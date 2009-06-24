@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Les Grilles Informatiques</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050128" />
+<meta name="author" content="S. Genaud" />
+<meta name="company" content="Université Louis Pasteur" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+
+.tableauMedia
+{
+  	margin: 0px 0px 20px 30px;
+	padding: 5px;
+}
+.legende {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 15px;
+	padding: 3px 0 0 0;
+}
+.legendeTitre
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 16px;
+	color: #333;
+	font-weight: bold;
+}
+
+
+.important { color : red; }
+
+table.list { border-spacing : 3px; 
+             margin-left: auto; 
+             margin-right : auto; /* pour centrer la table */ 
+           }
+tr.list    { background-color : #eee59a; font : fixed; }
+th.list    { background-color : #c2ddeb; }
+td.list    { background-color : #eee59a; margin : 3px; 
+        font-family : courier ; font-size : 12pt;}
+
+
+#listing pre { padding: 0; margin: 0; 
+               background-color : #c2ddeb; 
+               text-fontsize : 30%;
+           border-bottom: 1px solid #000;
+           border-top   : 1px solid #000;
+           width: 100%; position: relative;}
+</style>
+
+
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Novembre &#8226; 2005</h1>
+<h2>Les Grilles Informatiques</h2>
+</h2>
+</div>
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Les Grilles informatiques</h1>
+<h2>Modèles de programmation</h2>
+<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
+</div>
+
+<!-- Part : Modèles de programmation -->
+
+<div class="slide">
+ <h1>Problèmes ouverts</h1>
+ <ul>
+ <li> Portabilité, Interopérabilité : indépendance architecture
+ <li> Adaptivité : adaptation à la charge 
+ <li> Découverte : programmes capables de trouver de nouvelles ressources 
+ <li> Performance :
+  	<ul>
+	<li> latence réseau : gros grain
+	<li> ordonnancement : conflits potentiels sur ressources
+	<li> variance de la disponibilité : qualité de service
+	</ul>
+ </ul>
+</div>
+
+<div class="slide">
+ <h1>Problèmes ouverts (2)</h1>
+ <ul>
+ <li> Tolérance aux pannes : résister à la <em>volatilité</em>. </li>
+ <li> Sécurité : 
+      <ul>
+  	<li> encapsulation des codes exécutés (sandboxing)</li>
+	<li>vérifier la validité des résultats</li>
+      </ul>
+ </li>
+ </ul>
+</div>
+
+<div class="slide">
+<h1>Modèles de programmation</h1>
+ <ul>
+ <li> Modèles à passages de messages : MPI et variantes </li>
+ <li> Modèles RPC (ou client/serveur) : CORBA, RMI, GridRPC, ... </li>
+ <li> Modèles Pair-à-pair : Chord, JXTA, ... </li>
+ </ul>
+</div>
+
+<div class="slide">
+<h1>Modèles RPC</h1>
+
+<ul>
+<li>Vient du monde système distribué : le client/serveur.</li>
+<li> Utilisation de technologies répandues : RPC, CORBA, RMI sont
+bien connus.</li>
+<li> Permet une distribution "incrémentale" du code : on peut ne
+remplacer qu'une procédure par un appel distant.</li>
+<li> Les applications ne peuvent rivaliser en performance
+      avec des applications parallèles : on n'a pas un graphe complet
+	de communication entre processus.
+</li>
+</ul>
+
+</div>
+
+
+<div class="slide">
+<h1>Exemple GridRPC</h1>
+<i>A Remote Procedure Call API for Grid Computing</i>, 
+    Seymour,Nakada,Matsuoka,Dongarra,Lee,Casanova, 2002.
+	 
+<div id="listing">
+<pre>
+main() { 
+   grpc_function_handle_t h;
+   grpc_initialize(argv[1]);
+   grpc_function_handle_default(&amp;h,"mat/mmul");
+   if (grpc_call(&amp;h,N,A,B,C) != GRPC_ERROR) {
+     printf("error\n");
+   }
+</pre>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exemple GridRPC (2)</h1>
+
+aussi :
+<div id="listing">
+<pre>
+grpc_function_handle_init()
+                /* lien vers un serveur precis*/
+grpc_function_handle_destruct()
+grpc_finalize()
+
+grpc_call_async()   /* appel non bloquant*/
+grpc_probe()        /* test si l'appel est fini*/
+grpc_wait()         /* attend fin d'un appel */
+grpc_cancel()       /* annule l'appel */
+</pre></div>
+</div>
+
+<div class="slide">
+<h1>Exemple GridRPC (3)</h1>
+<ul>
+<li> Le serveur peut réaliser une implémentation parallèle</li>
+
+<li> Nécessite un langage d'interface (IDL)</li>
+</ul>
+<div class="listing">
+<pre>
+Module mat;
+ 
+Define mmul(IN int N, 
+            IN double A[N*N], 
+            IN double B[N*N], 
+            OUT double C[N*N])
+"matmul"
+Required "mmul_lib.o"
+Calls "C" mmul(N, A, B, C);
+</pre>
+</div>
+</div>
+
+<div class="slide">
+<h1>Modèle RPC : problèmes</h1>
+
+<ul>
+<li> performances : goulot d'étranglement constitué
+      par l'interface de communication unique de l'objet
+	serveur
+	
+<li> trouver le service adéquat d'après l'appel dans le code client 
+      (interface repository distribué)
+
+<li> trouver le <b>meilleur</b> service (le plus rapide,
+      le moins cher, ....)
+
+</ul>
+
+</div>
+
+
+<div class="slide">
+<h1>Modèle à passages de messages</h1>
+
+<ul>
+  <li> Avantages 
+	<ul>
+	<li> portage immédiat d'un code pour machine
+	      parallèle vers une grille (e.g. MPICH-g2)</li>
+      <li> toujours graphe complet de communication
+	      entre processus (pas de goulot d'étranglement
+		d'un point de vue logique)</li>
+	</ul>
+  </li>
+  <li> Problèmes
+	<ul>
+	<li> la conception de la parallélisation dépend de l'architecture
+	      cible</li>
+	<li> la grille est composée de liens réseaux et processeurs hétérogènes</li>
+	<li> les performances de l'application parallèle seront faibles</li>
+	</ul>
+   </li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1> MPI pour Grille</h1>
+
+Amélioration de la librairie de communication
+<ul> 
+<li> Réglage fin des buffers de tra/nsmission (e.g. globus I/O)</li>
+<li> Utilisation d'un vendor MPI (optimisé) quand disponible</li>
+<li> Opérations de communication collectives adaptées à la topologie physique :
+      essayer de moins utiliser les liens les plus lents.
+	(e.g. MPICH-G2, Magpie, PACXMPI)
+	MPICH-G2 différencie 4 niveaux : WAN-TCP,LAN-TCP,intra,vendor MPI </li>
+</ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Modèle pair-à-pair</h1>
+
+Chaque noeud de la grille dispose d'une certaine autonomie
+<ul>
+<li>Avantages 
+	<ul>
+  	  <li> protocoles de découverte inhérent à l'architecture</li>
+	  <li> tolérance aux pannes plus facilement réalisable </li>
+        <li> maintenance logiciel/matériel plus simple</li>
+        <li> tradition de prise en compte des pare-feux </li>
+	</ul>
+</li>
+<li> Problèmes
+	<ul>
+	<li> les performances de l'application parallèle seront faibles</li>
+	</ul>
+</li>
+</ul>
+</div>
+
+
+</div> <!-- ********** div final ************* -->
+
+</body>
+</html>

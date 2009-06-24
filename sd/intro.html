@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	  <title>Applications distribuees</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050128" />
+<meta name="author" content="S. Genaud" />
+<meta name="company" content="Université Louis Pasteur" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+
+.important { color : red; }
+
+table.list { border-spacing : 3px; 
+             margin-left: auto; 
+             margin-right : auto; /* pour centrer la table */ 
+           }
+tr.list    { background-color : #eee59a; font : fixed; }
+th.list    { background-color : #c2ddeb; }
+td.list    { background-color : #eee59a; margin : 3px; 
+        font-family : courier ; font-size : 12pt;}
+
+
+#listing pre { padding: 0; margin: 0; 
+               background-color : #c2ddeb; 
+               text-fontsize : 30%;
+           border-bottom: 1px solid #000;
+           border-top   : 1px solid #000;
+           width: 100%; position: relative;}
+</style>
+
+
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Octobre &#8226; 2005</h1>
+<h2> Evolution des syst&egrave;mes distribu&eacute;s</h2>
+<h2></h2>
+</div>
+</div>
+<div class="presentation">
+
+<div class="slide">
+        <h1>"Applications distribuées"</h1>
+<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
+</div>
+
+<!-- ________________________ Général _____________________________ -->
+
+
+<div class="slide">
+        <h1>Thèmes abordés</h1>
+        <p>
+	  Les thèmes que recouvre "Applications distribuées": toutes les tentatives de faire participer des machines distantes à un traitement informatique.
+	  </p>
+        <ul>
+                <li>système d'échange de messages,</li>
+                <li>systèmes d'exploitation distribués</li>
+                <li>applications réparties/parallèles</li>
+        </ul>
+</div>
+
+<div class="slide">
+        <h1>Thèmes abordés</h1>
+        <p>
+	  Tous ces systèmes nécessitent certaines techniques usuelles pour leur fonctionnement:
+	  </p>
+        <ul>
+                <li>technique de localisation (annuaires, découverte, ...),</li>
+                <li>horloges globales,</li>
+                <li>identifiants uniques,</li>
+                <li>espace global de stockage (disque, mémoire)</li>
+        </ul>
+</div>
+	
+
+<div class="slide">
+        <h1>Thèmes abordés</h1>
+        <p>
+        Depuis 1985, au fil du temps, les technologies ont évoluées sur la base 
+        d'idées fondamentales avec des ajouts, selon des déclinaisons différentes.
+	  Par exemple:
+	  </p>
+        <ul>
+		    <li><a href="http://www.ietf.org/rfc/rfc1050.txt">RPC</a> (Sun, 1988),</li>
+                <li>Java RMI (Sun, 1997 - JDK 1.1)</li>
+                <li>CORBA (OMG, 1998),</li>
+        </ul>
+</div>
+	
+
+<div class="slide">
+<h1>L'évolution des technologies</h1>
+
+Les technonologies des applications distribuées doivent s'adapter
+<ul>
+        <li>
+        à l'évolution des technologies matérielles. 
+        E.g. évolution rapide
+            <ul>
+              <li>des capacités des réseaux informatiques,</li>
+              <li>des capacités des processeurs (loi de Moore)</li>
+            </ul>
+         </li>
+      <li>
+      à l'évolution des technologies logicielles.
+      E.g. multiplication des systèmes d'exploitation, des protocoles, ...
+      </li>
+</ul>  
+</div>
+
+
+<!-- __________ Timeline  ________________________ -->
+<div class="slide">
+        <h1>Chronologie</h1>
+        Des domaines divers, des niveaux de complexité différents, des naissances et des morts ...
+<p>
+<img class="centrehoriz" src="img/timeline.png" alt="timeline image" title="timeline"/>
+</p>
+</div>
+
+
+<!-- __________ Interfaces  ________________________ -->
+<div class="slide">
+        <h1>1985~1995 : des systèmes d'exploitation distribués</h1>
+<ul>
+        <li>Mach, Chorus, DCE, ...</li>
+        <li>Tout le parc de machines est installé avec l'OS.</li>
+        <li>Technologie de micro-noyau.</li>
+        <li>Permettent la programmation distribuée au niveau système.</li>
+</ul>
+</div>
+
+
+<!-- __________ 1995  ________________________ -->
+<div class="slide">
+        <h1>~1995: l'hétérogénéité entérinée</h1>
+
+<ul>
+        <li>On invente des protocoles pour faire communiquer des systèmes différents 
+	  (<a href="http://www.ietf.org/rfc/rfc1050.txt">RPC</a>, <a href="http://www.ietf.org/rfc/rfc1945.txt">HTTP</a>, PVM/MPI, ...).</li>
+        <li>On accepte l'hétérogénéité des systèmes.</li>
+        <li>Communication à plus grande échelle mais plus simple.</li>
+</ul>
+</div>
+
+<!-- __________ 1998  ________________________ -->
+<div class="slide">
+        <h1>~1998: développement distribué hététogène</h1>
+
+<ul>
+        <li>Développement de technologies pour la programmation distribuée
+        en environnement <b class="important">hétérogène</b>.</li>
+        <li>Deux idées:
+        <ul>
+                <li>supporter l'hétérogénéité des OS et langages (CORBA)</li>
+                <li>supporter l'hétérogénéité des OS à l'aide d'une machine virtuelle (JavaRMI).</li>
+	  </ul></li>
+	  <li>Naissance de l'idée d'application distribuée à grande échelle (grille)</li>
+</ul>
+</div>
+
+<!-- __________ 2001  ________________________ -->
+<div class="slide">
+<h1>~2001: les composants</h1>
+
+<img style="float:right;" width="30%" src="img/compmodel.gif" alt="component model"/>
+<ul>
+        <li>Les difficultés de maintenir des codes sur des plateformes changeant
+        sans arrêt conduisent à une tentative d'encapsulation des <b>binaires</b>.</li>
+        <li>Les composants définissent leurs interfaces mais aussi spécifient comment
+        ils peuvent être <b>déployés</b> (dépendances de contexte).</li>
+</ul>
+
+</div>
+
+<!-- __________ 2001  ________________________ -->
+<div class="slide">
+<h1>les composants</h1>
+<p>
+Exemples de modèles de composants: <a href="http://java.sun.com/products/ejb/">EJB</a>, <a href="">CCM</a>, <a href="http://developer.gnome.org/arch/component/bonobo.html">Bonobo</a>, ...
+</p>
+<img width="50%" style="float:right;" src="img/epiphany-gnumeric.png" alt="epiphany-gnumeric"/>
+
+</div>
+
+<!-- __________ 1998-2000 ________________________ -->
+<div class="slide">
+	  <h1>1998~2000: La "mondialisation"</h1>
+<p>
+Parallèlement, depuis la fin des années 1990, l'idée de transposer le formidable
+succès de <a href="http://www.ietf.org/rfc/rfc1945.txt">HTTP</a> pour les applications fait son chemin.
+Objectif: permettre à des applications appartenant à des <b>entités différentes</b> de coopérer.
+</p>
+<ul>
+	<li>L'idée de <b>grille</b> est proposée (<a href="http://www.globus.org">Globus</a>, Foster 1998)</li>
+	<li>Le W3C établit la recommandation <a href="http://www.w3.org/TR/soap">SOAP</a> (2000)</li> 
+
+</ul>
+
+</div>
+
+<!-- __________ aujourd'hui ________________________ -->
+<div class="slide">
+	  <h1>Aujourd'hui</h1>
+<ul>
+	<li>Le développement d'application distribuées utilisant une technologie homogène existe encore.</li>
+	<li>Les efforts vont vers des technologies qui peuvent s'intégrer dans le paysage des protocoles existants
+	<ul>
+		    <li>Définition de protocoles pour fournir des service de grilles (<a href="http://www-128.ibm.com/developerworks/library/gr-grid1/">OGSI/OGSA</a>).</li>
+		    <li>Définition des technologies baptisées <a href="http://www.w3.org/2002/ws/">web-services</a> (SOAP, WSDL, UDDI).</li>
+	  </ul>
+	  </li>
+	<li>Découverte des problèmes liés au passage à l'échelle et à l'hétérogénéité:
+	de nouvelles technologies se montrent efficaces (E.g. pair-à-pair avec <a href="http://www.jxta.org">JXTA</a>).</li>
+</ul>
+
+</div>
+
+
+</div>
+</body>
+</html>

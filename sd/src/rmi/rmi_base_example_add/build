@@ -1,0 +1,20 @@
+#!/bin/bash
+
+SERV_DIR=s
+CLI_DIR=c
+
+set -v
+javac Serveur.java Client.java Operation.java OperationImpl.java
+rmic OperationImpl
+
+\rm -rf ${SERV_DIR} ${CLI_DIR} 
+mkdir ${CLI_DIR} 
+mkdir ${SERV_DIR}
+
+for i in Client OperationImpl_Stub Operation
+do  cp $i.class ${CLI_DIR} ; done
+
+for i in Serveur OperationImpl_Stub OperationImpl_Skel OperationImpl Operation
+do  cp $i.class ${SERV_DIR} ; done
+
+\rm *.class
