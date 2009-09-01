@@ -1,0 +1,36 @@
+TP scripts shell du 12-12-2005
+
+Remarque  : les scripts commencent généralement par la ligne 
+#!/bin/sh
+qui permet de choisir l'interpréteur de commande qui doit exécuter ce script
+
+Exercice 1 :
+Écrire un script qui tant que l'utilisateur n'a pas tapé 9 :
+* Affiche un menu
+* Demande à l'utilisateur de saisir une option du menu
+* Affiche à l'utilisateur le résultat de sa demande
+
+Exemple de ce qui doit s'afficher à l'écran :
+
+************************ Menu général ************************
+<1> Afficher la date 
+<2> Afficher les noms de personnes loguées sur la même machine
+<3> Affiche la liste des processus
+<4> La place occupée par les fichiers du répertoire courant
+<5> La taille et l'occupation du disque
+<6> mettre dans un fichier "tousfichiers"le nom de tous les fichiers du répetoire 
+	courant récursivement 
+<9> Quitter 
+**************************************************************
+
+
+Exercice 2 :
+Ecrire un script Shell qui joue le rôle d'une petite calculatrice. Les commandes 
+sont sous la forme OPERANDE OPERATION OPERANDE. Bien évidemment le script donnera
+ le résultat de l'opération.
+
+
+Exercice 3:
+Ecrire un script Shell qui supprime tous les fichiers de l'arborescence courante 
+ayant une taille supérieure à une valeur (en octets) donnée en paramètre.
+
