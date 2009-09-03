@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Apache, PHP et MySQL</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Notes de cours Apache+PHP+MySQL"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Introduction"
+HREF="c12.html"><LINK
+REL="NEXT"
+TITLE="Architecture 3-tiers"
+HREF="x40.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Notes de cours Apache+PHP+MySQL</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c12.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x40.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="AEN16"
+></A
+>Chapter 2. Apache, PHP et MySQL</H1
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN18"
+>2.1. Les trois logiciels en bref</A
+></H1
+><P
+>&#13;Ces trois noms désignent des logiciels, installés sur le site
+web (machine serveur), ayant chacun des rôles différents. 
+Examinons le rôle de chacun d'entre eux.
+
+<P
+></P
+><UL
+><LI
+><P
+>&#13;<A
+HREF="http://www.apache.org"
+TARGET="_top"
+>&#13;Apache
+</A
+>
+est le <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>serveur web</I
+></SPAN
+>. 
+Son rôle est d'écouter les requêtes émises par les navigateurs (qui demandent
+des pages web), de chercher la page demandée et de la renvoyer.
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.php.net"
+TARGET="_top"
+>&#13;PHP
+</A
+>
+est un <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>langage de script</I
+></SPAN
+>. 
+Il permet, de décrire dans une page web, un affichage dynamique d'information,
+c'est-à-dire que le texte affiché peut dépendre de variables. 
+Nous avons par exemple la possibilité d'afficher dans une page renvoyée au navigateur, la date du jour.
+Les instructions PHP sont généralement contenues dans des fichiers 
+d'extension php. Ces fichiers peuvent contenir du HTML, entremêlé avec
+le code PHP. Quand un navigateur demande un tel fichier, le serveur Apache
+exécute les instructions PHP, qui produisent une page HTML.
+Une fois la page HTML générée, le serveur la renvoie au navigateur, qui
+ne voit qu'une page HTML.
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://www.mysql.com"
+TARGET="_top"
+>&#13;MySQL
+</A
+>
+est un <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>système de gestion de base de données</I
+></SPAN
+>. 
+Son rôle est de stocker les données, sous forme de tables, et de permettre
+la manipulation de ces données à travers le langage de requête SQL.
+Un exemple de requête peut être par exemple (exprimé en francais) 
+: <SPAN
+CLASS="QUOTE"
+>"Lister les adresses des clients (à partir de la table client) qui
+    ont acheté cette année pour plus de 1000 euros (à partir de la table facturation)"</SPAN
+>. 
+En SQL, cette requête s'écrirait par exemple de la manière suivante : 
+<B
+CLASS="command"
+>select (nom,adresse) from (client,facturation) where (client.numero = facturation.numero and facturation.total&#62;1000)</B
+> 
+où le champ <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>numero</I
+></SPAN
+> est la clé primaire de chacune des 
+tables, et représente le numéro de client.
+</P
+><P
+>&#13;PHP est capable de passer à MySQL de telles requêtes à travers les fonctions
+de préfixe <CODE
+CLASS="function"
+>mysql_</CODE
+> (PHP possède également des 
+fonctions pour dialoguer avec d'autres systèmes de gestion de base de données).
+C'est une raison du succès du couple PHP+MySQL dans la mise en place de
+sites webs.
+</P
+></LI
+></UL
+>
+</P
+><P
+>&#13;L'utilisation des trois logiciels n'est nécessaire que lorsqu'on
+veut afficher au visiteur des informations provenant de la base
+de données. Cependant, cette configuration est fréquement utilisée
+car elle correspond à beaucoup de besoins.
+Un magasin voulant afficher à ses clients la liste de ses produits 
+en stock, un forum de discussions permettant à des internautes
+de lire, et rechercher des messages, sont autant d'exemples
+d'application nécessitant la manipulation (enregistrement, manipulation,
+affichage) de données à travers le réseau.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c12.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x40.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Introduction</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Architecture 3-tiers</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

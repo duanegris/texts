@@ -1,0 +1,536 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>PHP</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Notes de cours Apache+PHP+MySQL"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Installation Windows"
+HREF="x78.html"><LINK
+REL="NEXT"
+TITLE="Les tableaux"
+HREF="x237.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Notes de cours Apache+PHP+MySQL</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x78.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x237.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="AEN82"
+></A
+>Chapter 3. PHP</H1
+><P
+>&#13;PHP est un langage interprété exécuté du côté serveur (comme les scripts CGI, ASP, ...) 
+et non du côté client (par exemple un code Javascript ou une applet Java s'exécute sur votre ordinateur...). 
+La syntaxe du langage est inspirée de celles du langage C, du Perl et de Java. 
+</P
+><P
+>&#13;La grande force de tels langages (PHP ou ASP) réside dans les fonctionnalités
+de programmation qu'ils offrent pour traiter des problèmes liés au 
+developpement de services web. 
+Par exemple, des fonctions de traitements de chaînes de caractères puissantes
+sont fournies.
+Une autre grande classe de besoin pour les développements web concerne
+l'utilisation de base de données. PHP propose une interface vers de
+nombreux gestionnaires de bases de données, permettant au programmeur
+d'accéder à un système de gestion de base de données à travers des
+primitives du langage. 
+PHP supporte des interfaces vers les bases de données suivantes :
+Adabas D, dBase, Empress, FilePro, Hyperware, IBM DB2, Informix, Ingres, Interbase, Frontbase, 
+Direct MS-SQL, mSQL, MySQL, Oracle (version 7 et 8), Ovrimos, PostgreSQL, Sesam, Solid, Sybase, Velocis et Unix dbm.
+Quand une base de données n'est pas interfacée, il est en outre possible
+d'utiliser le format ODBC.
+</P
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN86"
+>3.1. Les opérateurs</A
+></H1
+><P
+>&#13;Les exemples donnés supposent que la valeur de <CODE
+CLASS="varname"
+>$x</CODE
+>
+ est 8, <CODE
+CLASS="varname"
+>$c</CODE
+>  est "la ", et <CODE
+CLASS="varname"
+>$b</CODE
+> est TRUE;
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN92"
+>3.1.1. Opérateurs sur les nombres</A
+></H2
+><P
+>&#13;<DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN95"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><COL><THEAD
+><TR
+><TH
+>opérateur</TH
+><TH
+>dénomination</TH
+><TH
+>exemple</TH
+><TH
+>résultat</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>+</TD
+><TD
+>addition</TD
+><TD
+>$x+4</TD
+><TD
+>12</TD
+></TR
+><TR
+><TD
+>-</TD
+><TD
+>soustraction</TD
+><TD
+>$x-4</TD
+><TD
+>4</TD
+></TR
+><TR
+><TD
+>*</TD
+><TD
+>multiplication</TD
+><TD
+>$x*3</TD
+><TD
+>24</TD
+></TR
+><TR
+><TD
+>/</TD
+><TD
+>division</TD
+><TD
+>$x/2</TD
+><TD
+>4</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+>
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN124"
+>3.1.2. Opérateurs booléens</A
+></H2
+><P
+>&#13;
+<DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN127"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><COL><TBODY
+><TR
+><TD
+>|| ou OR</TD
+><TD
+>OU logique</TD
+><TD
+>$b OR FALSE</TD
+><TD
+>TRUE</TD
+></TR
+><TR
+><TD
+>|| ou OR</TD
+><TD
+>OU logique</TD
+><TD
+>$b OR FALSE</TD
+><TD
+>TRUE</TD
+></TR
+><TR
+><TD
+>&#38;&#38; ou AND</TD
+><TD
+>ET logique</TD
+><TD
+>$b AND TRUE</TD
+><TD
+>TRUE</TD
+></TR
+><TR
+><TD
+>XOR</TD
+><TD
+>OU exclusif</TD
+><TD
+>$b XOR FALSE</TD
+><TD
+>FALSE</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+>
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN150"
+>3.1.3. Affectation et affection combinées</A
+></H2
+><P
+>&#13;
+<DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN153"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><COL><TBODY
+><TR
+><TD
+>=</TD
+><TD
+>affectation</TD
+><TD
+>$x=5</TD
+><TD
+>$x==5</TD
+></TR
+><TR
+><TD
+>+=</TD
+><TD
+>incrémentation et affectation</TD
+><TD
+>$x+=6</TD
+><TD
+>$x==14</TD
+></TR
+><TR
+><TD
+>-=</TD
+><TD
+>soustraction</TD
+><TD
+>$x-=6</TD
+><TD
+>$x==2</TD
+></TR
+><TR
+><TD
+>/=</TD
+><TD
+>division</TD
+><TD
+>$x/=2</TD
+><TD
+>$x==4</TD
+></TR
+><TR
+><TD
+>%=</TD
+><TD
+>division entière</TD
+><TD
+>$x%=3</TD
+><TD
+>$x==2</TD
+></TR
+><TR
+><TD
+>|=</TD
+><TD
+>effectue un OU logique</TD
+><TD
+>$b |= FALSE</TD
+><TD
+>$b==TRUE</TD
+></TR
+><TR
+><TD
+>^=</TD
+><TD
+>effectue un OU exclusif logique</TD
+><TD
+>$b ^= FALSE</TD
+><TD
+>$b==TRUE</TD
+></TR
+><TR
+><TD
+>&#38;=</TD
+><TD
+>effectue un ET logique</TD
+><TD
+>$b &#38;= FALSE</TD
+><TD
+>$b==FALSE</TD
+></TR
+><TR
+><TD
+>.=</TD
+><TD
+>concatène la chaîne à droite à celle de gauche</TD
+><TD
+>$c .= "fin"</TD
+><TD
+>$c=="la fin"</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+>
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN201"
+>3.1.4. Opérateurs de comparaison</A
+></H2
+><P
+>&#13;<DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN204"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><COL><TBODY
+><TR
+><TD
+>!=</TD
+><TD
+>différent</TD
+><TD
+>$x!=10</TD
+><TD
+>TRUE</TD
+></TR
+><TR
+><TD
+>==</TD
+><TD
+>égalité</TD
+><TD
+>$x==10</TD
+><TD
+>FALSE</TD
+></TR
+><TR
+><TD
+>&#60;=</TD
+><TD
+>inférieur ou égal</TD
+><TD
+>$x&#60;=10</TD
+><TD
+>TRUE</TD
+></TR
+><TR
+><TD
+>&#60;</TD
+><TD
+>inférieur</TD
+><TD
+>$x&#60;10</TD
+><TD
+>TRUE</TD
+></TR
+><TR
+><TD
+>&#62;=</TD
+><TD
+>supérieur ou égal</TD
+><TD
+>$x&#62;=10</TD
+><TD
+>FALSE</TD
+></TR
+><TR
+><TD
+>&#62;</TD
+><TD
+>supérieur</TD
+><TD
+>$x&#62;10</TD
+><TD
+>FALSE</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+>
+</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x78.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x237.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installation Windows</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Les tableaux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Architecture 3-tiers</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Notes de cours Apache+PHP+MySQL"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Apache, PHP et MySQL"
+HREF="c16.html"><LINK
+REL="PREVIOUS"
+TITLE="Apache, PHP et MySQL"
+HREF="c16.html"><LINK
+REL="NEXT"
+TITLE="Installation Linux"
+HREF="x63.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Notes de cours Apache+PHP+MySQL</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c16.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. Apache, PHP et MySQL</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x63.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN40"
+>2.2. Architecture 3-tiers</A
+></H1
+><P
+>&#13;La configuration que l'on met ici en place est souvent nommée "3-tiers" (3-tier en anglais) car
+on peut décomposer fonctionnellement notre application en 3 couches distinctes.
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>couche présentation:</I
+></SPAN
+>
+   c'est la partie de l'application visible par les utilisateurs (on parle d'interface utilisateur). 
+   Dans notre cas, elle se présentera sous la forme de pages HTML, composée de formulaires, bouttons, etc. 
+   Un exemple concret peut être l'interface de recherche de vols sur un site de réservation d'une compagnie aérienne: 
+   la couche de présentation définit le formulaire de recherche et la présentation des résultats de la recherche.
+<DIV
+CLASS="figure"
+><A
+NAME="flightsearch_form"
+></A
+><P
+><B
+>Figure 2-1. Exemple d'interface pour une recherche de vols</B
+></P
+><P
+><IMG
+SRC="fligthsearch_form_shot.png"></P
+></DIV
+>
+
+
+   </P
+></LI
+><LI
+><P
+>&#13;    <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>couche métier:</I
+></SPAN
+>
+    c'est la "logique" de l'application elle-même, c'est-à-dire les algorithmes implémentés pour remplir les fonctions spécifiées.
+    Dans l'exemple de la fonction de recherche de vols, l'application prendra les données saisies par l'utilisateur dans le formulaire,
+    pourra vérifier la cohérence des informations demandées, mettre cette requête dans un format adéquat, et transmettre la requête
+    au gestionnaire des données (couche accès aux données). 
+    Si l'utilisateur attend des données en résultat, l'application procède en général à un traitement avant de les passer
+    à la couche présentation.</P
+></LI
+><LI
+><P
+>&#13;    <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>couche accès aux données:</I
+></SPAN
+> c'est la partie qui gère les données. 
+La façon dont elle organise, manipule, stocke, etc, les données est transparente aux applications ou utilsiateurs externes,
+toutes ces opérations étant internes à la couche d'accès aux données.
+Cette couche est souvent implantée avec un sytème de gestion de base de données. 
+L'interface proposée est souvent SQL.
+</P
+></LI
+></UL
+>
+Remarquons bien que le choix de Apache+PHP+MySQL n'en est que partie une multitude d'autres possibles.
+(Par exemple Java/RMI+Base de données).
+
+
+<DIV
+CLASS="figure"
+><A
+NAME="fg1"
+></A
+><P
+><B
+>Figure 2-2. Architecture 3-tiers avec Apache+PHP+MySQL</B
+></P
+><P
+><IMG
+SRC="webserver-3tier.png"></P
+></DIV
+>
+
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c16.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x63.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Apache, PHP et MySQL</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c16.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Installation Linux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

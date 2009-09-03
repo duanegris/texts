@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Installation Linux</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Notes de cours Apache+PHP+MySQL"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Apache, PHP et MySQL"
+HREF="c16.html"><LINK
+REL="PREVIOUS"
+TITLE="Architecture 3-tiers"
+HREF="x40.html"><LINK
+REL="NEXT"
+TITLE="Installation Windows"
+HREF="x78.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Notes de cours Apache+PHP+MySQL</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x40.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. Apache, PHP et MySQL</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x78.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN63"
+>2.3. Installation Linux</A
+></H1
+><P
+>&#13;L'installation sur un système Linux de ces trois composants est 
+plutôt simple, étant donné que ces logiciels sont généralement
+disponibles sur les CDs livrés par la plupart des distributions.
+Nous prenons ici deux exemples de distribution. 
+<A
+HREF="http://www.linux-mandrake.com"
+TARGET="_top"
+>Mandrake 8</A
+>.
+</P
+><P
+>&#13;Dans cette distribution, Il vous faut installer les packages suivants :
+<PRE
+CLASS="programlisting"
+>&#13;apache-common-1.3.19-3mdk
+apache-modules-1.3.19-3mdk
+apache-1.3.19-3mdk
+apache-conf-1.3.19-3mdk
+apache-mod_perl-1.3.19_1.25-3mdk
+apache-suexec-1.3.19-3mdk
+php-mysql-4.0.4pl1-6mdk
+php-common-4.0.4pl1-6mdk
+mod_php-4.0.4pl1-6mdk
+php-4.0.4pl1-6mdk
+php-mysql-4.0.4pl1-6mdk
+MySQL-shared-3.23.36-2mdk
+MySQL-client-3.23.36-2mdk
+MySQL-3.23.36-2mdk
+</PRE
+>
+
+De plus, on vérifiera que la configuration de PHP permet bien
+d'accéder aux fonctions MySQL : 
+visualiser le fichier <TT
+CLASS="filename"
+>/etc/php.ini</TT
+>
+et vérifier que la ligne :
+<PRE
+CLASS="programlisting"
+>&#13;extension = mysql.so
+</PRE
+>
+est décommentée (il ne doit pas y avoir de points virgule en début de ligne).
+</P
+><P
+>&#13;Bien sûr, il faut aussi vérifier que les services Apache et MySQL sont
+actifs. Dans le doute démarrez les (en tant que root):
+<PRE
+CLASS="screen"
+>&#13;  <SAMP
+CLASS="prompt"
+>bash # </SAMP
+><KBD
+CLASS="userinput"
+>service httpd start</KBD
+>
+  Starting httpd:                                            [  OK  ]
+  <SAMP
+CLASS="prompt"
+>bash # </SAMP
+><KBD
+CLASS="userinput"
+>service mysql start</KBD
+>
+  Starting mysqld daemon with databases from /var/lib/mysql
+  <SAMP
+CLASS="prompt"
+>bash # </SAMP
+>
+</PRE
+>
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x40.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x78.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Architecture 3-tiers</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c16.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Installation Windows</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

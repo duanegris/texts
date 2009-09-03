@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Lecture et affichage HTML des données</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Notes de cours Apache+PHP+MySQL"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Accéder à une base MySQL avec PHP"
+HREF="c466.html"><LINK
+REL="PREVIOUS"
+TITLE="Accéder à une base MySQL avec PHP"
+HREF="c466.html"><LINK
+REL="NEXT"
+TITLE="Insertion de données dans la base"
+HREF="x528.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Notes de cours Apache+PHP+MySQL</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c466.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Accéder à une base MySQL avec PHP</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x528.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN479"
+>5.2. Lecture et affichage HTML des données</A
+></H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecture"
+>5.2.1. Lecture des données</A
+></H2
+><P
+>&#13;Supposons que nous ayons une base de données appelée 
+<CODE
+CLASS="varname"
+>base</CODE
+> comportant une table appelée 
+<CODE
+CLASS="varname"
+>produit</CODE
+>. 
+Notre première tâche est de demander à PHP de se connecter
+à l'ordinateur sur lequel se trouve la base MySQL, puis
+de préciser qu'on veut utiliser cette table :
+</P
+><PRE
+CLASS="programlisting"
+>&#13;&#60;?
+mysql_connect("localhost","root","") or die("Impossible de se connecter");;
+mysql_select_db("base") or die("pas possible de trouver la base");
+</PRE
+><P
+>&#13;Ici, nous spécifions que la base est sur l'ordinateur qui exécute le
+script PHP (<CODE
+CLASS="varname"
+>localhost</CODE
+>), et qu'on se connecte
+en tant qu'administrateur de la base (<CODE
+CLASS="varname"
+>root</CODE
+>), qui
+n'a pas de mot de passe.
+<DIV
+CLASS="note"
+><P
+></P
+><TABLE
+CLASS="note"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;Si votre base MySQL à été paramétrée différement, changez bien sûr les
+paramètres (vérifier entre autres que vous n'avez pas besoin d'un mot
+de passe).
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+
+L'instruction <CODE
+CLASS="function"
+>die</CODE
+> permet d'arrêter le script avec un message d'erreur
+en cas d'échec.
+</P
+><P
+>&#13;Demandons maintenant de lister toutes les informations de notre 
+table <CODE
+CLASS="varname"
+>produit</CODE
+>. Il faut d'abord, à travers
+PHP, faire une requête SQL qui permette de selectionner tous les
+champs de la table (première ligne).
+
+<PRE
+CLASS="programlisting"
+>&#13;$result = mysql_query("SELECT * FROM produit");
+$nblignes = mysql_num_rows($result);
+</PRE
+>
+
+Le résultat de cette requête est un tableau de données, comme les
+deux dernières lignes du tableau suivant :
+<DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN496"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><THEAD
+><TR
+><TH
+>ref</TH
+><TH
+>nom</TH
+><TH
+>prix</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>1</TD
+><TD
+>canon bj10e</TD
+><TD
+>120</TD
+></TR
+><TR
+><TD
+>2</TD
+><TD
+>epson stylus 8c</TD
+><TD
+>135</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+> 
+
+Nous devons traiter les lignes du tableau les unes après les
+autres. Pour cela, nous avons besoin de connaître le nombre
+de ligne de notre tableau. C'est ce qui est fait à la deuxième ligne
+de l'extrait de code précédent, et le résultat est conservé dans <CODE
+CLASS="varname"
+>nblignes</CODE
+>.
+Nous sommes maintenant prêt à afficher nos données présentes dans 
+<CODE
+CLASS="varname"
+>result</CODE
+>, dans le format HTML.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN514"
+>5.2.2. Afficher les données</A
+></H2
+><P
+>&#13;Nous voulons présenter nos données sous la forme d'une table HTML.
+Il faut donc faire écrire à PHP, le code HTML correspondant.
+</P
+><P
+>&#13;La première ligne de la table est constante : il s'agit de l'entête.
+Ensuite, il faut extraire, pour chaque ligne de notre tableau,
+les valeurs à afficher. Pour cela, nous extrayons pour chaque ligne 
+<CODE
+CLASS="varname"
+>i</CODE
+> les valeurs des champs nom et prix de notre table,
+que nous mettons respectivement dans les variables PHP <CODE
+CLASS="varname"
+>$prod_nom</CODE
+> 
+et <CODE
+CLASS="varname"
+>$prod_prix</CODE
+>. Quand les valeurs de la ligne ont
+été récupérées, nous pouvons écrire la ligne correspondante du tableau HTML. 
+Enfin, nous fermons la table quand toutes les lignes ont été examinées.
+
+<PRE
+CLASS="programlisting"
+>&#13; echo "&#60;table&#62;&#60;tr&#62;&#60;td&#62; Désignation &#60;/td&#62;&#60;td&#62; Prix &#60;/td&#62;&#60;/tr&#62;\n";
+    for ($i=0;$i&#60;$nblignes;$i=$i+1) {
+	 $prod_nom =  mysql_result($result,$i,"nom");
+	 $prod_prix = mysql_result($result,$i,"prix");
+	 echo "&#60;tr&#62;&#60;td&#62;$prod_nom&#60;/td&#62;&#60;td&#62;$prod_prix&#60;/td&#62;&#60;/tr&#62;";
+    }
+    echo "&#60;/table&#62;";
+
+</PRE
+>
+
+</P
+><P
+>&#13;Enfin, il nous faut par prudence refermer la base MySQL mais la quasi-totalité
+du code PHP nécessaire à la consultation de notre table est écrit.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN523"
+>5.2.3. Programme complet</A
+></H2
+><P
+>&#13;Récapitulons en listant maintenant le programme complet qui permet 
+de lire le contenu
+de notre table. Donnez une extension php à votre nom de fichier 
+(<TT
+CLASS="filename"
+>lecture.php</TT
+> par exemple).
+
+<PRE
+CLASS="programlisting"
+>&#13;&#60;html&#62;
+&#60;body&#62;
+&#60;h1&#62; Catalogue produit&#60;/h1&#62;
+&#60;?
+mysql_connect("localhost","root","") or die("Impossible de se connecter");;
+mysql_select_db("base") or die("pas possible de trouver la base");
+
+$result = mysql_query("SELECT * FROM produit");
+$nblignes = mysql_numrows($result);
+    
+echo "&#60;table&#62;&#60;tr&#62;&#60;td&#62;Désignation&#60;/td&#62;&#60;td&#62;Prix&#60;/td&#62;&#60;/tr&#62;\n";
+for ($i=0;$i&#60;$nblignes;$i=$i+1) {
+	 $prod_nom =  mysql_result($result,$i,"nom");
+	 $prod_prix = mysql_result($result,$i,"prix");
+	 echo "&#60;tr&#62;&#60;td&#62;$prod_nom&#60;/td&#62;&#60;td&#62;$prod_prix&#60;/td&#62;&#60;/tr&#62;";
+}
+echo "&#60;/table&#62;";
+mysql_close();
+?&#62;
+&#60;/body&#62;
+&#60;/html&#62;
+</PRE
+>
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c466.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x528.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Accéder à une base MySQL avec PHP</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c466.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Insertion de données dans la base</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

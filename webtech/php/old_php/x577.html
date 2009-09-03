@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Gérer plusieurs tables</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Notes de cours Apache+PHP+MySQL"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Accéder à une base MySQL avec PHP"
+HREF="c466.html"><LINK
+REL="PREVIOUS"
+TITLE="Insertion de données dans la base"
+HREF="x528.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Notes de cours Apache+PHP+MySQL</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x528.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Accéder à une base MySQL avec PHP</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN577"
+>5.4. Gérer plusieurs tables</A
+></H1
+><P
+>&#13;Nous n'avons jusqu'ici considéré que la base de données n'était constituée
+que d'une table. 
+Dans la réalité, la base de données est toujours constituée
+de plusieurs tables. Pour illustrer notre propos, imaginons que
+notre base est faite de trois tables : tables clients, produits et commandes.
+<PRE
+CLASS="programlisting"
+>&#13;clients (clid,nom)                         clé : clid
+produits(pid,descr,prix)                   clé : pid
+commandes(pid,cli,quantite,montant,date)   clé : pid,clid
+</PRE
+>
+</P
+><P
+>&#13;Pour lister les clients qui ont passé des commandes de plus de 2000 Euros
+et afficher ce qu'ils ont commandé, on peut écrire la requête SQL
+suivante :
+<PRE
+CLASS="programlisting"
+>&#13;select client.nom,produits.descr 
+  from produits,commandes,clients
+where
+   commandes.montant &#62;  2000  and
+   commandes.pid=produits.pid and
+   commandes.clid=clients.clid
+</PRE
+>
+</P
+><P
+>&#13;On remarque d'abord la notation pointée <CODE
+CLASS="varname"
+>table.champ</CODE
+>.
+Elle permet de distinguer des noms de champs identiques dans des tables
+différentes (par exemple clid est le nom d'un attribut dans la table clients
+mais aussi dans la table commandes).
+</P
+><P
+>&#13;La liaison entre les tables réside enitèrement dans les contraintes imposées
+par la clause <CODE
+CLASS="varname"
+>where</CODE
+>. 
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x528.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Insertion de données dans la base</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c466.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

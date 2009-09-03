@@ -1,0 +1,618 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>SQL</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Notes de cours Apache+PHP+MySQL"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Les fonctions"
+HREF="x279.html"><LINK
+REL="NEXT"
+TITLE="Gestion des données"
+HREF="x456.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Notes de cours Apache+PHP+MySQL</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x279.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x456.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="AEN298"
+></A
+>Chapter 4. SQL</H1
+><P
+>&#13;SQL (Structured Query Language) est un langage de définition, de contrôle et de manipulation de données 
+pour les bases de données relationnelles. 
+Le modèle relationnel a été inventé par E.F. Codd (Directeur de recherche du centre IBM de San José) en 1970,
+ et est devenu aujourd'hui le standart en terme de langage pour les bases de données.
+ De fait, c'est le langage utilisé par le système de gestion de base de données
+ MySQL.
+</P
+><P
+>&#13;Nous ne donnons ici qu'un aperçu du langage SQL, permettant de comprendre
+les grands principes du langage et de réaliser des requêtes élémentaires.
+Pour plus de détails, on pourra se reporter à la documentation
+<A
+HREF="http://www.commentcamarche.net/sql/sqlsel.php3"
+TARGET="_top"
+>&#13;comment ça marche.
+</A
+>
+</P
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN303"
+>4.1. Manipulation des données</A
+></H1
+><P
+>&#13;SQL est à la fois un langage de manipulation de données et un langage de définition de données. 
+Toutefois, la définition de données est l'oeuvre de l'administrateur de la base de données, c'est pourquoi la plupart des personnes qui utilisent le langage SQL ne se servent que du langage de manipulation de données, permettant de sélectionner les données qui les intéresse. 
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN306"
+>4.1.1. Lire des données dans la base : SELECT</A
+></H2
+><P
+>&#13;     La principale commande du langage de manipulation de données est la 
+     commande <CODE
+CLASS="function"
+>SELECT</CODE
+>, dont la syntaxe est la suivante :  
+
+     <PRE
+CLASS="programlisting"
+>&#13;		 SELECT [ALL] | [DISTINCT] &#60;liste des noms de colonnes&#62; 
+		              | * FROM &#60;Liste des tables&#62; [WHERE &#60;condition logique&#62;] 
+     </PRE
+>
+
+</P
+><P
+>&#13;<P
+></P
+><UL
+><LI
+><P
+> 
+     L'option ALL (option par défaut) permet de sélectionner 
+     l'ensemble des lignes satisfaisant à la condition logique
+     </P
+></LI
+><LI
+><P
+>&#13;     L'option DISTINCT permet de ne conserver que des 
+     lignes distinctes, en éliminant les doublons 
+     </P
+></LI
+><LI
+><P
+>                         
+     La liste des noms de colonnes indique la liste des 
+     colonnes choisies, séparées par des virgules.
+     </P
+></LI
+><LI
+><P
+>&#13;     Lorsque l'on désire sélectionner l'ensemble des colonnes 
+     d'une table il n'est pas nécessaire de saisir la liste 
+     exhaustive de ses colonnes : l'option * permet de réaliser cette tâche 
+     </P
+></LI
+><LI
+><P
+>&#13;     La liste des tables indique l'ensemble des tables 
+     (séparées par des virgules) sur lesquelles on opère
+     </P
+></LI
+><LI
+><P
+>&#13;     La condition logique permet d'exprimer des 
+     qualifications complexes à l'aide d'opérateurs 
+     logiques et de comparateurs arithmétiques 
+     </P
+></LI
+></UL
+>  
+<DIV
+CLASS="tip"
+><P
+></P
+><TABLE
+CLASS="tip"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;        Le langage SQL n'est pas sensible à la casse 
+	  (en anglais case sensitive), cela signifie que l'on peut aussi 
+	  bien écrire les instructions en minuscules qu'en majuscule. 
+	  Toutefois, cette insensibilité à la casse n'est que partielle 
+	  dans la mesure où la différenciation entre minuscules et 
+	  majuscules existe au niveau des identificateurs d'objets. 
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN327"
+>4.1.2. Exemples SELECT</A
+></H2
+><P
+>&#13;        Voyons quelques unes des possibilités de la 
+	  commande <CODE
+CLASS="function"
+>SELECT</CODE
+>. 
+        Supposons l'existence de la table suivante, recensant des 
+	  lecteurs de CD
+        vendus d'occasion. 
+	  Cette table s'appelle <CODE
+CLASS="varname"
+>lecteurs</CODE
+>.
+</P
+><DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN332"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><COL><COL><THEAD
+><TR
+><TH
+>ref</TH
+><TH
+>marque</TH
+><TH
+>modele</TH
+><TH
+>annee</TH
+><TH
+>prix</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>1</TD
+><TD
+>Pioneer</TD
+><TD
+>CD-120</TD
+><TD
+>1998</TD
+><TD
+>700</TD
+></TR
+><TR
+><TD
+>2</TD
+><TD
+>Sony</TD
+><TD
+>PL135</TD
+><TD
+>1999</TD
+><TD
+>890</TD
+></TR
+><TR
+><TD
+>3</TD
+><TD
+>Pioneer</TD
+><TD
+>CD-140</TD
+><TD
+>1997</TD
+><TD
+>950</TD
+></TR
+><TR
+><TD
+>4</TD
+><TD
+>Philips</TD
+><TD
+>PH340</TD
+><TD
+>2000</TD
+><TD
+>1050</TD
+></TR
+><TR
+><TD
+>5</TD
+><TD
+>Technics</TD
+><TD
+>T600</TD
+><TD
+>1998</TD
+><TD
+>890</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+><P
+>&#13;Nous pouvons lister l'ensemble de la table par 
+<PRE
+CLASS="programlisting"
+>&#13;SELECT * FROM lecteurs
+</PRE
+>
+qui nous donne tous les enregistrements de la table (cinq lignes).
+Maintenant, nous pouvons restreindre la liste aux lecteurs ayant un prix
+inférieur ou égal à 1000F :
+<PRE
+CLASS="programlisting"
+>&#13;SELECT * FROM lecteurs WHERE prix &#60;= 1000
+</PRE
+>
+<DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN375"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><COL><COL><THEAD
+><TR
+><TH
+>ref</TH
+><TH
+>marque</TH
+><TH
+>modele</TH
+><TH
+>annee</TH
+><TH
+>prix</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>1</TD
+><TD
+>Pioneer</TD
+><TD
+>CD-120</TD
+><TD
+>1998</TD
+><TD
+>700</TD
+></TR
+><TR
+><TD
+>2</TD
+><TD
+>Sony</TD
+><TD
+>PL135</TD
+><TD
+>1999</TD
+><TD
+>890</TD
+></TR
+><TR
+><TD
+>3</TD
+><TD
+>Pioneer</TD
+><TD
+>CD-140</TD
+><TD
+>1997</TD
+><TD
+>950</TD
+></TR
+><TR
+><TD
+>5</TD
+><TD
+>Technics</TD
+><TD
+>T600</TD
+><TD
+>1998</TD
+><TD
+>890</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+> 
+On peut également combiner plusieurs critères.
+Par exemple, les lecteurs Pioneer à moins de 1000F.
+<PRE
+CLASS="programlisting"
+>&#13;SELECT * FROM lecteurs WHERE prix &#60; 1000 and marque='Pioneer'
+</PRE
+>
+
+On peut aussi vouloir sortir cette liste après l'avoir trié.
+La requête SELECT permet cela directement. 
+Pour obtenir la liste des lecteurs classés par ordre de prix,
+nous demandons :
+<PRE
+CLASS="programlisting"
+>&#13;SELECT * FROM lecteurs ORDER BY prix 
+</PRE
+>
+</P
+><P
+>&#13;Quand on ne précise pas si le tri est croissant ou décroissant,
+c'est un tri décroissant qui est opéré. 
+On peut préciser de quel type est le tri à l'aide des mots clés
+<CODE
+CLASS="varname"
+>ASC</CODE
+> (croissant) ou <CODE
+CLASS="varname"
+>DESC</CODE
+> (décroissant).
+</P
+><P
+>&#13;On peut aussi utiliser plusieurs critères de tri. 
+Il suffit alors de séparer les noms des colonnes utilisées pour le
+tri par des virgules. L'ordre dans lequel apparaissent les 
+noms de colonnes indique quels critères sont prioritaires.
+Par exemple,
+
+<PRE
+CLASS="programlisting"
+>&#13;SELECT * FROM lecteurs ORDER BY prix,annee 
+</PRE
+>
+
+donne la liste suivante, où quand plusieurs prix sont identiques,
+le second critère (l'année) est utilisé pour déterminer l'ordre.
+<DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN416"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><THEAD
+><TR
+><TH
+>ref</TH
+><TH
+>marque</TH
+><TH
+>modele</TH
+><TH
+>annee</TH
+><TH
+>prix</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>1</TD
+><TD
+>Pioneer</TD
+><TD
+>CD-120</TD
+><TD
+>1998</TD
+><TD
+>700</TD
+></TR
+><TR
+><TD
+>5</TD
+><TD
+>Technics</TD
+><TD
+>T600</TD
+><TD
+>1998</TD
+><TD
+>890</TD
+></TR
+><TR
+><TD
+>2</TD
+><TD
+>Sony</TD
+><TD
+>PL135</TD
+><TD
+>1999</TD
+><TD
+>890</TD
+></TR
+><TR
+><TD
+>3</TD
+><TD
+>Pioneer</TD
+><TD
+>CD-140</TD
+><TD
+>1997</TD
+><TD
+>950</TD
+></TR
+><TR
+><TD
+>4</TD
+><TD
+>Philips</TD
+><TD
+>PH340</TD
+><TD
+>2000</TD
+><TD
+>1050</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+> 
+
+
+</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x279.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x456.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Les fonctions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Gestion des données</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

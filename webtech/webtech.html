@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Technologies Internet I</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20060904" />
+<meta name="author" content="Stéphane Genaud" />
+<meta name="company" content="Université Strasbourg" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+
+.important { color : red; }
+
+table.list { border-spacing : 3px; 
+             margin-left: auto; 
+             margin-right : auto; /* pour centrer la table */ 
+           }
+tr.list    { background-color : #eee59a; }
+th.list    { background-color : #c2ddeb; }
+td.list    { background-color : #eee59a; margin : 3px; 
+        font-family : courier ; font-size : 12pt;}
+
+
+#listing pre { padding: 0; margin: 0; 
+               background-color : #c2ddeb; 
+               font-size : 30%;
+           border-bottom: 1px solid #000;
+           border-top   : 1px solid #000;
+           width: 100%; position: relative;}
+</style>
+
+
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Presentacular theme -->
+<link rel="stylesheet" href="presentacular.css" type="text/css" /> 
+
+<!-- prototype + scriptaculous -->
+<script src="prototype/prototype.js" type="text/javascript"></script>
+<script src="scriptaculous/scriptaculous.js" type="text/javascript"></script>
+
+<!-- Presentaculous JS -->
+<script src="presentacular.js" type="text/javascript"></script>
+
+
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>october &#8226; 2006</h1>
+<h2>Internet Technologies</h2>
+</div>
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Internet Technologies</h1>
+<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
+</div>
+
+<!-- ________________________ obj. cours _____________________________ -->
+<div class="slide">
+<h1>Technologies de l'internet et la gestion</h1>
+
+<ul class="incremental">
+<li> Gestion = interprétation de données, puis action. </li>
+<li> Le système d'information est un outil de base du gestionnaire.</li>
+<li> Les technologies internet couvrent tous les échanges de données,
+et sont donc au coeur des systèmes d'information. </li> 
+</ul>
+
+</div>
+
+<!-- ________________________ obj. cours _____________________________ -->
+<div class="slide">
+<h1>Ce cours</h1>
+
+<h2>Objectifs</h2>
+<ul>
+<li>Se faire une culture des technologies de l'internet:
+	<ul>
+	<li> HTML, CSS, XML, XHTML,</li>
+	<li> RSS, XSLT, </li>
+	<li> Serveur Web.</li>
+	</ul>
+</li>
+<li> Pratiquer HTML à  travers une réalisation, </li>
+<li> Analyser les possibilités techniques ultérieures pour remplir l'objectif
+d'information visé (dossier).</li>
+</ul>
+
+</div>
+<!-- ________________________ Général _____________________________ -->
+<div class="slide">
+<h1>Perception d'internet aujourd'hui</h1>
+<ul>
+   <li> Internet: depuis 1993, une phase de <span class="important">découverte</span> avec un essor fulgurant grâce:
+        <ul>
+        <li> aux applications: mail et web (HTTP), </li>
+        <li> au progrès des matériels: réseaux, processeurs et disques.</li>
+        </ul>
+    </li> 
+    <li>Depuis, 3 à  4 ans, une phase d'accoutumance: internet est sous-jacent à  toutes les
+techniques de travail. Grâce entre autres à :
+<!--<br/>Conséquence: développement du <em>nomadisme<em> (ou <em>mobilité</em>).-->
+        <ul>
+        <li>beaucoup d'information accessible immédiatement,</li>
+        <li>simplicité d'accès grâce à  des standards (e.g. html, xml, ...),</li>
+        <li>développement des matériels mobiles (ordintateurs portables, wifi, téléphone, ...).</li>
+        </ul>
+    </li>
+</ul>  
+</div>
+
+<div class="handout">
+<p>
+Des moteurs de recherche comme Google ont beaucoup contribué à  habituer l'utilisateur à  
+obtenir instannément une réponse à  une recherche sur des milliards de pages indexées. 
+Signe extérieur: les barres de recherche intégrées (e.g. Firefox).
+</p>
+</div>
+
+<!-- ________________________ domaines couverts _____________________________ -->
+<div class="slide">
+<h1>Domaines couverts</h1>
+
+Internet a transformé des activités d'échange existantes:
+<ul>
+<li>Commerce B-to-C (magasins virtuels, ventes privées, sites d'enchères),</li>
+<li>Commerce B-to-B (market places, enchères inversées, ré-approvisionnement automatique, ...)</li>
+</ul>
+<p>
+Les communications informatiques ont <b>accéléré</b>, <b>simplifié</b> la vitesse d'exécution des
+transactions, permettant l'<b>essor</b> de ces activités (e.g. eBay). 
+</p>
+</div>
+
+<!-- ________________________ domaines couverts _____________________________ -->
+<div class="slide">
+<h1>Domaines couverts: Travail collaboratif</h1>
+
+  <ul>
+	<li>Temps 1: Outils initiaux de communication : mail, transfert de fichier, sites web statiques.</li>
+	<li>Temps 2: Les sites web dynamiques ont permis de mettre en ligne des applications.
+		<ul>Par exemple, un Intranet pourra proposer
+		<li>des annuaires, </li>
+		<li>des agendas partagés,</li>
+		<li>des dépà´ts de documents, </li>
+		<li>des applications sur mesure pour l'entreprise.</li>
+		</ul>
+	</li>
+	<li>Temps 3: Développement social. Les utilisateurs enrichissent le contenu sans restriction.
+	    Exemple: L'encyclopédie <a href="http://www.wikipedia.org">Wikipédia</a>, ou les millions
+de <a href="http://fr.wikipedia.org/wiki/Blog">Blogs</a>.
+	</li>
+  </ul>
+</div>
+
+<div class="slide">
+<h1>Domaines couverts: Travail individuel</h1>
+
+<ul>
+	<li>Gestion du carnet d'adresse (e.g. <a href="http://www.plaxo.com">Plaxo</a>)</li>
+	<li>Gestion du réseau relationnel (e.g. <a href="http://www.linkedin.com">LinkedIn</a>)</li>
+	<li>Gestion de l'espace de stockage (e.g. <a href="http://www.flickr.com/">flickr</a>)</li>
+<li>Outils bureautiques (e.g. <a href="http://www.writely.com">Writley</a>, <a href="http://spreadsheets.google.com">Google spreadsheet</a>)</li>
+<li>...</li>
+</ul>
+Externalisation d'outils traditionnellement présents sur les ordinateurs personnels.
+</div>
+
+
+<!-- ________________________ historique _____________________________ -->
+<div class="slide">
+<h1>Le début</h1>
+
+<p>
+Le succès de l'internet est lié au web, i.e. aux protocoles  <acronym title="HyperText Transfer Protocol">HTTP</acronym> et  <acronym title="HyperText Meta Language">HTML</acronym>:
+<ul>
+	<li>HTTP: un protocole très simple permettant de demander à  un serveur un certain fichier, en utilisant
+une adresse unique (baptisée <acronym title="Unique Resource Locator">URL</acronym>) pour le localiser.</li> 
+	<li>HTML: un langage pour présenter l'information avec la possibilité de définir des liens.
+</ul>
+</p>
+
+<p>
+Utilisé par des chercheurs à  partir de 1992/93, le nombre de serveurs web augmente exponentiellement d'années en années.
+</p>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<h1>Avant le début</h1>
+<p>
+  HTML est un langage à  balises (<i>tags</i>). 
+  Une balise donne une signification au texte englobé dans la balise. Exemple:
+  <pre>
+  &lt;title&gt;Cours Technologies Internet&lt;/title&gt;
+  </pre>
+
+   <p>
+   Dans HTML, les balises apportent des indications de mise en page du texte.
+   Par exemple:
+   <div style="border: dashed black 1px; margin: 10px;">
+<pre>
+ Ce mot est &lt;b&gt;en gras&lt;/b&gt;, celui ci &lt;i&gt;en italiques&lt;/i&gt;.
+</pre>
+  Ce mot est <b>en gras</b>, celui ci <i>en italiques</i>.
+  </div>
+HTML est utilisé pour représenter à  l'écran l'immense majorité des documents sur internet,
+mais n'est pas le premier historiquement. 
+   </p> 
+ 
+</div>
+
+<!-- ________________________ XML _____________________________ -->
+<div class="slide">
+<h1>XML</h1>
+
+<ul>
+<li>XML : une méthode pour écrire des langages. </li>
+<li>L'ancêtre de XML est le <acronym title="Standard Generalized Markup Language">HTTP</acronym> normalisé par l'ISO en 1986 (ISO 8879:1986).</li>
+<li>XML est une simplification de SGML, développé entre 1996 et 1998. Publié en 1998 sous la forme de la recommandation XML 1.0 du W3C. </li>
+<li>La recommandation actuelle est <a href="http://www.w3.org/TR/2004/REC-xml11-20040204/">XML 1.1</a>.</li>
+</ul> 
+</div>
+
+
+
+<div class="handout">
+Dans les années 1980, de nombreux industriels de l'informatique essayèrent de
+promouvoir un format de données indépendant de toute plateforme \cite{Fretter98}.
+Microsoft lance par exemple le RTF, et Adobe le PostScript, parent du PDF.
+Parallèlement, un groupe travailla à  la normalisation d'un standard nommé
+<em>Standard Generalized Markup technology</em> (SGML), normalisé par l'ISO en
+1986 (ISO 8879:1986).
+
+Durant les années 1990, SGML n'a pas rencontré le succès escompté : le monde de l'internet découvre à  cette époque le langage HTML et sa facilité de mise en oeuvre, en passant à  coté de SGML.
+Conscients des faiblesses de HTML, le W3C à  mis en place en 1996 un groupe pour
+définir une nouvelle version de SGML, baptisée <em>eXtensible Markup Language</em> (XML).
+La spécification XML à  été développée de 1996, à  1998, par un partenariat d'industriels et d'organismes universitaires. La première spécification, XML 1.0 à  été publiée en Février 1998 sous la forme
+d'une recommandation du W3C.
+Parmi les industriels, on compte Sun, HP, Microsoft, Netscape, Adobe, Fuji, Xerox, auxquels il faut ajouter des entreprises spécialisées dans le SGML, comme Arbor Text, Inso,
+SoftQuad, Grif, Isogen, Texcel. Dans la communauté universitaire, les principaux participants furent la Text Encoding Initiative (TEI), le NCSA, et James Clark.
+
+</div>
+
+<!-- ________________________ XML _____________________________ -->
+<div class="slide">
+<h1>Qu'est ce qu'un document XML ?</h1>
+
+Document XML <b>bien form&eacute;</b>: 
+un texte à <em>balises</em> qui respecte les règles:
+<ul>
+<li>possède une entête : 
+	<tt> &lt;?xml version="1.0"?&gt; </tt>
+</li>
+<li>L'imbrication des balises est <em>arborescente</em>. 
+    Ceci implique que 
+	<ul>
+	<li>toute balise ouverte est fermée,</li>
+	<li>que les balises ne sont pas enchevêtrées (<strike>&lt;a&gt;&lt;b&gt;&nbsp;&nbsp;&nbsp;&lt;/a&gt;&lt;/b&gt;</strike> mais &lt;a&gt;&lt;b&gt;&nbsp;&nbsp;&nbsp;&lt;/b&gt;&lt;/a&gt;).</li>
+	</ul>
+</li>
+</ul> 
+
+<p>
+Document XML <b>valide</b>: 
+c'est un document XML bien form&eacute; qui respecte une grammaire donne&acute;e.
+</p>
+</div>
+
+<!-- ________________________ XML _____________________________ -->
+<div class="slide">
+<h1>Grammaire XML</h1>
+
+La grammaire définit un langage.
+<ul>
+	<li>Des langages XML ont été proposés pour presque tous les domaines.</li>
+	<li>Ex: XHTML (documents web), graphiques (SVG), multimédia synchronisé (SMIL)</li>
+	<li>Grammaire : c'est "ce qu'on a le droit d'écrire" dans un langage donné (règles syntaxiques).</li>
+	<li>On peut définir de nouveaux langages, y compris pour ses propres usages</li>.
+</ul>
+
+</div>
+
+<!-- ________________________ XML _____________________________ -->
+<div class="slide">
+<h1>Exemple de document</h1>
+
+<div>
+<img style="float:right" width="40%" src="img/conglomerate-carnet.png">
+<code>
+<pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE carnet-adresse&gt;
+&lt;carnet auteur="Jean-Paul"&gt;
+  &lt;personne&gt;
+     &lt;etatcivil&gt;
+        &lt;titre&gt;Mr&lt;/titre&gt;
+        &lt;prenom&gt;Charles&lt;/prenom&gt;
+        &lt;nom&gt;Dupont&lt;/nom&gt;
+     &lt;/etatcivil&gt;
+     &lt;adresse&gt;
+        &lt;rue&gt;13 Avenue des lilas&lt;/rue&gt;
+        &lt;ville&gt;Nantes&lt;/ville&gt;
+        &lt;cp&gt;44000&lt;/cp&gt;
+     &lt;/adresse&gt;
+  &lt;/personne&gt;
+&lt;/carnet&gt;
+</pre>
+</code>
+</div>
+</div>
+
+
+
+<!-- ________________________ XML _____________________________ -->
+<div class="slide">
+<h1>Exemple de document RSS</h1>
+
+<div>
+<img style="float:right" width="40%" src="img/rss-icon.svg">
+
+<code>
+<pre>
+<i><b>&lt;?xml version="1.0"?&gt;</b></i>
+&lt;<b>rss</b> <i>version</i>="2.0"&gt;
+  &lt;<b>channel</b>&gt;
+    &lt;<b>title</b>&gt;Liftoff News&lt;/<b>title</b>&gt;
+    &lt;<b>link</b>&gt;http://liftoff.msfc.nasa.gov/&lt;/<b>link</b>&gt;
+
+    &lt;<b>description</b>&gt;Liftoff to Space Exploration.&lt;/<b>description</b>&gt;
+    &lt;<b>language</b>&gt;en-us&lt;/<b>language</b>&gt;
+    &lt;<b>pubDate</b>&gt;Tue, 10 Jun 2003 04:00:00 GMT&lt;/<b>pubDate</b>&gt;
+
+    &lt;<b>lastBuildDate</b>&gt;Tue, 10 Jun 2003 09:41:01 GMT&lt;/<b>lastBuildDate</b>&gt;
+    &lt;<b>docs</b>&gt;http://blogs.law.harvard.edu/tech/rss&lt;/<b>docs</b>&gt;
+    &lt;<b>generator</b>&gt;Weblog Editor 2.0&lt;/<b>generator</b>&gt;
+
+    &lt;<b>managingEditor</b>&gt;editor@example.com&lt;/<b>managingEditor</b>&gt;
+    &lt;<b>webMaster</b>&gt;webmaster@example.com&lt;/<b>webMaster</b>&gt;
+
+    &lt;<b>item</b>&gt;
+      &lt;<b>title</b>&gt;Star City&lt;/<b>title</b>&gt;
+
+      &lt;<b>link</b>&gt;http://liftoff.msfc.nasa.gov/news/2003/news-starcity.asp&lt;/<b>link</b>&gt;
+      &lt;<b>description</b>&gt;How do Americans get ready to work with Russians aboard the
+        International Space Station? They take a crash course in culture, language
+        and protocol at Russia's Star City.&lt;/<b>description</b>&gt;
+      &lt;<b>pubDate</b>&gt;Tue, 03 Jun 2003 09:39:21 GMT&lt;/<b>pubDate</b>&gt;
+
+      &lt;<b>guid</b>&gt;http://liftoff.msfc.nasa.gov/2003/06/03.html#item573&lt;/<b>guid</b>&gt;
+    &lt;/<b>item</b>&gt;
+    
+    &lt;<b>item</b>&gt;
+      &lt;<b>title</b>&gt;Space Exploration&lt;/<b>title</b>&gt;
+
+      &lt;<b>link</b>&gt;http://liftoff.msfc.nasa.gov/&lt;/<b>link</b>&gt;
+      &lt;<b>description</b>&gt;Sky watchers in Europe, Asia, and parts of Alaska and Canada
+        will experience a partial eclipse of the Sun on Saturday, May 31st.&lt;/<b>description</b>&gt;
+      &lt;<b>pubDate</b>&gt;Fri, 30 May 2003 11:06:42 GMT&lt;/<b>pubDate</b>&gt;
+
+      &lt;<b>guid</b>&gt;http://liftoff.msfc.nasa.gov/2003/05/30.html#item572&lt;/<b>guid</b>&gt;
+    &lt;/<b>item</b>&gt;
+    
+    &lt;<b>item</b>&gt;
+      &lt;<b>title</b>&gt;The Engine That Does More&lt;/<b>title</b>&gt;
+
+      &lt;<b>link</b>&gt;http://liftoff.msfc.nasa.gov/news/2003/news-VASIMR.asp&lt;/<b>link</b>&gt;
+      &lt;<b>description</b>&gt;Before man travels to Mars, NASA hopes to design new engines
+        that will let us fly through the Solar System more quickly.  The proposed
+        VASIMR engine would do that.&lt;/<b>description</b>&gt;
+      &lt;<b>pubDate</b>&gt;Tue, 27 May 2003 08:37:32 GMT&lt;/<b>pubDate</b>&gt;
+
+      &lt;<b>guid</b>&gt;http://liftoff.msfc.nasa.gov/2003/05/27.html#item571&lt;/<b>guid</b>&gt;
+    &lt;/<b>item</b>&gt;
+    
+    &lt;<b>item</b>&gt;
+      &lt;<b>title</b>&gt;Astronauts' Dirty Laundry&lt;/<b>title</b>&gt;
+
+      &lt;<b>link</b>&gt;http://liftoff.msfc.nasa.gov/news/2003/news-laundry.asp&lt;/<b>link</b>&gt;
+      &lt;<b>description</b>&gt;Compared to earlier spacecraft, the International Space
+        Station has many luxuries, but laundry facilities are not one of them.
+        Instead, astronauts have other options.&lt;/<b>description</b>&gt;
+      &lt;<b>pubDate</b>&gt;Tue, 20 May 2003 08:56:02 GMT&lt;/<b>pubDate</b>&gt;
+
+      &lt;<b>guid</b>&gt;http://liftoff.msfc.nasa.gov/2003/05/20.html#item570&lt;/<b>guid</b>&gt;
+    &lt;/<b>item</b>&gt;
+  &lt;/<b>channel</b>&gt;
+&lt;/<b>rss</b>&gt;
+
+</pre>
+</code>
+</div>
+
+</div>
+
+
+<div class="slide">
+<h1>Client-serveur</h1>
+
+<p>
+<img src="img/client-server.gif" alt="client-server" title="client-server" width="250"/>
+
+<table>
+        <tr>
+                <td><img src="img/logo_ie.png" alt="ie"/></td>
+                <td><img src="img/logo_firefox.png" alt="firefox"/></td>
+                <td><img src="img/logo_opera.png" alt="opera"/></td>
+                <td><img src="img/logo_safari.png" alt="safari"/></td>
+                <td><img src="img/logo_mozilla.png" alt="safari"/></td>
+        </tr>
+</table>
+</p>
+<p>
+<ul>
+<li>Un protocole est défini pour un type de tâche (e.g. HTTP, FTP),</li>
+<li>Des clients et serveurs peuvent interagir (quelquesoit l'entreprise les ayant développés).</li>
+</ul>
+</p>
+
+</div>
+
+<!-- ________________________ URL _____________________________ -->
+<div class="slide">
+<h1>Localiser un document: URL</h1>
+
+<p>
+Pour désigner un document, indépendamment de son emplacement géographique,
+du type de service capable de le délivrer, on utilise des URLs (<em>Uniform Resource Locator</em> ).
+</p>
+ 
+<img src="img/url_in_nav.png" alt="an URL with http" title="an URL with http">
+
+<p>
+<pre>
+http://www.iecs.edu
+http://www.iecs.edu/etu/liste.html
+http://123.4.56.34/news/  
+ftp://perso.free.fr
+mailto://admin@iecs.edu
+</pre>
+</p>
+</div>
+
+ 
+<div class="slide">
+<h1>Localiser un document: URL</h1>
+<p>
+<code>protocole://serveur[:port]/[chemin/]fichier[#position]</code>
+</p>
+
+</p>
+<table width="100%" border="1">
+<tr><td>protocole</td>
+<td>Le nom du protocole. Le plus souvent <code>http</code> ou <code>ftp</code></td></tr>
+<tr><td>serveur</td><td>Le nom d'une machine reli&eacute;e &agrave; Internet (ex: <code>www.epfl.ch</code>) ou son num&eacute;ro IP (ex: <code>128.178.50.32</code>).</td></tr>
+<tr><td>[port]</td>
+<td>Num&eacute;ro du port sur lequel le serveur est en attente. Suivant le
+protocole utilis&eacute; il existe toujours une valeur par d&eacute;faut et ce
+param&egrave;tre est alors omis.</td></tr>
+<tr><td>[chemin]</td> 
+<td>Le chemin (suite de r&eacute;pertoires s&eacute;par&eacute;s par des <code>/</code>) vers le document
+recherch&eacute;.</td></tr>
+<tr><td>fichier</td> 
+<td>Le nom du document recherch&eacute;.</td></tr>
+<tr><td>[position]</td> 
+<td>Un nom d&eacute;signant une position (ancre) &agrave; l'int&eacute;rieur du document.
+Facultatif.</td></tr>
+  </table>
+</div>
+
+
+<div class="slide">
+<h1>Accès via une URL</h1>
+
+<p>
+Organisation de l'espace de données sur le serveur web.
+</p>
+<img src="img/webserver-tree.png" alt="webserver organization"/>
+</div>
+
+<div class="slide">
+<h1>Accès via une URL</h1>
+
+<p>
+<img src="img/webserver-tree-request.png" alt="client-server"/>
+</p>
+</div>
+
+
+<!-- _________________________ technologies ________________________ -->
+<div class="slide">
+<h1>Syndication</h1>
+
+<h2>Fils de syndication RSS ou Atom</h2>
+<p>
+La syndication est un moyen de mettre à  disposition un condensé (sorte de table des matières) de nouvelles. C'est une liste de titre et de résumé, avec une référence vers le document complet.
+Le fichier de synthèse est un document XML.
+</p>
+<p> 
+Le succès de cette technique provient de son utilisation facile, par exemple embarqué dans un navigateur.<br/>
+</p>
+
+<p>
+<img src="img/rss_in_nav.png" alt="RSS in Firefox">
+</p>
+<a href="http://fr.wikipedia.org/wiki/Really_Simple_Syndication">RSS sur Wikipedia</a>.
+</div>
+
+<div class="slide">
+<h1>AJAX</h1>
+
+<h2>AJAX : Asynchronous JavaScript and XML</h2>
+<p>
+Utilisation combinée de technologies (JavaScript, XHTML, CSS) pour proposer
+une application tenant en une page web.
+<a href="http://fr.wikipedia.org/wiki/Asynchronous_JavaScript_And_XML">AJAX sur Wikipedia</a>.
+</p>
+
+<p>
+Depuis peu, permet le développement d'applications concurentes de celles intallées sur les PCs.
+e.g. <a href="http://www.writely.com">Writley</a> (rachat par Google en mars 2006).
+</p>
+<p>
+<img src="img/menued.gif" alt="">
+</p>
+</p>
+</div>
+<!-- ____________________ FIN ___________________________ -->
+</body>
+</html>
