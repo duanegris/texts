@@ -1,0 +1,63 @@
+\begin{picture}(0,0)%
+\includegraphics{decoupe_OBS.pdftex}%
+\end{picture}%
+\setlength{\unitlength}{2763sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(4824,3174)(1564,-3598)
+\put(3376,-1411){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Sous-projet}%
+}}}}
+\put(3376,-1561){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Ordres Bourse}%
+}}}}
+\put(2026,-1561){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Base Valeur}%
+}}}}
+\put(3451,-3061){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Ordres Bourse}%
+}}}}
+\put(3451,-2911){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Tests}%
+}}}}
+\put(3451,-2611){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Ordres Bourse}%
+}}}}
+\put(3451,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Programation}%
+}}}}
+\put(3451,-2161){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Ordres Bourse}%
+}}}}
+\put(3451,-2011){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Etude d\'etaill\'ee}%
+}}}}
+\put(2101,-2161){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Base Valeur}%
+}}}}
+\put(2101,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Programation}%
+}}}}
+\put(2101,-2611){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Base Valeur}%
+}}}}
+\put(2101,-2911){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Tests}%
+}}}}
+\put(2101,-3061){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Base Valeur}%
+}}}}
+\put(4876,-1411){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Sous-projet}%
+}}}}
+\put(4876,-1561){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Comptabilit\'e}%
+}}}}
+\put(4951,-2011){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Etude pr\'eliminaire}%
+}}}}
+\put(4951,-2161){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Comptabilit\'e}%
+}}}}
+\put(4951,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Prototype}%
+}}}}
+\put(4951,-2611){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Comptabilit\'e}%
+}}}}
+\put(4951,-2911){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Programation}%
+}}}}
+\put(4951,-3061){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Comptabilit\'e}%
+}}}}
+\put(4951,-3361){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Tests}%
+}}}}
+\put(4951,-3511){\makebox(0,0)[lb]{\smash{{\SetFigFont{5}{6.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Comptabilit\'e}%
+}}}}
+\put(1726,-661){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Gestion valeurs mobili\`eres}%
+}}}}
+\end{picture}%

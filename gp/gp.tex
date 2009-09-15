@@ -1,0 +1,59 @@
+%\documentclass{beamer}
+\documentclass[handout]{beamer}
+\usepackage{beamerthemesplit}
+
+%fond rosé dégradé
+%\beamertemplateshadingbackground{red!10}{blue!10}
+\beamertemplatetransparentcovereddynamic
+
+\usepackage{beamerthemeshadow}
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{fancyvrb}
+\usepackage{pgf}
+
+% definition de couleur
+\definecolor{gris}{rgb}{0.65,0.65,0.65}
+
+\usepackage{ifpdf}
+        \ifpdf
+          \DeclareGraphicsRule{.pdftex}{pdf}{*}{}
+        \fi
+
+\hypersetup{%
+  pdfauthor={Stéphane Genaud},
+  pdftitle={Outils pour la gestion de projet}
+}
+
+\title{\textit{Outils pour la gestion de projet (IT-S601)}}
+
+\author{St\'ephane Genaud }
+
+%\AtBeginSection[]
+%{
+%\begin{frame}
+%\frametitle{Plan section}
+%\tableofcontents[currentsection]
+%\end{frame}
+%}
+
+
+\begin{document}
+
+\frame{\titlepage}
+\frame{\tableofcontents}
+
+\include{contexte}
+\include{decoupage}
+\include{estimation}
+\include{planification}
+		
+	
+\end{document}  

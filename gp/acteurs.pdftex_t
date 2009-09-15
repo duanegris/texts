@@ -1,0 +1,37 @@
+\begin{picture}(0,0)%
+\includegraphics{acteurs.pdftex}%
+\end{picture}%
+\setlength{\unitlength}{2763sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(6699,3924)(814,-3898)
+\put(2701,-1711){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}m. ouvrage}%
+}}}}
+\put(2701,-1486){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Assistance}%
+}}}}
+\put(5026,-1486){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Chef de projet}%
+}}}}
+\put(901,-2911){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}utilisateurs}%
+}}}}
+\put(5101,-2086){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}d'oeuvre}%
+}}}}
+\put(5101,-1861){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Maitrise}%
+}}}}
+\put(4501,-2986){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Sous-traitants}%
+}}}}
+\put(1201,-2011){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}d'ouvrage}%
+}}}}
+\put(1351,-961){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}D\'ecideurs}%
+}}}}
+\put(6151,-2986){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Sous-traitants}%
+}}}}
+\put(2326,-2911){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}utilisateurs}%
+}}}}
+\put(1201,-1786){\makebox(0,0)[lb]{\smash{{\SetFigFont{6}{7.2}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Maitrise}%
+}}}}
+\end{picture}%

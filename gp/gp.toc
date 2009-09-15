@@ -1,0 +1,20 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {1}{Le contexte de la gestion de projet}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Projet: origine, d\'efinitions}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Assurer le lancement du projet: l'\'evaluation}{6}{0}{1}
+\beamer@subsectionintoc {1}{3}{Le triangle projet: objectifs, d\'elais, ressources}{10}{0}{1}
+\beamer@subsectionintoc {1}{4}{Structurations typiques pour les ressources humaines}{13}{0}{1}
+\beamer@sectionintoc {2}{Le d\'ecoupage}{18}{0}{2}
+\beamer@subsectionintoc {2}{1}{Pourquoi d\'ecouper ?}{18}{0}{2}
+\beamer@subsectionintoc {2}{2}{Principe du d\'ecoupage}{19}{0}{2}
+\beamer@subsectionintoc {2}{3}{Les m\'ethodes}{20}{0}{2}
+\beamer@subsectionintoc {2}{4}{Decoupage en phases}{29}{0}{2}
+\beamer@sectionintoc {3}{L'estimation d'un projet}{31}{0}{3}
+\beamer@subsectionintoc {3}{1}{Pourquoi estimer ?}{31}{0}{3}
+\beamer@subsectionintoc {3}{2}{Estimer \`a diff\'erents niveaux}{32}{0}{3}
+\beamer@subsectionintoc {3}{3}{Estimer charges et co\^uts}{33}{0}{3}
+\beamer@subsectionintoc {3}{4}{Utiliser une m\'ethode ?}{35}{0}{3}
+\beamer@sectionintoc {4}{La planification}{42}{0}{4}
+\beamer@subsectionintoc {4}{1}{M\'ethode PERT}{43}{0}{4}
+\beamer@subsectionintoc {4}{2}{M\'ethode PERT probabiliste}{52}{0}{4}
+\beamer@subsectionintoc {4}{3}{Diagramme Gantt}{60}{0}{4}

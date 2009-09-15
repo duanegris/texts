@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+
+\title{Gestion de projet}
+\author{Stéphane Genaud}
+\begin{document}
+\thispagestyle{empty}
+\noindent Introduction à la gestion de projet\\
+IECS - 2e année\\
+Stéphane Genaud
+\begin{center} 
+Travaux Dirigés \\
+\today\\
+\end{center}
+\vspace{.5cm}
+
+
+\section{Le projet} 
+\noindent  
+Un jeune couple, Kevin et Pricillia, décide de faire faire des travaux dans le bel appartement qu'ils viennent d'acheter. Ils veulent emménager dans cet appartement dès que possible. 
+Pour cela, ils ont décidé de planifier les différentes tâches à accomplir.
+Le tableau indique également quelles tâches peuvent où doivent, se faire 
+à plusieurs, et si la durée de la tâche dépend ou non du nombre de personnes
+afectées à la tâche (durée fixe).
+Pourrez vous les aider ?\\
+
+
+\begin{center}
+\begin{tabular}{|l|r|l|c|c|}
+\hline
+tâche	& durée	& description & à plusieurs & durée fixe\\
+\hline\hline
+Clés	& 1h	& Récupérer les clés de l'ancien propriétaire & possible & oui\\
+PS1		& 8h	& Première couche de peinture du séjour	& possible & non\\
+PS2		& 8h	& Deuxième couche de peinture du séjour& possible & non\\ 
+Carrelage	& 12h	& Pose du carrelage dans la salle de bain & non & non\\
+Plomberie	& 4h	& Plomberie : changer la tuyauterie dans la salle de
+bains & non & oui\\
+Moquette 	& 12h	& Pose de la moquette dans le séjour & non & oui\\
+Meubles	& 3h	& Enménager les meubles et les disposer dans le séjour & obligatoire & oui\\
+EM1		& 2h	& Achat électroménager : lave-linge et cuisinière & possible & oui\\
+EM2		& 2h	& Livraison et installation des appareils electro-ménagers & non & oui\\
+Elec1		& 3h	& Refaire le câblage électrique dans la salle de bains & non & oui\\
+Elec2		& 1h	& Pose des luminaires dans la salle de bains & non & oui\\
+PC1			& 5h	& Première couche de peinture dans la cuisine & possible & non\\
+PC2			& 5h	& Deuxième couche de peinture dans la cuisine & possible & non\\
+\hline
+
+\end{tabular}
+\end{center}
+\vspace{.5cm}
+
+\noindent De plus, ils ont noté quelques points importants :
+\begin{itemize}
+\item La remise des clés se fera le 31 Janvier à 8h00,
+\item Le vendeur du matériel électro-ménager ne pourra envoyer son livreur que 4 jours
+ouvrés après la commande,
+
+\item Il faut attendre 12 heures entre deux couches de peinture,
+
+\item José, un ami, pourra venir les aider. Il sait carreler, faire la
+plomberie et peut s'occuper de l'électricité. 
+En revanche, il ne peut commencer à
+travailler que le 3 Février (on considère qu'il travaille aux mêmes heures
+que Kevin et Pricillia), 
+
+\item Pricillia n'a pas envie de peindre, mais elle est d'accord pour toutes les autres tâches, en particulier à aider Kevin pour le transport des meubles. 
+Elle veut bien aussi, aller choisir avec Kevin l'electro-ménager,
+
+\item Kevin, Pricillia ont une activité professionnelle qui ne leur permet de
+travailler sur le déménagement que selon ces horaires : en semaine, de 17h00 à 23h00, et de 8h00 à 12h00 et 13h00 à 20h00 le Samedi et le Dimanche.
+
+\end{itemize}
+Ils n'ont pas noté certaines dépendances évidentes et c'est à vous de les
+trouver.
+
+
+\newpage
+\section{Notions à utiliser}
+
+
+\begin{itemize}
+\item unités de temps (j=jour, h=heures, hé=heures écoulées),
+\item Fixer la date de début du projet (\textsf{Projet} $\rightarrow$ \textsf{Informations sur le projet}),
+\item Modifier l'échelle de temps affichée (un clic droit
+dans la zone affichant le calendrier),
+
+\item Liens \emph{fin-début} avec retard : retard en nombre de jours ouvrés et
+retard en temps écoulé (double clic gauche sur le lien), 
+
+\item Affecter plusieurs ressources à une même tâche (\textsf{Outils}
+$\rightarrow$ \textsf{Ressources} $\rightarrow$ \textsf{Affecter ressources}),
+
+\item Donner une contrainte de date sur une tâche (\textsf{Informations sur la tâche}, onglet \textsf{Confirmé}, champ \textsf{Type}).
+\item Indiquer les dates de disponibilités d'une ressource (\textsf{Tableau des
+ressources}, clic droit, \textsf{Informations sur la ressource, Du - Au}),
+
+\item Utiliser l'audit des ressources pour éliminer la surutilisation (\textsf{Outils}
+$\rightarrow$ \textsf{Audit}).
+\item Modifier le temps de travail (\textsf{Outils} $\rightarrow$ \textsf{Modifier temps de travail}).
+
+\item Affecter un calendrier à une personne (\textsf{Tableau des
+ressources}, colonne \textsf{Calendrier}).
+
+\end{itemize}
+ 
+\end{document}
