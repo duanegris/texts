@@ -1,16 +1,28 @@
-%\documentclass{beamer}
-\documentclass[handout]{beamer}
-\usepackage{beamerthemesplit}
+%
+% Guide des themes:
+% http://mcclinews.free.fr/latex/beamergalerie.php
+
+\documentclass{beamer}
+
+\mode<presentation>
+%\mode<handout>{\beamertemplatesolidbackgroundcolor{black!5}}
+
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\useinnertheme[shadow]{rounded}
+
+%albatross -> fond bleu
+%crane -> barre orangé
+%beetle 
+%dove fly seagull wolverine beaver
 
 %fond rosé dégradé
 %\beamertemplateshadingbackground{red!10}{blue!10}
-\beamertemplatetransparentcovereddynamic
 
-\usepackage{beamerthemeshadow}
 %\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
 
 \usepackage[latin1]{inputenc}
-\usepackage{color}
+\usepackage{pifont}
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{amsmath}
