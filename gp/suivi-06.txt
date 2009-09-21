@@ -7,6 +7,7 @@ horaire : mardi 14:00-16:00
 
 ma  5 sep  le contexte de la gestion projet     (1)
 ma 12 sep  le decoupage + l'estimation          (2)  
+--
 ma 19 sep  exemple de decoupage : intranet IECS - decoupage PBS 
            (les fonctionnalites), WBS des services, matrice d'impact
            Product/Organization 
@@ -15,8 +16,10 @@ ma 19 sep  exemple de decoupage : intranet IECS - decoupage PBS
 
 ma 26 sep  la planification : correction exo
             Pert probabiliste (jusqu'a exo)   (4)
+--
 ma  3 oct  correction Exo Pert probabiliste + Gantt 
 ma 10 oct  la planification : Pert & Gantt #3   (6)
+--
 ma 24 oct  MS-Project  TD Group  (machines) (7)
 
    31 oct  ------ vacances scolaires --------------
