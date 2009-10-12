@@ -1,0 +1,137 @@
+\documentclass{report}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc} 
+%\usepackage{times}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{comment}
+%\setlength\textwidth{15.5cm}
+%\setlength\textheight{20cm}
+%\setlength\rightmargin{2cm}
+\pagestyle{empty}
+\geometry{a4paper}
+\begin{document}
+ 
+\begin{center}
+\begin{Large}
+	Sujet d'examen
+\end{Large}
+
+\begin{Large}
+\emph{Outils pour la gestion de projet} (MSI 403)\\
+I.E.C.S., 2\ieme année\\
+\end{Large}
+
+\vspace{.3cm}
+\begin{large}
+Stéphane \textsc{Genaud}, Décembre 2005
+\end{large}
+ 
+\end{center}
+
+
+\noindent {\footnotesize
+durée : 2 heures\\
+documents non autorisés\\
+toute calculatrice autorisée
+}
+\vspace{1cm}\\
+%----------------- Question -------------------
+
+\vspace{.5cm}
+ 
+\noindent  $\diamond$ {\em Question 1} (4 pts) 
+Dans la phase d'estimation, quels éléments vous semblent importants
+ou pourraient aider à une estimation plus précise de la durée ou du côut 
+des tâches.\\[.6cm]
+
+
+
+\noindent  $\diamond$ {\em Question 2} (4 pts) 
+
+Citez des exemples de difficultés non-prévues pouvant apparaître  
+lors du déroulement d'un projet, et surtout quels mécanismes  
+généraux peuvent être introduits dans le domaine de la méthode de  
+communication pour les minimiser ou y remédier.\\[.6cm]
+
+\begin{comment}
+\paragraph{Solution} 
+Un projet ne se déroule jamais comme planifié, on peut anticiper  
+desproblèmes / risques, mais pas des problèmes imprévisibles.
+Il faut un système de contrôle (décentralisé et bilatéral) et  
+d'alerte précoce (feux) qui permettent de détecter, de traiter et de  
+communiquer un problème dès son apparition dans le but de gagner en temps.
+\end{comment}
+
+
+
+
+
+%----------------- Question -------------------
+\noindent  $\diamond$ {\em Question 3} (12 pts) 
+
+\noindent L'analyse du projet vous fournit le tableau suivant.
+Il liste les tâches (non-préemptibles) et leurs dépendances (en indiquant les successeurs)
+ainsi que les durées 
+Toutes les dépendances sont de type \textbf{fin-début}, sauf la dépendance $t_9 \rightarrow t_{7}$ qui est de type \textbf{début-début}.
+
+\[\begin{array}{|l|l|c|c|c|}
+\hline
+\hline
+\textrm{tâche}& \textrm{successeur} & \textrm{durée} \\
+\hline
+t_1		&   t_3	& 3 \\
+t_2		&   t_3,t_4	& 5\\
+t_3		&   t_7	& 5 \\
+t_4		&   t_5,t_6,t_8    & 5 \\
+t_5		&   fin	& 3\\
+t_6		&   t_{10}	& 7\\
+t_7		&   fin     & 2 \\
+t_8		&   fin  	& 4  \\
+t_9		&   t_7,fin	& 5 \\
+t_{10}      &   fin  	& 3 \\
+\hline
+\hline
+\end{array}
+\]\\
+
+%% solution : fin=20, chemin critique = T2;T4;T6;T10
+
+\noindent
+\begin{itemize}
+
+\item[\textit{a)}] \emph{Graphe PERT} (4 pts)\\
+Tracer le graphe PERT correspondant en utilisant les durées vraisemblables
+pour calculer et reporter sur le graphe, les dates au plus tôt et au plus
+tard, ainsi que les marges. Faîtes apparaître les jalons \emph{début} et \emph{fin} sur votre graphe.\\
+
+%\paragraph{Solution} Le chemin critique est formé des tâches $\{t_2;t_4;t_6;t_{10}\}$.
+%Les dates au plus tôt et au plus tard sont celles resprésentées ci-dessous.
+
+
+\item[\textit{b)}] \emph{Diagramme Gantt} (4 pts)\\
+Faire un diagramme Gantt pour le réseau PERT précédent, 
+en utilisant le nombre minimum de ressources%
+\footnote{(on suppose que les ressources travaillent à plein temps et qu'elles peuvent réaliser toutes les tâches)}
+qui permette de terminer le projet dans le délai donné par le réseau PERT.\\
+
+
+\item[\textit{c)}] \emph{Diagramme Gantt (préemption)} (1 pt)\\
+Si on suppose maintenant que les tâches sont préemptibles, de combien la durée du projet
+peut elle être raccourcie ?\\ 
+
+\item[\textit{d)}] \emph{Planification Gantt avec MS-Project} (3 pts)\\
+Supposons que vous ayiez saisi dans le logiciel MS-Project les affectations
+suivantes: la ressource $R_1$ doit faire les tâches $t_2, t_4, t_6, t_7$ et $t_{10}$.
+(Les autres tâches sont réalisées par d'autres ressources.)
+Le logiciel indique une sur-utilisation de $R_1$ et vous demandez au logiciel
+de résoudre la sur-utilisation. 
+Indiquez quel type de solution le logiciel propose et quelle sera la nouvelle date de fin
+du projet.
+
+\end{itemize}
+
+\end{document}
+
+
+

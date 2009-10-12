@@ -1,0 +1,227 @@
+\documentclass{report}
+\usepackage[francais]{babel}
+%\usepackage{times}
+\usepackage{geometry}
+\usepackage[latin1]{inputenc} 
+%\setlength\textwidth{15.5cm}
+%\setlength\textheight{20cm}
+%\setlength\rightmargin{2cm}
+\pagestyle{empty}
+\geometry{a4paper}
+\begin{document}
+ 
+\begin{center}
+\begin{Large}
+	Sujet d'examen
+\end{Large}
+
+\begin{Large}
+\emph{Introduction à la gestion de projet} (MSI 204)\\
+I.E.C.S., 2\ieme année\\
+\end{Large}
+
+\vspace{.3cm}
+\begin{large}
+Stéphane \textsc{Genaud}, Janvier 2001 
+\end{large}
+ 
+\end{center}
+
+
+\noindent {\footnotesize
+durée : 2 heures\\
+documents non autorisés\\
+toute calculatrice autorisée
+}
+\vspace{1cm}\\
+%----------------- Question -------------------
+
+\vspace{.5cm}
+ 
+\noindent  $\diamond$ {\em Question 1} (5pts)
+
+Dans le cadre d'un projet important, expliquez quelles sont les tâches 
+qui incombent au client,
+et comment il doit s'organiser pour s'assurer du succès du projet.\\
+
+
+\vspace{.5cm}
+%----------------- Question -------------------
+\noindent  $\diamond$ {\em Question 2}  (15 pts)
+
+Vous passez un entretien d'embauche pour un poste dans une société de 
+production de reportages
+audiovisuels, le recruteur vous soumet un problème : le dimanche 4 Mars 2001 auront
+lieu des élections présidentielles au Zwimland, et une chaîne de télévision a commandé
+un reportage sur ce sujet pour le journal de 20 heures.\\
+Le processus de production du reportage est le suivant.
+Le reportage comportera deux parties qui peuvent être réalisées indépendamment : 
+un \emph{historique} du contexte politique du pays ($t_1$),
+suivi d'une partie \emph{actualité}, présentant les événements des derniers jours 
+($t_2$),
+et qui donnera les estimations des résultats de l'élection. 
+Le tournage d'un reportage est fait par un trio : cameraman, preneur de son et journaliste.
+Après le tournage, des commentaires doivent être enregistrés sur la partie
+historique ($t_3$) et sur la partie actualités ($t_4$) par le journaliste qui a 
+participé au tournage.
+ 
+Pour achever ce dernier commentaire, on doit attendre l'estimation fournie par un 
+institut de sondage ($t_5$). 
+Le reportage complet doit ensuite être monté par le monteur pour ne donner qu'une séquence ($t_6$). 
+Enfin, un livreur est chargé de porter la cassette à la chaîne de télévision ($t_7$)
+afin que le reportage puisse être livré à $20:00$ et le reportage passer à $20:20$.
+
+Le recruteur vous indique les durées approximatives de chacune des tâches, 
+résumées dans 
+le tableau suivant (durées optimiste, vraisemblable et pessimiste). 
+Notez que pour la tâche $t_5$, c'est l'heure à laquelle
+l'institut de sondage doit remettre ses estimations qui est indiquée.
+
+\[\begin{array}{|l|c|c|c|}
+\hline
+\hline
+\textrm{tâche}& \textrm{opt} &\textrm{vrai} &\textrm{pess}\\
+\hline
+t_1		&   4h		&     5h     & 6h     \\
+t_2		&   3h		&    	4 h     & 5h      \\		
+t_3		&   1h		& 	1h      & 1h      \\
+t_4		&	1h 	      & 	1h      & 1h      \\
+t_5		&	\textrm{à } 17:00	 & \textrm{à } 17:30 & \textrm{à } 18:00  \\
+t_6		&   30 mn	& 45 mn & 60 mn \\
+t_7		&	15 mn	& 45 mn & 75 mn\\
+\hline
+\hline
+\end{array}
+\]\\
+
+Le recruteur vous demande maintenant comment vous conduiriez ce projet.
+\begin{itemize}
+
+\item[\textit{a)}] 
+Dessinez le graphe Pert correspondant au processus en vous basant sur les 
+durées vraisemblables des tâches (indiquez aussi les marges). 
+Le recruteur vous indique que les journalistes
+commenceront à travailler à $7:30$ ce même dimanche.
+ 
+\item[\textit{b)}] 
+Pour réaliser les deux parties du reportages, deux trios (cameraman, preneur de son, journaliste) 
+ont été mobilisés.
+Est il nécessaire de faire travailler les deux trios? 
+Dans tous les cas, établir un diagramme de Gantt présentant le calendrier 
+de travail des acteurs du projet.
+
+\item[\textit{c)}] 
+Calculer la somme des durées probables des tâches $\{t_1,t_2,t_3,t_4,t_6,t_7\}$, la variance $v$ de chacune de
+ces tâches, avec $v_i=(\frac{pess_i-opt_i}{6})^2$ pour une tâche $i$. 
+Calculer l'écart-type de la durée de l'ensemble de ces tâches.
+Quelle est la probabilité, en suivant
+le chemin constitué par ces tâches, que le reportage puisse passer à $20:20$,
+sachant que la loi normale associe en particulier les valeurs suivantes :
+$$\begin{array}{cc}
+ p & G(p) \\
+\hline
+ 90\% & 1,28 \\
+ 87\% & 1,19 \\
+ 73,2\% & 0,62 \\
+ 70\% & 0,52 \\
+ 50\% & 0\\
+\end{array}$$
+  
+
+\end{itemize}
+
+\section*{Corrigé}
+%---------------------------------------------------------------------------
+\noindent  $\diamond$ {\em Question 2a}  
+Nous avons deux chemins principaux : 
+$$C_1 = \{t_1, t_3 ,t_6,t_7\}$$ et 
+$$C_2 = \{t_2 , t_4 , t_6 ,t_7 \}$$
+Nous n'avons que des liens fin-début, sauf pour $t_5 \rightarrow t_4$
+qui est de type \textbf{fin-fin}.  \\
+
+\[\begin{array}{|l|c|c|c|c|c|}
+\hline
+\hline
+\textrm{tâche}& d_{tot} & f_{tot} & d_{tard} & f_{tard} & \textrm{marge totale}\\
+\hline
+t_1		&   7:30 & 12:30     & 11:30  &  16:30  & 4h\\
+t_2		&   7:30 & 11:30   	 & 12:30 & 16:30    & 5h     \\		
+t_3		&   12:30 & 13:30	 & 16:30 & 17:30    & 4h  \\
+t_4		&	11:30 & 12:30    & 16:30 & 17:30 	& 5h   \\
+t_5		&	?	  & ?        & 17:30 & 17:30    & 0\\
+t_6		&   17:30 &	18h15    & 18:30 & 19:15   &  1h\\
+t_7		&	18:15 & 19:00    & 19:15 & 20:00   &  1h \\
+\hline
+\hline
+\end{array}
+\]\\
+
+\noindent  $\diamond$ {\em Question 2b} 
+Un seul trio est nécessaire dans l'absolu, comme le montre le calendrier de travail
+suivant :
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+                 7:30  &  12:30  & 16:30 & 17:30    & 18:30   & 19:15 & 20:00\\
+\hline
+                 $t_1$  & $t_2$  & $t_3$  & $t_4$    & $t_6$  & $t_7$ & \\
+                 trio 1 & trio 1 & journaliste 1  & journaliste 1  & monteur & livreur& \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent  $\diamond$ {\em Question 2c}  
+Calculons les durées probables.
+
+\[\begin{array}{|l|c|c|c|| c | c |c|}
+\hline
+\hline
+\textrm{tâche}& \textrm{$opt_i$} &\textrm{$vrai_i$} &\textrm{$pess_i$} 
+              & \textrm{prob}_i& \sqrt{v_i}=(pess_i-opt_i)/6 & v_i\\
+\hline
+t_1		&   4h		&     5h     & 6h     & 5h & \frac{1}{3}h & \frac{1}{9}h\\
+t_2		&   3h		&    	4h     & 5h  & 4h &  \frac{1}{3}h & \frac{1}{9}h  \\		
+t_3		&   1h		& 	1h      & 1h      & 1h &  0 & 0\\
+t_4		&	1h 	      & 	1h      & 1h  & 1h & 0 & 0   \\
+t_5		&	\textrm{à 17{:}00}	 & \textrm{à 17{:}30} & \textrm{à 18{:}00} & 17{:}30 &
+                \frac{1}{6}h & \frac{1}{36}h  \\
+t_6		&   30 mn	& 45 mn & 60 mn & 45 mn & \frac{1}{12}h & \frac{1}{144}h\\
+t_7		&	15 mn	& 45 mn & 75 mn & 45 mn & \frac{1}{6}h & \frac{1}{36}h\\
+\hline
+\hline
+\end{array}
+\]\\
+Soit le chemin $C$ constitué des tâches $\{t_1, t_2,t_3,t_4,t_6,t_7\}$ 
+(hypothèse d'un lissage gantt, c.f. quesiton précédente).
+La somme des durées probables de ces tâches est, en heures  :
+$$D_C = 5 + 4 + 1 + 1 + \frac{3}{4} + \frac{3}{4} = 12h30$$
+L'écart type est 
+$$E_C = 
+  \sqrt{\frac{1}{9}+\frac{1}{9}+\frac{1}{36}+\frac{1}{144}+\frac{1}{36}} =
+  \sqrt{\frac{41}{144}} = \sqrt{0,28h} = 0,53h \approx 17 mn
+$$
+Rappelons qu'on peut finir avec une probabilité $p$ 
+un ensemble $C$ de tâches, dans un délai ${\cal D}(p)$ défini par
+${\cal D}(p)  =D_C + G(p).E_C$.\\
+
+\begin{itemize}
+\item
+Avec une probabilité de 50\%, le reportage sera prêt pour $20{:}00$,
+puisque $G(50\%)=0$ et dans ce cas ${\cal D}(50\%)=D_C=12h30$.\\
+
+\item
+On cherche maintenant $p$ telle que le reportage soit prêt à $20{:}20$. 
+On s'aperçoit immédiatement qu'on dispose de 20 mn de plus (1/3 heure), donc on peut poser :
+\[ {\cal D}(p)=12h30 + G(p).E_C=12h50 \]
+donc, avec des durées exprimées en heures (on arrive au même résultat bien sûr en minutes) \[
+  G(p)=\frac{1}{3E_C} \approx 0,626
+\]
+D'autre part on lit directement dans le tableau la probabilité associée à $G(p)=0,625$,
+soit $p=73,2\%$. On a donc envirn 73\% chances  de pouvoir passer le reportage à $20{:}20$ ou avant.
+\end{itemize}
+
+
+
+
+
+\end{document}

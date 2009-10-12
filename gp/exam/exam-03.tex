@@ -1,0 +1,183 @@
+\documentclass{report}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc} 
+%\usepackage{times}
+\usepackage{geometry}
+\usepackage{marvosym}
+%\usepackage{comment}
+%\setlength\textwidth{15.5cm}
+%\setlength\textheight{20cm}
+%\setlength\rightmargin{2cm}
+\pagestyle{empty}
+\geometry{a4paper}
+\begin{document}
+ 
+\begin{center}
+\begin{Large}
+	Sujet d'examen
+\end{Large}
+
+\begin{Large}
+\emph{Introduction à la gestion de projet} (MSI 203)\\
+I.E.C.S., 2\ieme année\\
+\end{Large}
+
+\vspace{.3cm}
+\begin{large}
+Stéphane \textsc{Genaud}, Janvier 2003 
+\end{large}
+ 
+\end{center}
+
+
+\noindent {\footnotesize
+durée : 2 heures\\
+documents non autorisés\\
+toute calculatrice autorisée
+}
+\vspace{1cm}\\
+%----------------- Question -------------------
+
+\vspace{.5cm}
+ 
+\noindent  $\diamond$ {\em Question 1} (6pts)
+
+Pour la réalisation de l'intranet d'une école, vous êtes
+chargés par le chef de projet d'analyser une partie du
+projet nommé sous-projet \textsf{étudiants}.
+On vous demande de lister cinq rubriques d'information qui seront 
+publiés sur le site (un exemple de rubrique pourrait être
+"la consultation des notes obtenues").
+Ensuite, faîtes la liste complète des acteurs qui interviendront
+sur le sous-projet (services, sous-traitants, etc..) et
+proposer un découpage WBS et OBS du sous-projet.
+
+
+
+\vspace{.5cm}
+%----------------- Question -------------------
+\noindent  $\diamond$ {\em Question 2}  (14 pts)
+
+\noindent L'analyse du projet vous fournit le tableau suivant.
+Il liste les tâches (non-préemptibles) et leurs dépendances (en indiquant les successeurs)
+ainsi que les durées vraisemblables (\textrm{vrai}), pessimistes (\textrm{pess})
+et optimistes (\textrm{opt}) de chacune des tâches. 
+\[\begin{array}{|l|l|c|c|c|}
+\hline
+\hline
+\textrm{tâche}& \textrm{successeur} & \textrm{vrai} &\textrm{pess} & \textrm{opt}\\
+\hline
+t_1		&   t_5,t_4	& 2 &   3 & 1    \\
+t_2		&   t_4	& 5 &   5 & 5      \\		
+t_3		&   t_4,t_8	& 3 &   6 & 3      \\
+t_4		&   t_6    	& 5 &   5 & 5      \\
+t_5		&   t_6 	& 7 &   8 & 6	\\
+t_6		&   t_7 	& 5 &   7 & 3      \\
+t_7		&   fin 	& 10 &  12  & 8     \\
+t_8		&   t_7  	& 5  &  8 & 4\\
+\hline
+\hline
+\end{array}
+\]\\
+
+\noindent
+\begin{itemize}
+
+\item[\textit{a)}] \emph{Graphe PERT} \\
+Tracer le graphe PERT correspondant en utilisant les durées vraisemblables
+pour calculer et reporter sur le graphe, les dates au plus tôt et au plus
+tard, ainsi que les marges. Noter également le chemin critique.\\
+
+\item[\textit{b)}] \emph{Durée}\\
+Donner la durée du projet en hommes $\times$ jours en utilisant le graphe PERT.\\
+
+
+\item[\textit{c)}] \emph{Deux personnes}\\
+Dire si l'on peut finir le projet dans le délai minimum donné par
+le graphe PERT si l'on fait l'hypothèse que l'on dispose de deux
+personnes travaillant à temps complet comme ressources.
+Si ce n'est pas possible, en combien de jours pourrait on finir
+au mieux ?
+Dans tous les cas, dessiner le diagramme Gantt justifiant votre
+réponse.\\
+
+\item[\textit{d)}] \emph{$n$ personnes}\\
+Faire un diagramme de Gantt avec autant de personnes que vous le
+souhaitez. Bien sûr, le projet doit s'achever dans les délais donnés
+par le graphe PERT.\\
+
+\item[\textit{e)}] \emph{Variance du chemin critique}\\
+Calculer la durée probable $D$ (somme des durées probables des tâches) 
+ainsi que l'incertitude $E$ du 
+chemin critique. Diriez vous que la durée estimée 
+l'est avec une certitude faible ou elevée ?\\
+
+
+
+\item[\textit{f)}] \emph{Finir avant la date}\\
+Soit ${\cal D}(p)  = D_C + E_C \cdot G(p)$ 
+la durée d'un chemin $C$ avec une probabilité $p$.
+Donner un encadrement de la probabilité de finir le projet en 24,5 jours. 
+
+
+
+
+\end{itemize}
+
+\vspace{1cm}
+
+\noindent \textbf{Annexe} : pour le PERT probabiliste, 
+la loi normale utilisée associe en particulier les valeurs suivantes :
+$$\begin{array}{cc}
+ p & G(p) \\
+ \hline
+  90\% & 1,28 \\
+  87\% & 1,19 \\
+  70\% & 0,52 \\
+  50\% & 0\\
+  34,5\% & -0,4\\
+  27,4\% & -0.6
+\end{array}$$
+
+\end{document}
+
+
+
+%\begin{comment}
+%----------------------------------------------------------
+\begin{tabbing}
+xxxxx\=xxxx\=xxxxxx\=xxxxxxxxxx\=xxxx\=xxxxxxxxx\=xxxxxxxxxxxxxxxxxxxxxx  \kill
+R1   \> t2 \>      \> t4       \>mmmm\> t6      \> t7 \\
+R2   \> t1 \> t3   \> t5       \>    \> t8      \> mmmmmmmmmmmmmmmmmmmmm\\
+\end{tabbing}
+%\end{coment}
+%\begin{comment}
+%----------------------------------------------------------
+$$
+D(C) = prob_2 + prob_4 + prob_6 + prob_7
+      = 5   +  5  + 5   + 10
+	 = 25
+$$
+
+$
+d_i = \frac{pess_i - opt_i}{6}\\
+$
+$$
+\begin{array}{lll}
+E_C  & = & \sqrt{d_2^2 + d_4^2 + d_6^2 + d_7^2} \\
+     & = & \sqrt{0   + 0   + 4/9 + 4/9}  \\
+    &  = & \sqrt{8/9}= \frac{2 \sqrt{2}}{3} = .942809\\ 
+\end{array}
+$$
+
+
+%-------------------------------------------------------
+Finir en 24,5 jours :
+  
+   D(p) = 24,5
+   D_C + E_C * G(p) = 24.5
+   25  + 0.942.G(p) = 24.5
+   G(p) = -0.5 / 0.942 = -.53
+   =>
+   27,4\% < p < 34,5\% 
+%\end{coment}

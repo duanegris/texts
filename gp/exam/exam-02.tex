@@ -1,0 +1,130 @@
+\documentclass{report}
+\usepackage[francais]{babel}
+%\usepackage{times}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage[T1]{fontenc} 
+%\setlength\textwidth{15.5cm}
+%\setlength\textheight{20cm}
+%\setlength\rightmargin{2cm}
+\pagestyle{empty}
+\geometry{a4paper}
+\begin{document}
+ 
+\begin{center}
+\begin{Large}
+	Sujet d'examen
+\end{Large}
+
+\begin{Large}
+\emph{Introduction à la gestion de projet} (MSI 203)\\
+I.E.C.S., 2\ieme année\\
+\end{Large}
+
+\vspace{.3cm}
+\begin{large}
+Stéphane \textsc{Genaud}, Janvier 2002 
+\end{large}
+ 
+\end{center}
+
+
+\noindent {\footnotesize
+durée : 2 heures\\
+documents non autorisés\\
+toute calculatrice autorisée
+}
+\vspace{1cm}\\
+%----------------- Question -------------------
+
+\vspace{.5cm}
+ 
+\noindent  $\diamond$ {\em Question 1} (5pts)
+
+Dans le cadre d'un projet important, expliquez quelles sont les tâches 
+qui incombent au client,
+et comment il doit s'organiser pour s'assurer du succès du projet.\\
+
+
+\vspace{.5cm}
+%----------------- Question -------------------
+\noindent  $\diamond$ {\em Question 2}  (15 pts)
+
+\noindent
+On vous nomme chef de projet pour réorganiser trois services (S1,S2,S3) 
+d'une entreprise.
+Les tâches identifiées (au nombre de quatorze) du projet sont : 
+\begin{itemize}
+\item une étude préalable du fonctionnement
+de chacun des services (EP1,EP2,EP3),
+\item une tâche d'analyse complémentaire (AN) concernant S1 et S2,
+\item La ré-organisation proprement dite de chacun des services (RO1,RO2,RO3),
+\item Le fonctionnement des services dans le nouveau modèle d'organisation
+      (NF1,NF2,NF3),
+\item Une mesure de performance du fonctionnement coordonné des trois services
+      (PERF),
+\item Des ajustements (AJ1,AJ2,AJ3) des ré-organisations dans les trois services après l'observation des performances obtenues.\\
+\end{itemize}
+
+\noindent
+Les contraintes identifiées concernant la synchronisation des tâches sont les suivantes (les durées sont exprimées en jours) :
+\begin{itemize}
+\item la tâche AN doit finir en même temps que EP1 et EP2, 
+\item les tâches de ré-organisation succèdent aux études préalables dans chacun des services. Les durées des tâches sont EP1 : 4, EP2 : 6, EP3 : 8,
+RO1 : 8, RO2 : 12, RO3 : 12.
+\item la tâche AN, d'une durée de 2, doit être terminée avant le début de RO1 et RO2, 
+\item Après les ré-organisations, suivent les tâches de fonctionnement dans le
+nouveau mode d'organisation (NF1,NF2,NF3). 
+Pour mesurer la façon dont les services collaborent, la mesure de performance PERF ainsi que NF1,NF2,NF3 doivent commencer en même temps. 
+Leurs durées sont NF1 : 10, NF2 : 7, NF3 : 10, PERF : 11.
+
+\item Les ajustements AJ1,AJ2,AJ3 commencent quand les tâches NF1,NF2,NF3 et PERF sont terminées. Leurs durées sont : AJ1 : 3, AJ2 : 4, AJ3 : 5.\\
+\end{itemize}
+
+\noindent
+D'autre part, la direction vous donne la liste des personnes (ressources) qui seront disponibles pendant la période du projet. 
+Le tableau ci-dessous donne pour chaque ressource, le nombre maximum de jours
+que cette ressource peut consacrer au projet, et le coût par jour de cette 
+ressource.
+ 
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\hline
+\textit{ressource}& \textit{nb jours disponibilité} &\textit{coût/jour}\\
+\hline
+R1		&   36		&    100 \EUR      \\
+R2		&   31		&    100 \EUR      \\
+R3		&   25		&    110 \EUR      \\
+R4		&   10		&    120 \EUR      \\
+R5		&   11		&    130 \EUR      \\
+\hline
+\end{tabular}
+\\
+\end{center}
+
+On vous demande de :
+\begin{itemize}
+
+\item[\textit{a)}] Donner la durée du projet en hommes/jours,
+\item[\textit{b)}] 
+Dessiner le graphe Pert du projet (indiquez aussi les marges). 
+Vous encadrerez les tâches critiques.
+
+\item[\textit{c)}] De dire combien de personnes sont théoriquement 
+nécessaires au minimum pour réaliser 
+le projet dans le délai donné par le réseau Pert (sans 
+contrainte de ressources) ?
+\item[\textit{d)}] 
+D'établir un diagramme Gantt du projet avec pour objectif de minimiser le coût du projet. Donner le coût du projet ainsi planifié.
+  
+\item[\textit{e)}] 
+A la dernière minute, on vous informe de la disponibilité d'une 
+nouvelle ressource R6, travaillant à mi-temps, d'un coût de 
+40 \EUR /jour. 
+Pourrait elle s'insérer dans le projet, et en faisant quoi ?
+\end{itemize}
+ 
+
+
+\end{document}
