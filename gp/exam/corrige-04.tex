@@ -191,7 +191,15 @@ avant le début de $t_7/t_{10}$.
 Dans le cas d'un chargement au plus tard, $t_7$ commence à 15.
 Deux personnes ont donc une capacité de 30 jours de travail.
 Or la somme des durées de $t_1$, $t_2$, $t_6$ et $t_9$ est de 32.
-C'est donc impossible avant. Il est très simple de voir que c'est encore moins possible après.
+C'est donc impossible avant. Il est très simple de voir que c'est encore moins possible après.\\
+
+Pour réaliser le meilleur planning, on affecte les tâches en choisissant la
+répartition qui a une somme des durées minimale. Ici, en affectant $t_1,t_2$ à une
+ressource, $t_6,t_9$ à une autre ressource, on a au maximu: $d(t_1)+d(t_2)=18$.
+la somme des durées.
+Par rapport à la date au plus tard de $t_7/t_{10}$ qui était $15$, on a donc 3 jours de retard,
+puisqu'on doit faire partir $t_7/t_{10}$ à 18. On doit ensuite caler $t_8$ à la fin de $t_7$,
+d'où une fin à 31.
  
 
 \[ 
@@ -200,7 +208,7 @@ C'est donc impossible avant. Il est très simple de voir que c'est encore moins p
 }
 \]
 
-La figure montre l'ordonnancement optimal en durée qu'on peut faire avec 3 personnes. On termine à 30.\\
+La figure montre l'ordonnancement optimal en durée qu'on peut faire avec 3 personnes. On termine à 31.\\
 
 \item[\textit{d)}] \emph{Planification Gantt libre}\\
 Faire un diagramme de Gantt avec autant de personnes que vous le
