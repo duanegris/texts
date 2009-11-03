@@ -8,7 +8,7 @@
 <!-- metadata -->
 <meta name="generator" content="S5" />
 <meta name="version" content="S5 1.1" />
-<meta name="presdate" content="20050128" />
+<meta name="presdate" content="20091030" />
 <meta name="author" content="S. Genaud" />
 <meta name="company" content="Université Louis Pasteur" />
 <!-- configuration parameters -->
@@ -60,7 +60,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 <div id="currentSlide"><!-- DO NOT EDIT --></div>
 <div id="header"></div>
 <div id="footer">
-<h1>Octobre &#8226; 2005</h1>
+<h1>Octobre &#8226; 2009</h1>
 <h2> Evolution des syst&egrave;mes distribu&eacute;s</h2>
 <h2></h2>
 </div>
@@ -122,16 +122,16 @@ td.list    { background-color : #eee59a; margin : 3px;
 Les technonologies des applications distribuées doivent s'adapter
 <ul>
         <li>
-        à l'évolution des technologies matérielles. 
-        E.g. évolution rapide
+        à l'évolution des technologies matérielles, marquée par 
+        évolution rapide
             <ul>
               <li>des capacités des réseaux informatiques,</li>
-              <li>des capacités des processeurs (loi de Moore)</li>
+              <li>des capacités des processeurs (loi de Moore puis augmentation nombre de coeurs)</li>
             </ul>
          </li>
       <li>
-      à l'évolution des technologies logicielles.
-      E.g. multiplication des systèmes d'exploitation, des protocoles, ...
+      à l'évolution des technologies logicielles,
+      marquée par multiplication des systèmes d'exploitation, des protocoles, ...
       </li>
 </ul>  
 </div>
@@ -140,10 +140,19 @@ Les technonologies des applications distribuées doivent s'adapter
 <!-- __________ Timeline  ________________________ -->
 <div class="slide">
         <h1>Chronologie</h1>
-        Des domaines divers, des niveaux de complexité différents, des naissances et des morts ...
+        20 ans d'histoire.
 <p>
 <img class="centrehoriz" src="img/timeline.png" alt="timeline image" title="timeline"/>
 </p>
+<ul>
+    <li> Les tendances logicielles s'adaptent au matériel et à son coût économique.
+         (ex: les stations <i>diskless</i> ont disparu dès que le disque est devenu peu cher).
+         </li>
+	<li>
+	Parmi les tendances, plus de naissances que de morts.
+      Donc, plus de choix possibles pour implanter une solution (et plus de besoins de niches).
+	</li>
+</ul>
 </div>
 
 
@@ -191,12 +200,14 @@ Les technonologies des applications distribuées doivent s'adapter
 <div class="slide">
 <h1>~2001: les composants</h1>
 
-<img style="float:right;" width="30%" src="img/compmodel.gif" alt="component model"/>
+<img style="float:right;" width="40%" src="img/evol-component.png" alt="evolution towards components"/>
+Les difficultés de maintenir des codes sur des plateformes changeant
+sans arrêt conduisent à une tentative d'encapsulation plus grande des codes. 
+Un composant est un élément qui:
 <ul>
-        <li>Les difficultés de maintenir des codes sur des plateformes changeant
-        sans arrêt conduisent à une tentative d'encapsulation des <b>binaires</b>.</li>
-        <li>Les composants définissent leurs interfaces mais aussi spécifient comment
-        ils peuvent être <b>déployés</b> (dépendances de contexte).</li>
+	<li> contient toute sa logique et ses données (comme un objet)</li>
+     <li> est <b>composable</b>: interfaces externes bien définies, pas de communications cachées.</li>
+     <li> est <b>configurable</b> pour être <b>déployé</b> dans différents contextes.
 </ul>
 
 </div>
@@ -209,6 +220,9 @@ Exemples de modèles de composants: <a href="http://java.sun.com/products/ejb/">E
 </p>
 <img width="50%" style="float:right;" src="img/epiphany-gnumeric.png" alt="epiphany-gnumeric"/>
 
+%<img style="float:left;" width="30%" src="img/compmodel.gif" alt="component model"/>
+<img style="left:right;" width="30%" src="img/component.jpg" alt="component"/>
+<img style="left:right;" width="30%" src="img/component-assembly.jpg" alt="component"/>
 </div>
 
 <!-- __________ 1998-2000 ________________________ -->
@@ -234,12 +248,15 @@ Objectif: permettre à des applications appartenant à des <b>entités différentes<
 	<li>Le développement d'application distribuées utilisant une technologie homogène existe encore.</li>
 	<li>Les efforts vont vers des technologies qui peuvent s'intégrer dans le paysage des protocoles existants
 	<ul>
+		    <li>Utilisation massive de http+javascript pour fournir une interface utilisateur.</li>
 		    <li>Définition de protocoles pour fournir des service de grilles (<a href="http://www-128.ibm.com/developerworks/library/gr-grid1/">OGSI/OGSA</a>).</li>
-		    <li>Définition des technologies baptisées <a href="http://www.w3.org/2002/ws/">web-services</a> (SOAP, WSDL, UDDI).</li>
+		    <li>Définition des technologies de <a href="http://www.w3.org/2002/ws/">web-services</a> (SOAP, WSDL, UDDI).</li>
 	  </ul>
 	  </li>
 	<li>Découverte des problèmes liés au passage à l'échelle et à l'hétérogénéité:
-	de nouvelles technologies se montrent efficaces (E.g. pair-à-pair avec <a href="http://www.jxta.org">JXTA</a>).</li>
+	de nouvelles technologies sont envisagées pour le modèle de programmation 
+      (e.g. pair-à-pair avec <a href="http://www.jxta.org">JXTA</a>) ou pour
+      abstraire le matériel (virtualisation).</li>
 </ul>
 
 </div>
