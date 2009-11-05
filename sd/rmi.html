@@ -281,7 +281,30 @@ Le code du serveur est très générique : on réutilisera presque toujours la m
  <h1>Le serveur</h1>
 
 En utilisant la classe <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/rmi/registry/LocateRegistry.html"><tt>java.rmi.registry.LocateRegistry</tt></a> :
-<div id="listing">
+
+<pre width="80"><font color="#228B22">import java.rmi.registry.Registry;</font>
+<font color="#228B22">import java.rmi.registry.LocateRegistry;</font>
+<font color="#228B22">import java.rmi.RemoteException;</font>
+<font color="#228B22">import java.rmi.server.UnicastRemoteObject;</font>
+
+<strong><font color="#4169E1"><a name="Serveur"></a>public class Serveur </font></strong>{
+
+<strong><font color="#4169E1">      public static void main( String [] args)</font></strong> {
+
+      <font color="#4169E1">try</font> {
+	   OperationImpl une_op = new OperationImpl ();
+
+	   Registry registry = LocateRegistry.getRegistry();
+
+	   registry.bind(<font color="#666666">"Operation"</font>,une_op); 
+	   System.out.println(<font color="#666666">"Serveur pret"</font>); 
+       }
+       <font color="#4169E1">catch</font> (Exception e) { System.out.println(e) ; }
+       }
+}
+</pre>
+
+<!-- <div id="listing">
 <pre>
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
@@ -305,7 +328,7 @@ public class Serveur {
 }
 </pre>
 </div>
-
+-->
 <p>
 <small>
  Il y a possibilité de créer le registry dynamiquement (au lieu de lancer 
