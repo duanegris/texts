@@ -30,6 +30,8 @@ img#me04 {top: 44px;}
 img#me05 {top: 43px;left: 36px;}
 
 <style type="text/css">
+body { font-size: 80%;}
+
 .important { color : red; }
 
 table.list { border-spacing : 3px; 
@@ -39,12 +41,12 @@ table.list { border-spacing : 3px;
 tr.list    { background-color : #eee59a; font : fixed; }
 th.list    { background-color : #c2ddeb; }
 td.list    { background-color : #eee59a; margin : 3px; 
-        font-family : courier ; font-size : 12pt;}
+        font-family : courier ; font-size : 11pt;}
 
 
 #listing pre { padding: 0; margin: 0; 
                background-color : #c2ddeb; 
-               font-size : 60%;
+               font-size : 50%;
            border-bottom: 1px solid #000;
            border-top   : 1px solid #000;
            width: 100%; position: relative;}
@@ -454,7 +456,32 @@ Comme pour le serveur, deux classes permettent de le faire :
 <h1>Le client</h1>
 En utilisant la classe <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/rmi/Naming.html"><tt>java.rmi.Naming</tt></a> :
 <div id="listing">
-<pre>
+<pre width="80">
+<font color="#228B22">import java.rmi.* ;</font>
+<font color="#228B22">import java.net.MalformedURLException ;</font>
+<font color="#228B22">import java.io.*;</font>
+
+<strong><font color="#4169E1"><a name="Client"></a>public class Client </font></strong>{
+<strong><font color="#4169E1">  public static void main(String [] args)</font></strong> {
+    <font color="#4169E1">if</font> (args.length != 1)
+        System.out.println(<font color="#666666">"Usage : java Client Serveur"</font>);
+    <font color="#4169E1">else</font> {
+        <font color="#4169E1">try</font> {
+          Operation o =
+             (Operation) Naming.lookup(<font color="#666666">"//"</font>+args[0]+<font color="#666666">"/Operation"</font>);
+          System.out.println(<font color="#666666">"Client : 33 + 45 = ? "</font>);
+          int r = o.addition( 33 , 45 );
+          System.out.println(<font color="#666666">"Le serveur a calcule : 33+45="</font>+ r );
+        }
+        <font color="#4169E1">catch</font> (NotBoundException re) { System.out.println(re) ; }
+        <font color="#4169E1">catch</font> (RemoteException re) { System.out.println(re) ; }
+        <font color="#4169E1">catch</font> (MalformedURLException e) { System.out.println(e) ; }
+     }
+   }
+}
+</pre>
+
+<!--<pre>
 import java.rmi.* ;
 import java.net.MalformedURLException ;
 import java.io.*;
@@ -477,7 +504,7 @@ public class Client {
      }
    }
 }
-</pre>
+</pre>-->
 </div>
 </div>
 <!-- ________________________ Compilation _____________________________ -->
@@ -582,18 +609,20 @@ dans un flux transmissible sur le réseau, mais n'incorpore pas au flux les mét
 <div class="slide">
 <h1>Exemple 2: Passage d'objets en paramètres</h1>
 
+Imaginons un objet dont le rôle est d'exécuter du code.
 <table>
 <tr>
 <td>
 <img src="img/object_parameter.png" alt="pass object" title="Passing objects">
-</td><td>
+</td>
+
+<td>
 <p>
-Illustration : imaginons un objet dont le rôle est d'exécuter du code.
-Celui-ci :
 <ul>
-<li>accepte en entrée un objet quelconque qui a une méthode <tt>execute()</tt>, </li>
-<li>télécharge dynamiquement le code de l'objet (cherche dans <tt>codebase</tt>),</li>
-<li>invoque la méthode <tt>execute()</tt>,</li>
+<li>Il accepte en entrée un objet quelconque qui a une méthode <tt>execute()</tt>
+<small>(appelons <tt>Task</tt> l'interface correspondante)</small>, </li>
+<li>télécharge dynamiquement le code de l'implémentation (cherche dans <tt>codebase</tt>),</li>
+<li>invoque <tt>execute()</tt>,</li>
 <li>retourne le résultat au client.</li>
 </ul>
 </td>
@@ -607,7 +636,8 @@ Celui-ci :
 <h1>Objet Remote Compute (interface)</h1>
 
 <p>
-L'interface <tt>Compute.java</tt> :
+Comme précédemment, on doit spécifier au client l'interface offerte par
+l'objet distant. On la nomme <tt>Compute.java</tt>.
 <div id="listing">
 <pre> 
 import java.rmi.Remote;
@@ -619,15 +649,35 @@ public interface Compute extends Remote {
 </pre>
 </div>
 </p>
-
+<p>
+L'unique méthode accepte un objet de classe <tt>Task</tt>.
+</p>
 </div>
 
 <!-- __________ Interfaces  ________________________ -->
 <div class="slide">
 <h1>Objet Remote Compute (impl.)</h1>
-L'implémentation <tt>ComputeImpl.java</tt> :
+Sur le serveur, l'implémentation <tt>ComputeImpl.java</tt> :
 <div id="listing">
-<pre> 
+<pre width="80">
+<font color="#228B22">import java.rmi.server.UnicastRemoteObject ;</font>
+<font color="#228B22">import java.rmi.RemoteException ;</font>
+<font color="#228B22">import java.net.* ;</font>
+
+<strong><font color="#4169E1"><a name="ComputeImpl"></a>public class ComputeImpl extends UnicastRemoteObject implements Compute</font></strong>
+{
+<strong><font color="#4169E1">    public ComputeImpl()</font></strong> <font color="#4169E1">throws</font> RemoteException {
+       <font color="#B22222">/* constructeur de la classe mere UnicastRemoteObject */</font>
+       super();   
+    }
+<strong><font color="#4169E1">    public Object executeTask(Task t)</font></strong> {
+       <font color="#B22222">/* les objets passes en arg. doivent fournir une methode execute() */</font>
+       <font color="#4169E1">return</font> t.execute();   
+    }
+}
+</pre>
+
+<!-- <pre> 
 import java.rmi.server.UnicastRemoteObject ;
 import java.rmi.RemoteException ;
 import java.net.* ;
@@ -644,32 +694,71 @@ public class ComputeImpl extends UnicastRemoteObject implements Compute
     }
 }
 </pre>
-</div>
+-->
 
 </div>
 
+</div>
 
-<!-- __________ Task  ________________________ -->
+
+<!-- __________ Task interface ________________________ -->
 <div class="slide">
-<h1>L'objet task passé en paramètre</h1>
+<h1>La classtask passé en paramètre</h1>
 
 <p>
-L'interface <tt>Task.java</tt> :
+L'interface <tt>Task.java</tt> : spécifie
 <div id="listing">
-<pre> 
+
+<pre width="80">
+<font color="#228B22">import <b class="important">java.io.Serializable</b>;</font>
+
+public interface Task extends <b class="important">Serializable</b> {
+    Object execute();
+}
+</pre>
+
+
+<!-- <pre> 
 import <b class="important">java.io.Serializable</b>;
 
 public interface Task extends <b class="important">Serializable</b> {
     Object execute();
 }
 </pre>
+-->
 </div>
-</p>
+</div>
+
+
+<!-- __________ Task impl. ________________________ -->
+<div class="slide">
+<h1>L'objet task passé en paramètre (impl)</h1>
 
 <p>
 L'implémentation <tt>TaskPi.java</tt>:
 <div id="listing">
-<pre> 
+
+<pre width="80">
+<strong><font color="#4169E1"><a name="TaskPi"></a>public class TaskPi implements Task </font></strong>{
+
+<strong><font color="#4169E1">    public TaskPi(int digits)</font></strong> {  <font color="#B22222">//constructeur</font>
+        this.digits = digits;
+    }
+
+    public Object <b class=important">execute()</b> {
+        <font color="#4169E1">return</font> computePi(digits);
+    }
+
+<strong><font color="#4169E1">    public static BigDecimal computePi(int digits)</font></strong> {
+
+        <font color="#B22222">/* ... calcul compliqué ...*/</font>
+        <font color="#4169E1">return</font> pi.setScale(digits,BigDecimal.ROUND_HALF_UP);
+    }
+}
+</pre>
+
+
+<!--<pre> 
 public class TaskPi implements Task {
 
     public TaskPi(int digits) {  //constructeur
@@ -686,7 +775,7 @@ public class TaskPi implements Task {
         return pi.setScale(digits,BigDecimal.ROUND_HALF_UP);
     }
 }
-</pre>
+</pre> -->
 </div>
 </p>
 
@@ -698,6 +787,36 @@ public class TaskPi implements Task {
 <h1>Le client <tt>Client.java</tt></h1>
 
 <div id="listing">
+
+<pre width="80">
+<font color="#228B22">import java.rmi.*;</font>
+<font color="#228B22">import java.math.*;</font>
+
+<font color="#B22222">/* Un code qui utilise l'objet remote Compute doit (1) obtenir une reference vers cet objet, (2) creer un objet Task, (3) appeler l'execution de la tache en passant la tache a Compute */</font>
+
+<strong><font color="#4169E1"><a name="Client"></a>public class Client </font></strong>{
+<strong><font color="#4169E1">    public static void main(String args[])</font></strong> {
+        <font color="#4169E1">if</font> (System.getSecurityManager() == null) {
+            System.setSecurityManager(new RMISecurityManager());
+        }
+        <font color="#4169E1">try</font> {
+            String name = <font color="#666666">"rmi://"</font> + args[0] + <font color="#666666">"/Compute"</font>;
+            <font color="#B22222">/* obtenir une ref. sur un objet Compute */</font>
+            Compute engine = (Compute) Naming.lookup(name);
+            <font color="#B22222">/* instancie un objet de calcul */</font>
+            TaskPi ma_tache = new TaskPi(Integer.parseInt(args[1]));
+            <font color="#B22222">/* faire calculer la tache envoyee et recuperer */</font>
+            BigDecimal pi = (BigDecimal) (engine.executeTask(ma_tache));
+            System.out.println(pi);
+        } <font color="#4169E1">catch</font> (Exception e) {
+            System.err.println(<font color="#666666">"Exception du client : "</font> + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+}
+</pre>
+
+<!--
 <pre> 
 import java.rmi.*;
 import java.math.*;
@@ -729,6 +848,7 @@ public class Client {
     }
 }
 </pre>
+-->
 </div>
 
 </div>

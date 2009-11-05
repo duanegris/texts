@@ -24,7 +24,7 @@ Compilation
 o Si vous avez un JDK <= 1.4, vous pouvez utiliser le scipt "build" qui 
   ebchaine les javac et rmic
 
-o Si vous avez le JDK1.5, vous pouvez plus simplement compiler les sources
+o Si vous avez un JDK >= 1.5, vous pouvez plus simplement compiler les sources
   avec javac sans rmic.
 
 
@@ -41,18 +41,28 @@ o Si vous avez le JDK1.5, vous pouvez plus simplement compiler les sources
 Execution
 ---------
 
-1. Lancer le serveur
+1. Si vous commencez par une exécution locale pour tester,
+   créez des répertoires différents pour le client et le serveur
+   pour vérifier qui utilise quoi.
 
-cd tServeur
+   mkdir dir_server
+   mkdir dir_client
+   
+   Copiez les .class appropriés dans ces répertoires.
+
+
+2. Lancer le serveur
+
+cd dir_server
 rmiregistry &     # "start rmiregistry" avec Windows
 java -Djava.security.policy=java.policy Serveur localhost
 
 
 N.B.: Lancer le rmiregistry dans le même répertoire que le serveur (où se trouve OperationImpl_Stub.class ou OperationImpl.class) est bien commode car le CLASSPATH contient le répertoire courant par défaut. Si vous lancez rmiregistry ailleurs, il faut que le CLASSPATH pointe vers où se trouve OperationImpl_Stub.class ou OperationImpl.class.
 
-2. Lancer le client
+3. Lancer le client
 
-cd tClient
+cd dir_client 
 java Client localhost
 
 
