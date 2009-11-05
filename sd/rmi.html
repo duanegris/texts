@@ -44,7 +44,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 
 #listing pre { padding: 0; margin: 0; 
                background-color : #c2ddeb; 
-               text-fontsize : 20%;
+               font-size : 60%;
            border-bottom: 1px solid #000;
            border-top   : 1px solid #000;
            width: 100%; position: relative;}
@@ -172,6 +172,9 @@ Le service est ici un objet dont l'une des méthodes fait l'addition de deux nom
 
 <div class="slide">
 <h1>L'interface du service</h1>
+
+<tt>Operation.java</tt><br/>
+
 <div id="listing">
 <pre>
 import java.rmi.Remote;
@@ -203,6 +206,7 @@ On pourrait bien sûr définir d'autres methodes à côté de <tt>addition</tt>.
 
 <div class="slide">
 <h1>L'implémentation du service</h1>
+<tt>OperationImpl.java</tt><br/>
 <div id="listing">
 <pre>
 import java.rmi.server.UnicastRemoteObject ;
@@ -282,6 +286,7 @@ Le code du serveur est très générique : on réutilisera presque toujours la m
 
 En utilisant la classe <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/rmi/registry/LocateRegistry.html"><tt>java.rmi.registry.LocateRegistry</tt></a> :
 
+<div id="listing">
 <pre width="80"><font color="#228B22">import java.rmi.registry.Registry;</font>
 <font color="#228B22">import java.rmi.registry.LocateRegistry;</font>
 <font color="#228B22">import java.rmi.RemoteException;</font>
@@ -303,6 +308,7 @@ En utilisant la classe <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/rmi
        }
 }
 </pre>
+<div>
 
 <!-- <div id="listing">
 <pre>
@@ -432,7 +438,7 @@ se font toujours avec un registry local.
 </p>
 
 <p>
-Avant d'invoquer une m&eacute;thode de l'interface, il faut obtenir une r&eacute;fe&eacute;rence.
+Avant d'invoquer une m&eacute;thode de l'interface, il faut obtenir une référence.
 Comme pour le serveur, deux classes permettent de le faire :
 <ul>
     <li>Avec la classe de plus haut niveau <tt>java.rmi.Naming</tt> : 
@@ -689,10 +695,8 @@ public class TaskPi implements Task {
 
 <!-- __________ Task  ________________________ -->
 <div class="slide">
-<h1>Le client</h1>
+<h1>Le client <tt>Client.java</tt></h1>
 
-<p>
-Le client <tt>Client.java</tt> :
 <div id="listing">
 <pre> 
 import java.rmi.*;
@@ -726,7 +730,6 @@ public class Client {
 }
 </pre>
 </div>
-</p>
 
 </div>
 
