@@ -10,7 +10,8 @@
 <meta name="version" content="S5 1.1" />
 <meta name="presdate" content="20050128" />
 <meta name="author" content="S. Genaud" />
-<meta name="company" content="Université Louis Pasteur" />
+<meta name="company" content="Université de Strasbourg" />
+
 <!-- configuration parameters -->
 <meta name="defaultView" content="slideshow" />
 <meta name="controlVis" content="hidden" />
@@ -855,10 +856,9 @@ public class Client {
 
 <!-- __________ Serveur  ________________________ -->
 <div class="slide">
-<h1>Le serveur</h1>
+<h1>Le serveur <tt>Server.java</tt></h1>
 
 <p>
-Le serveur <tt>Server.java</tt>:
 <div id="listing">
 <pre> 
 import java.rmi.*;
@@ -926,7 +926,7 @@ Ensuite, la recherche se fait dans <tt>codebase</tt>, spécifié au lancement du
 (qui enregistre l'objet). <br/>
 <code>
 -Djava.rmi.server.codebase=
- http://tag.u-strasbg.fr/~genaud/codebase/
+ http://icps.u-strasbg.fr/~genaud/codebase/
 </code>
 </li>
 <li>
@@ -958,6 +958,21 @@ Remarque: en utilisant une codebase, le serveur doit pouvoir accéder avec son C
 <tr class="list"><td>                   </td><td>  OperationImpl.class</td></tr>
 <tr class="list"><td>                   </td><td>  OperationImpl_Skel.class</td></tr>
 </table>
+</div>
+
+
+<!-- ______________________ Exercice ______________________ -->
+<div class="slide">
+<h1>Exercice</h1>
+
+Ecivez un système de <i>polling</i> de messages, avec plusieurs clients,
+un serveur:
+<ul>
+	<li>un client envoie un message vers un serveur connu,</li>
+	<li>le serveur enregistre le message du client,</li>
+	<li>et lui renvoie tous les messages non encore lus provenant d'autres clients.</li>
+</ul>
+
 </div>
 <!-- ____________________ FIN ___________________________ -->
 </body>
