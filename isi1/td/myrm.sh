@@ -21,7 +21,7 @@
 CONFIRM="./confirm.sh"
 
 efface=1
-for i in $*
+for i in $*  #for #for
 do
 	if [ -d $i ]
 	then	# cas d'un repertoire
