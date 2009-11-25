@@ -1,0 +1,9 @@
+
+Le noyau : un programme unique responsable de la communication entre le matériel et le logiciel.
+
+L’existence d’un noyau présuppose une partition virtuelle de la mémoire vive physique en deux régions disjointes, l'une étant réservée au noyau (l'espace noyau) et l’autre aux applications (l'espace utilisateur).
+
+Le noyau offre ses fonctionnalités (l'accès aux ressources qu'il gère) au travers des appels système. 
+Il transmet ou interprète les informations du matériel via des interruptions.  Ce sont les I/O. 
+
+

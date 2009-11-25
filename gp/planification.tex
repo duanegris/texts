@@ -218,7 +218,7 @@ $t_{14}$	& 30	& fin $t_{14}$ - fin \\
 \item<+-> Inclure risque et incertitude dans la durée
 
 \item<+-> Durée d'une tâche considérée comme une variable aléatoire
-(dont la distributon suit une loi Beta).
+(dont la distribution suit une loi Beta).
 
 \item<+-> 
 \begin{tabular}[t]{p{.6\textwidth}c}
@@ -503,6 +503,7 @@ $$
 \input{pert5.pdftex_t}
 
 \underline{Hypothèses} : ressources R1 et R2, et chargement au plus tôt\\
+\pause
 
 \input{gantt1.pdftex_t} 
 
@@ -514,6 +515,7 @@ $$
 \input{pert5.pdftex_t}
 
 \underline{Hypothèses} : ressources R1 et R2, et chargement au plus tard\\
+\pause
 
 \input{gantt2.pdftex_t} 
 \vfill
@@ -543,6 +545,18 @@ Le \emph{lissage} : répartir l'utilisation d'une ressource dans le temps
 \begin{center}
 \input{gantt3.pdftex_t} 
 \end{center}
+}
+
+
+\frame{
+\frametitle{Diagramme Gantt: raffinement}
+
+Il faut connaître les hypothèses:
+\begin{itemize}
+\item tâches préemptibles ? préemptible: peut être interrompue.
+\item ressources hétérogènes ? connaître la capacité de travail de la ressource. 
+\item contraintes spécifiques sur les tâches ? e.g la tâche nécessite au minimum 2 personnes.
+\end{itemize}
 
  
 }
