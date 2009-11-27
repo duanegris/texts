@@ -1,4 +1,5 @@
-\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{a4wide}
 \usepackage[francais]{babel}
 %\usepackage{times}
 \usepackage{geometry}
@@ -59,7 +60,7 @@ et le porteur de la carte pourra être identifié par la  photo figurant sur la ca
 
 \item  Accès réseau transport: la carte pourra être utilisée dans tous les automates
 des transporteurs ayant signé une convention avec l'université. Dans l'immédiat, seul
-la Compagnie des TRansports Strasbourgeois (CTS) est concernée.\\
+la Compagnie des Transports Strasbourgeois (CTS) est concernée.\\
  
 \item  Accès service de restauration: la carte pourra être utilisée dans tous les 
 restaurants du CROUS.\\
@@ -85,9 +86,22 @@ Le LDAP contient les nom, prénom, identifiant, et mail de l'étudiant.
 
 \item
 Le service central de scolarité utilise une base de données Oracle.
-La base de données de la scolarité contient le nom, prénom, n° étudiant, diplôme étudiant,  composante (EM, autre école, ...)
-Le numéro national d'étudiant est obtenu de manière syncrhone lors de l'insertion
-d'un étudiant dans la BD.
+La base de données de la scolarité contient le nom, prénom, n°étudiant (INE), 
+diplôme étudiant,  composante (EM, autre école, ...).
+Le système de gestion de base de données du service central de scolarité autorise
+certaines requêtes provenant de machines localisées dans le réseau de 
+l'Université et déclarées au préalable.
+Parmi ces requêtes, il est possible de demander la création d'un numéro INE:
+le système d'information de la scolarité est en effet synchronisé avec des 
+serveurs nationaux, ce qui lui permet de déterminer un numéro INE unique.
+
+\item 
+Lors de la création d'une carte, il faut donc demander la génération
+d'un numéro INE par l'intermédiaire d'un première requête. Celle
+ci créé un enregistrement dans le système d'information de la scolarité.
+Le numéro INE généré est récupéré et mémorisé par le système d'information de la
+CNEG.
+
 
 \end{itemize}
 
@@ -124,7 +138,7 @@ L'abonnement n'est pas crédité. L'étudiant doit le créditer par les moyens habit
 transporteur (bornes, guichets, ...). 
 
 
-\item  l'Université a obtenu l'accord du transporteur pour faire des statistiques sur le nombre de trajets 
+\item  L'Université a obtenu l'accord du transporteur pour faire des statistiques sur le nombre de trajets 
        effectués par les étudiants afin de mesurer l'attractivité du transporteur.
 	 Une fois par mois, le transporteur s'engage à transmettre un fichier indiquant combien de trajets
 	 ont effectués chacun de ses clients porteurs de la CENG.
@@ -144,17 +158,19 @@ identifiant chez le transporteur, identifiant au CROUS, n° INSEE,
 n° national d'étudiant, composante d'inscription.
 
 \item
-La création de la carte remplace l'inscription administrative à l'Université. 
+La création de la carte remplace l'inscription administrative à l'Université
+(l'étudiant ne passe plus dans les bureaux de la scolarité comme les années précédentes).
 Elle n'est faite que la première fois que l'étudiant s'inscrit à l'Université.
-Par conséquent, avant la création de la carte, l'étudiant ne figure pas dans i
-le système d'information de l'unversité.
+Par conséquent, avant la création de la carte, l'étudiant ne figure pas dans
+le système d'information de l'Université.
 
 \end{itemize}
 
 
 \section{Travail à réaliser}
 
-\textbf{But} : Le travail démandé consiste à répondre à cet appel d'offres carte 
+\noindent
+Le travail démandé consiste à répondre à cet appel d'offres carte 
 d'étudiant nouvelle génération, en proposant une nouvelle organisation des S.I. 
 permettant le bon fonctionnement de cette carte. 
 Votre proposition est libre dans la forme. 
@@ -166,19 +182,26 @@ Pour vous aider dans votre réponse, vous pourrez répondre aux points suivants.
 
 \begin{enumerate}
 \item  Représenter schématiquement les différents systèmes d'information et les flux entre ces systèmes.
-\item  Faire un modèle de traitement des données. Par exemple : procédure d'obtention le n° de client chez le transporteur
-\item  Processus à mettre en place pour que la carte puisse être délivrée immédiatement.
-\item  Proposez le processus permettant de faire des statistiques sur les trajets effectués. 
-       
-\item  Processus de transmission d'informations vers le CROUS
-\item  Afin de recalculer les subventions au CROUS, l'établissement doit connaitre
-le montant des dépenses effectuées au restaurant universitaire.
-Proposez le processus correspondant.
-
-\item  Processus de création du compte. L'étudiant doit obtenir login, mot de passe et adresse mail
-\item  Processus de création de l'étudiant dans la base de donnée scolarité.
+\item  Lister les cas d'utilisation qui vous semblent pertinents.
+\item  Proposez un processus pour la délivrance de la carte.
+       Pensez que L'étudiant doit obtenir login, mot de passe et adresse mail
   Décrire les flux correspondant. 
 
+\item Décrivez ce qui devra être prévu (matériel, logiciel) sur le poste de travail où se réalise
+la délivrance de la CENG.
+%% Le poste de travail devra comporter :
+%% - Un ordinateur de bureau
+%% - Le nécessaire pour numériser une photo. Pour la Carte multi-services, ils ont prévu un scanner et une webcam pour faire des photos
+%% - L'application de saisie de la CENG, la connexion à la BD
+
+\item  Précisez la forme que prend la création de l'étudiant dans la base de donnée scolarité.
+\item  Montrez que votre modèle conceptuel des données permet de faire des statistiques sur les trajets effectués. 
+	 Par exemple, pouvez vous indiquer le mois de l'année où le nombre de trajets en transports en commun est
+	le plus important.
+\item  Proposez un processus de transmission d'informations vers le CROUS
+\item  Afin de recalculer les subventions au CROUS, l'établissement doit connaitre
+le montant des dépenses effectuées au restaurant universitaire. Votre modèle conceptuel des données permet-il
+de le calculer ?
 \end{enumerate}
 
 Pensez à représenter les aspects statiques et dynamiques du système. Vous 
