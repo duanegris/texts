@@ -3,18 +3,18 @@
 \usepackage[francais]{babel}
 %\usepackage{times}
 \usepackage{geometry}
-\usepackage[latin1]{inputenc} 
+\usepackage[utf8]{inputenc} 
 %\setlength\textwidth{15.5cm}
 %\setlength\textheight{20cm}
 %\setlength\rightmargin{2cm}
 \pagestyle{empty}
 \geometry{a4paper}
 \begin{document}
- 
+
 \begin{center}
 \begin{Large}
 \'Etude de Cas \\
-\textit{Carte d'étudiant nouvelle génération (CENG)}
+\textit{Carte d'Ã©tudiant nouvelle gÃ©nÃ©ration (CENG)}
 \end{Large}
 
 \begin{Large}
@@ -24,9 +24,9 @@
 
 \vspace{.3cm}
 \begin{large}
-Romaric David, Stéphane \textsc{Genaud}, Novembre 2009 
+Romaric David, StÃ©phane \textsc{Genaud}, Novembre 2009 
 \end{large}
- 
+
 \end{center}
 
 
@@ -38,69 +38,70 @@ Romaric David, Stéphane \textsc{Genaud}, Novembre 2009
 \vspace{.5cm}
 %----------------------------------------------------------------------------------
 \section{Contexte}
-L'Université de Strasbourg veut mettre à disposition des étudiants une carte d'étudiant
-leur donnant accès à des services supplémentaires que ceux traditionnellement proposés
-avec ce type de carte. Elle souhaite par exemple que la carte donne immédiatement
-accès aux transports en commun de la ville et aux services universitaires de restauration 
-gérés par le CROUS.
-Les services de la carte sont également étendus par rapport à ceux proposés précédemment
-à l'intérieur de l'Université: la carte doit donner accès à l'étudiant à ses relevés de notes,
-et permettre également un accès sécurisé à certaines bornes en libre-service (BLS) disposant
-d'écrans tactiles.\\
+L'UniversitÃ© de Strasbourg veut mettre Ã  disposition des Ã©tudiants une carte d'Ã©tudiant
+leur donnant accÃ¨s Ã  des services supplÃ©mentaires que ceux traditionnellement proposÃ©s
+avec ce type de carte. Elle souhaite par exemple que la carte donne immÃ©diatement
+accÃ¨s aux transports en commun de la ville et aux services universitaires de restauration 
+gÃ©rÃ©s par le CROUS.
+Les services de la carte sont Ã©galement Ã©tendus par rapport Ã  ceux proposÃ©s prÃ©cÃ©demment
+Ã  l'intÃ©rieur de l'UniversitÃ©: la carte doit donner accÃ¨s Ã  l'Ã©tudiant Ã  ses relevÃ©s de notes,
+et permettre Ã©galement un accÃ¨s sÃ©curisÃ© Ã  certaines bornes en libre-service (BLS) disposant
+d'Ã©crans tactiles.\\
 
 \noindent %
-Ci-dessous est présenté un ensemble d'éléments extraits du cahier des charges.
+Ci-dessous est prÃ©sentÃ© un ensemble d'Ã©lÃ©ments extraits du cahier des charges.
 
 
-\section{Fonctionnalités}
+\section{FonctionnalitÃ©s}
+
 \begin{itemize}
-\item  Identification visuelle du porteur: la carte comportera les noms, prénoms, 
-numéro national étudiant (INE), le nom de la composante où est inscrit l'étudiant
-et le porteur de la carte pourra être identifié par la  photo figurant sur la carte.\\
+\item  Identification visuelle du porteur : la carte comportera les noms, prÃ©noms, 
+numÃ©ro national Ã©tudiant (INE), le nom de la composante oÃ¹ est inscrit l'Ã©tudiant
+et le porteur de la carte pourra Ãªtre identifiÃ© par la  photo figurant sur la carte.\\
 
-\item  Accès réseau transport: la carte pourra être utilisée dans tous les automates
-des transporteurs ayant signé une convention avec l'université. Dans l'immédiat, seul
-la Compagnie des Transports Strasbourgeois (CTS) est concernée.\\
- 
-\item  Accès service de restauration: la carte pourra être utilisée dans tous les 
+\item  AccÃ¨s rÃ©seau transport : la carte pourra Ãªtre utilisÃ©e dans tous les automates
+des transporteurs ayant signÃ© une convention avec l'universitÃ©. Dans l'immÃ©diat, seul
+la Compagnie des Transports Strasbourgeois (CTS) est concernÃ©e.\\
+
+\item  AccÃ¨s service de restauration : la carte pourra Ãªtre utilisÃ©e dans tous les 
 restaurants du CROUS.\\
 
-\item  Consultation relevé de notes:  à partir de BLS, l'étudiant devra pouvoir consulter
-	son relevé de notes.\\
+\item  Consultation relevÃ© de notes :  Ã  partir de BLS, l'Ã©tudiant devra pouvoir consulter
+	son relevÃ© de notes.\\
 
-\item  Accès à l'Espace Numérique de Travail (ENT) sur borne libre service:  
-       en enfichant sa carte sur la borne, l'étudiant pourra accéder à son compte ENT.
-        
+\item  AccÃ¨s Ã  l'Espace NumÃ©rique de Travail (ENT) sur borne libre service :  
+      en enfichant sa carte sur la borne, l'Ã©tudiant pourra accÃ©der Ã  son compte ENT.
+
 \end{itemize}
 
 
-\section{\'Eléments du cahier des charges}
+\section{\'ElÃ©ments du cahier des charges}
 
-\subsection{Université}
+\subsection{UniversitÃ©}
 \begin{itemize}
 \item 
 L'ENT utilise un annuaire LDAP.
-La création de la carte étudiant doit entrainer la création du compte informatique.
-Le LDAP contient les nom, prénom, identifiant, et mail de l'étudiant.
+La crÃ©ation de la carte Ã©tudiant doit entrainer la crÃ©ation du compte informatique.
+Le LDAP contient les nom, prÃ©nom, identifiant, et mail de l'Ã©tudiant.
 
 
 \item
-Le service central de scolarité utilise une base de données Oracle.
-La base de données de la scolarité contient le nom, prénom, n°étudiant (INE), 
-diplôme étudiant,  composante (EM, autre école, ...).
-Le système de gestion de base de données du service central de scolarité autorise
-certaines requêtes provenant de machines localisées dans le réseau de 
-l'Université et déclarées au préalable.
-Parmi ces requêtes, il est possible de demander la création d'un numéro INE:
-le système d'information de la scolarité est en effet synchronisé avec des 
-serveurs nationaux, ce qui lui permet de déterminer un numéro INE unique.
+Le service central de scolaritÃ© utilise une base de donnÃ©es Oracle.
+La base de donnÃ©es de la scolaritÃ© contient le nom, prÃ©nom, INE, 
+diplÃ´me Ã©tudiant,  composante (EM, autre Ã©cole, ...).
+Le systÃ¨me de gestion de base de donnÃ©es du service central de scolaritÃ© autorise
+certaines requÃªtes provenant de machines localisÃ©es dans le rÃ©seau de 
+l'UniversitÃ© et dÃ©clarÃ©es au prÃ©alable.
+Parmi ces requÃªtes, il est possible de demander la crÃ©ation d'un numÃ©ro INE:
+le systÃ¨me d'information de la scolaritÃ© est en effet synchronisÃ© avec des 
+serveurs nationaux, ce qui lui permet de dÃ©terminer un numÃ©ro INE unique.
 
 \item 
-Lors de la création d'une carte, il faut donc demander la génération
-d'un numéro INE par l'intermédiaire d'un première requête. Celle
-ci créé un enregistrement dans le système d'information de la scolarité.
-Le numéro INE généré est récupéré et mémorisé par le système d'information de la
-CNEG.
+Lors de la crÃ©ation d'une carte, il faut donc demander la gÃ©nÃ©ration
+d'un numÃ©ro INE par l'intermÃ©diaire d'un premiÃ¨re requÃªte. Celle
+ci crÃ©Ã© un enregistrement dans le systÃ¨me d'information de la scolaritÃ©.
+Le numÃ©ro INE gÃ©nÃ©rÃ© est rÃ©cupÃ©rÃ© et mÃ©morisÃ© par le systÃ¨me d'information de la
+CENG.
 
 
 \end{itemize}
@@ -108,106 +109,106 @@ CNEG.
 \subsection{CROUS}
 \begin{itemize}
 \item 
-Le CROUS et les compagnies de transports ont leur propre système d'information, qui stocke l'ensemble
-de leurs clients, chacun sous un format propriétaire auquel on ne peut avoir accès.
+Le CROUS et les compagnies de transports ont leur propre systÃ¨me d'information, qui stocke l'ensemble
+de leurs clients, chacun sous un format propriÃ©taire auquel on ne peut avoir accÃ¨s.
 
 \item
-Le CROUS fait une mise à jour quotidienne et à heure fixe de ses usagers, en prenant en compte
-les nouveaux inscrits et les usagers dont l'inscription périme.
-À tout usager inscrit est associé une période de validité, mémorisée dans la base de données du CROUS.
+Le CROUS fait une mise Ã  jour quotidienne et Ã  heure fixe de ses usagers, en prenant en compte
+les nouveaux inscrits et les usagers dont l'inscription pÃ©rime.
+Ã€ tout usager inscrit est associÃ© une pÃ©riode de validitÃ©, mÃ©morisÃ©e dans la base de donnÃ©es du CROUS.
 
 \item
-Le CROUS ne souhaite pas que ses bases soient accédées en écriture.
-Par contre, l'étudiant doit pouvoir accéder à un restaurant universitaire dès le lendemain de son inscription.
-Il est prévu que le CROUS fournisse annuellement à l'Université une plage d'identifiants réservés pour attribution
-par l'Université.
+Le CROUS ne souhaite pas que ses bases soient accÃ©dÃ©es en Ã©criture.
+Par contre, l'Ã©tudiant doit pouvoir accÃ©der Ã  un restaurant universitaire dÃ¨s le lendemain de son inscription.
+Il est prÃ©vu que le CROUS fournisse annuellement Ã  l'UniversitÃ© une plage d'identifiants rÃ©servÃ©s pour attribution
+par l'UniversitÃ©.
 \end{itemize}
 
 
 \subsection{Transporteurs}
 \begin{itemize}
 \item 
-Avant l'introduction de la carte CENG, la création d'un client à la CTS est uniquement faite par un opérateur 
-dans un point de vente. Depuis son terminal, l'opérateur créé instantanément l'enregistrement dans les 
+Avant l'introduction de la carte CENG, la crÃ©ation d'un client Ã  la CTS est uniquement faite par un opÃ©rateur 
+dans un point de vente. Depuis son terminal, l'opÃ©rateur crÃ©Ã© instantanÃ©ment l'enregistrement dans les 
 bases de la CTS. 
-Avec le projet CENG, la création de la carte étudiant doit automatiquement enregistrer l'étudiant comme nouveau
-client du transporteur de son choix (à l'heure actuelle, le seul choix possible est la CTS).
+Avec le projet CENG, la crÃ©ation de la carte Ã©tudiant doit automatiquement enregistrer l'Ã©tudiant comme nouveau
+client du transporteur de son choix (Ã  l'heure actuelle, le seul choix possible est la CTS).
 
-Immédiatement après délivrance, la CENG fait office de support d'abonnement auprès du transporteur.
-L'abonnement n'est pas crédité. L'étudiant doit le créditer par les moyens habituels prévus par le
+ImmÃ©diatement aprÃ¨s dÃ©livrance, la CENG fait office de support d'abonnement auprÃ¨s du transporteur.
+L'abonnement n'est pas crÃ©ditÃ©. L'Ã©tudiant doit le crÃ©diter par les moyens habituels prÃ©vus par le
 transporteur (bornes, guichets, ...). 
 
 
-\item  L'Université a obtenu l'accord du transporteur pour faire des statistiques sur le nombre de trajets 
-       effectués par les étudiants afin de mesurer l'attractivité du transporteur.
-	 Une fois par mois, le transporteur s'engage à transmettre un fichier indiquant combien de trajets
-	 ont effectués chacun de ses clients porteurs de la CENG.
+\item  L'UniversitÃ© a obtenu l'accord du transporteur pour faire des statistiques sur le nombre de trajets 
+      effectuÃ©s par les Ã©tudiants afin de mesurer l'attractivitÃ© du transporteur.
+	 Une fois par mois, le transporteur s'engage Ã  transmettre un fichier indiquant combien de trajets
+	 ont effectuÃ©s chacun de ses clients porteurs de la CENG.
 
 \end{itemize}
 
 
 
-\subsection{Modalités de délivrance}
+\subsection{ModalitÃ©s de dÃ©livrance}
 \begin{itemize}
 \item 
-La délivrance de la CENG se fait en présence de l'étudiant. Elle doit être immédiate.
+La dÃ©livrance de la CENG se fait en prÃ©sence de l'Ã©tudiant. Elle doit Ãªtre immÃ©diate.
 
 \item 
-La base de données CENG doit contenir nom, prénom, photo, 
-identifiant chez le transporteur, identifiant au CROUS, n° INSEE, 
-n° national d'étudiant, composante d'inscription.
+La base de donnÃ©es CENG doit contenir nom, prÃ©nom, photo, 
+identifiant chez le transporteur, identifiant au CROUS, numÃ©ro INSEE, 
+numÃ©ro INE, composante d'inscription.
 
 \item
-La création de la carte remplace l'inscription administrative à l'Université
-(l'étudiant ne passe plus dans les bureaux de la scolarité comme les années précédentes).
-Elle n'est faite que la première fois que l'étudiant s'inscrit à l'Université.
-Par conséquent, avant la création de la carte, l'étudiant ne figure pas dans
-le système d'information de l'Université.
+La crÃ©ation de la carte remplace l'inscription administrative Ã  l'UniversitÃ©
+(l'Ã©tudiant ne passe plus dans les bureaux de la scolaritÃ© comme les annÃ©es prÃ©cÃ©dentes).
+Elle n'est faite que la premiÃ¨re fois que l'Ã©tudiant s'inscrit Ã  l'UniversitÃ©.
+Par consÃ©quent, avant la crÃ©ation de la carte, l'Ã©tudiant ne figure pas dans
+le systÃ¨me d'information de l'UniversitÃ©.
 
 \end{itemize}
 
 
-\section{Travail à réaliser}
+\section{Travail Ã  rÃ©aliser}
 
 \noindent
-Le travail démandé consiste à répondre à cet appel d'offres carte 
-d'étudiant nouvelle génération, en proposant une nouvelle organisation des S.I. 
+Le travail dÃ©mandÃ© consiste Ã  rÃ©pondre Ã  cet appel d'offres carte 
+d'Ã©tudiant nouvelle gÃ©nÃ©ration, en proposant une nouvelle organisation des S.I. 
 permettant le bon fonctionnement de cette carte. 
 Votre proposition est libre dans la forme. 
-L'exhaustivité de la modélisation des flux d'information, du modèle conceptuel 
-des données et des traitements, et la clarté avec laquelle elle est présentée 
-fera la qualité de votre réponse.
+L'exhaustivitÃ© de la modÃ©lisation des flux d'information, du modÃ¨le conceptuel 
+des donnÃ©es et des traitements, et la clartÃ© avec laquelle elle est prÃ©sentÃ©e 
+fera la qualitÃ© de votre rÃ©ponse.
 
-Pour vous aider dans votre réponse, vous pourrez répondre aux points suivants.
+Pour vous aider dans votre rÃ©ponse, vous pourrez rÃ©pondre aux points suivants.
 
 \begin{enumerate}
-\item  Représenter schématiquement les différents systèmes d'information et les flux entre ces systèmes.
+\item  ReprÃ©senter schÃ©matiquement les diffÃ©rents systÃ¨mes d'information et les flux entre ces systÃ¨mes.
 \item  Lister les cas d'utilisation qui vous semblent pertinents.
-\item  Proposez un processus pour la délivrance de la carte.
-       Pensez que L'étudiant doit obtenir login, mot de passe et adresse mail
-  Décrire les flux correspondant. 
+\item  Proposez un processus pour la dÃ©livrance de la carte.
+      Pensez que L'Ã©tudiant doit obtenir login, mot de passe et adresse mail
+ DÃ©crire les flux correspondant. 
 
-\item Décrivez ce qui devra être prévu (matériel, logiciel) sur le poste de travail où se réalise
-la délivrance de la CENG.
+\item DÃ©crivez ce qui devra Ãªtre prÃ©vu (matÃ©riel, logiciel) sur le poste de travail oÃ¹ se rÃ©alise
+la dÃ©livrance de la CENG.
 %% Le poste de travail devra comporter :
 %% - Un ordinateur de bureau
-%% - Le nécessaire pour numériser une photo. Pour la Carte multi-services, ils ont prévu un scanner et une webcam pour faire des photos
-%% - L'application de saisie de la CENG, la connexion à la BD
+%% - Le nÃ©cessaire pour numÃ©riser une photo. Pour la Carte multi-services, ils ont prÃ©vu un scanner et une webcam pour faire des photos
+%% - L'application de saisie de la CENG, la connexion Ã  la BD
 
-\item  Précisez la forme que prend la création de l'étudiant dans la base de donnée scolarité.
-\item  Montrez que votre modèle conceptuel des données permet de faire des statistiques sur les trajets effectués. 
-	 Par exemple, pouvez vous indiquer le mois de l'année où le nombre de trajets en transports en commun est
+\item  PrÃ©cisez la forme que prend la crÃ©ation de l'Ã©tudiant dans la base de donnÃ©e scolaritÃ©.
+\item  Montrez que votre modÃ¨le conceptuel des donnÃ©es permet de faire des statistiques sur les trajets effectuÃ©s. 
+	 Par exemple, pouvez vous indiquer le mois de l'annÃ©e oÃ¹ le nombre de trajets en transports en commun est
 	le plus important.
 \item  Proposez un processus de transmission d'informations vers le CROUS
-\item  Afin de recalculer les subventions au CROUS, l'établissement doit connaitre
-le montant des dépenses effectuées au restaurant universitaire. Votre modèle conceptuel des données permet-il
+\item  Afin de recalculer les subventions au CROUS, l'Ã©tablissement doit connaitre
+le montant des dÃ©penses effectuÃ©es au restaurant universitaire. Votre modÃ¨le conceptuel des donnÃ©es permet-il
 de le calculer ?
 \end{enumerate}
 
-Pensez à représenter les aspects statiques et dynamiques du système. Vous 
-pourrez par exemple représenter les données stockées en utilisant un diagramme de 
-classes UML. Les processus pourront être représentés avec des diagrammes
-de séquences ou des diagrammes d'états.
+Pensez Ã  reprÃ©senter les aspects statiques et dynamiques du systÃ¨me. Vous 
+pourrez par exemple reprÃ©senter les donnÃ©es stockÃ©es en utilisant un diagramme de 
+classes UML. Les processus pourront Ãªtre reprÃ©sentÃ©s avec des diagrammes
+de sÃ©quences ou des diagrammes d'Ã©tats.
 
 
 \end{document}
