@@ -4,13 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>Introduction à RMI</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+<title>Introduction Ã  RMI</title>
 <!-- metadata -->
 <meta name="generator" content="S5" />
 <meta name="version" content="S5 1.1" />
 <meta name="presdate" content="20050128" />
 <meta name="author" content="S. Genaud" />
-<meta name="company" content="Université de Strasbourg" />
+<meta name="company" content="UniversitÃ© de Strasbourg" />
 
 <!-- configuration parameters -->
 <meta name="defaultView" content="slideshow" />
@@ -65,58 +66,58 @@ td.list    { background-color : #eee59a; margin : 3px;
 <div id="header"></div>
 <div id="footer">
 <h1>octobre &#8226; 2009</h1>
-<h2>Introduction à RMI</h2>
+<h2>Introduction Ã  RMI</h2>
 </div>
 </div>
 
 <div class="presentation">
 
 <div class="slide">
-<h1>Introduction à RMI</h1>
-<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
+<h1>Introduction Ã  RMI</h1>
+<h4><a href="http://icps.u-strasbg.fr/~genaud">StÃ©phane Genaud</a></h4>
 </div>
 
-<!-- ________________________ Général _____________________________ -->
+<!-- ________________________ GÃ©nÃ©ral _____________________________ -->
 <div class="slide">
-<h1>Caractéristiques générales</h1>
+<h1>CaractÃ©ristiques gÃ©nÃ©rales</h1>
 <ul>
    <li>RMI est un moyen de faire du client/serveur.
         <ul>
         <li> Limitation : tout les programmes sont en Java (sauf utilisation JNI).</li>
-        <li> Permet d'invoquer des méthodes d'un objet distant dans une JVM distante.</li>
+        <li> Permet d'invoquer des mÃ©thodes d'un objet distant dans une JVM distante.</li>
         </ul>
     </li> 
-    <li>On peut passer des objets en paramètre des appels distants.
-        (Implique qu'on peut télécharger du code dans une JVM distante).
+    <li>On peut passer des objets en paramÃ¨tre des appels distants.
+        (Implique qu'on peut tÃ©lÃ©charger du code dans une JVM distante).
     </li>
     <li>
-    Accessibilité : disponible dans tout JDK (&gt;=1.1) 
+    AccessibilitÃ© : disponible dans tout JDK (&gt;=1.1) 
     </li>
 </ul>  
 </div>
 
 <div class="handout">
 <p>
-JNI (Java Native Interface) doit permettre à du code Java de s'interfacer avec d'autres langages (cibles principales le C/C++) mais son emploi semble délicat et peu convaincant.
+JNI (Java Native Interface) doit permettre Ã  du code Java de s'interfacer avec d'autres langages (cibles principales le C/C++) mais son emploi semble dÃ©licat et peu convaincant.
 </p>
 <p>
-Passer des objets est un mécanisme plus puissant que les RPC habituels qui sont limités à des types primitifs (ou structures de type primitifs, e.g. CORBA).
+Passer des objets est un mÃ©canisme plus puissant que les RPC habituels qui sont limitÃ©s Ã  des types primitifs (ou structures de type primitifs, e.g. CORBA).
 </p>
 </div>
 
 <!-- ________________________ Objet proxy _____________________________ -->
 <div class="slide">
-<h1>Appel de procédure à distance</h1>
+<h1>Appel de procÃ©dure Ã  distance</h1>
 
 <img src="img/proxy.png" alt="proxy" title="Principe de l'objet proxy">
 
 <p>
-L'objet distant possède un <strong>représentant (proxy)</strong> sur la machine locale;
-ceci permet d'invoquer une méthode de l'objet B comme si celui-ci était local.
-C'est la <strong>souche (stub)</strong> qui matérialise ce représentant.
+L'objet distant possÃ¨de un <strong>reprÃ©sentant (proxy)</strong> sur la machine locale;
+ceci permet d'invoquer une mÃ©thode de l'objet B comme si celui-ci Ã©tait local.
+C'est la <strong>souche (stub)</strong> qui matÃ©rialise ce reprÃ©sentant.
 </p>
 <p>
-Avant la version 5 du JDK, les souches sont des fichiers <tt>stub.class</tt>générés avec <tt>rmic</tt>. 
+Avant la version 5 du JDK, les souches sont des fichiers <tt>stub.class</tt>gÃ©nÃ©rÃ©s avec <tt>rmic</tt>. 
 </p>
 </div>
 
@@ -128,14 +129,14 @@ Avant la version 5 du JDK, les souches sont des fichiers <tt>stub.class</tt>gén
 		   initie la connexion avec la JVM distante contenant l'objet,
 		 </li>
 		 <li>
-		 op&egrave;re le marshalling (&eacute;criture et transmission) des param&egrave;tres à la JVM distante,
+		 op&egrave;re le marshalling (&eacute;criture et transmission) des param&egrave;tres Ã  la JVM distante,
 		 </li>
 		  <li>
 		  attend les resultats de la m&eacute;thode invoqu&eacute;e,
 		    </li>
 		    <li>
-		    opère le demarshalling (lecture) de la valeur ou de l'exception retourn&eacute;e
-		    et renvoie le r&eacute;sultat à l'appelant. 
+		    opÃ¨re le demarshalling (lecture) de la valeur ou de l'exception retourn&eacute;e
+		    et renvoie le r&eacute;sultat Ã  l'appelant. 
 		    </li>
            </ul>
 	     </p>
@@ -147,14 +148,14 @@ Avant la version 5 du JDK, les souches sont des fichiers <tt>stub.class</tt>gén
 
 <p>
 Exemple Simple: 
-les arguments de la méthode invoquée sont des types primitifs (scalaires, e.g. int, float, ..) 
-ou tableaux (e.g. String) mais <span class="important">sérialisables</a> (java.io.Serializable).  
+les arguments de la mÃ©thode invoquÃ©e sont des types primitifs (scalaires, e.g. int, float, ..) 
+ou tableaux (e.g. String) mais <span class="important">sÃ©rialisables</a> (java.io.Serializable).  
 </p>
 
-<h2>Les différents programmes</h2>
+<h2>Les diffÃ©rents programmes</h2>
 <ul>
-   <li>Le service : le code lui-même ; répond aux clients. </li>
-   <li>Le serveur : gère le service. </li>
+   <li>Le service : le code lui-mÃªme ; rÃ©pond aux clients. </li>
+   <li>Le serveur : gÃ¨re le service. </li>
    <li>Le client : utilise le service.</li>
 </ul>  
 </div>
@@ -164,11 +165,11 @@ ou tableaux (e.g. String) mais <span class="important">sérialisables</a> (java.
 <div class="slide">
 <h1>Le service</h1>
 
-Le service est ici un objet dont l'une des méthodes fait l'addition de deux nombres.
+Le service est ici un objet dont l'une des mÃ©thodes fait l'addition de deux nombres.
   <ul>
-     <li><tt>Operation.java</tt>     : interface utilisée par le client</li>
-     <li><tt>OperationImpl.java</tt> : classe implémentant <tt>Operation</tt>, 
-                                       lancée par le serveur</li>
+     <li><tt>Operation.java</tt>     : interface utilisÃ©e par le client</li>
+     <li><tt>OperationImpl.java</tt> : classe implÃ©mentant <tt>Operation</tt>, 
+                                       lancÃ©e par le serveur</li>
   </ul>
 
 </div>
@@ -193,13 +194,13 @@ public interface Operation extends Remote {
 <div class="handout">
 <p>
 <b>Remarque 1.</b>
-En étendant l'interface java.rmi.Remote, les méthodes de l'interface sont automatiquement
+En Ã©tendant l'interface java.rmi.Remote, les mÃ©thodes de l'interface sont automatiquement
 appelables depuis d'autres JVM. 
-Tout objet qui implémentera cette interface deviendra "remote".
+Tout objet qui implÃ©mentera cette interface deviendra "remote".
 </p>
 <p>
 <b>Remarque 2.</b> 
-On pourrait bien sûr définir d'autres methodes à côté de <tt>addition</tt>. 
+On pourrait bien sÃ»r dÃ©finir d'autres methodes Ã  cÃ´tÃ© de <tt>addition</tt>. 
 </p>
 
 </div>
@@ -208,7 +209,7 @@ On pourrait bien sûr définir d'autres methodes à côté de <tt>addition</tt>.
 
 
 <div class="slide">
-<h1>L'implémentation du service</h1>
+<h1>L'implÃ©mentation du service</h1>
 <tt>OperationImpl.java</tt><br/>
 <div id="listing">
 <pre>
@@ -233,9 +234,9 @@ public class OperationImpl extends UnicastRemoteObject
 <!-- _________________________ Remarques ________________________ -->
 <div class="handout">
 <p>
-Le service hérite de la classe <tt>java.rmi.UnicastRemoteObject</tt> pour activer l'objet distribué automatiquement.
+Le service hÃ©rite de la classe <tt>java.rmi.UnicastRemoteObject</tt> pour activer l'objet distribuÃ© automatiquement.
 </p>
-<p><b>Remarque.</b> On pourrait définir directement l'enregistrement
+<p><b>Remarque.</b> On pourrait dÃ©finir directement l'enregistrement
 de l'objet en ajoutant, par exemple dans main :
 <div id="listing">
 <pre>
@@ -243,7 +244,7 @@ de l'objet en ajoutant, par exemple dans main :
      try {
          OperationImpl une_op = new OperationImpl ();
          Naming.rebind("rmi://localhost/Operation",une_op) ;
-         System.out.println("Service Operation enregistré");
+         System.out.println("Service Operation enregistrÃ©");
       }  
       catch(Exception e) {
          System.out.println("Err. enreg. registry");
@@ -251,7 +252,7 @@ de l'objet en ajoutant, par exemple dans main :
     }
 </pre>
 </div>
-Cependant, on préfère isoler ce code assez générique dans un programme <tt>serveur</tt>.
+Cependant, on prÃ©fÃ¨re isoler ce code assez gÃ©nÃ©rique dans un programme <tt>serveur</tt>.
 </div>
 
 </div>
@@ -262,7 +263,7 @@ Cependant, on préfère isoler ce code assez générique dans un programme <tt>s
 
 <tt>Serveur.java</tt> est une classe qui
     <ol>
-     <li>crée une instance de l'objet demandé (le service),</li>
+     <li>crÃ©e une instance de l'objet demandÃ© (le service),</li>
      <li>enregistre ce service dans le <tt>rmiregistry</tt> pour le rendre public. 
      Deux classes permettent de le faire (choisir une seule des 2 solutions):
      <ul style="font-size: smaller">
@@ -270,17 +271,17 @@ Cependant, on préfère isoler ce code assez générique dans un programme <tt>s
 		     m&eacute;thode <tt>bind()</tt> permet d'utiliser des URLs. </li>
            <li>La classe <tt>java.rmi.registry.LocateRegistry</tt> 
 	     et sa m&eacute;thode <tt>getRegistry()</tt> est un niveau plus bas 
-	     (elle est utilisée par <tt>Naming</tt>).
-	     Cette classe permet de créer dynamiquement un registry (avec <tt>createRegistry()</tt>).</li>
+	     (elle est utilisÃ©e par <tt>Naming</tt>).
+	     Cette classe permet de crÃ©er dynamiquement un registry (avec <tt>createRegistry()</tt>).</li>
          </ul>
     </li>
      <li>lance un gestionnaire de s&eacute;curit&eacute;.</li>
     </ol>
-<i><small>Dans un premier temps, nous simplifions le code en ne créant pas le gestionnaire de sécurité.</small></i>
+<i><small>Dans un premier temps, nous simplifions le code en ne crÃ©ant pas le gestionnaire de sÃ©curitÃ©.</small></i>
 </div>
 
 <div class="handout">
-Le code du serveur est très générique : on réutilisera presque toujours la même chose pour démarrer des services.
+Le code du serveur est trÃ¨s gÃ©nÃ©rique : on rÃ©utilisera presque toujours la mÃªme chose pour dÃ©marrer des services.
 </div>
 
 <!-- _______ Code Serveur avec LocateRegistry _________ -->
@@ -340,7 +341,7 @@ public class Serveur {
 -->
 <p>
 <small>
- Il y a possibilité de créer le registry dynamiquement (au lieu de lancer 
+ Il y a possibilitÃ© de crÃ©er le registry dynamiquement (au lieu de lancer 
 rmiregistry sur la ligne de commande) avec 
 <pre>
            Registry registry = LocateRegistry.createRegistry(1099);
@@ -353,10 +354,10 @@ rmiregistry sur la ligne de commande) avec
 <!-- Commentaires -->
 <div class="handout">
 <p>
-<tt>LocateRegistry.getRegistry()</tt> instancie une souche qui implémente l'interface Remote <tt>java.rmi.registry.Registry</tt> en demandant le registre sur localhost et le port 1099 (défauts). Utiliser 
-<tt> getRegistry(String, int)</tt> pour spécifier hôte et port.
+<tt>LocateRegistry.getRegistry()</tt> instancie une souche qui implÃ©mente l'interface Remote <tt>java.rmi.registry.Registry</tt> en demandant le registre sur localhost et le port 1099 (dÃ©fauts). Utiliser 
+<tt> getRegistry(String, int)</tt> pour spÃ©cifier hÃ´te et port.
 
-<tt>bind()</tt> est ensuite invoquée sur le stub pour que le registre attache le code de <tt>une_op</tt> au nom arbitraire "Operation".
+<tt>bind()</tt> est ensuite invoquÃ©e sur le stub pour que le registre attache le code de <tt>une_op</tt> au nom arbitraire "Operation".
 </p>
 <p>
 Exemples :
@@ -408,16 +409,16 @@ se font toujours avec un registry local.
 
 </div>
 
-<!-- _______ Gestionnaire de sécurité _________ -->
+<!-- _______ Gestionnaire de sÃ©curitÃ© _________ -->
 <div class="slide">
-<h1>Gestionnaire de sécurité serveur</h1>
+<h1>Gestionnaire de sÃ©curitÃ© serveur</h1>
 
 <ul>
-  <li>Définie par le fichier <tt>java.policy</tt></li>
-  <li>Par défaut, celui du JDK, e.g. <br/>
+  <li>DÃ©finie par le fichier <tt>java.policy</tt></li>
+  <li>Par dÃ©faut, celui du JDK, e.g. <br/>
     <tt>/usr/java/j2sdk1.4.2_04/jre/lib/security/java.policy</tt>
   </li>
-  <li> Donner plus de permissivité :<br/>
+  <li> Donner plus de permissivitÃ© :<br/>
     <div id="listing">
     <pre>
     grant {
@@ -441,7 +442,7 @@ se font toujours avec un registry local.
 </p>
 
 <p>
-Avant d'invoquer une m&eacute;thode de l'interface, il faut obtenir une référence.
+Avant d'invoquer une m&eacute;thode de l'interface, il faut obtenir une rÃ©fÃ©rence.
 Comme pour le serveur, deux classes permettent de le faire :
 <ul>
     <li>Avec la classe de plus haut niveau <tt>java.rmi.Naming</tt> : 
@@ -530,7 +531,7 @@ do  cp $i.class serveur ; done
 
 <!-- Commentaires -->
 <div class="handout">
-La commande <code>rmic OperationImpl</code> génère 
+La commande <code>rmic OperationImpl</code> gÃ©nÃ¨re 
 <tt>OperationImpl_Stub.class</tt> et <tt>OperationImpl_Skel.class</tt>.
 </div>
 
@@ -552,7 +553,7 @@ La commande <code>rmic OperationImpl</code> génère
 <!-- ________________________ Execution _____________________________ -->
 
 <div class="slide">
-<h1>Exécution</h1>
+<h1>ExÃ©cution</h1>
 
 <ol>
    <li> Lancer le serveur 
@@ -582,8 +583,8 @@ La commande <code>rmic OperationImpl</code> génère
 Lancer "start rmiregistry" sous windows, ou monopoliser un terminal pour lui.
 </p>
 <p>
-Lancer le rmiregistry dans le même répertoire que le serveur (où se trouve OperationImpl_Stub.class)
-est bien commode car le CLASSPATH contient le répertoire courant par défaut. Si vous lancez rmiregistry ailleurs, il faut que le CLASSPATH pointe vers où se trouve OperationImpl_Stub.class.
+Lancer le rmiregistry dans le mÃªme rÃ©pertoire que le serveur (oÃ¹ se trouve OperationImpl_Stub.class)
+est bien commode car le CLASSPATH contient le rÃ©pertoire courant par dÃ©faut. Si vous lancez rmiregistry ailleurs, il faut que le CLASSPATH pointe vers oÃ¹ se trouve OperationImpl_Stub.class.
 </p>
 </div>
 
@@ -593,24 +594,24 @@ est bien commode car le CLASSPATH contient le répertoire courant par défaut. S
 <h1>Exemple 2: Passage d'objets</h1>
 
 <p>
-RMI permet de passer en paramètres des méthodes, des types simples, mais
+RMI permet de passer en paramÃ¨tres des mÃ©thodes, des types simples, mais
 aussi des <span class="important">objets construits</span>.
 </p>
 <p>
-Comme précédemment, les arguments passés doivent être <strong>serializable</strong>.
+Comme prÃ©cÃ©demment, les arguments passÃ©s doivent Ãªtre <strong>serializable</strong>.
 </p>
 <p>
-La sérialisation écrit la <span class="important">structure</span> de l'objet 
-dans un flux transmissible sur le réseau, mais n'incorpore pas au flux les méthodes.
+La sÃ©rialisation Ã©crit la <span class="important">structure</span> de l'objet 
+dans un flux transmissible sur le rÃ©seau, mais n'incorpore pas au flux les mÃ©thodes.
 </p>
 
 </div>
 <!-- __________ Passage d'objets en parametre  ________________________ -->
 
 <div class="slide">
-<h1>Exemple 2: Passage d'objets en paramètres</h1>
+<h1>Exemple 2: Passage d'objets en paramÃ¨tres</h1>
 
-Imaginons un objet dont le rôle est d'exécuter du code.
+Imaginons un objet dont le rÃ´le est d'exÃ©cuter du code.
 <table>
 <tr>
 <td>
@@ -620,11 +621,11 @@ Imaginons un objet dont le rôle est d'exécuter du code.
 <td>
 <p>
 <ul>
-<li>Il accepte en entrée un objet quelconque qui a une méthode <tt>execute()</tt>
+<li>Il accepte en entrÃ©e un objet quelconque qui a une mÃ©thode <tt>execute()</tt>
 <small>(appelons <tt>Task</tt> l'interface correspondante)</small>, </li>
-<li>télécharge dynamiquement le code de l'implémentation (cherche dans <tt>codebase</tt>),</li>
+<li>tÃ©lÃ©charge dynamiquement le code de l'implÃ©mentation (cherche dans <tt>codebase</tt>),</li>
 <li>invoque <tt>execute()</tt>,</li>
-<li>retourne le résultat au client.</li>
+<li>retourne le rÃ©sultat au client.</li>
 </ul>
 </td>
 </tr>
@@ -637,7 +638,7 @@ Imaginons un objet dont le rôle est d'exécuter du code.
 <h1>Objet Remote Compute (interface)</h1>
 
 <p>
-Comme précédemment, on doit spécifier au client l'interface offerte par
+Comme prÃ©cÃ©demment, on doit spÃ©cifier au client l'interface offerte par
 l'objet distant. On la nomme <tt>Compute.java</tt>.
 <div id="listing">
 <pre> 
@@ -651,14 +652,14 @@ public interface Compute extends Remote {
 </div>
 </p>
 <p>
-L'unique méthode accepte un objet de classe <tt>Task</tt>.
+L'unique mÃ©thode accepte un objet de classe <tt>Task</tt>.
 </p>
 </div>
 
 <!-- __________ Interfaces  ________________________ -->
 <div class="slide">
 <h1>Objet Remote Compute (impl.)</h1>
-Sur le serveur, l'implémentation <tt>ComputeImpl.java</tt> :
+Sur le serveur, l'implÃ©mentation <tt>ComputeImpl.java</tt> :
 <div id="listing">
 <pre width="80">
 <font color="#228B22">import java.rmi.server.UnicastRemoteObject ;</font>
@@ -704,10 +705,10 @@ public class ComputeImpl extends UnicastRemoteObject implements Compute
 
 <!-- __________ Task interface ________________________ -->
 <div class="slide">
-<h1>La classtask passé en paramètre</h1>
+<h1>La classtask passÃ© en paramÃ¨tre</h1>
 
 <p>
-L'interface <tt>Task.java</tt> : spécifie
+L'interface <tt>Task.java</tt> : spÃ©cifie
 <div id="listing">
 
 <pre width="80">
@@ -733,10 +734,10 @@ public interface Task extends <b class="important">Serializable</b> {
 
 <!-- __________ Task impl. ________________________ -->
 <div class="slide">
-<h1>L'objet task passé en paramètre (impl)</h1>
+<h1>L'objet task passÃ© en paramÃ¨tre (impl)</h1>
 
 <p>
-L'implémentation <tt>TaskPi.java</tt>:
+L'implÃ©mentation <tt>TaskPi.java</tt>:
 <div id="listing">
 
 <pre width="80">
@@ -752,7 +753,7 @@ L'implémentation <tt>TaskPi.java</tt>:
 
 <strong><font color="#4169E1">    public static BigDecimal computePi(int digits)</font></strong> {
 
-        <font color="#B22222">/* ... calcul compliqué ...*/</font>
+        <font color="#B22222">/* ... calcul compliquÃ© ...*/</font>
         <font color="#4169E1">return</font> pi.setScale(digits,BigDecimal.ROUND_HALF_UP);
     }
 }
@@ -772,7 +773,7 @@ public class TaskPi implements Task {
 
     public static BigDecimal computePi(int digits) {
         
-        /* ... calcul compliqué ...*/
+        /* ... calcul compliquÃ© ...*/
         return pi.setScale(digits,BigDecimal.ROUND_HALF_UP);
     }
 }
@@ -872,7 +873,7 @@ public class Server {
      try {
          ComputeImpl <b class="important">engine1</b> = new ComputeImpl ();
          Naming.rebind("rmi://localhost/Compute",<b class="important">engine1</b>) ;
-         System.out.println("Objet Compute enregistré dans le registry.");
+         System.out.println("Objet Compute enregistrÃ© dans le registry.");
          System.out.println("Serveur pret.");
      }
      catch (RemoteException re) { System.out.println(re) ; }
@@ -890,18 +891,18 @@ Comme dans l'exemple de base, le serveur instancie un objet <tt>ComputeImpl</tt>
 
 <!-- __________ Securite  ________________________ -->
 <div class="slide">
-<h1>Gestionnaire Sécurité</h1>
+<h1>Gestionnaire SÃ©curitÃ©</h1>
 
 <p>
-L'une des principales difficultés de RMI est la gestion de la sécurité.
+L'une des principales difficultÃ©s de RMI est la gestion de la sÃ©curitÃ©.
 <ul>
-	  <li>Il est nécessaire de modifier la politique très restrictive de sécurité par défaut (<tt>$JAVA_HOME/lib/security/java.policy</tt>). 
-	  La méthode préconisée est d'associer un fichier décrivant la politique avec la JVM lancée 
+	  <li>Il est nÃ©cessaire de modifier la politique trÃ¨s restrictive de sÃ©curitÃ© par dÃ©faut (<tt>$JAVA_HOME/lib/security/java.policy</tt>). 
+	  La mÃ©thode prÃ©conisÃ©e est d'associer un fichier dÃ©crivant la politique avec la JVM lancÃ©e 
 	  (<tt>-Djava.security.policy=fichier</tt>)
 	  (<a href="http://java.sun.com/j2se/1.4.2/docs/guide/security/PolicyFiles.html">syntaxe</a>).
 	  </li>
 
-	  <li>Un programme n'a pas de gestionnaire de sécurité par défaut, et empêche certaines opérations (comme le téléchargement de code). On peut en créer un:
+	  <li>Un programme n'a pas de gestionnaire de sÃ©curitÃ© par dÃ©faut, et empÃªche certaines opÃ©rations (comme le tÃ©lÃ©chargement de code). On peut en crÃ©er un:
 	  <ul>
 		    <li>par programme (<tt><a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/SecurityManager.html">SecurityManager</a></tt>),</li>
 		    <li>par fichier <tt>-Djava.security.manager</tt>.</li>
@@ -917,12 +918,12 @@ L'une des principales difficultés de RMI est la gestion de la sécurité.
 
 <p>
 <ol>
-<li>Quand un client invoque une méthode d'un objet distant, le <b>rmiregistry</b> (lui aussi distant) retourne une référence à cet objet (stub). Le rmiregistry doit pouvoir accéder aux classes correspondant à ce stub.  </li>
+<li>Quand un client invoque une mÃ©thode d'un objet distant, le <b>rmiregistry</b> (lui aussi distant) retourne une rÃ©fÃ©rence Ã  cet objet (stub). Le rmiregistry doit pouvoir accÃ©der aux classes correspondant Ã  ce stub.  </li>
 <li>
-Le  rmiregistry cherche d'abord dans son CLASSPATH la définition de la classe.
+Le  rmiregistry cherche d'abord dans son CLASSPATH la dÃ©finition de la classe.
 </li>
 <li>  
-Ensuite, la recherche se fait dans <tt>codebase</tt>, spécifié au lancement du serveur
+Ensuite, la recherche se fait dans <tt>codebase</tt>, spÃ©cifiÃ© au lancement du serveur
 (qui enregistre l'objet). <br/>
 <code>
 -Djava.rmi.server.codebase=
@@ -930,7 +931,7 @@ Ensuite, la recherche se fait dans <tt>codebase</tt>, spécifié au lancement du
 </code>
 </li>
 <li>
-Le client pourra alors télécharger la définition des classes de la codebase.
+Le client pourra alors tÃ©lÃ©charger la dÃ©finition des classes de la codebase.
 </li>
 </ol>
 </p>
@@ -938,7 +939,7 @@ Le client pourra alors télécharger la définition des classes de la codebase.
 </div>
 <div class="handout">
 
-Remarque: en utilisant une codebase, le serveur doit pouvoir accéder avec son CLASSPATH aux definitions de classes, mais le rmiregistry ne doit pas pouvoir le faire.
+Remarque: en utilisant une codebase, le serveur doit pouvoir accÃ©der avec son CLASSPATH aux definitions de classes, mais le rmiregistry ne doit pas pouvoir le faire.
 
 </div>
 
@@ -965,7 +966,7 @@ Remarque: en utilisant une codebase, le serveur doit pouvoir accéder avec son C
 <div class="slide">
 <h1>Exercice</h1>
 
-Ecivez un système de <i>polling</i> de messages, avec plusieurs clients,
+Ecivez un systÃ¨me de <i>polling</i> de messages, avec plusieurs clients,
 un serveur:
 <ul>
 	<li>un client envoie un message vers un serveur connu,</li>

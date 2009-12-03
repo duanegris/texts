@@ -10,7 +10,7 @@
 <meta name="version" content="S5 1.1" />
 <meta name="presdate" content="20050128" />
 <meta name="author" content="S. Genaud" />
-<meta name="company" content="Université Louis Pasteur" />
+<meta name="company" content="UniversitÃ© Louis Pasteur" />
 <!-- configuration parameters -->
 <meta name="defaultView" content="slideshow" />
 <meta name="controlVis" content="hidden" />
@@ -93,60 +93,60 @@ td.list    { background-color : #eee59a; margin : 3px;
 
 <div class="slide">
 <h1>Les Grilles informatiques</h1>
-<h2>Modèles de programmation</h2>
-<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
+<h2>ModÃ¨les de programmation</h2>
+<h4><a href="http://icps.u-strasbg.fr/~genaud">StÃ©phane Genaud</a></h4>
 </div>
 
-<!-- Part : Modèles de programmation -->
+<!-- Part : ModÃ¨les de programmation -->
 
 <div class="slide">
- <h1>Problèmes ouverts</h1>
+ <h1>ProblÃ¨mes ouverts</h1>
  <ul>
- <li> Portabilité, Interopérabilité : indépendance architecture
- <li> Adaptivité : adaptation à la charge 
- <li> Découverte : programmes capables de trouver de nouvelles ressources 
+ <li> PortabilitÃ©, InteropÃ©rabilitÃ© : indÃ©pendance architecture
+ <li> AdaptivitÃ© : adaptation Ã  la charge 
+ <li> DÃ©couverte : programmes capables de trouver de nouvelles ressources 
  <li> Performance :
   	<ul>
-	<li> latence réseau : gros grain
+	<li> latence rÃ©seau : gros grain
 	<li> ordonnancement : conflits potentiels sur ressources
-	<li> variance de la disponibilité : qualité de service
+	<li> variance de la disponibilitÃ© : qualitÃ© de service
 	</ul>
  </ul>
 </div>
 
 <div class="slide">
- <h1>Problèmes ouverts (2)</h1>
+ <h1>ProblÃ¨mes ouverts (2)</h1>
  <ul>
- <li> Tolérance aux pannes : résister à la <em>volatilité</em>. </li>
- <li> Sécurité : 
+ <li> TolÃ©rance aux pannes : rÃ©sister Ã  la <em>volatilitÃ©</em>. </li>
+ <li> SÃ©curitÃ© : 
       <ul>
-  	<li> encapsulation des codes exécutés (sandboxing)</li>
-	<li>vérifier la validité des résultats</li>
+  	<li> encapsulation des codes exÃ©cutÃ©s (sandboxing)</li>
+	<li>vÃ©rifier la validitÃ© des rÃ©sultats</li>
       </ul>
  </li>
  </ul>
 </div>
 
 <div class="slide">
-<h1>Modèles de programmation</h1>
+<h1>ModÃ¨les de programmation</h1>
  <ul>
- <li> Modèles à passages de messages : MPI et variantes </li>
- <li> Modèles RPC (ou client/serveur) : CORBA, RMI, GridRPC, ... </li>
- <li> Modèles Pair-à-pair : Chord, JXTA, ... </li>
+ <li> ModÃ¨les Ã  passages de messages : MPI et variantes </li>
+ <li> ModÃ¨les RPC (ou client/serveur) : CORBA, RMI, GridRPC, ... </li>
+ <li> ModÃ¨les Pair-Ã -pair : Chord, JXTA, ... </li>
  </ul>
 </div>
 
 <div class="slide">
-<h1>Modèles RPC</h1>
+<h1>ModÃ¨les RPC</h1>
 
 <ul>
-<li>Vient du monde système distribué : le client/serveur.</li>
-<li> Utilisation de technologies répandues : RPC, CORBA, RMI sont
+<li>Vient du monde systÃ¨me distribuÃ© : le client/serveur.</li>
+<li> Utilisation de technologies rÃ©pandues : RPC, CORBA, RMI sont
 bien connus.</li>
-<li> Permet une distribution "incrémentale" du code : on peut ne
-remplacer qu'une procédure par un appel distant.</li>
+<li> Permet une distribution "incrÃ©mentale" du code : on peut ne
+remplacer qu'une procÃ©dure par un appel distant.</li>
 <li> Les applications ne peuvent rivaliser en performance
-      avec des applications parallèles : on n'a pas un graphe complet
+      avec des applications parallÃ¨les : on n'a pas un graphe complet
 	de communication entre processus.
 </li>
 </ul>
@@ -193,9 +193,9 @@ grpc_cancel()       /* annule l'appel */
 <div class="slide">
 <h1>Exemple GridRPC (3)</h1>
 <ul>
-<li> Le serveur peut réaliser une implémentation parallèle</li>
+<li> Le serveur peut rÃ©aliser une implÃ©mentation parallÃ¨le</li>
 
-<li> Nécessite un langage d'interface (IDL)</li>
+<li> NÃ©cessite un langage d'interface (IDL)</li>
 </ul>
 <div class="listing">
 <pre>
@@ -213,15 +213,15 @@ Calls "C" mmul(N, A, B, C);
 </div>
 
 <div class="slide">
-<h1>Modèle RPC : problèmes</h1>
+<h1>ModÃ¨le RPC : problÃ¨mes</h1>
 
 <ul>
-<li> performances : goulot d'étranglement constitué
+<li> performances : goulot d'Ã©tranglement constituÃ©
       par l'interface de communication unique de l'objet
 	serveur
 	
-<li> trouver le service adéquat d'après l'appel dans le code client 
-      (interface repository distribué)
+<li> trouver le service adÃ©quat d'aprÃ¨s l'appel dans le code client 
+      (interface repository distribuÃ©)
 
 <li> trouver le <b>meilleur</b> service (le plus rapide,
       le moins cher, ....)
@@ -232,24 +232,24 @@ Calls "C" mmul(N, A, B, C);
 
 
 <div class="slide">
-<h1>Modèle à passages de messages</h1>
+<h1>ModÃ¨le Ã  passages de messages</h1>
 
 <ul>
   <li> Avantages 
 	<ul>
-	<li> portage immédiat d'un code pour machine
-	      parallèle vers une grille (e.g. MPICH-g2)</li>
+	<li> portage immÃ©diat d'un code pour machine
+	      parallÃ¨le vers une grille (e.g. MPICH-g2)</li>
       <li> toujours graphe complet de communication
-	      entre processus (pas de goulot d'étranglement
+	      entre processus (pas de goulot d'Ã©tranglement
 		d'un point de vue logique)</li>
 	</ul>
   </li>
-  <li> Problèmes
+  <li> ProblÃ¨mes
 	<ul>
-	<li> la conception de la parallélisation dépend de l'architecture
+	<li> la conception de la parallÃ©lisation dÃ©pend de l'architecture
 	      cible</li>
-	<li> la grille est composée de liens réseaux et processeurs hétérogènes</li>
-	<li> les performances de l'application parallèle seront faibles</li>
+	<li> la grille est composÃ©e de liens rÃ©seaux et processeurs hÃ©tÃ©rogÃ¨nes</li>
+	<li> les performances de l'application parallÃ¨le seront faibles</li>
 	</ul>
    </li>
 </ul>
@@ -259,35 +259,35 @@ Calls "C" mmul(N, A, B, C);
 <div class="slide">
 <h1> MPI pour Grille</h1>
 
-Amélioration de la librairie de communication
+AmÃ©lioration de la librairie de communication
 <ul> 
-<li> Réglage fin des buffers de tra/nsmission (e.g. globus I/O)</li>
-<li> Utilisation d'un vendor MPI (optimisé) quand disponible</li>
-<li> Opérations de communication collectives adaptées à la topologie physique :
+<li> RÃ©glage fin des buffers de tra/nsmission (e.g. globus I/O)</li>
+<li> Utilisation d'un vendor MPI (optimisÃ©) quand disponible</li>
+<li> OpÃ©rations de communication collectives adaptÃ©es Ã  la topologie physique :
       essayer de moins utiliser les liens les plus lents.
 	(e.g. MPICH-G2, Magpie, PACXMPI)
-	MPICH-G2 différencie 4 niveaux : WAN-TCP,LAN-TCP,intra,vendor MPI </li>
+	MPICH-G2 diffÃ©rencie 4 niveaux : WAN-TCP,LAN-TCP,intra,vendor MPI </li>
 </ul>
 </div>
 
 
 
 <div class="slide">
-<h1>Modèle pair-à-pair</h1>
+<h1>ModÃ¨le pair-Ã -pair</h1>
 
 Chaque noeud de la grille dispose d'une certaine autonomie
 <ul>
 <li>Avantages 
 	<ul>
-  	  <li> protocoles de découverte inhérent à l'architecture</li>
-	  <li> tolérance aux pannes plus facilement réalisable </li>
-        <li> maintenance logiciel/matériel plus simple</li>
+  	  <li> protocoles de dÃ©couverte inhÃ©rent Ã  l'architecture</li>
+	  <li> tolÃ©rance aux pannes plus facilement rÃ©alisable </li>
+        <li> maintenance logiciel/matÃ©riel plus simple</li>
         <li> tradition de prise en compte des pare-feux </li>
 	</ul>
 </li>
-<li> Problèmes
+<li> ProblÃ¨mes
 	<ul>
-	<li> les performances de l'application parallèle seront faibles</li>
+	<li> les performances de l'application parallÃ¨le seront faibles</li>
 	</ul>
 </li>
 </ul>

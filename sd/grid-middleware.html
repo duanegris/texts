@@ -10,7 +10,7 @@
 <meta name="version" content="S5 1.1" />
 <meta name="presdate" content="20050128" />
 <meta name="author" content="S. Genaud" />
-<meta name="company" content="Université Louis Pasteur" />
+<meta name="company" content="UniversitÃ© Louis Pasteur" />
 <!-- configuration parameters -->
 <meta name="defaultView" content="slideshow" />
 <meta name="controlVis" content="hidden" />
@@ -103,7 +103,7 @@ td.list    { background-color : #eee59a; margin : 3px; font-family : courier ; f
 <div class="slide">
         <h1>Les Grilles informatiques</h1>
 	  <h2>Partie 2: middleware</h2>
-<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
+<h4><a href="http://icps.u-strasbg.fr/~genaud">StÃ©phane Genaud</a></h4>
 </div>
 
 
@@ -115,12 +115,12 @@ Les Grilles sont construites sur une base logicielle de type <em>Middleware</em>
 i.e. interface entre les OS et les applications.
 </p>
 <p>
-Les intergiciels pour Grilles permettent de déployer une large classe d'applications
-distribuées (&ne; applications dédiées comme SETI@Home) et proposent un modèle de 
+Les intergiciels pour Grilles permettent de dÃ©ployer une large classe d'applications
+distribuÃ©es (&ne; applications dÃ©diÃ©es comme SETI@Home) et proposent un modÃ¨le de 
 programmation.
 </p>
 <p>
-Quelques projets caractéristiques :
+Quelques projets caractÃ©ristiques :
 </p>
 <ul>
 	  <li><b>Globus</b></li>
@@ -133,14 +133,14 @@ Quelques projets caractéristiques :
 <div class="slide">
 <h1>Middleware pour les grilles</h1>
 <p>
-Les intergiciels pour grilles fournissent souvent des fonctionnalités supplémentaires: 
-des <em>services</em> répondant aux besoins des tuilisateurs de grilles.
+Les intergiciels pour grilles fournissent souvent des fonctionnalitÃ©s supplÃ©mentaires: 
+des <em>services</em> rÃ©pondant aux besoins des tuilisateurs de grilles.
 </p>
 <ul>
 <li> identification des utilisateurs, 
-<li> découverte des ressources ,
-<li> interface uniforme de requête,
-<li> localisation des données.
+<li> dÃ©couverte des ressources ,
+<li> interface uniforme de requÃªte,
+<li> localisation des donnÃ©es.
 </ul>
 </div>
 
@@ -159,8 +159,8 @@ des <em>services</em> répondant aux besoins des tuilisateurs de grilles.
 <h1>OGSA</h1>
 <ul>
    <li>Le <a href="http://www.ggf.org"><i>Global Grid Forum</i></a> tente
-       de définir les éléments fondamentaux d'une grille (OGSI et OGSA).</li>
-   <li>Les participants au forum représentent les intérêts les plus larges.</li>
+       de dÃ©finir les Ã©lÃ©ments fondamentaux d'une grille (OGSI et OGSA).</li>
+   <li>Les participants au forum reprÃ©sentent les intÃ©rÃªts les plus larges.</li>
    <li>L'approche retenue est celle des services : des services de base plus ceux offerts localement.</li>
    <li>Globus suit les recommandations du GGF.</li>
 </ul>
@@ -172,9 +172,9 @@ des <em>services</em> répondant aux besoins des tuilisateurs de grilles.
 	  A base de <i>Web service</i>. 
 	  Un web service :
 	  <ul>
-		    <li>est décrit à travers WSDL,</li>
-	          <li>est publié dans un annuaire,</li>	    
-		    <li>est découvrable,</li>	
+		    <li>est dÃ©crit Ã  travers WSDL,</li>
+	          <li>est publiÃ© dans un annuaire,</li>	    
+		    <li>est dÃ©couvrable,</li>	
 		    <li>et est invocable par un client.</li>
 	  </ul>    
 	  
@@ -187,7 +187,7 @@ OGSA propose d'utiliser les recommandations existantes du W3C : XML, SOAP, WSDL,
 <div class="slide">
 <h1>OGSA>/h1>
 		    
-	  serviceData: les propriétés d'un service qu'on peut invoquer
+	  serviceData: les propriÃ©tÃ©s d'un service qu'on peut invoquer
 	    
 </div>
 -->
@@ -241,23 +241,23 @@ OGSA propose d'utiliser les recommandations existantes du W3C : XML, SOAP, WSDL,
 <h1>DIET</h1>
 
 <p>
-DIET est une plate-forme hiérarchique développée à l'INRIA. 
-Elle est orientée <em>Application Service Provider</em> (ASP) et son modèle de
+DIET est une plate-forme hiÃ©rarchique dÃ©veloppÃ©e Ã  l'INRIA. 
+Elle est orientÃ©e <em>Application Service Provider</em> (ASP) et son modÃ¨le de
 programmation est Grid-RPC.
-Elle permet à des clients de soumettre une requête prise en charge par un serveur
+Elle permet Ã  des clients de soumettre une requÃªte prise en charge par un serveur
 de la plate-forme.
 </p>
 <p>
-Cet intergiciel peut être rangé dans la catégorie des <em>Network Enabled  Servers</em> (NES).
+Cet intergiciel peut Ãªtre rangÃ© dans la catÃ©gorie des <em>Network Enabled  Servers</em> (NES).
 (<a href="http://ninf.apgrid.org/">Ninf</a>, <a href="http://icl.cs.utk.edu/netsolve/">Netsolve</a>, ...)
 </p>
 <p>
-Problématiques:
+ProblÃ©matiques:
 </p>
 <ul>
-<li>Equilibrage de charge: éviter la saturation de requêtes =&gt; architecture hiérarchique.</li>
-<li>Tolérance aux fautes: coupure d'une composante du réseau, non-réponse =&gt; architecture redondante.</li>
-<li>Ordonnancement: où et quand exécuter la tâche. Ex: Avec l'objectif de minimiser le temps de réponse d'une requête, de maximiser l'utilisation des serveurs, ...
+<li>Equilibrage de charge: Ã©viter la saturation de requÃªtes =&gt; architecture hiÃ©rarchique.</li>
+<li>TolÃ©rance aux fautes: coupure d'une composante du rÃ©seau, non-rÃ©ponse =&gt; architecture redondante.</li>
+<li>Ordonnancement: oÃ¹ et quand exÃ©cuter la tÃ¢che. Ex: Avec l'objectif de minimiser le temps de rÃ©ponse d'une requÃªte, de maximiser l'utilisation des serveurs, ...
 </ul>
 
 </div>
@@ -268,26 +268,26 @@ Problématiques:
 
 <img style="float:right" src="grid-img/dietarchi.png" alt="DIET archi"> 
 <ul>
-<li>Master Agent (MA): reçoit des requêtes des clients. 
-Les requêtes doivent mentionner des problèmes DIET référencés (listés sur une page web).
-Le MA recense les capacités des serveurs et choisit le meilleur pour le problème.
-Il envoie ensuite au client l'adresse du serveur sélectionné. 
+<li>Master Agent (MA): reÃ§oit des requÃªtes des clients. 
+Les requÃªtes doivent mentionner des problÃ¨mes DIET rÃ©fÃ©rencÃ©s (listÃ©s sur une page web).
+Le MA recense les capacitÃ©s des serveurs et choisit le meilleur pour le problÃ¨me.
+Il envoie ensuite au client l'adresse du serveur sÃ©lectionnÃ©. 
 </li>
 <li>
-Leader Agent (LA): diffuse les requêtes en cours vers les serveurs. 
-Chaque LA remonte au MA les serveurs capables de résoudre le problème et le 
-temps estimé du calcul sur chacun.
+Leader Agent (LA): diffuse les requÃªtes en cours vers les serveurs. 
+Chaque LA remonte au MA les serveurs capables de rÃ©soudre le problÃ¨me et le 
+temps estimÃ© du calcul sur chacun.
 </li>
 <li>
-Server Daemon (SeD) : gestionnaire du serveur de calcul (éventuellement cluster).
+Server Daemon (SeD) : gestionnaire du serveur de calcul (Ã©ventuellement cluster).
 Connait 
 <ul>
-<li>les données disponibles,</li>
-<li>la liste des problèmes implantés sur le serveur,</li>
-<li>la charge CPU, la mémoire disponible, etc.</li>
+<li>les donnÃ©es disponibles,</li>
+<li>la liste des problÃ¨mes implantÃ©s sur le serveur,</li>
+<li>la charge CPU, la mÃ©moire disponible, etc.</li>
 </ul>
-Il estime le temps de traitement d'un problème (CPU + déplacement des donnnées)
-à l'aide d'un module d'estimation (FAST).
+Il estime le temps de traitement d'un problÃ¨me (CPU + dÃ©placement des donnnÃ©es)
+Ã  l'aide d'un module d'estimation (FAST).
 </li>
 </ul>
 </div>
@@ -301,17 +301,17 @@ Il estime le temps de traitement d'un problème (CPU + déplacement des donnnées)
 <p>
 <a href="http://www-sop.inria.fr/oasis/ProActive/">ProActive</a> est un projet INRIA, Nice.<br/>
 <img style="float:right" src="grid-img/pro-active2.gif" alt="ProActive Logo" width="320"/>
-Objectifs: développer une librarie permettant le développement d'applications 
+Objectifs: dÃ©velopper une librarie permettant le dÃ©veloppement d'applications 
 sur Grille.
 </p>
 <p>
-Caractéristiques:
+CaractÃ©ristiques:
 </p>
 <ul>
-	  <li>Middleware basé sur le modèle des composants: description du déploiement.</li>
-	  <li>Java est choisi pour amoindrir les difficultés liées à l'hétérogénité.</li>
-	  <li>Le modèle de programmation est de type client-server avec des 
-	  communications sophistiquées. </li> 
+	  <li>Middleware basÃ© sur le modÃ¨le des composants: description du dÃ©ploiement.</li>
+	  <li>Java est choisi pour amoindrir les difficultÃ©s liÃ©es Ã  l'hÃ©tÃ©rogÃ©nitÃ©.</li>
+	  <li>Le modÃ¨le de programmation est de type client-server avec des 
+	  communications sophistiquÃ©es. </li> 
 </ul>
 </div>
 
@@ -319,20 +319,20 @@ Caractéristiques:
 <div class="slide">
 <h1>ProActive</h1>
 <p>
-Idée forte: accès transparent aux objets pour le programmeur.<br/>
+IdÃ©e forte: accÃ¨s transparent aux objets pour le programmeur.<br/>
 <img style="margin-left:auto;margin-right:auto;text-align:center;" 
      src="grid-img/proActiveModelColor.gif" 
      alt="ProActive iobjects" width="500"/>
 <br/>
 </p>
 <ul>
-	  <li>La création distante d'objet est rendue très simple (une instruction,
+	  <li>La crÃ©ation distante d'objet est rendue trÃ¨s simple (une instruction,
             plus une pour le placement).</li>
-	  <li>L'appel de méthodes est identique quelque soit l'emplacement de l'objet 
+	  <li>L'appel de mÃ©thodes est identique quelque soit l'emplacement de l'objet 
 	  (proxy en cas d'objet distant).</li>
-	  <li>La synchronisation est implicite (évaluation par nécessité),
-           que se soit des opérations sur groupes ou objets simples.</li>
-	  <li>La <span class="important">migration</span> est partie intégrante.</li>
+	  <li>La synchronisation est implicite (Ã©valuation par nÃ©cessitÃ©),
+           que se soit des opÃ©rations sur groupes ou objets simples.</li>
+	  <li>La <span class="important">migration</span> est partie intÃ©grante.</li>
 </ul>
 </div>
 
@@ -341,8 +341,8 @@ Idée forte: accès transparent aux objets pour le programmeur.<br/>
 <div class="slide">
 <h1>ProActive - objets </h1>
 <p>
-Les <span class="important">objets actifs</span> implémentent les accès à distance de
-manière transparente.<br/>
+Les <span class="important">objets actifs</span> implÃ©mentent les accÃ¨s Ã  distance de
+maniÃ¨re transparente.<br/>
 <br/>
 <img style="float:left;padding-right=20px;" 
      src="grid-img/activeObjectMethodCall.gif" 
@@ -355,24 +355,24 @@ manière transparente.<br/>
    ...
   }
   ...
-  A.calcul(); // calcul peut être 
-              // exécuté à distance
+  A.calcul(); // calcul peut Ãªtre 
+              // exÃ©cutÃ© Ã  distance
 </pre>
 </p>
 
 <ul>
-	  <li>Localement, un proxy est créé. Il gère un espace appelé <em>futur</em> où sera
-	  placée le résultat en retour.</li>
-	  <li>Dans la machine distante, une instance <em>body</em> est créée. 
-	  Elle gère les stubs, et evenutellement la délégation en cas de migration.</li>
+	  <li>Localement, un proxy est crÃ©Ã©. Il gÃ¨re un espace appelÃ© <em>futur</em> oÃ¹ sera
+	  placÃ©e le rÃ©sultat en retour.</li>
+	  <li>Dans la machine distante, une instance <em>body</em> est crÃ©Ã©e. 
+	  Elle gÃ¨re les stubs, et evenutellement la dÃ©lÃ©gation en cas de migration.</li>
 </ul>
 </div>
 
 <!-- ____________________________ ProActive active objects______________________________ -->
 <div class="slide">
-<h1>ProActive - objets - création</h1>
+<h1>ProActive - objets - crÃ©ation</h1>
 <p>
-Création d'un objet actif avec <tt>ProActive.newactive()</tt>.
+CrÃ©ation d'un objet actif avec <tt>ProActive.newactive()</tt>.
 </p>
 <div class="listing">
 <pre>
@@ -386,11 +386,11 @@ Création d'un objet actif avec <tt>ProActive.newactive()</tt>.
 </pre>
 </div>
 <p>
-L'appel à une méthode de <tt>a</tt> provoque la copie par valeur
-des paramètres et la requête est mise dans la file d'attente de <tt>a</tt>. 
+L'appel Ã  une mÃ©thode de <tt>a</tt> provoque la copie par valeur
+des paramÃ¨tres et la requÃªte est mise dans la file d'attente de <tt>a</tt>. 
 </p>
 <p>
-Ici, <tt>a</tt> est créé dans la JVM d'origine (locale).
+Ici, <tt>a</tt> est crÃ©Ã© dans la JVM d'origine (locale).
 </p>
 
 
@@ -398,9 +398,9 @@ Ici, <tt>a</tt> est créé dans la JVM d'origine (locale).
 
 <!-- ____________________________ ProActive active objects______________________________ -->
 <div class="slide">
-<h1>ProActive - objets - création</h1>
+<h1>ProActive - objets - crÃ©ation</h1>
 <p>
-Création d'un objet actif distant.
+CrÃ©ation d'un objet actif distant.
 </p>
 <div class="listing">
 <pre>
@@ -416,7 +416,7 @@ Création d'un objet actif distant.
 </p>
 
 <p>
-Note: on peut "rendre actif" un objet ordinaire après sa création avec 
+Note: on peut "rendre actif" un objet ordinaire aprÃ¨s sa crÃ©ation avec 
 <tt>turnActive()</tt>.
 </p>
 
@@ -432,12 +432,12 @@ Note: on peut "rendre actif" un objet ordinaire après sa création avec
 <p>
 <br/>
  <b>Placement des objets actifs</b> sur un
-  <tt>Node</tt>, élément d'un <tt>VirtualNode</tt>.
-  Un descripteur de déploiement donne :
+  <tt>Node</tt>, Ã©lÃ©ment d'un <tt>VirtualNode</tt>.
+  Un descripteur de dÃ©ploiement donne :
   <ul>
     <li>composition des VirtualNodes,</li>
     <li>la distribution des nodes sur les JVMs,</li>
-    <li>la manière de démarrer le process.</li>
+    <li>la maniÃ¨re de dÃ©marrer le process.</li>
   </ul>
 </p>
 
@@ -448,11 +448,11 @@ Note: on peut "rendre actif" un objet ordinaire après sa création avec
 <!-- _______________________ objects mapping (nodes)______________________________ -->
 
 <div class="slide">
-<h1>ProActive - déploiement</h1>
+<h1>ProActive - dÃ©ploiement</h1>
   
 
 <p>
-Créé un noeud appelé <tt>Dispatcher</tt> qui sera placé dans la JVM <tt>jvm1</tt>.
+CrÃ©Ã© un noeud appelÃ© <tt>Dispatcher</tt> qui sera placÃ© dans la JVM <tt>jvm1</tt>.
 </p>
 
 
@@ -476,7 +476,7 @@ Créé un noeud appelé <tt>Dispatcher</tt> qui sera placé dans la JVM <tt>jvm1</tt
     &lt;/mapping&gt;
     &lt;jvm name="<b>jvm1</b>"&gt; 
       &lt;creation&gt;
-        &lt;processReference refid="<b>jvmProcess</b>"/&gt; <span style="color:firebrick">(décrit dans la partie infrastructure)</span>
+        &lt;processReference refid="<b>jvmProcess</b>"/&gt; <span style="color:firebrick">(dÃ©crit dans la partie infrastructure)</span>
         &lt;/creation&gt;
     &lt;/jvm&gt;    
 &lt;/deployment&gt;
@@ -490,7 +490,7 @@ Créé un noeud appelé <tt>Dispatcher</tt> qui sera placé dans la JVM <tt>jvm1</tt
 
 <!-- ____________________________  ______________________________ -->
 <div class="slide">
-<h1>ProActive - déploiement</h1>
+<h1>ProActive - dÃ©ploiement</h1>
 <p>
 Extrait de code typique:
 </p>
@@ -515,12 +515,12 @@ Node node = dispatcher.getNode();
 Un <i>VirtualNode</i> peut regrouper plusieurs JVM.
 </p>
 <p>
-Une JVM peut héberger, un ou plusieurs <i>Nodes</i>. <br/>
-Dans le cas d'un cluster, on associe généralement <i>n</i> JVM avec <i>n</i>Nodes. 
+Une JVM peut hÃ©berger, un ou plusieurs <i>Nodes</i>. <br/>
+Dans le cas d'un cluster, on associe gÃ©nÃ©ralement <i>n</i> JVM avec <i>n</i>Nodes. 
 </p>
 
 <p>
-Le détail des possibilités de configuration: 
+Le dÃ©tail des possibilitÃ©s de configuration: 
 [ <a href="http://www-sop.inria.fr/oasis/ProActive/doc/api/org/objectweb/proactive/doc-files/Descriptor.html">html</a> ].
 </p>
 
@@ -530,13 +530,13 @@ Le détail des possibilités de configuration:
 <div class="slide">
 <h1>ProActive - groupes</h1>
 <p>
-Les méthodes les plus utilisées pour la gestion de groupe sont fournies par 
+Les mÃ©thodes les plus utilisÃ©es pour la gestion de groupe sont fournies par 
 la classe
 <a 
 href="http://www-sop.inria.fr/oasis/ProActive/doc/api/org/objectweb/proactive/core/group/ProActiveGroup.html">ProActiveGroup</a>.
-Ces groupes sont typés (éléments de même classe ou plus abstraits).
+Ces groupes sont typÃ©s (Ã©lÃ©ments de mÃªme classe ou plus abstraits).
 </p>
-<p>Par exemple, pour la <b>création</b> d'un groupe:
+<p>Par exemple, pour la <b>crÃ©ation</b> d'un groupe:
 </p>
 <div class="listing">
 <pre>
@@ -552,8 +552,8 @@ Ces groupes sont typés (éléments de même classe ou plus abstraits).
 <div class="slide">
 <h1>ProActive - groupes</h1>
 <p>
-Les groupes permettent de déclencher des 
-<span class="important">appels de méthode en parallèle</span>.
+Les groupes permettent de dÃ©clencher des 
+<span class="important">appels de mÃ©thode en parallÃ¨le</span>.
 
 </p>
 <p>
@@ -570,7 +570,7 @@ Soit la classe <tt>C</tt>:
 
 <p>
 On peut former un groupe G d'objets actifs de type <tt>C</tt>,
-et invoquer la méthode <tt>calcul()</tt> sur chaque élément
+et invoquer la mÃ©thode <tt>calcul()</tt> sur chaque Ã©lÃ©ment
 du groupe (map).
 </p>
 <div class="listing">
@@ -583,8 +583,8 @@ du groupe (map).
 
 <p>
 Autant d'appels <span class="important">asynchrones</span> 
-<tt>calcul()</tt> sont déclenchés qu'il n'y a
-d'éléments dans <tt>groupeDeC</tt>.
+<tt>calcul()</tt> sont dÃ©clenchÃ©s qu'il n'y a
+d'Ã©lÃ©ments dans <tt>groupeDeC</tt>.
 </p>
 </div>
 
@@ -607,7 +607,7 @@ Les groupes permettent les
 </pre>
 </div>
 <p>
-Les 3 appels à <tt>uneMethodeDeR()</tt> seront effectués au fur et à mesure
+Les 3 appels Ã  <tt>uneMethodeDeR()</tt> seront effectuÃ©s au fur et Ã  mesure
 que <tt>r</tt> se remplit.
 </p>
 <p>
@@ -637,7 +637,7 @@ static&nbsp;void</TD>
 
 </td><td>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-attend que tous les résultats soient arrivés.</TD>
+attend que tous les rÃ©sultats soient arrivÃ©s.</TD>
 </TR>
 <tr>
 <td>
@@ -655,7 +655,7 @@ static&nbsp;java.lang.Object</TD>
 
 </td><td>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-attend l'arrivée d'un résultat et retourne ce résultat.</TD>
+attend l'arrivÃ©e d'un rÃ©sultat et retourne ce rÃ©sultat.</TD>
 </TR>
 <tr>
 <td>
@@ -717,8 +717,8 @@ Les groupes permettent les
 </p>
 
 <p>
-Quand un groupe est passé en argument d'une méthode appliquée sur groupe,
-le paramètre est <span class="important">diffusé</span> à tous les
+Quand un groupe est passÃ© en argument d'une mÃ©thode appliquÃ©e sur groupe,
+le paramÃ¨tre est <span class="important">diffusÃ©</span> Ã  tous les
 objets actifs du groupe.
 <div class="listing">
 <pre>
@@ -726,7 +726,7 @@ objets actifs du groupe.
   
   Data mydata  = (Data) ProActiveGroup.newGroup("Data",{data1,data2,data3},nodes);
 
-  g.calcul(mydata); // chaque élem. de g recoit mydata en entier
+  g.calcul(mydata); // chaque Ã©lem. de g recoit mydata en entier
 </pre>
 </div>
 <p>
@@ -738,7 +738,7 @@ Au lieu
   Data mydata  = (Data) ProActiveGroup.newGroup("Data",{data1,data2,data3},nodes);
   
   ProActiveGroup.setScatterGroup( mydata );
-  g.calcul( mydata ); // chaque élem. de g recoit un objet de mydata 
+  g.calcul( mydata ); // chaque Ã©lem. de g recoit un objet de mydata 
 </pre>
 </div>
 
