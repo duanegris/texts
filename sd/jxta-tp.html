@@ -19,8 +19,8 @@
 
 <h1>Installer JXTA</h1>
 
-TÃ©lÃ©charger JXTA (<a href="http://www.jxta.org">www.jxta.org</a>),
-enregistrer les jar dans un rÃ©pertoire <tt>$HOME/jxta</tt>, et
+Télécharger JXTA (<a href="http://www.jxta.org">www.jxta.org</a>),
+enregistrer les jar dans un répertoire <tt>$HOME/jxta</tt>, et
 renseigner ses variables d'environnment pour une utilisation simple. Par exemple,
 dans <tt>.bashrc</tt>
 <pre>
@@ -40,22 +40,22 @@ Dans le cours, l'exemple complet de pipe
 advertisement : [ <a href="src/jxta/pipe/pipexample.adv">pipexample.adv</a> ].
 </p>
 <p>
-montre la crÃ©ation d'un pipe quand les
+montre la création d'un pipe quand les
 <b>deux</b> pairs connaissent l'ID du pipe (contenu dans pipexample.adv). 
 </p>
 
-Bien sÃ»r, dans la rÃ©alitÃ© ce n'est pas toujours le cas. 
+Bien sûr, dans la réalité ce n'est pas toujours le cas. 
 Ici, on souhaite transformer le code existant pour 
 <ul>
-        <li>qu'un pair, appelons le <tt>Server</tt> qui possÃ¨de <tt>pipexample.adv</tt>, publie
+        <li>qu'un pair, appelons le <tt>Server</tt> qui possède <tt>pipexample.adv</tt>, publie
         l'annonce de ce pipe. 
         On pourra partir du code de <tt>PipeListener.java</tt>.</li>
 
         <li>d'autres pairs (appelons ce type de pair <tt>Client</tt>, 
-        tentent de dÃ©couvrir ce pipe, connaissant son nom (balise name dans <tt>pipexample.adv</tt>),
-        puis quand ils l'ont trouvÃ©, Ã©crivent dessus.</li>
+        tentent de découvrir ce pipe, connaissant son nom (balise name dans <tt>pipexample.adv</tt>),
+        puis quand ils l'ont trouvé, écrivent dessus.</li>
 
-        <li>CÃ´tÃ© Server, implÃ©menter un <i>listener</i> qui affiche les messages reÃ§us.</li>
+        <li>CÃ´té Server, implémenter un <i>listener</i> qui affiche les messages reÃ§us.</li>
 </ul>
 
 
