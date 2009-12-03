@@ -17,18 +17,18 @@
 
 <div class="innerbox">
 
-<i>Note</i>: les exercices demandent d'Ã©crire les programmes princpalement en PHP. Vous pourrez vous aider
+<i>Note</i>: les exercices demandent d'écrire les programmes princpalement en PHP. Vous pourrez vous aider
 des explications suivantes sur les tableaux en PHP si vous en avez besoin:
 <a href="http://tag.u-strasbg.fr/~genaud/tutorial/php/ch03.html#id2481778">http://tag.u-strasbg.fr/~genaud/tutorial/php/ch03.html#id2481778</a>.
 
 
-<h1>Utilisation d'un service commercial de gÃ©olocalisation</h1>
+<h1>Utilisation d'un service commercial de géolocalisation</h1>
 
 <p>
-La sociÃ©tÃ© <a href="http://www.fraudlabs.com">FraudLabs</a> propose un ensemble (payants) de services web
-ayant trait Ã  la gÃ©o-localisation. Ceux-ci peuvent par exemple Ãªtre utilisÃ©s pour 
-vÃ©rifier la validitÃ© d'une adresse saisie par un client, pour localiser gÃ©ographiquement
-un client d'aprÃ¨s l'IP de sa machine, ...
+La société <a href="http://www.fraudlabs.com">FraudLabs</a> propose un ensemble (payants) de services web
+ayant trait Ã  la géo-localisation. Ceux-ci peuvent par exemple Ãªtre utilisés pour 
+vérifier la validité d'une adresse saisie par un client, pour localiser géographiquement
+un client d'après l'IP de sa machine, ...
 </p>
 <p>
 
@@ -36,7 +36,7 @@ un client d'aprÃ¨s l'IP de sa machine, ...
 
 
 
-On souhaite utiliser le service de GÃ©olocalisation qui Ã  une adresse IP rend les coordonnÃ©es gÃ©ographiques (lattitude, longitude) de la machine.
+On souhaite utiliser le service de Géolocalisation qui Ã  une adresse IP rend les coordonnées géographiques (lattitude, longitude) de la machine.
 Examiner la description WSDL du service :
 <a href="http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl">
 http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
@@ -45,11 +45,11 @@ http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
 <ol>
 	<li><i>Analyse du WSDL</i>
 	<ul>
-		<li>Cherchez le nom de la mÃ©thode unique proposÃ©e par ce service.
+		<li>Cherchez le nom de la méthode unique proposée par ce service.
 		<!-- <wsdl:operation name="IP2Location"> -->
 		</li>
-		<li>Cherchez les entrÃ©es et sorties de cette mÃ©thode.
-		Quel est le nom des entrÃ©es, quel est le nom des sorties ?
+		<li>Cherchez les entrées et sorties de cette méthode.
+		Quel est le nom des entrées, quel est le nom des sorties ?
 		<!-- <wsdl:types> 
 			in = <s:element name="IP2Location">
 			out = <s:element name=IP2LocationResponse">
@@ -57,10 +57,10 @@ http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
 		</li>
 		<li>
 		<li>
-		Quels sont les paramÃ¨tres (nom et types) qui composent l'entrÃ©e ?
+		Quels sont les paramètres (nom et types) qui composent l'entrée ?
 		</li>
 		<li>
-		Quels sont les paramÃ¨tres (nom et types) qui composent l'entrÃ©e ?
+		Quels sont les paramètres (nom et types) qui composent l'entrée ?
 		</li>
 		<!-- entree :  
                  <s:complexType>
@@ -79,7 +79,7 @@ http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
 		-->
         	</li>
 		<li>
-		A quels noms de champs le type de la sortie fait il rÃ©fÃ©rence ?
+		A quels noms de champs le type de la sortie fait il référence ?
 		<!--
 	        <s:sequence>
                   <s:element minOccurs="0" maxOccurs="1" name="COUNTRYCODE" type="s:string"/>
@@ -98,12 +98,12 @@ http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
 	</ul>
 	<li><i>Ecriture d'un client PHP :</i>
 	<ul>
-		<li>Demander un numÃ©ro de license gratuit Ã  <a href="http://www.fraudlabs.com/freelicense.aspx?PackageID=1">http://www.fraudlabs.com/freelicense.aspx?PackageID=1</a>.</li>
-		<li>Vous disposez d'un interprÃ©teur PHP5 (taper <tt>php</tt> ou <tt>php5</tt>) compilÃ© avec le support SOAP (taper  <tt>php -i</tt> pour le vÃ©rifier).</li>
-		<li>Appeler le web-service: construisez un tableau associatif pour les paramÃ¨tres d'entrÃ©e ("IP" et "LICENSE").</li>
+		<li>Demander un numéro de license gratuit Ã  <a href="http://www.fraudlabs.com/freelicense.aspx?PackageID=1">http://www.fraudlabs.com/freelicense.aspx?PackageID=1</a>.</li>
+		<li>Vous disposez d'un interpréteur PHP5 (taper <tt>php</tt> ou <tt>php5</tt>) compilé avec le support SOAP (taper  <tt>php -i</tt> pour le vérifier).</li>
+		<li>Appeler le web-service: construisez un tableau associatif pour les paramètres d'entrée ("IP" et "LICENSE").</li>
 		<!-- array("IP" => "130.79.192.160", "LICENSE" => "OA-457-....") -->
 
-		<li>Afficher la rÃ©ponse: si le champ <tt>Err</tt> n'est pas vide, afficher les valeurs de latitude, longitude, sinon afficher l'erreur.
+		<li>Afficher la réponse: si le champ <tt>Err</tt> n'est pas vide, afficher les valeurs de latitude, longitude, sinon afficher l'erreur.
 		<!-- 
 	   	$result = $SoapResponse -> GetLocationByIPResult;
 	   	if (!isset($result->Error)) {
@@ -126,12 +126,12 @@ http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
 Recherche dans des dictionnaires. 
 Le noeud SOAP <a href="http://services.aonaware.com/DictService/DictService.asmx">
 http://services.aonaware.com/DictService/DictService.asmx
-</a> fournit diffÃ©rents services.
-On souhaite utiliser la mÃ©thode Define qui rend la dÃ©finition d'un mot anglais.
+</a> fournit différents services.
+On souhaite utiliser la méthode Define qui rend la définition d'un mot anglais.
 </p>
 <ol>
-	<li>Le paramÃ¨tre d'entrÃ©e de Define est une chaine unique (word).
-	SchÃ©matiser la structure (imbrication des champs) de la rÃ©ponse.</li>
+	<li>Le paramètre d'entrée de Define est une chaine unique (word).
+	Schématiser la structure (imbrication des champs) de la réponse.</li>
 	<!--
 		DefineResult
 			Word
@@ -142,11 +142,11 @@ On souhaite utiliser la mÃ©thode Define qui rend la dÃ©finition d'un mot ang
 					Id
 					Name
 	-->
-	<li>Ecrire un client PHP qui utilise cette mÃ©thode. 
+	<li>Ecrire un client PHP qui utilise cette méthode. 
 Vous pouvez utiliser le WSDL disponible Ã  <a href="http://services.aonaware.com/DictService/DictService.asmx?WSDL">
 http://services.aonaware.com/DictService/DictService.asmx?WSDL
 </a>.
-(Conseil : vous devrez utiliser 3 niveaux d'itÃ©rations pour parcourir le rÃ©sultat contenu dans <tt>DefineResult</tt> ; la primitive <tt>foreach ($tableau as $cle =&gt; $val) {}</tt> est adÃ©quate pour cela. La primitive <tt>var_dump($variable)</tt> ou <tt>print_r($variable)</tt> est Ã©galement d'un grand secours pour analyser la structuration des donnÃ©es gÃ©nÃ©rÃ©e par la classe SoapClient).</li>
+(Conseil : vous devrez utiliser 3 niveaux d'itérations pour parcourir le résultat contenu dans <tt>DefineResult</tt> ; la primitive <tt>foreach ($tableau as $cle =&gt; $val) {}</tt> est adéquate pour cela. La primitive <tt>var_dump($variable)</tt> ou <tt>print_r($variable)</tt> est également d'un grand secours pour analyser la structuration des données générée par la classe SoapClient).</li>
 	<!--
 
 		Reponse (principe d'acces aux donnees) : 
@@ -166,7 +166,7 @@ http://services.aonaware.com/DictService/DictService.asmx?WSDL
 
 		programme complet : http://tag.u-strasbg.fr/~genaud/tutorial/sd/cvs/src/soap/php/DictService_wsdl.php.txt
 	-->
-	<li>Question subsidiaire: Ecrire un client SOAP::Lite qui utilise cette mÃ©thode.</li>
+	<li>Question subsidiaire: Ecrire un client SOAP::Lite qui utilise cette méthode.</li>
 </ol>
 
 
