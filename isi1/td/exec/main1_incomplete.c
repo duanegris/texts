@@ -1,11 +1,14 @@
 /* main1.c */
 #include <stdio.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <dlfcn.h>
 #include "compress.h"
 #define MAX_SIZE 4096
 UBYTE buffer_in[MAX_SIZE + 256]; /* zones de travail pour */
 UBYTE buffer_out[MAX_SIZE + 256]; /* treatment */
+
+
 /* le pointeur de fonction operation doit recevoir l'adresse de la
  * fonction choisie par l'utilisateur : compress ou uncompress */
 void (*operation)(UBYTE *, ULONG, UBYTE *, ULONG *) = NULL;
@@ -57,11 +60,16 @@ void (* loader(char *function))(UBYTE*, ULONG, UBYTE*,ULONG*) {
 	  return (void (*) (UBYTE *, ULONG, UBYTE *, ULONG *))
 		    dlsym(.................);
 }
-char *argv0;
-void usage(void);
+
+
+
+void usage(char *prog) {
+		    fprintf(stderr, "Usage: %s operation f1 f2\n", prog);
+	  exit(1);
+}
 main(int argc, char **argv) {
 	  argv0 = argv[0];
-	  if (argc < 4) usage();
+	  if (argc < 4) usage( argv[0]);
 	  /* Integration du fichier partageable choisi dans l'image memoire
 	   * puis recuperation de l'adresse virtuelle de la fonction a
 	   * executer. Placer ci-dessous le second argument de la commande */
@@ -71,7 +79,4 @@ main(int argc, char **argv) {
 	   * Placer ci-dessous les 3eme et 4eme arguments */
 	  treatment(.................);
 }
-void usage(void) {
-		    fprintf(stderr, "Usage: %s operation f1 f2\n", argv0);
-	  exit(1);
-}
+

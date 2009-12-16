@@ -1,14 +1,18 @@
 /* main1.c */
 #include <stdio.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <dlfcn.h>
 #include "compress.h"
 #define MAX_SIZE 4096
+
 UBYTE buffer_in[MAX_SIZE + 256]; /* zones de travail pour */
 UBYTE buffer_out[MAX_SIZE + 256]; /* treatment */
+
 /* le pointeur de fonction operation doit recevoir l'adresse de la
  * fonction choisie par l'utilisateur : compress ou uncompress */
 void (*operation)(UBYTE *, ULONG, UBYTE *, ULONG *) = NULL;
+
 /* la fonction treatment() effectue le travail requis : compresser
  * ou decompresser le fichier dont le nom lui est passe dans input.
  * Le resultat de l'operation est place dans le fichier dont le nom
@@ -33,13 +37,14 @@ void treatment(char *input, char *output) {
 	  length_in = read(in, buffer_in, sizeof(UBYTE)* MAX_SIZE);
 	  /* Modification du buffer par appel de l'operation (compress ou
 	   * uncompress) */
-	  operation( buffer_in, length_in, buffer_out, length_out);
+	  operation( buffer_in, length_in, buffer_out, &length_out);
 	  /* Ecriture du buffer resultat dans le fichier de sortie */
 	  write( out, buffer_out, sizeof(UBYTE)*length_out);
 	  /* fermeture des fichiers d'entrée et de sortie */
 	  close(in);
 	  close(out);
 }
+
 /* La fonction loader() procede au chargement dynamique du contenu
  * d'un fichier objet designe par <function>.so, puis retourne
  * l'adresse virtuelle ou la <function>() a ete implantee */
@@ -55,22 +60,27 @@ void (* loader(char *function))(UBYTE*, ULONG, UBYTE*,ULONG*) {
 	  }
 	  /* retour de l'adresse de la fonction chargee */
 	  return (void (*) (UBYTE *, ULONG, UBYTE *, ULONG *))
-		    dlsym( so_handle, partageable );
+		    dlsym( so_handle, function );
 }
 char *argv0;
 void usage(void);
+
+/**
+ * main : 
+ **/
 main(int argc, char **argv) {
 	  argv0 = argv[0];
 	  if (argc < 4) usage();
 	  /* Integration du fichier partageable choisi dans l'image memoire
 	   * puis recuperation de l'adresse virtuelle de la fonction a
 	   * executer. Placer ci-dessous le second argument de la commande */
-	  operation = loader(.................);
-	  printf("Called function address : %x\n", operation);
+	  operation = loader( argv[1]);
+	  //printf("Called function address : %p\n", operation);
 	  /* Traitement du fichier "entrée" pour produire le fichier "sortie".
 	   * Placer ci-dessous les 3eme et 4eme arguments */
-	  treatment(.................);
+	  treatment( argv[2], argv[3] );
 }
+
 void usage(void) {
 		    fprintf(stderr, "Usage: %s operation f1 f2\n", argv0);
 	  exit(1);
