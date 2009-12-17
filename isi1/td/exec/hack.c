@@ -14,9 +14,9 @@ void muahaha()
     for ( i=10 ; i>-10; i-- ) {
          printf("[stack %d] : 0x%lx",i,*(top+i)); 
 	   if (i==0)
-         	printf(" <-- first var on stack\n",i);
+         	printf(" <-- first var on stack\n");
     	   else 
-         	printf("\n",i);
+         	printf("\n");
     }
 
     int offset = 4;
