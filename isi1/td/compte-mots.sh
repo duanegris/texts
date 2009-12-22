@@ -1,4 +1,5 @@
 # !/bin/sh
+# S. Genaud 19/nov/2009
 
 motif=$1
 motiflen=`echo "$motif" | wc -c` #nombre de caractères du motif (attention +1 pour terminal)
