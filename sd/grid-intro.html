@@ -11,7 +11,7 @@
 <meta name="version" content="S5 1.1" />
 <meta name="presdate" content="20090128" />
 <meta name="author" content="S. Genaud" />
-<meta name="company" content="UniversitÃ© Louis Pasteur" />
+<meta name="company" content="Université Louis Pasteur" />
 <!-- configuration parameters -->
 <meta name="defaultView" content="slideshow" />
 <meta name="controlVis" content="hidden" />
@@ -94,7 +94,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 <div class="slide">
 <h1>Les Grilles informatiques</h1>
 <h2>Partie 1: introduction</h2>
-<h4><a href="http://icps.u-strasbg.fr/~genaud">StÃ©phane Genaud</a></h4>
+<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
 </div>
 
 
@@ -103,9 +103,9 @@ td.list    { background-color : #eee59a; margin : 3px;
  <ul>
 	   <li> Qu'est ce qu'une Grille ?
 	   <ul>
-		     <li>Le rÃªve</li>
-		     <li>La rÃ©alitÃ©: les diffÃ©rentes "grilles"</li>
-		     <li>Le dÃ©nominateur commun des grilles</li>
+		     <li>Le rêve</li>
+		     <li>La réalité: les différentes "grilles"</li>
+		     <li>Le dénominateur commun des grilles</li>
 	   </ul>
 	   </li>
 	   
@@ -121,49 +121,49 @@ td.list    { background-color : #eee59a; margin : 3px;
 <h1>Origines</h1>
 
 <p>
- Une nouvelle mode ? I. Foster a mobilisÃ© les esprits avec l'image du rÃ©seau Ã©lectrique
+ Une nouvelle mode ? I. Foster a mobilisé les esprits avec l'image du réseau électrique
  (Grid aux U.S.A). 
  <i>"The Grid : Blueprint for a New Computing Infrastructure"</i>, Foster et Kesselman, 1998.
  
  <img style="float:right" src="grid-img/grid2_book_cover.jpg" alt="couverture"/> 
 
- PlutÃ´t une convergence de maturitÃ© de technologies et de besoins.
+ Plutà´t une convergence de maturité de technologies et de besoins.
  Pour les technologies :
  </p>
 <ul>
-  <li>rÃ©seaux,</li>
+  <li>réseaux,</li>
   <li>logiciels de communication et intergiciels,</li>
   <li>cryptographie.</li>
 </ul>
 <p>
-  Pour les besoins, la conviction qu'on peut gÃ©nÃ©raliser le partage 
-  des ressources de maniÃ¨re aussi universelle qu'avec http.
+  Pour les besoins, la conviction qu'on peut généraliser le partage 
+  des ressources de manière aussi universelle qu'avec http.
 </p>
 </div>
 
 <div class="slide">
 <h1>Technologies</h1>
 <ul>
-<li> RÃ©seaux :  exemple aux U.S. : rÃ©seau NFSNET, puis Abilene.
+<li> Réseaux :  exemple aux U.S. : réseau NFSNET, puis Abilene.
      Evolution de la bande passante des liens de dorsale (en Mb/s)
    <table style="margin : auto" border="1">
    <tr><td>1986</td><td>1989</td><td>1991</td><td>1995</td><td>2000</td><td>2003</td></tr>
    <tr><td>0.056</td><td>1.5 </td><td> 45</td><td>  155</td><td>2500</td><td>10000</td></tr>
    </table>
    <p>
-   En France/Europe : depuis 2003, liens inter-sites Ã  2.5 Gb/s,
+   En France/Europe : depuis 2003, liens inter-sites à  2.5 Gb/s,
    GEANT entre pays : 10 Gb/s  
    </p>
 </li>
 
 <li> Middleware : HTTP, Corba, JVM, .... </li>
 <li> Cryptographie  :
-          Chiffrement asymÃ©trique, certificats </li>
+          Chiffrement asymétrique, certificats </li>
 </ul>
 </div>
 
 <div class="slide">
-<h1>Pour rÃ©sumer le rÃªve, on peut dire ...</h1>
+<h1>Pour résumer le rêve, on peut dire ...</h1>
 
 <p>
 While the <b>Web</b> is a service for sharing information over the Internet, 
@@ -180,70 +180,70 @@ and aims ultimately to turn the global network of computers into one vast comput
 </div>
 
 
-<!-- _______________________________  RÃ©alitÃ© _____________________________ -->
+<!-- _______________________________  Réalité _____________________________ -->
 <div class="slide">
-<h1>La rÃ©alitÃ© des Grilles</h1>
+<h1>La réalité des Grilles</h1>
 
 <p>
 Que couvre au sens large le terme "une grille" ?
 </p>
 <ul>
-  <li>L'activitÃ©: l'utilisation faite des logiciels (e.g. calcul distribuÃ©, partage de fichier),</li>
-  <li>Le matÃ©riel (e.g. des PCs de particuliers, le cluster de 10000 PCs de Google), </li>
-  <li>Les utilisateurs/les fournisseurs (qui a le droit d'utiliser le systÃ¨me, qui doit l'administrer).</li>
+  <li>L'activité: l'utilisation faite des logiciels (e.g. calcul distribué, partage de fichier),</li>
+  <li>Le matériel (e.g. des PCs de particuliers, le cluster de 10000 PCs de Google), </li>
+  <li>Les utilisateurs/les fournisseurs (qui a le droit d'utiliser le système, qui doit l'administrer).</li>
 </ul>
 
 <p>
-Dans chacune de ces catÃ©gories existe une grande diversitÃ©.
+Dans chacune de ces catégories existe une grande diversité.
 </p>
 </div>
 
 <!-- _______________________________ L'existant  _____________________________ -->
 
 <div class="slide">
-<h1>CatÃ©gories</h1>
+<h1>Catégories</h1>
 
 <p>
-Aujourd'hui, les applications distribuÃ©es Ã  large Ã©chelle sont variÃ©es, car
-grande diversitÃ© de besoins et d'utilisations des ressources informatiques.
-On peut les classer en catÃ©gories:
+Aujourd'hui, les applications distribuées à  large échelle sont variées, car
+grande diversité de besoins et d'utilisations des ressources informatiques.
+On peut les classer en catégories:
 </p>
 <ul>
-<li>Calcul distribuÃ©,</li>
+<li>Calcul distribué,</li>
 <li>Meta-computing,</li>
 <li>Internet computing,</li>
-<li>RÃ©seaux pair-Ã -pair.</li>
+<li>Réseaux pair-à -pair.</li>
 </ul>
 <p>
-De nombreux projets rÃ©ussis dans chacun de ces domaines
-ont confirmÃ© l'intÃ©rÃªt du partage de ressources.
+De nombreux projets réussis dans chacun de ces domaines
+ont confirmé l'intérêt du partage de ressources.
 </p>
 </div>
 
 <div class="slide">
-<h1>Calcul distribuÃ©</h1>
+<h1>Calcul distribué</h1>
 
 <p>
-DÃ©signe toutes les solutions oÃ¹ plusieurs ordinateurs rÃ©solvent un problÃ¨me ensemble,
-en communiquant Ã  travers le rÃ©seau.
+Désigne toutes les solutions oà¹ plusieurs ordinateurs résolvent un problème ensemble,
+en communiquant à  travers le réseau.
 </p>
 <p>
-Terme gÃ©nÃ©rique mais utilisÃ© surtout aujourd'hui pour dÃ©signer des projets qui utilisent des 
-ressources internes Ã  une organisation
+Terme générique mais utilisé surtout aujourd'hui pour désigner des projets qui utilisent des 
+ressources internes à  une organisation
 (les plus nombreux).
 </p>
 <div>
 <img style="float:right" src="grid-img/ilm_yoda.png" alt="frame rendering"/> 
 <p>
-Mises en oeuvre trÃ¨s variÃ©es: de CORBA, en passant par RMI, Ã  MPI, dÃ©ployÃ©es sur des rÃ©seau de stations, cluster ou mÃªme machine parallÃ¨le.
+Mises en oeuvre très variées: de CORBA, en passant par RMI, à  MPI, déployées sur des réseau de stations, cluster ou même machine parallèle.
 </p>
 <div style="font-size: smaller; background-color:#ddddff;border: dashed black 1px; padding-right : 2px; padding-left : 2px; magin-right:10px;">
 <b>Exemple</b>: <br/>
 rendu d'images dans un film. Il faut produire au moins
-20 scÃ¨nes/s * 60 s * 90 min = 108 000 scÃ¨nes.
-Si une scÃ¨ne coÃ»te 1h de calcul, il faut 12 ans de calcul.
+20 scènes/s * 60 s * 90 min = 108 000 scènes.
+Si une scène coûte 1h de calcul, il faut 12 ans de calcul.
 <p>
-ILM, filiale de Dreamworks a dÃ©ployÃ©
+ILM, filiale de Dreamworks a déployé
 <a href="http://www.linuxjournal.com/xstatic/articles/lj/0099/6011/6011s1.html">
 350 PCs pour Star Wars Episode II
 </a>.
@@ -258,14 +258,14 @@ ILM, filiale de Dreamworks a dÃ©ployÃ©
 <h1>Meta-computing</h1>
 
 <p>
-Dans les annÃ©es 1990, ce terme dÃ©signe des projets d'interconnexion de super-calculateurs
-pour les capacitÃ©s records d'une telle installation. Exemple (1997-2004), program PACI.
+Dans les années 1990, ce terme désigne des projets d'interconnexion de super-calculateurs
+pour les capacités records d'une telle installation. Exemple (1997-2004), program PACI.
 <img style="float:right" src="grid-img/nsf_PACI_1998.gif" alt="Project NFS PACI"/>
 </p>
 <p>
-Les applications dÃ©ployÃ©es sont des applications <i class="important">parallÃ¨les</i>.
-Les configurations exceptionnelles visent Ã  relever
-des <em>grand dÃ©fis</em>.
+Les applications déployées sont des applications <i class="important">parallèles</i>.
+Les configurations exceptionnelles visent à  relever
+des <em>grand défis</em>.
 </p>
 <!-- 
 From http://gridcafe.web.cern.ch/gridcafe/Gridhistory/ancestors.html :
@@ -289,13 +289,13 @@ Dr. Fran Berman from 2001 to 2004. The NPACI program advanced science by working
 <h1>Internet computing</h1>
 
 <p>
-Un cas particulier de calcul distribuÃ©. CaractÃ©ristiques:
+Un cas particulier de calcul distribué. Caractéristiques:
 </p>
 <ul>
-	  <li>L'application doit Ãªtre "embarassingly parallel",</li>
-	  <li>Le volume de donnÃ©es Ã  communiquer modÃ©rÃ©,</li>
+	  <li>L'application doit être "embarassingly parallel",</li>
+	  <li>Le volume de données à  communiquer modéré,</li>
 	  <li>Participation sur la base du volontariat des particuliers,</li>
-	  <li>Utilise le processeur en basse prioritÃ© (<i>screen-saver</i>)</li>
+	  <li>Utilise le processeur en basse priorité (<i>screen-saver</i>)</li>
 </ul>
 </div>
 
@@ -303,18 +303,18 @@ Un cas particulier de calcul distribuÃ©. CaractÃ©ristiques:
 <h1>Internet computing: Exemples </h1>
 <p>
 <b><a href="http://setiathome.ssl.berkeley.edu/">SETI@Home</a>.</b>
-Objectif: sonder les signaux Ã©lectromagnÃ©tiques venus de l'espace Ã  la recherche d'intelligence.
-RÃ©unit aujourd'hui 400&nbsp;000 participants pour une puissante totale de 60 tÃ©raflops, soit plus que Earth Simulator (35 tÃ©raflops). 
+Objectif: sonder les signaux électromagnétiques venus de l'espace à  la recherche d'intelligence.
+Réunit aujourd'hui 400&nbsp;000 participants pour une puissante totale de 60 téraflops, soit plus que Earth Simulator (35 téraflops). 
 </p>
 <b><a href="http://folding.stanford.edu/french/">Folding@Home</a>.</b>
-Calcul de repliement et d'agrÃ©gation de protÃ©ines. A mobilisÃ© des milliers d'ordinateurs individuels. 
+Calcul de repliement et d'agrégation de protéines. A mobilisé des milliers d'ordinateurs individuels. 
 <div style="float:right">
-<img style="float:right;border: dashed" alt="Un rÃ©sultat de folding@home" src="grid-img/folding.gif"/>
+<img style="float:right;border: dashed" alt="Un résultat de folding@home" src="grid-img/folding.gif"/>
 <br/>
 <div class="legende" style="float:right; width:200px">
-<span class="legendeTitre">L'un des premiers rÃ©sultats obtenus:
+<span class="legendeTitre">L'un des premiers résultats obtenus:
 simulation d'un repliement du domaine carboxy-terminal (<i>headpiece</i>) de la villine</span>
-(une protÃ©ine parmi les plus petites et les plus rapides Ã  se replier).Â© Vijay Pande et Stanford University.
+(une protéine parmi les plus petites et les plus rapides à  se replier).Â© Vijay Pande et Stanford University.
 </div>
 </div>
 
@@ -325,42 +325,42 @@ simulation d'un repliement du domaine carboxy-terminal (<i>headpiece</i>) de la 
 
 <!-- From http://ditwww.epfl.ch/publications-spip/article.php3?id_article=928 -->
 
-Le projet Seti@Home (Search for Extra-Terrestrial Intelligence) a dÃ©butÃ© 
+Le projet Seti@Home (Search for Extra-Terrestrial Intelligence) a débuté 
 officiellement le 17 mai 1999. 
-L'objectif est de dÃ©couvrir le premier signal extraterrestre intelligent . 
-Ce projet est la continuation logique du projet OZMA du NRAO (National Radio Astronomy Observatory) commencÃ© en 1960. 
-Le radiotÃÂ©lescope d'Arecibo sur l'ile de Puerto Rico enregistre toutes les ondes Ã©mises par l'univers sur une plage de frÃ©quence de Â± 2.5 MHz autour de la raie de l'hydrogÃ¨ne (1420 MHz). 
-Cette plage de frÃ©quence a Ã©tÃ© choisie, car elle reprÃ©sente une trouÃ©e dans la brume radio de l'univers, on dit qu'elle constitue le trou d'eau (waterhole).
-En 3 ans, la durÃ©e du projet, le radiotÃ©lescope d'Arecibo a couvert trois fois la partie du ciel qui lui est visible, reprÃ©sentant 39 Tbytes de donnÃ©es.
+L'objectif est de découvrir le premier signal extraterrestre intelligent . 
+Ce projet est la continuation logique du projet OZMA du NRAO (National Radio Astronomy Observatory) commencé en 1960. 
+Le radiotàÂ©lescope d'Arecibo sur l'ile de Puerto Rico enregistre toutes les ondes émises par l'univers sur une plage de fréquence de Â± 2.5 MHz autour de la raie de l'hydrogène (1420 MHz). 
+Cette plage de fréquence a été choisie, car elle représente une trouée dans la brume radio de l'univers, on dit qu'elle constitue le trou d'eau (waterhole).
+En 3 ans, la durée du projet, le radiotélescope d'Arecibo a couvert trois fois la partie du ciel qui lui est visible, représentant 39 Tbytes de données.
 
 
-<h2>Des donnÃ©es parfaitement indÃ©pendantes</h2>
+<h2>Des données parfaitement indépendantes</h2>
 
-Les observations recueillies par le radiotÃ©lescope peuvent Ãªtre sÃ©parÃ©es en bandes de frÃ©quences indÃ©pendantes et chacune d'entre elles dÃ©composÃ©es en petits paquets Ã  traiter, indÃ©pendants les uns des autres. 
-Le traitement consiste en une dÃ©composition FFT (Fast Fourrier Transform) suivie par une transformÃ©e inverse. 
-L'application peut donc traiter chaque paquet de donnÃ©es de faÃ§on indÃ©pendanÃ©.
-Ici, la granularitÃ© choisie est de 10 KHz, de maniÃ¨re Ã  ce que ces paquets soient traitables par un ordinateur personnel. 
-Une architecture client-serveur est donc parfaitement adaptÃ©e: 
-le serveur distribue les paquets aux clients, ces derniers les analysent et renvoient les rÃ©sultats au serveur.
+Les observations recueillies par le radiotélescope peuvent être séparées en bandes de fréquences indépendantes et chacune d'entre elles décomposées en petits paquets à  traiter, indépendants les uns des autres. 
+Le traitement consiste en une décomposition FFT (Fast Fourrier Transform) suivie par une transformée inverse. 
+L'application peut donc traiter chaque paquet de données de faà§on indépendané.
+Ici, la granularité choisie est de 10 KHz, de manière à  ce que ces paquets soient traitables par un ordinateur personnel. 
+Une architecture client-serveur est donc parfaitement adaptée: 
+le serveur distribue les paquets aux clients, ces derniers les analysent et renvoient les résultats au serveur.
 
 
 </div>
 
 
 <div class="slide">
-<h1>Stockage distribuÃ©</h1>
+<h1>Stockage distribué</h1>
 
 <p>
-Un catÃ©gorie de besoin est l'espace de stockage distribuÃ©.
+Un catégorie de besoin est l'espace de stockage distribué.
 Exemple: projet <a href="http://www.edg.org/">DataGrid</a> de la CE pour le LHC (fini mars 2004).
 
 </p>
 <p>
-Une des applications qui a changÃ© la perception de l'usage possible des rÃ©seaux
+Une des applications qui a changé la perception de l'usage possible des réseaux
 est l'application de partage de fichiers, dont l'initiateur fut Napster.
 </p>
 <p>
-Ont suivi des systÃ¨mes beaucoup plus dÃ©centralisÃ©s:
+Ont suivi des systèmes beaucoup plus décentralisés:
 <a href="http://www.gnutella.com/">Gnutella</a>,
 Kaaza,
 <a href="http://www.edonkey2000.com">Overnet (eDonkey)</a>,
@@ -368,29 +368,29 @@ Kaaza,
 </p>
 
 <p>
-Ces systÃ¨mes ont prouvÃ© l'efficacitÃ© du concept <span class="important">pair Ã  pair</span>.
+Ces systèmes ont prouvé l'efficacité du concept <span class="important">pair à  pair</span>.
 </p>
 
 </div>
 
 
 <div class="slide">
-<h1>Les plate-formes matÃ©rielles</h1>
+<h1>Les plate-formes matérielles</h1>
 
 <p>
-Les <span class="important">ressources matÃ©rielles</span>
-nÃ©cessaires varient selon l'activitÃ©. Exemples:
+Les <span class="important">ressources matérielles</span>
+nécessaires varient selon l'activité. Exemples:
 </p>
 <ul>
-  <li>Les grilles de type <i>Internet computing</i> requiÃ¨rent de trÃ¨s nombreuses et puissantes CPU, mais n'ont pas besoin d'un rÃ©seau trÃ¨s efficace =&gt; PC de particuliers.</li>
-  <li>Les simulations numÃ©riques requierent souvent beaucoup de mÃ©moire et de bon rÃ©seaux (communications Ã  chaque pas de temps) =&gt; machines puissantes sur rÃ©seau protÃ©gÃ©.</li>
+  <li>Les grilles de type <i>Internet computing</i> requièrent de très nombreuses et puissantes CPU, mais n'ont pas besoin d'un réseau très efficace =&gt; PC de particuliers.</li>
+  <li>Les simulations numériques requierent souvent beaucoup de mémoire et de bon réseaux (communications à  chaque pas de temps) =&gt; machines puissantes sur réseau protégé.</li>
 
 </ul>
 <p>
-De mÃªme que les activitÃ©s, les modÃ¨les de programmation utilisÃ©s ne sont pas les mÃªmes selon les plate-formes matÃ©rielles.
+De même que les activités, les modèles de programmation utilisés ne sont pas les mêmes selon les plate-formes matérielles.
 </p>
 <p>
-Recensons quelques catÃ©gories de Grilles au sens matÃ©riel.
+Recensons quelques catégories de Grilles au sens matériel.
 </p>
 </div>
 
@@ -404,31 +404,31 @@ Recensons quelques catÃ©gories de Grilles au sens matÃ©riel.
      alt="weblike sharing"
      width="500"/> 
 <ul>
-<li>Des institutions partagent des resources onÃ©reuses (clusters,
+<li>Des institutions partagent des resources onéreuses (clusters,
 super-calculateurs, etc).</li>
-<li>Le nombre de machines installÃ©es est faible.</li>
-<li>La fiabilitÃ© des noeuds est grande.</li>
-<li>Les utilisateurs sont clairement identifiÃ©s.</li>
+<li>Le nombre de machines installées est faible.</li>
+<li>La fiabilité des noeuds est grande.</li>
+<li>Les utilisateurs sont clairement identifiés.</li>
 </ul>
 
 </div>
 
 
 <div class="slide">
-<h1>Grille expÃ©rimentale TAG</h1>
+<h1>Grille expérimentale TAG</h1>
 
 <table>
 <tr><td>
 <img src="grid-img/tag_grid.png" alt="La grille TAG"/>
 </td>
 <td>
-Grille "institutionnelle" car fÃ©dÃ¨re des institutions identifiÃ©es
+Grille "institutionnelle" car fédère des institutions identifiées
 <ul>
 <li>Intergiciel Globus 2.4</li>
 <li>Utilise Renater</li>
-<li>FÃ©dÃ¨re des centres de calcul (exploitation ou expÃ©rimentaux)</li>
-<li>StabilitÃ© des ressources</li>
-<li>HÃ©tÃ©rogÃ©nÃ©itÃ© des ressources (e.g. OS, processeurs)</li>
+<li>Fédère des centres de calcul (exploitation ou expérimentaux)</li>
+<li>Stabilité des ressources</li>
+<li>Hétérogénéité des ressources (e.g. OS, processeurs)</li>
 <li>Nombre de processeurs moyen (&lt;100)</li>
 </ul>
 </td></tr>
@@ -439,44 +439,45 @@ Grille "institutionnelle" car fÃ©dÃ¨re des institutions identifiÃ©es
 <h1>Desktop grid</h1>
 
 <ul>
-<li>Les Ã©lÃ©ments de la grille sont peux coÃ»teux individuellement (e.g. PC).</li>
-<li>Le nombre de machines installÃ©es est grand.</li>
-<li>La fiabilitÃ© des noeuds est faible (parfois, volatilitÃ© extrÃªme)</li>
-<li>Les utilisateurs ne sont pas toujours clairement identifiÃ©s.</li>
+<li>Les éléments de la grille sont peux coûteux individuellement (e.g. PC).</li>
+<li>Le nombre de machines installées est grand.</li>
+<li>La fiabilité des noeuds est faible (parfois, volatilité extrême)</li>
+<li>Les utilisateurs ne sont pas toujours clairement identifiés.</li>
 </ul>
 
 
 </div>
 
 
-<!-- _______________________________ DÃ©finitions _____________________________ -->
+<!-- _______________________________ Définitions _____________________________ -->
 <div class="slide">
-<h1>DÃ©finition d'une Grille</h1>
+<h1>Définition d'une Grille</h1>
 
-<p>Comment dÃ©finir ce qui doit rÃ©pondre Ã  des besoins et Ã  des exigences techniques si diffÃ©rentes ? DÃ©gageons des points communs:
+<p>Comment définir ce qui doit répondre à des besoins et à des exigences 
+techniques si différentes ? Dégageons des points communs :
 </p>
 <ul>
-<li>L'Ã©tendue gÃ©ographique du systÃ¨me est internationale.</li>
-<li>Le partage de ressource est gÃ©nÃ©ralisÃ© Ã  n'importe quel 
-Ã©lÃ©ment d'un systÃ¨me informatique (e.g. processeur, disque, workbench, fichier, ...).</li>
-<li>Les ressources de mÃªme type sont probablement hÃ©tÃ©rogÃ¨nes (e.g. processeur, OS).</li>
-<li>Les utilisateurs du systÃ¨me forment une communautÃ© (avec des contraintes d'identifications plus ou moins fortes).</li>
+<li>L'étendue géographique du système est internationale.</li>
+<li>Le partage de ressource est généralisé à  n'importe quel 
+élément d'un système informatique (e.g. processeur, disque, workbench, fichier, ...).</li>
+<li>Les ressources de même type sont probablement hétérogènes (e.g. processeur, OS).</li>
+<li>Les utilisateurs du système forment une communauté (avec des contraintes d'identifications plus ou moins fortes).</li>
 </ul>
 </div>
 
 <!--
 <ul>
 	<li>Besoin de puissance de calcul et espace de stockage de nombreuses machines 
-	sous-exploitÃ©es : amÃ©lioration du rendement des ressources.
+	sous-exploitées : amélioration du rendement des ressources.
 	<ul>
 		  <li>Calcul de type "embarassingly parallel" (SEITI@Home, RC5,...),</li>
-		  <li>Calcul d'applications parallÃ¨les (applications MPI, ...).</li>
+		  <li>Calcul d'applications parallèles (applications MPI, ...).</li>
 	</ul>
 	</li>
-	<li>Besoin d'accÃ©der/fournir des services distribuÃ©s : faciliter les transactions client/fournisseur
+	<li>Besoin d'accéder/fournir des services distribués : faciliter les transactions client/fournisseur
 	<ul>
 		  <li>Proposer des applications en ligne,</li>
-		  <li>Concevoir des applications distribuÃ©es pÃ©rennes.</li>
+		  <li>Concevoir des applications distribuées pérennes.</li>
 	</ul>
 	</li>
 </ul>
@@ -487,18 +488,18 @@ Grille "institutionnelle" car fÃ©dÃ¨re des institutions identifiÃ©es
 <h1>Conclusion</h1>
 
 <p>
-Il est difficile de donner une dÃ©finition unique des grilles car
-les besoins et les contraintes des activitÃ©s dans le domaine
-de l'informatique distribuÃ©e sont diffÃ©rents.
+Il est difficile de donner une définition unique des grilles car
+les besoins et les contraintes des activités dans le domaine
+de l'informatique distribuée sont différents.
 </p>
 <p>
-Cependant, convergence dans l'idÃ©e de:
+Cependant, convergence dans l'idée de:
 </p>
 <ul>
-        <li>mutualisation gÃ©nÃ©ralisÃ©e des ressources (prÃªter/emprunter),</li>
-        <li>transparence dans l'accÃ¨s aux ressources,</li>
-        <li>formation de communautÃ©s d'utilisateurs,</li>
-        <li>augmentation de la puissance du systÃ¨me (calcul/stockage).</li>
+        <li>mutualisation généralisée des ressources (prêter/emprunter),</li>
+        <li>transparence dans l'accès aux ressources,</li>
+        <li>formation de communautés d'utilisateurs,</li>
+        <li>augmentation de la puissance du système (calcul/stockage).</li>
 </ul>        
 </div>
 

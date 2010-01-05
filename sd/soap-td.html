@@ -19,14 +19,14 @@
 
 <i>Note</i>: les exercices demandent d'écrire les programmes princpalement en PHP. Vous pourrez vous aider
 des explications suivantes sur les tableaux en PHP si vous en avez besoin:
-<a href="http://tag.u-strasbg.fr/~genaud/tutorial/php/ch03.html#id2481778">http://tag.u-strasbg.fr/~genaud/tutorial/php/ch03.html#id2481778</a>.
+<a href="http://icps.u-strasbg.fr/~genaud/courses/webtech/php/ch03.html#id2608323">http://icps.u-strasbg.fr/~genaud/courses/webtech/php/ch03.html#id2608323</a>.
 
 
 <h1>Utilisation d'un service commercial de géolocalisation</h1>
 
 <p>
 La société <a href="http://www.fraudlabs.com">FraudLabs</a> propose un ensemble (payants) de services web
-ayant trait Ã  la géo-localisation. Ceux-ci peuvent par exemple Ãªtre utilisés pour 
+ayant trait &agrave; la géo-localisation. Ceux-ci peuvent par exemple être utilisés pour 
 vérifier la validité d'une adresse saisie par un client, pour localiser géographiquement
 un client d'après l'IP de sa machine, ...
 </p>
@@ -36,7 +36,7 @@ un client d'après l'IP de sa machine, ...
 
 
 
-On souhaite utiliser le service de Géolocalisation qui Ã  une adresse IP rend les coordonnées géographiques (lattitude, longitude) de la machine.
+On souhaite utiliser le service de Géolocalisation qui à une adresse IP rend les coordonnées géographiques (lattitude, longitude) de la machine.
 Examiner la description WSDL du service :
 <a href="http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl">
 http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
@@ -98,7 +98,7 @@ http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
 	</ul>
 	<li><i>Ecriture d'un client PHP :</i>
 	<ul>
-		<li>Demander un numéro de license gratuit Ã  <a href="http://www.fraudlabs.com/freelicense.aspx?PackageID=1">http://www.fraudlabs.com/freelicense.aspx?PackageID=1</a>.</li>
+		<li>Demander un numéro de license gratuit : <a href="http://www.fraudlabs.com/freelicense.aspx?PackageID=1">http://www.fraudlabs.com/freelicense.aspx?PackageID=1</a>.</li>
 		<li>Vous disposez d'un interpréteur PHP5 (taper <tt>php</tt> ou <tt>php5</tt>) compilé avec le support SOAP (taper  <tt>php -i</tt> pour le vérifier).</li>
 		<li>Appeler le web-service: construisez un tableau associatif pour les paramètres d'entrée ("IP" et "LICENSE").</li>
 		<!-- array("IP" => "130.79.192.160", "LICENSE" => "OA-457-....") -->
@@ -143,7 +143,7 @@ On souhaite utiliser la méthode Define qui rend la définition d'un mot anglais
 					Name
 	-->
 	<li>Ecrire un client PHP qui utilise cette méthode. 
-Vous pouvez utiliser le WSDL disponible Ã  <a href="http://services.aonaware.com/DictService/DictService.asmx?WSDL">
+Vous pouvez utiliser le WSDL disponible : <a href="http://services.aonaware.com/DictService/DictService.asmx?WSDL">
 http://services.aonaware.com/DictService/DictService.asmx?WSDL
 </a>.
 (Conseil : vous devrez utiliser 3 niveaux d'itérations pour parcourir le résultat contenu dans <tt>DefineResult</tt> ; la primitive <tt>foreach ($tableau as $cle =&gt; $val) {}</tt> est adéquate pour cela. La primitive <tt>var_dump($variable)</tt> ou <tt>print_r($variable)</tt> est également d'un grand secours pour analyser la structuration des données générée par la classe SoapClient).</li>

@@ -16,7 +16,9 @@
 <meta name="defaultView" content="slideshow" />
 <meta name="controlVis" content="hidden" />
 <!-- style sheet links -->
-<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<!-- theme 'i18n' instead of 'default' -->
+<link rel="stylesheet" href="ui/i18n/slides.css" type="text/css" media="projection" id="slideProj" />
+
 <link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
 <link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
 <link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
@@ -72,7 +74,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 <div id="currentSlide"><!-- DO NOT EDIT --></div>
 <div id="header"></div>
 <div id="footer">
-<h1>Novembre &#8226; 2006</h1>
+<h1>Décembre &#8226; 2009</h1>
 <h2>Les Web services</h2>
 </div>
 </div>
@@ -95,7 +97,7 @@ Les web-services sont aujourd'hui implémentés dans leur écrasante majorité e
 Pas de nouveauté conceptuelle par rapport à  d'autres propositions antérieures (e.g. DCE RPC ou CORBA IIOP), mais un engouement inégalé de la part de l'industrie (e.g. Microsoft, IBM, Sun Microsystems, BEA, HP, Oracle, SAP, ...).
 </p>
 <p>
-Une part du succà¨s de SOAP vient de son adossement au <a href="http://www.w3.org">W3C</a>, qui
+Une part du succès de SOAP vient de son adossement au <a href="http://www.w3.org">W3C</a>, qui
 publie la spécification de SOAP sous la forme d'une 
  <a href="http://www.w3.org/TR/soap/">recommandation</a>.
 </p>
@@ -111,7 +113,7 @@ Définition du W3C:
 	   <li> SOAP est un protocole léger pour l'échange d'information en environnement distribué.</li> 
 	   
 	   <li>SOAP utilise les technologies XML pour bénéficier d'un cadre extensible dans lequel des messages peuvent être échangés avec des protocoles sous-jacents divers.</li>
-	   <li>Sa conception se veut indépendante de tout modà¨le de programmation ou implémentation spécifiques.</li>
+	   <li>Sa conception se veut indépendante de tout modèle de programmation ou implémentation spécifiques.</li>
  </ul>
 </div>
 
@@ -150,7 +152,7 @@ Dans les grandes lignes:
 <div class="slide">
 <h1>Exemple de message</h1>
 
-<div class="listing" style="font-size:larger">
+<div class="listing-normal">
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
   &lt;soap:Envelope
@@ -177,14 +179,37 @@ Dans les grandes lignes:
   &lt;/soap:Envelope&gt;
 </pre>
 </div>
-Remarques:
-<p>
-Le protocole prévoit que ce message peut être transporté d'un emétteur vers
+</div>
+
+<!-- _________________ SOAP message structure _________________ -->
+<div class="slide">
+<h1>Message SOAP - structure</h1>
+
+
+<img style="float:left;margin:30pt" src="soap-img/soap_envelope_structure.gif" alt="message structure"/>
+ 
+Un message SOAP est dans une <tt>Envelope</tt>, qui contient :
+<ul>
+<li>Les namespaces utilisés,</li>
+<li>Un <tt>Header</tt> optionnel, qui peut être traité par des intérmédiaires,</li>
+<li>Un <tt>Body</tt> obligatoire, traité par le récepteur final.</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Remarques</h1>
+
+<ul>
+<li>
+Le protocole prévoit que ce message peut être transporté d'un emetteur vers
 un destinataire final à  travers des intermédiaires éventuels.
-</p>
-<p>
+</li>
+<li>
 Les langages XML utilisés dans les messages peuvent être multiples.
-</p>
+</li>
+</ul>
+
 </div>
 
 <!-- _________________ Namespaces _________________ -->
@@ -196,7 +221,7 @@ Les langages XML utilisés dans les messages peuvent être multiples.
 </p>
 <ul>
 <li>On associe un <em>préfixe</em> avec une URI. L'association se fait avec
-l'attribut <span class="important"><tt>xmlns:<i>prefixe</i>="<i>URI</i>"</tt></span> oà¹ <tt>xmlns</tt> est un mot clé.</li>
+l'attribut <span class="important"><tt>xmlns:<i>prefixe</i>="<i>URI</i>"</tt></span> où <tt>xmlns</tt> est un mot clé.</li>
 <li><tt><i>prefixe</i></tt> permet ensuite de préfixer les noms de balise.</li>
 <li>L'URI n'est pas accédée. Elle sert d'identifiant unique.</li>
 </ul>
@@ -218,7 +243,9 @@ l'attribut <span class="important"><tt>xmlns:<i>prefixe</i>="<i>URI</i>"</tt></s
 <div class="slide">
 <h1>Namespaces (encart - suite)</h1>
 <p>
-On peut utiliser des <em>default namespaces</em> pour ne pas avoir à  spécifier le préfixe à  chaque balise. Ils ont définis avec <tt>xmlns</tt> <span class="important">sans</span> préfixe.
+On peut utiliser des <em>default namespaces</em> pour ne pas avoir à  spécifier le préfixe à  chaque balise. <br/>
+
+Ils sont définis avec <tt>xmlns</tt> <span class="important">sans</span> préfixe.
 </p>
 
 <div class="listing-normal">
@@ -231,21 +258,6 @@ On peut utiliser des <em>default namespaces</em> pour ne pas avoir à  spécifi
 
 
 </div>
-<!-- _________________ SOAP message structure _________________ -->
-<div class="slide">
-<h1>Message SOAP - structure</h1>
-
-
-<img style="float:left;margin:20pt" src="soap-img/soap_envelope_structure.gif" alt="message structure"/>
- 
-Un message SOAP est dans une <tt>Envelope</tt>, qui contient :
-<ul>
-<li>Les namespaces utilisés,</li>
-<li>Un <tt>Header</tt> optionnel, qui peut être traité par des intérmédiaires,</li>
-<li>Un <tt>Body</tt> obligatoire, traité par le récepteur final.</li>
-</ul>
-</div>
-
 <!-- _________________ SOAP message Header _________________ -->
 <div class="slide">
 <h1>Message SOAP - Header et Body</h1>
@@ -295,10 +307,10 @@ Les éléments nécessaires à  un appel RPC sont :
 <ol>
    <li>l'adresse du noeud SOAP final (destinataire), </li>
    <li>le nom du service (ou classe, ou méthode) à  invoquer,</li>
-   <li>l'identification et le type des paramà¨tres d'entrée et de retour.</li>
+   <li>l'identification et le type des paramètres d'entrée et de retour.</li>
 </ol>
 <p>
-Note: par analogie avec les modà¨les RPC existants, 1. est souvent dénommé <em>proxy</em>.
+Note: par analogie avec les modèles RPC existants, 1. est souvent dénommé <em>proxy</em>.
 </p>
 </div>
 
@@ -334,7 +346,7 @@ Le message en réponse devrait être:
 </pre>
 </div>
 <p>
-Toujours un seul paramà¨tre en retour, de type simple ou complexe.
+Toujours un seul paramètre en retour, de type simple ou complexe.
 Utilise l'espace de nommage de  <a href="http://www.w3.org/XML/Schema">XML Schema</a> pour les types.
 </p>
 
@@ -346,8 +358,8 @@ Utilise l'espace de nommage de  <a href="http://www.w3.org/XML/Schema">XML Schem
 <h1>Spécification du service</h1>
 
 <p>
-Dans l'exemple précédent, l'utilisateur du service doit connaà®tre, 
-le nom des opérations disponibles, le type des entrées et sorties, à  quel hà´te s'adresser, ....
+Dans l'exemple précédent, l'utilisateur du service doit connaître, 
+le nom des opérations disponibles, le type des entrées et sorties, à  quelle machine s'adresser, ....
 </p>
 Un format de description à  été proposé, permettant de décrire des web-services: WSDL.
 <p>
@@ -388,7 +400,7 @@ Un document WSDL utilise les éléments suivants:
   </tr>
   <tr>
     <td valign="top">&lt;binding&gt;</td>
-    <td valign="top">Les protocols de communication utilisés par le web service</td>
+    <td valign="top">Les protocoles de communication utilisés par le web service</td>
   </tr>
 </table>
 
@@ -434,7 +446,7 @@ Un document WSDL utilise les éléments suivants:
 <h1>Hello World en WSDL</h1>
 
 <p>
-Exemple: si vous passez le paramà¨tre "monde", le service renvoie la chaine "Bonjour, monde !"
+Exemple: si vous passez le paramètre "monde", le service renvoie la chaine "Bonjour, monde !"
 </p>
 
 <div class="listing-normal">
@@ -491,7 +503,7 @@ Pour plusieurs arguments en entrée ou en sortie, on aurait plusieurs
       &lt;output message="tns:DisBonjourResponse"/&gt;
    &lt;/operation&gt;
 &lt;/portType&gt;
-&lt;/pre&gt;
+</pre>
 </div>
 
 <p>
@@ -502,6 +514,37 @@ et les messages impliqués.
 </div>
 
 <!-- _______________________ binding ___________________________ -->
+<div class="slide">
+
+<h1>Hello World en WSDL (binding)</h1>
+
+Indique par quel protocole les opérations vont être transportées. 
+
+<ul>
+<li>
+<tt>binding</tt> a 2 attributs: <tt>name</tt> (celui que vous voulez) et <b>type</b> (le portType utilisé).
+</li>
+<li>
+<tt>soap:binding</tt> a 2 attributs : <tt>style</tt> (rpc ou document) et <tt>transport</tt> (souvent HTTP).
+</li>
+</ul>
+
+</p>
+<div class="listing-normal">
+<pre>
+&lt;binding name="..." type="..."&gt;
+      &lt;soap:binding style="rpc|document" transport="...http..."/&gt;
+      &lt;operation name="..."&gt;
+
+		.... input et output de l'operation ...
+
+      &lt;/operation &gt;
+
+&lt;/binding&gt;
+</div>
+
+</div>
+
 
 <div class="slide">
 <h1>Hello World en WSDL (binding)</h1>
@@ -576,7 +619,7 @@ Quelques toolkits sont présentés ici:
 
 <p>
 <a href="http://www.soaplite.com/">SOAP::Lite</a> permet de construire
-une requête RPC de manià¨re trà¨s concise de la forme:
+une requête RPC de manière très concise de la forme:
 </p>
 <div class="listing-normal">
 <pre>
@@ -597,7 +640,7 @@ L'URI est ici un nom unique de service.</li>
 On peut utiliser les protocoles http:, mailto:, ou ftp:.</li>
 
 
-<li><tt>result</tt> est un scalaire. Dans le cas oà¹ le résultat est un vecteur
+<li><tt>result</tt> est un scalaire. Dans le cas où le résultat est un vecteur
 il faut utiliser <tt>paramsout</tt> à  la place.</li>
 </ul>
 </div>
