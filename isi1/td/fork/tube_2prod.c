@@ -70,7 +70,7 @@ int main() {
 		    else {
 				/* le pere = consommateur */
 				printf("[consommateur] demarre.\n");
-				while (1) {
+				while (1) {  /* boucle infinie */
 					  char lu;
 					  ret = read( tube[0], &lu, 1 );
 					  printf("%c",lu);
@@ -81,5 +81,3 @@ int main() {
 	  }
 
 }
-
-
