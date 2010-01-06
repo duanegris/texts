@@ -18,11 +18,11 @@ $wsdl_url = "http://ws.fraudlabs.com/ip2locationwebservice.asmx?wsdl";
    $SoapResponse = $c->IP2Location(array("IP" => $query, "LICENSE" => $LicenseKey));
    $result = $SoapResponse -> IP2LocationResult;
    //print_r($result);
-   if (!isset($result->Error)) {
+   if (!isset($result->Message)) {
    	print("IP $query localisée en (lat,lon): ".$result->LATITUDE ."°,". $result->LONGITUDE."°\n");
 	print("Pays  : ".$result->COUNTRYNAME . "\n");
 	print("Ville : ".$result->CITY . "\n");
    }
    else
- 	print("Erreur : " . $result->Error->Desc . "\n");
+ 	print("Erreur : " . $result->Message . "\n");
 ?>

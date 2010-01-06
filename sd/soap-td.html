@@ -103,17 +103,17 @@ http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
 		<li>Appeler le web-service: construisez un tableau associatif pour les paramètres d'entrée ("IP" et "LICENSE").</li>
 		<!-- array("IP" => "130.79.192.160", "LICENSE" => "OA-457-....") -->
 
-		<li>Afficher la réponse: si le champ <tt>Err</tt> n'est pas vide, afficher les valeurs de latitude, longitude, sinon afficher l'erreur.
+		<li>Afficher la réponse: si le champ <tt>Message</tt> n'est pas vide, afficher les valeurs de latitude, longitude, sinon afficher l'erreur.
 		<!-- 
 	   	$result = $SoapResponse -> GetLocationByIPResult;
-	   	if (!isset($result->Error)) {
+	   	if (!isset($result->Message)) {
      			 print("IP $query localisee aux coordonnees geographiques (lat,lon) : ".$result->LATITUDE ."Â°,". $result->LONGITUDE."Â°\n");
    	   	}
    	   	else
-      		print("Erreur : " . $result->Error->Desc . "\n");
+      		print("Erreur : " . $result->Message . "\n");
 
 		_________________
-		programme complet: http://tag.u-strasbg.fr/~genaud/tutorial/sd/cvs/src/soap/php/ip2location_wsdl.php
+		programme complet: http://icps.u-strasbg.fr/~genaud/courses/sd/src/soap/php/ip2location_wsdl.php
 			
 		-->
 	</ul>
@@ -164,7 +164,7 @@ http://services.aonaware.com/DictService/DictService.asmx?WSDL
 		$DicoDef1 = $Result->Definitions->Definition[0]->Dictionary->Name;
 		_____________________	
 
-		programme complet : http://tag.u-strasbg.fr/~genaud/tutorial/sd/cvs/src/soap/php/DictService_wsdl.php.txt
+		programme complet : http://icps.u-strasbg.fr/~genaud/courses/sd/src/soap/php/DictService_wsdl.php.txt
 	-->
 	<li>Question subsidiaire: Ecrire un client SOAP::Lite qui utilise cette méthode.</li>
 </ol>
