@@ -1,0 +1,273 @@
+What is CSS?
+
+    * CSS stands for Cascading Style Sheets
+    * Styles define how to display HTML elements
+    * Styles are normally stored in Style Sheets
+    * Styles were added to HTML 4.0 to solve a problem
+    * External Style Sheets can save you a lot of work
+    * External Style Sheets are stored in CSS files
+    * Multiple style definitions will cascade into one
+
+
+Cascading Order
+===============
+What style will be used when there is more than one style specified for an HTML element?
+
+Generally speaking we can say that all the styles will "cascade" into a new "virtual" Style Sheet by the following rules, where number four has the highest priority:
+
+   1. Browser default
+   2. External Style Sheet
+   3. Internal Style Sheet (inside the <head> tag)
+   4. Inline Style (inside HTML element)
+
+===========================================================
+                     SYNTAX
+===========================================================
+The CSS syntax is made up of three parts: a selector, a property and a value:
+
+selector {property: value}
+
+The selector is normally the HTML element/tag you wish to define, the property is the attribute you wish to change, and each property can take a value. The property and value are separated by a colon and surrounded by curly braces:
+
+body {color: black}
+
+If  the value is multiple words, put quotes around the value:
+
+p {font-family: "sans serif"}
+
+Note: If you wish to specify more than one property, you should separate each property with a semi-colon. The example below shows how to define a center aligned paragraph, with a red text color:
+
+p {text-align:center;color:red}
+
+To make the style definitions more readable, you can describe one property on each line, like this:
+
+p
+{
+text-align: center;
+color: black;
+font-family: arial
+}
+
+Grouping
+========
+You can group selectors. Separate each selector with a comma. In the example below we have grouped all the header elements. Each header element will be green:
+
+h1,h2,h3,h4,h5,h6 
+{
+color: green
+}
+
+The class Selector
+==================
+With the class selector you can define different styles for the same type of HTML element. Say that you would like to have two types of paragraphs in your document: one right-aligned paragraph, and one center-aligned paragraph. Here is how you can do it with styles:
+
+p.right {text-align: right}
+p.center {text-align: center}
+
+You have to use the class attribute in your HTML document:
+
+<p class="right">
+This paragraph will be right-aligned.
+</p>
+
+<p class="center">
+This paragraph will be center-aligned.
+</p>
+
+Note: Only one class attribute can be specified per HTML element! The example below is wrong:
+
+<p class="right" class="center">
+This is a paragraph.
+</p>
+
+You can also omit the tag name in the selector to define a style that will be used by all HTML elements that have a certain class. In the example below, all HTML elements with class="center" will be center-aligned:
+
+.center {text-align: center}
+
+In the code below both the h1 element and the p element have class="center". This means that both elements will follow the rules in the ".center" selector:  
+
+<h1 class="center">
+This heading will be center-aligned
+</h1>
+
+<p class="center">
+This paragraph will also be center-aligned.
+</p> 
+
+
+The id Selector
+===============
+The id selector is different from the class selector! While a class selector may apply to SEVERAL elements on a page, an id selector always applies to only ONE element.
+
+An ID attribute must be unique within the document.
+
+The style rule below will match a p element that has the id value "para1":
+
+p#para1
+{
+text-align: center;
+color: red
+}
+
+The style rule below will match the first element that has the id value "wer345":
+
+*#wer345 {color: green}
+
+The rule above will match this h1 element:
+
+<h1 id="wer345">Some text</h1>
+
+The style rule below will match a p element that has the id value "wer345":
+
+p#wer345 {color: green}
+
+The rule above will not match this h2 element:
+
+<h2 id="wer345">Some text</h2>
+
+
+
+=============================================================
+                  INSERT A STYLE SHEET
+=============================================================
+
+
+External Style Sheet
+====================
+An external style sheet is ideal when the style is applied to many pages. With an external style sheet, you can change the look of an entire Web site by changing one file. Each page must link to the style sheet using the <link> tag. The <link> tag goes inside the head section:
+
+<head>
+<link rel="stylesheet" type="text/css"
+href="mystyle.css" />
+</head>
+
+Internal Style Sheet
+====================
+An internal style sheet should be used when a single document has a unique style. You define internal styles in the head section by using the <style> tag, like this:
+
+<head>
+<style type="text/css">
+hr {color: sienna}
+p {margin-left: 20px}
+body {background-image: url("images/back40.gif")}
+</style>
+</head>
+
+Inline Styles
+=============
+An inline style loses many of the advantages of style sheets by mixing content with presentation. Use this method sparingly, such as when a style is to be applied to a single occurrence of an element.
+
+To use inline styles you use the style attribute in the relevant tag. The style attribute can contain any CSS property. The example shows how to change the color and the left margin of a paragraph:
+
+<p style="color: sienna; margin-left: 20px">
+This is a paragraph
+</p>
+
+
+
+
+=============================================================
+                         EXAMPLES
+=============================================================
+
+Background
+==========
+Set the background color
+Set an image as the background
+How to repeat a background image vertically
+How to repeat a background image horizontally
+How to place the background image
+A fixed background image (this image will not scroll with the rest of the page)
+All the background properties in one declaration
+
+Text
+====
+Set the color of the text
+Specify the space between characters
+Align the text
+Decorate the text
+Indent text
+Control the letters in a text
+
+Font
+====
+Set the font of a text
+Set the size of the font
+Set the style of the font
+Set the variant of the font
+Set the boldness of the font
+All the font properties in one declaration
+
+Border
+======
+Set the style of the four borders
+Set different borders on each side
+Set the color of the four borders
+Set the width of the bottom border
+Set the width of the left border
+Set the width of the right border
+Set the width of the top border
+All the bottom border properties in one declaration
+All the left border properties in one declaration
+All the right border properties in one declaration
+All the top border properties in one declaration
+All the width of the border properties in one declaration
+All the border properties in one declaration
+
+Margin
+======
+Set the left margin of a text
+Set the right margin of a text
+Set the top margin of a text
+Set the bottom margin of a text
+All the margin properties in one declaration
+
+Padding
+=======
+Set the left padding of a tablecell
+Set the right padding of a tablecell
+Set the top padding of a tablecell
+Set the bottom padding of a tablecell
+All the padding properties in one declaration
+
+List
+====
+The different list-item markers in unordered lists
+The different list-item markers in ordered lists
+Set an image as the list-item marker
+Place the list-item marker
+All list properties in one declaration
+
+Dimension
+=========
+Set the height and width of an image
+Increase the space between lines
+
+Classification
+==============
+How to display an element?
+Set where an image will appear in another element
+Position an element relative to its normal position
+Position all headings relative to its normal position
+Position an element with an absolute value
+How to make an element invisible
+Change the cursor
+
+Positioning
+===========
+Set the shape of an element
+Set the left and top position of an element
+What should happen when an element's content is too big to fit in a specified area
+Vertical alignment of an image
+Place an element "behind" another element
+Place an element "behind" another element 2
+
+Pseudo-classes
+==============
+Add different colors to a hyperlink
+Add other styles to hyperlinks
+
+Pseudo-elements
+===============
+Make the first letter special in a text
+Make the first line special in a text 
