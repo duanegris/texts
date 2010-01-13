@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<title>Basic form to pass values</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body> 
+
+<h1>The Form</h1>
+<form name="f" method="post" action="process_post_form.php">
+
+<table border="1">
+<!-- text -->
+<tr>
+	<td> &lt;input type="text"&gt; </td>
+	<td>  <input type="text" name="text1" value="texte"/> </td>
+</tr>
+<!-- textarea -->
+<tr>
+	<td> &lt;textarea&gt; ... &lt;/textarea&gt;</td>
+	<td>  <textarea name="textarea1"/> texte ici </textarea> </td>
+</tr>
+
+<!-- radio -->
+<tr>
+	<td> &lt;input type="radio"&gt; </td>
+	<td>  
+		<input type="radio" name="radio1" value="on"> on 
+		<input type="radio" name="radio1" value="off"> off
+	</td>
+</tr>
+<!-- checkbox -->
+<tr>
+	<td> &lt;input type="checkbox"&gt; </td>
+	<td>  
+		<input type="checkbox" name="checkbox1" value="un"> avec un 
+		<input type="checkbox" name="checkbox1" value="deux"> avec deux
+		<input type="checkbox" name="checkbox1" value="trois"> avec trois
+	</td>
+</tr>
+
+<!--select-->
+<tr>
+	<td> &lt;select&gt; &lt;option&gt; </td>
+	<td>  
+		<select name="select1"> 
+			<option value="1">choix 1</option> 
+			<option value="2">choix 2</option> 
+			<option value="3">choix 3</option> 
+		</select>
+	</td>
+</tr>
+<!-- button -->
+<tr>
+	<td> &lt;input type="button"&gt; </td>
+	<td>  
+		<input type="button" name="button1" value="Valider"/> 
+		<input type="button" name="button2" value="Annuler"/> 
+	</td>
+</tr>
+<!-- submit -->
+<tr>
+	<td> &lt;input type="submit"&gt; </td>
+	<td>  
+		<input type="submit" name="submit1" method="post" value="Envoyer formulaire"/> 
+	</td>
+</tr>
+
+
+</form>
+
+</body>
+</html>
