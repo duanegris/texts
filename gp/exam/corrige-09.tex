@@ -204,12 +204,12 @@ qui est de type \textbf{fin-fin}.  \\
 \hline
 \textrm{tâche}& d_{tot} & f_{tot} & d_{tard} & f_{tard} & \textrm{marge totale}\\
 \hline
-t_1		&   7{:}30 & 12{:}30     & 11{:}30  &  16{:}30  & 4h\\
+t_1		&   7{:}30 & 12{:}30     & 11{:}30  &  16{:}30  & 5h\\
 t_2		&   7{:}30 & 11{:}30   	 & 12{:}30 & 16{:}30    & 5h     \\		
 t_3		&   12{:}30 & 13{:}30	 & 16{:}30 & 17{:}30    & 4h  \\
 t_4		&	11{:}30 & 12{:}30    & 16{:}30 & 17{:}30 	& 5h   \\
 t_5		&	?	  & ?        & 17{:}30 & 17{:}30    & 0\\
-t_6		&   17{:}30 &	18h15    & 18{:}30 & 19{:}15   &  1h\\
+t_6		&   17{:}30 &	18{:}15    & 18{:}30 & 19{:}15   &  1h\\
 t_7		&	18{:}15 & 19{:}00    & 19{:}15 & 20{:}00   &  1h \\
 \hline
 \hline
@@ -257,12 +257,17 @@ La somme des durées probables de ces tâches est, en heures  :
 $$D_C = 5 + 4 + 1 + 1 + \frac{3}{4} + \frac{3}{4} = 12h30$$
 L'écart type est 
 $$E_C = 
-  \sqrt{\frac{1}{9}+\frac{1}{9}+\frac{1}{36}+\frac{1}{144}+\frac{1}{36}} =
-  \sqrt{\frac{41}{144}} = \sqrt{0,28h} = 0,53h \approx 17 mn
+  \sqrt{\frac{1}{9}+\frac{1}{9}+\frac{1}{144}+\frac{1}{36}} =
+  \sqrt{\frac{37}{144}} = \sqrt{0,25h} = 0,506h \approx 0,5h
 $$
 Rappelons qu'on peut finir avec une probabilité $p$ 
 un ensemble $C$ de tâches, dans un délai ${\cal D}(p)$ défini par
-${\cal D}(p)  =D_C + G(p).E_C$.\\
+
+\begin{equation}
+{\cal D}(p)  = D_C + G(p).E_C
+\label{eq:dp}
+\end{equation}
+
 
 \begin{itemize}
 \item
@@ -271,12 +276,22 @@ puisque $G(50\%)=0$ et dans ce cas ${\cal D}(50\%)=D_C=12h30$.\\
 
 \item
 On cherche maintenant $p$ telle que le reportage soit prêt à $20{:}20$. 
-On s'aperçoit immédiatement qu'on dispose de 20 mn de plus (1/3 heure), donc on peut poser :
-\[ {\cal D}(p)=12h30 + G(p).E_C=12h50 \]
-donc, avec des durées exprimées en heures (on arrive au même résultat bien sûr en minutes) \[
-  G(p)=\frac{1}{3E_C} \approx 0,626
-\]
-D'autre part on lit directement dans le tableau la probabilité associée à $G(p)=0,625$,
+On s'aperçoit immédiatement qu'on dispose de 20 mn de plus (1/3 heure), que
+la date de fin au plus tard initialement prévue. 
+Donc on peut poser :
+\[ {\cal D}(p)= D_C + \frac{1}{3}h \]
+et en remplaçant dans Eq. \ref{eq:dp} on a:
+\[  D_C + \frac{1}{3}h = D_C + G(p).E_C \]
+donc
+$$
+\begin{array}{lllcl}
+				& G(p).E_C &=& \frac{1}{3}h \\
+\Leftrightarrow		& G(p)     &=& \frac{1h}{3*0,5h} \\
+\Leftrightarrow		& G(p)     &=& \frac{2}{3} = 0,666 \\
+\end{array}
+$$
+
+D'autre part on lit directement dans le tableau la probabilité associée à $G(p)=0,6666$,
 soit $p=73,2\%$. On a donc environ 73\% chances  de pouvoir passer le reportage à $20{:}20$ ou avant.
 \end{itemize}
 
