@@ -55,8 +55,8 @@ figure pas dans le programme au début de l'exécution, mais qui doit se trouver
 dans le fichier compress.so ou dans le fichier uncompress.so.
 Cette opération peut être effectuée à l'aide de la fonction \texttt{dlopen()} qui
 ajoute dans l'image mémoire d'un processus, pendant son exécution, le contenu
-d'un fichier partageable d'extension .so. Il faut donc, avant d'exécuter le pro-
-gramme, produire le fichier à inclure (c'est-à-dire compress.so ou uncompress.so),
+d'un fichier partageable d'extension .so. Il faut donc, avant d'exécuter le programme, 
+produire le fichier à inclure (c'est-à-dire compress.so ou uncompress.so),
 ce qui peut être fait par la commande suivante (à partir d'un fichier fich.o) :
 \begin{verbatim}
 gcc -shared -o fich.so fich.c.
@@ -69,7 +69,7 @@ et à l'entête compress.h.
 Pour que l'édition de liens dynamique puisse être opérationnelle, il faut que
 la variable d'environnement \verb#LD_LIBRARY_PATH# contienne les chemins d'accès
 au répertoire contenant les fichiers .so. La compilation de \texttt{main1.c} doit être
-effectuée avec l'option -ldl.
+effectuée avec l'option \texttt{-ldl}.
 
 \begin{comment}
 Correction :
