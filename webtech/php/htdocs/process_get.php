@@ -8,6 +8,7 @@
 
 <body> 
 
+
 <h1>Traitement PHP des valeurs passées par GET</h1>
 
 <?php

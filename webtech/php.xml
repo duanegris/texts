@@ -1092,11 +1092,13 @@ Enfin, nous fermons la table quand toutes les lignes ont été examinées.
 
 <programlisting>
 <![CDATA[ echo "<table><tr><td> Désignation </td><td> Prix </td></tr>\n";
+
     for ($i=0;$i<$nblignes;$i=$i+1) {
 	 $prod_nom =  mysql_result($result,$i,"nom");
 	 $prod_prix = mysql_result($result,$i,"prix");
 	 echo "<tr><td>$prod_nom</td><td>$prod_prix</td></tr>";
     }
+
     echo "</table>";
 ]]>
 </programlisting>
@@ -1106,6 +1108,45 @@ Enfin, nous fermons la table quand toutes les lignes ont été examinées.
 Enfin, il nous faut par prudence refermer la base MySQL mais la quasi-totalité
 du code PHP nécessaire à la consultation de notre table est écrit.
 </para>
+
+<sect3><title>Alternative</title></sect3>
+
+<para>
+Nous avons utilisé dans la solution précédente une boucle pour 
+passer en revue chaque ligne de la table de résultat obtenue par la 
+requête SELECT. Le nombre de lignes de la table est donné par
+mysql_numrows() et chaque élément est extrait avec mysql_result().
+</para>
+<para>
+Une alternative un peu plus concise consiste à utiliser mysql_fetch_array().
+Cette fonction prend en argument la table de résultat obtenue par la requête
+($result dans notre exemple), et
+renvoie un tableau associatif correspondant à une ligne de la table.
+L'indexation du tableau est faite avec les noms des colonnes de la table SQL.
+Par exemple, si on récupère un tableau $t ( $t = mysql_fetch_array($result)),
+et qu'un des champs SQL a pour nom 'id', alors on peut accéder à la valeur
+de la ligne lue par $t['id'].
+La fonction gère un poineur interne: lors du premier appel, ce sont les éléments
+de la première ligne qui sont mis en tableau. Chaque nouvel appel fait progresser 
+le pointeur pour permettre de lire la ligne suivante.
+</para>
+<para>
+Un équivalent au bout de code précédent est:
+<programlisting>
+<![CDATA[ echo "<table><tr><td> Désignation </td><td> Prix </td></tr>\n";
+
+       while ($ligne = mysql_fetch_array($result)) {
+   		echo "<tr><td> $ligne['nom'] </td><td>$ligne['prix']</td></tr>";
+       }
+       
+       echo "</table>";
+]]>
+</programlisting>
+</para>
+
+
+</para>
+
 </sect2>
 <sect2>
 <title>Programme complet</title>
