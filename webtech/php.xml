@@ -33,8 +33,8 @@ des exemples simples.
 <para>
 Le lecteur doit cependant avoir certaines connaissances pour comprendre
 les éléments présentés dans cette documentation. 
-Le premier pré-requis est une bonne connaissance du langage HTML (i.e.
-savoir écrire du code HTML). Etant donné le panorama très large de
+Le premier pré-requis est une bonne connaissance du langage HTML. 
+Etant donné le panorama très large de
 techniques présentées, certains chapitres ne seront pas développés 
 (ou même pas écrits) et nécessiteront d'aller consulter des documents
 annexes. 
@@ -1085,20 +1085,25 @@ La première ligne de la table est constante : il s'agit de l'entête.
 Ensuite, il faut extraire, pour chaque ligne de notre tableau,
 les valeurs à afficher. Pour cela, nous extrayons pour chaque ligne 
 <varname>i</varname> les valeurs des champs nom et prix de notre table,
-que nous mettons respectivement dans les variables PHP <varname>$prod_nom</varname> 
-et <varname>$prod_prix</varname>. Quand les valeurs de la ligne ont
+avec la commande <command>mysql_result()</command>. 
+Celle-ci prend en argument la table, le numéro de ligne, et le nom de colonne
+pour rendre la valeur correspondante dans la table.
+Nous mettons les valeurs nom et prix de la table respectivement dans les variables 
+PHP <varname>$prod_nom</varname> et <varname>$prod_prix</varname> 
+(le nom de ces variables PHP est tout à fait 
+arbitraire et n'a pas de relation avec le nom des colonnes SQL).
+Quand les valeurs de la ligne ont
 été récupérées, nous pouvons écrire la ligne correspondante du tableau HTML. 
 Enfin, nous fermons la table quand toutes les lignes ont été examinées.
 
 <programlisting>
-<![CDATA[ echo "<table><tr><td> Désignation </td><td> Prix </td></tr>\n";
-
+<![CDATA[ 
+    echo "<table><tr><td> Désignation </td><td> Prix </td></tr>\n";
     for ($i=0;$i<$nblignes;$i=$i+1) {
 	 $prod_nom =  mysql_result($result,$i,"nom");
 	 $prod_prix = mysql_result($result,$i,"prix");
 	 echo "<tr><td>$prod_nom</td><td>$prod_prix</td></tr>";
     }
-
     echo "</table>";
 ]]>
 </programlisting>
@@ -1108,24 +1113,29 @@ Enfin, nous fermons la table quand toutes les lignes ont été examinées.
 Enfin, il nous faut par prudence refermer la base MySQL mais la quasi-totalité
 du code PHP nécessaire à la consultation de notre table est écrit.
 </para>
+</sect2>
 
-<sect3><title>Alternative</title></sect3>
+<sect2>
+<title>Une autre façon de faire ...</title>
 
 <para>
 Nous avons utilisé dans la solution précédente une boucle pour 
 passer en revue chaque ligne de la table de résultat obtenue par la 
 requête SELECT. Le nombre de lignes de la table est donné par
-mysql_numrows() et chaque élément est extrait avec mysql_result().
+<command>mysql_numrows()</command> et chaque élément est extrait 
+avec <command>mysql_result()</command>.
 </para>
 <para>
-Une alternative un peu plus concise consiste à utiliser mysql_fetch_array().
+Une alternative un peu plus concise consiste à utiliser 
+<command>mysql_fetch_array()</command>.
 Cette fonction prend en argument la table de résultat obtenue par la requête
-($result dans notre exemple), et
+(<varname>$result</varname> dans notre exemple), et
 renvoie un tableau associatif correspondant à une ligne de la table.
 L'indexation du tableau est faite avec les noms des colonnes de la table SQL.
-Par exemple, si on récupère un tableau $t ( $t = mysql_fetch_array($result)),
-et qu'un des champs SQL a pour nom 'id', alors on peut accéder à la valeur
-de la ligne lue par $t['id'].
+Par exemple, si on récupère un tableau <varname>$t</varname> 
+($t = mysql_fetch_array($result)),
+et qu'un des champs SQL a pour nom <varname>id</varname>, alors on peut 
+accéder à la valeur de la ligne lue par <varname>$t['id']</varname>.
 La fonction gère un poineur interne: lors du premier appel, ce sont les éléments
 de la première ligne qui sont mis en tableau. Chaque nouvel appel fait progresser 
 le pointeur pour permettre de lire la ligne suivante.
@@ -1133,21 +1143,17 @@ le pointeur pour permettre de lire la ligne suivante.
 <para>
 Un équivalent au bout de code précédent est:
 <programlisting>
-<![CDATA[ echo "<table><tr><td> Désignation </td><td> Prix </td></tr>\n";
-
-       while ($ligne = mysql_fetch_array($result)) {
+<![CDATA[ 
+      echo "<table><tr><td> Désignation </td><td> Prix </td></tr>\n";
+      while ($ligne = mysql_fetch_array($result)) {
    		echo "<tr><td> $ligne['nom'] </td><td>$ligne['prix']</td></tr>";
-       }
-       
-       echo "</table>";
+      }
+      echo "</table>";
 ]]>
 </programlisting>
 </para>
-
-
-</para>
-
 </sect2>
+
 <sect2>
 <title>Programme complet</title>
 
@@ -1198,7 +1204,7 @@ la base.
 <title>Saisie des données (formulaire)</title>
 
 <para>
-Ici, le fichier peut être un simple fichier HTML, puisque toues les éléments de la page sont statiques.
+Ici, le fichier peut être un simple fichier HTML, puisque toutes les éléments de la page sont statiques.
 Nous l'appelons <filename>saisie.html</filename>. 
 Notez que la mise en page HTML est des
 plus sommaires, ceci afin d'améliorer la lisibilité et se concentrer
@@ -1334,21 +1340,197 @@ echo "Le prix de l'article $ref est modifié ..";
 </sect2>
 </sect1>
 
-
+<!-- ___________ Gerer plusieurs tables _____________ -->
 <sect1>
 <title>Gérer plusieurs tables</title>
+
 <para>
 Nous n'avons jusqu'ici considéré que la base de données n'était constituée
 que d'une table. 
-Dans la réalité, la base de données est toujours constituée
-de plusieurs tables. Pour illustrer notre propos, imaginons que
-notre base est faite de trois tables : tables clients, produits et commandes.
+Dans la réalité, la base de données est toujours constituée de plusieurs tables,
+et il est donc naturel d'aller chercher, pour un élément d'une table, des
+informations liées présentes dans d'autres tables.
+</para>
+<para>
+Faire une sélection impliquant plusieurs tables implique un mécanisme plus 
+difficile à comprendre. La sélection revient à faire le 
+<emphasis>produit cartésien</emphasis> des tables. 
+Une bonne compréhension de ces mécanismes peut être acquise dans des ouvrages
+traitant spécifiquement des bases de données relationnelles et de SQL.
+Cependant, l'exemple simple suivant permet de schématiser ce processus.
+</para>
+
+<sect2>
+<title>L'exemple simple d'un forum</title>
+
+<para>
+Dans un forum de discussions, on pourrait avoir par exmeple les deux tables
+suivantes: une table recensant les messages postés avec pour chaque message,
+le numéro d'utilisateur l'ayant posté. Dans une table profils, on retrouverait
+toutes les informations sur cet utilisateur.
 <programlisting>
-clients (clid,nom)                         clé : clid
-produits(pid,descr,prix)                   clé : pid
-commandes(pid,cli,quantite,montant,date)   clé : pid,clid
+posts    (numpost,user,texte)    
+profils  (user,pseudo,email)
+</programlisting>
+Un exemple simplifié de données pour de telles tables pourrait être:
+<informaltable>
+<tgroup cols="3">
+<thead>
+<row>
+<entry>numpost</entry><entry>user</entry><entry>texte</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1</entry><entry>1</entry><entry>Hello, does anybody knows what is SQL?</entry>
+</row>
+<row>
+<entry>2</entry><entry>1</entry><entry>Hello again, anyone listening?</entry>
+</row>
+<row>
+<entry>3</entry><entry>2</entry><entry>Hello, you'd better buy a book and read it.</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable> 
+et
+<informaltable>
+<tgroup cols="3">
+<thead>
+<row>
+<entry>user</entry><entry>pseudo</entry><entry>email</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1</entry><entry>newbie555</entry><entry>newbie@hotmail.com</entry>
+</row>
+<row>
+<entry>2</entry><entry>jobasher</entry><entry>jo.basher@gmail.com</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable> 
+</para>
+
+<para>
+Pour l'affichage des messages, on veut bien sûr pouvoir associer au message 
+le pseudo ou l'email de l'utilisateur ayant posté le message, ce qui demande
+d'aller trouver, à partir de <varname>numpost</varname> le <varname>pseudo</varname>
+correspondant. Par exemple, le post 3 (<varname>numpost=3</varname>) à été
+posté par un utilisateur de pseudo jobasher.
+</para>
+
+<para>
+Faire une sélection impliquant plusieurs tables est plus difficile à
+comprendre. Elle revient à faire le produit cartésien des tables. Une bonne
+compréhension de ces mécanismes peut être acquise dans des ouvrages
+traitant spécifiquement des bases de données relationnelles et de SQL.
+</para>
+<para>
+On peut illustrer sur cet exemple simple, la requête SQL qui va nous permettre
+d'obtenir le résultat. Etant donné un numéro de post (disons 3), on veut le pseudo 
+associé tiré de la table <varname>profils</varname>:
+<programlisting>
+select pseudo
+  from posts,profils
+where
+   numpost = 3 and 
+   posts.user = profils.user
 </programlisting>
 </para>
+
+<tip>
+<para>
+   En SQL, un même nom de champ (de colonne) peut être utilisé dans plusieurs
+   tables. Il devient donc ambigu quand ces tables sont utilisées en même temps.
+   Pour lever l'ambiguité, il suffit de préfixer le nom du champ
+   par le nom de sa table. Ici par exemple, on
+   écrit <varname>profils.user</varname> pour préciser de quel
+   champ <varname>user</varname> il s'agit.
+</para>
+</tip>
+
+<para>
+Dire qu'on sélectionne deux tables provoque le produit cartésien des deux tables.
+
+<informaltable>
+<tgroup cols="6">
+<thead>
+<row>
+<entry>numpost</entry><entry>user</entry><entry>texte</entry>
+<entry>user</entry><entry>pseudo</entry><entry>email</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1</entry><entry>1</entry><entry>Hello, does anybody knows what is SQL?</entry>
+<entry>1</entry><entry>newbie555</entry><entry>newbie@hotmail.com</entry>
+</row>
+<row>
+<entry>1</entry><entry>1</entry><entry>Hello, does anybody knows what is SQL?</entry>
+<entry>2</entry><entry>jobasher</entry><entry>jo.basher@gmail.com</entry>
+</row>
+<row>
+<entry>2</entry><entry>1</entry><entry>Hello again, anyone listening?</entry>
+<entry>1</entry><entry>newbie555</entry><entry>newbie@hotmail.com</entry>
+</row>
+<row>
+<entry>2</entry><entry>1</entry><entry>Hello again, anyone listening?</entry>
+<entry>2</entry><entry>jobasher</entry><entry>jo.basher@gmail.com</entry>
+</row>
+<row>
+<entry>3</entry><entry>2</entry><entry>Hello, you'd better buy a book and read it.</entry>
+<entry>1</entry><entry>newbie555</entry><entry>newbie@hotmail.com</entry>
+</row>
+<row>
+<entry>3</entry><entry>2</entry><entry>Hello, you'd better buy a book and read it.</entry>
+<entry>2</entry><entry>jobasher</entry><entry>jo.basher@gmail.com</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable> 
+
+On constate aisément que dans ce produit cartésien (développant toutes les combinaisons
+de colonnes des deux tables) la seule ligne qui satisfait aux contraintes de notre 
+requête est la dernière du tableau: 
+<varname>numpost=3</varname> et <varname>post.user</varname> ainsi que 
+<varname>profils.user</varname> sont égaux (2).
+Le résultat à notre requête est donc la table:
+<informaltable>
+<tgroup cols="1">
+<thead>
+<row>
+<entry>pseudo</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>jobasher</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable> 
+
+
+</para>
+</sect2>
+
+
+<sect2>
+<title>Exemple avec trois tables</title>
+<para>
+Prenons maintenant un autre exemple.
+Imaginons que notre base est faite de trois tables : 
+les tables clients, produits et commandes.
+<programlisting>
+clients (clid,nom)                          clé : clid
+produits(pid,descr,prix)                    clé : pid
+commandes(pid,clid,quantite,montant,date)   clé : pid,clid
+</programlisting>
+</para>
+
+
 <para>
 Pour lister les clients qui ont passé des commandes de plus de 2000 Euros
 et afficher ce qu'ils ont commandé, on peut écrire la requête SQL
@@ -1363,15 +1545,18 @@ where
 </programlisting>
 </para>
 <para>
-On remarque d'abord la notation pointée <varname>table.champ</varname>.
-Elle permet de distinguer des noms de champs identiques dans des tables
-différentes (par exemple clid est le nom d'un attribut dans la table clients
-mais aussi dans la table commandes).
+Pour se persuader que la commande <command>select</command> précédente remplit 
+bien notre objectif, paraphrasons la. 
+Nous obtiendrons au final une table composée des colonnes
+<varname>client.nom</varname> et <varname>produits.descr</varname>.
+Dans la table <varname>commandes</varname> seules les lignes dont le
+montant dépassent 2000 sont sélectionnées. A chacune de ces lignes
+correspond un numéro de client <varname>(commandes.clid)</varname>.
+Ne seront sélectionnées dans les autres tables que les lignes dont le 
+numéro de client est égal à celui-ci. 
 </para>
-<para>
-La liaison entre les tables réside enitèrement dans les contraintes imposées
-par la clause <varname>where</varname>. 
-</para>
+</sect2>
+
 </sect1>
 </chapter>
 
