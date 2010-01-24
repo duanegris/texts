@@ -1249,14 +1249,21 @@ les données du formulaire à notre nouveau fichier (celui désigné par l'attri
 dans le formulaire précédent), et comment on peut récupérer ces valeurs en PHP.
 </para>
 <para>
-Techniquement, le formulaire HTML est <emphasis>posté</emphasis> lorsque l'utilisateur appuie sur le bouton de type <command>submit</command>.
-Ceci veut dire qu'une requête HTTP de type POST est émise vers le serveur, et cette requête contient les valeurs du formulaire. 
-La forme sous laquelle sont transmises les valeurs est une suite de copules (<command>variable</command> = <command>valeur</command>).
+Techniquement, le formulaire HTML est <emphasis>posté</emphasis> lorsque l'utilisateur 
+appuie sur le bouton de type <command>submit</command> et que la balise <command>form</command>
+spécifie <command>method="post"</command>.
+Ceci veut dire qu'une requête HTTP de type POST est émise vers le serveur, 
+et cette requête contient les valeurs du formulaire. 
+La forme sous laquelle sont transmises les valeurs est une suite de couples 
+(<command>variable</command> = <command>valeur</command>).
 </para>
 <para>
-PHP récupère ses requête dans un tableau nommé <command>$_POST</command>, dont les index de tableaux sont les noms des variables (voir le paragraphe sur les tableaux associatifs en PHP). 
+PHP récupère ces valeurs postées dans un tableau qu'il nomme <command>$_POST</command>.
+C'est un tableau associatif, dont les index de tableaux sont les noms des variables 
+(voir le paragraphe sur les tableaux associatifs en PHP). 
 Il est donc facile de retrouver la valeur associée à une variable.
-Par exemple, <command>$_POST['prix']</command> désigne la valeur associée à prix dans le formulaire posté.
+Par exemple, <command>$_POST['prix']</command> désigne la valeur associée au champ HTML <varname>prix</varname> 
+dans le formulaire posté.
 </para>
 <tip>
 <para>
@@ -1364,7 +1371,7 @@ Cependant, l'exemple simple suivant permet de schématiser ce processus.
 <title>L'exemple simple d'un forum</title>
 
 <para>
-Dans un forum de discussions, on pourrait avoir par exmeple les deux tables
+Dans un forum de discussions, on pourrait avoir par exemple les deux tables
 suivantes: une table recensant les messages postés avec pour chaque message,
 le numéro d'utilisateur l'ayant posté. Dans une table profils, on retrouverait
 toutes les informations sur cet utilisateur.
@@ -1421,12 +1428,6 @@ correspondant. Par exemple, le post 3 (<varname>numpost=3</varname>) à été
 posté par un utilisateur de pseudo jobasher.
 </para>
 
-<para>
-Faire une sélection impliquant plusieurs tables est plus difficile à
-comprendre. Elle revient à faire le produit cartésien des tables. Une bonne
-compréhension de ces mécanismes peut être acquise dans des ouvrages
-traitant spécifiquement des bases de données relationnelles et de SQL.
-</para>
 <para>
 On peut illustrer sur cet exemple simple, la requête SQL qui va nous permettre
 d'obtenir le résultat. Etant donné un numéro de post (disons 3), on veut le pseudo 
