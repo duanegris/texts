@@ -755,7 +755,7 @@ Dans l'exemple précédent, on peut récupérer la valeur du paramètre <varname
 <para>
 La tâche de transférer les valeurs dans $_POST et $_GET (et les autres, moins utilisées) étant fastidieuse,
 on peut demander à PHP une extraction automatique grâce à la fonction <command>extract()</command>. 
-Elle exporte votre tableau associatif et créer une variable pour chaque clé du tableau.
+Elle exporte votre tableau associatif et crée une variable pour chaque clé du tableau.
 </para>
 <para>
 Par exemple, si le tableau $_POST contient les variables <varname>login</varname> et <varname>email</varname>
