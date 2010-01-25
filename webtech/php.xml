@@ -672,8 +672,112 @@ function requete($requet, $debug=0) {
 
 
 </sect1>
+</chapter>
+
+
+<!-- _______________ Chapitre  PHP et HTML ______________________________ -->
+<chapter>
+<title>Passage de valeurs d'une page à l'autre</title>
+
+<para>
+La notion de site web <emphasis>dynamique</emphasis> repose sur l'interactivité,
+et donc la capacité du client à envoyer, avec son navigateur, des données au service web.
+Les méthodes principales pour envoyer les données sont:
+</para>
+<itemizedlist>
+	<listitem><para>L'utilisattion d'un formulaire HTML (méthode POST),</para></listitem>
+	<listitem><para>L'utilisation d'une URL (méthode GET).</para></listitem>
+</itemizedlist>
+
+<sect1>
+<title>Méthode POST</title>
+
+<para>
+Les moyens de saisir des données en HTML sont habituellement consignés
+à l'intérieur d'un <emphasis>formulaire</emphasis> (form). 
+Les balises HTML disponibles sont <varname>input</varname>, <varname>select</varname> ou <varname>textarea</varname>.
+La balise <varname>input</varname> a de nombreuses variantes (attribut <varname>type</varname>= text, password, file, hidden, radio, checkbox ...
+</para>
+
+<para>
+Le principe de passage des valeurs est le suivant.
+Quand un formulaire comme ci-dessous est posté (<varname>method='post'</varname> comme attribut de <varname>form</varname>)
+à l'aide du bouton submit,
+le navigateur transmet les valeurs saisies dans le formulaire à l'URL
+spécifiée dans l'attribut <varname>action</varname>.
+Dans notre cas, l'URL de destination est un programme PHP ('maj.php' dans l'exemple)..
+<programlisting>
+&lt;form method="post" action="maj.php"&gt;
+
+Champ texte : &lt;input type="text" name="monchamp"&gt;&lt;br&gt;
+
+            &lt;input type=submit value="Insérer"&gt;
+&lt;/form&gt;
+</programlisting>
+
+</para>
+
+<para>
+PHP met à disposition les valeurs saisies dans une variable <varname>$_POST</varname>.
+Cette variable est un tableau associatif qui contient en particulier toutes les valeurs
+saisies dans les champs du formulaire. 
+Quand il y a un champ nommé <varname>monchamp</varname> dans le formulaire posté, on peut
+récupérer la valeur saisie en PHP par 
+<programlisting>
+  $une_variable_php =  $_POST['monchamp'];
+</programlisting>
+</para>
+
+</sect1>
+
+<sect1>
+<title>Méthode GET</title>
+
+<para>
+La méthode GET permet de récupérer des valeurs passées dans l'URL.
+La partie de l'URL contenant les  paramètres passés est celle suivant le point d'interrogation (?).
+Ensuite, chaque paramètre et sa valeur sont séparés par un ET commercial (&amp;).
+Dans l'URL suivante, on a deux paramètres <varname>a</varname> et <varname>b</varname>
+qui valent respectivement 23 et toto.
+<programlisting>
+  http://domaine.org/maj.php?a=23&amp;b=toto 
+</programlisting>
+</para>
+<para>
+PHP met à disposition les valeurs des paramètres présents dans une URL à travers une  <varname>$_GET</varname>.
+Dans l'exemple précédent, on peut récupérer la valeur du paramètre <varname>a</varname> par:
+<programlisting>
+  $une_variable_php =  $_GET['a'];
+</programlisting>
+</para>
+
+<tip>
+<para>
+La tâche de transférer les valeurs dans $_POST et $_GET (et les autres, moins utilisées) étant fastidieuse,
+on peut demander à PHP une extraction automatique grâce à la fonction <command>extract()</command>. 
+Elle exporte votre tableau associatif et créer une variable pour chaque clé du tableau.
+</para>
+<para>
+Par exemple, si le tableau $_POST contient les variables <varname>login</varname> et <varname>email</varname>
+<programlisting>
+extract($_POST,EXTR_OVERWRITE);
+</programlisting>
+créera les deux variables PHP <varname>$login</varname> <varname>$email</varname>.
+</para>
+</tip>
+
+
+</sect1>
+
+<sect1>
+<title>Autres variables systèmes</title>
+
+<para>
+</para>
+</sect1>
 
 </chapter>
+
 <!-- ___________________________ Chapitre S Q L _______________ -->
 <chapter>
 <title>SQL</title>
