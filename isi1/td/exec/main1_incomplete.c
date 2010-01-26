@@ -52,7 +52,7 @@ void (* loader(char *function))(UBYTE*, ULONG, UBYTE*,ULONG*) {
 	  /* creation du nom de l'objet partageable*/
 	  sprintf(partageable,..................);
 	  if ((so_handle = dlopen(...............)) == NULL) {
-		    fprintf(stderr, "Impossible to open %s: %s\n", partageable,
+		    fprintf(stderr, "Impossible d'ouvrir la librairie %s: %s\n", partageable,
 					  dlerror());
 		    return NULL;
 	  }
@@ -68,11 +68,11 @@ void usage(char *prog) {
 	  exit(1);
 }
 main(int argc, char **argv) {
-	  argv0 = argv[0];
 	  if (argc < 4) usage( argv[0]);
 	  /* Integration du fichier partageable choisi dans l'image memoire
 	   * puis recuperation de l'adresse virtuelle de la fonction a
-	   * executer. Placer ci-dessous le second argument de la commande */
+	   * executer. Placer ci-dessous le second argument de la ligne de 
+	   * commande */
 	  operation = loader(.................);
 	  printf("Called function address : %x\n", operation);
 	  /* Traitement du fichier "entrée" pour produire le fichier "sortie".

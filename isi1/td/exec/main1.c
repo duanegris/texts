@@ -62,19 +62,18 @@ void (* loader(char *function))(UBYTE*, ULONG, UBYTE*,ULONG*) {
 	  return (void (*) (UBYTE *, ULONG, UBYTE *, ULONG *))
 		    dlsym( so_handle, function );
 }
-char *argv0;
 void usage(void);
 
 /**
  * main : 
  **/
 main(int argc, char **argv) {
-	  argv0 = argv[0];
 	  if (argc < 4) usage();
 	  /* Integration du fichier partageable choisi dans l'image memoire
 	   * puis recuperation de l'adresse virtuelle de la fonction a
-	   * executer. Placer ci-dessous le second argument de la commande */
-	  operation = loader( argv[1]);
+	   * executer. Placer ci-dessous le second argument de la ligne de 
+	   * commande */
+	  operation = loader( argv[1] );
 	  //printf("Called function address : %p\n", operation);
 	  /* Traitement du fichier "entrée" pour produire le fichier "sortie".
 	   * Placer ci-dessous les 3eme et 4eme arguments */
