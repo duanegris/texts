@@ -38,7 +38,8 @@ Etant donné le panorama très large de
 techniques présentées, certains chapitres ne seront pas développés 
 (ou même pas écrits) et nécessiteront d'aller consulter des documents
 annexes. 
-Si les logiciels Apache, PHP et MySQL ne sont pas déjà installés chez vous, il vous faudra consulter les documentations adéquates pour leur installation
+Si les logiciels Apache, PHP et MySQL ne sont pas déjà installés chez vous, 
+il vous faudra consulter les documentations adéquates pour leur installation
 et configuration.
 
 D'autre part, le langage de requête SQL ansi que le langage PHP ne 
@@ -247,7 +248,8 @@ seul paquet : le projet
 EasyPHP
 </ulink>
 livre une installation "clés-en-mains" de Apache, PHP, MySQL et de phpMyAdmin en prime.
-La procédure d'installation de ce paquet est très simple. Reportez vous à la section téléchargement et installation de ce site ; vous devriez pouvoir avoir un environnement fonctionnel très rapidement.
+La procédure d'installation de ce paquet est très simple. Reportez vous à la section téléchargement 
+et installation de ce site ; vous devriez pouvoir avoir un environnement fonctionnel très rapidement.
 </para>
 </sect1>
 
@@ -1380,9 +1382,10 @@ en écrivant <command> register_globals = On </command> dans le fichier <filenam
 </tip>
 </sect2>
 <sect2>
-<title>Ecriture des données</title>
+<title>Ecriture des données (INSERT)</title>
 <para>
-	  Maintenant que nous savons récupérer les valeurs des variables du formulaire, il faut les sauvegarder dans la base de données.
+Maintenant que nous savons récupérer les valeurs des variables du formulaire, 
+il faut les sauvegarder dans la base de données.
 </para>
 <para>
 Nous écrivons un deuxième fichier, que nous appelons <filename>maj.php</filename>.
@@ -1390,7 +1393,7 @@ Voyons le listing de notre fichier.
 On retrouve les instructions de connexion à la base, comme dans
 <xref linkend="lecture"/>. 
 Sur le principe, seule la requête SQL change, avec un 
-<function>insert</function> au lieu d'un <function>select</function>.
+<command>INSERT</command> au lieu d'un <command>select</command>.
 
 <programlisting>
 &lt;html&gt;
@@ -1405,7 +1408,7 @@ $nom = $_POST['nom'];
 $prix= $_POST['prix'];
 
 // insertion des valeurs dans la base
-$query = "insert into produit (nom,prix) values ('$nom','$prix')";
+$query = "INSERT INTO produit (nom,prix) VALUES ('$nom','$prix')";
 $result=mysql_query($query);
 mysql_close();
 ?&gt;
@@ -1424,27 +1427,71 @@ trouvées.
 </para>
 </sect2>
 <sect2>
-<title> Modification de données</title>
+<title> Modification de données (UPDATE)</title>
 <para>
-La modification de données (on dit encore la mise a jour, ou le remplacement de valeur)
+La modification de données (on dit encore la mise à jour, ou le remplacement de valeur)
 peut porter sur une ou plusieurs lignes, d'une ou plusieurs tables.
-La modification est introduite par la requête SQL :
+La modification en SQL se dit <command>UPDATE</command>.
+On indique les noms des colonnes concernées et les valeurs à y mettre (SET col1=valeur1, col2=valeur2, ...)
+et à quelles lignes cela s'applique (WHERE condition).
+</para>
+<para>
+Exemple: le nom d'un domaine informatique change de 'fly.com' à 'fly.org'. 
+Je veux mettre à jour la colonne 'nondomaine' de ma table 'adresses' en conséquence.
+La commande suivante modifiera toutes les lignes qui ont 'fly.com'.
 <programlisting>
-    replace into table 
+	  UPDATE adresses
+	  SET nomdomaine='fly.org'
+	  WHERE nomdomaine='fly.com'
+</programlisting>
+</para>
+
+<para>
+On peut aussi modifier plusieurs colonnes simultanément.
+Par exemple, modifier dans la table 'adresses' l'email et le pseudo de l'utilisateur 
+numéro 3 (uid=3) se dit: 
+<programlisting>
+        UPDATE adresses
+	  SET email='newemail@fly.org', pseudo='newpseudo' 
+        WHERE uid=3
+</programlisting>
+</para>
+
+
+<para>
+MySQL introduit une extension (ne faisant pas partie du standard SQL) 
+permettant de modifier toute une ligne: <command>REPLACE</command>.
+
+<programlisting>
+   REPLACE INTO  table 
            (champ1,champ2,...) 
-    where  (conditions)
-    values (val1,val2,...);
+    WHERE  (conditions)
+    VALUES (val1,val2,...);
 </programlisting>
 qui remplace les valeurs présentes dans champ1 par val1, champ2 par val2, etc.
 </para>
+<para>
+Cette commande est en fait une extension de la comande <command>INSERT</command>.
+Dans le cas ou l'un des champ est clé primaire de la table, et que la valeur
+précisée existe déjà dans la table, alors cette ligne sera remplacée.
+Si aucun enregistrement avec une telle valeur de clé n'existe, alors la ligne
+sera insérée.
+Ainsi, cette commande peut être utilisée à des fins d'insertion ou de remplacement.
+</para>
 <para> 
-Commençons par le cas simple : modifier les valeurs d'une seule ligne.
-On veut par exemple modifier le prix d'un article de notre exemple précédent.
-On utilise ici la clé primaire <varname>ref</varname>, unique qui a pour conséquence que
-le remplacement ne se fait que sur une ligne.
+Reprenons notre exemple précédent. 
+On veut modifier le prix d'un article dont on connait la référence, stockée dans
+la variable $ref.
+La référence est la clé primaire (colonne <varname>ref</varname>) de notre table
+'lecteurs'.
+Le remplacement va être opéré si la valeur présente dans $ref existe déjà
+dans la table. 
 <programlisting>
-$query = "replace into produit (ref,prix) values ('$ref','$nouveau_prix')";
-echo "Le prix de l'article $ref est modifié .."; 
+$query = "REPLACE INTO produit (ref,marque,modele,annee,prix) 
+          VALUES ('$ref','$marque','$modele','$annee','$nouveau_prix')";
+$ok = mysql_query( $query );
+if ($ok) 
+   echo "Le prix de l'article $ref est modifié ..."; 
 </programlisting>
 
 </para>
@@ -1464,8 +1511,15 @@ informations liées présentes dans d'autres tables.
 </para>
 <para>
 Faire une sélection impliquant plusieurs tables implique un mécanisme plus 
-difficile à comprendre. La sélection revient à faire le 
-<emphasis>produit cartésien</emphasis> des tables. 
+difficile à comprendre. Une opération sur plusieurs table implique en général
+de travailler sur le <emphasis>produit cartésien</emphasis> des tables. 
+Une opération fondamentale des bases de données relationnelle est la 
+<emphasis>jointure</emphasis> qui indique comment deux tables doivent
+être mises en correspondance, et représente donc un sous-ensemeble du
+produit cartésien.
+</para>
+
+<para>
 Une bonne compréhension de ces mécanismes peut être acquise dans des ouvrages
 traitant spécifiquement des bases de données relationnelles et de SQL.
 Cependant, l'exemple simple suivant permet de schématiser ce processus.
@@ -1557,8 +1611,10 @@ where
 </tip>
 
 <para>
-Dire qu'on sélectionne deux tables provoque le produit cartésien des deux tables.
-
+Pour comprendre cette jointure, on peut la représenter par le produit cartésien des deux tables,
+sur lequel on va imposer des restrictions. 
+Le produit cartésien des deux tables (développant toutes les combinaisons
+de colonnes des deux tables) donnerait:
 <informaltable>
 <tgroup cols="6">
 <thead>
@@ -1596,9 +1652,8 @@ Dire qu'on sélectionne deux tables provoque le produit cartésien des deux tabl
 </tgroup>
 </informaltable> 
 
-On constate aisément que dans ce produit cartésien (développant toutes les combinaisons
-de colonnes des deux tables) la seule ligne qui satisfait aux contraintes de notre 
-requête est la dernière du tableau: 
+La jointure contraint ce résultat en spécifiant l'égalité des valeurs de deux des colonnes.
+Ainsi, la seule ligne qui satisfait aux contraintes de notre requête est la dernière du tableau: 
 <varname>numpost=3</varname> et <varname>post.user</varname> ainsi que 
 <varname>profils.user</varname> sont égaux (2).
 Le résultat à notre requête est donc la table:
