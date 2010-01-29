@@ -23,16 +23,16 @@ int main() {
 	  int ret;
 	  int tube[2];
 
-        /* creat pipe */ 
+	  /* creat pipe */ 
+	  ret = pipe( tube );
 	  if (ret == -1 ) {
-		   printf("[erreur]: echec pipe().\n");
+		    printf("[erreur]: echec pipe().\n");
 		   exit(1); 
 	  }
 
         /* creat fils */ 
 	  ret = fork();
 	  if (ret == -1 ) {
-		    ret = pipe( tube );
 		    printf("[erreur]: echec fork().\n");
 		    exit(1); 
 	  }
