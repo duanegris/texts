@@ -1,0 +1,64 @@
+
+
+Besoin de parallélisme pour traiter les données.
+
+
+Exemple: 20 milliards pages web x 20KB = $4* 10^{14}$ (400 TB)
+• vitesse lecture disque 30-35 MB/sec
+$\Righarrow$ 4 mois de lecture
+• nécessite de l'ordre de 1000 disques
+• Traitement de ces données encore plus long et fastidieux
+
+
+MapReduce
+=========
+Un modèle de programmation
+
+* avec un schéma très contraint
+
+Mais permet
+* parallélisation automatique
+* de l'équilibrage de charge
+* des optimisations sur les transferts disques et réseaux
+* de la tolérance aux pannes
+
+
+Applications typiques
+=====================
+
+
+Base: un problème qui nécessite la lecture de très 
+nombreuses données uniformes.
+
+* Map : extraction d'une caractéristique particulière présente dans chaque donnée,
+puis tri.
+* Reduce : agréger les résultats obtenus: opérande, tri ou transformation, ...
+
+Le schéma de l'application reste constant, ce sont les 
+fonctions Map et Reduce qui changenet selon le problème.
+
+
+Exemple: fréquence de mots dans des fichiers
+=============================================
+
+f1: "le soleil brille sur le fleuve"
+f2: "L'or brille plus que l'argent"
+f3: "...."
+
+Map count f1 : [('le',1);('soleil',1);('brille',1);('sur',1);('le',1);('fleuve',1)]
+    count f2 : [('L',1);('or',1);('brille',1);('plus');('que',1);('l',1);('argent',1)]
+
+Reduce :
+     'le',[1;1]     ->  'le',2
+     'soleil',[1]   ->  'soleil',1
+     'brille',[1;1]   ->  'brille',2
+
+
+
+
+
+
+
+
+
+
