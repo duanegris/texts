@@ -37,6 +37,8 @@ puis tri.
 Le schéma de l'application reste constant, ce sont les 
 fonctions Map et Reduce qui changenet selon le problème.
 
+(Plus exactement, devrait s'appeler Map-Sort-Reduce)
+
 
 Exemple: fréquence de mots dans des fichiers
 =============================================
@@ -54,7 +56,18 @@ Reduce :
      'brille',[1;1]   ->  'brille',2
 
 
+Exemple
+=======
 
+* The New York Times used 100 Amazon EC2 instances and a Hadoop application to process 4TB of raw image TIFF data (stored in S3) into 11 million finished PDFs in the space of 24 hours at a computation cost of about  
+\$240 
+
+
+
+Hadoop
+======
+
+(input) <k1, v1> -> map -> <k2, v2> -> combine -> <k2, v2> -> reduce -> <k3, v3> (output) 
 
 
 
