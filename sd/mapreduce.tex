@@ -71,6 +71,35 @@ Hadoop
 
 
 
+QuickStart
+==========
+http://hadoop.apache.org/common/docs/r0.20.0/quickstart.html
+
+Trois configurations possibles
+* Local (Standalone) Mode  -> un seul processus java
+* Pseudo-Distributed Mode  -> sur un host, un processus java par demon hadoop
+* Fully-Distributed Mode   -> un demon hadoop par host
+
+
+Définir l'interface 
+   org.apache.hadoop.mapred
+       Interface Mapper<K1,V1,K2,V2>
+
+Classe abstraite : MapReduceBase
+   implémentée en particulier par IdentityMapper
+
+
+Méthode de l'interface à implémenter: 
+void map(K1 key,
+         V1 value,
+         OutputCollector<K2,V2> output,
+         Reporter reporter)
+         throws IOException
+
+
+
+
+
 
 
 
