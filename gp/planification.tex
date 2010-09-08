@@ -3,7 +3,7 @@
 \frame{
 \frametitle{Techniques de planification}
 \begin{center}
-Objectif : gérer le découpage temporel et structurel
+Objectif : gÃ©rer le dÃ©coupage temporel et structurel
 \end{center}
 \vspace{.8cm}
 
@@ -12,34 +12,34 @@ Objectif : gérer le découpage temporel et structurel
 \begin{itemize}
 \item Graphe PERT pour :
 	\begin{itemize}
-	\item mettre en évidence les dépendances entre tâches
-	\item mettre en évidence le parallélisme potentiel
-	\item calculer la durée minimum du projet
-	\item mettre en évidence les temps d'attente
+	\item mettre en Ã©vidence les dÃ©pendances entre tÃ¢ches
+	\item mettre en Ã©vidence le parallÃ©lisme potentiel
+	\item calculer la durÃ©e minimum du projet
+	\item mettre en Ã©vidence les temps d'attente
 	\end{itemize}
 	\vspace{.3cm}
 \item Diagramme Gantt pour :
 	 \begin{itemize}
-	 \item faire des hypothèses sur les \emph{ressources}
-	 \item faire des hypothèses sur les disponibilités
-	\item  établir un calendrier de travail
+	 \item faire des hypothÃ¨ses sur les \emph{ressources}
+	 \item faire des hypothÃ¨ses sur les disponibilitÃ©s
+	\item  Ã©tablir un calendrier de travail
 	\end{itemize}
 \end{itemize}
 \vspace{1cm}	
  
 }
 %*****************************************************************
-\subsection{Méthode PERT}
+\subsection{MÃ©thode PERT}
 \frame{
-\frametitle{Méthode PERT}
+\frametitle{MÃ©thode PERT}
 \begin{center}
 Project Evaluation and Review Technique (PERT)
 \end{center}
 \vspace{.3cm}
 
 \begin{itemize}
-\item \'{E}tablissement de l'ensemble des tâches et leurs durée estimée
-\item Ordonnancement des tâches selon dépendances
+\item \'{E}tablissement de l'ensemble des tÃ¢ches et leurs durÃ©e estimÃ©e
+\item Ordonnancement des tÃ¢ches selon dÃ©pendances
 \end{itemize}
  
  \input pert.pdftex_t
@@ -48,9 +48,9 @@ Project Evaluation and Review Technique (PERT)
 }
 %*****************************************************************
 \frame{
-\frametitle{Méthode PERT (2)}
+\frametitle{MÃ©thode PERT (2)}
 
-%% Graphes utilisés pour représenter les dépendances
+%% Graphes utilisÃ©s pour reprÃ©senter les dÃ©pendances
 
 \noindent \input pert2.pdftex_t
 }
@@ -59,38 +59,38 @@ Project Evaluation and Review Technique (PERT)
 \frametitle{Graphe PERT}
 
 \begin{itemize}
-\item Le projet est caractérisé par 
+\item Le projet est caractÃ©risÃ© par 
 \begin{itemize}
-	\item	un ensemble de tâches $T$
-	\item	une date de début $t_0$
+	\item	un ensemble de tÃ¢ches $T$
+	\item	une date de dÃ©but $t_0$
 	\item	une date de fin	$t_f$
 \end{itemize}
 \vspace{3mm}
-\item Une tâche $T_i$ possède :
+\item Une tÃ¢che $T_i$ possÃ¨de :
 \begin{itemize}
-	\item une durée $d({T_i})$
-	\item un ensemble de prédécesseurs $Pred(T_i)$
+	\item une durÃ©e $d({T_i})$
+	\item un ensemble de prÃ©dÃ©cesseurs $Pred(T_i)$
 	\item un ensemble de successeurs $Succ(T_i)$
 \end{itemize}
 \end{itemize}
 
-$\Rightarrow$ Objectif : définir  
+$\Rightarrow$ Objectif : dÃ©finir  
 
 \begin{itemize}
-	\item la date \emph{au plus tôt} de chaque tâche  
-	\item la date \emph{au plus tard} de chaque tâche
+	\item la date \emph{au plus tÃ´t} de chaque tÃ¢che  
+	\item la date \emph{au plus tard} de chaque tÃ¢che
 	\item le \emph{chemin critique}
 \end{itemize}
 
 }
 %*****************************************************************
 \frame{
-\frametitle{Dates au plus tôt}
+\frametitle{Dates au plus tÃ´t}
 
 \begin{tabular}{ll}
 
-	 la tâche ne peut débuter avant & $d_{tot}(T_i)$ 	\\
-	 la tâche ne peut finir avant	& $f_{tot}(T_i)$  	\\
+	 la tÃ¢che ne peut dÃ©buter avant & $d_{tot}(T_i)$ 	\\
+	 la tÃ¢che ne peut finir avant	& $f_{tot}(T_i)$  	\\
 
 \end{tabular} 
 
@@ -106,7 +106,7 @@ f_{tot}(T_i) = & d_{tot}(T_i) + d(T_i)\\
 \end{array}^{\star}$$
  
 \vspace{1cm}
-$\star$ : si tous les liens sont de type fin-début
+$\star$ : si tous les liens sont de type fin-dÃ©but
 }
 %*****************************************************************
 \frame{
@@ -114,8 +114,8 @@ $\star$ : si tous les liens sont de type fin-début
 
 \begin{tabular}{ll}
 
-	 la tâche doit débuter au plus tard à & $d_{tard}(T_i)$ 	\\
-	 la tâche doit finir au plus tard à	& $f_{tard}(T_i)$  	\\
+	 la tÃ¢che doit dÃ©buter au plus tard Ã  & $d_{tard}(T_i)$ 	\\
+	 la tÃ¢che doit finir au plus tard Ã 	& $f_{tard}(T_i)$  	\\
 
 \end{tabular} 
 
@@ -132,16 +132,16 @@ d_{tard}(T_i) = & f_{tard}(T_i) - d(T_i)\\
 
 
 \vspace{1cm}
-$\star$ : si tous les liens sont de type fin-début
+$\star$ : si tous les liens sont de type fin-dÃ©but
 }
 %************************************************************************
 \frame{
-\frametitle{Exemple dates au plus tôt}
+\frametitle{Exemple dates au plus tÃ´t}
  
 \input pert3.pdftex_t
  
 \vspace{1cm}
-Remarquer la tâche $T_5$ avec plusieurs prédécesseurs :
+Remarquer la tÃ¢che $T_5$ avec plusieurs prÃ©dÃ©cesseurs :
 
 $$d_{tot}(T_5) = max(\{f_{tot}(T_2);f_{tot}(T_3)\})) = max(\{7,10\})=10$$
 }
@@ -171,7 +171,7 @@ Supposons $t_f = 15$ (estimation de la fin du projet)
 	\item[$\bullet$] Chemin critique : \\
 	chemin tel que la somme des marges est minimale
 	
-	\item[$\bullet$] Cas particulier avec uniquement liens fin-début\\
+	\item[$\bullet$] Cas particulier avec uniquement liens fin-dÃ©but\\
 	Chemin critique $\Leftrightarrow$ Chemin le plus long
 	
  \end{itemize}
@@ -188,21 +188,21 @@ Ici : le chemin critique est $\{T_1;T_3;T_5\}$
 \begin{tiny}
 \[\begin{tabular}{|l|l|l|}
 \hline\hline
-Tâche		& durée	& lien	\\
+TÃ¢che		& durÃ©e	& lien	\\
 \hline
-$t_1$		& 5	& fin $t_1$ - début $t_3$ \\ \hline
-$t_2$		& 2	& fin $t_2$ - début $t_4,t_5$ \\ \hline
-$t_3$		& 10	& fin $t_3$ - début $t_6,t_8$ \\ \hline
-$t_4$		& 8	& fin $t_4$ - début $t_6$ \\ \hline
-$t_5$		& 10	& fin $t_5$ - début $t_7$ \\ \hline
-$t_6$		& 25	& fin $t_6$ - début $t_{11}$ \\ \hline
-$t_7$		& 4	& fin $t_7$ - début $t_{11}$ \\ \hline
-$t_8$		& 10	& fin $t_8$ - début $t_9,t_{10},t_{11}$ \\ \hline
-$t_9$		& 2	& fin $t_9$ - début $t_{13}$ \\ \hline
-$t_{10}$	& 1	& fin $t_{10}$ - début $t_{13}$ \\ \hline
-$t_{11}$	& 15	& début $t_{11}$ - début $t_{12}$ \\ 
-		&	& fin $t_{11}$ - début $t_{13}$ \\ \hline	
-$t_{12}$	& 10	& fin $t_{12}$ - début $t_{14}$ \\ \hline
+$t_1$		& 5	& fin $t_1$ - dÃ©but $t_3$ \\ \hline
+$t_2$		& 2	& fin $t_2$ - dÃ©but $t_4,t_5$ \\ \hline
+$t_3$		& 10	& fin $t_3$ - dÃ©but $t_6,t_8$ \\ \hline
+$t_4$		& 8	& fin $t_4$ - dÃ©but $t_6$ \\ \hline
+$t_5$		& 10	& fin $t_5$ - dÃ©but $t_7$ \\ \hline
+$t_6$		& 25	& fin $t_6$ - dÃ©but $t_{11}$ \\ \hline
+$t_7$		& 4	& fin $t_7$ - dÃ©but $t_{11}$ \\ \hline
+$t_8$		& 10	& fin $t_8$ - dÃ©but $t_9,t_{10},t_{11}$ \\ \hline
+$t_9$		& 2	& fin $t_9$ - dÃ©but $t_{13}$ \\ \hline
+$t_{10}$	& 1	& fin $t_{10}$ - dÃ©but $t_{13}$ \\ \hline
+$t_{11}$	& 15	& dÃ©but $t_{11}$ - dÃ©but $t_{12}$ \\ 
+		&	& fin $t_{11}$ - dÃ©but $t_{13}$ \\ \hline	
+$t_{12}$	& 10	& fin $t_{12}$ - dÃ©but $t_{14}$ \\ \hline
 $t_{13}$	& 12	& fin $t_{13}$ - fin  \\ \hline
 $t_{14}$	& 30	& fin $t_{14}$ - fin \\
 \hline
@@ -210,31 +210,31 @@ $t_{14}$	& 30	& fin $t_{14}$ - fin \\
 \end{tiny}
 }
 %************************************************************************
-\subsection{Méthode PERT probabiliste}
+\subsection{MÃ©thode PERT probabiliste}
 \frame{
 \frametitle{PERT Probabiliste: synopsis}
 
 \begin{itemize}
-\item<+-> Inclure risque et incertitude dans la durée
+\item<+-> Inclure risque et incertitude dans la durÃ©e
 
-\item<+-> Durée d'une tâche considérée comme une variable aléatoire
+\item<+-> DurÃ©e d'une tÃ¢che considÃ©rÃ©e comme une variable alÃ©atoire
 (dont la distribution suit une loi Beta).
 
 \item<+-> 
 \begin{tabular}[t]{p{.6\textwidth}c}
-La durée totale est aussi une variable aléatoire suivant une loi normale (théorème de la limite centrale).&
+La durÃ©e totale est aussi une variable alÃ©atoire suivant une loi normale (thÃ©orÃ¨me de la limite centrale).&
 \end{tabular}
 %--------- comment -------------
-%théorème de la limite centrale: la somme de variables aléatoires indépendantes est une variable aléatoire suivant une loi normale). 
-% En se positionnant en univers certain et en utilisant les durées moyennes
+%thÃ©orÃ¨me de la limite centrale: la somme de variables alÃ©atoires indÃ©pendantes est une variable alÃ©atoire suivant une loi normale). 
+% En se positionnant en univers certain et en utilisant les durÃ©es moyennes
 % obtenues avec la loi Beta. 
 
 
 \item<+-> Conditions
 \begin{itemize}
-	\item nombre suffisant de tâches
-	\item ordre de grandeur semblables pour les durées
-	\item indépendances entre durées des tâches
+	\item nombre suffisant de tÃ¢ches
+	\item ordre de grandeur semblables pour les durÃ©es
+	\item indÃ©pendances entre durÃ©es des tÃ¢ches
 \end{itemize}
 \end{itemize}
 \pgfputat{\pgfxy(8,1)}{\pgfbox[left,base]{\includegraphics[width=4cm]{gaussreduite.png}}}
@@ -242,9 +242,9 @@ La durée totale est aussi une variable aléatoire suivant une loi normale (théorè
 
 %************************ Pourqoui Beta ? *********************************
 \frame{
-\frametitle{Loi pour la durée d'une tâche}
+\frametitle{Loi pour la durÃ©e d'une tÃ¢che}
 
-Une loi adéquate est la distribution \textbf{Beta}.
+Une loi adÃ©quate est la distribution \textbf{Beta}.
 \pause
 
 \begin{center}
@@ -252,16 +252,16 @@ Une loi adéquate est la distribution \textbf{Beta}.
 \end{center}
 
 \begin{itemize}
-\item<+-> On peut contrôler la forme de la courbe avec $\alpha$ et $\beta$.
-\item<+-> En particulier, elle peut être asymétrique (e.g. allongée à droite).
-\item<+-> Elle a des limites finies (comme les durées de tâches).
+\item<+-> On peut contrÃ´ler la forme de la courbe avec $\alpha$ et $\beta$.
+\item<+-> En particulier, elle peut Ãªtre asymÃ©trique (e.g. allongÃ©e Ã  droite).
+\item<+-> Elle a des limites finies (comme les durÃ©es de tÃ¢ches).
 \end{itemize}
 }
 %************************************************************************
 \frame{
-\frametitle{Loi pour la durée d'une tâche}
+\frametitle{Loi pour la durÃ©e d'une tÃ¢che}
 
-\uncover<1>{Fonction de densité de la distribution:
+\uncover<1>{Fonction de densitÃ© de la distribution:
 $$ f(x)=\frac{(x-a)^{p-1}(b-x)^{q-1}}{(b-a)^{p+q-1}B(p,q)} ~~~ a \leq x \leq b ; p,q > 0$$
   	 avec $B$ la fonction beta:
   	 $ B(p,q)=\int_0^1 t^{\alpha-1}(1-t)^{\beta-1} dt$
@@ -270,14 +270,14 @@ $$ f(x)=\frac{(x-a)^{p-1}(b-x)^{q-1}}{(b-a)^{p+q-1}B(p,q)} ~~~ a \leq x \leq b ;
 }
 \pause
 
-Les travaux de C. Clarke (1962) ont donné une méthode pour contrôler
-$\alpha$ et $\beta$ à partir de 3 paramètres plus simples : \\
+Les travaux de C. Clarke (1962) ont donnÃ© une mÃ©thode pour contrÃ´ler
+$\alpha$ et $\beta$ Ã  partir de 3 paramÃ¨tres plus simples : \\
 \pause
 
 \begin{tabular}[t]{ll}
-	$opt$ : & durée optimiste\\
-	$pes$ : &  durée pessimiste\\
-	$vrai$ : & durée vraisemblable\\
+	$opt$ : & durÃ©e optimiste\\
+	$pes$ : &  durÃ©e pessimiste\\
+	$vrai$ : & durÃ©e vraisemblable\\
 \end{tabular}
 
 % $$ f(x)=\frac{(x-a)^{p-1}(b-x)^{q-1}}{(b-a)^(p+q-1)B(p,q)} ~~~ 0 \leq x \leq 1 ; p,q > 0$$
@@ -294,17 +294,17 @@ $\alpha$ et $\beta$ à partir de 3 paramètres plus simples : \\
 \frametitle{PERT probabiliste (2)}
  
 
-Pour une tâche :
+Pour une tÃ¢che :
 \begin{itemize}
 \item
-Calculer la durée probable d'une tâche $i$ : 
+Calculer la durÃ©e probable d'une tÃ¢che $i$ : 
 \[
 	prob_i = \frac{opt_i + 4~vrai_i + pes_i}{6}
 \]
  
 
 \item Mesurer l'incertitude de l'estimation en \\
-calculant l'indicateur de dispersion de la durée de la tâche $i$:
+calculant l'indicateur de dispersion de la durÃ©e de la tÃ¢che $i$:
 
 \[ d_i = \frac{pes_i - opt_i}{6} \]
 
@@ -313,30 +313,30 @@ calculant l'indicateur de dispersion de la durée de la tâche $i$:
 %************************************************************************
 \frame{
 \frametitle {PERT probabiliste (3)}
-Pour un chemin constitué des tâches $\{1;2; ...;n\}$ \\
+Pour un chemin constituÃ© des tÃ¢ches $\{1;2; ...;n\}$ \\
 \begin{itemize}
-\item Mesurer la durée estimée du chemin 
+\item Mesurer la durÃ©e estimÃ©e du chemin 
 \[	D = \sum_{i=1}^n prob_i \]
 
-\item Mesurer l'écart-type de l'estimation pour le chemin :
+\item Mesurer l'Ã©cart-type de l'estimation pour le chemin :
 \[ E = \sqrt{\sum_{i=1}^n d_i^2} \]
 \end{itemize}
 }
 \begin{comment}
-Note sur la variance et l'écart-type :
+Note sur la variance et l'Ã©cart-type :
 Exemple : on a $k$ notes $\{n_1, ..., n_k\}$. La moyenne est
 $m=(\sum_{i=1}^k n_i) /k$.
-La variance est $v = (\sum_{i=1}^k (n_i-m)^2)/k$ et l'écart-type
+La variance est $v = (\sum_{i=1}^k (n_i-m)^2)/k$ et l'Ã©cart-type
 est $\sigma=\sqrt{v}$.
 \end{comment}
 %************************************************************************
 \frame{
 \frametitle{PERT probabiliste (4)}
 
-	Obtenir la durée du chemin avec une probabilité $p$ :
+	Obtenir la durÃ©e du chemin avec une probabilitÃ© $p$ :
 	\[ {\cal D}(p) = D + E \times G(p) \] 
 
-où $G$ est la fonction associée à la loi normale centrée réduite (extrait)  :
+oÃ¹ $G$ est la fonction associÃ©e Ã  la loi normale centrÃ©e rÃ©duite (extrait)  :
 
 \[\begin{tabular}{|l|l||l|l|}
 \hline
@@ -358,7 +358,7 @@ $p$	&	$G(p)$	&$p$		&	$G(p)$ \\
 \frametitle{PERT probabiliste (4)}
 \underline{Exemple} : Les estimations sont $D = 100$ et  $E = 15$.\\
 
-	La durée probable à 90\% est
+	La durÃ©e probable Ã  90\% est
 	$$\begin{array}[t]{ll} 
 	  {\cal D}(90)	& = 100 + 15 \times G(90) \\
 	  		& = 100 + 15 \times 1,28\\
@@ -366,19 +366,19 @@ $p$	&	$G(p)$	&$p$		&	$G(p)$ \\
 	\end{array}$$ 
 
 
-	La durée probable à 70\% est
+	La durÃ©e probable Ã  70\% est
 	$$\begin{array}[t]{ll} 
 	  {\cal D}(70)	& = 100 + 15 \times G(70) \\
 	  		& = 100 + 15 \times 0,53\\
 			& \approx 108\\
 	\end{array}$$ 
 	
-	La probabilité de terminer en 90 jours est
+	La probabilitÃ© de terminer en 90 jours est
 	$$\begin{array}[t]{ll} 
 	  90	& = 100 + 15 \times G(p) \\
 	  G(p)	& = -10 / 15 = -2 / 3\\
 	 \end{array}$$
-	d'où ~~~$ p \approx 27\% $ 
+	d'oÃ¹ ~~~$ p \approx 27\% $ 
 }
 %************************************************************************
 \frame
@@ -391,11 +391,11 @@ $t_i$	& Description	& {\small $opt$}	&  {\small $pes$} & {\small
 $vrai$} \\
 \hline
 $t_1$ & {\small faire fondre le beurre et le chocolat}	& 6	& 9	& 7,5	\\
-$t_2$ & {\small séparer les oeufs en jaunes et blancs}	& 1	& 4,5	& 3	\\
-$t_3$ & {\small ajouter les jaunes au mélange, faire cuire} & 6 & 8 & 7	\\
+$t_2$ & {\small sÃ©parer les oeufs en jaunes et blancs}	& 1	& 4,5	& 3	\\
+$t_3$ & {\small ajouter les jaunes au mÃ©lange, faire cuire} & 6 & 8 & 7	\\
 $t_4$ & {\small monter les blancs en neige}	& 2 	& 12 	& 5	\\
-$t_5$ &	{\small arrêter la cuisson du mélange,}	&	& & \\
-      & {\small et incorporer les blancs au mélange}	& 2 & 6 & 3\\
+$t_5$ &	{\small arrÃªter la cuisson du mÃ©lange,}	&	& & \\
+      & {\small et incorporer les blancs au mÃ©lange}	& 2 & 6 & 3\\
 $t_6$ & {\small faire cuire au four}	& 16 & 22 & 18\\
 \hline
 \end{tabular}
@@ -403,19 +403,19 @@ $t_6$ & {\small faire cuire au four}	& 16 & 22 & 18\\
 \textit{\small 
 \begin{enumerate}
 \item Tracer le graphe PERT (sans contrainte de ressources)
-\item Calculer la durée probable, l'écart-type de chaque chemin
-\item Déterminer le chemin critique
-\item Quelle est la durée estimée de préparation du gâteau,
+\item Calculer la durÃ©e probable, l'Ã©cart-type de chaque chemin
+\item DÃ©terminer le chemin critique
+\item Quelle est la durÃ©e estimÃ©e de prÃ©paration du gÃ¢teau,
 	\begin{itemize}
-	\item[--] avec une probabilité de 90\% ?
-	\item[--] avec une probabilité de 95\% ?
+	\item[--] avec une probabilitÃ© de 90\% ?
+	\item[--] avec une probabilitÃ© de 95\% ?
 	\end{itemize}
-\item Quelle est la probabilité de terminer en 37 minutes ?	
+\item Quelle est la probabilitÃ© de terminer en 37 minutes ?	
 \end{enumerate}
 }
 }
 %************************************************************************
-%* Corrigé
+%* CorrigÃ©
 %*
 \begin{comment}
       prob   d_i    d_i^2
@@ -426,7 +426,7 @@ T4    5.66   5/3    25/9
 T5    3.33   2/3    4/9
 T6    18.33  1      1
 
-Examinons les différents chemins :
+Examinons les diffÃ©rents chemins :
         +-- T1 --> T3 --+
         |         ^     |
 debut --+        /      +--> T5 --> T6 --> fin
@@ -441,7 +441,7 @@ D_{C_1} = 31.57   E_{C_1} = 1.38
 D_{C_2} = 36.16   E_{C_2} = 1.34
 D_{C_3} = 30.23   E_{C_3} = 2.14
 
-Durée probable avec fiabilité à 90\% , à 95\%
+DurÃ©e probable avec fiabilitÃ© Ã  90\% , Ã  95\%
 ==============================================
 {\cal D}(0.9) = D_{C_2} + E_{C_2} * G(0.9)
               = 37.87 (37 min 52 s)
@@ -455,7 +455,7 @@ C_1   33.86  33.35
 C_2   38.38  37.89
 C_3   33.77  32.98
 
-Probabilité x de terminer en 37 min ou moins
+ProbabilitÃ© x de terminer en 37 min ou moins
 ============================================
 On prend le plus long dans presque (?) tous les cas : C_2
 on a :
@@ -464,7 +464,7 @@ on a :
             G(x) = 0.619
        <=>  x = 72\%
 
-A partir de quelle probabilité x a t-on {\cal D}_{C_3}(x) > {\cal D}_{C_2}(x) ?
+A partir de quelle probabilitÃ© x a t-on {\cal D}_{C_3}(x) > {\cal D}_{C_2}(x) ?
 ==============================================================================
         33.77 + G(x)*2.14    > 36.16 + G(x)* 1.34
         G(x) > 2.98
@@ -484,14 +484,14 @@ $$
 \vspace{.3cm}
 
 \begin{itemize}
-\item<+-> Un réseau PERT donne les dates (au plus tôt, au plus tard) sans tenir compte des contraintes de ressources\\
-\item<+-> Planning $\Rightarrow$ faire des hypothèses sur les ressources\\
+\item<+-> Un rÃ©seau PERT donne les dates (au plus tÃ´t, au plus tard) sans tenir compte des contraintes de ressources\\
+\item<+-> Planning $\Rightarrow$ faire des hypothÃ¨ses sur les ressources\\
 \item<+-> Diagramme Gantt : qui fait quoi et quand ?\\
 
-\item<+-> Possibilité de modifier le planning en 
+\item<+-> PossibilitÃ© de modifier le planning en 
 	\begin{itemize}
-	\item jouant sur les ressources affectées
-	\item jouant sur le chargement (au plus tôt, au plus tard)
+	\item jouant sur les ressources affectÃ©es
+	\item jouant sur le chargement (au plus tÃ´t, au plus tard)
 	\end{itemize}
 \end{itemize}
 
@@ -502,7 +502,7 @@ $$
 
 \input{pert5.pdftex_t}
 
-\underline{Hypothèses} : ressources R1 et R2, et chargement au plus tôt\\
+\underline{HypothÃ¨ses} : ressources R1 et R2, et chargement au plus tÃ´t\\
 \pause
 
 \input{gantt1.pdftex_t} 
@@ -514,7 +514,7 @@ $$
 
 \input{pert5.pdftex_t}
 
-\underline{Hypothèses} : ressources R1 et R2, et chargement au plus tard\\
+\underline{HypothÃ¨ses} : ressources R1 et R2, et chargement au plus tard\\
 \pause
 
 \input{gantt2.pdftex_t} 
@@ -524,7 +524,7 @@ $$
 \frame{
 \frametitle{Diagramme Gantt : le nivellement}
 \vspace{.4cm}
-Le \emph{nivellement} : limiter les ressources utilisées 
+Le \emph{nivellement} : limiter les ressources utilisÃ©es 
  
 \vspace{.8cm} 
 \begin{center}
@@ -538,7 +538,7 @@ Le \emph{nivellement} : limiter les ressources utilisées
 
 \vspace{.3cm}
 
-Le \emph{lissage} : répartir l'utilisation d'une ressource dans le temps
+Le \emph{lissage} : rÃ©partir l'utilisation d'une ressource dans le temps
 
 \vspace{.3cm}
 
@@ -548,15 +548,4 @@ Le \emph{lissage} : répartir l'utilisation d'une ressource dans le temps
 }
 
 
-\frame{
-\frametitle{Diagramme Gantt: raffinement}
 
-Il faut connaître les hypothèses:
-\begin{itemize}
-\item tâches préemptibles ? préemptible: peut être interrompue.
-\item ressources hétérogènes ? connaître la capacité de travail de la ressource. 
-\item contraintes spécifiques sur les tâches ? e.g la tâche nécessite au minimum 2 personnes.
-\end{itemize}
-
- 
-}
