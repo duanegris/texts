@@ -2,11 +2,11 @@
 % Guide des themes:
 % http://mcclinews.free.fr/latex/beamergalerie.php
 
-\documentclass{beamer}
-%\documentclass[handout]{beamer}
+%\documentclass{beamer}
+\documentclass[handout]{beamer}
 
-\mode<presentation>
-%\mode<handout>{\beamertemplatesolidbackgroundcolor{black!5}}
+%\mode<presentation>
+\mode<handout>{\beamertemplatesolidbackgroundcolor{black!5}}
 
 \usetheme{Boadilla}
 \usecolortheme{beaver}
@@ -61,16 +61,31 @@
 
 \begin{document}
 
+\AtBeginSection[]{
+  \begin{frame}
+	\frametitle{Plan}
+      \small \tableofcontents[currentsection, hideothersubsections]
+  \end{frame} 
+}
+
+
 \frame{\titlepage}
+
+%------- plan --------
 \frame{
-\begin{small}
-\tableofcontents
-\end{small}}
+\frametitle{Plan}
+\small \tableofcontents[hidesubsections]
+}
+%----------------------
 
 \include{contexte}
+
 \include{decoupage}
+
 \include{estimation}
+
 \include{planification}
+
 \include{ordo}
 		
 	
