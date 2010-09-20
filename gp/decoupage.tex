@@ -168,56 +168,74 @@ travaux à mener. Par exemple:
 \frame{
 \frametitle{Exemple WBS : institut de formation}
 \begin{center}
-\fbox{\begin{minipage}[t]{8cm}
-\begin{tabbing}
-xxxx\=xxx\=xxx\=xxx\=xxx\= \kill
+\fbox{\begin{minipage}[t]{9cm}
 Application 1 : \textbf{Gestion des candidatures}\\
-\> 1. Etude préalable\\
-\>\> 11. Lancement de la phase  \\
-\>\> 12. Recueil de l'existant\\
-\>\> 13. Conception\\
-\>\> 14. Appréciation \\
-\>\> 15. Validation de la phase\\
-\>2. Etude détaillée\\
-\>\> 21. Conception fonctionnelle générale\\
-\>\> 22. Conception fonctionnelle détaillée\\
-\>\> 23. Conception technique et validation\\
-\>3. Réalisation\\
-\>\> 31. Etude technique\\
-\>\> 32. Production du logiciel
-\end{tabbing}
-\end{minipage}}\end{center}
+\begin{enumerate}
+	\item[1.] Etude préalable
+	\begin{enumerate}
+		\item[11.] Lancement de la phase
+		\item[12.] Recueil de l'existant
+		\item[13.] Conception
+		\item[14.] Appréciation
+		\item[15.] Validation de la phase
+	\end{enumerate}
+	\item[2.] Etude détaillée
+	\begin{enumerate}
+		\item[21.] Conception fonctionnelle générale
+		\item[22.] Conception fonctionnelle détaillée
+		\item[23.] Conception technique validation
+	\end{enumerate}
+	\item[3.] Réalisation
+	\begin{enumerate}
+		\item[31.] Etude technique 
+		\item[32.] Production du logiciel
+	\end{enumerate}
+\end{enumerate}
+\end{minipage}
+}\end{center}
  
 }
 %*****************************************************************
-\frame{\frametitle{exemple : institut de formation (2)}
-
+\frame{
+\frametitle{exemple : institut de formation (2)}
 on raffine: 
 \begin{center}
-\fbox{\begin{minipage}[t]{8cm}
-\begin{tabbing}
-xxxx\=xxx\=xxx\=xxx\=xxx\= \kill
-\> 1. Etude préalable\\
-\>\> 14. Appréciation\\
-\>\>\> 141. Etude des scénarios de développement\\
-\>\>\> 142. Elaboration du bilan\\
-\>\>\> 143. Rédaction du dossier de choix\\
-\>\>\> 143. Réunion du comité directeur\\
-\end{tabbing}
-\end{minipage}}\end{center}
-
-\begin{center}
-\fbox{\begin{minipage}[t]{8cm}
-\begin{tabbing}
-xxxx\=xxx\=xxx\=xxx\=xxx\= \kill
-\> 142. Elaboration du bilan\\
-\>\> 1421. Recueil des éléments de coûts\\
-\>\> 1422. Recherche des éléments de gains attendus\\
-\>\> 1423. construction des bilans par scénario\\
-\end{tabbing}
-\end{minipage}}\end{center}
+\fbox{
+\begin{minipage}[t]{9cm}
+\begin{enumerate}
+	\item[1.] Etude préalable
+	\begin{enumerate}
+		\item[14.] Appréciation
+		\begin{enumerate}
+			\item[141.] Etude des scénarios de développement
+			\item[142.] Elaboration du bilan
+			\item[143.] Rédaction du dossier de choix
+			\item[143.] Réunion du comité directeur
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+\end{minipage}
 }
 
+\vspace{.5cm}
+\pause
+
+\fbox{
+\begin{minipage}[t]{9cm}
+\begin{enumerate}
+	\item[142.] Elaboration du bilan
+	\begin{enumerate}
+		\item[1421.] Recueil des éléments de coûts 
+		\item[1422.] Recherche des éléments de gain attendus 
+		\item[1423.] Construction des bilans par scénario 
+	\end{enumerate}
+\end{enumerate}
+\end{minipage}
+}
+
+
+\end{center}
+}
 
 %*****************************************************************
 \frame{
