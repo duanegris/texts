@@ -212,18 +212,18 @@ $t_{14}$	& 30	& fin $t_{14}$ - fin \\
 %************************************************************************
 \subsection{Méthode PERT probabiliste}
 \frame{
-\frametitle{PERT Probabiliste: synopsis}
+\frametitle{PERT Probabiliste}
 
 \begin{itemize}
-\item<+-> Inclure risque et incertitude dans la durée
+\item<+-> Objectif: Inclure risque et incertitude dans la durée
 
-\item<+-> Durée d'une tâche considérée comme une variable aléatoire
-(dont la distribution suit une loi Beta).
+\item<+-> Durée d'une tâche considérée comme une variable aléatoire.
+Des études ont montré que la durée d'une tâche peut être modélisée une loi Beta.
 
 \item<+-> 
-\begin{tabular}[t]{p{.6\textwidth}c}
-La durée totale est aussi une variable aléatoire suivant une loi normale (théorème de la limite centrale).&
-\end{tabular}
+La durée d'un chemin est la somme de telles variables aléatoires.\\
+Théorème centrale limite $\Rightarrow$
+La durée d'un chemin suit une loi normale.
 %--------- comment -------------
 %théorème de la limite centrale: la somme de variables aléatoires indépendantes est une variable aléatoire suivant une loi normale). 
 % En se positionnant en univers certain et en utilisant les durées moyennes
@@ -237,41 +237,16 @@ La durée totale est aussi une variable aléatoire suivant une loi normale (thé
 	\item indépendances entre durées des tâches
 \end{itemize}
 \end{itemize}
-\pgfputat{\pgfxy(8,1)}{\pgfbox[left,base]{\includegraphics[width=4cm]{gaussreduite.png}}}
+%\pgfputat{\pgfxy(8,1)}{\pgfbox[left,base]{\includegraphics[width=4cm]{gaussreduite.png}}}
 }
 
-%************************ Pourqoui Beta ? *********************************
 \frame{
-\frametitle{Loi pour la durée d'une tâche}
-
-Une loi adéquate est la distribution \textbf{Beta}.
-\pause
-
-\begin{center}
-\includegraphics[height=.5\textheight]{betapdf_general.png}
-\end{center}
-
-\begin{itemize}
-\item<+-> On peut contrôler la forme de la courbe avec $\alpha$ et $\beta$.
-\item<+-> En particulier, elle peut être asymétrique (e.g. allongée à droite).
-\item<+-> Elle a des limites finies (comme les durées de tâches).
-\end{itemize}
-}
-%************************************************************************
-\frame{
-\frametitle{Loi pour la durée d'une tâche}
-
-\uncover<1>{Fonction de densité de la distribution:
-$$ f(x)=\frac{(x-a)^{p-1}(b-x)^{q-1}}{(b-a)^{p+q-1}B(p,q)} ~~~ a \leq x \leq b ; p,q > 0$$
-  	 avec $B$ la fonction beta:
-  	 $ B(p,q)=\int_0^1 t^{\alpha-1}(1-t)^{\beta-1} dt$
-
-\vspace{1cm}
-}
-\pause
+\frametitle{PERT Probabiliste en pratique}
 
 Les travaux de C. Clarke (1962) ont donné une méthode pour contrôler
-$\alpha$ et $\beta$ à partir de 3 paramètres plus simples : \\
+les paramètres de la loi de distribution Beta $\alpha$ et $\beta$ 
+à partir de 3 paramètres plus simples : \\
+\pgfputat{\pgfxy(7,-3)}{\pgfbox[left,base]{\includegraphics[width=4cm]{fig/betapdf_general.png}}}
 \pause
 
 \begin{tabular}[t]{ll}
@@ -280,16 +255,10 @@ $\alpha$ et $\beta$ à partir de 3 paramètres plus simples : \\
 	$vrai$ : & durée vraisemblable\\
 \end{tabular}
 
-% $$ f(x)=\frac{(x-a)^{p-1}(b-x)^{q-1}}{(b-a)^(p+q-1)B(p,q)} ~~~ 0 \leq x \leq 1 ; p,q > 0$$
-%  	 avec $B$ la fonction beta:
-%  	 $ B(p,q)=\int_0^1 t^{\alpha-1}(1-t)^{\beta-1} dt$
-  	
-%
-% p = 3 + sqrt{2}    q = 3 - sqrt{2}   si m > (a+b)/2
-% p = 3 - sqrt{2}    q = 3 + sqrt{2}   si m > (a+b)/2
-
 }
-%************************************************************************
+
+
+
 \frame{
 \frametitle{PERT probabiliste (2)}
  
@@ -333,11 +302,37 @@ est $\sigma=\sqrt{v}$.
 \frame{
 \frametitle{PERT probabiliste (4)}
 
-	Obtenir la durée du chemin avec une probabilité $p$ :
+
+	\textbf{Idée}: on cherche une borne supérieure $t$ de la durée d'un chemin
+       avec un certain degré de confiance $p$.\\
+
+\begin{center}
+\includegraphics[width=8cm]{fig/gauss_pdf_cdf.png}
+\end{center}
+
+	Soit $F(t)$ est la fonction de répartition (ou CFD) de ${\cal N}(0,1)$,\\ 
+      on cherche
+	\begin{center}
+	$t$ telle que $F(t) \leq p$
+\end{center}
+}
+
+\frame{
+\frametitle{PERT probabiliste (5)}
+
+Le comportement stochastique s'applique à \\
+l'incertitude déclarée sur le chemnin : $E$.
+
+\vspace{.5cm}
+
+Si on appelle $G = F^{-1}$,\
+\begin{block}{}
+La durée maximum du chemin avec une probabilité $p$ est:
 	\[ {\cal D}(p) = D + E \times G(p) \] 
+\end{block}
 
-où $G$ est la fonction associée à la loi normale centrée réduite (extrait)  :
-
+On utilise une table (ou calculatrice):
+\begin{small}
 \[\begin{tabular}{|l|l||l|l|}
 \hline
 $p$	&	$G(p)$	&$p$		&	$G(p)$ \\
@@ -351,6 +346,7 @@ $p$	&	$G(p)$	&$p$		&	$G(p)$ \\
 90	&	1,28	& 27,4		&	-0,6	\\ 		
 \hline	
 \end{tabular}\]
+\end{small}
 
 }
 %************************************************************************
@@ -360,7 +356,7 @@ $p$	&	$G(p)$	&$p$		&	$G(p)$ \\
 
 	La durée probable à 90\% est
 	$$\begin{array}[t]{ll} 
-	  {\cal D}(90)	& = 100 + 15 \times G(90) \\
+	  {\cal D}(0,9)	& = 100 + 15 \times G(0,9) \\
 	  		& = 100 + 15 \times 1,28\\
 			& \approx 119\\
 	\end{array}$$ 
@@ -368,7 +364,7 @@ $p$	&	$G(p)$	&$p$		&	$G(p)$ \\
 
 	La durée probable à 70\% est
 	$$\begin{array}[t]{ll} 
-	  {\cal D}(70)	& = 100 + 15 \times G(70) \\
+	  {\cal D}(0,7)	& = 100 + 15 \times G(0,7) \\
 	  		& = 100 + 15 \times 0,53\\
 			& \approx 108\\
 	\end{array}$$ 
