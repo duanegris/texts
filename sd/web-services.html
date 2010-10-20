@@ -1,0 +1,1128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+<title>Web-services</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20101208" />
+<meta name="author" content="S. Genaud" />
+<meta name="company" content="Université de Strasbourg" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<!-- theme 'i18n' instead of 'default' -->
+<link rel="stylesheet" href="ui/i18n/slides.css" type="text/css" media="projection" id="slideProj" />
+
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+
+.important { color : red; }
+
+table.list { border-spacing : 3px; 
+             margin-left: auto; 
+             margin-right : auto; /* pour centrer la table */ 
+           }
+tr.list    { background-color : #eee59a; font : fixed; }
+th.list    { background-color : #c2ddeb; }
+td.list    { background-color : #eee59a; margin : 3px; 
+        font-family : courier ; font-size : 12pt;}
+
+
+.listing pre { 
+	     padding: 0; margin: 0; 
+           background-color : #c2ddeb; 
+           font-size : 90%; 
+           border-bottom: 1px solid #000;
+           border-top   : 1px solid #000;
+           width: 100%; position: relative;
+}
+.listing-normal pre { 
+	     padding: 0; margin: 0; 
+           background-color : #c2ddeb; 
+           border-bottom: 1px solid #000;
+           border-top   : 1px solid #000;
+           width: 100%; position: relative;
+}
+</style>
+
+
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>October&#8226; 2010</h1>
+<h2>Les Web services</h2>
+</div>
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Les Web services</h1>
+<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
+</div>
+
+
+<div class="slide">
+<h1>Introduction</h1>
+
+<p>
+Le W3C définit un <i>Web service</i>: 
+&ldquo;
+<i>a software system designed to support interoperable machine-to-machine interaction over a network.</i>
+&rdquo;
+</p>
+
+<p>Le W3C distingue 2 types de web services:
+<ul>
+<li><b>REST</b>-compliant: manipulation de resources à travers un ensemble uniforme d'opérateurs ne nécessitant pas d'information d'état.</li>
+<li><b>Arbitrary</b>: un ensemble quelconque d'opérations peut être proposé.</li>
+</ul>
+</p>
+
+</div>
+
+<!-- ______________________ SOAP __________________________ -->
+<div class="slide">
+<h1>Web Services SOAP</h1>
+<p>
+Les web-services de type 'arbitrary' sont aujourd'hui implémentés dans leur écrasante majorité en SOAP et WSDL.
+</p>
+<p>
+Pas de nouveauté conceptuelle par rapport à  d'autres propositions antérieures (e.g. DCE RPC ou CORBA IIOP), mais un engouement inégalé de la part de l'industrie (e.g. Microsoft, IBM, Sun Microsystems, BEA, HP, Oracle, SAP, ...).
+</p>
+<p>
+Une part du succès de SOAP vient de son adossement au <a href="http://www.w3.org">W3C</a>, qui
+publie la spécification de SOAP sous la forme d'une 
+ <a href="http://www.w3.org/TR/soap/">recommandation</a>.
+</p>
+</div>
+
+<!-- ______________________ SOAP __________________________ -->
+
+<div class="slide">
+<h1>Qu'est ce que SOAP ?</h1>
+
+Définition du W3C: 
+ <ul>
+	   <li> SOAP est un protocole léger pour l'échange d'information en environnement distribué.</li> 
+	   
+	   <li>SOAP utilise les technologies XML pour bénéficier d'un cadre extensible dans lequel des messages peuvent être échangés avec des protocoles sous-jacents divers.</li>
+	   <li>Sa conception se veut indépendante de tout modèle de programmation ou implémentation spécifiques.</li>
+ </ul>
+</div>
+
+<!-- ______________________ SOAP __________________________ -->
+<div class="slide">
+<h1>SOAP</h1>
+Dans les grandes lignes: 
+ <ul>
+	   <li>SOAP:  Simple Object Access Protocol (juste un acronyme aujourd'hui).</li>
+	   
+	   <li>Un protocole d'échange défini au dessus du protocole de transport (HTTP, SMTP ou même TCP/IP).</li>
+	   <li>XML est utilisé pour l'encodage des données (la plupart des messages sont du texte).</li>
+	   <li>Propose des appels de méthodes distantes (RPC).</li>
+ </ul>
+ <p>
+ De par sa simplicité et les standards utilisés, SOAP doit permettre d'embarquer
+ des services distants dans n'importe quelle application.
+ </p>
+ 
+</div>
+
+<!-- ______________________ SOAP motivation__________________________ -->
+
+<div class="slide">
+<h1>SOAP intérêts</h1>
+ <p>
+ De par sa simplicité et les standards utilisés, SOAP doit permettre d'embarquer
+ des services distants dans n'importe quelle application.
+ </p>
+ 
+ <img style="margin:auto" src="soap-img/www.soapuser.com-archi1.gif" alt="architecture example"/>
+</div>
+
+
+<!-- ______________________ Exemple de message __________________________ -->
+<div class="slide">
+<h1>Exemple de message</h1>
+
+<div class="listing" style="font-size : 70%">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  &lt;soap:Envelope
+        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" &gt;
+     &lt;soap:Body&gt;
+        &lt;po:purchaseOrder orderDate="2003-09-22" 
+               xmlns:po="http://www.Monson-Haefel.com/jwsbook/PO"&gt;
+          &lt;po:accountName&gt;Amazon.com&lt;/po:accountName&gt;
+          &lt;po:accountNumber&gt;923&lt;/po:accountNumber&gt;
+          &lt;po:address&gt;
+             &lt;po:name&gt;AMAZON.COM&lt;/po:name&gt;
+             &lt;po:street&gt;1850 Mercer Drive&lt;/po:street&gt;
+             &lt;po:city&gt;Lexington&lt;/po:city&gt;
+             &lt;po:state&gt;KY&lt;/po:state&gt;
+             &lt;po:zip&gt;40511&lt;/po:zip&gt;
+          &lt;/po:address&gt;
+          &lt;po:book&gt;
+             &lt;po:title&gt;J2EE Web Services&lt;/po:title&gt;
+             &lt;po:quantity&gt;300&lt;/po:quantity&gt;
+             &lt;po:wholesale-price&gt;24.99&lt;/po:wholesale-price&gt;
+          &lt;/po:book&gt;
+        &lt;/po:purchaseOrder&gt;
+     &lt;/soap:Body&gt;
+  &lt;/soap:Envelope&gt;
+</pre>
+</div>
+</div>
+
+<!-- _________________ SOAP message structure _________________ -->
+<div class="slide">
+<h1>Message SOAP - structure</h1>
+
+
+<img style="float:left;margin:30pt" src="soap-img/soap_envelope_structure.gif" alt="message structure"/>
+ 
+Un message SOAP est dans une <tt>Envelope</tt>, qui contient :
+<ul>
+<li>Les namespaces utilisés,</li>
+<li>Un <tt>Header</tt> optionnel, qui peut être traité par des intérmédiaires,</li>
+<li>Un <tt>Body</tt> obligatoire, traité par le récepteur final.</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Remarques</h1>
+
+<ul>
+<li>
+Le protocole prévoit que ce message peut être transporté d'un emetteur vers
+un destinataire final à  travers des intermédiaires éventuels.
+</li>
+<li>
+Les langages XML utilisés dans les messages peuvent être multiples.
+</li>
+</ul>
+
+</div>
+
+<!-- _________________ Namespaces _________________ -->
+<div class="slide">
+<h1>Namespaces (encart)</h1>
+
+<p>
+<b>Rappel</b>: les namespaces (espaces de nommage) permettent d'éviter les conflits de noms. L'objectif est de permettre l'emploi de plusieurs langages dans un seul document.
+</p>
+<ul>
+<li>On associe un <em>préfixe</em> avec une URI. L'association se fait avec
+l'attribut <span class="important"><tt>xmlns:<i>prefixe</i>="<i>URI</i>"</tt></span> où <tt>xmlns</tt> est un mot clé.</li>
+<li><tt><i>prefixe</i></tt> permet ensuite de préfixer les noms de balise.</li>
+<li>L'URI n'est pas accédée. Elle sert d'identifiant unique.</li>
+</ul>
+
+<p>
+<div class="listing" style="font-size : 90%">
+<pre>
+&lt;balise xmlns:mynsp="http://icps.u-strasbg.fr/course/sd/2005"&gt;
+&lt;mynsp:syllabus&gt;
+    ...
+&lt;/mysnp:syllabus&gt;
+&lt;/balise&gt;
+</pre>
+</div>
+</p>
+
+</div>
+<!-- _________________ Namespaces _________________ -->
+<div class="slide">
+<h1>Namespaces (encart - suite)</h1>
+<p>
+On peut utiliser des <em>default namespaces</em> pour ne pas avoir à  spécifier le préfixe à  chaque balise. <br/>
+
+Ils sont définis avec <tt>xmlns</tt> <span class="important">sans</span> préfixe.
+</p>
+
+<div class="listing-normal">
+<pre>
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+   &lt;title&gt;...&lt;/title&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+
+</div>
+<!-- _________________ SOAP message Header _________________ -->
+<div class="slide">
+<h1>Message SOAP - Header et Body</h1>
+
+<p>
+L'entête <tt>Header</tt> est optionnelle:
+</p>
+<ul>
+<li>Prévue pour être extensible: différents <tt>header blocks</tt> 
+    peuvent être lus, ajoutés ou supprimés au passage d'intérmédiares.</li>
+</ul>
+
+<p>
+Le corps <tt>Body</tt> est obligatoire:
+</p>
+<ul>
+<li>Le body est fait de blocs.</li> 
+<li>Lus uniquement par le destinataire final.</li>
+<li>La nature de l'information transportée peut être:
+    <ul>
+     <li>Des données (XML document) (document style)</li>
+     <li>RPC method and parameters (rpc style)</li>
+     <li>Une information d'erreur (SOAP fault)</li>
+     </ul>
+</li>
+</ul>
+
+</div>
+
+
+<!-- ============================ SOAP RPC  ================== -->
+
+<div class="slide">
+<h1>Messages RPC</h1>
+
+<p>
+SOAP 1.2 :<br/>
+La définition du format des messages de style RPC se trouve dans 
+<a href="http://www.w3.org/TR/2003/REC-soap12-part2-20030624/#soapforrpc">
+la partie 2, section 4</a> 
+de la <a href="http://www.w3.org/TR/soap/">recommandation</a>.
+</p>
+
+<p>
+Les éléments nécessaires à  un appel RPC sont :
+</p>
+<ol>
+   <li>l'adresse du noeud SOAP final (destinataire), </li>
+   <li>le nom du service (ou classe, ou méthode) à  invoquer,</li>
+   <li>l'identification et le type des paramètres d'entrée et de retour.</li>
+</ol>
+<p>
+Note: par analogie avec les modèles RPC existants, 1. est souvent dénommé <em>proxy</em>.
+</p>
+</div>
+
+
+<div class="slide">
+<h1>SOAP RPC requête/réponse</h1>
+
+
+Soit la méthode <i>foisdeux()</i> de signature: <tt> int foisdeux(int)</tt>.<br/>
+La requête <tt>foisdeux(63)</tt> est encodé dans un message comme:
+
+<div class="listing-normal">
+<pre>
+   &lt;body&gt;
+     &lt;ns1:<span style="color:firebrick">foisdeux</span> xmlns:ns1="urn:montest"&gt;
+        &lt;param1 xsi:type="xsd:int"&gt;63&lt;/param1&gt;
+     &lt;/ns1:foisdeux&gt;
+   &lt;/body&gt;
+</pre>
+</div>
+
+<p>
+Le message en réponse devrait être:
+</p>
+
+<div class="listing-normal">
+<pre>
+   &lt;body&gt;
+     &lt;ns1:<span style="color:red">foisdeuxResponse</span> xmlns:ns1="urn:montest"&gt;
+	  &lt;<span style="color:red">return</span> xsi:type="xsd:int"&gt;126&lt;/return&gt;
+     &lt;/ns1:foisdeux&gt;
+   &lt;/body&gt;
+</pre>
+</div>
+<p>
+Toujours un seul paramètre en retour, de type simple ou complexe.
+Utilise l'espace de nommage de  <a href="http://www.w3.org/XML/Schema">XML Schema</a> pour les types.
+</p>
+
+</div>
+
+
+
+<div class="slide">
+<h1>Spécification du service</h1>
+
+<p>
+Dans l'exemple précédent, l'utilisateur du service doit connaître, 
+le nom des opérations disponibles, le type des entrées et sorties, à  quelle machine s'adresser, ....
+</p>
+Un format de description à  été proposé, permettant de décrire des web-services: WSDL.
+<p>
+
+</div>
+<!-- _________________ WSDL _________________ -->
+<a name="wsdl"></a>
+<div class="slide">
+<h1>WSDL</h1>
+
+<p>
+WSDL (Web Service Description Language) permet la définition de <em>web services</em> dans un langage XML.
+C'est une <a href="http://www.w3.org/TR/wsdl">note du W3C</a>.
+</p>
+
+<p>
+Un document WSDL utilise les éléments suivants:
+<p/>
+
+<table border="1" class="ex" width="100%">
+  <tr>
+    <th align="left" width="20%">Element</th>
+    <th align="left" width="80%">Définit</th>
+  </tr>
+  <tr>
+    <td valign="top">&lt;portType&gt;</td>
+    <td valign="top">Les opérations proposées par le web service</td>
+
+  </tr>
+  <tr>
+    <td valign="top">&lt;message&gt;</td>
+    <td valign="top">Les messages utilisés par le web service</td>
+  </tr>
+  <tr>
+    <td valign="top">&lt;types&gt;</td>
+
+    <td valign="top">les types de données utilisées par le web service</td>
+  </tr>
+  <tr>
+    <td valign="top">&lt;binding&gt;</td>
+    <td valign="top">Les protocoles de communication utilisés par le web service</td>
+  </tr>
+</table>
+
+
+</div>
+
+
+
+<div class="slide">
+<h1>Structure d'un document WSDL</h1>
+
+<div class="listing-normal">
+<pre>
+&lt;definitions&gt;
+&lt;types&gt;
+... (utilise la notation des <a href="http://www.w3.org/XML/Schema">XML Schema</a>) ....
+&lt;/types&gt;
+
+&lt;message&gt;
+...
+&lt;/message&gt;
+
+&lt;portType&gt;
+...
+&lt;/portType&gt;
+
+&lt;binding&gt;
+...
+&lt;/binding&gt;
+&lt;/definitions&gt;
+</pre>
+</div>
+</div>
+
+
+<div class="handout">
+        <p>Un doc. WSDL peut contenir d'autres éléments, e.g.
+        les éléments extension et services permettant de gouper les définitions de plusieurs 
+        web services en 1 seul doc.</p>
+</div>
+
+<div class="slide">
+<h1>Hello World en WSDL</h1>
+
+<p>
+Exemple: si vous passez le paramètre "monde", le service renvoie la chaine "Bonjour, monde !"
+</p>
+
+<div class="listing" style="font-size : 90%">
+<pre>
+&lt;definitions name="HelloService"
+    targetNamespace="http://www.ecerami.com/wsdl/HelloService.wsdl"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://www.ecerami.com/wsdl/HelloService.wsdl"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+</pre>
+</div>
+
+<p>
+Définition des Namespaces pour éviter les conflits de noms. 
+<tt>targetNamespace</tt> permet de référencer le document lui-même.
+Le namespace par défaut est <tt>http://schemas.xmlsoap.org/wsdl/</tt> 
+(i.e. sans préfixe, c'est le namespace utilisé). 
+</p>
+
+</div>
+
+<!-- _______________________ message ___________________________ -->
+<div class="slide">
+<h1>Hello World en WSDL (message)</h1>
+
+<div class="listing" style="font-size : 90%">
+<pre>
+&lt;message name="DisBonjourRequest"&gt;
+   &lt;part name="monom" type="xsd:string"/&gt;
+&lt;/message&gt;
+&lt;message name="DisBonjourResponse"&gt;
+   &lt;part name="greeting" type="xsd:string"/&gt;
+&lt;/message&gt;
+</pre>
+</div>
+
+<p>
+Les deux messages définis correspondent aux entrées et sorties.
+Pour plusieurs arguments en entrée ou en sortie, on aurait plusieurs
+éléments &lt;part&gt;.
+</p>
+</div>
+<!-- _______________________ portType ___________________________ -->
+
+<div class="slide">
+<h1>Hello World en WSDL (portType)</h1>
+
+<div class="listing" style="font-size : 90%">
+<pre>
+<pre>
+&lt;portType name="bonjour_PortType"&gt;
+   &lt;operation name="DisBonjour"&gt;
+      &lt;input message="tns:DisBonjourRequest"/&gt;
+      &lt;output message="tns:DisBonjourResponse"/&gt;
+   &lt;/operation&gt;
+&lt;/portType&gt;
+</pre>
+</div>
+
+<p>
+L'élément &lt;portType&gt; est le plus important:
+il définit le web service=<b>l'opération</b> (méthode) qu'on peut invoquer 
+et les messages impliqués.
+</p>
+</div>
+
+<!-- _______________________ binding ___________________________ -->
+<div class="slide">
+
+<h1>Hello World en WSDL (binding)</h1>
+
+Indique par quel protocole les opérations vont être transportées. 
+
+<ul>
+<li>
+<tt>binding</tt> a 2 attributs: <tt>name</tt> (celui que vous voulez) et <b>type</b> (le portType utilisé).
+</li>
+<li>
+<tt>soap:binding</tt> a 2 attributs : <tt>style</tt> (rpc ou document) et <tt>transport</tt> (souvent HTTP).
+</li>
+</ul>
+
+</p>
+<div class="listing" style="font-size : 90%">
+<pre>
+&lt;binding name="..." type="..."&gt;
+      &lt;soap:binding style="rpc|document" transport="...http..."/&gt;
+      &lt;operation name="..."&gt;
+
+		.... input et output de l'operation ...
+
+      &lt;/operation &gt;
+
+&lt;/binding&gt;
+</div>
+
+</div>
+
+
+<div class="slide">
+<h1>Hello World en WSDL (binding)</h1>
+
+<p>
+Indique par quel protocole les opérations vont être transportées. 
+Le plus souvent, à  travers SOAP comme ici. 
+</p>
+<div class="listing" style="font-size : 70%">
+<pre>
+&lt;binding name="bonjour_Binding" type="tns:bonjour_PortType"&gt;
+      &lt;soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+      &lt;operation name="DisBonjour"&gt;
+         &lt;soap:operation soapAction="DisBonjour"/&gt;
+         &lt;input&gt;
+            &lt;soap:body
+               encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+               namespace="urn:examples:helloservice"
+               use="encoded"/&gt;
+         &lt;/input&gt;
+         &lt;output&gt;
+            &lt;soap:body
+               encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+               namespace="urn:examples:helloservice"
+               use="encoded"/&gt;
+         &lt;/output&gt;
+      &lt;/operation&gt;
+&lt;/binding&gt;
+</div>
+
+</div>
+
+<!-- _______________________ tools  ___________________________ -->
+<div class="slide">
+<h1>Outils intéressants</h1>
+
+<ul>
+<li>wsdlpull <a href="http://wsdlpull.sourceforge.net/">http://wsdlpull.sourceforge.net/</a> </li>
+</ul>
+
+</div>
+
+
+
+<!-- ============================ Toolkit RPC / CLient ================== -->
+
+
+
+<!-- _________________ Toolkits pour écrire des clients _________________ -->
+<div class="slide">
+<h1>Toolkits pour SOAP</h1>
+
+<p>
+Les messages XML sont la plupart du temps cachés au programmeur car il
+existe des outils existent dans de nombreux langages pour encoder/décoder
+les messages XML. (On parle de <em>sérialisation/dé-sérialisation</em>).
+</p>
+
+Quelques toolkits sont présentés ici:
+<ul>
+  <li><a href="http://www.soaplite.com">SOAP::Lite</a> pour Perl,</li>
+  <li><a href="http://ws.apache.org/soap/">Apache SOAP</a> pour Java,</li>
+  <li><a href="http://cvs.gnome.org/viewcvs/libsoup">libsoup</a> pour C.</li>
+  <li><a href="http://www.php.org">PHP5</a> contient une classe SOAP.</li> 
+</ul>
+
+</div>
+ 
+<!-- _________________ Exemple SOAP::Lite client _________________ -->
+<div class="slide">
+<h1>Exemple client Perl</h1>
+
+<p>
+<a href="http://www.soaplite.com/">SOAP::Lite</a> permet de construire
+une requête RPC de manière très concise de la forme:
+</p>
+<div class="listing-normal">
+<pre>
+  use SOAP::Lite;
+
+  print SOAP::Lite -&gt; uri($namespace)
+                   -&gt; proxy($service_URL)
+                   -&gt; $method_name($param)
+                   -&gt; result;
+</pre>
+</div>
+
+<ul>
+<li><tt>uri()</tt>: chaque proxy peut proposer plusieurs services (classes).
+L'URI est ici un nom unique de service.</li>
+
+<li><tt>proxy()</tt> est l'adresse du serveur à  contacter pour accéder à  la méthode. 
+On peut utiliser les protocoles http:, mailto:, ou ftp:.</li>
+
+
+<li><tt>result</tt> est un scalaire. Dans le cas où le résultat est un vecteur
+il faut utiliser <tt>paramsout</tt> à  la place.</li>
+</ul>
+</div>
+
+
+<!-- _________________ Exemple SOAP::Lite client BabelFish _________________ -->
+<div class="slide">
+<h1>Exemple client Perl: BabelFish</h1>
+
+<p style="font-size:smaller;font-weight:italic;background:grey">
+Detailed Description<br>
+
+IMPORTANT NOTE: Our own access to the Altavista Babelfish data has been
+terminated, so this web service has been disabled.  The service will remain down
+indefinitely until a suitable replacement translation engine can be found.
+</p>
+
+<p>
+Appel au service de traduction <a href="http://www.babelfish.org/">BabelFish</a>.
+<br/>
+source : [ <a href="src/soap/soap-lite/babelfish.pl">babelfish.pl</a> ].
+</p>
+
+<div class="listing-normal">
+<pre>
+  #!perl -w
+
+  use SOAP::Lite;
+
+  print SOAP::Lite                                            
+    -&gt; uri('urn:xmethodsBabelFish')
+    -&gt; proxy('http://services.xmethods.net:80/perl/soaplite.cgi')
+    -&gt; BabelFish('en_fr','The weather is fine. Let us go.')
+    -&gt; result;
+</pre>
+</div>
+
+</div>
+
+<!-- _________________ Exemple SOAP::Lite client pour WSDL _________________ -->
+<div class="slide">
+<h1>Exemple client Perl pour WSDL</h1>
+
+<p>
+<a href="http://www.soaplite.com/">SOAP::Lite</a> permet d'invoquer indirectement
+une méthode décrite dans un fichier <a href="#WSDL">WSDL</a>.
+Dans ce cas l'objet est construit par:
+</p>
+<div class="listing-normal">
+<pre>
+  use SOAP::Lite;
+
+  print SOAP::Lite -&gt; service($URL_to_wsdl_file)
+                   -&gt; $method_name($param);
+</pre>
+</div>
+<p>
+Une requête est faite pour récupérer la description, la parse, construit le stub
+(i.e. l'objet équivalent évoquant le service).
+</p>
+<p>
+Note 1: on peut invoquer plusieurs fois le service sans refaire la requête au WSDL :
+<span><pre> 
+  my $service= SOAP::Lite -&gt; service('http://... .wsdl');
+  print $service-&gt;method('a') + $service-&gt;method('a');
+</pre></span> 
+</p>
+<p>
+Note 2: le fichier peut être local :
+<pre> 
+  -&gt;service('file:// ... .wsdl');
+</pre>
+</p>
+</div>
+
+
+<!-- _________________ Exemple SOAP::Lite client BabelFish WSDL _________________ -->
+<div class="slide">
+<h1>Exemple client Perl: BabelFish</h1>
+
+<p>
+Appel au service de traduction <a href="http://www.babelfish.org/">BabelFish</a>
+à  travers une description WSDL. <br/>
+source : [ <a href="src/soap/soap-lite/babelfish2.pl">babelfish2.pl</a> ].
+</p>
+
+<div class="listing-normal">
+<pre>
+  #!perl -w
+
+  use SOAP::Lite;
+
+  print SOAP::Lite                                            
+    -&gt; service('http://www.xmethods.net/sd/2001/BabelFishService.wsdl')
+    -&gt; BabelFish('en_fr','The weather is fine. Let us go.');
+</pre>
+</div>
+
+</div>
+
+<!-- _________________ Exemple Apache SOAP client _________________ -->
+<div class="slide">
+<h1>Exemple client Java (<a href="http://ws.apache.org/soap/">Apache SOAP</a>)</h1>
+<div class="listing">
+<pre>
+//
+// XMethods sample client for the Stock Quote service
+//
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import org.apache.soap.util.xml.*;
+import org.apache.soap.*;
+import org.apache.soap.rpc.*;
+
+public class stockquoteClient{
+
+  public static float getQuote (URL url, String symbol) throws Exception {
+
+    Call call = new Call ();
+
+    // Service uses standard SOAP encoding
+    String encodingStyleURI = Constants.NS_URI_SOAP_ENC;
+    call.setEncodingStyleURI(encodingStyleURI);
+
+    // Set service locator parameters
+    call.setTargetObjectURI ("urn:xmethods-delayed-quotes");
+    call.setMethodName ("getQuote");
+
+    // Create input parameter vector
+    Vector params = new Vector ();
+    params.addElement (new Parameter("symbol", String.class, symbol, null));
+    call.setParams (params);
+
+    // Invoke the service ....
+    Response resp = call.invoke (url,"");
+</pre>
+</div>
+
+(../..)
+
+</div>
+<div class="slide">
+<h1>Exemple client Java (2/2)</h1>
+<div class="listing">
+<pre>
+    // ... and evaluate the response
+    if (resp.generatedFault ()) {
+	throw new Exception();
+    } else {
+      // Call was successful. Extract response parameter and return result
+      Parameter result = resp.getReturnValue ();
+      Float rate=(Float) result.getValue();
+      return rate.floatValue();
+    }
+  }
+
+// Driver to illustrate service invocation
+  public static void main(String[] args) {
+    try {
+          URL url=new URL("http://services.xmethods.net:80/soap");
+          String symbol= "TRW";
+          float quote = getQuote(url,symbol);
+          System.out.println(quote);
+    }
+    catch (Exception e) {e.printStackTrace();}
+  }
+}
+</pre>
+</div>
+</div>
+
+<!-- _________________ Exemple C SOAP client _________________ -->
+<div class="slide">
+<h1>Exemple client C </h1>
+
+<p>
+La librairie <a href="http://cvs.gnome.org/viewcvs/libsoup">libsoup</a> 
+est utilisée dans le projet <a href="http://www.gnome.org">GNOME</a>.
+</p>
+<p>
+<b>Exemple</b>: <br/>
+Recherche dans des dictionnaires.
+Le noeud SOAP <a href="http://services.aonaware.com/DictService/DictService.asmx">
+http://services.aonaware.com/DictService/DictService.asmx</a>
+fournit différents services, dont Define.
+</p>
+<p>
+listing complet : [ <a href="src/soap/soup/dict.c"> dict.c </a> ].
+</p>
+
+</div>
+
+<!-- _________________ Exemple C SOAP client _________________ -->
+<div class="slide">
+<h1>Exemple client C </h1>
+
+<div class="listing">
+<pre>
+int main (int argc, char **argv)
+{
+	SoupUri *proxy = NULL;
+	SoupSoapMessage *msg;
+
+	session = soup_session_async_new_with_options (SOUP_SESSION_PROXY_URI, proxy,NULL);
+	msg = soup_soap_message_new ("POST",
+				     "http://services.aonaware.com/DictService/DictService.asmx",
+				     FALSE, NULL, NULL, NULL);
+
+	soup_message_add_header (SOUP_MESSAGE (msg)-&gt;request_headers,
+				 "SOAPAction", "http://services.aonaware.com/webservices/Define");
+	soup_soap_message_start_envelope (msg);
+	soup_soap_message_start_body (msg);
+	soup_soap_message_start_element (msg,"Define",NULL,"http://services.aonaware.com/webservices/");
+	soup_soap_message_add_namespace (msg, NULL, "http://services.aonaware.com/webservices/");
+	soup_soap_message_start_element (msg, "word", NULL, NULL);
+	soup_soap_message_write_string (msg, argv[0]);
+	soup_soap_message_end_element (msg);
+	soup_soap_message_end_element (msg);
+	soup_soap_message_end_body (msg);
+	soup_soap_message_end_envelope (msg);
+	soup_soap_message_persist (msg);
+	soup_session_queue_message (session, SOUP_MESSAGE (msg), got_response, NULL);
+	loop = g_main_loop_new (NULL, TRUE);
+	g_main_run (loop);
+}
+</pre>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Exemple client C (libsoup) 2/3</h1>
+
+Décodage de la réponse:
+
+<div class="listing">
+<pre>
+static void got_response (SoupMessage *msg, gpointer user_data)
+{
+	SoupSoapResponse *response;
+	SoupSoapParameter *param, *subparam;
+	char *word, *dict, *def;
+	int count = 0;
+
+	if (!SOUP_STATUS_IS_SUCCESSFUL (msg->status_code)) {
+		fprintf (stderr, "%d %s\n", msg->status_code, msg->reason_phrase); exit (1);
+	}
+	response = soup_soap_message_parse_response (SOUP_SOAP_MESSAGE (msg));
+	if (!response) {
+		fprintf (stderr, "Could not parse SOAP response\n"); exit (1);
+	}
+	param = soup_soap_response_get_first_parameter_by_name (response, "DefineResult");
+	if (!param) {
+		fprintf (stderr, "Could not find result in SOAP response\n"); exit (1);
+	}
+	param = soup_soap_parameter_get_first_child_by_name (param, "Definitions");
+	if (!param)
+		goto done;
+</pre>
+</div>
+(../..)
+</div>
+
+
+<div class="slide">
+<h1>Exemple client C (libsoup) 3/3</h1>
+<div class="listing">
+<pre>
+	for (param = soup_soap_parameter_get_first_child_by_name (param, "Definition");
+	     param;
+	     param = soup_soap_parameter_get_next_child_by_name (param, "Definition")) {
+		subparam = soup_soap_parameter_get_first_child_by_name (param, "Word");
+		if (!subparam)
+			continue;
+		word = soup_soap_parameter_get_string_value (subparam);
+
+		subparam = soup_soap_parameter_get_first_child_by_name (param, "Dictionary");
+		if (subparam)
+			subparam = soup_soap_parameter_get_first_child_by_name (subparam, "Name");
+		if (subparam)
+			dict = soup_soap_parameter_get_string_value (subparam);
+		else
+			dict = NULL;
+
+		printf ("% 2d. %s (%s):\n", ++count, word, dict);
+		g_free (word);
+		g_free (dict);
+
+		subparam = soup_soap_parameter_get_first_child_by_name (param, "WordDefinition");
+		if (subparam) {
+			def = soup_soap_parameter_get_string_value (subparam);
+			printf ("%s\n", def);
+			g_free (def);
+		}
+	}
+
+ done:
+	if (count == 0)
+		printf ("No definition\n");
+
+	g_object_unref (response);
+	g_main_quit (loop);
+}
+</pre>
+</div>
+
+</div>
+
+<!-- _________________ PHP  _________________ -->
+<div class="slide">
+<h1>Exemple client PHP</h1>
+
+<p>
+PHP contient depuis PHP5 un support natif de SOAP (si compilé avec --enable-soap). 
+</p>
+<div class="listing-normal">
+<pre>
+&lt;?php
+    $client = new SoapClient(NULL,
+        array("location" => "http://64.124.140.30:9090/soap",
+              "uri"      => "urn:xmethods-delayed-quotes",
+              "style"    => SOAP_RPC,
+              "use"      => SOAP_ENCODED));
+
+print($client-&gt;__call(
+        "getQuote", 
+        /* Method params */
+         array(new SoapParam( "ibm", "symbol")),
+        /* Options */
+        array(
+            /* SOAP Method Namespace */
+            "uri" => "urn:xmethods-delayed-quotes",
+            /* SOAPAction HTTP Header for SOAP Method */
+            "soapaction" => "urn:xmethods-delayed-quotes#getQuote"
+        )). "\n");
+?&gt;
+</pre>
+</div>
+
+
+</div>
+<!-- _________________ Exemple client PHP  _________________ -->
+<div class="slide">
+<h1>Exemple client PHP pour WSDL</h1>
+
+<p>
+La classe permet également (comme SOAP::Lite) de parser un WSDL avant d'invoquer une méthode.
+Le WSDL téléchargé est ou non mis en cache (<tt>soap.wsdl_cache_enabled</tt> dans phph.ini).
+</p>
+<div class="listing-normal">
+<pre>
+&lt;?php
+$client = new
+    SoapClient(
+    "http://services.xmethods.net/soap/urn:xmethods-delayed-quotes.wsdl"
+    );
+
+print($client->getQuote("ibm"));
+?&gt;
+</pre>
+</div>
+
+
+</div>
+<!-- ============================================================== -->
+
+<!-- _______________________ Exos  ___________________________ -->
+<div class="slide">
+<h1>Exercices</h1>
+
+<p style="font-size:smaller;font-weight:italic;background:grey">
+Attention: cet exercice nécessite de créer un compte chez Google (gratuité totale). Je n'ai aucun intérêt dans cette entreprise. Néanmoins, La contrepartie à  la création d'un compte est l'utilisation de services puissants qui justifient l'exercice.
+</p>
+
+<p>
+<a href="http://www.google.com/apis/">Google</a> fournit des services SOAP (moyennant la création d'une clé).
+Ceux ci sont décrits dans le fichier WSDL suivant : [ <a href="src/soap/wsdl/GoogleSearch.wsdl">GoogleSearch.wsdl</a> ].
+</p>
+
+<ol>
+<li>Créer un <a href="https://www.google.com/accounts/NewAccount?continue=http://api.google.com/createkey&amp;followup=http://api.google.com/createkey">compte</a> pour obtenir une clé.</li>
+<li>Ecrire un client SOAP::Lite qui donne le nombre de résultats obtenus (estimatedTotalResultsCount) par une recherche <tt>doGoogleSearch</tt>.</li>
+</ol>
+
+</div>
+
+<!-- _______________________ Exos  ___________________________ -->
+<div class="slide">
+<h1>Exercices</h1>
+
+<p>
+Le site <a href="http://www.xmethods.com">XMethods</a> recense
+un ensemble de web-services publics.
+</p>
+
+<p>
+Parmi ceux-ci un service de localisation géographique capable de localiser une IP.
+La fiche de ce service est 
+<a href="http://www.xmethods.com/ve2/ViewListing.po?key=uuid:5ADFD852-70F4-0983-4B3B-A28F3DB014C1">
+ici</a>
+</p>
+<p>
+Ecrire une requête SOAP pour trouver la latitude et longitude d'une IP dont vous 
+connaissez l'emplacement géographique.
+</p>
+<p>
+Pour les détails, voir l'exercice de mise en application: [ <a href="soap-td.html">html</a> ].
+</p>
+
+
+</div>
+
+<!-- _______________________ demo  ___________________________ -->
+<div class="slide">
+<h1>Démo Mozilla</h1>
+
+<p>
+Mozilla (et les navigateurs basés sur Mozilla) sont dotés d'une API Javascript 
+pour SOAP. Des détails sont donnés dans cet <a href="http://mozilla.tlk.fr/doc09.php">article</a>.
+</p>
+<p style="font-weight:italic">Attention: pour fonctionner, les fichiers doivent être locaux.</p>
+
+<script type="text/javascript" src="src/soap/js/googleapi.js"></script>
+<script type="text/javascript">
+    
+    function spell()
+    {
+        var f = document.forms["formu"].elements;
+        var key = "RegvGPFQFHKAht9PBeGYj2b/UHz7QA3d";
+        var phrase = f["phrase"].value;
+        spellingSuggestion(phrase,key,showResults);
+    }
+    
+    function showResults(results)
+    {
+        params = results.getParameters(false,{});
+        var s = "";
+        for (var i=0; i<params.length;i++) {
+        
+            s += params[i].value + "\n";
+        }
+        document.forms["formu"].elements["results"].value = s;
+    }
+</script>
+
+<form action="#" name="formu">
+<p>Phrase à  vérifier:<br />
+<input type="text" name="phrase" width="25" value="Stephane Gneaud"/>
+<input type="button" 
+       value="Suggérer autre chose" onclick="spell(); return false;"/>
+</p>
+<p>
+Google Results:<br />
+<textarea cols="20" rows="10" name="results"> </textarea>
+</p>
+</form>
+
+</div>
+
+
+</div> <!-- ********** div final ************* -->
+</body>
+</html>
+
