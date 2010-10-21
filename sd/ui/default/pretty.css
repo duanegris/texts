@@ -5,7 +5,7 @@ body {background: #FFF url(bodybg.gif) -16px 0 no-repeat; color: #000; font-size
 #controls :active {color: #88A !important;}
 #controls :focus {outline: 1px dotted #227;}
 h1, h2, h3, h4 {font-size: 100%; margin: 0; padding: 0; font-weight: inherit;}
-ul, pre {margin: 0; line-height: 1em;}
+ul pre {margin: 0; line-height: 1em;}
 html, body {margin: 0; padding: 0;}
 
 blockquote, q {font-style: italic;}
@@ -23,6 +23,7 @@ sup {font-size: smaller; line-height: 1px;}
 .slide code.old {color: silver;}
 .slide pre {padding: 0; margin: 0.25em 0 0.5em 0.5em; color: #533; font-size: 90%;}
 .slide pre code {display: block;}
+
 .slide ul {margin-left: 5%; margin-right: 7%; list-style: disc;}
 .slide li {margin-top: 0.75em; margin-right: 0;}
 .slide ul ul {line-height: 1;}
