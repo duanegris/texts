@@ -1,6 +1,10 @@
 
+<!--
+  Client SOAP for GeoPinPoint
+  S. Genaud, 2009
+-->
 
-<?
+<?php
 
 $LicenseKey="WS1-LTC1-BOF1"; //!! valide du 7 nov au 21 nov 2006
 /*$Address = "

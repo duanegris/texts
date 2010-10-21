@@ -1,4 +1,4 @@
-<?
+<?php
 /*
  * client PHP (classe Soap native) pour methode Define (Stephane Genaud, 12 Nov 2006)
  *

@@ -1,6 +1,6 @@
 
 
-<?
+<?php
 // Example of PHP SOAP code to access an IP geolocation service.
 // Sample code, S. Genaud dec 2007
 

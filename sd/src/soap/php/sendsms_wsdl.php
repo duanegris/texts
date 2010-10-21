@@ -4,34 +4,61 @@
 https://www.esendex.com/secure/messenger/soap/SendService.asmx
 */
 
+$account="EX0071093";
+$username="genaud@unistra.fr";
+$password="NDX1737";
+$recipient="0033686267449";  /* use intl telephone numbers ! */
+$originator="0686267449"; /* any number to identify sender */
+$body="Ceci est mon test d'envoi de SMS";
+$type="Text"; /* can be : Text, Binary, SmartMessage, Unicode. Default is Text */
+$validityperiod="0"; /* validity in hours. 0 means never expires */
 
-$account="genaud@unistra.fr";
-$pwd="NDX1737";
-$msg="Ceci est mon test d'envoi de SMS";
-$telnum="00330686267449";
-$org="0686267449"; /* any number to identify sender */
 
 $wsdl_url = "https://www.esendex.com/secure/messenger/soap/SendService.asmx?WSDL";
-   
-   $c = new Soapclient($wsdl_url);
+
+   $c = new SoapClient($wsdl_url, array("trace"=>1));
+
+/* To analyze the WSDL, you can call the following useful functions */
+
+   /*
+   print_r( $c->__getFunctions());
    print_r( $c->__getTypes());
-/*
-   $SoapResponse = $c->SendFullMessage(array(	"Originator" => $org, 
-								"Account" => $account, 
-								"Password"=> $pwd,
-								"Password"=> $pwd,
-								"Password"=> $pwd,
-								));
-   $result = $SoapResponse -> GetLocationByIPResult;
-   if (!isset($result->Error)) {
-   	print("IP $query localisée aux coordonnées géographiques (lat,lon) : ".$result->Latitude ."°,". $result->Longitude."°\n");
-	print("Degré de confiance de la réponse : ".$result->Certainty . "%\n");
-   }
-   else
- 	print("Erreur : " . $result->Error->Desc . "\n");
+   */
+
+
+/* The services expects to receive crendentials in the header 
+   It waits for :
+ 
+  <soap:Header>
+    <MessengerHeader xmlns="com.esendex.ems.soapinterface">
+      <Username>string</Username>
+      <Password>string</Password>
+      <Account>string</Account>
+    </MessengerHeader>
+  </soap:Header>
 */
+   $header = new SOAPHeader("com.esendex.ems.soapinterface",
+				"MessengerHeader", 
+				array(
+					"Username"=> $username,
+					"Password"=> $password,
+					"Account"=>$account)
+				);
+   $c -> __setSoapHeaders( $header );
 
-
+/* Now call te function 'SendFullMessage' */
+   try {
+	$c->SendMessageFull(array(
+					"originator" => $originator, 
+					"recipient"=> $recipient,
+					"body"=> $body,
+					"type"=> $type,
+					"validityperiod"=> $validityperiod,
+				));
+   }
+   catch (SoapFault $fault) {
+	die( $fault->faultstring);
+   }
 
 /****
 Array
