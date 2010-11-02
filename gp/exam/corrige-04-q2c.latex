@@ -6,7 +6,7 @@
   \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
   \selectfont}%
 \fi\endgroup%
-\begin{picture}(7582,1444)(3117,-2318)
+\begin{picture}(7489,1444)(3102,-2318)
 \put(10576,-1036){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}31}%
 }}}}
 \thinlines
@@ -60,7 +60,7 @@
 }}}}
 \put(8797,-1795){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$t_8$ (8)}%
 }}}}
-\put(6355,-1795){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$t_2$ (6)}%
+\put(6355,-1795){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$t_2$ (3)}%
 }}}}
 \put(4367,-1795){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$t_1$ (12)}%
 }}}}

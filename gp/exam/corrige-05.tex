@@ -1,10 +1,23 @@
+%\documentclass{report}
+%\usepackage[francais]{babel}
+%\usepackage[T1]{fontenc} 
+%\usepackage{geometry}
+%\usepackage{marvosym}
+%\usepackage[pdftex]{graphicx}
+%\usepackage{epsfig}
+
 \documentclass{report}
 \usepackage[francais]{babel}
-\usepackage[T1]{fontenc} 
-%\usepackage{times}
+\usepackage[latin1]{inputenc} 
 \usepackage{geometry}
-\usepackage{marvosym}
+\usepackage{color}
+\usepackage[pdftex]{graphicx}
+\usepackage{epsfig}
 \usepackage{comment}
+
+
+
+
 %\setlength\textwidth{15.5cm}
 %\setlength\textheight{20cm}
 %\setlength\rightmargin{2cm}
@@ -38,8 +51,8 @@ toute calculatrice autorisée
 \vspace{1cm}\\
 %----------------- Question -------------------
 
-\paragraph{Remarque:} 
-\textit{La question 3 est la même que l'examen de 2004. Voir corrigé 2004 pour un corrigé étendu de la question 3c).}
+%\paragraph{Remarque:} 
+%\textit{La question 3 est la même que l'examen de 2004.}
 
 
 \vspace{.5cm}
@@ -48,7 +61,7 @@ toute calculatrice autorisée
 Dire sous quelles conditions un projet ayant échoué sur le plan technique peut il
 être considéré comme un succès pour l'entreprise ?
 
-\paragraph{Solution} non répondu.
+\paragraph{Solution} voir transparents cours Kenneth Brown. \\
 
 
 
@@ -61,12 +74,18 @@ mais aussi les limitations d'ordre général quand on se place dans la complexité 
 
 
 \paragraph{Solution} 
-\emph{Avantages :} a au moins l'intérêt d'un outil bureautique : production rapide de documents, archivage, échange informatique ....
+\emph{Avantages :} 
+\begin{itemize}
+\item a au moins l'intérêt d'un outil bureautique : production rapide de documents, archivage, échange informatique ....
+\item permet de faire des modifications rapides, concernant l'affectation des ressources, les durées, les dépedances. Par conséquent, permet au chef de projet de tester rapidement différents scénarios, différents ordonnancements (\og que se passerait-il si je mettais untel à la place d'une telle sur cette tâche ?\fg).
+Avoir plusieurs scénarios, avec une appréhension de leurs avantages/inconvénients donne des
+arguments au chef de projet pour motiver ou faire adhérer ses équipes (\og si untel veut bien prendre cette tâche, on finit le projet 3jous plus tôt \fg)
+\end{itemize}
    
 \emph{limitations techniques :} 
 \begin{itemize}
 \item version permettant un travail collaboratif pas toujours disponible (MS Project),
-\item ordonnancement des ressources assez limité (MS Project garde les affectations des ressources par tâches inchangées => ne peut proposer qu'un décalage dans le temps (lissage) pour éviter une surcharge). 
+\item ordonnancement des ressources assez limité (MS Project garde les affectations des ressources par tâches inchangées $\Rightarrow$  ne peut proposer qu'un décalage dans le temps (lissage) pour éviter une surcharge). 
 \end{itemize}
 \emph{limitations générales :} 
 \begin{itemize}
@@ -129,9 +148,9 @@ Les dates au plus tôt et au plus tard sont celles resprésentées ci-dessous.
 
 
 \begin{verbatim}
-  0      12     12      18     
-     t_1            t_2     ---------------+
-  2      14     14      20                 |  
+  0      12     12      15     
+     t_1    ->      t_2     ---------------+
+  5      17     17      20                 |  
                                            | 
                                            | 
   0      5       5      10     10     20   |       20       28
@@ -171,30 +190,40 @@ $$\begin{array}{lcl}
        & = & 5 + 5 + 10 + 8 = 28 \\
  E_{C_0} & = & \sqrt{d_3^2 +  d_4^2 + d_5^2  + d_8^2} \\
        & = & \sqrt{0 + \frac{1}{9} +  \frac{1}{9} + 0} = 0,47 \\ 
+\\
  D_{C_1} & = & prob_1 +  prob_2 + prob_8 \\
-         & = & \frac{78}{6} + \frac{40}{6} + 8 = 27,666\\
+         & = & 13 + 3 + 8 = 24\\
  E_{C_1} & = & \sqrt{d_1^2 +  d_2^2 + d_8^2} \\
-         & = & \sqrt{\frac{64}{36} + \frac{64}{36} +0} = 1,88\\
+         & = & \sqrt{\frac{16}{9} + \frac{1}{9} +0} = 1,37\\
 \end{array}
 $$
-De la table, on a  $p = 70\% \Leftrightarrow G(p)=0,52$. Donc, avec cette
-probabilité la durée de $C_0$ est $28 + 0,52 \cdot 0,47 = 28,24$ et
-la durée de $C_1$ est $25,83 + 0,52 \cdot 1,53 = 27,16$.\\
+De la table, on sait que  $p =0,5 \Leftrightarrow G(p)=0$. 
+Donc, les durées probables à 50\% sont les mêmes que les durées pondérées:
+${\cal D}_{C_0}(0,5) = D_{C_0}$ et ${\cal D}_{C_0}(0,5) = D_{C_1}$.\\
+
 
 On cherche ensuite $x$ telle que 
 $$D_{C_0} + E_{C_0} \cdot G(x) = D_{C_1} + E_{C_1} \cdot G(x)$$
-Il vient immédiatement :
+Il vient :
               $$G(x) (E_{C_0} - E_{C_1}) = D_{C_1}-D_{C_0}$$
 donc
-$$G(x) = \frac{D_{C_1}-D_{C_0}}{E_{C_0} - E_{C_1}} = \frac{27,66 - 28}{0,47-1,88} = 0,23 $$ 
+$$G(x) = \frac{D_{C_1}-D_{C_0}}{E_{C_0} - E_{C_1}} = \frac{24 - 28}{0,47-1,37} = 4,44$$
 
-D'où $p = 60\%$. 
-Ce qui se signifie 
-"La probabilité de finir les chemins $C_0$ et $C_1$ dans un même délai donné est de 60\%".
-Si l'on désire une plus grande certitude (i.e. $p > 60\%$) le chemin $C_1$ devient plus long. \\
+Cette valeur est grande, c-a-d qu'elle est très largement au delà des valeurs 
+habituellement dans les tables (pour rappel, 99\% des valeurs de la loi normale 
+centrée réduite sont situées entre
+$-3\sigma$ et $3\sigma$, soit entre $-3$ et $3$).
+La probabilité associée à $G(4,444) = 0,9999965$. 
+Cela signifie que pour que les chemins soient égaux en durée, il faudrait ajouter aux
+deux chemins (et surtout à $C_1$), 
+une "marge de sécurité" telle qu'on ait 99,99965\% de chances de finir les 2 chemins dans ce délai. 
+La probabilité de terminer dans $99.99965\%$ des cas les deux chemins implique une durée 
+de 30 jours. Il ajouter plus de 6 jours à $C_1$ ($4,444\times 1,37$) et environ $2$ jours à
+$C_0$ qui est moins incertain.
 
-
-
+En d'autres termes, il est 
+coûteux d'ajouter une marge à $C_1$ de telle manière que quand il est terminé, $C_0$
+est terminé aussi.\\
 
 
 \item[\textit{c)}] \emph{Planification Gantt contrainte}\\
@@ -205,6 +234,37 @@ Si ce n'est pas possible, en combien de jours pourrait on finir
 au mieux ?
 Dans tous les cas, dessiner le diagramme Gantt justifiant votre
 réponse.\\
+
+\paragraph{Solution} 
+On peut finir le projet dans le délai du réseau PERT (28).\\
+
+On affecte une ressource au chemin critique ($\{t_3;t_4;t_5;t_8\}$) 
+qui par définition ne peut prendre de retard.
+On sait aussi que $t_7$ et $t_{10}$
+doivent commencer en même temps et donc être réalisées en même temps.
+A partir de 15, on a donc besoin de 3 personnes en même temps 
+sur $t_7$ , $t_{10}$ et $t_5$. Pour ces trois tâches, et la suivante
+$t_8$ qui finit le chemin critique, nous avons suffisamment de ressources.
+
+
+La question est de savoir si les 2 ressources (hors celle dédiée au chemin critique)
+ ont suffisament de temps pour faire $t_1$, $t_2$, $t_6$ et $t_9$
+avant le début de $t_7/t_{10}$.
+
+Pour réaliser le meilleur planning, on affecte les tâches en choisissant la
+répartition qui a une somme des durées minimale (autrement dit, affecter les tâches
+au deux ressources en essayant d'égaliser au mieux la charge affectée à chaque ressource). 
+Ici, en affectant $t_1,t_2$ à une
+ressource, $t_6,t_9$ à une autre ressource, on a au maximum: $d(t_1)+d(t_2)=15$.
+On arrive donc à placer ces tâches dans la marge disponible comme montré sur
+le schéma.
+
+\[ 
+%\includegraphics[.9\textwidth]{corrige-05-q3c.pdf}
+\includegraphics[scale=0.55]{corrige-05-q3c.pdf}
+\]
+
+
 
 \item[\textit{d)}] \emph{Planification Gantt libre}\\
 Faire un diagramme de Gantt avec autant de personnes que vous le
@@ -217,11 +277,13 @@ mi-temps sur certaines tâches). Justifiez vos choix.
 \vspace{1cm}
 
 \noindent \textbf{Annexe} : pour le PERT probabiliste, 
-la loi de distribution utilisée associe en particulier les valeurs suivantes :
+on utilisera la fonction de répartition de la normale centrée réduite qui 
+associe en particulier les valeurs suivantes :
 $$\begin{array}{|c|c|}
  \hline
  p & G(p) \\
  \hline
+  99\% & 2,33 \\ 
   90\% & 1,28 \\
   87\% & 1,19 \\
   80\% & 0,79 \\
