@@ -3,6 +3,9 @@
 %\usepackage{times}
 \usepackage{geometry}
 \usepackage[latin1]{inputenc} 
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
 %\setlength\textwidth{15.5cm}
 %\setlength\textheight{20cm}
 %\setlength\rightmargin{2cm}
@@ -92,254 +95,153 @@ proposant des éléments concrets sur lesquels ils pourront se prononcer.
 
 
 \paragraph{Solution} 
-\emph{Avantages :} a au moins l'intérêt d'un outil bureautique : production rapide de documents, archivage, échange informatique ....
-   
-\emph{limitations techniques :} 
-\begin{itemize}
-\item version permettant un travail collaboratif pas toujours disponible (MS Project),
-\item ordonnancement des ressources assez limité (MS Project garde les affectations des ressources par tâches inchangées 
-      $\Rightarrow$ ne peut proposer qu'un décalage dans le temps (lissage) pour éviter une surcharge). 
-\end{itemize}
-\emph{limitations générales :} 
-\begin{itemize}
-\item on ne doit pas être prisonnier de l'outil. Le logiciel permet de mieux percevoir certains pièges
-(par exemple dépendances) ou opportunités (chemins en parallèle) mais il faut être capable d'adapter
-la conduite de projet en cas d'imprévu.
-L'outil demeure un cadre intéressant pour savoir comment réagir: par exemple si la la quantification 
-de la main d'oeuvre nécessaire a été sous-estimée, avoir tracé le réseau Pert permet de voir 
-où la marge est la plus importante.
-\end{itemize}
-
 
 
 \vspace{.5cm}
 %----------------- Question -------------------
-\noindent  $\diamond$ {\em Question 2}  (6 pts)
-Supposons qu'un client potentiel vous sollicite en tant que chef de projet, 
-pour conduire un projet innovant ayant des conséquences sur son organisation interne.
-Quels critères allez vous considérer pour évaluer la faisabilité du projet ?
+\noindent  $\diamond$ {\em Question 2}  (8 pts)
+
+\noindent L'analyse du projet vous fournit le tableau suivant.
+Il liste les tâches (non-préemptibles) et leurs dépendances (en indiquant les successeurs)
+ainsi que les durées vraisemblables (\textrm{vrai}), pessimistes (\textrm{pess})
+et optimistes (\textrm{opt}) de chacune des tâches. 
+Toutes les dépendances sont de type \textbf{fin-début}, sauf la dépendance $t_7 \rightarrow t_{10}$ qui est de type \textbf{début-début}.
+
+\[\begin{array}{|l|l|c|c|c|}
+\hline
+\hline
+\textrm{tâche}& \textrm{successeur} & \textrm{vrai} &\textrm{pess} & \textrm{opt}\\
+\hline
+t_1		&   t_2	& 12 &   19 & 11    \\
+t_2		&   t_8	& 6 &    12 & 4      \\		
+t_3		&   t_4	& 5 &    5 & 5      \\
+t_4		&   t_5    	& 5 &    6 & 4      \\
+t_5		&   t_8 	& 10 &   11 & 9	\\
+t_6		&   t_5,t_7	&  6 &   6 & 6      \\
+t_7		&   t_8,t_{10}& 5 &    5 & 5    \\
+t_8		&   fin  	& 8  &   8 & 8\\
+t_9		&   t_{10}	& 8  &   9 & 7\\
+t_{10}      &   fin  	& 7  &   7 & 7\\
+\hline
+\hline
+\end{array}
+\]\\
+
+%% solution : fin=28, chemin critique = T3;T4;T5;T8
+
+
+\noindent
+\begin{itemize}
+
+\item[\textit{a)}] \emph{Graphe PERT} \\
+Tracer le graphe PERT correspondant en utilisant les durées vraisemblables
+pour calculer et reporter sur le graphe, les dates au plus tôt et au plus
+tard, ainsi que les marges. Faîtes apparaître les jalons \emph{début} et \emph{fin} sur votre graphe.\\
+
+\paragraph{Solution} Le chemin critique est formé des tâches $\{t_3;t_4;t_5;t_8\}$ si l'on considère les durées vraisemblables.
+Les dates au plus tôt et au plus tard sont celles resprésentées ci-dessous.
+
+
+\begin{verbatim}
+  0      12     12      18     
+     t_1            t_2     -----------------+
+  2      14     14      20                   |  
+                                             | 
+                                             | 
+  0      5       5      10      10      20   |       20       28
+     t_3    ->      t_4     -+->    t_5   - -+-->        t_8         ---+
+  0      5       5      10   |  10      20   |       20       28        |
+                             |               |                          |
+            +----------------+               |                          |
+            |                                |                          |
+  0      6  |    8      13                   |                         fin = 28
+     t_6   -+-->    t_7   -------------------+ 
+  4      10      15     20                                              |
+                 |                                                      |
+                 |                                                      |
+                 v
+  0      8       8      15                                              |
+     t_9    ->     t_10      -------------------------------------------+
+  7      15      15     22 
+\end{verbatim}
+La tâche $t_7$ ne peut commencer qu'à 8 car elle doit commencer en même temps que $t_{10}$.
+Or  $t_{10}$ ne peut commencer commencer avant 8 car elle dépend de la fin de $t_9$.
+La date de fin au plus  tard de $t_{10}$ est 22 (et non 28).
+En effet, $t_{10}$ doit commencer en même temps que $t_7$ qui doit finir au plus tard à 20, et donc commencer au plus tard à 15.
+La date de début au plus tard de $t_{10}$ est donc aussi 15, et par définition de date de fin au plus tard, 
+sa fin au plus tard est 15+7=22 (en réalité un retard jusqu'à 28 n'est pas gênant). 
+\\
+
+
+\item[\textit{b)}] \emph{Chemin critique probabiliste}\\
+Si l'on considère les durées vraisemblables, le chemin critique est constitué
+des tâches $C_0 = \{ t_3; t_4 ; t_5 ; t_8 \}$.
+Donner une définition du chemin critique.\\
+Combien de jours faut il prévoir pour achever le chemin $C_0$ avec une probabilité de 95\%,
+sachant que la fonction de répartition de la loi normale centré réduite (si on l'appelle $G$)
+donne $G(0,95)=1,645$. 
+
+
+%------------------------------------------------------------------------
+\paragraph{Solution} La durée probable avec une probabilité $p$ de
+$C_0$ est $D_{C_0} + E_{C_0} \cdot G(p)$ avec : 
+$$\begin{array}{lcl}
+ D_{C_0} & = &prob_3 +  prob_4 + prob_5  + prob_8 \\
+       & = & 5 + 5 + 10 + 8 = 28 \\
+ E_{C_0} & = & \sqrt{d_3^2 +  d_4^2 + d_5^2  + d_8^2} \\
+       & = & \sqrt{0 + \frac{1}{9} +  \frac{1}{9} + 0} = 0,47 \\ 
+\end{array}
+$$
+
+\item[\textit{c)}] \emph{Planification Gantt contrainte}\\
+Dire si l'on peut finir le projet dans le délai minimum donné par
+le graphe PERT si l'on fait l'hypothèse que l'on dispose de trois
+personnes travaillant à temps complet comme ressources.
+Si ce n'est pas possible, en combien de jours pourrait on finir
+au mieux ?
+Dans tous les cas, dessiner le diagramme Gantt justifiant votre
+réponse.\\
 
 \paragraph{Solution} 
-	\begin{itemize}
-	\item Définissez l'idée en termes de résultat attendu: s'assurer 
-             que les décideurs sont d'accords avec ces résultats et 
-             peuvent dire ce qui va changer par rapport à ce qui est connu.
-    		\begin{itemize}
-		    	\item Tous les acteurs ont ils la même représentation du produit attendu ?
-			\item Cerner la demande : demande énoncée clairement, nature de la demande, cadre de la demande, les délais 
-		 	\item Quels changements l'idée va t-elle produire ? Sont ils acceptable dans les structures et comportements ?  Que faut il faire pour les rendre acceptables ? 
-    	\end{itemize}
+On ne peut pas finir le projet dans le délai du réseau PERT (28).
+Pour s'en convaincre, examinons la charge maximale : on sait que $t_7$ et $t_{10}$
+doivent commencer et donc être réalisées en même temps.
+Or il existe en parallèle un chemin critique qui par définition ne peut prendre de retard,
+et doit être réalisé en même temps (disons par une ressource dédiée). 
+Il y a donc déjà 3 personnes occupées. 
+La question est de savoir si 2 ressources ont suffisament de temps pour faire $t_1$, $t_2$, $t_6$ et $t_9$
+avant le début de $t_7/t_{10}$.
+Dans le cas d'un chargement au plus tard, $t_7$ commence à 15.
+Deux personnes ont donc une capacité de 30 jours de travail.
+Or la somme des durées de $t_1$, $t_2$, $t_6$ et $t_9$ est de 32.
+C'est donc impossible avant. Il est très simple de voir que c'est encore moins possible après.\\
 
-	\item  évaluer la cohérence du projet dans le contexte de l'organisation
-    	\begin{itemize}
-    		\item Générateur de résultats économiques ?
-    		\item Identifier le demandeur (initiateur, décideur, destinataire)
-    		\item Les résultats escomptés sont ils en accord avec la stratégie 
-          		de l'entreprise ? 
-    		\item Le projet s'inscrit-il dans la planification générale de l'entreprise  ?
-    		\item Comment se positionne le projet vis-à-vis d'autres projets ou actions ? (antinomies, synergies, compétition )
-    	\end{itemize}
-
-	\item évaluer la conduite de projet
-    	\begin{itemize}
-    		\item Garanties de progression et d'achèvement ? 
-		\item Programme des étapes et décisions intermédiaires connus ?
-    		\item Les indicateurs de bonne fin sont ils précisés ?
-    	\end{itemize}
- \end{itemize}
-	
-
-
-\vspace{.5cm}
-%----------------- Question -------------------
-\noindent  $\diamond$ {\em Question 3} (9 pts)
-
-Vous passez un entretien d'embauche pour un poste dans une société de 
-production de reportages
-audiovisuels, le recruteur vous soumet un problème : dimanche prochain auront
-lieu des élections présidentielles au Zwimland, et une chaîne de télévision a commandé
-un reportage sur ce sujet pour le journal de 20 heures.\\
-Le processus de production du reportage est le suivant.
-Le reportage comportera deux parties qui peuvent être réalisées indépendamment : 
-un \emph{historique} du contexte politique du pays ($t_1$),
-suivi d'une partie \emph{actualités}, présentant les événements des derniers jours 
-($t_2$),
-et qui donnera les estimations des résultats de l'élection. 
-Le tournage d'un reportage est fait par un trio : cameraman, preneur de son et journaliste.
-Après le tournage, des commentaires doivent être enregistrés sur la partie
-historique ($t_3$) et sur la partie actualités ($t_4$) par le journaliste qui a 
-participé au tournage.
+Pour réaliser le meilleur planning, on affecte les tâches en choisissant la
+répartition qui a une somme des durées minimale. Ici, en affectant $t_1,t_2$ à une
+ressource, $t_6,t_9$ à une autre ressource, on a au maximu: $d(t_1)+d(t_2)=18$.
+la somme des durées.
+Par rapport à la date au plus tard de $t_7/t_{10}$ qui était $15$, on a donc 3 jours de retard,
+puisqu'on doit faire partir $t_7/t_{10}$ à 18. On doit ensuite caler $t_8$ à la fin de $t_7$,
+d'où une fin à 31.
  
-Pour achever ce dernier commentaire, on doit attendre l'estimation fournie par un 
-institut de sondage ($t_5$). 
-Le reportage complet doit ensuite être monté par le monteur pour ne donner qu'une séquence ($t_6$). 
-Enfin, un livreur est chargé de porter la cassette à la chaîne de télévision ($t_7$)
-afin que le reportage puisse être livré à $20{:}00$ et le reportage passer à $20{:}20$.
 
-Le recruteur vous indique les durées approximatives de chacune des tâches, 
-résumées dans 
-le tableau suivant (durées optimiste, vraisemblable et pessimiste). 
-Notez que pour la tâche $t_5$, c'est l'heure à laquelle
-l'institut de sondage doit remettre ses estimations qui est indiquée.
+\[ 
+\resizebox{.9\textwidth}{!}{
+\input{corrige-04-q2c.latex}
+}
+\]
 
-\[\begin{array}{|l|c|c|c|}
-\hline
-\hline
-\textrm{tâche}& \textrm{opt} &\textrm{vrai} &\textrm{pess}\\
-\hline
-t_1		&   4h		&     5h     & 6h     \\
-t_2		&   3h		&    	4 h     & 5h      \\		
-t_3		&   1h		& 	1h      & 1h      \\
-t_4		&	1h 	      & 	1h      & 1h      \\
-t_5		&	\textrm{à } 17:00	 & \textrm{à } 17:30 & \textrm{à } 18:00  \\
-t_6		&   30 mn	& 45 mn & 60 mn \\
-t_7		&	15 mn	& 45 mn & 75 mn\\
-\hline
-\hline
-\end{array}
-\]\\
+La figure montre l'ordonnancement optimal en durée qu'on peut faire avec 3 personnes. On termine à 31.\\
 
-Le recruteur vous demande maintenant comment vous conduiriez ce projet.\\
+\item[\textit{d)}] \emph{Planification Gantt libre}\\
+Faire un diagramme de Gantt avec autant de personnes que vous le
+souhaitez et précisez quel type de disponibilité vous préconisez pour les ressources utilisées (par exemple, vous pouvez préferrer utiliser un employé à 
+mi-temps sur certaines tâches). Justifiez vos choix. 
 
-\noindent \begin{itemize}
-\item[\textit{a)}] 
-Dessinez le graphe PERT correspondant au processus en vous basant sur les 
-durées vraisemblables des tâches (indiquez aussi les marges). 
-Le recruteur vous indique que les journalistes
-commenceront à travailler à $7{:}30$ ce même dimanche.
- 
-\item[\textit{b)}] 
-Pour réaliser les deux parties du reportages, deux trios (cameraman, preneur de son, journaliste) 
-ont été mobilisés.
-Est il nécessaire de faire travailler les deux trios? 
-Dans tous les cas, établir un diagramme de Gantt présentant le calendrier 
-de travail des acteurs du projet.
-
-\item[\textit{c)}] 
-Calculer la somme des durées probables des tâches $\{t_1,t_2,t_3,t_4,t_6,t_7\}$, la dispersion $d$ de chacune de
-ces tâches, avec $d_i=\frac{pess_i-opt_i}{6}$ pour une tâche $i$. 
-Calculer l'écart-type de la durée de l'ensemble de ces tâches.
-Quelle est la probabilité, en suivant
-le chemin constitué par ces tâches, que le reportage puisse passer à $20{:}20$,
-sachant que la loi normale associe en particulier les valeurs suivantes :
-$$\begin{array}{cc}
- p & G(p) \\
-\hline
- 90\% & 1,28 \\
- 87\% & 1,19 \\
- 73,2\% & 0,62 \\
- 70\% & 0,52 \\
- 50\% & 0\\
-\end{array}$$
-  
 
 \end{itemize}
 
-\section*{Corrigé}
-%---------------------------------------------------------------------------
-\noindent  $\diamond$ {\em Question 3a}  
-Nous avons deux chemins principaux : 
-$$C_1 = \{t_1, t_3 ,t_6,t_7\}$$ et 
-$$C_2 = \{t_2 , t_4 , t_6 ,t_7 \}$$
-Nous n'avons que des liens fin-début, sauf pour $t_5 \rightarrow t_4$
-qui est de type \textbf{fin-fin}.  \\
-
-\[\begin{array}{|l|c|c|c|c|c|}
-\hline
-\hline
-\textrm{tâche}& d_{tot} & f_{tot} & d_{tard} & f_{tard} & \textrm{marge totale}\\
-\hline
-t_1		&   7{:}30 & 12{:}30     & 11{:}30  &  16{:}30  & 5h\\
-t_2		&   7{:}30 & 11{:}30   	 & 12{:}30 & 16{:}30    & 5h     \\		
-t_3		&   12{:}30 & 13{:}30	 & 16{:}30 & 17{:}30    & 4h  \\
-t_4		&	11{:}30 & 12{:}30    & 16{:}30 & 17{:}30 	& 5h   \\
-t_5		&	?	  & ?        & 17{:}30 & 17{:}30    & 0\\
-t_6		&   17{:}30 &	18{:}15    & 18{:}30 & 19{:}15   &  1h\\
-t_7		&	18{:}15 & 19{:}00    & 19{:}15 & 20{:}00   &  1h \\
-\hline
-\hline
-\end{array}
-\]\\
-
-\noindent  $\diamond$ {\em Question 3b} 
-Un seul trio est nécessaire dans l'absolu, comme le montre le calendrier de travail
-suivant :
-\begin{center}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline
-                 7{:}30  &  12{:}30  & 16{:}30 & 17{:}30    & 18{:}30   & 19{:}15 & 20{:}00\\
-\hline
-                 $t_1$  & $t_2$  & $t_3$  & $t_4$    & $t_6$  & $t_7$ & \\
-                 trio 1 & trio 1 & journaliste 1  & journaliste 1  & monteur & livreur& \\
-\hline
-\end{tabular}
-\end{center}
-
-\noindent  $\diamond$ {\em Question 3c}  
-Calculons les durées probables.
-
-\[\begin{array}{|l|c|c|c|| c | c |c|}
-\hline
-\hline
-\textrm{tâche}& \textrm{$opt_i$} &\textrm{$vrai_i$} &\textrm{$pess_i$} 
-              & \textrm{prob}_i& d_i=(pess_i-opt_i)/6 & d_i^2\\
-\hline
-t_1		&   4h		&     5h     & 6h     & 5h & \frac{1}{3}h & \frac{1}{9}h\\
-t_2		&   3h		&    	4h     & 5h  & 4h &  \frac{1}{3}h & \frac{1}{9}h  \\		
-t_3		&   1h		& 	1h      & 1h      & 1h &  0 & 0\\
-t_4		&	1h 	      & 	1h      & 1h  & 1h & 0 & 0   \\
-t_5		&	\textrm{à 17{:}00}	 & \textrm{à 17{:}30} & \textrm{à 18{:}00} & 17{:}30 &
-                \frac{1}{6}h & \frac{1}{36}h  \\
-t_6		&   30 mn	& 45 mn & 60 mn & 45 mn & \frac{1}{12}h & \frac{1}{144}h\\
-t_7		&	15 mn	& 45 mn & 75 mn & 45 mn & \frac{1}{6}h & \frac{1}{36}h\\
-\hline
-\hline
-\end{array}
-\]\\
-Soit le chemin $C$ constitué des tâches $\{t_1, t_2,t_3,t_4,t_6,t_7\}$ 
-(hypothèse d'un lissage gantt, c.f. quesiton précédente).
-La somme des durées probables de ces tâches est, en heures  :
-$$D_C = 5 + 4 + 1 + 1 + \frac{3}{4} + \frac{3}{4} = 12h30$$
-L'écart type est 
-$$E_C = 
-  \sqrt{\frac{1}{9}+\frac{1}{9}+\frac{1}{144}+\frac{1}{36}} =
-  \sqrt{\frac{37}{144}} = \sqrt{0,25h} = 0,506h \approx 0,5h
-$$
-Rappelons qu'on peut finir avec une probabilité $p$ 
-un ensemble $C$ de tâches, dans un délai ${\cal D}(p)$ défini par
-
-\begin{equation}
-{\cal D}(p)  = D_C + G(p).E_C
-\label{eq:dp}
-\end{equation}
-
-
-\begin{itemize}
-\item
-Avec une probabilité de 50\%, le reportage sera prêt pour $20{:}00$,
-puisque $G(50\%)=0$ et dans ce cas ${\cal D}(50\%)=D_C=12h30$.\\
-
-\item
-On cherche maintenant $p$ telle que le reportage soit prêt à $20{:}20$. 
-On s'aperçoit immédiatement qu'on dispose de 20 mn de plus (1/3 heure), que
-la date de fin au plus tard initialement prévue. 
-Donc on peut poser :
-\[ {\cal D}(p)= D_C + \frac{1}{3}h \]
-et en remplaçant dans Eq. \ref{eq:dp} on a:
-\[  D_C + \frac{1}{3}h = D_C + G(p).E_C \]
-donc
-$$
-\begin{array}{lllcl}
-				& G(p).E_C &=& \frac{1}{3}h \\
-\Leftrightarrow		& G(p)     &=& \frac{1h}{3*0,5h} \\
-\Leftrightarrow		& G(p)     &=& \frac{2}{3} = 0,666 \\
-\end{array}
-$$
-
-D'autre part on lit directement dans le tableau la probabilité associée à $G(p)=0,6666$,
-soit $p=73,2\%$. On a donc environ 73\% chances  de pouvoir passer le reportage à $20{:}20$ ou avant.
-\end{itemize}
-
+\end{document}
 
 
 

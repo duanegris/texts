@@ -7,9 +7,9 @@
   \selectfont}%
 \fi\endgroup%
 \begin{picture}(7489,1444)(3102,-2318)
-\put(10576,-1036){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}31}%
-}}}}
 \thinlines
+{\color[rgb]{0,0,0}\put(8683,-1852){\framebox(1818,228){}}
+}%
 {\color[rgb]{0,0,0}\put(3458,-1397){\framebox(1136,227){}}
 }%
 {\color[rgb]{0,0,0}\put(4594,-1397){\framebox(1135,227){}}
@@ -70,6 +70,6 @@
 }}}}
 \put(3685,-1340){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$t_3 (5)$}%
 }}}}
-{\color[rgb]{0,0,0}\put(8683,-1852){\framebox(1818,228){}}
-}%
+\put(10576,-1036){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}31}%
+}}}}
 \end{picture}%
