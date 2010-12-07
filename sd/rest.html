@@ -5,7 +5,7 @@
 
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-<title>Web-services</title>
+<title>Web services REST</title>
 <!-- metadata -->
 <meta name="generator" content="S5" />
 <meta name="version" content="S5 1.1" />
@@ -79,7 +79,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 <div id="header"></div>
 <div id="footer">
 <h1>October&#8226; 2010</h1>
-<h2>Les Web services</h2>
+<h2>Les Web services - REST</h2>
 </div>
 </div>
 
@@ -110,73 +110,69 @@ Le W3C définit un <i>Web service</i>:
 
 <br/>
 <p>
-<i>Les services web REST-compliant (ou RESTful) sont présentés <a href="rest.html">ici</a></i>.
+<i>Les services web arbitrary, avec SOAP, sont présentés <a href="web-services.html">ici</a></i>.
 </p>
 
 </p>
 
 </div>
 
-<!-- ______________________ SOAP __________________________ -->
+<!-- ______________________ REST : Principes  __________________________ -->
 <div class="slide">
-<h1>Web Services SOAP</h1>
+<h1>REST : principes</h1>
 <p>
-Les web-services de type 'arbitrary' sont aujourd'hui implémentés dans leur écrasante majorité en SOAP et WSDL.
-</p>
-<p>
-Pas de nouveauté conceptuelle par rapport à  d'autres propositions antérieures (e.g. DCE RPC ou CORBA IIOP), mais un engouement inégalé de la part de l'industrie (e.g. Microsoft, IBM, Sun Microsystems, BEA, HP, Oracle, SAP, ...).
+<i>Representational State Transfer</i> (REST) définit quelques principes simples pour concevoir
+des systèmes distribués de type hyper-média (comme le world wide web).
 </p>
 <p>
-Une part du succès de SOAP vient de son adossement au <a href="http://www.w3.org">W3C</a>, qui
-publie la spécification de SOAP sous la forme d'une 
- <a href="http://www.w3.org/TR/soap/">recommandation</a>.
+Une architecture REST :
+<ul>
+	<li>est <b>client/server</b>: un client initie les requêtes vers les serveurs.</li>
+	<li>les requêtes et réponses manipulent des <b>représentations</b> de <b>ressources</b>.</li>
+	<li>un client change son état comme un automate à états fini. 
+	Ses requêtes provoquent des transitions, et entre deux requêtes il est "at rest" : 
+	peut interagir avec l'utilisateur mais n'utilise pas de bande passante et est donnecté du serveur)
+	</li>
+</ul>
+
 </p>
 </div>
-
-<!-- ______________________ SOAP __________________________ -->
-
-<div class="slide">
-<h1>Qu'est ce que SOAP ?</h1>
-
-Définition du W3C: 
- <ul>
-	   <li> SOAP est un protocole léger pour l'échange d'information en environnement distribué.</li> 
-	   
-	   <li>SOAP utilise les technologies XML pour bénéficier d'un cadre extensible dans lequel des messages peuvent être échangés avec des protocoles sous-jacents divers.</li>
-	   <li>Sa conception se veut indépendante de tout modèle de programmation ou implémentation spécifiques.</li>
- </ul>
-</div>
-
-<!-- ______________________ SOAP __________________________ -->
-<div class="slide">
-<h1>SOAP</h1>
-Dans les grandes lignes: 
- <ul>
-	   <li>SOAP:  Simple Object Access Protocol (juste un acronyme aujourd'hui).</li>
-	   
-	   <li>Un protocole d'échange défini au dessus du protocole de transport (HTTP, SMTP ou même TCP/IP).</li>
-	   <li>XML est utilisé pour l'encodage des données (la plupart des messages sont du texte).</li>
-	   <li>Propose des appels de méthodes distantes (RPC).</li>
- </ul>
- <p>
- De par sa simplicité et les standards utilisés, SOAP doit permettre d'embarquer
- des services distants dans n'importe quelle application.
- </p>
- 
-</div>
-
-<!-- ______________________ SOAP motivation__________________________ -->
+<!-- ______________________ REST : Principes  __________________________ -->
 
 <div class="slide">
-<h1>SOAP intérêts</h1>
- <p>
- De par sa simplicité et les standards utilisés, SOAP doit permettre d'embarquer
- des services distants dans n'importe quelle application.
- </p>
- 
- <img style="margin:auto" src="soap-img/www.soapuser.com-archi1.gif" alt="architecture example"/>
+<h1>REST : principes</h1>
+<p>
+Pour qu'un système puisse être qualifié de RESTful, il faut les caractéristiques suivantes:
+<ul>
+	<li>Client/Server: les interfaces doivent être le seul point de communication (indépendance)</li>
+	<li>Stateless : pas de contexte stocké sur le serveur entre les requêtes (la réponse est complète à chaque requête).
+		Le serveur peut au contraire maintenir un état, mais qui doit être accessible via une URL.</li>
+	<li>Relais: un client ne doit pas savoir si il est connecté au serveur final directement ou passe par des intermédaires (load-balancing, shared caches)</li> 
+	<li>Cache : les réponses doivent être  marquées par le serveur comme <i>cachables</i> ou non.</li>
+	<li>Interface uniforme: les éléments échangés entre serveur et client ont les caractéristiques invariables suivantes (../..)</li>
+</ul>
 </div>
 
+<div class="slide">
+<h1>REST : principe Interface Uniforme</h1>
+
+<ul>
+<li>Interface uniforme: les éléments échangés entre serveur et client respectent:
+		<ul>
+			<li>Toutes les ressources identifiables de manière unique (URIs)</li>
+			<li>Manipulation des ressources à travers leurs représentations
+			    (e.g le serveur n'evoie pas une BD mais un document en représentant une partie, 
+				l'utilisateur peut modifier ces élément, altérant la BD côté serveur)<br/> 
+				</li>
+			<li>Messages auto-suffisants: contiennent toutes les informations pour leur traitement <br/>
+			    (e.g le parser nécessaire ) </li>
+			<li>Transitions assurées par des hyperliens</li>
+		</ul>
+	</li>
+</ul>
+
+</p>
+</div>
 
 <!-- ______________________ Exemple de message __________________________ -->
 <div class="slide">
@@ -391,18 +387,8 @@ Utilise l'espace de nommage de  <a href="http://www.w3.org/XML/Schema">XML Schem
 Dans l'exemple précédent, l'utilisateur du service doit connaître, 
 le nom des opérations disponibles, le type des entrées et sorties, à  quelle machine s'adresser, ....
 </p>
+Un format de description à  été proposé, permettant de décrire des web-services: WSDL.
 <p>
-<b>Problème:</b> comment faire pour changer un service web de machine ?
-<br>
-<b>Réponse:</b>
-Ne pas donner directement au client la localisation et les protocoles d'accès au service,
-mais une description du service qui contient ces informations. On peut alors changer la 
-description: <b>WSDL</b>
-</p>
-
-<p> Cette description peut être dans un fichier distribué, à une URL, ou localisée par
-un annuaire (UDDI).
-</p>
 
 </div>
 <!-- _________________ WSDL _________________ -->
@@ -411,12 +397,8 @@ un annuaire (UDDI).
 <h1>WSDL</h1>
 
 <p>
-WSDL (Web Service Description Language) permet la description de <em>web services</em> dans un langage XML.
+WSDL (Web Service Description Language) permet la définition de <em>web services</em> dans un langage XML.
 C'est une <a href="http://www.w3.org/TR/wsdl">note du W3C</a>.
-</p>
-<p>
-Permet de séparer la description des fonctionnalités abstraites offertes par un service, 
-des détails concrets d'une description de service, tels que "comment" et "où" cette fonctionnalité est proposée.
 </p>
 
 <p>
@@ -490,12 +472,9 @@ Un document WSDL utilise les éléments suivants:
 <h1>Hello World en WSDL</h1>
 
 <p>
-Exemple: description d'un service qui propose une opération HelloWorld.
+Exemple: si vous passez le paramètre "monde", le service renvoie la chaine "Bonjour, monde !"
 </p>
 
-<p>
-Entête:
-</p>
 <div class="listing" style="font-size : 90%">
 <pre>
 &lt;definitions name="HelloService"
@@ -967,7 +946,7 @@ Array
 <tt>SoapHeader</tt>: permet de construire des entêtes personnalisées.
 
 Pour générer :
-<div class="listing" style="font-size:70%">
+<div class="listing" style="font-size:80%">
 <pre class="brush:xml">
  &lt;soap:Header&gt;
     &lt;Credentials xmlns="my.namespace.cred.steph"&gt;
@@ -980,7 +959,7 @@ Pour générer :
 
 écrire en PHP :
 
-<div class="listing" style="font-size:65%">
+<div class="listing" style="font-size:80%">
 <pre class="brush: php">
 &lt;?php
    $login = "toto";
@@ -1023,7 +1002,7 @@ Pour générer :
 </pre>
 </div>
 
-Ces paramètres sont généralement utilisés dans un
+Ces paramètres sont géénralement utilisés dans un
 appel de méthode, qui va les englober dans une balise
 portant son nom. C'est <tt>SoapClient</tt> qui va la générer.
 </div>
