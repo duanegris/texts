@@ -920,7 +920,7 @@ Client minimal pour analyzer le WSDL :
 <pre class="brush: php">
 &lt;?php
     $wsdl_url = "http://soap.amazon.com/schemas2/AmazonWebServices.wsdl";
-    $client = new SoapClient( $url_wsdl );
+    $client = new SoapClient( $wsdl_url );
 	
     $client -&gt; __getFunctions();
 ?&gt;

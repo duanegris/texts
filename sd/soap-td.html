@@ -171,6 +171,102 @@ http://services.aonaware.com/DictService/DictService.asmx?WSDL
 
 
 
+<h1>Utilisation d'un service commercial d'envoi de SMS</h1>
+
+<p>
+La société <a href="http://www.esendex.com/">Esendex</a> propose un services web
+permettant l'envoi massif de SMS.
+</p>
+<p>
+Le service est à <a href="https://www.esendex.com/secure/messenger/soap/SendService.asmx">
+https://www.esendex.com/secure/messenger/soap/SendService.asmx
+</a>
+</p>
+
+
+<ol>
+	<li><i>Analyse du WSDL</i>
+
+Analyser le WSDL situé à:
+<a href="https://www.esendex.com/secure/messenger/soap/SendService.asmx?WSDL">
+https://www.esendex.com/secure/messenger/soap/SendService.asmx?WSDL
+</a>
+
+	<!--
+		Aide pour analyser le WSDL avec votre programme PHP
+		___________________________________________________
+	
+		$wsdl_url = "https://www.esendex.com/secure/messenger/soap/SendService.asmx?WSDL";
+   		$c = new SoapClient($wsdl_url, array("trace"=>1));
+
+		/* To analyze the WSDL, you can call the following useful functions */
+
+   		print_r( $c->__getFunctions());
+   		print_r( $c->__getTypes());
+
+
+		/* The services expects to receive crendentials in the header 
+   		It waits for :
+ 
+		<soap:Header>
+  			  <MessengerHeader xmlns="com.esendex.ems.soapinterface">
+     				 <Username>string</Username>
+     			 	<Password>string</Password>
+      			<Account>string</Account>
+    			  </MessengerHeader>
+  		</soap:Header>
+		*/
+	-->
+
+
+
+	</li>
+	<li>
+		Ecrire le programme PHP construisant l'appel de la méthode <tt>SendMessageFull()</tt>.
+		Pour faire des tests, vous aurez besoin d'un compte utilisateur avec mot de passe
+		que je fournirai après vérification du code, le nombre d'essais associé au compte étant
+		limité. 
+	</li>
+	
+	<!--	
+
+		$account="EX0071093";
+		$username="genaud@unistra.fr";
+		$password= ASK ME !!
+		$recipient="0033686267449";  /* use intl telephone numbers ! */
+		$originator="0686267449"; /* any number to identify sender */
+		$body="Ceci est mon test d'envoi de SMS";
+		$type="Text"; /* can be : Text, Binary, SmartMessage, Unicode. Default is Text */
+		$validityperiod="0"; /* validity in hours. 0 means never expires */
+
+
+		 $header = new SOAPHeader("com.esendex.ems.soapinterface",
+				"MessengerHeader", 
+				array(
+					"Username"=> $username,
+					"Password"=> $password,
+					"Account"=>$account)
+				);
+   		$c -> __setSoapHeaders( $header );
+
+		/* Now call te function 'SendFullMessage' */
+   		try {
+			$c->SendMessageFull(array(
+					"originator" => $originator, 
+					"recipient"=> $recipient,
+					"body"=> $body,
+					"type"=> $type,
+					"validityperiod"=> $validityperiod,
+				));
+   		}
+   		catch (SoapFault $fault) {
+			die( $fault->faultstring);
+   		}
+
+
+	-->
+
+
 </div> <!-- innerbox -->
 </body>
 </html>
