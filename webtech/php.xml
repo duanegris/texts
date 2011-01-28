@@ -189,29 +189,7 @@ Remarquons bien que le choix de Apache+PHP+MySQL n'en est que partie une multitu
 <para>
 L'installation sur un système Linux de ces trois composants est 
 plutôt simple, étant donné que ces logiciels sont généralement
-disponibles sur les CDs livrés par la plupart des distributions.
-Nous prenons ici deux exemples de distribution. 
-<ulink url="http://www.linux-mandrake.com">Mandrake 8</ulink>.
-</para>
-
-<para>
-Dans cette distribution, Il vous faut installer les packages suivants :
-<programlisting>
-apache-common-1.3.19-3mdk
-apache-modules-1.3.19-3mdk
-apache-1.3.19-3mdk
-apache-conf-1.3.19-3mdk
-apache-mod_perl-1.3.19_1.25-3mdk
-apache-suexec-1.3.19-3mdk
-php-mysql-4.0.4pl1-6mdk
-php-common-4.0.4pl1-6mdk
-mod_php-4.0.4pl1-6mdk
-php-4.0.4pl1-6mdk
-php-mysql-4.0.4pl1-6mdk
-MySQL-shared-3.23.36-2mdk
-MySQL-client-3.23.36-2mdk
-MySQL-3.23.36-2mdk
-</programlisting>
+disponibles d'office dans les distributions. 
 
 De plus, on vérifiera que la configuration de PHP permet bien
 d'accéder aux fonctions MySQL : 
@@ -225,7 +203,21 @@ est décommentée (il ne doit pas y avoir de points virgule en début de ligne).
 
 <para>
 Bien sûr, il faut aussi vérifier que les services Apache et MySQL sont
-actifs. Dans le doute démarrez les (en tant que root):
+actifs. Dans le doute démarrez les (en tant que rootou en sudo).
+On peut utiliser la commande <filename>apachectl</filename>,
+souvent placée dans <filename>/usr/sbin/</filename>.
+Cette commande propose comme option <filename>start, restart, graceful, graceful-stop,
+ou stop</filename>, et est toujours disponible avec Apache. 
+
+Pour lancer:
+<screen>
+  <prompt>bash # </prompt><userinput>apachectl start</userinput>
+</screen>
+</para>
+<para>
+Alternativement, on peut utiliser les scripts de démarrage enrobant
+cette commande. Ils varient en fonction de la distribution. 
+Sur Mandriva/Redhat/Fedora, on peut utiliser:
 <screen>
   <prompt>bash # </prompt><userinput>service httpd start</userinput>
   Starting httpd:                                            [  OK  ]
@@ -242,12 +234,16 @@ actifs. Dans le doute démarrez les (en tant que root):
 
 <para>
 L'installation sur les systèmes Windows de ces trois logiciels est aussi très populaire.
-A tel point que les trois logiciels sont parfois proposés en un
-seul paquet : le projet
+A tel point que les trois logiciels sont parfois proposés en un seul paquet. Deux
+projets:
 <ulink url="http://www.easyphp.org/">
 EasyPHP
 </ulink>
-livre une installation "clés-en-mains" de Apache, PHP, MySQL et de phpMyAdmin en prime.
+et
+<ulink url="http://www.wampserver.com/">
+WAMP
+</ulink>
+livrent une installation "clés-en-mains" de Apache, PHP, MySQL et de phpMyAdmin en prime.
 La procédure d'installation de ce paquet est très simple. Reportez vous à la section téléchargement 
 et installation de ce site ; vous devriez pouvoir avoir un environnement fonctionnel très rapidement.
 </para>
@@ -1228,7 +1224,7 @@ du code PHP nécessaire à la consultation de notre table est écrit.
 Nous avons utilisé dans la solution précédente une boucle pour 
 passer en revue chaque ligne de la table de résultat obtenue par la 
 requête SELECT. Le nombre de lignes de la table est donné par
-<command>mysql_numrows()</command> et chaque élément est extrait 
+<command>mysql_num_rows()</command> et chaque élément est extrait 
 avec <command>mysql_result()</command>.
 </para>
 <para>
@@ -1716,6 +1712,144 @@ Ne seront sélectionnées dans les autres tables que les lignes dont le
 numéro de client est égal à celui-ci. 
 </para>
 </sect2>
+
+</sect1>
+</chapter>
+
+
+<!-- Chapitre  -->
+<chapter>
+<title>Fonctionnalités Récurrentes</title>
+
+<para>
+Certains besoins fonctionnels reviennent en permanence. Par exemple,
+charger un fichier vers le serveur (upload) est un besoin qui revient dans
+d'innombrables situations.  
+</para>
+
+<!-- Affichage  -->
+<sect1>
+<title>Upload</title>
+<para>
+
+La figure ci-dessous montre un exemple de page HTML permettant de charger 
+un fichier photo vers le serveur (upload). 
+
+<figure id="fileupload_form">
+<title>Exemple de file upload form</title>
+<screenshot>
+<screeninfo></screeninfo>
+<graphic format="PNG" fileref="upload.png"/>
+</screenshot>
+</figure>
+
+Comme pour le traitement des données postées par formulaire,
+charger un fichier comporte conceptuellement deux étapes:
+<itemizedlist>
+	<listitem> <para> Un formulaire HTML qui permet de sélectionner le fichier,</para></listitem>
+	<listitem> <para> Un fichier PHP de traitement qui manipule le fichier transféré.</para></listitem>
+</itemizedlist>
+</para>
+
+<sect2>
+<title>Formulaire HTML</title>
+
+<para>
+Le champ permettant de sélectionner un fichier et le bouton 'Choisir' 
+sont produits par le navigateur quand il rencontre la balise HTML
+<command>&lt;input type="file"&gt;</command>.
+
+Cette balise, comme tous les autres champs input doit être dans un
+formulaire (<command>&lt;form&gt;</command>).
+Un exemple HTML de base pour cette fonctionnalité est donné ci-dessous: 
+
+<programlisting>
+&lt;form enctype="multipart/form-data" action="uploader.php" method="POST"&gt;
+      &lt;input type="hidden" name="max_file_size" value="100000" /&gt;
+      Choisir fichier: &lt;input name="fichier_photo" type="file" /&gt;&lt;lt;br /&gt;
+
+      &lt;input type="submit" value="Soumettre" /&gt;
+&lt;/form&gt;
+</programlisting>
+
+Ici, en appuyant sur le bouton de type submit "Soumettre", le formulaire
+va diriger les données du formulaires vers le fichier de traitement 
+<filename>uploader.php</filename>. La propritété <command>multipart/form-data</command> 
+permet au fichier de traitement de réagir correctement.
+On passe aussi dans un champ caché la taille (en octets) maximale qu'on souhaite
+pouvoir transmettre.
+</para>
+</sect2>
+
+
+<sect2>
+<title>Traitement PHP</title>
+
+<para>
+Quand la page <filename>uploader.php</filename> est exécutée, le fichier chargé est
+stocké par le serveur web dans un espace de stockage temporaire. Si il n'est pas
+déplacé rapidement, il sera détruit par le serveur web.
+</para>
+<para>
+Pour localiser ce fichier temporaire et les informations associées, nous allons
+consulter une variable renseignée par PHP, à la façon dont on le faisait quand
+il fallait récupérer des données d'un formulaire stockées pour le transport dans
+la varaible <varname>$_POST</varname>.
+</para>
+<para>
+Pour le transfert de fichier, on utilise la varaible <varname>$_FILES</varname>.
+Cette variable est renseignée par PHP à l'arrivée sur le traitement du fichier.
+C'est un vecteur, dont chaque élément est un vecteur d'informations relatives à un fichier chargé (le forumlaire 
+pouvait permettre le chargement de plusieurs fichiers).
+Chacun de ses élements est indexé par le nom du champ HTML du formulaire.
+Dans notre exemple, les informations sont trouvées par <varname>$_FILES['fichier_photo']</varname>.
+Ces informations relatives sont donc elle même un vecteur de propriétés:
+le nom, le type, le nom temporaire, l'erreur, la taille du fichier.
+
+La structure en PHP de <varname>$_FILES</varname> pour notre exemple pourrait être:
+<programlisting>
+Array
+(
+    [fichier_photo] => Array
+        (
+            [name] => baby.jpg
+            [type] => image/jpeg
+            [tmp_name] => /tmp/php/php1h5j1o 
+            [error] => UPLOAD_ERR_OK  (= 0)
+            [size] => 45654   (the size in bytes)
+        )
+)
+</programlisting>
+Et on peut récupérer par exemple le nom de fichier original par <varname>$_FILES['fichier_photo']['name']</varname>.
+</para>
+
+<para>
+Un code PHP typique utilisera la fonction prédéfinie <command>move_uploaded_file()</command>
+pour transférer le fichier temporaire vers un enndroit de stockage définitif. Dans l'exemple
+suivant, on transfère le fichier temporaire vers un répertoire <varname>images/</varname>
+en renommant au passage le fichier temporaire avec le nom original du fichier.
+
+<programlisting>
+&lt;?php
+
+$donnees = "images/";
+$nom_final  = $donnees. basename( $_FILES['fichier_photo']['name']); 
+
+if (move_uploaded_file($_FILES['fichier_photo']['tmp_name'], $nom_final)) {
+    echo "Le fichier a ete charge sur le serveur (taille=" . ['fichier_photo']['size'] . ")";
+} 
+else{
+    echo "Erreur lors du transfert vers le serveur.";
+}
+?&gt;
+</programlisting>
+
+
+</para>
+</sect2>
+
+
+
 
 </sect1>
 </chapter>
