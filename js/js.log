@@ -1,0 +1,884 @@
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2009.7.7)  3 DEC 2009 11:31
+entering extended mode
+**js.tex
+(./js.tex
+LaTeX2e <2008/12/01>
+Babel <v3.8d> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, bulgarian, catalan, croatian, czech, danish, dutch, esperanto, e
+stonian, finnish, greek, icelandic, irish, italian, latin, magyar, norsk, polis
+h, portuges, romanian, russian, serbian, slovak, slovene, spanish, swedish, tur
+kish, ukrainian, nohyphenation, loaded.
+(/sw/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2004/02/16 v1.4f Standard LaTeX document class
+(/sw/share/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/sw/share/texmf-dist/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)
+(/sw/share/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(/sw/share/texmf-dist/tex/latex/fancyheadings/fancyheadings.sty
+\headrulewidth=\dimen103
+\footrulewidth=\dimen104
+\plainheadrulewidth=\dimen105
+\plainfootrulewidth=\dimen106
+\headwidth=\dimen107
+\footruleskip=\dimen108
+)
+(/sw/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/sw/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/sw/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/sw/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/sw/share/texmf-dist/tex/latex/graphics/graphics.cfg
+File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/sw/share/texmf-dist/tex/latex/graphics/pdftex.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen109
+\Gin@req@width=\dimen110
+)
+(/sw/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2004/11/20 v3.8d The Babel package
+
+(/sw/share/texmf-dist/tex/generic/babel/frenchb.ldf
+Language: french 2004/04/02 v1.6f French support from the babel system
+
+(/sw/share/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2004/11/20 v3.8d Babel common definitions
+\babel@savecnt=\count89
+\U@D=\dimen111
+)
+Package babel Info: Making : an active character on input line 219.
+Package babel Info: Making ; an active character on input line 220.
+Package babel Info: Making ! an active character on input line 221.
+Package babel Info: Making ? an active character on input line 222.
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 299.
+\parindentFFN=\dimen112
+\std@mcc=\count90
+\dec@mcc=\count91
+
+*************************************
+* Local config file frenchb.cfg used
+*
+(/sw/share/texmf-dist/tex/generic/babel/frenchb.cfg)))
+(/sw/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2004/02/05 v1.0d Input encoding file
+
+(/sw/share/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2004/02/05 v1.0d Input encoding file
+))
+(/sw/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 1998/07/17
+
+Style option: `fancyvrb' v2.6, with DG/SPQR fixes <1998/07/17> (tvz)
+\FV@CodeLineNo=\count92
+\FV@InFile=\read1
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count93
+\FV@StepNumber=\count94
+\FV@OutFile=\write3
+
+No file fancyvrb.cfg.
+) (/sw/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/sw/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2003/12/17 v2.4a Tabular extension package (FMi)
+\col@sep=\dimen113
+\extrarowheight=\dimen114
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen115
+\TX@old@table=\dimen116
+\TX@old@col=\dimen117
+\TX@target=\dimen118
+\TX@delta=\dimen119
+\TX@cols=\count95
+\TX@ftn=\toks16
+) (./lettrine.sty
+File: lettrine.sty 2002/10/26 v1.4 (D. Flipo)
+\c@DefaultLines=\count96
+\DefaultFindent=\dimen120
+\DefaultNindent=\dimen121
+\DefaultSlope=\dimen122
+\L@lbox=\box27
+\L@tbox=\box28
+\c@L@lines=\count97
+\L@Pindent=\dimen123
+\L@Findent=\dimen124
+\L@Nindent=\dimen125
+\L@lraise=\dimen126
+\L@first=\dimen127
+\L@next=\dimen128
+\L@slope=\dimen129
+\L@height=\dimen130
+
+(/sw/share/texmf-dist/tex/latex/lettrine/lettrine.cfg))
+(/sw/share/texmf-dist/tex/latex/eurosym/eurosym.sty
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box29
+)
+(/sw/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/sw/share/texmf-dist/tex/latex/graphics/color.cfg
+File: color.cfg 2005/02/03 v1.3 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 125.
+)
+(/sw/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count98
+\lst@gtempboxa=\box30
+\lst@token=\toks17
+\lst@length=\count99
+\lst@currlwidth=\dimen131
+\lst@column=\count100
+\lst@pos=\count101
+\lst@lostspace=\dimen132
+\lst@width=\dimen133
+\lst@newlines=\count102
+\lst@lineno=\count103
+\c@lstlisting=\count104
+\lst@maxwidth=\dimen134
+
+(/sw/share/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2004/10/17 1.3b (Carsten Heinz)
+)
+(/sw/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2004/09/07 1.3 (Carsten Heinz)
+\c@lstnumber=\count105
+\lst@skipnumbers=\count106
+\lst@framebox=\box31
+)
+(/sw/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2004/09/05 1.3 listings configuration
+))
+Package: listings 2004/10/17 1.3b (Carsten Heinz)
+\@indexfile=\write4
+\openout4 = `js.idx'.
+
+
+Writing index file js.idx
+(./js.aux)
+\openout1 = `js.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/lmr/m/n on input line 72.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 72.
+ (/sw/share/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2003/07/22 v1.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+
+(/sw/share/texmf-dist/tex/context/base/supp-pdf.tex
+(/sw/share/texmf-dist/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Miscellaneous (2004.10.26)
+\protectiondepth=\count107
+\scratchcounter=\count108
+\scratchtoks=\toks18
+\scratchdimen=\dimen135
+\scratchskip=\skip45
+\scratchmuskip=\muskip10
+\scratchbox=\box32
+\scratchread=\read2
+\scratchwrite=\write5
+\zeropoint=\dimen136
+\onepoint=\dimen137
+\onebasepoint=\dimen138
+\minusone=\count109
+\thousandpoint=\dimen139
+\onerealpoint=\dimen140
+\emptytoks=\toks19
+\nextbox=\box33
+\nextdepth=\dimen141
+\everyline=\toks20
+\!!counta=\count110
+\!!countb=\count111
+\recursecounter=\count112
+)
+loading : Context Support Macros / PDF (2004.03.26)
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen142
+\MPnumerator=\count116
+\everyMPtoPDFconversion=\toks21
+)
+LaTeX Info: Redefining \dots on input line 72.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 94.
+ (/sw/share/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 94.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 95.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 95.
+ [1
+
+{/Users/genaud/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+] (./js.toc [3])
+\tf@toc=\write6
+\openout6 = `js.toc'.
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[4]
+Chapitre 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--116
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 119.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 119.
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
+
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <29.13887> not available
+(Font)              size <24.88> substituted on input line 124.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <49.9557> not available
+(Font)              size <24.88> substituted on input line 124.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--139
+
+ []
+
+
+Overfull \hbox (0.95503pt too wide) in paragraph at lines 140--148
+[]\OT1/cmr/m/n/10 Les pro-grammes Ja-vaS-cript s'int^^Regrent dans le code HTML
+ d'une page web. L'int^^Ser^et
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 163--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--183
+
+ []
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[6] <figures/console.png, id=39, 457.71pt x 172.645pt>
+File: figures/console.png Graphic file (type png)
+
+<use figures/console.png>
+<figures/firefox-webdevel-plugin.png, id=40, 976.64874pt x 142.5325pt>
+File: figures/firefox-webdevel-plugin.png Graphic file (type png)
+
+<use figures/firefox-webdevel-plugin.png>
+<figures/firefox-tools-menu.png, id=41, 220.825pt x 277.035pt>
+File: figures/firefox-tools-menu.png Graphic file (type png)
+
+<use figures/firefox-tools-menu.png>
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
+
+ []
+
+[7 <./figures/console.png> <./figures/firefox-webdevel-plugin.png>]
+Overfull \hbox (8.95746pt too wide) in paragraph at lines 319--324
+ \OT1/cmr/bx/n/10 Ca-cher Ja-vaS-cript ^^Ra cer-tains na-vi-ga-teurs[] \OT1/cmr
+/m/n/10 Cer-tains na-vi-ga-teurs ne com-prennent
+ []
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[8 <./figures/firefox-tools-menu.png>] [9]
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[10
+
+]
+Chapitre 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--346
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 417--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--444
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 462--463
+
+ []
+
+
+Underfull \vbox (badness 1668) has occurred while \output is active []
+
+ [13]
+Overfull \hbox (6.15057pt too wide) in paragraph at lines 508--515
+\OT1/cmr/m/n/10 Cependant, la s^^Sequence simple ren-drait fas-ti-dieuse l'^^Se
+criture d'ins-truc-tions se r^^Sep^^Setant
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 521.
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[14]
+Overfull \hbox (0.42836pt too wide) detected at line 623
+[]
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 639--641
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--644
+
+ []
+
+
+Overfull \hbox (31.4559pt too wide) in paragraph at lines 645--646
+[]\OT1/cmr/m/n/10 De plus, les blocs en Ja-vaS-cript, se nomment []\OT1/cmr/m/i
+t/10 fonc-tions\OT1/cmr/m/n/10 , comme les fonc-tions math^^Sematiques,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 647
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 647.
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 647.
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 795--797
+
+ []
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 839--843
+
+ []
+
+
+Underfull \hbox (badness 6461) in paragraph at lines 895--896
+[]|\OT1/cmr/m/n/10 Trie le ta-bleau se-lon l'ordre lexi-co-gra-
+ []
+
+
+Underfull \hbox (badness 6542) in paragraph at lines 899--900
+[]|\OT1/cmr/m/n/10 Retourne une cha^^^Pne qui repr^^Sesente la
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 901--902
+[]|\OT1/cmr/m/n/10 Retourne le ta-bleau sous la forme d'une
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 926--932
+
+ []
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[20] (./chap_exercice.tex [21]
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[22
+
+]
+Chapitre 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--160
+
+ []
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--195
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--250
+
+ []
+
+) (./chap_dhtml.tex
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[27]
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[28
+
+]
+Chapitre 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--146
+
+ []
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 166--171
+
+ []
+
+[31]
+Overfull \hbox (28.48367pt too wide) in paragraph at lines 216--219
+\OT1/cmr/m/n/10 alors le contenu de l'ob-jet \OT1/cmtt/m/n/10 texte1 \OT1/cmr/m
+/n/10 de-vient ``bon-jour mon-sieur'', c'est-^^Ra-dire la concat^^Senation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--234
+
+ []
+
+
+Overfull \hbox (13.095pt too wide) in paragraph at lines 235--239
+[]\OT1/cmr/m/n/10 Quelque soit le mod^^Rele de do-cu-ment uti-lis^^Se, les prin
+-cipes sont proches et les d^^Sesignations
+ []
+
+[32] <figures/classes.jpg, id=135, 529.98pt x 445.665pt>
+File: figures/classes.jpg Graphic file (type jpg)
+
+<use figures/classes.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+[33 <./figures/classes.jpg>]
+Overfull \hbox (2.06694pt too wide) in paragraph at lines 306--308
+\OT1/cmr/m/n/10 par des ba-lises telles \OT1/cmtt/m/n/10 <img> \OT1/cmr/m/n/10 
+pour une image), le na-vi-ga-teur les range dans la hi^^Serarchie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
+
+ []
+
+(/sw/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(/sw/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2004/09/07 1.3 (Carsten Heinz)
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 313.
+
+<figures/struct-example-navig.png, id=139, 338.26375pt x 484.81125pt>
+File: figures/struct-example-navig.png Graphic file (type png)
+
+<use figures/struct-example-navig.png>
+Underfull \hbox (badness 10000) in paragraph at lines 346--350
+
+ []
+
+[34 <./figures/struct-example-navig.png>]
+<figures/struct-example-dom.png, id=145, 510.90875pt x 444.66125pt>
+File: figures/struct-example-dom.png Graphic file (type png)
+
+<use figures/struct-example-dom.png>
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
+
+ []
+
+[35 <./figures/struct-example-dom.png>]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 471.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 482.
+
+
+(/sw/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 482.
+ [36]
+<figures/ex_alert.jpg, id=154, 250.9375pt x 126.4725pt>
+File: figures/ex_alert.jpg Graphic file (type jpg)
+
+<use figures/ex_alert.jpg> [37 <./figures/ex_alert.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 578--587
+
+ []
+
+
+Overfull \hbox (15.78764pt too wide) in paragraph at lines 629--629
+[][]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 674--678
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--708
+
+ []
+
+[39] <figures/ex_form.jpg, id=165, 467.7475pt x 284.06125pt>
+File: figures/ex_form.jpg Graphic file (type jpg)
+
+<use figures/ex_form.jpg> [40 <./figures/ex_form.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 805--807
+
+ []
+
+<figures/ex_menu2.jpg, id=169, 388.45125pt x 245.91875pt>
+File: figures/ex_menu2.jpg Graphic file (type jpg)
+
+<use figures/ex_menu2.jpg>
+<figures/ex_menu1.jpg, id=170, 388.45125pt x 245.91875pt>
+File: figures/ex_menu1.jpg Graphic file (type jpg)
+
+<use figures/ex_menu1.jpg>
+Overfull \hbox (8.5358pt too wide) detected at line 831
+[] []
+ []
+
+[41] (/sw/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+<figures/ex_menu3.jpg, id=174, 213.79875pt x 128.48pt>
+File: figures/ex_menu3.jpg Graphic file (type jpg)
+
+<use figures/ex_menu3.jpg>
+<figures/ex_radio.jpg, id=175, 237.88875pt x 293.095pt>
+File: figures/ex_radio.jpg Graphic file (type jpg)
+
+<use figures/ex_radio.jpg> [42 <./figures/ex_menu2.jpg> <./figures/ex_menu1.jpg
+> <./figures/ex_menu3.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 907--913
+
+ []
+
+
+Overfull \hbox (5.85814pt too wide) in paragraph at lines 915--916
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (0.75803pt too wide) in paragraph at lines 918--919
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[43 <./figures/ex_radio.jpg>]
+<figures/ex_checkbox.png, id=183, 600.2425pt x 297.11pt>
+File: figures/ex_checkbox.png Graphic file (type png)
+
+<use figures/ex_checkbox.png>
+Overfull \hbox (65.44135pt too wide) detected at line 983
+[]
+ []
+
+[44 <./figures/ex_checkbox.png>])
+No file js.bbl.
+(./annexea.tex [45] [46
+
+]
+Annexe A.
+[47]
+Overfull \hbox (46.09749pt too wide) detected at line 84
+[]
+ []
+
+[48]
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[49]
+Overfull \hbox (3.67247pt too wide) in paragraph at lines 197--210
+ \OT1/cmr/bx/n/10 Pro-pri^^Set^^Ses[] [] 
+ []
+
+[50]
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[51]
+Overfull \hbox (6.1468pt too wide) in paragraph at lines 311--311
+[]         \OT1/cmtt/m/n/10 <INPUT TYPE="PASSWORD" NAME="NAME" VALUE="VALUE" SI
+ZE="SIZE">[] 
+ []
+
+[52]
+Overfull \hbox (18.3716pt too wide) in paragraph at lines 379--381
+\OT1/cmr/m/n/10 est pr^^Secis^^Se fait du menu une liste ^^Ra choix mul-tiple. 
+L'at-tri-but []\OT1/cmtt/m/n/10 <OPTION VALUE="option">
+ []
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[53]
+Overfull \hbox (44.93639pt too wide) in paragraph at lines 399--420
+ \OT1/cmr/bx/n/10 M^^Sethodes[] [] 
+ []
+
+
+Overfull \hbox (0.60555pt too wide) in paragraph at lines 441--444
+ \OT1/cmr/bx/n/10 Syn-taxe[] []\OT1/cmtt/m/n/10 <INPUT TYPE="text" NAME="name" 
+VALUE="value" SIZE="size"> \OT1/cmr/m/n/10 o^^Ru
+ []
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--475
+
+ []
+
+
+Overfull \hbox (15.08922pt too wide) in paragraph at lines 477--491
+ \OT1/cmr/bx/n/10 Pro-pri^^Set^^Ses[] [] 
+ []
+
+)
+No file js.ind.
+
+Overfull \hbox (103.35321pt too wide) in paragraph at lines 492--969
+ \OT1/cmr/bx/n/10 M^^Sethodes[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--969
+
+ []
+
+
+Overfull \vbox (1.07225pt too high) has occurred while \output is active []
+
+
+[55] [56] (./js.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 25.0757pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4381 strings out of 94500
+ 57358 string characters out of 1176115
+ 126147 words of memory out of 1500000
+ 7469 multiletter control sequences out of 10000+50000
+ 12142 words of font info for 44 fonts, out of 1200000 for 2000
+ 580 hyphenation exceptions out of 8191
+ 33i,15n,59p,382b,1910s stack positions out of 5000i,500n,6000p,200000b,5000s
+PDF statistics:
+ 224 PDF objects out of 65536
+ 0 named destinations out of 20000
+ 66 words of extra memory for PDF output out of 65536
+ </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmsy8.600pk> </sw/var/lib/texmf
+/fonts/pk/ljfour/public/cm/cmtt12.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/pub
+lic/cm/cmbx8.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmmi8.600pk> <
+/sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmitt10.600pk> </sw/var/lib/texmf/f
+onts/pk/ljfour/public/cm/cmmi7.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public
+/cm/cmsy7.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/eurosym/feymr10.600p
+k> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmex10.600pk> </sw/var/lib/texm
+f/fonts/pk/ljfour/public/cm/cmr5.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/publ
+ic/cm/cmbx12.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmcsc10.540pk>
+ </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmtt8.600pk> </sw/var/lib/texmf/f
+onts/pk/ljfour/public/cm/cmss10.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/publi
+c/cm/cmbx12.720pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmcsc10.480pk> 
+</sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmr8.600pk> </sw/var/lib/texmf/fon
+ts/pk/ljfour/public/cm/cmr6.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm
+/cmti9.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmti10.600pk> </sw/v
+ar/lib/texmf/fonts/pk/ljfour/public/cm/cmcsc10.600pk> </sw/var/lib/texmf/fonts/
+pk/ljfour/public/cm/cmr17.864pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/c
+mr7.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmbx12.1037pk> </sw/var
+/lib/texmf/fonts/pk/ljfour/public/cm/cmtt10.600pk> </sw/var/lib/texmf/fonts/pk/
+ljfour/public/cm/cmsl10.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmb
+x10.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmbx12.1244pk> </sw/var
+/lib/texmf/fonts/pk/ljfour/public/cm/cmsy10.600pk> </sw/var/lib/texmf/fonts/pk/
+ljfour/public/cm/cmr10.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmmi
+10.600pk> </sw/var/lib/texmf/fonts/pk/ljfour/public/cm/cmr12.600pk> </sw/var/li
+b/texmf/fonts/pk/ljfour/public/cm/cmr12.720pk>
+Output written on js.pdf (56 pages, 745379 bytes).

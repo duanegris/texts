@@ -1248,7 +1248,7 @@ Un équivalent au bout de code précédent est:
 <![CDATA[ 
       echo "<table><tr><td> Désignation </td><td> Prix </td></tr>\n";
       while ($ligne = mysql_fetch_array($result)) {
-   		echo "<tr><td> $ligne['nom'] </td><td>$ligne['prix']</td></tr>";
+   		echo "<tr><td>" . $ligne['nom'] . "</td><td>". $ligne['prix']. "</td></tr>";
       }
       echo "</table>";
 ]]>
@@ -1766,8 +1766,7 @@ Un exemple HTML de base pour cette fonctionnalité est donné ci-dessous:
 <programlisting>
 &lt;form enctype="multipart/form-data" action="uploader.php" method="POST"&gt;
       &lt;input type="hidden" name="max_file_size" value="100000" /&gt;
-      Choisir fichier: &lt;input name="fichier_photo" type="file" /&gt;&lt;lt;br /&gt;
-
+      Choisir fichier: &lt;input name="fichier_photo" type="file" /&gt;&lt;br/&gt;
       &lt;input type="submit" value="Soumettre" /&gt;
 &lt;/form&gt;
 </programlisting>
@@ -1792,19 +1791,19 @@ déplacé rapidement, il sera détruit par le serveur web.
 </para>
 <para>
 Pour localiser ce fichier temporaire et les informations associées, nous allons
-consulter une variable renseignée par PHP, à la façon dont on le faisait quand
+consulter une variable renseignée par PHP ( à la façon dont on le faisait quand
 il fallait récupérer des données d'un formulaire stockées pour le transport dans
-la varaible <varname>$_POST</varname>.
+la variable <varname>$_POST</varname>).
 </para>
 <para>
-Pour le transfert de fichier, on utilise la varaible <varname>$_FILES</varname>.
+Pour le transfert de fichier, on utilise la variable <varname>$_FILES</varname>.
 Cette variable est renseignée par PHP à l'arrivée sur le traitement du fichier.
-C'est un vecteur, dont chaque élément est un vecteur d'informations relatives à un fichier chargé (le forumlaire 
+C'est un vecteur, avec un élément par fichier chargé (le forumlaire 
 pouvait permettre le chargement de plusieurs fichiers).
-Chacun de ses élements est indexé par le nom du champ HTML du formulaire.
+Chaque élement est indexé par le nom du champ HTML du formulaire.
 Dans notre exemple, les informations sont trouvées par <varname>$_FILES['fichier_photo']</varname>.
-Ces informations relatives sont donc elle même un vecteur de propriétés:
-le nom, le type, le nom temporaire, l'erreur, la taille du fichier.
+Chaque élément est lui-même un vecteur de propriétés: le nom, le type, le nom temporaire, l'erreur, 
+la taille du fichier.
 
 La structure en PHP de <varname>$_FILES</varname> pour notre exemple pourrait être:
 <programlisting>
@@ -1815,8 +1814,8 @@ Array
             [name] => baby.jpg
             [type] => image/jpeg
             [tmp_name] => /tmp/php/php1h5j1o 
-            [error] => UPLOAD_ERR_OK  (= 0)
-            [size] => 45654   (the size in bytes)
+            [error] => UPLOAD_ERR_OK 
+            [size] => 45654 
         )
 )
 </programlisting>
@@ -1825,7 +1824,7 @@ Et on peut récupérer par exemple le nom de fichier original par <varname>$_FIL
 
 <para>
 Un code PHP typique utilisera la fonction prédéfinie <command>move_uploaded_file()</command>
-pour transférer le fichier temporaire vers un enndroit de stockage définitif. Dans l'exemple
+pour transférer le fichier temporaire vers un endroit de stockage définitif. Dans l'exemple
 suivant, on transfère le fichier temporaire vers un répertoire <varname>images/</varname>
 en renommant au passage le fichier temporaire avec le nom original du fichier.
 
@@ -1836,7 +1835,8 @@ $donnees = "images/";
 $nom_final  = $donnees. basename( $_FILES['fichier_photo']['name']); 
 
 if (move_uploaded_file($_FILES['fichier_photo']['tmp_name'], $nom_final)) {
-    echo "Le fichier a ete charge sur le serveur (taille=" . ['fichier_photo']['size'] . ")";
+    echo "Le fichier a ete charge sur le serveur 
+          (taille=" . ['fichier_photo']['size'] . ")";
 } 
 else{
     echo "Erreur lors du transfert vers le serveur.";

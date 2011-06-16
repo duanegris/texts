@@ -1,0 +1,1021 @@
+%--------------------------------------------------------------------------
+%                      DHTML 
+%--------------------------------------------------------------------------
+\chapter{DHTML : JavaScript et HTML}
+
+\lettrine[lines=3]{L}{'une} des raisons du succès de JavaScript est qu'il permet de 
+construire des pages web \motcle{dynamiques}. 
+Le terme \motcle{Dynamic HTML} (ou DHTML) est souvent utilisé pour désigner l'utilisation de
+javascript dans les pages HTML.\\
+
+Une page web construite simplement avec du HTML ne propose à l'utilisateur que le lien 
+hypertexte en guise d'interactivité. 
+L'objectif de JavaScript est d'impliquer beaucoup plus activement l'utilisateur dans 
+la consultation d'une page web. 
+Nous allons utiliser dans ce chapitre les concepts de programmation présentés au chapitre précédent
+afin de les appliquer à une page de présentation HTML.
+Dans la pratique, l'utilisation de JavaScript revient quasiment toujours à modifier dynamiquement 
+la structure ou le contenu de la page HTML initialement chargée, 
+et nous verrons quelques exemples de cette utilisation.
+
+
+
+
+%--------------------EVENEMENTS---------------------------------------
+\section{\'{E}vènements}
+
+L'interactivité avec l'utilisateur suppose que le navigateur soit capable de réagir
+quand l'utilisateur s'agite (clic de souris sur un lien, retour à la page précédente, \textit{etc}).
+Pour cela, des \motcle{évènements}, correspondant à des actions de l'utilisateur, ont été définis. 
+La table \ref{tb:event} liste les évènements gérés par JavaScript et leurs
+significations. Chaque objet JavaScript réagit à certains évènements seulement,
+qui sont listés, objet par objet, en annexe \ref{ch:annexea}, page \pageref{ch:annexea}.
+
+\begin{center}
+\begin{table}[hbt]
+\[
+\begin{tabular}{|ll|}
+\hline
+Evénement	& Se produit quand ...    	\\
+\hline\hline
+onAbort		& le chargement d'une image a été interrompu\\
+onBlur		& la souris quitte une zone formulaire   	\\
+onClick		& on clique sur un formulaire ou un lien          	\\
+onChange	& on change une zone texte ou une sélection d'élément \\
+onFocus		& la souris entre dans une zone formulaire         	\\
+onLoad		& on charge la page dans le navigateur 	\\
+onMouseOut	& la souris sort d'une zone imagemap\\ 
+onMouseOver	& la souris passe au-dessus d'un lien ou d'un formulaire \\
+onReset		& on vide un formulaire	\\
+onSelect 	& on sélectionne un élément dans un formulaire \\
+onSubmit	& on envoie un formulaire               	\\
+onUnload	& on sort de la page                    \\
+\hline
+\end{tabular}\]
+\caption{Nom et descriptions des évènements en JavaScript}
+\label{tb:event}
+\end{table}
+\end{center}
+
+Afin de gérer un évènement, il est nécessaire de spécifier
+quel évènement on veut surveiller, et quelle action entreprendre quand l'évènement se produit. 
+Ceci s'écrit à l'aide d'un attribut HTML.
+Par exemple,
+la ligne suivante : 
+
+\begin{Verbatim}[frame=single]
+<a href="page2.html" onClick="compte++">Page suivante</a>
+\end{Verbatim}                   
+
+indique que l'on gère l'évènement "clic de souris" sur ce lien. Quand l'évènement
+se produit, l'action à entreprendre est d'incrémenter d'une unité la valeur de la variable \texttt{compte}. Notons que l'on aurait pu mettre n'importe quel code JavaScript en guise d'action à entreprendre (les différentes instructions sont alors séparées par un point-virgule (\texttt{;})). 
+Si l'action est compliquée, on appelle habituellement une fonction.\\ 
+\begin{center}
+\begin{table}[hbt]
+\[
+\begin{tabular}{|ll|}
+\hline
+Balise		& Evénement\\
+\hline\hline
+\texttt{<a>}& onClick		\\
+ 		& onMouseOver         	\\
+		& onMouseOut		\\
+		\hline
+\texttt{<area>}		& onMouseOver         	\\
+		& onMouseOut		\\
+		\hline
+\texttt{<body>}	& onBlur		\\
+		& onFocus		\\
+		& onLoad		\\
+		& onUnload		 \\
+		\hline
+\texttt{<form>}		& onReset		\\
+		& onSubmit		\\
+		\hline
+\texttt{<img>}	& onAbort		\\								& onLoad		\\
+		& onError		\\
+\hline
+\texttt{<input type="button">} 	& 	\\
+\texttt{<input type="checkbox">} & onClick	\\
+\texttt{<input type="radio">} &	\\
+
+		\hline
+\texttt{<input type="text">}   	& onBlur \\
+\texttt{<textarea>}	            & onChange\\
+                                    & onFocus\\
+
+\hline
+\texttt{<input type="select">}	& onSelect\\
+                                    & onBlur\\
+			                  & onChange\\
+			                  & onClick\\
+		                  	& onFocus \\
+\hline
+\end{tabular}
+\]
+\caption{Les évènements associés aux balises}
+\label{tb:tag}
+\end{table}
+\end{center}
+
+
+\textbf{Note:~} \textit{Les noms d'évènements sont ici ceux de la définition initiale, avec une majuscule après \texttt{on} (comme dans \texttt{onClick}). 
+Dans les recommandations courantes de HTML, ces noms ne sont plus sensibles aux majuscules/minuscules. On trouve maintenant écrit \texttt{onclick}} par exemple.\\
+
+\vspace{.4cm}
+
+Les différents objets HTML sont donc sujets à des évènements particuliers.
+Etant donné une balise désignant un objet HTML, seuls quelques évènements parmi ceux listés dans la table \ref{tb:event} peuvent survenir. 
+Autrement dit, on ne peut pas associer la surveillance de n'importe quel évènement 
+dans le code HTML. \\
+
+
+Par exemple, l'évenement \texttt{onSubmit} (validation d'un formulaire) ne peut concerner qu'un formulaire. 
+La surveillance de cet évènement est insérée dans le HTML de manière similaire
+à ceci :
+\begin{Verbatim}[frame=single]
+<form id="formu" onSubmit="fait_qquechose()">
+....
+</form>
+\end{Verbatim}
+De même, seul l'évènement \texttt{onClick} peut être associé à un bouton radio.
+On remarquera également que la balise \texttt{<input type="passwd">} utilisée pour
+des saisies confidentielles ne génèrent jamais d'évènement.
+Cette décision à été prise par les concepteurs du langage afin de ne pas permettre
+à des gens mal intentionnés de récupérer des mots de passe.\\
+
+La table \ref{tb:tag} indique quels évènements concernent quelles balises.
+
+Nous verrons tout au long du chapitre, à travers les exemples, comment sont utilisés ces évènements.
+Mais avant cela, nous devons aborder la notion d'objet utilisée entre autres pour structurer
+les éléments d'une page web.
+
+\section{Notation orientée objet}
+
+JavaScript est un langage orienté objet. 
+Je ne développe pas ici les concepts de la programmation objet, mais 
+précisons certains termes et idées afin de comprendre les notations utilisées.
+
+\subsection{Classes et objets}
+\label{sc:classes-objets}
+ 
+Une \motcle{classe} est la description d'un ensemble de \motcle{propriétés} et de \emph{méthodes}. 
+Les propriétés sont les données, et les méthodes sont les fonctions qui manipulent ces données. 
+Un \emph{objet} est une instance de classe. 
+
+On pourrait par exemple définir la classe \textsf{voiture}, dont les propriétés seraient l'immatriculation, le modèle, la marque, la couleur, le propiétaire, etc. Les méthodes pourraient alors être repeindre() qui changerait la propriété couleur, revendre() qui changerait la propriété propriétaire, etc.
+On pourrait définir deux instances $v_1$ et $v_2$ de la classe \textsf{voiture}. 
+Ces deux instances possèdent automatiquement les propriétés et les méthodes de la classe \textsf{voiture}. 
+On peut ensuite appliquer à chacun de ces objets les méthodes qui ont
+été définies pour cette classe. Par exemple, \textsf{v1.revendre()} et \textsf{v2.revendre()} modifieront les propriétaires respectifs de ces deux objets de la classe \textsf{voiture}.\\
+
+On peut considérer que la notion d'objet est une généralisation de la notion de type décrite en section \ref{sc:types}, page \pageref{sc:types}. 
+Les objets possèdent en effet des propriétés supplémentaires, comme la notion de classe et d'héritage. Nous n'utiliserons pas ces notions, et par conséquent nous pouvons considérer une classe d'objet comme un type dans ce qui suit.
+
+Par conséquent, nous retrouvons naturellement, parmi les classes d'objets pré-définies dans le langage, les classes :
+%
+\[\begin{tabular}{ll}
+ \texttt{Array} 	&: les tableaux	\\
+ \texttt{Boolean} 	&: les booléens \\
+ \texttt{Date}		& : les dates	\\
+ \texttt{Number}	& : les valeurs numériques (entiers ou réels) \\
+ \texttt{String}	& : les chaines de caractères \\ 
+\end{tabular}\]
+
+Par exemple, la classe \texttt{String} englobe les objets de type chaine de caractères. Créer un objet de cette classe se fait à l'aide de l'opérateur
+\texttt{new}. 
+La déclaration suivante :
+\begin{verbatim}
+       var texte1 = new String;
+       var texte2 = new String("bonjour ");
+\end{verbatim}
+crée deux objets de noms \texttt{texte1} et \texttt{texte2} appartenant tous deux à la classe \texttt{String}. 
+Notons que \texttt{texte2} à été initialisé simultanément à sa déclaration. 
+      
+\subsubsection{Les propriétés des objets}
+
+Pour accéder à une propriété $p$ d'un objet $o$, on utilise la notation
+$o$\texttt{.}$p$. Par exemple, l'objet \texttt{texte2} déclaré précédemment
+appartient à la classe \texttt{String}. Or tous les objets de cette classe
+ont la propriété \instrcle{length} qui définit la longueur de la chaine mémorisée
+dans cette objet. On peut donc faire afficher la longueur par :
+\begin{verbatim}
+       document.write(texte2.length);
+\end{verbatim}
+
+\subsection{Les méthodes des objets}
+
+
+La même notation s'applique aussi pour exécuter des méthodes des objets. 
+Là aussi, il est nécessaire de connaître le noms des méthodes existantes pour les objets pré-définis. 
+Toujours pour la classe \instrcle{String}, la méthode pré-définie \instrcle{concat()} permet de concaténer (mettre bout-à-bout) deux chaines. 
+Si, dans la continuité de l'exemple précédent j'écris :
+\begin{verbatim}
+       texte1 = texte2.concat(" monsieur");
+\end{verbatim}
+alors le contenu de l'objet \texttt{texte1} devient ``bonjour monsieur'',
+c'est-à-dire la concaténation \index{concaténation} de la chaine contenue dans \texttt{texte2} et
+de la chaine `` monsieur''.
+
+\vspace{.5cm}
+
+
+\section{Les objets DHTML}
+
+\subsection{Modèles DHTML et DOM}
+Quand une page web est chargée, le navigateur créé plusieurs objets pour 
+représenter les informations y figurant.
+Les premières versions de DHTML ont mis en place un modèle d'objets  
+présenté ci-dessous et toujours en cours.
+Plus récemment, un modèle plus général à été proposé par le W3C : 
+c'est le \motcle{Document Object Model} (DOM)\index{DOM}.
+Il propose un ensemble de méthodes et d'interfaces standarts permettant de décrire, parcourir et modifier de façon uniforme des documents HTML mais aussi XML.
+Pour les documents HTML, il est donc proposé une représentation conforme au DOM \cite{HTML-DOM-2-03}.\\
+
+Quelque soit le modèle de document utilisé, les principes sont proches et les désignations
+d'objets totalement compatibles. La seule conséquence actuellement, est qu'il y a souvent 
+plusieurs manières de procéder. 
+On peut aussi noter que les méthodes proposées par le DOM sont plus puissantes car permettent de modifier tous les éléments du document (par exemple supprimer un morceau de texte HTML).
+
+
+\subsection{Les objets instanciés}
+
+Quand une page web est chargée, le navigateur créé plusieurs objets pour 
+représenter les informations y figurant. 
+Ces objets sont classés de manière hiérarchique, l'objet le plus haut dans la hiérarchie (appelé aussi racine car la hiérarchie est arborescente) étant un objet de la classe \texttt{Window}.
+Le schéma ci-dessous (figure \ref{fg:classes}) montre l'organisation des différentes classes 
+dans le modèle d'objets DHTML. 
+On peut interpréter ce schéma comme <<un objet \texttt{window} contient éventuellement  des frames, une adresse, un document>> et <<un document contient lui-même éventuellement des formulaires et des liens>>, etc. 
+
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=9cm]{figures/classes.jpg}\]
+\else
+%------------ PS ------------------------
+\vspace{.2cm}
+\[\psfig{figure=figures/classes.ps,width=9cm}\]
+%----------------------------------------
+\fi
+\caption{Les classes d'objets DHTML}
+\label{fg:classes}
+\end{figure}\end{center}
+%
+%\begin{verbatim}
+%window 
+%  |
+%  +--frames, self, top, parents 
+%  |
+%  +--location 
+%  | 
+%  +--history
+%  |
+%  +--document
+%       |
+%       +--forms
+%       |    |
+%       |  elements (text fields, textarea, checkbox, password
+%       |            radio, select, button, submit, reset)   
+%       +--links
+%       |
+%       +--anchors
+%\end{verbatim}  
+
+Les noms choisis par le navigateur pour instancier les objets des différentes classes sont les mêmes que ceux de la classe mais typographiés en minuscule. Quand plusieurs objets appartiennent à une même classe, ils sont regroupés dans un tableau et peuvent être distingués par leur place dans le tableau.
+
+Ainsi, l'objet (unique) de la classe \instrcle{Window} s'appelle \texttt{window} et les différents objets cadres (éventuellement plusieurs dans une fenêtre) s'appellent \texttt{window.frames[0]}, \texttt{window.frames[1]}, etc.\\
+
+\textbf{Note :}
+\textit{Etant donné qu'on accède très souvent à des objets de la classe \texttt{window},
+le langage permet, pour des raisons de commodité, d'ommettre le mot \texttt{window} quand on désigne un objet faisant partie de la hiérarche de \texttt{window}
+---il s'agit donc des objets  \instrcle{location}, \instrcle{history} et \instrcle{document}.
+Les deux déclarations suivantes sont donc équivalentes, la deuxième étant simplement plus concise :
+}
+\begin{verbatim} 
+       var url = window.location.href; 
+       var url = location.href;
+\end{verbatim}
+
+%\marginpar{\raggedleft \small{\textit{}}}
+
+
+\subsection{Comment désigner les éléments HTML}
+
+Pour chacun des éléments HTML figurant dans une page (c'est-à-dire ceux définis par des balises telles \texttt{<img>} pour une image), le navigateur les range dans la hiérarchie vue dans la section précédente. 
+Pour chaque objet HTML nommé avec l'attribut \texttt{name} ou \texttt{id}, il créé un objet JavaScript correspondant de même nom.\\
+
+Prenons le document HTML très simple suivant :
+\lstset{basicstyle=\footnotesize,language=HTML,
+        frame=shadowbox,rulesepcolor=\color{black}}
+\begin{lstlisting}
+<html>
+<head></head>
+<body>
+     <img id="header" src="header.jpg" alt="image">
+
+     <form  id="quest">
+          <input id="email" type="text"><br>
+          <input type="submit"> 
+     </form>
+
+     <img id="footer" src="greyfoot.jpg" alt="image">
+</body>
+</html>
+\end{lstlisting}
+
+\smallskip
+Vu dans un navigateur, cet exemple pourrait ressembler à l'image représentée
+figure \ref{fg:example-navig} ci-dessous.
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\[\includegraphics[height=7cm]{figures/struct-example-navig.png}\]
+\else
+%------------ PS ------------------------
+\vspace{.2cm}
+\[\psfig{figure=figures/classes.ps,height=6cm}\]
+%----------------------------------------
+\fi
+\caption{L'exemple HTML rendu par un navigateur}
+\label{fg:example-navig}
+\end{figure}\end{center}
+
+Ici \texttt{<img>} et \texttt{<form>} sont des balises HTML qui sont 
+représentées dans la classification de la figure \ref{fg:classes} par les 
+classes \textsf{Image} et \textsf{Form} respectivement. 
+Pour les deux balises \texttt{<input>} on remarque que leur type est aussi référencé dans la classification par les class \textsf{Text} et \textsf{Submit}.\\
+
+
+En suivant les branches de la figure \ref{fg:classes}, on déduit l'objet qui à été créé pour 
+représenter chacun de ces éléments HTML. 
+On part de \texttt{Window}, on passe par \textsf{Document} 
+et on arrive au niveau \textsf{Image} et \textsf{Form}.
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\[\includegraphics[width=7cm]{figures/struct-example-dom.png}\]
+\else
+%------------ PS ------------------------
+\vspace{.2cm}
+\[\psfig{figure=figures/classes.ps,width=7cm}\]
+%----------------------------------------
+\fi
+\caption{L'inspecteur DOM de Mozilla-Firefox montre la hiérarchie des objets}
+\label{fg:example-dom}
+\end{figure}\end{center}
+Certains outils comme l'inspecteur DOM du navigateur Mozilla-Firefox sont capables 
+d'afficher comment sont hiérarchisés les éléments par le navigateur (fig. \ref{fg:example-dom}).\\
+
+
+\paragraph{Désignation par le nom}
+Comme des noms on été donnés%
+\footnote{On a utilisé \texttt{id} mais le résultat aurait été le même avec la balise (obsolète) \texttt{name}.} 
+à ces éléments, on peut désigner en javascript ces éléments par (respectivement) :
+%-------------------------- verb ------------------------------------------
+\begin{Verbatim}[frame=single]
+window.document.bandeau
+window.document.quest
+window.document.footer
+\end{Verbatim}
+%-------------------------- verb ------------------------------------------
+En suivant la hiérarchie, on peut aussi désigner le seul champ \texttt{<input>}
+portant un nom à l'intérieur du formulaire en suivant la même logique.
+%-------------------------- verb ------------------------------------------
+\begin{Verbatim}[frame=single]
+window.document.quest.email
+\end{Verbatim}
+%-------------------------- verb ------------------------------------------
+
+
+Cette notation est concise et largement utilisée, mais n'est pas la seule.
+
+
+\paragraph{Désignation par tableau}
+Dès qu'une classe peut comporter plusieurs objets, 
+le navigateur crée un tableau pour chaque classe avec les différents objets.
+Dans chaque tableau les objets sont numérotés dans leur ordre
+d'apparition dans la page.
+
+Le nom du tableau est celui de la classe, mis au pluriel 
+(e.g. \textsf{images}, \textsf{forms}, \textsf{anchors}, \textsf{links}, ...).
+Ainsi, on peut aussi désigner les éléments précédents par leur numéro d'ordre 
+dans la classe.
+Aussi les expressions suivantes sont équivalentes (i.e. désignent les mêmes objets).
+
+%-------------------------- verb ------------------------------------------
+\begin{Verbatim}[frame=single]
+window.document.bandeau     = window.document.images[0]
+window.document.quest       = window.document.forms[0]
+window.document.quest.email = window.document.forms[0].email
+window.document.footer      = window.document.images[1]
+\end{Verbatim}
+%--------------------------------------------------------------------------
+Cette écriture est cependant risquée : si l'élément HTML change de place, sa
+désignation en javascript risque d'être fausse.
+Etant donné que javascript supporte les tableaux associatifs, il est recommandé
+de désigner l'élément de tableau à l'aide de son nom, et pas de son numéro.
+De manière équivalente, on peut écrire : 
+
+%-------------------------- verb ------------------------------------------
+\begin{Verbatim}[frame=single]
+window.document.bandeau     = window.document.images['bandeau']
+window.document.quest       = window.document.forms['quest']
+window.document.quest.email = window.document.forms['quest'].email
+window.document.footer      = window.document.images['footer']
+\end{Verbatim}
+%--------------------------------------------------------------------------
+
+\paragraph{Eléments} \index{éléments} 
+Notons que les classes en dessous de \textsf{Form} ne sont pas distinguées.
+(Il n'y a pas de tableau d'objets \textsf{texts} par exemple).
+Tous les objets sous un objet \textsf{Form} sont rangés dans un tableau
+\instrcle{elements}, quelque soit leurs types.
+
+On peut donc utiliser ces différentes notations pour notre champ de texte :
+
+%-------------------------- verb ------------------------------------------
+\begin{Verbatim}[frame=single]
+window.document.quest.email 
+=  window.document.forms['quest'].elements[0]
+=  window.document.forms['quest'].elements['email']
+\end{Verbatim}
+%--------------------------------------------------------------------------
+
+\paragraph{Méthodes DOM}
+
+La recommandation DOM propose des méthodes pour accéder aux objets. 
+Parmi celles-ci on a : 
+\begin{itemize}
+\item \instrcle{getElementById()} et \instrcle{getElementsByName()} qui rend
+      un objet correspondant à l'élément HTML désigné par son attribut 
+      \texttt{id} ou \texttt{name} respectivment,
+\item \instrcle{getElementsByTagName()} qui rend un tableau des objets représentant une balise.
+      Par exemple, \texttt{getElementsByTagName("a")} donne un tableau comportant les hyper-liens.
+\end{itemize}
+
+Voici quelques exemples d'équivalence avec les notations précédentes :
+
+%-------------------------- verb ------------------------------------------
+\begin{Verbatim}[frame=single]
+window.document.quest.email = document.getElementById('email')
+window.document.images      = document.getElementsByTagName('img')
+\end{Verbatim}
+%--------------------------------------------------------------------------
+
+\bigskip
+
+\subsection{Désignation de l'objet courant : \instrcle{this}}
+
+Il est souvent commode de pouvoir désigner l'objet manipulé sans devoir
+le nommer de manière explicite, comme nous l'avons décrit précédemment.
+Il existe le mot clé \instrcle{this} qui permet de désigner l'objet en cours de manipulation. 
+Illustrons ceci par un exemple : 
+
+
+\begin{lstlisting}
+<html> <head>
+<script type="text/javascript">
+function testResults (form) {
+	  var TestVar = form.elements['champ'].value;
+	  alert ("Vous avez tapé : " + TestVar);
+}
+</script> </head>
+<body>
+<form id="monformulaire" method="get" action="">
+<p>Saisir quelquechose dans le champ :<br>
+<input type="text" id="champ"><br>
+<input type="button" id="bouton" value="Click" 
+       onClick="testResults(this.form)">
+</p></form>
+</body></html>
+\end{lstlisting}
+Dans la déclaration du formulaire HTML (lignes 9 à 14), on remarque
+l'insertion de l'évènement Javascript \texttt{onClick}, qui indique
+qu'on doit appeler la fonction \texttt{testResults()} (définie lignes 3 à 6)
+lorsque le bouton
+à été cliqué. 
+On désire passer comme argument à cette fonction le formulaire \texttt{monformulaire}. 
+On pourrait désigner cet objet par son nom complet, ce qui donnerait :\\
+\texttt{onClick="testResults(document.forms['monformulaire'])"}.
+Cependant, il est aussi possible de le désigner, comme c'est le cas, par 
+\texttt{this.form}. 
+Cette désignation est en effet plus générale, puisqu'elle est valable
+quelquesoit le nom du formulaire.
+
+%--------------------------------------------------------------
+\section{Utilisation des objets}
+
+Nous passons en revue dans ce chapitre, quelques uns des objets les
+plus utilisés, en donnant des exemples dans lesquels ils ont utilisés.
+Vous trouverez plus de détails concernant chacune des classes dans l'annexe
+\ref{ch:annexea} où les propriétés et les méthodes des classes sont
+listées de manière exhaustive.
+
+\subsection{La classe {\tt Window}}
+
+
+Cette classe fournit des méthodes utiles d'affichage, parmi lesquelles
+on trouve des fenêtres pop-up de dialogue : 
+\[\begin{tabular}{ll}
+    \instrcle{alert()} 	& affiche une fenêtre de dialogue \\
+    \instrcle{confirm()} 	& affiche une fenêtre de dialogue avec boutons 'OK' et 'Cancel'\\
+    \instrcle{prompt()} 	& affiche une fenêtre de dialogue avec une zone texte\\  
+\end{tabular}
+\]
+
+\paragraph{Méthode \instrcle{alert()}}
+
+La méthode \instrcle{alert()} est très utile pour le déboggage de code : 
+on peut utiliser cette méthode pour faire afficher les valeurs des variables. 
+La figure \ref{fg:alert} illustre l'apparition d'un fenêtre pop-up de dialogue après l'appel à la méthode \texttt{alert()}. 
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=6cm]{figures/ex_alert.jpg}\]
+\else
+%------------ PS ------------------------
+\vspace{.2cm}
+\[\psfig{figure=figures/ex_alert.ps,width=6cm}\]
+%----------------------------------------
+\fi
+\caption{Pop-up \texttt{alert()}}
+\label{fg:alert}
+\end{figure}\end{center}
+%
+Cette fenêtre est obtenue grâce à la ligne de code suivante :
+\begin{verbatim}
+        window.alert("Texte affiché par window.alert()");
+\end{verbatim}
+                  
+D'autres méthodes permettent d'ouvrir et de fermer de nouvelles fenêtres ou de changer leur apparence. 
+Une autre méthode très utile est la méthode \instrcle{setTimeout()}. 
+Elle permet d'exécuter un code JavaScript
+après un laps de temps donné (indiqué en millisecondes). 
+Par exemple :
+\begin{verbatim}
+       setTimeout("alert('bonjour');", 500);
+\end{verbatim}
+fera apparaître la fenêtre de dialogue une demi-seconde après le chargement de la page.
+
+
+\paragraph{Méthode \instrcle{confirm()}}
+
+Cette méthode permet de poser une question à l'utilisateur, qui répondra
+en appuyant soit sur "Ok" soit sur "Annuler". Si "Ok" est appuyé,
+la fonction retourne \texttt{true}, et si "Annuler" est appuyé,
+elle rend \texttt{false}.
+	  
+\paragraph{Méthode \instrcle{prompt()}}
+\begin{center}
+  \texttt{String s =} \instrcle{prompt()}({\em message} [,{\em initial},]))\end{center}
+  
+Cette méthode permet à l'utilisateur, de lire une question, spécifiée par
+la chaine {\em message},
+de saisir une valeur et d'appuyer ensuite sur "Ok".
+On peut spécifier une valeur par défaut à l'aide du deuxième paramètre optionnel
+{\em initial}.
+La fonction rend la valeur saisie sous la forme d'une chaine de caractère.
+Si le programme attend une valeur numérique, il faut la convertir avec 
+des fonctions comme \instrcle{parseInt()} que nous avons vu en 
+section \ref{sc:conversion}, page \pageref{sc:conversion}.\\
+
+Dans l'exemple suivant, on demande à l'utilisateur son age, en supposant
+que 20 est une valeur qui fera l'affaire dans de nombreux cas. 
+On convertit ensuite la réponse sous forme de chaine en une valeur numérique.
+
+\begin{Verbatim}[frame=single,numbers=left]
+  reponse = prompt("Quel est votre age ?","20");
+  age = parseInt(reponse,10);
+\end{Verbatim}
+
+\paragraph{Méthode \texttt{open()}}
+
+Cette méthode permet d'ouvrir une nouvelle fenêtre de navigateur.
+Ce type d'action est utilisé en général pour afficher des informations
+annexes qui ne doivent pas interférer avec la fenêtre principale.
+Le prototype de la fonction est :
+\begin{center}
+  \texttt{window w =} \instrcle{open()}({\em URL} ,{\em titre} [,{\em options},]))
+\end{center}
+
+\begin{tabularx}{\linewidth}{lX}
+
+{\em URL}	&  une chaine spécifiant l'URL à charger l'ouverture de la fenêtre.
+           L'URL peut être un fichier ou une page internet.\\
+
+{\em titre} &  une chaine donnant un titre à la fenêtre.\\
+
+{\em options} &  une chaine contenant une liste de mots-clés, séparés par des virgules (ne pas insérer d'espaces dans cette chaine), qui indiquent quelle apparence doit avoir la nouvelle fenêtre, comme par exemple sa taille.
+Suit quelques unes des options qu'il est possible de spécifier.
+
+\vspace{3mm}
+\begin{tabular}{|l|l|}
+\hline
+height		& hauteur de la fenêtre en pixels\\
+width			& largeur de la fenêtre en pixels\\
+scrollbars        & créé des ascenseurs de défilement si vaut \emph{yes}\\
+status		& affiche une barre d'état si vaut \emph{yes}\\
+toolbar		& créé la barre d'outil avec boutons de navigation\\
+resizable         & autorise le redimensionnement de la fenêtre si \emph{yes} spécifié.\\
+location		& crée la fenêtre permettant de saisir l'adresse\\
+\hline
+\end{tabular}\\
+\end{tabularx}\\
+
+
+
+Si on ne spécifie pas d'\emph{URL} la fenêtre ouverte sera vierge.
+Si on ne précise pas d'options, certaines options seront activées
+ou non, automatiquement selon le contexte (place disponible pour 
+afficher la barre d'outils, etc).
+Voici deux exemples :
+\begin{lstlisting}
+  if (confirm("ouverture w1 ?"))
+    w1 = window.open("http://www.google.com","","toolbar=false");
+  if (confirm("ouverture w2 ?")) {
+    w2 = window.open("","nouvelle","width=200,height=200");
+    w2.document.write("<html><body><h1>Bonjour</h1></body></html>");
+  }
+\end{lstlisting}
+La ligne 2 permet d'ouvrir dans une fenêtre sans barre d'outil, 
+la page d'un moteur de recherche. La ligne 4 ouvre une fenêtre
+vierge, de petite taille, dans laquelle on imprime un message
+à la ligne 5.
+
+\paragraph{Les cadres (frames)} 
+
+Les \motcle{cadres} sont representés par des objet de la classe \texttt{Window}.  
+Quand une page contient des cadres, l'objet de cette classe contient un tableau
+de tels objets. A l'intérieur d'un cadre, on peut faire référence à la fenêtre le contenant à l'aide de \texttt{window.parent} ou simplement \texttt{parent}. Pour des cadres imbriqués doublement, on utilise \texttt{window.parent.parent} pour accéder à la fenêtre originelle ou simplement \texttt{window.top}.  
+  
+
+
+
+\subsection{La classe {\tt Document}}
+
+L'objet \instrcle{document} est probablement le plus utilisé. 
+Les propriétés de cet objet font référence au contenu de votre page web.
+Parmi celles ci, on trouve :
+ 
+\[\begin{tabular}{ll}
+\instrcle{bgColor}	& la couleur de fond\\
+\instrcle{fgColor} 	& la couleur du texte\\
+\instrcle{lastModified}	& une chaine donnant la date de dernière modification\\ 
+\instrcle{images} 	& un tableau d'objets Image\\
+\instrcle{forms}		& un tableau d'objets Form\\
+\instrcle{links}		& un tableau d'objets Link\\
+\end{tabular}
+\]
+La plupart de ces propriétés sont initialisées avec les balises HTML. 
+La propriété \texttt{bgColor} par exemple, est celle qui est spécifiée par
+l'attribut déprécié bgcolor dans la balise \texttt{<body>} de la page.\\
+
+
+\subsection{La classe {\tt Image}}
+
+Les informations concernant les\index{image} images peuvent être stockées par un objet de cette classe. Les propriétés de cet objet recensent entre autres l'URL de l'image, son état de chargement, ses dimensions, etc. 
+
+Pour illustrer simplement la manipulation d'images, voici quelques lignes permettant de changer l'image quand le pointeur de la souris passe au-dessus.
+En l'occurence, on veut que l'image du point vert (greenball.gif) se transforme en une flèche jaune (right.gif) quand la souris passe sur l'image.
+Bien sûr, il faut gérer l'évènement qui se produit quand la souris passe sur l'image. 
+Pour cela, on écrit dans la partie HTML le code suivant, en supposant que
+notre image est la première de la page.
+\begin{lstlisting}
+<a href="#" 
+  onMouseOver="document.images[0].src='right.gif'"
+  onMouseOut="document.images[0].src='greenball.gif'">
+  <img id="image1" src="greenball.gif" alt="">
+</a>
+\end{lstlisting}
+%
+Nous avons ici deux instructions HTML : 
+celle qui crée un lien et celle qui crée une image. 
+L'instruction de création de lien comporte une instruction JavaScript qui charge les fichiers right.gif ou greenball.gif dans la place réservée à l'image en fonction de l'évènement. Il est important de définir la gestion de l'évènement avant de créer l'image par la balise \texttt{<img>}. 
+
+\subsection{La classe {\tt Form}}
+
+Un objet de type \instrcle{form} est utilisé pour décrire les propriétés
+et traitements inhérents à un formulaire HTML.
+Cette classe est celle qui contient le plus grand nombre de classes dérivées, comme le montre la figure \ref{fg:classes}.
+En effet, le formulaire peut contenir de nombreux objets de types différents,
+comme des champs de saisie, des boutons à sélection multiples, etc.\\
+
+
+Pour illuster simplement la manipulation de \index{formulaire}formulaire, essayons de contrôler
+la saisie d'un formulaire comme celui de la figure \ref{fg:ex_form}.
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=10cm]{figures/ex_form.jpg}\]
+\else
+%------------ PS ------------------------
+\vspace{.2cm}
+\[\psfig{figure=figures/ex_form.ps,width=10cm}\]
+%----------------------------------------
+\fi
+\caption{Un formulaire d'enregistrement}
+\label{fg:ex_form}
+\end{figure}\end{center}
+%
+On veut interdire à l'utilisateur de valider le formulaire si 
+il n'a saisi aucun caractère dans le champ nom.
+
+Nous définissons donc le formulaire correspondant en HTML avec la balise <\instrcle{form}>. 
+On donne le nom \texttt{formulaire} à ce formulaire et on associe une action JavaScript à exécuter lorsque l'utilisateur validera le formulaire.
+En l'occurence on exécute une fonction que l'on a choisi d'appeler \texttt{verifie()}.
+
+Notons qu'il est nécessaire de retourner la valeur faux
+au formulaire (d'où la présence de \verb@return verifie()@ ligne 5) pour que l'attribut \texttt{action} ne soit pas réalisé.
+
+Pour cette vérification, nous aurons besoin de savoir ce que l'utilisateur a saisi dans le champ \texttt{nom} du formulaire.
+
+%\begin{Verbatim}[frame=single,numbers=left]
+\lstset{basicstyle=\footnotesize,language=HTML,
+        frame=shadowbox,rulesepcolor=\color{black},numbers=left}
+\begin{lstlisting}
+
+<html>
+<body>
+Donnez moi votre nom:
+<form id="formulaire" onSubmit="return verifie()"
+action="merci.html" method="get">
+<p>
+Votre nom : <input id="nom" type="text"  value=""> <br>
+
+<input type="submit" value="Enregistrer">
+<input type="reset"  value="Effacer">
+
+</p>
+</form>
+</body>
+<html>
+\end{lstlisting}
+
+\medskip
+
+Le formulaire défini, il faut écrire en quoi consiste la vérification, c'est-à-dire écrire la fonction \texttt{verifie()}. 
+Comme d'habitude, nous plaçons la définition de la fonction dans la partie
+\texttt{<head>} du document HTML.
+
+La vérification consiste ici à vérifier que dans le formulaire, le champ \texttt{nom}
+n'est pas une chaine de caractères vide. Si c'est le cas, une fenêtre pop-up affiche un message d'erreur, le curseur revient dans le champ \texttt{nom}, 
+et la fonction renvoie la valeur faux pour indiquer que la saisie n'est pas correcte.
+Dans le cas contraire, la fonction renvoie vrai et le formulaire affichera la page de remerciements pour avoir rempli correctement le formulaire.
+
+\medskip
+
+\begin{lstlisting}
+<html>
+<head>
+<script type="text/javascript">
+function verifie() {
+    if (document.forms['formulaire'].elements['nom'].value == "") {
+      document.forms['formulaire'].elements['nom'].focus();
+      alert("Le nom est obligatoire");
+      return false;
+    }
+    else return true;
+}
+</script>
+</head>
+\end{lstlisting}
+
+
+
+\subsection{Quelques éléments de la classe {\tt Form}}
+
+
+Nous avons vu dans l'exemple du formulaire précédent qu'il était composé de trois types d'éléments différents : 
+le type \texttt{input}, pour le champ \texttt{nom}, le type \instrcle{submit} et le type \instrcle{reset}.  
+La balise <\instrcle{form}> du langage HTML permet d'utiliser d'autres éléments.
+Tous les éléments qui peuvent composer un formulaire apparaissent dans la figure
+\ref{fg:classes}. 
+Examinons maintenant comment nous pouvons manipuler certains de ces objets.
+
+\subsubsection{Les objets {\tt select}}
+
+On peut par exemple créer des menus avec des éléments de type \instrcle{select}.
+Ci-dessous, nous créons un formulaire permettant de choisir un système d'exploitation. Nous prévoyons d'ores et déjà d'appeler la fonction \texttt{choix()} lorsque l'utilisateur aura choisi un élément de la liste.\\
+
+% --- HTML
+\begin{lstlisting}
+<form>
+  Systeme d'exploitation : 
+  <select id="liste" onChange="choix();">
+     <option value="Vous avez choisi BeOs">BeOs</option>
+     <option value="Vous avez choisi Linux">Linux</option>
+     <option value="Vous avez choisi MacOs">Macintosh</option>
+     <option value="Vous avez choisi Solaris">Solaris</option>
+     <option value="Vous avez choisi Windows">Windows</option>
+  </select>
+</form>
+\end{lstlisting}
+
+Ce formulaire nous permet d'obtenir l'écran de la figure \ref{fg:ex_menu}.
+On voit à gauche l'aspect initial du menu, et à droite son apparence lorsqu'on clique dessus.
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=6cm]{figures/ex_menu2.jpg}
+\hspace{1cm}
+\includegraphics[width=6cm]{figures/ex_menu1.jpg}\]
+\else
+%------------ PS ------------------------
+\[\psfig{figure=figures/ex_menu2.ps,width=6cm}
+\hspace{1cm}
+\psfig{figure=figures/ex_menu1.ps,width=6cm}
+\]
+%----------------------------------------
+\fi
+\caption{Un formulaire avec menu {\tt select}}
+\label{fg:ex_menu}
+\end{figure}\end{center}
+%
+Maintenant nous voulons afficher le choix de l'utilisateur. 
+Par conséquent, il faut retrouver l'élément choisi dans la liste.
+Notre formulaire n'a pas de nom mais comme c'est le seul (donc le premier), on peut le désigner par \verb@document.forms[0]@. 
+Nous avons donné un nom à notre menu : il s'appelle \texttt{liste} et nous pouvons le désigner par \verb@document.forms[0].liste@. 
+Ce type de menu possède des propriétés définies : 
+la propriété \verb@selectedIndex@ conserve le numéro de l'élément choisi (les éléments sont numérotés du haut vers le bas, et le premier est numéroté 0). 
+Les différents attributs \instrcle{value} sont eux stockés dans la propriété \instrcle{options}, qui est un tableau de chaines. 
+Nous avons là les informations nécessaires pour afficher un message correspondant au choix fait par l'utilisateur. On écrit la fonction :
+
+\lstset{basicstyle=\footnotesize,language=Java,
+        frame=shadowbox,rulesepcolor=\color{black}}
+\begin{lstlisting}
+   function choix() {
+        var i,s;
+        i = document.forms[0].elements['liste'].selectedIndex;
+        s = document.forms[0].elements['liste'].options[i].value;
+        window.confirm(s);
+   } 
+\end{lstlisting}
+
+Une fois déterminé le message de \texttt{value} du formulaire associé avec le choix fait, on demande confirmation à l'utilisateur. 
+Cette confirmation est illustrée par la figure \ref{fg:ex_menu3}. 
+%
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=4cm]{figures/ex_menu3.jpg}\]
+\else
+%------------ PS ------------------------
+\[\psfig{figure=figures/ex_menu3.ps,width=4cm}
+\]
+%----------------------------------------
+\fi
+\caption{Fenêtre affichant la sélection et demandant confirmation}
+\label{fg:ex_menu3}
+\end{figure}\end{center}
+%
+
+\subsubsection{Les objets \instrcle{radio}}
+
+Les boutons radio sont des boutons permettant un choix unique parmi plusieurs
+options. 
+Graphiquement, le fait de cliquer sur un des boutons entraîne la dé-sélection des autres boutons. 
+La figure \ref{fg:ex_radio} présente un exemple de choix par boutons radio.
+Dans cet exemple, nous voulons également afficher le choix fait par l'utilisateur après qu'il ait appuyé sur le bouton ``Afficher choix''.
+%
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=5cm]{figures/ex_radio.jpg}\]
+\else
+%------------ PS ------------------------
+\[\psfig{figure=figures/ex_radio.ps,width=5cm} \]
+%----------------------------------------
+\fi
+\caption{Sélection par bouton \texttt{radio}}
+\label{fg:ex_radio}
+\end{figure}\end{center}
+%
+Le bouton radio fait partie du langage HTML : 
+comme le bouton \texttt{select}, il est défini dans un formulaire HTML. 
+Pour créer l'exemple de la figure \ref{fg:ex_radio}, nous avons décrit le formulaire :\\
+\begin{small}
+\lstset{basicstyle=\footnotesize,language=HTML,
+        frame=shadowbox,rulesepcolor=\color{black}}
+\begin{lstlisting}
+<form id="formu_age" action=""><p>
+<input name="age" type="radio" value="15-">vous avez 15 ans ou moins<br>
+<input name="age" type="radio" value="16-30">vous avez 16-30 ans<br>
+<input name="age" type="radio" value="31-50">vous avez 31-50 ans<br>
+<input name="age" type="radio" value="50+">vous avez 50 ans ou plus<br>
+<input type="button" value="Afficher choix" onClick="afficheChoix();">
+</p></form>
+\end{lstlisting}
+\end{small}
+%
+Il est important que les noms donnés aux boutons dans le formulaire soient tous les mêmes, car c'est parmi ces boutons de même nom que le choix unique est autorisé.
+La dernière ligne du formulaire, associe au bouton permettant de valider le choix, la fonction JavaScript appelée quand on appuie sur le bouton.
+Cette fonction permet
+d'afficher le texte correspondant au bouton sélectionné.
+
+
+Pour déterminer quel bouton est sélectionné, le code décrit une boucle vérifiant tour à tour pour chacun des boutons, si la propriété \instrcle{checked} est vraie.
+Si c'est le cas, on ouvre une fenêtre affichant le texte associé au bouton.
+Le code de la fonction est le suivant :
+
+\lstset{basicstyle=\footnotesize,language=Java,
+        frame=shadowbox,rulesepcolor=\color{black}}
+\begin{lstlisting}
+   function afficheChoix() {
+   var nb = document.forms['formu_age'].age.length;
+       for (var i=0;i< nb;i++) {
+                if (document.forms['formu_age'].age[i].checked)
+                   alert(document.forms['formu_age'].age[i].value)
+       }
+   }
+\end{lstlisting}
+
+\subsubsection{Les objets \instrcle{checkbox}}
+
+Les \texttt{checkbox} permettent de sélectionner plusieurs éléments dans une 
+liste (choix multiple). 
+En HTML, le formulaire présenté en figure \ref{fg:checkbox} est obtenu
+par l'extrait de texte suivant :
+
+\begin{small}
+\lstset{basicstyle=\footnotesize,language=HTML,
+        frame=shadowbox,rulesepcolor=\color{black}}
+\begin{lstlisting}
+Choisissez vos options :
+
+<form id="opt" action=""><p>
+<input type="checkbox" name="choix" value="radio"> 
+                       Auto-radio (1800 F)<br>
+<input type="checkbox" name="choix" value="p. métal."> 
+                       Peinture métalisée (3000 F)<br>
+<input type="checkbox" name="choix" value="jantes"> 
+                       Jantes alliages (2500 F)<br>
+<input type="checkbox" name="choix" value="clim."> 
+                       Climatisation (7000 F)<br>
+<input type="button" value="Total options" onClick="afficheTotal();">
+</p></form>
+\end{lstlisting}
+\end{small}
+Notons que tous les éléments \texttt{checkbox} portent le même nom.
+Comme précémment, ceci permet au navigateur de contruire un tableau (vecteur) regroupant
+tous ces objets et portant le nom \texttt{choix[]}.
+On note aussi, à la dernière ligne du formulaire, l'appel à la fonction \texttt{afficheTotal()},
+qui sera chargée de faire le total du prix des options sélectionnées par l'utilisateur.
+
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=15cm]{figures/ex_checkbox.png}\]
+\else
+%------------ PS ------------------------
+\vspace{.2cm}
+\[\psfig{figure=figures/ex_checkbox.ps,width=6cm}\]
+%----------------------------------------
+\fi
+\caption{Sélection dans un formulaire à l'aide de cases \texttt{checkbox}}
+\label{fg:checkbox}
+\end{figure}\end{center}
+
+Le code de la fonction illustre l'accès au contenu des cases \texttt{checkbox} du formulaire.
+On détermine le nombre \texttt{nb} de cases de nom \texttt{choix} dans le formulaire nommé \texttt{opt} (ligne 4).
+Puis, on peut parcourir le tableau des cases, et pour chaque case (\texttt{document.opt.choix[i]}),
+vérifier si la case à été cochée (ligne 8). 
+Il faut utiliser ici la propriété de type booléen \instrcle{checked} de l'objet \texttt{checkbox}.
+Si c'est le cas, on cumule le prix de cette option
+stockée dans le tableau \texttt{tarif} dans le même ordre (choix arbitraire) que les cases (ligne 10). 
+On ajoute aussi l'intitulé de cette option au message récapitulatif final (ligne 9).
+
+\lstset{basicstyle=\footnotesize,language=Java,
+        frame=shadowbox,rulesepcolor=\color{black}}
+\begin{lstlisting}
+  <script type="text/javascript">
+  function afficheTotal() {
+  tarif = new Array(1800, 3000,2500,7000);
+  var nb = document.forms['opt'].choix.length;
+  var somme = 0;
+  var recap = "";
+    for (var i=0;i< nb;i++) {
+        if (document.forms['opt'].choix[i].checked)  {
+             recap += document.forms['opt'].choix[i].value + " ";
+             somme += tarif[i];
+        }
+     }
+     alert("Total =" + somme + "F (" + recap +")");
+    }
+    </script>
+\end{lstlisting}

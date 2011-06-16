@@ -1,0 +1,503 @@
+\chapter{Objets - manuel de référence}	  
+\label{ch:annexea}
+\newcommand{\n}{\textsf{Netscape$\:$}}
+\newcommand{\ie}{\textsf{Internet Explorer$\:$}}
+	   
+\section{anchor}
+
+   Une ancre (anchor) est un repère dans une page. L'utilité de l'ancre est de pouvoir amener l'utilisateur directement sur la zone de la page marquée par ce repère. Ceci n'est généralement utilisé que quand la page est longue.
+zone d'une page. An example of an anchor would be
+  
+
+\paragraph{Syntaxe}   \verb@<A NAME="mon-ancre">@ 
+
+qui fait référence à l'ancre définie par 
+\verb@<A HREF="#mon-ancre">@
+
+\paragraph{Propriétés} aucune
+\paragraph{Méthodes} aucune
+	  
+\section{array} 
+
+Les tableaux servent à stocker d'autres objets. 
+comme par exemple plusieurs champs dans un formulaire. 
+Les différents éléments sont rangés dans un tableau dans l'ordre où 
+ils apparaissent.
+ 
+\paragraph{Propriétés}  length
+\paragraph{Méthodes}  aucune
+
+%----------------------------------------------------------------------	
+\section{button}
+
+ L'objet button ainsi que ses propriétés sont définis dans un formulaire. 
+ La propriété value est le texte apparaîssant sur le boutton. 
+ 
+\paragraph{Syntaxe}   \verb@<INPUT TYPE="button" name="Name" value="value">@
+\paragraph{Propriétés}   name et value
+\paragraph{Méthodes}   click()
+\paragraph{Evènements} onBlur, onClick, onFocus, onMouseDown, onMouseUp 
+%----------------------------------------------------------------------	
+\section{checkbox} 
+
+Une checkbox a l'apparence d'une boîte carrée qu'on sélectionne ou
+déselectionne par un clic de souris. Les checkbox sont définies à
+l'aide de la balise \verb@<FORM>@.
+    
+\paragraph{Syntaxe}   \verb@<INPUT TYPE="checkbox" name="Name" value="value">@
+\paragraph{Propriétés}   checked, defaultChecked, name, and value
+\paragraph{Méthodes}   blur(), click(), focus()
+\paragraph{Evènements} onBlur, onClick, onFocus 
+ 
+%----------------------------------------------------------------------	
+\section{Date} 
+
+L'objet date est un objet doté de nombreuses méthodes de manipulation.  
+JavaScript mémorise les dates comme le nombre de millisecondes (ms) écoulées depuis le 1er Janvier 1970.
+  
+ 
+\paragraph{Propriétés}  aucune
+\paragraph{Méthodes} 
+
+\[
+\begin{tabular}{ll}
+          getDate() & rend le jour du mois de la date courante\\
+          getDay() & rend le jour de la semaine de la date courante \\
+          getHours() & rend le jour de la semaine de la date courante\\
+          getMinutes() & rend les minutes de la date courante\\
+          getMonth() & rend le mois de la date courante\\
+          getSeconds() & rend les secondes de la date courante\\
+          getTime() & rend la valeur numérique de la date courante\\
+          getTimezoneOffset() & rend le décalage horaire en minutes avec GMT\\
+          getYear() & rend l'année de la date courante\\
+          parse(d) & rend le nombre de ms écoulées entre $d$ et le 1/1/70\\
+          setDate(j) & met à la jour la date au jour $j$ \\
+          setHours(h) & met à la jour la date au jour $h$ \\\\
+          setMinutes(m) & met à la jour la date à la minute $m$\\
+          setMonth(m) & met à la jour la date au mois $m$\\
+          setSeconds(s) & met à la jour la date à la seconde $s$\\
+          setTime(n) & met à jour la date étant donné le nombre $n$ de ms depuis le 1/1/70\\
+          setYear(d) & met à jour l'année pour une date $d$\\
+          toGMTString() &  convertit la date une date GMT \\
+          toLocaleString() & convertit la date une date locale\\
+          UTC(a,m,j) & rend le nombre de ms entre la date et le 1/1/70
+\end{tabular}\]
+%----------------------------------------------------------------------	
+\section{document} 
+
+L'objet document contient les onformations sur le document courant. 
+Il fournit aussi des méthodes pour afficher du texte au format HTML dans le navigateur. 
+
+\paragraph{Propriétés}
+\[\begin{tabular}[t]{ll}
+          alinkColor & couleur d'un lien actif\\
+          anchors & tableau regroupant les ancres du document\\
+          bgColor & couleur de fond\\
+          cookie &  \\
+          fgColor & couleur d'avant plan\\
+          forms & tableau des formulaires\\
+          lastModified & date de denière modification\\
+          linkColor & couleur des liens\\
+          links & tableau des liens\\
+          location & URL du document courant\\
+          referrer & URL de la page précédemment visitée\\
+          title & titre de la page\\
+          vlinkColor & couleur d'un lien visité\\
+\end{tabular}\]
+
+\paragraph{Méthodes} 
+\[\begin{tabular}[t]{ll}
+	close()	& ferme un flux ouvert par la méthode open()		\\
+	getSelection()	& rend la chaine selectionnée dans le document courant\\
+	open()	& ouvre un flux pour affichage de texte avec write() \\
+	write($e_1, .. ,e_n$)& affiche les expressions $e_1,..,e_n$ dans le document.		\\
+	writeln($e_1, .. , e_n$) & idem mais ajoute un retour à la ligne\\
+\end{tabular}
+\]
+               
+%----------------------------------------------------------------------	
+\section{form} 
+
+L'objet form permet de créer un formulaire. 
+Les formulaires peuvent contenir des champs, des zones de texte des boutons, des checkboxes, etc.  
+
+\paragraph{Syntaxe}
+
+\begin{verbatim}
+<FORM NAME="name" TARGET="target" ACTION="file" 
+ METHOD="POST/GET" ENCTYPE="encodingtype">
+\end{verbatim}
+ 
+où \verb@TARGET@ désigne la fenêtre dans laquelle les résultats doivent aller,
+\verb@ACTION@ défini quelle action doit être entreprise quand le formulaire à été rempli. Ce peut être entre autres un nom de fichier HTML à afficher, un script cgi à exécuter, ou une adresse electronique vers laquelle envoyer un courrier.
+\verb@METHOD@ peut prendre les valeurs POST ou GET, qui définissent comment la réponse est envoyée au serveur. \verb@ENCTYPE@ indique l'encodage MIME à utiliser dans le transfert.
+
+\paragraph{Propriétés}  action, elements, encoding, length, method, target,
+          button, checkbox, hidden, password, radio, reset, select, submit,
+          text, et textarea
+\paragraph{Méthodes}  submit()
+%----------------------------------------------------------------------	
+\section{frame}
+
+          L'objet frame permet de manipuler les cadres. 
+          Un cadre est une division de la page web en plusieurs zone.
+          La balise \texttt{<FRAMESET>} permet de diviser une zone en deux, chacune des zones pouvant être nouveau divisée en deux. 
+
+\paragraph{Syntaxe}
+\begin{verbatim}
+          <FRAMESET ROWS="x1,x2" COLS="y1,y2">
+          <FRAME SRC="file" NAME="name">
+          </FRAMESET>
+\end{verbatim}
+\texttt{ROWS} spécifie les nombres de lignes dans le premier cadre
+et le deuxième cadre par \texttt{x1} et \texttt{x2} respectivement, qui sont
+soient des entiers, soit des pourcentages de la zone divisée.
+De la même manière, \texttt{COLS} spécifie la largeur des cadres.
+\texttt{SRC} indique quel fichier doit être chargé dans le cadre.
+ 
+\paragraph{Propriétés} 
+
+\begin{tabular}[t]{ll}
+          frames &  \\
+          name &  \\
+          length &  \\
+          parent &  \\
+          self &  \\
+          window &  \\
+\end{tabular}
+
+\paragraph{Méthodes}  clearTimeout(), et setTimeout()
+%----------------------------------------------------------------------	
+\section{hidden}
+
+L'objet hidden est un champ texte invisible pour l'utilisateur, permettant d'ajouter des informations pré-définies dans un formulaire. 
+
+\paragraph{Syntaxe}
+
+\verb@<INPUT TYPE="hidden" NAME="name" VALUE="value">@
+où \verb@VALUE@ est la valeur du champ.
+
+\paragraph{Propriétés}  name et value
+\paragraph{Méthodes} : aucune
+%----------------------------------------------------------------------	
+\section{history} 
+
+L'objet history contient des informations sur la session de navigation en cours.
+Les informations sont essentiellement les URL des sites visités.
+ 
+\paragraph{Propriétés}  length
+\paragraph{Méthodes} back(), forward(), et go()
+%----------------------------------------------------------------------	
+\section{Image} 
+
+L'objet Image contient les informations concernant les images et cartes insérées
+dans le document HTML à l'aide des balises \verb@<IMG>@ et \verb@<AREA>@. Les propriétés sont disponibles pour \n 3, \n 4 et \ie 4 à l'exception des propriétés x et y uniquement disponibles dans \n 4.
+
+\paragraph{Propriétés}  
+\begin{tabular}[t]{ll}
+          border & valeur de l'attribut de même nom dans la balise \verb@<IMG>@	\\
+          complete & booléen indiquant si l'image est complétement affichée  \\
+          height &  la hauteur de l'image en pixels \\
+          hspace &  valeur de l'attribut de même nom dans la balise \verb@<IMG>@\\
+          lowsrc &  similaire à src, mais pour des images longues à charger\\
+          name	& valeur de l'attribut de même nom dans la balise \verb@<IMG>@  \\
+          src & le nom du fichier image		 \\
+          vspace & valeur de l'attribut de même nom dans la balise \verb@<IMG>@   \\
+          width & valeur de l'attribut de même nom dans la balise \verb@<IMG>@	\\
+	  x & l'abscisse du coin haut-gauche de l'image	\\
+	  y & l'ordonnée du coin haut-gauche de l'image 	 \\	
+\end{tabular} 
+
+\paragraph{Méthodes} aucune 
+
+%----------------------------------------------------------------------		  
+\section{link}
+ 
+\paragraph{Syntaxe}
+
+\verb@<HREF="location" NAME="name" TARGET="target">@ avec \verb@HREF@
+          l'URL du fichier à charger quand on clique sur le lien, 
+	et \verb@TARGET@ est le nom de la fenêtre ou l'afficher.  
+
+\paragraph{Propriétés} 
+\begin{tabular}[t]{ll}
+          hash & ancre dans l'URL\\
+          host & nom du serveur dans l'URL\\
+          hostname &  adresse IP du serveur\\
+          href &  URL complète\\
+          pathname & texte après le symbole / dans l'URL\\
+          port &  port que le serveur utilise\\
+          protocol & début de l'URL (http,ftp,...)\\
+          search & texte après le symbole ? dans l'URL\\
+          target & où afficher la page de cette URL\\
+\end{tabular}
+\paragraph{Méthodes}  aucune
+%----------------------------------------------------------------------	
+\section{location}
+
+L'objet location contient les informations sur l'URL courante.
+
+\paragraph{Propriétés}  
+ \begin{tabular}[t]{ll}
+          hash & ancre dans l'URL\\
+          host & nom du serveur dans l'URL\\
+          hostname &  adresse IP du serveur\\
+          href &  URL complète\\
+          pathname & texte après le symbole / dans l'URL\\
+          port &  port que le serveur utilise\\
+          protocol & début de l'URL (http,ftp,...)\\
+          search & texte après le symbole ? dans l'URL\\
+          target & où afficher la page de cette URL\\
+\end{tabular}
+\paragraph{Méthodes} aucune
+%----------------------------------------------------------------------		  
+\section{Math}
+
+\paragraph{Propriétés} 
+\begin{tabular}[t]{ll}
+          \verb@E@ &  constante d'Euler ($\sim 2.718$)\\
+          \verb@LN2@ &  logarithme de 2 ($\sim  0.693$)\\
+          \verb@LN10@ & logarithme de 10 ($\sim2.302$)\\
+          \verb@LOG2E@ & Returns the base 2 logarithm of e, about 1.442\\
+          \verb@LOG10E@ & Returns the base 10 logarithm of e, about 0.434\\
+          \verb@PI@ & valeur de Pi ($\sim 3.14159$)\\
+          \verb@SQRT1_2@ &  racine carrée de $\frac{1}{2}$ ($\sim 0.707$)\\
+          \verb@SQRT2@ & racine carrée de 2 ($\sim 1.414$)\\
+\end{tabular}
+\paragraph{Méthodes}  
+
+\begin{tabular}[t]{ll}
+          abs(x) & rend la valeur absolue de $x$\\ 
+          acos(x) & rends arc cosinus de $x$\\ 
+          asin(x) & rends arc sinus de $x$\\ 
+          atan(x) & rend  l'arc tangente de $x$\\ 
+          ceil(x) & rend l'entier immédiatement supérieur ou égal à $x$\\ 
+          cos(x) & rend le cosinus de $x$\\ 
+          exp(x) & rend $e^x$\\ 
+          floor(x) & rend l'entier immédiatement inférieur ou égal à $x$\\ 
+          log(x) & rend le logarithme de $x$\\ 
+          max(x,y) & rend le maximum de $x$ et $y$\\ 
+          min(x,y) & rend le minium de $x$ et $y$\\ 
+          pow(x,y) & rend $x^y$\\ 
+          random() & rend un nombre aléatoire entre 0 et 1\\ 
+          round(x) & rend l'entier le plus proche de $x$ \\
+          sin(x) & rend le sinus de $x$\\
+          sqrt(x) & rend $\sqrt{x}$\\
+          tan(x) & rend la tangente de $x$\\
+\end{tabular}
+
+\section{navigator} 
+
+ Cet objet permet d'obtenir des informations sur le navigateur visitant la page.
+ 
+\paragraph{Propriétés}
+\begin{tabular}[t]{ll}
+          appCodeName & rend le nom de code du navigateur (Mozilla)\\
+          appName & rend le nom commercial du navigateur\\
+          appVersion & rend le numéro de version du navigateur\\
+          userAgent & rend le nom complet du navigateur\\
+\end{tabular}
+\paragraph{Méthodes} aucune
+%----------------------------------------------------------------------	  
+\section{password}
+
+L'objet password créé un champ texte comme l'objet text, mais les caractères
+saisis apparaissent comme des astérisques, rendant la saise confidentielle
+aux yeux d'autres personnes que l'utilisateur. 
+
+\paragraph{Syntaxe}
+\begin{verbatim}
+         <INPUT TYPE="PASSWORD" NAME="NAME" VALUE="VALUE" SIZE="SIZE">
+\end{verbatim}
+ 
+ \texttt{SIZE}  est la largeurdu champ en nombre de caractères.
+    
+\paragraph{Propriétés} 
+\begin{tabular}[t]{ll}
+          defaultValue & valeur initiale du champ\\
+          name & nom du champ\\
+          value & valeur courante du champ\\
+\end{tabular}
+\paragraph{Méthodes} 
+\begin{tabular}[t]{ll}
+          blur() &  Enlève le curseur du champ\\
+          focus() &  Amène le curseur dans le champ\\
+          select() & Sélectionne le texte saisi\\
+\end{tabular}
+%----------------------------------------------------------------------	
+\section{radio}
+ 
+Les objets radios sont des boutons ne permettant a l'utilisateur de ne choisir 
+qu'une option parmi plusieurs.
+
+\paragraph{Syntaxe}  
+
+\verb@<INPUT TYPE="radio" NAME="Name" VALUE="Value" {CHECKED}>@
+      
+où \verb@VALUE@ est le texte apparaissant sur le bouton.
+En spécifiant l'attribut \texttt{CHECKED} alors le bouton est pré-sélectionné
+au chargement du formulaire. 
+
+ \paragraph{Propriétés} 
+\begin{tabular}[t]{ll}
+          checked & indique si le bouton à été sélectionné\\ 
+          defaultChecked & indique quel bouton doit être pré-selectionné \\
+          length & donne le nombre de  boutons \\
+          object &\\
+          name  & permet de donner un nom au(x) bouton(s) \\
+          value &  permet de donner une valeur au(x) bouton(s)\\
+\end{tabular}
+\paragraph{Méthodes}  click()
+\paragraph{Evènements} onBlur, onClick, onFocus 
+
+%----------------------------------------------------------------------	
+\section{reset}
+
+Le bouton reset permet de réinitialiser un formulaire.
+ 
+\paragraph{Syntaxe}
+
+\verb@<INPUT TYPE="RESET" NAME="NAME" VALUE="VALUE">@
+où \verb@VALUE@ est le texte apparaissant sur le bouton.
+ 
+\paragraph{Propriétés} 
+\begin{tabular}[t]{ll}
+          name & Le nom du bouton\\
+          value & La chaine associée au bouton\\
+\end{tabular}
+
+\paragraph{Méthodes}  click()
+\paragraph{Evènements} onBlur, onClick, onFocus 
+
+%----------------------------------------------------------------------	
+\section{select}
+\paragraph{Syntaxe}
+\begin{verbatim}
+          <SELECT NAME="NAME" SIZE="SIZE" {MULTIPLE}> 
+          <OPTION VALUE="option"> Texte </SELECT>
+\end{verbatim}
+où \texttt{SIZE} fixe le nombre d'options avant de dérouler le menu (défaut 1), \texttt{MULTIPLE}, s'il est précisé fait du menu une liste à choix multiple.
+L'attribut \verb@<OPTION VALUE="option">@ ajoute une option de menu à chaque fois qu'il est ajouté. Il faut donc un attribut \verb@OPTION@ pour chaque option du menu. 
+ 
+\paragraph{Propriétés} 
+
+\begin{tabular}{ll}
+          length & Met à jour le nombre d'options	\\
+          name &  Met à jour le nom du menu	\\
+          options & Tableau des différentes options du menu\\
+          selectedIndex & Rend le numéro de l'option choisie\\
+	  \end{tabular}
+\paragraph{Méthodes} : blur(), et focus()
+\paragraph{Evènements} onBlur, onChange, onFocus 
+
+%----------------------------------------------------------------------	
+\section{string}
+\label{sc:appendix-string}
+\paragraph{Propriétés}  length
+\paragraph{Méthodes} 
+
+\begin{tabular}[t]{ll}
+          big & Affiche la chaine dans une grande police\\
+          blink & Affiche la chaine en clignotant\\
+          bold & Affiche la chaine en caractères gras\\
+          charAt & Rend le caractère à une certaine position dans la chaine\\
+          fixed & Affiche la chaine dans une police à taille fixe\\
+          fontcolor & La couleur de fond d'affichage de la chaine\\
+          fontsize & La taille de la police d'affichage de la chaine\\
+          indexOf & Rend la première occurence d'une sous-chaine dans la chaine\\
+          italics & Affiche la chaine en italique\\
+          lastIndexOf & Cherche la dernière occurence d'une valeur dans une chaine\\
+          link & affiche La chaine comme un lien\\
+          small & Affiche la chaine en petite police\\
+          strike & Affiche la chaine avec une barre en travers\\
+          sub & Affiche la chaine en mode indice (subscript)\\
+          substring & Référence une sous-chaine\\
+          sup & Affiche la chaine en mode exposant (superscript)\\
+          toLowerCase & Change la chaine en minuscules\\
+          toUpperCase & Change la chaine en majuscules \\
+\end{tabular}
+%----------------------------------------------------------------------	
+\section{submit} 
+
+L'objet submit est le bouton permettant de valider un formulaire. 
+
+\paragraph{Syntaxe}
+          
+\verb@<INPUT TYPE="SUBMIT" NAME="NAME" VALUE="Text">@ où VALUE est le texte
+affiché sur le bouton.
+
+\paragraph{Propriétés}  name, et value
+\paragraph{Méthodes} click()
+\paragraph{Evènements} onClick   
+
+              
+%----------------------------------------------------------------------	
+\section{text}
+
+ Un objet text est un champ de saisie sur une ligne permettant de saisir toute chaine alphanumérique. 
+ 
+\paragraph{Syntaxe}
+
+\verb@<INPUT TYPE="text" NAME="name" VALUE="value" SIZE="size">@
+où \texttt{VALUE} est le texte affiché initialement dans le champ, et
+\texttt{SIZE} est la largeur du champ en nombre de caractères.
+ 
+\paragraph{Propriétés} defaultValue, name, form, type, value
+\paragraph{Méthodes}  focus, blur, and select
+\paragraph{Evènements} onBlur, onChange, onFocus, onSelect  
+
+%----------------------------------------------------------------------	
+\section{textarea} 
+
+L'objet textarea permet à l'utilisateur de saisir plusieurs lignes de
+textes dans un formulaire.
+ 
+\paragraph{Syntaxe}
+
+\begin{verbatim}
+            <TEXTAREA NAME="name" ROWS=rows COLS=cols
+             WRAP="off/virtual/physical">Text</TEXTAREA>
+\end{verbatim}
+où \texttt{rows} spécifie le nombre de lignes du champ, et \texttt{cols} le nombre de caractères par ligne.  
+
+\paragraph{Propriétés}   defaultValue, name, et select
+\paragraph{Méthodes}   focus, blur, et select
+\paragraph{Evènements} onBlur, onChange, onFocus, onKeyDown, onKeyPress, onKeyUp, onSelect  
+%----------------------------------------------------------------------	
+\section{window} 
+ 
+\paragraph{Syntaxe}
+	\verb@w = window.open("URL", "NAME" {,"Options"})@.\\
+
+où \verb@URL@ est l'adresse de la page à ouvrir, 
+\verb@NAME@ est le nom de la fenêtre, 
+et Options sont des paramètres optionels comme la taille de la fenêtre, etc.\\
+  
+\paragraph{Propriétés} 
+\begin{tabular}[t]{ll}
+          defaultStatus & Le message affiché par défaut dans la barre de statut\\
+          document & Permet d'accéder au document courant\\
+          frames &  Le tableau contenant les cadres de la fenêtre\\
+          frame & La fen\^{e}tre avec ascenseur utilisée pour un tableau\\
+          length & Le nombre de cadre dans la fenêtre\\
+          location & L'URL du document courant\\
+          name & Le nom de la fenêtre\\
+          parent & La fenêtre englobante\\
+          self & Référence à la fenêtre elle-même\\
+          status & Le message de la barre de statut\\
+          top & Référence à la fenêtre mère\\
+          window & Référence à la fenêtre courante\\
+\end{tabular}
+\paragraph{Méthodes}
+\begin{tabular}[t]{ll}
+          alert() 	& Créé une boite de dialogue de type message+OK	\\
+          close() 	& Ferme le document	\\
+          confirm() 	& Créé une boite de dialogue de type message+OK/Cancel\\
+          open() 	& Ouvre une nouvelle fenêtre \\
+          prompt() 	& Créé une boite de dialogue de type message+zone de
+	  saisie+OK/Cancel\\
+          setTimeout() 	&  Exécute le code JavaScript après un certain nombre de
+	  millisecondes\\
+          clearTimeout() & Annule l'effet de la commande setTimeout()\\
+\end{tabular} 
+%----------------------------------------------------------------------	

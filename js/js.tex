@@ -1,0 +1,979 @@
+%-----------------------------------------------------------------------
+%  File Name: js.tex
+%
+%  Author: S. Genaud
+%
+%    $Log: js.tex,v $
+%    Revision 1.17  2007-01-10 11:33:17  genaud
+%    integration shots plugin-webdevel
+%
+%    Revision 1.16  2006-09-13 21:38:45  genaud
+%    php.sgml :-)
+%
+%    Revision 1.15  2005-03-16 14:49:59  genaud
+%    modifs mineures
+%
+%    Revision 1.14  2005/03/09 23:30:27  genaud
+%    Detache chapitre : DHTML
+%    - evocation de DOM
+%    - dÃ©taillÃ© dÃ©signation des objets
+%
+%    Revision 1.13  2005/02/23 15:26:06  genaud
+%    typo
+%
+%    Revision 1.12  2005/02/23 15:19:39  genaud
+%    - A propos du document
+%    - methodes sur Array()
+%
+%    Revision 1.11  2005/02/06 22:53:03  genaud
+%    1.9 and 1.10 merged
+%
+%    Revision 1.10  2005/02/06 22:15:51  genaud
+%    Corrections et ajouts de Pierre Dureau
+%
+%    Revision 1.9  2005/02/03 00:21:03  genaud
+%    undefined value
+%
+%    Revision 1.8  2005/01/10 10:10:54  genaud
+%    essai de marginpar
+%
+%    Revision 1.7  2004/02/06 16:25:07  genaud
+%    essai variable RCS
+%
+%  Revision 1.3  2004/02/06 15:33:32  genaud
+%  - exo monnaieg
+%  - image console (mozilla 1.4)
+%  ---------------------------------------------------------------------
+\documentclass{book}
+\usepackage{a4,makeidx,fancyheadings}
+\usepackage{graphicx}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{makeidx}
+\usepackage{tabularx}
+\usepackage{lettrine}
+\usepackage{eurosym}
+\usepackage{color}
+\usepackage{listings}
+\makeindex
+
+%--------------------------------------
+%pour compiler avec latex ou pdflatex
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+  \pdffalse
+\else
+  \pdfoutput=1
+  \pdftrue
+\fi
+%--------------------------------------
+	
+\begin{document}
+\newcommand{\motcle}[1]{\index{#1}\emph{#1}}
+\newcommand{\instrcle}[1]{\index{\texttt{#1}}\texttt{#1}}
+
+\thispagestyle{empty}
+%-------- fancy headings setting -----------
+\rhead[]{}
+%\footrulewidth 0.1pt
+\rfoot[]{\small\sc S. Genaud}
+\pagestyle{fancy}
+%------------------------- Page de Garde -------------------
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0mm}
+\vspace*{\stretch{1}}
+\rule{\linewidth}{1mm}
+\begin{center}
+\Large{Introduction à JavaScript}\\[5mm]
+\large{Stéphane Genaud}
+\rule{\linewidth}{1mm}
+\vspace*{\stretch{2}}
+\end{center}
+\begin{center}
+\oldstylenums{2005} \\
+$Revision: 1.17 $\\
+$Date: 2007-01-10 11:33:17 $\\
+\end{center}
+%------------------------------------------------------------
+
+\tableofcontents
+\newpage
+
+ 
+ 
+
+\chapter{Introduction}
+
+\paragraph{A propos de ce document} 
+Ce document ne suppose que très peu de connaissances pré-requises.
+Des notions de HTML permettront néanmoins de faire clairement la distinction entre
+le JavaScript et le HTML quand ces deux langages sont présents dans un même texte.
+Le but principal est d'abord d'illustrer des concepts de base d'algorithmique et
+de langage de programmation. 
+JavaScript n'a pas été choisi pour ses aspects didactiques mais pour ses atouts pratiques :
+les navigateurs modernes les plus répandus possèdent tous un interpréteur Javascript permettant de tester simplement ses programmes, et quasiment n'importe où.\\
+
+J'esaye de compléter ce document en fonction des remarques des lecteurs ou des évolutions technologiques. 
+Toutes les remarques (notamment les corrections d'erreurs) sont donc les bienvenues%
+\footnote{Je remercie les gens ayant relu le document. Pour l'instant : Pierre \textsc{Dureau} (2005).}.\\
+
+\bigskip
+
+
+\lettrine[lines=3, lraise=0.1]{J}{avaScript} est un langage de script orienté-objet utilisé pour le développement d'applications internet.
+Ce langage a été developpé par la société \textsc{Netscape} Corporation, 
+qui l'a introduit, pour la première fois dans son \emph{Navigator 2.0} en 1996.
+
+Netscape met à disposition sur son site un guide de référence complet du langage \cite{Netscape98}. 
+
+Afin de rendre ce langage accessible à des navigateurs conçus par 
+d'autres entreprises, un procédé de normalisation à été entrepris dès 1996.
+La norme porte le nom ECMA-262 \cite{ECMA99}, et on se refère parfois à JavaScript sous le nom d'ECMA script.
+\marginpar{\raggedleft \small{\textit{Ne pas confondre JavaScript et Java, langage conçu et développé par Sun Microsystems.}}}
+Cette norme est un sous-ensemble du langage JavaScript conçu par Netscape,
+et 
+il est nécessaire de n'utiliser que les spécifications de cette norme
+pour s'assurer que le code écrit sera compris de tous les navigateurs
+interprétant le JavaScript.\\
+
+Les programmes JavaScript s'intègrent dans le code HTML d'une page web. 
+L'intérêt d'un langage comme JavaScript est de pouvoir contrôler dynamiquement
+le comportement d'un page web : on peut par exemple vérifier que le code postal
+saisi dans la page est correct, faire afficher des menus spéciaux quand la
+souris approche d'une zone donnée, afficher des bandeaux publicitaires animés,
+orienter automatiquement le visiteur sur une autre page, etc ... .
+Pour des exemples de mises en application de JavaScript, vous pouvez vous reporter
+à \cite{Bradenbaugh99}.
+
+\section{JavaScript est utilisé côté client}
+
+La charge d'exécuter le code JavaScript incombe au client, c'est-à-dire à un
+navigateur la plupart du temps. 
+Le serveur envoie le code HTML et JavaScript au client qui l'interprète dès
+qu'il est chargé. 
+Ce type de fonctionnement s'oppose aux langages orientés serveurs, comme
+PHP\cite{Bakken99} ou ASP. 
+Dans ce cas, le serveur exécute le programme pour produire du HTML et l'envoie
+au client.
+
+
+\section{JavaScript est interprété}
+
+On distingue habituellement deux modes d'exécution des programmes. 
+Dans le premier mode, dit \textbf{compilé}, le texte 
+de programme écrit par le programmeur (on dit aussi programme source)
+est traduit dans un autre format, directement compréhensible par la machine.
+La phase de traduction s'apelle la \motcle{compilation} et donne un fichier exécutable 
+(ou binaire). Les avantages de ce mode sont la rapidité d'exécution 
+(les instructions sont directement exécutées par la machine) 
+et la validité syntaxique du programme source (pour que le compilateur puisse traduire
+le source  il faut que les instructions soient syntaxiquement correctes).
+D'autre part, un avantage commercial est de pouvoir donner à une personne tierce, uniquement
+le fichier exécutable sans que cette personne puisse voir le programme source.
+L'inconvénient est que le fichier exécutable dépend à la fois de la machine et du système d'exploitation,
+et il est par conséquent plus difficile de le distribuer.\\
+ 
+Le deuxième mode est dit \textbf{interprété} : 
+un programme interprète lit le programme source, et essaye d'exécuter les instructions les unes après les autres. 
+A la différence du mode compilé, il n'y a pas de fichier exécutable. 
+L'avantage de ce mode est que toute personne ayant le programme interprète sur son ordinateur,
+peut exécuter le programme. L'inconvénient est la lenteur dûe à l'exécution et de l'interprète
+et du programme. \\
+
+
+JavaScript est un langage \motcle{interprété}. 
+Il faut donc un programme interprète pour exécuter des programmes écrits dans ce langage.
+Les deux navigateurs les plus répandus à l'heure actuelle sur le marché, 
+Netscape et Internet Explorer, incorporent de tels interprètes.
+Netscape Navigator 2.0, et ses versions ultérieures sont capables d'interpréter
+les programmes JavaScript. Quand un navigateur demande l'accès à une page HTML 
+contenant un programme JavaScript, le serveur envoie le document complet
+(incluant le HTML et les instructions JavaScript) au navigateur.  
+Le navigateur affiche alors le texte HTML et exécute le code JavaScript. 
+
+
+\paragraph{Quels navigateurs sont capables d'interpréter JavaScript ?} 
+
+Netscape a introduit pour la première fois l'interprétation de code JavaScript dans son Navigator version 2. 
+Microsoft, avec Internet Explorer version 3, a suivi, en implémentant une partie du langage. 
+D'autres navigateurs intègrent aussi l'interprétation de JavaScript aujourd'hui. 
+Il est difficile de donner une information exhaustive à un moment donné, sur les versions de navigateurs étant capables d'interpréter telle ou telle version du langage, du fait de l'évolution rapide et incessante des logiciels et des langages.   
+Citons simplement trois autres navigateurs qui respectent la norme ECMA-262 : 
+\begin{itemize}
+\item Opera, logiciel propriétaire disponible sous Windows/Linux/MacOs, 
+\item Konqueror, l'explorateur de fichiers et navigateur de l'environnement KDE sous Linux,
+\item Safari, le navigateur fourni dans l'environnement MacOSX, basé sur Konqueror,
+\item Firefox, le navigateur de la fondation Mozilla, basé sur le navigateur Mozilla. 
+Mozilla aujourd'hui complètement remplacé par Firefox, a fourni son moteur Gecko à de nomberux autres navigateurs, 
+dont les Netscape 6 et 7.
+\end{itemize}
+
+
+\paragraph{Détecter les erreurs} 
+Lors de la conception du programme javascript, des erreurs de programmation
+interviennent fréquemment. La première des choses à faire est bien sûr
+de vérifier la conformité de ce qu'on a écrit avec ce qu'on voulait dire.
+Il faut également faire particulièrement attention à la syntaxe, les
+fautes de frappe étant fréquentes.
+Le programme étant interprété par le navigateur, celui ci peut aussi
+mettre à votre disposition un outil d'aide à la détection des erreurs.
+Les anciens navigateurs (e.g. \textsc{Netscape} séries 4.7x, Microsoft IE 5) vous signalent une
+erreur de manière discrète%
+\footnote{Cependant, \textsc{Netscape} séries 4.7x permet (même s'il est ancien) d'obtenir une console javascript expliquant les erreurs:
+quand une erreur est signalée dans le bandeau bas de la fenêtre, tapez \texttt{javascript:} dans la barre d'adresse},
+voire pas du tout.  dans le bandeau bas de la fenêtre du navigateur de manière discrète , sans plus de détails. 
+Les navigateurs \textsc{Mozilla} 1.x et \textsc{Netscape} 7.x proposent dans le menu
+\textsf{outils/développement web} une console JavaScript (voir la figure \ref{fg:console})
+et même un \motcle{debugger}.
+
+\begin{center}
+\begin{figure}[hbt]
+\ifpdf
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=9cm]{figures/console.png}\]
+\else
+%------------ PS ------------------------
+\vspace{.2cm}
+\[\psfig{figure=figures/console.eps,width=9cm}\]
+%----------------------------------------
+\fi
+\caption{La console javascript de Mozilla 1.4}
+\label{fg:console}
+\end{figure}\end{center}
+%
+Enfin, les navigateurs récents comme Firefox 2.0 proposent des plugins puissants aidant la recherche d'erreurs 
+et plus généralement le développement orienté web (e.g. plugin \textit{web-developper}, voir illustrations
+\ref{fg:plugin-webdevel} et \ref{fg:plugin-webdevel-tool-menu}).
+
+\ifpdf
+\begin{center}
+\begin{figure}[thb]
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=10cm]{figures/firefox-webdevel-plugin.png}\]
+\caption{Le plugin web-developper dans FireFox 2.0}
+\label{fg:plugin-webdevel}
+\end{figure}
+\end{center}
+\fi
+
+\ifpdf
+\begin{center}
+\begin{figure}[thb]
+%----------- PDF ------------------------
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
+\[\includegraphics[width=3cm]{figures/firefox-tools-menu.png}\]
+\caption{Le menu de \textit{tools} dans le plugin web-developper}
+\label{fg:plugin-webdevel-tool-menu}
+\end{figure}
+\end{center}
+\fi
+
+	  
+\section{Où et comment insérer du JavaScript ?}
+
+Pour placer des intructions JavaScript dans une page HTML, il faut utiliser
+la balise <\instrcle{script}> de la manière suivante :\\
+
+\begin{Verbatim}[frame=single]
+  <script type="text/javascript"> 
+         .....
+         instructions javascript  
+         .....
+  </script>
+\end{Verbatim}
+Notons que l'ouverture \verb+<script >+ est suffisante pour une écriture rapide, mais que
+la type \verb+text/javascript+ est nécessaire pour que la page soit conforme à la norme HTML 4.01.
+
+
+Si l'on préfère inclure le code JavaScript stocké dans un autre fichier, on peut l'indiquer par une ligne comme :
+\begin{Verbatim}[frame=single]
+  <script src="mon_code.js" type="text/javascript"></script>
+\end{Verbatim}
+
+Ces instructions peuvent s'insérer n'importe où à l'intérieur du code HTML.
+Dans l'exemple suivant, on note l'utilsation de la fonction \texttt{document.write} \index{\texttt{write}} qui permet, 
+en JavaScript, d'écrire un message dans la fenêtre du navigateur. 
+Nous reviendrons sur cette fonction plus tard.  
+\begin{Verbatim}[frame=single]
+  <html>
+      ligne 1 de texte . <br>
+  <script type="text/javascript">
+      document.write("ligne 2 de texte.")
+  </script> 
+      <br>ligne 3 de texte.
+  </html>
+\end{Verbatim}
+Lors du chargement de cette page HTML, l'utilisateur ne verra s'afficher dans son navigateur que les trois lignes :
+\begin{verbatim}
+        ligne 1 de texte
+        ligne 2 de texte
+        ligne 3 de texte
+\end{verbatim} 
+sans savoir si c'est du texte produit par HTML ou par JavaScript.
+
+\paragraph{Cacher JavaScript à certains navigateurs}
+
+Certains navigateurs ne comprennent pas le JavaScript. 
+Pour éviter les erreurs que signaleraient ces navigateurs lors
+de la lecture du JavaScript, on peut leur faire croire qu'il
+s'agit de commentaires HTML. Par exemple :
+%
+\begin{Verbatim}[frame=single]
+ <html>
+ <script type="text/javascript">
+ <!-- cache le script .
+        document.write("Bonjour !") 
+ // fin du commentaire ici. -->
+ </script>
+
+ reste du texte HTML.
+ </html>
+\end{Verbatim}
+
+ 
+%----------------------Le langage---------------------------------------
+\chapter{Le langage}
+
+\lettrine[lines=2]{N}{ous} présentons dans ce chapitre deux notions distinctes.
+D'une part, les concepts de base de la programmation%
+\footnote{De la programmation impérative, c'est-à-dire le modèle de programmation le plus répandu.}
+et d'autre part, la \emph{syntaxe} du langage qui permet d'exprimer ces concepts.
+La syntaxe du langage consiste en l'ensemble des règles qui nous sont imposées 
+sur le vocabulaire employé lorsqu'on écrit un programme dans ce langage.\\
+
+Tou au long du chapitre, les conventions suivantes sont utilisées. On appelle
+\motcle{mot-clé} tout mot ou symbole appartenant au langage JavaScript. 
+Ces mots-clés sont typographiés en police télétype : 
+par exemple, \texttt{if} est un mot-clé (il indique le début d'un test).
+En pratique, ceci signifie qu'on ne peut utiliser un mot-clé en dehors 
+de son contexte. Vous ne pourrez pas par exemple, choisir if comme nom de variable. 
+La table \ref{tb:mots-cles} recense les mots-clés du langage.
+
+\begin{table}
+\[\begin{tabular}{|lll|}
+\hline
+	abstract	& float		& public	\\
+	boolean		& for		& return         \\
+	break		& function      & short    	\\
+	byte		& goto          & static \\
+	case		& if        	& super   \\
+	catch		& implements	& switch     \\
+	chat		& import        & synchronized \\
+	class		& in            & this       \\
+	const		& instanceof    & throw \\
+	continue	& int           & throws \\
+	default		& interface     & transient\\
+	do		& long          & true      \\
+	double		& native        & try    \\
+	else		& new           & var           \\
+	extends		& null          & void 	\\
+	false		& package       & while 	\\
+	final		& private       & width   \\
+	finally		& protected	&		\\
+\hline 
+\end{tabular}\]
+\caption{Liste des mots-clés}
+\label{tb:mots-cles}
+\end{table}
+   
+
+\section{Variables}
+
+\subsection{Déclaration et lecture/écriture}
+
+Une \motcle{variable} est une case mémoire à laquelle on a donné un nom. 
+Dans les langages impératifs, (comme JavaScript, Java,C/C++) le contenu de cette case mémoire peut varier au cours de l'exécution du programme.
+On peut ranger une valeur dans cette case, ou de manière synonyme, dans la variable, par une instruction nommée \motcle{affectation}. 
+On peut aussi lire son contenu à tout moment. 
+On peut par exemple indiquer que l'on utilise un variable pour compter les points d'un match. 
+Il faut alors l'indiquer par l'instruction suivante, qu'on appelle \motcle{déclaration} de variable :
+\begin{verbatim}
+         var compteur;
+\end{verbatim}
+Ici, \instrcle{var} est un mot-clé et \texttt{compteur} un nom choisi par le programmeur. 
+Après une telle déclaration et sans précision supplémentaire, la variable 
+vaut \instrcle{undefined}%
+\footnote{Depuis JavaScript >= 1.3. Auparavant, \instrcle{undefined} n'existait 
+pas et la valeur d'une variable non initialisée était \texttt{true}.}.
+
+
+Si je veux signifier à un moment du programme que le nombre de points est quatre, j'écris l'instruction d'affectation :
+\begin{verbatim}
+         compteur = 4;
+\end{verbatim}
+Les noms de variables sont de longueur quelconques, peuvent contenir des lettres, chiffres et le caractère souligné (\_) , mais doivent commencer par une lettre. Notons que JavaScript, contrairement à HTML, distingue les majuscules des minuscules, et qu'ainsi \texttt{MaVariable} et
+\texttt{mavariable} désignent deux variables différentes. 
+
+
+Maintenant supposons que mon compteur a une valeur que je ne connais pas, 
+et que je veuille indiquer qu'il faut ajouter un \'a cette valeur. 
+Pour cela, je peux écrire l'instruction :
+\begin{verbatim}
+         compteur = compteur + 1;
+\end{verbatim}  
+Pour comprendre la signification de cette instruction, il faut savoir que l'ordinateur va d'abord évaluer la partie à droite du symbole égal. 
+Le contenu de la variable \texttt{compteur} est lu, et on additionne un à ce contenu. 
+Dans un deuxième temps, 
+la somme est ré-écrite dans la variable \texttt{compteur}.
+Cette opération est tellement courante en informatique qu'elle porte un nom :
+c'est l'\motcle{incrémentation} d'une variable.\\ 
+
+
+Il faut ici faire attention au sens du symbole \verb@=@. 
+Il dénote en JavaScript (comme en Java ou en C) l'\motcle{affectation}, et non l'\motcle{égalité}, auquel cas le texte précédent n'aurait pas de sens. 
+On signifie l'égalité par le symbole \verb@==@, comme nous le verrons par la suite.\\
+
+
+\subsection{Types de données}
+
+On pourrait se poser la question suivante : peut on mettre n'importe quelle sorte de données dans une variable ? 
+La réponse est non, car il se poserait alors des problèmes de cohérence : 
+que se passerait il si on mettait le message <<bonjour>> dans \texttt{compteur} et que l'on essayait ensuite de lui ajouter un ? 
+
+
+Pour assurer la cohérence des instruction, les langages informatiques définissent habituellement des \motcle{types de données}. 
+Un type de données est un ensemble de \motcle{valeurs} et un ensemble d'\motcle{opérateurs} sur ces valeurs.
+Par exemple, le type \motcle{entier} est constitué de l'ensemble des entiers et des opérateurs +, -,*, /, etc. 
+Un autre type très utilisé est le type \motcle{chaine} (ou chaine de caractères) permettant de traiter les messages.
+Une chaine est un ensemble de caractères composé indifféremment de lettres, symboles ou chiffres. 
+Sur l'ensemble des chaines de caractères, on peut définir des opérateurs comme la \motcle{concaténation} (mettre deux chaines bout-à-bout).
+La section \ref{sc:types} revient en détail sur les types du langage JavaScript.\\
+
+
+JavaScript, comme la plupart des langages de script, 
+est un langage très faiblement typé. 
+Ceci ne veut pas dire qu'il est capable d'effectuer l'instruction 1+"bonjour", mais qu'il n'impose pas au programmeur d'indiquer explicitement le type d'une variable lors de la déclaration de celle-ci. 
+
+\subsection{Exemples de déclaration}
+
+Voici, quelques exemples de déclarations :
+\begin{verbatim}
+      var texte;
+      var cle;
+      var compteur = 3;
+      var Erreur = "Connexion perdue.";
+      var Erreur2 = 'Pas assez de mémoire';
+\end{verbatim}
+Notons que l'on peut \motcle{initialiser} les variables (y inscrire une valeur initiale) à leur déclaration, comme c'est le cas dans les trois dernières déclarations.
+ 
+On remarque aussi dans l'exemple précédent que l'on peut indifféremment utiliser les guillements ou les quotes pour délimiter une chaine de caractères.\\
+
+
+\section{Opérations, expressions}
+
+La plupart des \index{expression}expressions que l'on rencontre dans des langages comme C/C++ et Java existent en JavaScript. 
+Nous ne donnerons que quelques exemples ici, et nous
+découvrirons ces expressions au fil de ce document. 
+Voici quelques exemples,
+les instructions sur la même ligne ayant la même signification.
+\begin{Verbatim}[frame=single]
+      total += 4;                       total = total + 4;
+      i++;                              i = i + 1;
+      msg = "code erreur " + code;
+\end{Verbatim}
+
+\section{Commentaires}
+Parfois, un programmeur souhaite annoter le code qu'il vient d'écrire, 
+mais sans que ces annotations n'interfèrent avec les instructions proprement dites. 
+On appelle ces annotations des \motcle{commentaires} du programmes.
+Pour que l'interprète ne confonde pas ces caractères avec les instructions, 
+(pour qu'il les ignore), on fait précéder un commentaire disposé en fin de ligne par les deux barres obliques
+(\verb@//@) et on utilise \verb@/*@ et \verb@*/@ pour délimiter un commentaire
+sur plusieurs lignes. 
+Voici un exemple de code commenté.
+\index{\texttt{write}}\index{\texttt  {if}} \index{et logique}
+\begin{Verbatim}[frame=single]
+/* test pour poser la bonne question */
+  if (reduc && vieux) { // a une reduction et est vieille
+     document.write("Voulez que quelqu'un vous accompagne ?");
+  }
+\end{Verbatim}
+
+%-----------------Déroulement d'un programe---------------------------------
+\section{Déroulement d'un programe}
+
+\subsection{La séquence}
+
+Quand on veut faire exécuter plusieurs instructions (c'est en pratique toujours le cas)
+on écrit ces instuctions de haut en bas, en insérant un point-virgule entre
+chaque instruction \footnote{En réalté, le point-virugle n'est pas nécessaire en JavaScript. Il me semble cependant préférable de prendre cette habitude car de nombreux langages ayant une syntaxe très proche utilise le point-virgule pour séparer deux instructions.} . 
+Pour incrémenter ma variable \texttt{compteur} d'une unité, puis de deux, j'écris :
+\begin{verbatim}
+        compteur = compteur + 1;
+        compteur = compteur + 2;
+\end{verbatim}
+Cependant, la séquence simple rendrait fastidieuse l'écriture d'instructions
+se répétant un grand nombre de fois. 
+Si l'on doit par exemple afficher les cinquante premiers entiers, nous aurions
+besoin de cent instructions : 
+cinquante instructions d'affichage, et cinquante incrémentations.
+Pour simplifier l'écriture, le langage fournit des \emph{structures de contrôle}
+permettant de modifier la séquence d'exécution des instructions.
+
+\subsection{Structures de contrôle}
+
+Parmi ces structures on trouve la \motcle{boucle} (aussi appelée itérative) 
+et le \motcle{test} (ou alternative). 
+
+\subsubsection{La boucle \texttt{for}}
+
+La boucle permet de répéter un certain nombre de fois un ensemble d'instructions. 
+La boucle est introduite par le mot-clé \instrcle{for}.
+
+Pour afficher nos cinquante premiers entiers, nous pouvons écrire une boucle
+qui nous permet de réduire le texte de programme à trois lignes (au lieu de cent).
+
+Cette boucle utilise la variable \texttt{i} qui vaut 1 initialement. 
+Ensuite le \emph{corps} de la boucle, c'est-à-dire les instructions à l'intérieur
+des crochets (\verb@{@ et \verb@}@) est exécuté tant que la condition
+\verb@i<=50@ est vraie. 
+A chaque tour de boucle, on incrémente la variable \texttt{i}.
+\begin{Verbatim}[frame=single]
+       for (i=1; i<=50; i++) {
+             document.writeln(i);
+       }
+\end{Verbatim}
+
+La syntaxe de la boucle en JavaScript est la suivante. 
+La notation utilise les crochets pour indiquer les paramètres optionnels.
+
+\begin{tabbing}
+xxxxx\=xxxxxx\=xxxx\kill
+\>	{\tt for (}[$init{-}expr$\verb@;@][$condition$\verb@;@][$incr{-}expr$] \verb@){@\\
+\>\>		$instructions$\\
+\>\verb@}@
+\end{tabbing}	 
+
+Le comportement de cette instruction est :
+\[\begin{tabular}{l}
+	1. exécute $init{-}expr$\\
+	2. si $condition$ est faux aller en 6., sinon aller en 3. \\
+	3. exécuter $incr{-}expr$\\
+	4. exécuter $instructions$\\
+	5. aller en 2.\\
+	6. sortie de l'instruction {\tt for}
+\end{tabular}\]
+
+\subsubsection{La boucle \texttt{while}}
+
+Une autre structure itérative plus simple est la boucle \instrcle{while}.
+Celle-ci dit simplement qu'on doit répéter un ensemble d'instructions tant qu'une condition est vraie.
+\begin{tabbing}
+xxxxx\=xxxxxx\=xxxx\kill
+\>	{\tt while (}$condition$\verb@){@\\
+\>\>		$instructions$\\
+\>\verb@}@
+\end{tabbing}	 
+
+Le comportement de cette instruction est :
+\[\begin{tabular}{l}
+	1. évalue $condition$\\
+	2. si $condition$ est vraie aller en 3, sinon aller en 5. \\
+	3. exécuter $instructions$\\
+	4. aller en 1.\\
+	5. sortie de l'instruction {\tt while}
+\end{tabular}\]
+
+Nous pouvons par exemple refaire un calcul tant que l'utilisateur le désire.
+Supposons que nous disposions par ailleurs d'une fonction \texttt{calc\_moyenne()} calculant une moyenne de notes.
+Dans l'exemple suivant, la variable \texttt{recommence} est un booléen
+qui contrôle la répétition du calcul de la moyenne. 
+On relance ce calcul tant que l'utilisateur n'a pas cliqué sur \emph{Annuler} dans la boite de dialogue affichée par \instrcle{prompt()}.
+
+\begin{Verbatim}[frame=single]
+var recommence = true;
+
+    while (recommence) {
+       m = calc_moyenne();     
+       recommence=prompt("La moyenne est " + m + ".Recommencer ?");
+    }
+\end{Verbatim}
+Notons qu'il est important d'initialiser la variable \texttt{recommence} à la valeur vraie afin d'entrer dans la boucle la première fois.
+
+
+
+\subsubsection{L'alternative}
+
+La structure alternative permet d'exécuter un ensemble d'instruction quand 
+une condition est vraie. 
+Le type de la condition est \index{booléen} booléen 
+(la condition est soit vraie soit fausse). 
+La structure alternative est introduite par le mot-clé \instrcle{if}, et sa syntaxe est la suivante :
+
+\begin{tabbing}
+xxxxx\=xxxxxx\=xxxx\kill
+\>	{\tt if (}$condition_1$\verb@){@\\
+\>\>		$instructions_1$\\
+\>\verb@}@\\
+\>	[\verb@else  {@\\
+\>\>		$instructions_2$\\
+\>\verb@}@]
+\end{tabbing}
+
+Le comportement de cette instruction est :
+\[\begin{tabular}{l}
+	1. si $condition_1$ est vrai, aller en 2, sinon aller en 3.\\
+	2. exécuter $instructions_1$ et aller en 4. \\
+	3. si il y a une partie \verb@else@, exécuter $instructions_2$ et aller en 4 sinon 
+	aller en 4.\\
+ 	4. sortie de l'instruction
+\end{tabular}\]
+
+Exemple : on peut simplement tester la valeur d'une variable, comme dans l'exemple suivant.
+\begin{Verbatim}[frame=single]
+    if (i==50) {
+       document.writeln("i est égal à 50")
+    }
+    else {
+       document.writeln("i n'est pas égal à 50")
+    }
+\end{Verbatim}
+ 
+
+
+\subsection{Fonctions}
+\label{sc:fonctions}
+De même que la boucle permet de répéter plusieurs instructions, la fonction est très utile pour accomplir une tâche répétitive. 
+Le principe consiste à regrouper dans un <<bloc>> un ensemble d'instructions nécessaire pour accomplir une tâche, à nommer ce bloc, et à l'appeler à chaque fois qu'on a besoin d'effectuer la tâche.\\
+
+Une sophistication supplémentaire réside dans la possibilité de pouvoir \emph{paramétrer} ce bloc, c'est-à-dire exécuter le bloc avec des paramètres pouvant être différents à chaque appel. Il va de soi que si je construis un bloc permettant de calculer la factorielle d'un nombre, je veux que ce bloc puisse calculer la factorielle de n'importe quel entier. 
+Cet entier est mon paramètre (ou de manière synonyme, l'\motcle{argument} du bloc).\\
+
+De plus, les blocs en JavaScript, se nomment \motcle{fonctions}, comme les fonctions mathématiques, ils renvoient un résultat unique.\\
+
+La définition d'une fonction est introduite par le mot clé \texttt{function} suivi de ses arguments, puis du code de la fonction entre accolades (\texttt{\{\}}).
+ Le résultat de la fonction est indiqué par le mot-clé
+\instrcle{return}. 
+Par exemple, ci-dessous est définie la fonction \texttt{carre}
+qui rend le carré de son argument. 
+
+\begin{Verbatim}[frame=single]
+ <script type="text/javascript">
+   function carre(i) {
+         return (i*i)
+    }
+ </script>
+\end{Verbatim}
+Notons que rien ne se passe si on charge seulement la page contenant ce
+script. Il faut en effet appeler la fonction avec un argument effectif
+pour que l'évaluation se fasse. Pour cela, on pourra par exemple ajouter
+après le code de la fonction, un appel à cette fonction :
+%
+\begin{Verbatim}[frame=single]
+ <script type="text/javascript">
+       document.write("La fonction a retourné ",carre(4),".")
+ </script>
+\end{Verbatim}
+
+Pour appeler la fonction, il faut bien sûr qu'elle ait été définie auparavant.
+Par conséquent, il est conseillé de placer la définition de fonction dans
+l'entête de la page HTML, et les appels dans le corps de cette page.
+Pour notre exemple, la page HTML a donc la structure suivante :
+
+\begin{Verbatim}[frame=single]
+<head>
+<script type="text/javascript">
+   function carre(i) {
+     document.write("on a appelé carre avec l'argument ",i ,"<br>")
+     return i * i
+   }
+</script>
+</head>
+<body>
+<script type="text/javascript">
+     document.write("La fonction a retourné ",carre(4),".")
+</script>
+</body>
+\end{Verbatim}
+
+\section{Portée des variables}
+
+Les variables déclarées en dehors d'une fonction sont \motcle{globales}\index{variable globale},
+c'est-à-dire qu'il est possible de les lire ou de les modifier de n'importe quelle partie du script ou de n'importe quelle fonction.
+Par opposition, les variables déclarées à l'intérieur d'une fonction sont \motcle{locales}\index{variable locale}, c'est-à-dire que leur valeur n'est connue qu'à l'intérieur de la fonction.
+
+
+\section{Les types de données en JavaScript}
+\label{sc:types}
+
+\subsection{Le type booléen}
+
+Une expression de type \motcle{booléen} ne peut prendre que les valeurs \emph{true} ou \emph{false}. 
+Ce type est notamment utilisé dans l'instruction \texttt{if}.
+L'ensemble des opérateurs définis sur l'ensemble de valeurs $\{true,false\}$ est présenté dans la table \ref{tb:op-logiques}.
+(dans les exemples de cette table, les variables \texttt{a} et \texttt{b} sont de type booléen).
+\begin{table}[hbt]
+\[
+\begin{tabular}{|l|c|l|l|}
+\hline
+	nom		& syntaxe	& exemple		& définition\\
+\hline
+\hline
+	et logique	& \verb@&&@	& \verb@ a && b@	&
+	$\begin{array}[t]{lll}
+		true,&true &\rightarrow true \\
+		true,&false &\rightarrow false \\
+		false,&true &\rightarrow false \\
+		false,&false &\rightarrow false \\
+	\end{array}$
+	\\
+\hline	
+	ou logique	& \verb@||@	& \verb@ a || b@ &	
+	$\begin{array}[t]{lll}
+		true,&true &\rightarrow true \\
+		true,&false &\rightarrow true \\
+		false,&true &\rightarrow true \\
+		false,&false &\rightarrow false \\
+			\end{array}$
+	\\
+\hline		
+	Négation	& \verb@!@	& \verb@ !a@	&
+	$\begin{array}[t]{lll}
+		true &\rightarrow& false \\
+		false &\rightarrow& true \\
+			\end{array}$\\
+\hline
+\end{tabular}\]
+\caption{Les opérateurs logiques (définis sur les booléens)}
+\label{tb:op-logiques}
+\end{table}
+\index{et logique}\index{ou logique}\index{négation logique}\index{opérateurs logiques}
+
+\textit{Remarque} : l'implication est absente mais peut s'écrire à partir de la négation et du ou logique ($\vee$). 
+On a : $(a \Rightarrow b) \equiv (\neg a \vee b)$, (c'est-à-dire \verb@(!a || b)@ en JavaScript).
+	
+
+\subsection{Le type entier}
+
+\subsection{Le type chaine de caractères}
+
+L'ensemble de valeurs que peut prendre une variable de type chaine est une combinaison quelconque
+d'un nombre quelconque de  caractères quelconques. 
+Comme indiqué dans l'introduction, des exemples de chaines sont \texttt{"abcdef"} ou \texttt{"az1r"}
+ou \texttt{"123"}.
+Dans les programmes, une chaine de caractères est délimitée par des guillemets (\texttt{""}) ou des
+quotes (\texttt{''}).
+
+La liste des méthodes sont listées en section \ref{sc:appendix-string}, page \pageref{sc:appendix-string}.
+On peut donner quelques exemples de méthodes qui existent sur les chaines :
+\begin{itemize}
+\item \instrcle{indexOf} : cette méthode indique à quelle place se situe la première occurrence d'une sous-chaine dans une chaine. 
+Par exemple, dans la chaine "le baba de ECMA-script", la première occurrence de
+la sous-chaine "ba" est en position 3 (on compte à partir de 0).
+Dans la chaine "jones@free.fr", la sous-chaine "@" est à la position 5.
+Si la sous-chaine n'existe pas dans la chaine, \texttt{indexOf} rend -1.
+En JavaScript, les deux exemples précédents peuvent s'écrire ainsi, \texttt{p1} et \texttt{p2} recevan les positions indiquées :
+\begin{Verbatim}[frame=single]
+    var s1 = "le baba de ECMA-script";
+    var s2 = "jones@free.fr";
+
+    p1 = s1.indexOf("ba");   // p1 = 3
+    p2 = s2.indexOf("@");    // p2 = 5
+    p3 = s2.indexof("abc");  // p3 = -1
+\end{Verbatim}
+
+
+\end{itemize}
+
+\subsection{Les tableaux}
+
+Un \motcle{tableau} permet de stocker plusieurs valeurs de même type, comme par exemple plusieurs entiers dans une seule variable. 
+Les tableaux sont donc un type à part entière : ma variable de contenant plusieurs entiers est de type <<tableau d'entiers>>. 
+En JavaScript\footnote{%
+cette syntaxe n'est valable que pour des versions de navigateurs supérieures à Netscape 2 et IE 3-DLL JScript 1. Pour une utilisation des tableaux avec des verions anciennes de navigateurs, vous pouvez consulter \cite{Goodman98}.}%
+, la déclaration d'une telle variable se fait par exemple comme suit :
+\begin{Verbatim}[frame=single]
+    var tableau_entiers = new Array();
+\end{Verbatim}
+
+Remarquez que nous n'avons pas précisé que les éléments du tableau étaient des entiers, du fait du typage faible de JavaScript. 
+Ce sont les éléments que nous metterons dans le tableau qui détermineront le type du tableau. 
+
+Le lecteur connaissant d'autres langages de programmation de type impératif peut \^{e}tre surpris qu'il ne soit pas obligatoire de préciser la taille du tableau que l'on déclare. 
+Les tableaux sont effet \motcle{dynamiques}, c'est-à-dire qu'on peut leur ajouter à tout moment, autant d'éléments que l'on veut.\\
+
+Pour accéder à un valeur particulière du tableau, il faut indiquer sa place dans le tableau, à l'aide de crochets. 
+Attention, le premier élément est numéroté 0.
+On peut par exemple mettre la valeur 56 dans la première case du tableau,
+et la valeur 9 dans la cinquième case : 
+\begin{Verbatim}[frame=single]
+    tableau_entiers[0] = 56;
+    tableau_entiers[4] = 9;
+\end{Verbatim}
+Il existe une façon plus concise d'initialiser les valeurs d'un tableau, à la condition de mettre des valeurs dans toutes les cases du tableau (pas de ``trou''). On peut alors initialiser le tableau par l'une ou l'autre des lignes suivantes :
+\begin{Verbatim}[frame=single]
+    tableau_entiers = new Array(56,12,43,4,9);
+    tableau_entiers = [56,12,43,4,9];
+\end{Verbatim}
+Il faut noter que la deuxième ligne emprunte une notation uniquement acceptée par des navigateurs récents\footnote{%
+A partir de Netscape 3 et IE 4}.
+ 
+On peut ensuite lire le contenu d'une case, et le faire apparaitre à l'écran par exemple :
+\begin{Verbatim}[frame=single]
+    document.write(tableau_entiers[4]); 
+\end{Verbatim}
+
+Tout tableau possède une \index{longueur de tableau}\emph{longueur}. 
+La longueur du tableau est le numéro de case occupée le plus grand, plus un.
+Les tableaux étant dynamiques, l'interpréteur met à jour la longueur du tableau à chaque affectation.
+Dans les deux affectations précédentes, la longueur du tableau est 1 après la première affectation, et 5 après la deuxième affectation. 
+Le programmeur peut obtenir cette longueur en consultant la propriété \instrcle{length} du tableau considéré : 
+par exemple, 
+on peut faire afficher la longueur du tableau par :
+\begin{Verbatim}[frame=single]
+    document.writeln(tableau_entiers.length);
+\end{Verbatim}
+ 
+Les tableaux sont très utiles car ils permettent de manipuler de manière concise un ensemble de valeurs.
+En partriculier, on peut utiliser une boucle pour faire afficher toutes les valeurs contenues dans le tableau.
+
+\begin{Verbatim}[frame=single]
+     for (i=0;i<tableau_entiers.length;i=i+1)
+         document.writeln(tableau_entiers[i]);
+\end{Verbatim}
+
+\paragraph{Tableaux multi-dimensionnels} 
+Les tableaux utilisés jusqu'à présent étaient des vecteurs, avec une dimension.
+Cependant, on a très vite besoin de tables, à deux dimensions.
+Une limitation importante et décévante de JavaScript est qu'on ne peut décrire 
+simplement des \motcle{tableaux multi-dimensionnels}.\\ 
+
+Cependant, il existe des moyens détournés de créer de tels tableaux (voir \cite{Goodman98} pour plus de détails). 
+Il s'agit en fait de créer un tableau a une dimension, dont chaque case
+contient un nouveau tableau à une dimension. Dans l'extrait suivant,
+on créé d'abord un tableau de quatre cases (ligne 1), puis on met dans chacune 
+des cases, un nouveau tableau de quatre cases (ligne 3). 
+Enfin, on initialise chacune des seize cases du tableau avec la valeur 1 
+(ligne 5). On remarquera la notation utilisée pour accéder à une case
+d'un tel tableau bi-dimensionnel.
+
+\begin{Verbatim}[frame=single,numbers=left]
+     a = new Array(4);
+     for (i=0;i<4;i=i+1) {
+        a[i] = new Array(4);
+	  for (j=0;j<4;j=j+1)
+            a[i][j] = 1;
+     }
+\end{Verbatim}
+ 
+\paragraph{Opérateurs sur les tableaux} 
+
+Les méthodes suivantes sur les tableaux sont définies à partir de JavaScript 1.3. 
+Ces méthodes s'appliquent toutes sur un tableau et utilisent donc la notation pointée
+(voir la section \ref{sc:classes-objets}, \pageref{sc:classes-objets} pour des explications détaillées).
+Ainsi si \texttt{t}, \texttt{u} et \texttt{v} sont des tableaux, on peut écrire :
+\begin{Verbatim}[frame=single] 
+    u = t.reverse();     /* u devient l'inverse du tableau t */
+    v = u.concat(t);     /* v devient la concaténation de u et t */
+    v = u.concat(t,u,t); /* v est u,t,u,t mis bouts à bouts */
+    v = u.sort();        /* v devient le tableau u trié */
+\end{Verbatim}
+
+\index{tableau}
+\index{concaténation}
+\index{tri}
+
+\begin{tabular}{|l|p{7cm}|}
+\hline 
+\instrcle{concat()} & Regroupe (concatène) plusieurs tableaux et rend un nouveau tabeau\\	
+\hline 
+\instrcle{join}(delimiter) & 	Rend une chaîne contenant les éléments du tableau séparés par le délimiteur spécifié\\
+\hline 
+\instrcle{pop()}   & Retourne le dernier élément du tableau et le supprime du tableau\\ 
+\hline 
+\instrcle{push}(e1,e2, ... ) & Ajoute les éléments e1, e2, ... à la fin du tableau et retourne la nouvelle longueur.\\
+\hline 
+\instrcle{reverse}() 	& Renverse le tableau.\\
+\hline 
+\instrcle{shift}() 	& Retourne le premier élément du tableau et le supprime du tableau.\\
+\hline 
+\instrcle{slice}(begin[,end]) & Retourne un nouveau tableau constitué d'une sous-partie d'un tableau existant.\\
+\hline 
+\instrcle{sort}([function]) 	& Trie le tableau selon l'ordre lexicographique (tri ascendant). Possibilité de définir l'opérateur de comparaison à l'aide d'une fonction\\
+\hline 
+\instrcle{splice}(index,n,[,el1,el2]) & 	Ajouter/Enlever des éléments d'un tableau\\ 
+\hline 
+\instrcle{toSource}() 	& Retourne une chaîne qui représente la définition du tableau. \\
+\hline 
+\instrcle{toString}() 	& Retourne le tableau sous la forme d'une chaîne. \\ 
+\hline 
+\instrcle{unshift}(e1,e2,...) & Ajoute les éléments e1,e2, ... en tête du tableau et retourne la longueur du nouveau tableau.\\
+\hline 
+\instrcle{valueOf}() &	Retourne une chaine décrivant les valeurs initiales du tableau. Notez que cette méthode est utilisable sur tous les objets (fonctions, chaines, ...).\\
+\hline 
+\hline 
+\end{tabular}
+
+
+\subsection{Conversion de type}
+\label{sc:conversion}
+
+Notons que des fonctions pré-défines sont fournies permettant d'effecteur des conversions de types. 
+
+\paragraph{Converion de chaines en nombres}
+
+Ce type de \index{conversion de type}conversion est très utilisé en JavaScript car les données saisies par l'utilisateur ont toujours le type \index{chaine}chaine de caractères.
+Les fonctions \instrcle{parseInt()} et \instrcle{parseFloat()} permettent de convertir explicitement une chaine en un entier ou en un réel respectivement.
+Ainsi, \texttt{parseFloat("13.56")} rend le le réel 13.56 (à partir de la chaine "13.56"). La fonction \texttt{parseInt} agit de même sur les entiers, mais accepte un deuxième argument optionnel qui est la base dans laquelle est exprimé l'entier rendu. 
+Si on ne précise pas cette base, l'interpréteur décide de la base en fonction du format de la chaine : pour une chaine commençant par 0, il choisit par exemple la base 8, \emph{e.g.} \texttt{parseInt("011")} rend 9. 
+Il est par conséquent recommandé de préciser la base 10 en deuxième paramètre.
+On utilise par exemple \texttt{parseInt("0345",10)} pour obtenir l'entier 345.
+
+
+Pour compléter la conversion vers un nombre, il est souvent nécessaire de
+s'assurer de la validité du résultat obtenu car il est parfois impossible de
+traduire une chaine en une expression numérique. Dans ce cas, le résultat de
+\texttt{parseInt} est \texttt{Nan} (\emph{Not a Number}). 
+Pour savoir si la chaine à convertir ne représente pas une expresson numérique,
+on doit utiliser la fonction \instrcle{isNaN()}, qui renvoie vrai dans ce cas.\\
+
+Notons qu'on peut aussi utiliser \texttt{parseInt()} pour extraire la \motcle{partie entière} d'un réel: 
+par exemple \texttt{parseInt(5.67)} rend 5. 
+La partie décimale peut être extraite par soustraction de la partie entière (\texttt{5.67 - parseInt(5.67)}
+rend \texttt{0.67}).
+
+
+\paragraph{Converion vers une chaine}
+
+La fonction \instrcle{toString()} permet de faire la conversion inverse.
+Elle est cependant plus générale que les précédentes car peut s'appliquer, non pas uniquement à des nombres, mais aussi à une chaine (rend la même chaine), à un booléen (rend "true" ou "false") à un tableau (rend le contenu des tableaux séparés par des virgules), ou encore à une fonction (rend la définition de la fonction).\\
+Sur les nombres on utilise la fonction de la manière suivante :
+\begin{Verbatim}[frame=single] 
+        var i = 15;
+        i.toString(10);
+\end{Verbatim}
+La fonction \texttt{toString()} accepte un argument optionnel qui est la base utilisée pour représenter le nombre en chaine. Dans l'exemple, on obtient simplement la chaine "15".
+
+%--------------------------------------------------------------------------
+%                      Exercices 
+%--------------------------------------------------------------------------
+
+\input{chap_exercice.tex}
+
+%--------------------------------------------------------------------------
+%                      DHTML 
+%--------------------------------------------------------------------------
+
+\input{chap_dhtml.tex}
+
+%----------------------- BIBLIO ----------------------------------------------
+\bibliographystyle{alpha}
+\bibliography{biblio}
+%----------------------- ANNEXES -------------------------------------
+\appendix
+\input{annexea.tex}
+\printindex
+\end{document}
+
+ 
+
+  
+ 
+ 
+    
+
+
+
