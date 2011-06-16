@@ -1,0 +1,120 @@
+
+\documentclass{book}
+\usepackage{a4,makeidx,fancyheadings}
+\usepackage{graphicx}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{makeidx}
+\usepackage{tabularx}
+\usepackage{lettrine}
+\usepackage{eurosym}
+\usepackage{color}
+\usepackage{listings}
+\makeindex
+
+%--------------------------------------
+%pour compiler avec latex ou pdflatex
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+  \pdffalse
+\else
+  \pdfoutput=1
+  \pdftrue
+\fi
+%--------------------------------------
+	
+\begin{document}
+\newcommand{\motcle}[1]{\index{#1}\emph{#1}}
+\newcommand{\instrcle}[1]{\index{\texttt{#1}}\texttt{#1}}
+
+\thispagestyle{empty}
+%-------- fancy headings setting -----------
+\rhead[]{}
+%\footrulewidth 0.1pt
+\rfoot[]{\small\sc S. Genaud}
+\pagestyle{fancy}
+%------------------------- Page de Garde -------------------
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0mm}
+\vspace*{\stretch{1}}
+\rule{\linewidth}{1mm}
+\begin{center}
+\Large{Audit du Système d'Information}\\[5mm]
+\Large{de l'Ecole de Management de Strasbourg}\\[5mm]
+\large{Stéphane Genaud}
+\rule{\linewidth}{1mm}
+\vspace*{\stretch{2}}
+\end{center}
+\begin{center}
+juin \oldstylenums{2011} \\
+$Id$ -- $Revision$\\
+$Date$\\
+\end{center}
+%------------------------------------------------------------
+
+\tableofcontents
+\newpage
+
+ 
+ 
+
+\chapter{Services Audités}
+ 
+
+\subsection{Responsable Informatique}
+
+\paragraph{Christos Karakostas} (Responsable)
+
+
+\subsection{Recherche}
+\paragraph{Maxime Merli, Thierry Nobre, Karine Bouvier}
+
+\subsection{Relations Externes}
+\paragraph{Marie-Hélène Brémont}
+
+\subsection{Service communication}
+Michèle Schmidt
+
+\subsection{Ressources humaines}
+Laurie Walbrou
+
+\subsection{Executive Education }
+Pia Imbs (Directrice déléguée)
+
+\subsection{Accréditations}
+Maxime Merli, Fatiha Boutera
+
+\subsection{Concours }
+Aida Saïd, responsable
+
+\subsection{EM Strasbourg Partenaires }
+Francis Schillio, Directeur 
+
+\subsection{Masters Universitaires}
+Géraldine Broye (Directrice déléguée),
+
+ 
+\subsection{Scolarités}
+
+\subsection{Programme Grande Ecole}
+Babak Mehmanpazir, (Directeur déléguée)
+
+\subsection{Service International}
+
+\subsection{Université numérique}
+
+%----------------------- BIBLIO ----------------------------------------------
+\bibliographystyle{alpha}
+\bibliography{biblio}
+%----------------------- ANNEXES -------------------------------------
+\appendix
+%\input{annexea.tex}
+\printindex
+\end{document}
+
+ 
+
+  
+ 
+
