@@ -7,11 +7,15 @@
 \usepackage{fancyvrb}
 \usepackage{makeidx}
 \usepackage{tabularx}
-\usepackage{lettrine}
 \usepackage{eurosym}
 \usepackage{color}
-\usepackage{listings}
 \usepackage{url}
+\usepackage{geometry}
+\geometry{ 
+      hmargin=3cm,
+      vmargin=3cm
+}
+
 \makeindex
 
 %--------------------------------------
@@ -74,6 +78,7 @@ $Date$\\
 \subsection{Recherche}
 \paragraph{Maxime Merli, Thierry Nobre, Karine Bouvier}
 
+\paragraph{Processus fonctionnels}
 Le besoin quasi-exclusif est le recensement des publications des chercheurs.
 Cette information sert à deux types processus:
 \begin{itemize}
@@ -88,38 +93,116 @@ formats existent depuis longtemps (par exemple bibtex). Une spécificité
 à prendre en compte est les classements des revues établi annuellement par 
 l'AERES.
 
+D'autres processus peuvent être identifiés, comme par exemple l'organisation
+d'une conférence, où la collecte d'information concernant le devenir des
+doctorants. Cependant, l'essentiel de ces actions sont ponctuelles et ne 
+nécessitent pas un support récurrent du système d'information. La seule 
+activité récurrente annexe identifiée est la consultation de l'état des 
+finances. Dans ce cas, l'interface web avec SIFAC ainsi que les contacts 
+nécessaires avec le gestionnaire des comptes apparaissent satisfaisants.
+
+
+
+\paragraph{L'existant}
+L'existant est essentiellement constitué de:
+\begin{itemize}
+\item la base de données recherche (MS Access), propre à l'EM,
+\item l'application, partie de l'intranet, qui gère cette base : saisie, 
+modification, consultation de la base.
+\end{itemize}
 Un premier projet a été mené en 2010 pour constuire cette base de données des
 publications des enseignants-chercheurs de l'EM Strasbourg. Il a été demandé à 
 CK de développer une fonctionnalité de l'intranet pour cela. L'interface de 
 saisie développée n'étant pas assez contrainte, ce premier projet n'a pas 
-permis de collecter des données d'une qualité suffisante pour être exploitable
-(e.g noms de revues orthographiées différement).
-Sur la base de ce constat, l'outil de collecte a été amélioré en 2011.
-Du point de vue des responsables du projet (MM, KB, TN) l'outil donne satisfaction 
-en concerne la qualité des données. Des fonctionnalités supplémentaires sont
-envisagées de manière non urgente (fichier PDF de la publication téléchargeable,
+permis de collecter des données d'une qualité suffisante pour être exploitables
+pour produire les statistiques requises (e.g noms de revues orthographiées 
+différement). Sur la base de ce constat, l'outil de collecte a été amélioré en 
+2011. Du point de vue des responsables du projet (MM, KB, TN) l'outil donne 
+satisfaction en concerne la qualité des données. Des fonctionnalités supplémentaires 
+sont envisagées de manière non urgente (fichier PDF téléchargeable de la publication,
 remontée automatique du papier sur des archives ouvertes comme SSRN%
 \footnote{\url{ http://www.ssrn.com/}}).
 La façon dont les informations sont présentées sur les pages web personnelles
-des enseignants chercheurs%
-\foonote{\url{http://www.em-strasbourg.eu/enseignants/em-strasbourg-enseignants}}
+des enseignants-chercheurs%
+\footnote{\url{http://www.em-strasbourg.eu/enseignants/em-strasbourg-enseignants}}
 est également jugé satisfaisant.
 
+\paragraph{Qualité des applications}
+Il est à noter que l'interface construite ne permet pas de faire d'import (bibtex, 
+endnotes,~...). 
 
-Il est à noter que l'interface construite ne permet pas de faire d'import (bitex, endnotes, ...).
 
-
-Pb conduite de projet
-Pb pas d'interlocuteur
+\paragraph{Observations générales}
+Il ressort de la discussion que les principaux problèmes auxquels ont eu à 
+faire MM et KB pour la mise en place du projet sont:
+\begin{itemize}
+\item un problème d'interlocuteur : ils n'ont pas trouvé de personne référente 
+capable de les orienter sur les ressources internes ou externes, capables de fournir 
+la prestation dont ils avaient besoin.
+\item un problème de conduite de projet : une fois la ressource chargée de la 
+réalisation identifiée (CK), leur demande n'a pas fait l'objet d'une conduite
+de projet. La planification était hasardeuse, le cahier des charges et
+les validations peu formalisées.
+\end{itemize}
 
 
 
 
 \subsection{Relations Externes}
-\paragraph{Marie-Hélène Brémont}
+\paragraph{Marie-Hélène Brémonti, Hélène Heitz}
 
 \subsection{Service communication}
-Michèle Schmidt
+Michèle Schmidt (MS), Isabelle Suhr (IS), Nicolas Beyhurst (NB),
+
+\paragraph{Processus fonctionnels}
+Les processus nécessitant le support du système d'information peuvent 
+être rangés en quatre catégories:
+\begin{itemize}
+\item i) La communication d'informations à des publics ciblés
+\item ii) La gestion technique d'évènementiels 
+\item iii) La collecte d'informations pour répondre aux enquêtes
+\item iv) L'analyse de l'attractivité de chaque formation académique
+\end{itemize}
+
+Dans la catégorie i) le besoin est de constuire des listes pertinentes 
+et ciblées d'adresses electroniques. Dans les faits, le mailing est
+souvent fait de manière indirecte : l'information est communiquée par
+le service en charge du public visé. Une invitation à un colloque académique
+sera transmis par Karine Bouvier (Recherche) ou une invitation à un
+carrefour métier sera transmis par Bernadette Fischbach (Relations Entreprises).
+
+Dans la catégorie ii) on trouve en particulier l'activité de création
+de mini-sites par NB permettant de gérer chaque évènement (inscriptions,
+programmes, informations pratiques, ...) ou du site des diplômés (alumnis).
+
+
+La catégorie iii) nécessite de rassembler des statistiques provenant de 
+nombreuses sources. Les informations à collecter et les services qui les 
+produisent sont présentés en figure~\ref{fg:comm_flux}.
+\begin{figure}[hbt]
+\begin{center}
+\includegraphics[width=.75\linewidth]{figs/comm_flux.pdf}
+\end{center}
+\label{fg:comm_flux}
+\caption{Les flux d'informations nécessaires pour répondre aux enquêtes}
+\end{figure}
+
+
+
+\paragraph{L'existant}
+L'existant est essentiellement constitué de:
+\begin{itemize}
+\item la base de données recherche (MS Access), propre à l'EM,
+\item l'application, partie de l'intranet, qui gère cette base : saisie, 
+modification, consultation de la base.
+\end{itemize}
+Un premier projet a été mené en 2010 pour constuire cette base de données des
+publications des enseignants-chercheurs de l'EM Strasbourg. Il a été demandé à 
+CK de développer une fonctionnalité de l'intranet pour cela. L'interface de 
+saisie développée n'étant pas assez contrainte, ce premier projet n'a pas 
+permis de collecter des données d'une qualité suffisante pour être exploitables
+p
+
 
 \subsection{Ressources humaines}
 Laurie Walbrou
