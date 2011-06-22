@@ -78,7 +78,7 @@ $Date$\\
 \section{Recherche}
 \paragraph{Maxime Merli, Thierry Nobre, Karine Bouvier}
 
-\paragraph{Processus fonctionnels}
+\subsection{Processus fonctionnels}
 Le besoin quasi-exclusif est le recensement des publications des chercheurs.
 Cette information sert à deux types processus:
 \begin{itemize}
@@ -105,7 +105,7 @@ nécessaires avec le gestionnaire des comptes apparaissent satisfaisants.
 
 
 
-\paragraph{Existant}
+\subsection{Existant}
 L'existant est essentiellement constitué de:
 \begin{itemize}
 \item la base de données recherche (MS Access), propre à l'EM,
@@ -120,9 +120,9 @@ permis de collecter des données d'une qualité suffisante pour être exploitabl
 pour produire les statistiques requises (e.g noms de revues orthographiées 
 différement). Sur la base de ce constat, l'outil de collecte a été amélioré en 
 2011. Du point de vue des responsables du projet (MM, KB, TN) l'outil donne 
-satisfaction en concerne la qualité des données. Des fonctionnalités supplémentaires 
-sont envisagées de manière non urgente (fichier PDF téléchargeable de la publication,
-remontée automatique du papier sur des archives ouvertes comme SSRN%
+satisfaction en ce qui concerne la qualité des données. Des fonctionnalités 
+supplémentaires sont envisagées de manière non urgente (fichier PDF téléchargeable 
+de la publication, remontée automatique du papier sur des archives ouvertes comme SSRN%
 \footnote{\url{ http://www.ssrn.com/}}).
 La façon dont les informations sont présentées sur les pages web personnelles
 des enseignants-chercheurs%
@@ -147,16 +147,31 @@ de projet. La planification était hasardeuse, le cahier des charges et
 les validations peu formalisées.
 \end{itemize}
 
+\paragraph{Bilan qualité des données}
+~\\
+
+
+	\begin{tabular}{|l|l|l|l|l|l|l|}
+	\hline
+	efficacité	& efficience &	confidentialité	& intégrité & disponibilité & conformité & fiabilité \\
+	\hline
+	
+	\hline
+	\end{tabular}
+	
+
 
 
 
 \section{Relations Externes}
-\paragraph{Marie-Hélène Brémont, Hélène Heitz}
+\paragraph{Marie-Hélène Brémont (MHB), Hélène Heintz (HH)}
 
 \section{Service communication}
-Michèle Schmidt (MS), Isabelle Suhr (IS), Nicolas Beyhurst (NB),
 
-\paragraph{Processus fonctionnels}
+\paragraph{Michèle Schmidt (MS), Isabelle Suhr (IS), Marine Julien (MJ), 
+Nicolas Beyhurst (NB).}
+
+\subsection{Processus fonctionnels}
 Les processus nécessitant le support du système d'information peuvent 
 être rangés en quatre catégories:
 \begin{itemize}
@@ -222,11 +237,12 @@ Master et EE à tous les stades du recrutement. IS a construit au cours
 des années un historique de ces statistiques, formation par formation,
 et peut ainsi mieux analyser l'attractivité de chacune des formations.
 Ces données permettent aussi d'ajuster les opérations de communication.
-Par exemple, un nombre plus faible de demande de dossiers d'inscription 
+Par exemple, un nombre plus faible de demandes de dossier d'inscription 
 à une formation peut suggérer une opération de communication ciblée.
 Pour collecter ces statistiques, une synthèse des données était auparavant
-demandée (via ifchier partagé) à la scolarité aux différents étapes du 
-recrutement (nombre de dossiers demandés, dossiers reçus, dossiers acceptés). 
+demandée (via fichier partagé en réseau) à la scolarité aux différents 
+étapes du recrutement (nombre de dossiers demandés, dossiers reçus, 
+dossiers acceptés). 
 L'accroissement du nombre de formations et la mise en place d'ARIA rend 
 cette procédure caduque. Aujourd'hui, ces données dont récupérées
 directement d'ARIA mais la précision est plus faible et ARIA ne 
@@ -234,35 +250,57 @@ conserve que les pré-inscriptions pour l'année en cours. Il faudrait
 donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 
 
-\paragraph{Existant}
+\subsection{Existant}
 \begin{itemize}
 \item Pour les processus de catégorie (i) il existe des fichiers prospects 
 	dispersés et conservés dans des formats techniques de stockage différents. 
+	Le tableau en figure \ref{fg:comm_prospects} liste ces différents fichiers.
 	L'utilisation de fichier excel est la plus courante et considérée la plus
 	pratique actuellement.
+
+\begin{figure}[hbt]
+\begin{center}
 	\begin{tabular}{llll}
 	\hline
-	public	& source	 & format de stockage & \\
+	\hline
+	public	& source	 & format de stockage \\
 	\hline
 	prospects par évènements & inscription sur  mini-sites &  base de données, export csv (excel)\\
 	prospects formation continue  & pré-inscriptions ARIA & import csv \\
-	prospects diplômés      & service diplômés &  import csv, base de donnée \\
-	étudiants de la CRD 	& import APOGEE & \\
-	journalistes 		& contact personnel	& carnet d'adresse \\
+	prospects diplômés      & service diplômés &  import csv, puis base de \\
+					&			 &  données gérée dans le service Comm. \\
+	étudiants après CRD 	& données APOGEE & import csv \\
+	journalistes 		& contact personnel	& carnets d'adresse \\
+	salons, contacts divers	& contact mail, carte visite & carnets d'adresse, fichiers excel\\ 
 	\hline
-	\end{itemize}
-	Ceux-ci  ont pu être constitués par 
-      la collecte des informations saisies par un participant
-      à un évènement (inscription sur mini-site), ou lors de salons (saisie
-	manuelle). L'application ARIA de pré-candidature (application de l'UdS)
+	\hline
+	\end{tabular}
+\end{center}
+\caption{Fichiers prospects utilisés pour communiquer vers l'extérieur, source 
+	d'acquisition et format de stockage}
+\label{fg:comm_prospects}
+\end{figure}
+	Ceux-ci  ont pu être constitués par la collecte des informations saisies 
+	par un participantà un évènement (inscription sur mini-site), ou lors de 
+      salons (saisie manuelle). L'application ARIA de pré-candidature (application de l'UdS)
       peut aussi être utilisée pour produire des fichiers prospects (personnes 
 	ayant entamé une démarche d'inscription sans finaliser).
 
-\item 
+\item Dans la catégorie ii) NB développe de manière réactive des sites couplés à 
+	des base de données selon des formats ouverts (logiciels libres PHP, MySQL) 
+	qui répondent aux besoins ponctuels de gestion d'un évènement, permettant
+	de conserver de manière pérenne ces données. Son action est cependant intrinsèquement
+	limitée par la difficile connexion à d'autres sources d'informations (intranet 
+	EM et applications du S.I. UdS).
+
+\item Dans la catégorie iii) les données ne sont pas stockées mais simplement reportées
+	aux demandeurs dans le format souhaité.
+
+\item Dans la catégorie iv) les processus sont manuels et les données enregistrées
+	dans des fichiers personnels.
 \end{itemize}
 
-
-\paragraph{Observations}
+\paragraph{Analyse}
 
 D'une part, le service communication a globalement besoin d'informations 
 réparties dans la quasi-totalité des applications du système d'information.
@@ -273,14 +311,65 @@ que ce fonctionnement serait recommandé même si le système d'information
 
 D'autre part, le service communication possède et produit ses propres
 données, principalement des contacts. La gestion de ces données
-est hétéroclite, peu pérenne, faiblement collaborative et pourrait
-certainement gagner en efficacité. 
+est hétéroclite en raison des supports divers. La disponibilité de
+l'information n'est pas totalement maîtrisée car certaines données peuvent
+échapper aux sauvegardes car non entreposées dans des espaces de stockage
+sauvegardés par les services informatiques). Les outils bureautiques utilisés
+font que l'information est peu efficiente et peu efficace. 
 
 
+Du point de vue des applications, la présence d'un informaticien au
+sein du service aide considérablement à la résolution de problèmes
+techniques ponctuels. Ceci ne peut cependant pas remplacer la mise
+en place se solutions applicatives plus globales. Il manque en particulier
+un outil pour faire du mailing de masse compatible avec les règles de
+sécurité anti-spam de l'UdS. L'emploi d'outils collaboratifs adaptés 
+permettrait également de gagner en efficacité. 
 
+
+\paragraph{Bilan qualité des données}
+~\\
+
+
+	\begin{tabular}{|l|l|l|l|l|l|l|}
+	\hline
+	efficacité	& efficience &	confidentialité	& intégrité & disponibilité & conformité & fiabilité \\
+	\hline
+	
+	\hline
+	\end{tabular}
+	
+
+%------------------------------- R H -------------------------------------------------
 
 \section{Ressources humaines}
-Laurie Walbrou
+
+\paragraph{Laurie Walbrou (LW), Emilie Kaës (EK)}
+
+
+\subsection{Processus fonctionnels}
+Les processus nécessitant le support du système d'information peuvent 
+être rangés en deux catégories:
+\begin{itemize}
+\item i) La gestion du personnel administratif et enseignant
+\item ii) L'organisation d'évènements
+\end{itemize}
+\bigskip
+
+La catégorie i) représente l'immense majorité de l'activité.
+
+Le besoin est de \textbf{collecter des informations pertinentes
+sur le personnel} de l'EM. La pertinence se décline selon
+trois besoins plus spécifiques:
+\begin{enumerate}
+\item les besoins pour répondre aux accréditations, enquêtes palmarès, 
+	au label diversité, écrire le bilan social.
+
+\item les besoins issus du dialogue de gestion avec l'Université.
+\end{enumerate}
+
+
+\subsection{Existant}
 
 \begin{figure}[hbt]
 \begin{center}
