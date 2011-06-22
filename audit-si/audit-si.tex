@@ -204,7 +204,7 @@ produisent sont présentés en figure~\ref{fg:comm_flux}.
 \begin{center}
 \includegraphics[width=.75\linewidth]{figs/comm_flux.pdf}
 \end{center}
-\caption{Les flux d'informations nécessaires pour répondre aux enquêtes}
+\caption{Les flux d'informations nécessaires pour répondre aux enquêtes de type palmarès}
 \label{fg:comm_flux}
 \end{figure}
 Dans ces enquêtes, MS sépare les différentes questions posées et délègue
@@ -216,14 +216,43 @@ Universitaires, EE) qui apportent de l'information sur la typologie des
 étudiants nouvellement recrutés et la façon dont ils ont eu connaissance
 de l'établissement et de la formation. Cette information permet au service
 de mieux comprendre l'impact des différents supports de communication.
+
 Rentre également dans cette catégorie les statistiques sur les formations
-Master et EE à tous les stades du recrutement. 
+Master et EE à tous les stades du recrutement. IS a construit au cours 
+des années un historique de ces statistiques, formation par formation,
+et peut ainsi mieux analyser l'attractivité de chacune des formations.
+Ces données permettent aussi d'ajuster les opérations de communication.
+Par exemple, un nombre plus faible de demande de dossiers d'inscription 
+à une formation peut suggérer une opération de communication ciblée.
+Pour collecter ces statistiques, une synthèse des données était auparavant
+demandée (via ifchier partagé) à la scolarité aux différents étapes du 
+recrutement (nombre de dossiers demandés, dossiers reçus, dossiers acceptés). 
+L'accroissement du nombre de formations et la mise en place d'ARIA rend 
+cette procédure caduque. Aujourd'hui, ces données dont récupérées
+directement d'ARIA mais la précision est plus faible et ARIA ne 
+conserve que les pré-inscriptions pour l'année en cours. Il faudrait
+donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 
 
 \paragraph{Existant}
 \begin{itemize}
-\item i) il existe des fichiers prospects dispersés. Ceux-ci ont pu être 
-      constitués par la collecte des informations saisies par un participant
+\item Pour les processus de catégorie (i) il existe des fichiers prospects 
+	dispersés et conservés dans des formats techniques de stockage différents. 
+	L'utilisation de fichier excel est la plus courante et considérée la plus
+	pratique actuellement.
+	\begin{tabular}{llll}
+	\hline
+	public	& source	 & format de stockage & \\
+	\hline
+	prospects par évènements & inscription sur  mini-sites &  base de données, export csv (excel)\\
+	prospects formation continue  & pré-inscriptions ARIA & import csv \\
+	prospects diplômés      & service diplômés &  import csv, base de donnée \\
+	étudiants de la CRD 	& import APOGEE & \\
+	journalistes 		& contact personnel	& carnet d'adresse \\
+	\hline
+	\end{itemize}
+	Ceux-ci  ont pu être constitués par 
+      la collecte des informations saisies par un participant
       à un évènement (inscription sur mini-site), ou lors de salons (saisie
 	manuelle). L'application ARIA de pré-candidature (application de l'UdS)
       peut aussi être utilisée pour produire des fichiers prospects (personnes 
@@ -233,11 +262,35 @@ Master et EE à tous les stades du recrutement.
 \end{itemize}
 
 
+\paragraph{Observations}
+
+D'une part, le service communication a globalement besoin d'informations 
+réparties dans la quasi-totalité des applications du système d'information.
+Aujourd'hui, la collecte des informations nécessaires est déléguée aux
+services les plus proches de ces applications. Cependant, il est probable 
+que ce fonctionnement serait recommandé même si le système d'information
+était directement interrogeable par le service communication.
+
+D'autre part, le service communication possède et produit ses propres
+données, principalement des contacts. La gestion de ces données
+est hétéroclite, peu pérenne, faiblement collaborative et pourrait
+certainement gagner en efficacité. 
+
 
 
 
 \section{Ressources humaines}
 Laurie Walbrou
+
+\begin{figure}[hbt]
+\begin{center}
+\includegraphics[width=\linewidth]{figs/rh_seq_vacataires.pdf}
+\end{center}
+\caption{Diagramme UML de séquence pour la procédure d'enregistrement d'un vacataire.}
+\label{fg:rh_seq_vacataires}
+\end{figure}
+
+
 
 \section{Executive Education }
 Pia Imbs (Directrice déléguée)
@@ -263,6 +316,16 @@ Babak Mehmanpazir, (Directeur déléguée)
 \section{Service International}
 
 \section{Université numérique}
+
+
+%----------------------- ----------------------------------------------
+
+\chapter{Analyse}
+
+
+Dépendent de l'intranet historique de l'IECS (CK)
+- annuaire personnel EM + vacataire
+
 
 %----------------------- BIBLIO ----------------------------------------------
 \bibliographystyle{alpha}
