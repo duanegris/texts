@@ -10,6 +10,7 @@
 \usepackage{eurosym}
 \usepackage{color}
 \usepackage{url}
+\usepackage{pdfpages}
 \usepackage{geometry}
 \geometry{ 
       hmargin=3cm,
@@ -17,17 +18,6 @@
 }
 
 \makeindex
-
-%--------------------------------------
-%pour compiler avec latex ou pdflatex
-\newif\ifpdf
-\ifx\pdfoutput\undefined
-  \pdffalse
-\else
-  \pdfoutput=1
-  \pdftrue
-\fi
-%--------------------------------------
 	
 \begin{document}
 \newcommand{\motcle}[1]{\index{#1}\emph{#1}}
@@ -168,14 +158,34 @@ endnotes,~...).
 %--------------- Relations Entreprises -----------------------------------
 
 \section{Relations Entreprises et EM Strasbourg Partenaires}
-\paragraph{Marie-Hélène Brémont (MHB), Hélène Heintz (HH)}
-\paragraph{Francis Schillio (FS)}
 
-Le service Relations Entreprise et Francis Schillio pour EM Strasbourg 
-Partenaires ont été audités séparémment mais leurs besoins sont confondus.
-La description est donc regroupée en une seule section.\\
+\paragraph{Marie-Hélène Brémont (MHB), Hélène Heintz (HH), Francis Schillio (FS)}
+~\\
+
+\textit{Le service Relations Entreprise et Francis Schillio pour 
+EM Strasbourg Partenaires ont été audités séparémment mais leurs 
+besoins sont confondus. La description est donc regroupée en une 
+seule section.}
 
 
+\subsection{Processus fonctionnels}
+
+
+\subsection{Existant}
+
+Bernadette Fischbach travaille avec un outil développé en 2003 par 
+une étudiante (Cécile Henner) du PGE IECS. L'outil est une base 
+Access interfacée. La base ....\\
+
+En septembre 2010, la direction de l'EM (Michel Kalika) a confié
+à l'auteur de cet audit une mission pour mettre en place un véritable
+CRM. Il a été décidé d'acheter cette prestation et de ne rien développer
+en interne étant donné la charge de travail de Christos Karacostas.
+Le calendrier initial prévoyait une mise en production à la fin du 
+printemps 2011. A la demande du service relations entreprises, le
+calendrier du projet a été reporté pour une mise en production fin 2011.
+
+en annexe \ref{ch:annexe-crm}
 
 \begin{figure}[hbt]
 \begin{center}
@@ -477,7 +487,7 @@ Confrontés aux demandes des accréditations, en 2009, le service RH a passé
 de l'ordre de 10 mois hommes (quatre personnes en janvier, février, mars)
 pour analyser les CV papiers des enseignants intervenant (de l'ordre de 500). 
 Un nouveau projet a été conçu, intitulé \textit{Base de 
-données CV}, dont le document de travail est copié en annexe~A.%\ref{ch:annexea}.
+données CV}, dont le document de travail est copié en annexe~\ref{ch:rh-cvtheque}.
 Idéalement, ce projet devrait mis en production en décembre 2011. 
 Cependant, le manque général de planification des projets et la faible 
 formalisation du cahier des charges pourrait rendre cette échéance improbable.\\
@@ -525,6 +535,15 @@ Babak Mehmanpazir, (Directeur déléguée)
 
 \chapter{Analyse}
 
+ - pb interlocuteur
+
+- pb planification projets / travailler mode projet 
+
+- doubler les personnes sur les tâches critiques
+
+- les personnels informatique se sentent entravés vis-à-vis de la DI
+
+- les personnels informatique ne travaillent pas ensemble
 
 Dépendent de l'intranet historique de l'IECS (CK)
 - annuaire personnel EM + vacataire
@@ -535,12 +554,20 @@ Dépendent de l'intranet historique de l'IECS (CK)
 \bibliography{biblio}
 %----------------------- ANNEXES -------------------------------------
 \appendix
-%\input{annexea.tex}
+
+\chapter{Cahier des charges du CRM}
+\label{ch:annexe-crm}
+\includepdf[pages=1-5]{figs/crm_cctp.pdf}
+
+
+\chapter{Descriptif demande pour la CVthèque}
+\label{ch:rh-cvtheque}
+
+
 \printindex
 \end{document}
 
  
-
   
  
 
