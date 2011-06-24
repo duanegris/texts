@@ -21,7 +21,8 @@
 	
 \begin{document}
 \newcommand{\motcle}[1]{\index{#1}\emph{#1}}
-\newcommand{\instrcle}[1]{\index{\texttt{#1}}\texttt{#1}}
+\newcommand{\sre}{service relations entreprises\xspace}
+
 
 \thispagestyle{empty}
 %-------- fancy headings setting -----------
@@ -102,7 +103,7 @@ nécessaires avec le gestionnaire des comptes apparaissent satisfaisants.
 L'existant est essentiellement constitué de:
 \begin{itemize}
 \item la base de données recherche (MS Access), propre à l'EM,
-\item l'application, partie de l'intranet, qui gère cette base : saisie, 
+\item l'application, partie de l'\motcle{intranet}, qui gère cette base : saisie, 
 modification, consultation de la base.
 \end{itemize}
 Un premier projet a été mené en 2010 pour constuire cette base de données des
@@ -171,21 +172,44 @@ seule section.}
 \subsection{Processus fonctionnels}
 
 
+
+Deux processus sont en interaction complète avec le système d'information. 
+La partie du système d'information concernée est très centrée sur la base 
+des entreprises et des contacts à l'intérieur de ces entreprises.
+\begin{itemize}
+\item[$\bullet$] RE-1) La recherche ponctuelle d'information sur une entreprise 
+			     ou sur un contact professionnel particuliers.
+\item[$\bullet$] RE-2) Le filtrage d'un ensemble d'entreprises ou de contacts
+			     selon des critères de façon à obtenir un tableau de bord
+			     ou envoyer une sollicitation. 
+\item[$\bullet$] RE-2) L'enrichissement de la base de données entreprises.
+\end{itemize}
+
+
 \subsection{Existant}
 
 Bernadette Fischbach travaille avec un outil développé en 2003 par 
 une étudiante (Cécile Henner) du PGE IECS. L'outil est une base 
-Access interfacée. La base ....\\
+Access interfacée. La base comporte de l'ordre de 10000 fiches 
+entreprises dont environ 2000 réellement actives. La qualité
+des données est maintenue par le travail quotidien de Bernadette
+Fischbach. De plus, une opération d'ajout et de vérification des
+numéros SIRET a été confié à un prestataire extérieur (environ
+60-70\% des entreprises ont été ``SIRETé''.\\
 
 En septembre 2010, la direction de l'EM (Michel Kalika) a confié
 à l'auteur de cet audit une mission pour mettre en place un véritable
-CRM. Il a été décidé d'acheter cette prestation et de ne rien développer
-en interne étant donné la charge de travail de Christos Karacostas.
-Le calendrier initial prévoyait une mise en production à la fin du 
-printemps 2011. A la demande du service relations entreprises, le
-calendrier du projet a été reporté pour une mise en production fin 2011.
-
-en annexe \ref{ch:annexe-crm}
+CRM. Cette demande émanait du service relation entrepise (Francis 
+Schillio). Il a été décidé d'acheter cette prestation et de ne rien 
+développer en interne étant donné la charge de travail de Christos 
+Karacostas. Le calendrier initial prévoyait une mise en production 
+à la fin du printemps 2011. A la demande du service relations 
+entreprises, le calendrier du projet a été reporté pour une mise en 
+production fin 2011.
+Le cahier des charges établi après étude de marché et audition de
+plusieurs offre a été établi d'après l'expression des besoins
+centrée autour du service relations entreprises, stages et apprentis.
+Ce cahier des charges, base de l'appel d'offre figure en annexe~\ref{ch:annexe-crm}.\\
 
 \begin{figure}[hbt]
 \begin{center}
@@ -195,6 +219,21 @@ en annexe \ref{ch:annexe-crm}
 \label{fg:crm_overview}
 \end{figure}
 
+Le périmètre du CRM  a été volontairement limité au \sre. L'analyse 
+des besoins a montré que le CRM ne pouvait pas prendre en charge 
+toutes les fonctionnalités de gestion des stages et de l'apprentissage. 
+Ceci nécessiterait d'ne faire un outil de gestion de scolarité également
+(par exemple mémorisation des notes de stage). Comme le montre la 
+figure~\ref{fg:crm_overview}, il a été décidé que la liste des étudiants 
+en stage et apprentissage serait régulièrement exportés (fréquence 
+mensuelle environ) vers le CRM afin de l'enrichir.\\
+
+Etant donné que cet outil est un produit commercial dont le coût est
+proportionnel au nombre de licences utilisateurs achetées, et qu'il
+donne des informations financières sensibles sur les versements des
+entreprises, cet outil reste confiné au \sre. D'autres services, comme
+les scolarités, pourront profiter de cet outil indirectement en adressant
+des requêtes au \sre.
 
 
 %---------------  Communication  -----------------------------------
@@ -285,7 +324,7 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 \subsection{Existant}
 \begin{itemize}
 \item Pour les processus de catégorie i) pour la communication interne
-	les données d'annuaire fournies par l'intranet EM %
+	les données d'annuaire fournies par l'\motcle{intranet} EM %
 	\footnote{\url{http://intranet.em-strasbourg.eu/adm/fr/grh/coordonnees.html}}
 	sont utilisées de manière efficace pour communiquer par mail.
 	En revanche, il n'existe pas d'annuaire plus complet permettant
@@ -333,7 +372,7 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 	des base de données selon des formats ouverts (logiciels libres PHP, MySQL) 
 	qui répondent aux besoins ponctuels de gestion d'un évènement, permettant
 	de conserver de manière pérenne ces données. Son action est cependant intrinsèquement
-	limitée par la difficile connexion à d'autres sources d'informations (intranet 
+	limitée par la difficile connexion à d'autres sources d'informations (\motcle{intranet} 
 	EM et applications du S.I. UdS).
 
 \item Dans la catégorie SC3) les données ne sont pas stockées mais simplement reportées
@@ -505,7 +544,7 @@ un espace commun, il est censé%
 Concernant les applications, il faut retenir que les applications
 du S.I. de l'Université ne fournissent quasiment aucune information en
 retour (SOSIE et HARPGest). L'ADE permet de vérifier les cours effectuées.
-L'intranet EM n'est pas du tout utilisé par le service RH.
+L'\motcle{intranet} EM n'est pas du tout utilisé par le service RH.
  
 
 \section{Executive Education }
@@ -545,7 +584,7 @@ Babak Mehmanpazir, (Directeur déléguée)
 
 - les personnels informatique ne travaillent pas ensemble
 
-Dépendent de l'intranet historique de l'IECS (CK)
+Dépendent de l'\motcle{intranet} historique de l'IECS (CK)
 - annuaire personnel EM + vacataire
 
 
