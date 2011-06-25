@@ -155,7 +155,6 @@ endnotes,~...).
 	\end{tabular}
 	
 
-
 %--------------- Relations Entreprises -----------------------------------
 
 \section{Relations Entreprises et EM Strasbourg Partenaires}
@@ -171,19 +170,43 @@ seule section.}
 
 \subsection{Processus fonctionnels}
 
-
-
-Deux processus sont en interaction complète avec le système d'information. 
-La partie du système d'information concernée est très centrée sur la base 
-des entreprises et des contacts à l'intérieur de ces entreprises.
+Les processus principaux sont:
 \begin{itemize}
 \item[$\bullet$] RE-1) La recherche ponctuelle d'information sur une entreprise 
 			     ou sur un contact professionnel particuliers.
 \item[$\bullet$] RE-2) Le filtrage d'un ensemble d'entreprises ou de contacts
 			     selon des critères de façon à obtenir un tableau de bord
 			     ou envoyer une sollicitation. 
-\item[$\bullet$] RE-2) L'enrichissement de la base de données entreprises.
+\item[$\bullet$] RE-3) L'enrichissement de la base de données entreprises.
 \end{itemize}
+
+\bigskip
+
+L'activité RE-1) permet à FS ou MHB de trouver les coordonnées d'une personne
+contact dans une entreprise, d'avoir une vision d'ensemble des personnes 
+présentes dans l'entreprise, de voir l'état des cotisations, des versements
+effectués, de vérifier à quelles chaires l'entreprise participe, ou toute
+information permettant d'avoir une vision globale de l'historique de la 
+relation avec cette entreprise.\\
+
+Dans la catégorie RE-2) on trouve le besoin de générer des états récapitulatifs,
+comme par exemple lister les entreprises pour lesquelles il y une différence
+entre promesse de don et versement réalisés, extraire les entreprises dont 
+l'activité est dans tel domaine, etc. Ces actions de filtrage des entreprises
+ou des contacts rattachés est également nécessaire pour des actions de 
+type publi-postage.\\
+
+L'activité RE-3) consiste à enrichir la base de façon à améliorer les deux
+processus précédents. MHB aimerait intégrer les personnes (et leurs entreprises)
+participant au concours. L'import des prospects acquis sous une forme quelconque
+fait également partie de cette catégorie.
+Un point particulier est l'import des diplômés dans cette base. Bien que l'intérêt 
+de les y inclure soit évident, l'obsolescence des données est difficile à déterminer.
+Seuls les enregistrements des cotisants à jour constituent une information fiable.
+Il s'ajoute à cette considération de qualité des données, une difficulté technique
+d'identification des entreprises auxquelles ces diplômés doivent être rattachés car
+l'entreprise dans la base diplômés n'a pas d'identifiant unique (e.g le numéro SIRET).
+
 
 
 \subsection{Existant}
@@ -225,7 +248,7 @@ toutes les fonctionnalités de gestion des stages et de l'apprentissage.
 Ceci nécessiterait d'ne faire un outil de gestion de scolarité également
 (par exemple mémorisation des notes de stage). Comme le montre la 
 figure~\ref{fg:crm_overview}, il a été décidé que la liste des étudiants 
-en stage et apprentissage serait régulièrement exportés (fréquence 
+en stage et apprentissage serait régulièrement exportée (fréquence 
 mensuelle environ) vers le CRM afin de l'enrichir.\\
 
 Etant donné que cet outil est un produit commercial dont le coût est
@@ -234,6 +257,8 @@ donne des informations financières sensibles sur les versements des
 entreprises, cet outil reste confiné au \sre. D'autres services, comme
 les scolarités, pourront profiter de cet outil indirectement en adressant
 des requêtes au \sre.
+
+\subsection{Analyse}
 
 
 %---------------  Communication  -----------------------------------
@@ -444,20 +469,24 @@ Le besoin est de \textbf{collecter des informations pertinentes
 sur le personnel} de l'EM. La pertinence se décline selon
 deux besoins plus spécifiques:
 \begin{itemize}
-\item RH-1.1) les besoins pour répondre aux accréditations, enquêtes palmarès, 
-	au label diversité, écrire le bilan social.
+\item RH-1.1) les besoins pour répondre aux accréditations, enquêtes 
+	palmarès, au label diversité, écrire le bilan social.
 \item RH-1.2) les besoins issus du dialogue de gestion avec l'Université.
 \end{itemize}
 
 \bigskip
 
 Le besoin RH-1.1) nécessite des informations très nombreuses, précises
-et changeantes d'années en années. Ainsi l'accrédidation ACSB 
-pourra demander pour chaque enseignant combien d'années il a passé
-à l'étranger les cinq dernières années.
-Ces contraintes spécifiques \textbf{obligent l'établissement à 
-posséder une base propre} de ces informations étant les logiciels
-de gestion de RH disponibles à l'UdS.\\
+et changeantes d'années en années. Ainsi l'accrédidation AACSB demande
+par exemple pour chaque enseignant combien d'années il a passé à l'étranger 
+les cinq dernières années. Ces contraintes spécifiques \textbf{obligent 
+l'établissement à posséder une base propre} de ces informations étant donné 
+que les logiciels de gestion de RH disponibles à l'UdS ne peuvent en aucun
+cas fournir d'informations aussi spécifiques. Il est probable que cette
+contrainte perdure après la mise en place du futur SI RH du schéma numérique
+directeur de l'UdS (horizon 2014), à moins que celui-ci ne soit extrêmement 
+paramétrable et qu'un support important de la part de l'UdS soit consacré 
+aux demandes spécifiques.\\
 
 Le besoin RH-1.2) est beaucoup moins exigeant. Il fait appel à toutes
 les informations administratives contenues dans HARPEGE et SOSIE
@@ -522,11 +551,11 @@ aux processus décrits ici, le service RH fonctionnait sans aucun support réel
 du point de vue des systèmes d'information. La perspective de créer un outil 
 spécifique pour gérer les candidatures et CV a été évoquée dès 2006 mais ne 
 s'est pas réalisée. 
-Confrontés aux demandes des accréditations, en 2009, le service RH a passé
-de l'ordre de 10 mois hommes (quatre personnes en janvier, février, mars)
-pour analyser les CV papiers des enseignants intervenant (de l'ordre de 500). 
-Un nouveau projet a été conçu, intitulé \textit{Base de 
-données CV}, dont le document de travail est copié en annexe~\ref{ch:rh-cvtheque}.
+Confrontés aux demandes des accréditations, depuis 2010, les service RH et
+Organisation et Process ont passé de l'ordre de 10 mois hommes pour analyser 
+les CV papiers des enseignants intervenant (de l'ordre de 500 intervenant). 
+Un nouveau projet a été conçu, intitulé \textit{Base de données CV}, dont 
+le document de travail est copié en annexe~\ref{ch:rh-cvtheque}.
 Idéalement, ce projet devrait mis en production en décembre 2011. 
 Cependant, le manque général de planification des projets et la faible 
 formalisation du cahier des charges pourrait rendre cette échéance improbable.\\
@@ -539,7 +568,7 @@ un espace commun, il est censé%
 \footnote{Vérification non effectuée lors de l'audit.}
 être sauvegardé par le service informatique mais la gestion des droits
 étant difficile, on peut imaginer qu'un autre administratif corrompe 
-(y compris non-intentionnellement) les données y figurant.\\
+(intentionnellement ou non) les données y figurant.\\
 
 Concernant les applications, il faut retenir que les applications
 du S.I. de l'Université ne fournissent quasiment aucune information en
@@ -596,12 +625,23 @@ Dépendent de l'\motcle{intranet} historique de l'IECS (CK)
 
 \chapter{Cahier des charges du CRM}
 \label{ch:annexe-crm}
+
+Le document suivant est le cahier des charges pour le CRM.
+Ce document constitue le cahier des clauses techniques particulières
+utilisé dans l'appel d'offre (procédure marché à procédure adaptée)
+lancé en décembre 2010. 
+
 \includepdf[pages=1-5]{figs/crm_cctp.pdf}
 
 
-\chapter{Descriptif demande pour la CVthèque}
+\chapter{Base de données des CV}
 \label{ch:rh-cvtheque}
 
+Le document suivant décrit l'expression des besoins (dernière version du 9 mai 2011)
+concernant le projet d'une base de donnée des CV.
+
+
+\includepdf[pages=1-4]{figs/rh-bdcv.pdf}
 
 \printindex
 \end{document}
