@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{url}
 \usepackage{pdfpages}
+\usepackage{xspace}
 \usepackage{geometry}
 \geometry{ 
       hmargin=3cm,
@@ -22,6 +23,9 @@
 \begin{document}
 \newcommand{\motcle}[1]{\index{#1}\emph{#1}}
 \newcommand{\sre}{service relations entreprises\xspace}
+\newcommand{\sop}{service organisation et process\xspace}
+\newcommand{\scom}{service communication\xspace}
+\newcommand{\sconc}{service concours\xspace}
 
 
 \thispagestyle{empty}
@@ -58,7 +62,7 @@ $Date$\\
  
  
 
-\chapter{Services Audités}
+\chapter{Audit des Services}
  
 
 \section{Responsable Informatique}
@@ -270,7 +274,8 @@ de données assez difficile car des requêtes spécifiques nécessitent
 l'intervention de CK. La base de données entreprises est autonome, ce
 qui explique la longévité du système, mais qui s'avère limitante aujourd'hui.
 Le nouveau projet CRM doit améliorer cette situation. D'une part, l'outil
-sera multi-utilisateurs, permettra à chaque utilisateur de construire ses
+sera multi-utilisateurs, accessible en ligne (il est prévu qu'il soit consultable
+de l'antenne Parisienne), permettra à chaque utilisateur de construire ses
 reqûetes à travers son interface, et sera paramétrable. D'autre part, 
 des données externes (stagiaires et apprentis, prospectivement données du
 concours et diplômés) seront importées pour enrichir la base.\\
@@ -430,28 +435,26 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 
 \paragraph{Analyse}
 
-D'une part, le service communication a globalement besoin d'informations 
-réparties dans la quasi-totalité des applications du système d'information.
-Aujourd'hui, la collecte des informations nécessaires est déléguée aux
-services les plus proches de ces applications. Cependant, il est probable 
-que ce fonctionnement serait recommandé même si le système d'information
-était directement interrogeable par le service communication.
+D'une part, le \scom a globalement besoin d'informations réparties dans la 
+quasi-totalité des applications du système d'information. Aujourd'hui, la 
+collecte des informations nécessaires est déléguée aux services les plus 
+proches de ces applications. Cependant, il est probable que ce fonctionnement 
+serait recommandé même si le système d'information était directement interrogeable 
+par le \scom.
 
-D'autre part, le service communication possède et produit ses propres
-données, principalement des contacts. La gestion de ces données
-est hétéroclite en raison des supports divers. La disponibilité de
-l'information n'est pas totalement maîtrisée car certaines données peuvent
-échapper aux sauvegardes car non entreposées dans des espaces de stockage
-sauvegardés par les services informatiques). Les outils bureautiques utilisés
-font que l'information est peu efficiente et peu efficace. 
+D'autre part, le \scom possède et produit ses propres données, principalement 
+des contacts. La gestion de ces données est hétéroclite en raison des supports 
+divers. La disponibilité de l'information n'est pas totalement maîtrisée car 
+certaines données peuvent échapper aux sauvegardes car non entreposées dans des 
+espaces de stockage sauvegardés par les services informatiques). Les outils 
+bureautiques utilisés font que l'information est peu efficiente et peu efficace. 
 
 
-Du point de vue des applications, la présence d'un informaticien au
-sein du service aide considérablement à la résolution de problèmes
-techniques ponctuels. Ceci ne peut cependant pas remplacer la mise
-en place se solutions applicatives plus globales. Il manque en particulier
-un outil pour faire du mailing de masse compatible avec les règles de
-sécurité anti-spam de l'UdS. L'emploi d'outils collaboratifs adaptés 
+Du point de vue des applications, la présence d'un informaticien au sein du service 
+aide considérablement à la résolution de problèmes techniques ponctuels. Ceci ne 
+peut cependant pas remplacer la mise en place se solutions applicatives plus globales. 
+Il manque en particulier un outil pour faire du mailing de masse compatible avec les 
+règles de sécurité anti-spam de l'UdS. L'emploi d'outils collaboratifs adaptés 
 permettrait également de gagner en efficacité. 
 
 
@@ -476,6 +479,7 @@ permettrait également de gagner en efficacité.
 
 
 \subsection{Processus fonctionnels}
+\label{sc:rh-process}
 Les processus nécessitant le support du système d'information peuvent 
 être rangés en deux catégories:
 \begin{itemize}
@@ -565,7 +569,7 @@ non sur la base d'une importation automatique de données.\\
 Concernant le besoin RH-2.), aucun outil n'est aujourd'hui en place.
 
 \subsection{Analyse}
-
+\label{sc:rh-analyse}
 Le support du S.I. aux RH est en train d'évoluer. Avant la mise en place
 de la procédure décrite (figure~\ref{fg:rh_seq_vacataires}), et relativement 
 aux processus décrits ici, le service RH fonctionnait sans aucun support réel 
@@ -597,14 +601,149 @@ retour (SOSIE et HARPGest). L'ADE permet de vérifier les cours effectuées.
 L'\motcle{intranet} EM n'est pas du tout utilisé par le service RH.
  
 
-\section{Executive Education }
-Pia Imbs (Directrice déléguée)
 
-\section{Accréditations}
-Maxime Merli, Fatiha Boutera
+
+% --------------- A C C R E D I T A T I O N S ----------------------
+\section{Service Organisation et Process}
+
+\paragraph{Fatiha Bouteraa (FB), Maxime Merli (MM)} 
+
+\textit{Pour l'audit dans ce service, le sujet prioritaire concerne les 
+accréditations, d'où la présence de MM pour l'entretien. Cependant, pour 
+garder la cohérence du document, cette section reprend les besoins du service.}
+
+\subsection{Processus fonctionnels}
+
+Une très grosse partie de l'activité du service est aujourd'hui en rapport avec les
+accrédidations. 
+\begin{itemize}
+\item[$\bullet$] OP-1) La production de statistiques pour répondre aux accrédiations
+\item[$\bullet$] OP-2) La structuration du contenu pédagogique pour répondre aux accrédiations
+\item[$\bullet$] OP-3) La gestion  des fiches d'amélioration
+\end{itemize}
+\bigskip
+Les activités pour OP-1) se décomposent selon les flux d'information nécessaires
+au document à produire (différents pour chaque accrédidation). Les flux sont
+comparables à ceux sollicités par le \scom. Ils sont présentés en figure~\ref{fg:accred_flux}.
+\begin{figure}[hbt]
+\begin{center}
+\includegraphics[width=.75\linewidth]{figs/accred_flux.pdf}
+\end{center}
+\caption{Les flux d'informations nécessaires pour les accréditations}
+\label{fg:accred_flux}
+\end{figure}
+En plus des informations que le \scom doit aggréger, le \sop doit obtenir des 
+données précises sur les programmes pédagogiques. Bien que cohérentes ces 
+informations nécessitent de les demander à plusieurs sources: par exemple
+le nom des diplômes, des listes d'étudiants inscrits, les volumes horaires,
+seront obtenus via les scolarités et la base de l'intranet EM (intervention de 
+CK), les taux de sélectivité à l'entrée des formations seront obtenus du \sconc 
+pour le PGE ou ou des responsables de formation pour les autres formations, 
+tandis que que l'année de création d'une formation nécessite
+de faire une recherche auprès du créateur de la formation (la mémoire n'étant
+pas infaillible, un recours à des documents annexes comme les plaquettes peut
+être nécessaire).
+Une difficulté supplémnetaire est ajoutée par les questions posées qui impliquent
+souvent un \textbf{historique}, comme par exemple nombre de diplômés sur les trois
+dernières années.
+
+Obtenir ces données se révèle encore plus compliqué pour les diplômes hébergés
+hors Strasbourg (Maroc, Nancy, Paris).\\
+
+
+L'activité OP-2) concerne la gestion de l'\emph{Assurance of Learning} (AOL).
+Un document d'accréditation AACSB implique, outre les données quantitatives,
+d'être capable de présenter une maquette pédagogique en conformité avec des
+objectifs pédagogiques (\emph{learning goals}) définis au préalable. 
+Les besoins sont ici de pouvoir extraire automatiquement des vues matricielles
+de synthèse sur l'ensemble des formations. Cela peut être des tableaux montrant
+quels \emph{learning goals} sont satisfaits par quels cours. 
+En plus de ces indicateurs de la cohérence de la proposition pédagogique, il
+faut pouvoir mettre en place des indicateurs sur l'efficacité de la formation,
+c'est-à-dire définir des critères de réussite formulés pour chaque formation
+et mesurer les taux de réussite.
+
+L'évaluation des enseignements est également nécessaire dans ce processus.\\
+
+L'activité OP-3) devrait être collaborative, et ouverte aux utilisateurs à 
+travers une interface web. Une fiche d'amélioration qualité devrait pouvoir
+être suivie en temps réel: personne en charge, statut du problème (en cours, 
+traité), et son efficacité testée après traitement (délai programmé après 
+lequel le test d'efficacité est fait). Un système de relance automatique
+par mail doit y être adjoint pour s'assurer de l'avancement des traitements.
+
+
+
+\subsection{Existant}
+
+Le processus OP-1) contient le processus RH-1.1) décrit précédemment dans la 
+section~\ref{sc:rh-process} (partie qui concerne les renseignements sur les
+personnels enseignants). Comme pour RH-1.1., le même constat s'applique pour 
+toutes les autres données à collecter: le S.I. ne permettait pas d'obtenir ces 
+données initialement et des fichiers ad-hoc ont été construits quand il a fallu 
+produire le rapport la première fois. Ces fichiers sont aujourd'hui vitaux pour
+rédiger les dossiers d'accrédidations à venir.\\
+
+Pour OP-2) la gestion de l'AOL peut utiliser l'\motcle{intranet} de l'EM qui
+permet à chaque enseignant de saisir les données relatives à chacun de ses 
+cours\footnote{Exemple: \url{http://tinyurl.com/3ek7rus}}. Ces données 
+constituent une base précieuse pour le travail de structuration de l'ensemble
+la maquette. De nouvelles fonctions pourraient aussi être ajoutées facielement
+en cas d'urgence.\\
+
+Concernant OP-2) également, une procédure d'évaluation existe depuis une dizaine 
+d'années dans le programme PGE et a été généralisée à tous les programmes. Elle 
+propose aux étudiants d'évaluer anonymement chaque cours auquel il était inscrit. 
+Cette procédure utilise exclusivement l'\motcle{intranet} EM.
+L'évaluation de l'établissement est proposé par un autre service à l'UdS%
+\footnote{\url{http://sondages.unistra.fr}, (logiciel limesurvey)}.\\
+
+Pour OP-3) aucun support n'existe actuellement. Cependant, le besoin est
+bien connu dans le monde du logiciel et de nombreux outils existent%
+\footnote{\url{http://tinyurl.com/3eyvb4y}}
+et pourraient être transposés ici.
+
+
+\subsection{Analyse}
+
+Dans son travail sur les dossiers d'accrédiation, le \sop et les autres
+personnels impliqués ont effectué un travail considérable pour produire
+les informations quantitatives exigées par ces dossiers. Ces procédures
+de collectes d'information sont très faiblement automatisées. Les données
+les plus facilement exploitables sont celles provenant de l'\motcle{intranet}
+ou que l'EM contrôle : base entreprises, stages, apprentis, concours. 
+L'exploitation des données nécessite quand même l'intervention de CK. 
+Pour les données qui étaient hors de ce champ, le \sop a enregistré de
+nombreuses informations dans des fichiers à part, avec les mêmes risques
+que ceux mentionés précédemment (e.g section \ref{sc:rh-analyse}). 
+Il serait donc judicieux de ré-injecter toutes ces informations dans le S.I.
+global mais ceci implique des développements conséquents dans l'intranet.\\
+
+
+L'AOL pourrait faire l'objet d'un projet à moyen terme sur 3 ans, par exemple
+pour l'objectif d'une accrédidation AACSB à l'automne 2014. Le S.I. devrait
+alors être repensé pour recueillir puis formatter les données décrites
+précédemment. Il devrait également prendre en compte les possibilités qui 
+seront offertes par le futur S.I. \motcle{Alisée} de l'UdS.
+Etant donné que ces questions sont transversales à toutes les formations, 
+concevoir un modèle de données capable de s'adapter à la variabilité des
+angles de vues, et capable de s'articuler avec les enseignants et un projet
+complexe qui nécessite une grande concertation, et donc probablement 
+plusieurs années.
+
+
+
+
+
+
+% --------------- C O N C O U R S ----------------------
 
 \section{Concours }
 Aida Saïd, responsable
+
+
+\section{Executive Education }
+Pia Imbs (Directrice déléguée)
 
 \section{Masters Universitaires}
 Géraldine Broye (Directrice déléguée),
