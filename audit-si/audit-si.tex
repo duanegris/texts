@@ -112,7 +112,7 @@ modification, consultation de la base.
 \end{itemize}
 Un premier projet a été mené en 2010 pour construire cette base de données des
 publications des enseignants-chercheurs de l'EM Strasbourg. Il a été demandé à 
-CK de développer une fonctionnalité de l'intranet pour cela. L'interface de 
+CK de développer une fonctionnalité de l'\motcle{intranet} pour cela. L'interface de 
 saisie développée n'étant pas assez contrainte, ce premier projet n'a pas 
 permis de collecter des données d'une qualité suffisante pour être exploitables
 pour produire les statistiques requises (e.g noms de revues orthographiées 
@@ -389,7 +389,7 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 	il existe des fichiers prospects dispersés et conservés dans des 
 	formats techniques de stockage différents. Le tableau en figure 
 	\ref{fg:comm_prospects} liste ces différents fichiers.
-	L'utilisation de fichiers excel est la plus courante et considérée 
+	L'utilisation de fichiers Excel est la plus courante et considérée 
 	la plus pratique actuellement.
 
 \begin{figure}[hbt]
@@ -399,14 +399,14 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 	\hline
 	public	& source	 & format de stockage \\
 	\hline
-	prospects par évènements & inscription sur  mini-sites &  base de données, export csv (excel)\\
+	prospects par évènements & inscription sur  mini-sites &  base de données, export csv (Excel)\\
 	prospects formation continue  & pré-inscriptions ARIA & import csv \\
 	prospects diplômés      & service diplômés &  import csv, puis base de \\
 					&			 &  données gérée dans le service Comm. \\
 	étudiants après CRD 	& données APOGEE & import csv \\
 	journalistes 		& contact personnel	& carnets d'adresse \\
-	salons, contacts divers	& contact mail, carte visite & carnets d'adresse, fichiers excel\\ 
-	VIP institutionnels	& contact mail, carte visite & carnets d'adresse, fichiers excel\\ 
+	salons, contacts divers	& contact mail, carte visite & carnets d'adresse, fichiers Excel\\ 
+	VIP institutionnels	& contact mail, carte visite & carnets d'adresse, fichiers Excel\\ 
 	\hline
 	\hline
 	\end{tabular}
@@ -545,7 +545,7 @@ que les noms, date de naissance et nationalité d'une personne. SOSIE ne liste
 que les heures de cours \emph{payées} et sur des intitulés de matière qui
 peuvent avoir changé dans APOGEE.
 Pour connaître l'état des paiements des heures, la procédure en place prévoit
-que Sylvie Amar édite le fichier excel (partagé en réseau) pour y inscrire 
+que Sylvie Amar édite le fichier Excel (partagé en réseau) pour y inscrire 
 les heures payées pour chaque enseignant.\\
 
 Les processus de la catégorie RH-1.2) subissent les mêmes manquements en terme
@@ -577,7 +577,7 @@ Cependant, le manque général de planification des projets et la faible
 formalisation du cahier des charges pourrait rendre cette échéance improbable.\\
 
 La procédure actuelle est adaptée aux demandes et devrait permettre de 
-répondre assez efficacement aux questions. Cependant, le fichier excel
+répondre assez efficacement aux questions. Cependant, le fichier Excel
 dans lequel figure quasiment toutes les données est le point névralgique
 de ce processus, et à ce titre représente un risque certain. Etant sur
 un espace commun, il est censé%
@@ -706,7 +706,7 @@ Cette procédure utilise exclusivement l'\motcle{intranet} EM.
 L'évaluation de la formation dans sa globalité est proposé par un autre service à l'UdS%
 \footnote{\url{http://sondages.unistra.fr}, (logiciel limesurvey)}.\\
 
-Pour OP-3 seul un support sous forme d'un fichier excel non partagé (possédé par Angèle 
+Pour OP-3 seul un support sous forme d'un fichier Excel non partagé (possédé par Angèle 
 N'zinga) existe actuellement. Cependant, le besoin est
 bien connu dans le monde du logiciel et de nombreux outils existent%
 \footnote{\url{http://tinyurl.com/3eyvb4y}}
@@ -755,7 +755,107 @@ plusieurs semestres.
 % --------------- C O N C O U R S ----------------------
 
 \section{Concours }
-Aida Saïd, responsable
+\paragraph{Aida Saïd (AS)}
+~\\
+
+\subsection{Processus fonctionnels}
+\label{sc:concours-process}
+
+\begin{itemize}
+\item[$\bullet$] CO-1) Faire la promotion du concours
+\item[$\bullet$] CO-2) Organiser le concours
+\item[$\bullet$] CO-3) Produire les résultats du concours
+\end{itemize}
+\bigskip
+
+CO-1 concerne la centralisation des informations revenant des
+opérations de promotion: promotion par des étudiants auprès  des 
+élèves en classe préparatoire, salon, et journées portes 
+ouvertes.\\ 
+
+CO-2 est l'activité d'organisation comprend deux phases. Il 
+faut d'abord solliciter des personnes du monde professionnel 
+ou académique à devenir membre de jury. Il faut ensuite gérer
+la planification des jurys d'après les informations de
+disponibilité des candidats, transmises quotidiennement
+par les organisations Passerelle et BCE.\\
+
+CO-3 consiste en la saisie des notes des jurys dans un fichier
+Excel (double saisie pour éviter les erreurs). Ce fichier est 
+envoyé à Passerelle, resaisi sur un site web dans le cas de BCE.
+En retour, AS obtient le rang et la moyenne des candidats sous
+la forme d'un fichier Excel. L'EM décide de la barre d'admissibilité
+et la communique à Passerelle et BCE. Ces derniers peuvent alors
+communiquer les listes d'admissions.
+
+A partir de septembre, il faut produire des statistiques sur le
+résultat du concours, qui seront utilisées par plusieurs services.
+
+
+\subsection{Existant}
+CO-1) 
+La collecte tout au long de l'année de prospects étudiants
+ne donne pas lieu à un traitement rationel de l'information.
+Les compte-rendus fait par les étudiants aux retours d'opération
+promotion en classes préparatoires sont des documents papiers
+archivés mais inexploités. Occasionnellement, AS saisit dans un
+fichier Excel des noms et adresses de prospects étudiants ayant 
+manifesté un intérêt pour l'EM lors de salons ou journées portes 
+ouvertes. La source la plus abondante pour des contacts reste
+les fichiers de BCE et Passerelles, mais ces personnes ne restent
+prospects qu'un laps de temps assez court.\\
+
+
+CO-2)
+La sollicitation s'est faite cette année en compilant des
+fichiers d'adresse provenant de plusieurs sources: contacts
+EM Strasbourg Partenaires, diplômés, entreprises versant la
+taxe d'apprentissage, enseignants vacataires inscrits dans
+l'intranet et anciens membres de jury. Ces contacts ont été
+invités par mail à s'inscrire sur un site web%
+\footnote{\url{http://aestirh.em-strasbourg.eu/jurys}}.
+construit et géré par le \scom (Nicolas Beyhurst).
+Cette procédure qui vient juste de remplacer une procédure
+``papier'' est tout à fait adaptée au besoin. Elle va permettre
+de collecter des informations homogènes et enrichies sur les
+membres potentiels de jury.
+
+Du côté des étudiants candidats, toute la gestion de la 
+candidature et la prise de rendez-vous est assurée par 
+les sites web de BCE et Passerelle.\\
+
+CO-3) 
+La gestion des évaluations du concours (saisie, transmission)
+utilise essentiellement des fichiers Excel. Cette procédure
+est imposée et convient globalement. Elle est tout a fait 
+compatible à l'import des données dans un système de base de
+données plus évolué.
+C'est ce qui est d'ailleurs fait pour les résultats définitifs :
+ceux-ci sont importés dans une base Access qui permet ensuite
+à CK de lancer des requêtes permettant de produire les tableaux
+de bord habituellement demandés. 
+
+
+
+\subsection{Analyse}
+
+La procédure de gestion du concours lors de son déroulement
+implique de nombreux flux d'informations entre les différents
+protagonistes (service concours, Passerelle et BCE, \textit{staff 
+admissible}, membres jury). La gestion de ces informations se fait
+essentiellement par l'échange de fichiers Excel. Elle est imposée,
+et donne satisfaction.
+En amont du concours, l'activité de collecte d'information sur les
+prospects étudiants pourrait être largement améliorée. Pour la
+prospection de membres de jury, le site mis en place constitue un
+grand progrès.
+Un autre point d'amélioration pourrait être de supprimer la dernière
+dépendance existante vis-à-vis du service informatique en permettant
+au service concours d'être autonome pour produire les résultats finaux.
+La solution la plus générale et la plus pérenne serait de former AS à 
+formuler des requêtes sur la base des données. Cette solution est aussi
+le souhait de l'intéressée.
+
 
 
 % --------------- P R O G R A M M E S  ----------------------
@@ -854,7 +954,7 @@ formation au sein de leur entreprise.
 La prospection pour le PGE n'est pas plus rationalisée. Les étudiants envoyés
 en opération promotion dans les lycées rapportent des compte-rendus papier
 inexploité(ables). Quelques contacts pris sur des salons ou aux journées portes
-ouvertes sont saisis par Aida Saïd dans des fichiers excel. Pour la prospection
+ouvertes sont saisis par Aida Saïd dans des fichiers Excel. Pour la prospection
 à l'étranger, l'EM bénéficie de la plate-forme \motcle{Pass-world} de Passerelle
 qui permet de receuillir des candidatures communes aux 8 écoles françaises 
 participantes. \\
@@ -908,8 +1008,22 @@ exemple 5/40 pour MAE).
 
 \subsection{Analyse}
 
+L'EM est démunie par rapport au besoin de gérer une relation avec l'extérieur
+en amont de l'entrée en formation. La définition de l'organisation à
+mettre en place pour rationaliser la relation aux prospects est probablement à 
+envisager dans un plan communication plus large, qui définit l'ensemble des canaux
+de communication vers l'extérieur. Il est cependant possible de collecter rapidement
+des informations prospects efficaces et nombreuses en créant un groupe de travail
+qui pourrait être animé par le community manager.
 
-PP-4)
+PP-2) L'amélioration de la gestion de la maquette pédagogiques semble passer par
+des extensions des fonctionnalités de l'\motcle{intranet} EM, de façon à pouvoir
+implémenter toutes les demandes spécifiques de l'établissement.
+
+De même, l'\motcle{intranet}, avant de connaître les capacités du futur 
+système \motcle{Alisée}, semble être l'outil le plus adéquat pour ajouter des 
+fonctionnalités améliorant la gestion des informations étudiants.
+
 L'EM a moins de recul sur l'évaluation de la formation que sur celle des enseignements
 mais l'objectif d'avoir un processus efficace sur ce point est facilement atteignable.
 
