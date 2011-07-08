@@ -21,11 +21,14 @@
 \makeindex
 	
 \begin{document}
-\newcommand{\motcle}[1]{\index{#1}\emph{#1}}
+\newcommand{\motcle}[1]{\index{#1}{#1}}
+\newcommand{\clecommun}{stockage partagé en réseau\xspace}
 \newcommand{\sre}{service relations entreprises\xspace}
 \newcommand{\sop}{service organisation et process\xspace}
 \newcommand{\scom}{service communication\xspace}
 \newcommand{\sconc}{service concours\xspace}
+\newcommand{\sintl}{service international\xspace}
+\newcommand{\CK}{Christos Karacostas\xspace}
 
 
 \thispagestyle{empty}
@@ -117,12 +120,16 @@ saisie, modification, consultation de la base.
 \end{itemize}
 Un premier projet a été mené en 2010 pour construire cette base de données des
 publications des enseignants-chercheurs de l'EM Strasbourg. Il a été demandé à 
-CK de développer une fonctionnalité de l'\motcle{intranet} pour cela. L'interface 
+\CK de développer une fonctionnalité de l'\motcle{intranet} pour cela. L'interface 
 de saisie développée n'étant pas assez contrainte, ce premier projet n'a pas 
 permis de collecter des données d'une qualité suffisante pour être exploitables
 pour produire les statistiques requises (e.g noms de revues orthographiées 
 différement). Sur la base de ce constat, l'outil de collecte a été amélioré en 
-2011. Du point de vue des responsables du projet (MM, KB, TN) l'outil donne 
+2011. 
+
+\subsection{Analyse}
+
+Du point de vue des responsables du projet (MM, KB, TN) l'outil donne 
 satisfaction en ce qui concerne la qualité des données. Des fonctionnalités 
 supplémentaires sont envisagées de manière non urgente (fichier PDF téléchargeable 
 de la publication, remontée automatique du papier sur des archives ouvertes comme SSRN%
@@ -133,20 +140,16 @@ le sera très problement dans le futur.
 La façon dont les informations sont présentées sur les pages web personnelles
 des enseignants-chercheurs%
 \footnote{\url{http://www.em-strasbourg.eu/enseignants/em-strasbourg-enseignants}}
-est également jugé satisfaisant.
+est également jugé satisfaisant.\\
 
-
-
-\subsection{Analyse}
-
-Il ressort de la discussion que les principaux problèmes auxquels ont eu à 
-faire MM et KB pour la mise en place du projet sont:
+Les principaux problèmes auxquels ont eu à faire MM et KB pour la mise 
+en place du projet sont:
 \begin{itemize}
 \item un problème d'interlocuteur : ils n'ont pas trouvé de personne référente 
 capable de les orienter sur les ressources internes ou externes, capables de fournir 
 la prestation dont ils avaient besoin.
 \item un problème de conduite de projet : une fois la ressource chargée de la 
-réalisation identifiée (CK), leur demande n'a pas fait l'objet d'une conduite
+réalisation identifiée (\CK), leur demande n'a pas fait l'objet d'une conduite
 de projet. La planification était hasardeuse, le cahier des charges et
 les validations peu formalisées.
 \end{itemize}
@@ -266,7 +269,7 @@ entreprises avec lesquelles l'EM a des relations régulières. \\
 Cet outil est cependant limité de par sa conception et ses connexions
 avec les autres bases de données du S.I. Sa conception rend l'extraction
 de données assez difficile car des requêtes spécifiques nécessitent 
-l'intervention de CK. La base de données entreprises est autonome, ce
+l'intervention de \CK. La base de données entreprises est autonome, ce
 qui explique la longévité du système, mais qui s'avère limitante aujourd'hui.
 Le nouveau projet CRM doit améliorer cette situation. D'une part, l'outil
 sera multi-utilisateurs, accessible en ligne (il est prévu qu'il soit 
@@ -359,9 +362,9 @@ Ces données permettent aussi d'ajuster les opérations de communication.
 Par exemple, un nombre plus faible de demandes de dossier d'inscription 
 à une formation peut suggérer une opération de communication ciblée.
 Pour collecter ces statistiques, une synthèse des données était auparavant
-demandée (via fichier partagé en réseau) à la scolarité aux différents 
-étapes du recrutement (nombre de dossiers demandés, dossiers reçus, 
-dossiers acceptés). 
+demandée via fichier partagé en réseau (à travers l'espace de stockage nommé
+\textit{commun}\index{\clecommun}), à la scolarité aux différents étapes 
+du recrutement (nombre de dossiers demandés, dossiers reçus, dossiers acceptés). 
 L'accroissement du nombre de formations et la mise en place d'ARIA rend 
 cette procédure caduque. Aujourd'hui, ces données dont récupérées
 directement d'ARIA mais la précision est plus faible et ARIA ne 
@@ -487,7 +490,7 @@ deux besoins plus spécifiques:
 
 \bigskip
 
-Le besoin RH-1.1) nécessite des informations très nombreuses, précises
+Le besoin RH-1.1 nécessite des informations très nombreuses, précises
 et changeantes d'années en années. Ainsi l'accréditation AACSB demande
 par exemple pour chaque enseignant combien d'années il a passé à l'étranger 
 les cinq dernières années. Ces contraintes spécifiques \textbf{obligent 
@@ -515,7 +518,7 @@ par mail mais par un mécanisme de publication/souscription
 
 \subsection{Existant}
 
-Le processus correspondant au besoin RH-1.1) a conduit à mettre en
+Le processus correspondant au besoin RH-1.1 a conduit à mettre en
 place une procédure pour le recrutement des vacataires. Cette procédure
 est décrite par le diagramme de séquence en figure \ref{fg:rh_seq_vacataires}.
 Elle vise à enregistrer les informations perinentes concernant les enseignants
@@ -540,8 +543,8 @@ que les noms, date de naissance et nationalité d'une personne. SOSIE ne liste
 que les heures de cours \emph{payées} et sur des intitulés de matière qui
 peuvent avoir changé dans APOGEE.
 Pour connaître l'état des paiements des heures, la procédure en place prévoit
-que Sylvie Amar édite le fichier Excel (partagé en réseau) pour y inscrire 
-les heures payées pour chaque enseignant.\\
+que Sylvie Amar édite le fichier Excel (\index{\clecommun} partagé en réseau) 
+pour y inscrire les heures payées pour chaque enseignant.\\
 
 Les processus de la catégorie RH-1.2) subissent les mêmes manquements en terme
 de support du système d'information. Le dialogue de gestion annuel implique
@@ -575,11 +578,12 @@ La procédure actuelle est adaptée aux demandes et devrait permettre de
 répondre assez efficacement aux questions. Cependant, le fichier Excel
 dans lequel figure quasiment toutes les données est le point névralgique
 de ce processus, et à ce titre représente un risque certain. Etant sur
-un espace commun, il est censé%
-\footnote{Vérification non effectuée lors de l'audit.}
-être sauvegardé par le service informatique mais la gestion des droits
-étant difficile, on peut imaginer qu'un autre administratif corrompe 
-(intentionnellement ou non) les données y figurant.\\
+un espace commun, il sauvegardé%
+\footnote{Sauvergarde de cet espace de stockage géré par la direction 
+informatique de l'UdS selon \CK.
+}
+mais la gestion des droits étant difficile, on peut imaginer qu'un autre 
+administratif corrompe (intentionnellement ou non) les données y figurant.\\
 
 Concernant les applications, il faut retenir que les applications
 du S.I. de l'Université ne fournissent quasiment aucune information en
@@ -616,7 +620,7 @@ améliorer, notamment à travers le processus suivant:
 \item[$\bullet$] OP-3) La gestion des fiches d'amélioration.
 \end{itemize}
 \bigskip
-Les activités pour OP-1) se décomposent selon les flux d'information 
+Les activités pour OP-1 se décomposent selon les flux d'information 
 nécessaires au document à produire (différents pour chaque accréditation). 
 Les flux sont comparables à ceux sollicités par le \scom. Ils sont présentés 
 en figure~\ref{fg:accred_flux}.
@@ -632,7 +636,7 @@ données précises sur les programmes pédagogiques. Bien que cohérentes ces
 informations nécessitent de les demander à plusieurs sources: par exemple
 le nom des diplômes, des listes d'étudiants inscrits, les volumes horaires,
 seront obtenus via les scolarités et la base de l'intranet EM (intervention de 
-CK), les taux de sélectivité à l'entrée des formations seront obtenus du \sconc 
+\CK), les taux de sélectivité à l'entrée des formations seront obtenus du \sconc 
 pour le PGE ou des responsables de formation pour les autres formations, 
 tandis que l'année de création d'une formation nécessite
 de faire une recherche auprès du créateur de la formation (la mémoire n'étant
@@ -679,7 +683,7 @@ par mail doit y être adjoint pour s'assurer de l'avancement des traitements.
 
 \subsection{Existant}
 
-Le processus OP-1 contient le processus RH-1.1) décrit précédemment dans la 
+Le processus OP-1 contient le processus RH-1.1 décrit précédemment dans la 
 section~\ref{sc:rh-process} (partie qui concerne les renseignements sur les
 personnels enseignants et administratifs). Comme pour RH-1.1., le même constat 
 s'applique pour toutes les autres données à collecter: le S.I. ne permettait pas 
@@ -717,7 +721,7 @@ les informations quantitatives exigées par ces dossiers. Ces procédures
 de collectes d'information sont très faiblement automatisées. Les données
 les plus facilement exploitables sont celles provenant de l'\motcle{intranet}
 ou que l'EM contrôle : base entreprises, stages, apprentis, concours. 
-L'exploitation des données nécessite quand même l'intervention de CK. 
+L'exploitation des données nécessite quand même l'intervention de \CK. 
 Pour les données qui étaient hors de ce champ, le \sop a enregistré de
 nombreuses informations dans des fichiers à part, avec les mêmes risques
 que ceux mentionés précédemment (e.g section \ref{sc:rh-analyse}). 
@@ -827,7 +831,7 @@ compatible à l'import des données dans un système de base de
 données plus évolué.
 C'est ce qui est d'ailleurs fait pour les résultats définitifs :
 ceux-ci sont importés dans une base Access qui permet ensuite
-à CK de lancer des requêtes permettant de produire les tableaux
+à \CK de lancer des requêtes permettant de produire les tableaux
 de bord habituellement demandés. 
 
 
@@ -897,19 +901,19 @@ construction des contenus pédagogiques est essentiellement faite par les respon
 formation. Elle nécessite que ces responsables recrutent des intervenants ou mobilisent 
 des personnels permanents sur des cours, que les enseignants formalisent les contenus de 
 cours et les modalités d'administration de ces cours. La structuration de la maquette 
-pédagogique consiste à avoir une vue globale des formations offerte au niveau d'un 
+pédagogique consiste à avoir une vue globale des formations offertes au niveau d'un 
 programme, et d'ajuster les objectifs ou contenus de formation pour montrer la cohérence 
 de l'ensemble. Cette dernière activité est une conséquence directe des exigences 
 d'accréditation (voir OP-2 section \ref{sc:sop-process}). Ces deux activités ont été
 regroupées dans cette catégorie car idéalement, la phase de construction des contenus 
 pédagogiques devrait prévoir la saisie des éléments d'appréciation de la bonne structuration
 de la maquette. Par exemple, chaque enseignant lors de la saisie de son cours, devrait se
-voir présenter les \emph{learning goals} globaux du programme, et il devrait pouvoir 
-indiquer lequels sont remplit par chacun des cours qu'il dispense.
+voir présenter les \emph{learning goals} globaux du programme, et devrait pouvoir 
+indiquer lequels sont remplis par chacun des cours qu'il dispense.
 ~\\
 
-Répondre au besoin de  PP-3) est pertinent pour toutes les formations, mais
-a la plus forte value pour des parcours de formation complexes, comme celui du PGE.
+Répondre au besoin de PP-3 est pertinent pour toutes les formations, mais
+a la plus forte valeur pour des parcours complexes de formation, comme celui du PGE.
 Le souhait est d'obtenir immédiatement l'historique d'un étudiant. Cet historique
 est constitué des informations pertinentes permettant de rendre compte de son pédigrée
 (bac, boursier, etc)  et de son parcours scolaire (ECTS acquis, étape du diplôme, etc).
@@ -932,10 +936,10 @@ section \ref{sc:sop-process}).
 PP-1) Dans l'activité de publicité et prospection, les base d'information 
 utilisées sont très peu efficaces. 
 \begin{itemize}
-\item Pour EE, des fichiers de contacts spécifiques 
-pour certains domaines de formation, comme par exemple développement durable en
-2008, ont été construits à la main à partir d'annuaires d'entreprisesen (Kompass, 
-Regioner). Ces fichiers ont pu être complétés par des données diverses et ponctuelles
+\item Pour EE, pour certains domaines de formation, des fichiers de contacts 
+spécifiques ont été construits à la main à partir d'annuaires d'entreprises 
+(Kompass,  Regioner) comme par exemple pour développement durable en
+2008. Ces fichiers ont pu être complétés par des données diverses et ponctuelles
 comme des cartes de visites ou des inscriptions à des évènements thématiques.
 Ces fichiers sont conservés par le secrétariat du programme EE.
 
@@ -950,7 +954,7 @@ La prospection pour le PGE n'est pas plus rationalisée. Les étudiants envoyés
 en opération promotion dans les lycées rapportent des compte-rendus papier
 inexploité(ables). Quelques contacts pris sur des salons ou aux journées portes
 ouvertes sont saisis par Aida Saïd dans des fichiers Excel. Pour la prospection
-à l'étranger, l'EM bénéficie de la plate-forme \motcle{Pass-world} de Passerelle
+à l'étranger, l'EM ne dispose que de la plate-forme \motcle{Pass-world} de Passerelle
 qui permet de receuillir des candidatures communes aux 8 écoles françaises 
 participantes. \\
 \end{itemize}
@@ -993,7 +997,7 @@ que la personne concernée à consulter ses rapports à partir de son compte int
 L'évaluation des formations est également en place depuis un an à travers 
 un outil différent (service de l'UdS%
  \footnote{\url{http://sondages.unistra.fr}, (logiciel limesurvey)}).
-Un travail de communication pour inciter les étuiants à répondre, ou un ajustement 
+Un travail de communication pour inciter les étudiants à répondre, ou un ajustement 
 des modalités d'amdinistration du questionnaire sont à envisager pour améliorer
 le taux de réponse, parfois trop faible pour obtenir un retour significatif (par
 exemple 5/40 pour MAE).
@@ -1029,6 +1033,96 @@ mais l'objectif d'avoir un processus efficace sur ce point est facilement atteig
 
 \section{Service International}
 
+\paragraph{Ludwig Kreitz (LK), Kahina Kadji (KK), Sorina Lecler (SL), Caroline Risacher (CR)}
+~\\
+
+Le travail de pilotage accompli par la direction du service n'a pas recours
+au S.I. Ludwig Kreitz maintient et développe les relations avec les 175
+universités partenaires sur la base d'une documentation qui provient d'internet, 
+d'annuaires (par exemple la liste des membres AACSB), ou d'échanges oraux et
+de synthèses (fichiers Excel) discutées dans des réunions de service.
+
+
+\subsection{Processus fonctionnels}
+
+\begin{itemize}
+\item[$\bullet$] IN-1) Gérer les nominations des visitants.
+\item[$\bullet$] IN-2) Gérer l'inscription des visitants.
+\item[$\bullet$] IN-3) Gérer les affectations à l'étranger.
+\end{itemize}
+
+\bigskip
+IN-1 consiste à préparer l'accueil des étudiants étrangers acceptés
+pour venir à l'EM. Cette activité se déroule lorsque les étudiants
+sont encore dans leur Université d'origine. Le processus consiste 
+à gérer: son inscription à l'UdS, son hébergement, l'émission d'une 
+lettre d'accueil (obligatoire dans certains cas pour l'obtention du 
+visa).  \\
+
+IN-2 se déroule à l'arrivée (semestrielle) des visitants. Les visitants 
+sont inscrits administrativement à l'UdS par Caroline Risacher, ils sont 
+ensuite invités à choisir des cours sur l'\motcle{intranet} (inscription
+pédagogique). Cette période se prolonge généralement par des ajustements
+des cours choisis initialement par rapport aux exigences des cursus des 
+Universités. Enfin, la fin de semestre donne lieu à la production de
+relevé de notes et des documents attestant les cours suivis.\\
+
+IN-3 est un processus continu au long de l'année. Les deux assistantes
+chargées des zones Europe et Hors-Europe alimentent la base de données
+listant les places dans les universités partenaires. Le nombre de places
+à offrir s'estime de manière empirique, car la part d'étudiants partant 
+lors de leur 2$^e$ année peut varier. L'estimation est faite sur un 
+historique des années précédentes. Les étudiants font des pré-choix
+au moins un mois avant les affectations définitives mi-février. Ces 
+pré-choix permettent de détecter des manques de places sur certaines
+destinations et chercher davantage de places.
+
+\subsection{Existant}
+
+Pour IN-1, l'idée d'un sondage a été mis en place initialement par Elodie 
+Thévenet pour estimer les besoins en logement des arrivants. Ce sondage est 
+réalisé avec \textit{\motcle{GoogleDocs}}. Cette information permet
+à KK de travailler avec le CROUS ou le parc privé pour anticiper et satisfaire 
+la demande d'hébergement.
+La gestion des dossiers se fait dans l'outil commercial \textit{\motcle{move-on}}%
+\footnote{\url{http://di.unistra.fr/motcle.php?id=227&service=38}},
+fourni par l'UdS. Cet outil permet de mémoriser toutes les informations
+utiles au suivi logistique de l'étudiant, en particulier dans la production
+des attestations personnalisées d'acceptation et de logement.\\
+
+Pour IN-2, après l'inscription administrative finalisée sur \motcle{Apogée}
+par un membre du \sintl, les étudiants visitants deviennent autonome pour 
+leur choix de cours à travers l'\motcle{intranet}. De la même manière
+que pour les étudiants PGE français, il est nécessaire d'exporter ensuite
+ces choix de cours dans \motcle{Apogée}. En fin de cycle, les notes sont
+obtenues aux épreuves sont saisies par la scolarité. Le \sintl se charge
+d'éditer les documents terminaux : relevé de notes amélioré, création
+de PDF décrivant le syllabus. Ces tâches récurrentes sont proposées
+comme des fonctions dans l'\motcle{intranet}.
+ 
+
+\subsection{Analyse}
+
+Le \sintl utilise intensivement l'outil spécifique \textit{\motcle{move-on}}
+qui permet d'effectuer les tâches répétitives pour l'accueil des visitants.
+Cet outil donne satisfaction. 
+Néanmoins, la gestion des cas particuliers est quasiment inhérente à 
+l'activité du service. Par conséquent, tenter d'étendre les procédures 
+automatisées pour améliorer les temps de traitements semble superflu.
+Au contraire, le service a globalement besoin d'outils de communication
+souples, efficaces et sûrs. Les personnels utilisent énormément l'espace
+de stockage commun\index{\clecommun} pour y entreposer des informations
+sous des formes très variées (PDF, Excel, ...). Si cet \motcle{\clecommun}
+venait à être indisponible, l'activité du service en serait paralysée.
+Même si globalement, les personnes interviewées n'ont pas d'idées immédiates
+d'améliorations, il serait probablement intéressant de faire une analyse
+plus fine des possibilités d'amélioration de  l'efficacité et de la sécurité 
+de la gestion des données.  
+ 
+
+
+
+
 
 
 %----------------------- ----------------------------------------------
@@ -1047,7 +1141,7 @@ mais l'objectif d'avoir un processus efficace sur ce point est facilement atteig
 
 - les personnels informatique ne travaillent pas ensemble
 
-Dépendent de l'\motcle{intranet} historique de l'IECS (CK)
+Dépendent de l'\motcle{intranet} historique de l'IECS (\CK)
 - annuaire personnel EM + vacataire
 
 \section{Bilan qualité des données}
@@ -1065,6 +1159,8 @@ Dépendent de l'\motcle{intranet} historique de l'IECS (CK)
 \bibliography{biblio}
 %----------------------- ANNEXES -------------------------------------
 \appendix
+
+\printindex
 
 \chapter{Cahier des charges du CRM}
 \label{ch:annexe-crm}
@@ -1086,7 +1182,6 @@ concernant le projet d'une base de donnée des CV.
 
 \includepdf[pages=1-4]{figs/rh-bdcv.pdf}
 
-\printindex
 \end{document}
 
  
