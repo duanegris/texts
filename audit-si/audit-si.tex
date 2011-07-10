@@ -214,7 +214,7 @@ l'entreprise dans la base diplômés n'a pas d'identifiant unique (e.g le numér
 
 Bernadette Fischbach travaille avec un outil développé en 2001 par 
 une étudiante (Cécile Henner) du PGE IECS. L'outil est une base 
-Access interfacée. La base comporte de l'ordre de 10000 fiches 
+\motcle{Access} interfacée. La base comporte de l'ordre de 10000 fiches 
 entreprises dont environ 2000 réellement actives. La qualité
 des données est maintenue par le travail quotidien de Bernadette
 Fischbach. De plus, une opération d'ajout et de vérification des
@@ -223,7 +223,7 @@ numéros SIRET a été confié à un prestataire extérieur (environ
 
 En septembre 2010, la direction de l'EM (Michel Kalika) a confié
 à l'auteur de cet audit une mission pour mettre en place un véritable
-CRM. Cette demande émanait du service relation entreprise (Francis 
+\motcle{CRM}. Cette demande émanait du service relation entreprise (Francis 
 Schillio). Il a été décidé d'acheter cette prestation et de ne rien 
 développer en interne étant donné la charge de travail de Christos 
 Karacostas. Le calendrier initial prévoyait une mise en production 
@@ -240,18 +240,18 @@ annexe~\ref{ch:annexe-crm}.\\
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/crm_overview.pdf}
 \end{center}
-\caption{Positionnement du CRM dans le système d'information de l'EM}
+\caption{Positionnement du \motcle{CRM} dans le système d'information de l'EM}
 \label{fg:crm_overview}
 \end{figure}
 
-Le périmètre du CRM  a été volontairement limité au \sre. L'analyse 
-des besoins a montré que le CRM ne pouvait pas prendre en charge 
+Le périmètre du \motcle{CRM}  a été volontairement limité au \sre. L'analyse 
+des besoins a montré que le \motcle{CRM} ne pouvait pas prendre en charge 
 toutes les fonctionnalités de gestion des stages et de l'apprentissage. 
 Ceci nécessiterait d'ne faire un outil de gestion de scolarité également
 (par exemple mémorisation des notes de stage). Comme le montre la 
 figure~\ref{fg:crm_overview}, il a été décidé que la liste des étudiants 
 en stage et apprentissage serait régulièrement exportée (fréquence 
-mensuelle environ) vers le CRM afin de l'enrichir.\\
+mensuelle environ) vers le \motcle{CRM} afin de l'enrichir.\\
 
 Etant donné que cet outil est un produit commercial dont le coût est
 proportionnel au nombre de licences utilisateurs achetées, et qu'il
@@ -271,16 +271,16 @@ avec les autres bases de données du S.I. Sa conception rend l'extraction
 de données assez difficile car des requêtes spécifiques nécessitent 
 l'intervention de \CK. La base de données entreprises est autonome, ce
 qui explique la longévité du système, mais qui s'avère limitante aujourd'hui.
-Le nouveau projet CRM doit améliorer cette situation. D'une part, l'outil
+Le nouveau projet \motcle{CRM} doit améliorer cette situation. D'une part, l'outil
 sera multi-utilisateurs, accessible en ligne (il est prévu qu'il soit 
 consultable de l'antenne Parisienne), permettra à chaque utilisateur de 
 construire ses reqûetes à travers son interface, et sera paramétrable. 
 D'autre part, des données externes (stagiaires et apprentis, prospectivement 
 données du concours et diplômés) seront importées pour enrichir la base.\\
 
-Ce projet CRM, qui ne peut s'insérer complètement dans le S.I. global
+Ce projet \motcle{CRM}, qui ne peut s'insérer complètement dans le S.I. global
 (car il faudrait y gérer aussi la scolarité) est destiné au moyen terme,
-en attendant d'analyser le produit CRM qui sera adopté dans le schéma
+en attendant d'analyser le produit \motcle{CRM} qui sera adopté dans le schéma
 numérique directeur de l'UdS et probablement disponible à l'horizon 2014. 
 
   
@@ -289,7 +289,7 @@ numérique directeur de l'UdS et probablement disponible à l'horizon 2014.
 \section{Service communication}
 
 \paragraph{Michèle Schmidt (MS), Isabelle Suhr (IS), Marine Julien (MJ), 
-Nicolas Beyhurst (NB).}
+Nicolas Beyhurst (NB), Thomas Arbibi (TA).}
 
 \subsection{Processus fonctionnels}
 Les processus nécessitant le support du système d'information peuvent 
@@ -420,17 +420,17 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 	fichiers prospects (personnes ayant entamé une démarche d'inscription 
 	sans finaliser).
 
-\item Dans la catégorie SC-2) NB développe de manière réactive des sites couplés 
-	à des base de données selon des formats ouverts (logiciels libres PHP, 
-	MySQL) qui répondent aux besoins ponctuels de gestion d'un évènement, 
+\item Dans la catégorie SC-2, NB développe de manière réactive des sites couplés 
+	à des base de données selon des formats ouverts (logiciels libres \motcle{PHP}, 
+	\motcle{MySQL}) qui répondent aux besoins ponctuels de gestion d'un évènement, 
 	permettant de conserver de manière pérenne ces données. Son action est 
 	cependant intrinsèquement limitée par la difficile connexion à d'autres 
 	sources d'informations (\motcle{intranet} EM et applications du S.I. UdS).
 
-\item Dans la catégorie SC-3) les données ne sont pas stockées mais simplement 
+\item Dans la catégorie SC-3 les données ne sont pas stockées mais simplement 
 	reportées aux demandeurs dans le format souhaité.
 
-\item Dans la catégorie SC-4) les processus sont manuels et les données 
+\item Dans la catégorie SC-4 les processus sont manuels et les données 
 	enregistrées dans des fichiers personnels.
 \end{itemize}
 
@@ -830,7 +830,7 @@ est imposée et convient globalement. Elle est tout a fait
 compatible à l'import des données dans un système de base de
 données plus évolué.
 C'est ce qui est d'ailleurs fait pour les résultats définitifs :
-ceux-ci sont importés dans une base Access qui permet ensuite
+ceux-ci sont importés dans une base \motcle{Access} qui permet ensuite
 à \CK de lancer des requêtes permettant de produire les tableaux
 de bord habituellement demandés. 
 
@@ -943,7 +943,7 @@ spécifiques ont été construits à la main à partir d'annuaires d'entreprises
 comme des cartes de visites ou des inscriptions à des évènements thématiques.
 Ces fichiers sont conservés par le secrétariat du programme EE.
 
-Pour EE, le nouveau projet CRM représente l'espoir de mieux cibler les
+Pour EE, le nouveau projet \motcle{CRM} représente l'espoir de mieux cibler les
 démarches de prospections, si les informations sur les personnes contacts au sein 
 des entreprises sont de qualité. Le fichier des diplômés est également d'un 
 grand intérêt, les anciens d'une formation étant de bons prescripteurs de cette 
@@ -1031,6 +1031,22 @@ mais l'objectif d'avoir un processus efficace sur ce point est facilement atteig
 \section{Scolarités}
 
 
+\subsection{Processus fonctionnels}
+
+\begin{itemize}
+\item[$\bullet$] SC-1) Préparer les données pour les dossier d'habilitation et enquêtes.
+\item[$\bullet$] SC-2) Récupérer les notes.
+\item[$\bullet$] SC-3) Gérer les intervenants extérieurs.
+\end{itemize}
+
+\bigskip 
+SC-1 consiste à 
+
+
+
+
+
+
 \section{Service International}
 
 \paragraph{Ludwig Kreitz (LK), Kahina Kadji (KK), Sorina Lecler (SL), Caroline Risacher (CR)}
@@ -1107,8 +1123,11 @@ Le \sintl utilise intensivement l'outil spécifique \textit{\motcle{move-on}}
 qui permet d'effectuer les tâches répétitives pour l'accueil des visitants.
 Cet outil donne satisfaction. 
 Néanmoins, la gestion des cas particuliers est quasiment inhérente à 
-l'activité du service. Par conséquent, tenter d'étendre les procédures 
-automatisées pour améliorer les temps de traitements semble superflu.
+l'activité du service. Chaque étudiant étranger représente potentiellement
+un cas particulier, avec des contraintes propres liées à son Université,
+et une situation humaine demandant d'improviser une solution. Par conséquent, 
+tenter d'étendre les procédures automatisées pour améliorer les temps de 
+traitements semble superflu.
 Au contraire, le service a globalement besoin d'outils de communication
 souples, efficaces et sûrs. Les personnels utilisent énormément l'espace
 de stockage commun\index{\clecommun} pour y entreposer des informations
@@ -1162,10 +1181,10 @@ Dépendent de l'\motcle{intranet} historique de l'IECS (\CK)
 
 \printindex
 
-\chapter{Cahier des charges du CRM}
+\chapter{Cahier des charges du \motcle{CRM}}
 \label{ch:annexe-crm}
 
-Le document suivant est le cahier des charges pour le CRM.
+Le document suivant est le cahier des charges pour le \motcle{CRM}.
 Ce document constitue le cahier des clauses techniques particulières
 utilisé dans l'appel d'offre (procédure marché à procédure adaptée)
 lancé en décembre 2010. 
