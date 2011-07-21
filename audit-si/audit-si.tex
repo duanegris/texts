@@ -17,6 +17,12 @@
       hmargin=3cm,
       vmargin=3cm
 }
+\usepackage{draftwatermark}
+\SetWatermarkText{V. Provisoire}
+\SetWatermarkLightness{0.9}
+\SetWatermarkScale{3}
+
+
 
 \makeindex
 	
@@ -24,6 +30,7 @@
 \newcommand{\motcle}[1]{\index{#1}{#1}}
 \newcommand{\clecommun}{stockage partagé en réseau\xspace}
 \newcommand{\sre}{service relations entreprises\xspace}
+\newcommand{\srh}{service ressources humaines\xspace}
 \newcommand{\sop}{service organisation et process\xspace}
 \newcommand{\scom}{service communication\xspace}
 \newcommand{\sconc}{service concours\xspace}
@@ -62,15 +69,21 @@ $Date$\\
 \tableofcontents
 \newpage
 
- 
+
+\chapter*{Préambule}
+
+L'EM Strasbourg 
  
 
 \chapter{Audit des Services}
  
-
-\section{Responsable Informatique}
-
-\paragraph{Christos Karakostas} (Responsable)
+Les services mentionnés ci-dessous ont été audités entre les 20 et 28 juillet 2011.
+L'entretien s'est concentré sur l'identification, pour chaque service, des processus 
+principaux et en quoi ils dépendent du système d'information. Pour cahque service,
+nous structurons l'audit de la manière suivante~: les processus sont identifiés
+(processus fonctionnels), la façon dont les processus fonctionnent actuellement, 
+et comment ils s'appuient sur le système d'information est décrite (existant), 
+et enfin un jugement glboal est porté sur ces processus (analyse).
 
 
 \section{Recherche}
@@ -289,21 +302,21 @@ numérique directeur de l'UdS et probablement disponible à l'horizon 2014.
 \section{Service communication}
 
 \paragraph{Michèle Schmidt (MS), Isabelle Suhr (IS), Marine Julien (MJ), 
-Nicolas Beyhurst (NB), Thomas Arbibi (TA).}
+Nicolas Beyhurst (NB), Thomas Arbib (TA).}
 
 \subsection{Processus fonctionnels}
 Les processus nécessitant le support du système d'information peuvent 
 être rangés en quatre catégories:
 \begin{itemize}
-\item[$\bullet$] SC-1) La communication d'informations à des publics ciblés.
-\item[$\bullet$] SC-2) La gestion technique d'évènementiels.
-\item[$\bullet$] SC-3) La collecte d'informations pour répondre aux enquêtes de type 
+\item[$\bullet$] CO-1) La communication d'informations à des publics ciblés.
+\item[$\bullet$] CO-2) La gestion technique d'évènementiels.
+\item[$\bullet$] CO-3) La collecte d'informations pour répondre aux enquêtes de type 
       palmarès.
-\item[$\bullet$] SC-4) L'analyse de l'attractivité de chaque formation académique.
+\item[$\bullet$] CO-4) L'analyse de l'attractivité de chaque formation académique.
 \end{itemize}
 \bigskip
 
-Dans la catégorie SC-1) le besoin est de constuire des \textbf{listes 
+Dans la catégorie CO-1 le besoin est de constuire des \textbf{listes 
 pertinentes et ciblées d'adresses electroniques}. La difficulté
 est bien sûr différente selon que la communication est à destination
 d'un public interne ou externe à l'établissement.
@@ -324,15 +337,15 @@ qui puisse être consolidée avec les données d'autres services (scolarité,
 relation entreprises, recherche), ainsi que des \textbf{procédures 
 de collectes} de nouveaux prospects le plus automatisées possibles.\\
 
-Dans la catégorie SC-2) on trouve en particulier l'activité de création
+Dans la catégorie CO-2 on trouve en particulier l'activité de création
 de mini-sites web par NB permettant de gérer chaque évènement (inscriptions,
 programmes, informations pratiques, etc) ou du site des diplômés (alumnis).
 Cette activité ne dépend pas du système d'information excepté pour
 la mise à jour de l'annuaire des diplômés. Elle est au contraire 
-support à la catégorie SC-1) en fournissant les données déposées par les
+support à la catégorie CO-1 en fournissant les données déposées par les
 visiteurs sur les sites web.\\ 
 
-La catégorie SC-3) nécessite de rassembler des statistiques provenant de 
+La catégorie CO-3 nécessite de rassembler des statistiques provenant de 
 nombreuses sources. Les informations à collecter et les services qui les 
 produisent sont présentés en figure~\ref{fg:comm_flux}.
 \begin{figure}[hbt]
@@ -347,7 +360,7 @@ Dans ces enquêtes, MS sépare les différentes questions posées et délègue
 dans les services appropriés la charge de trouver l'information.\\
 
 
-Dans la catégorie SC-4), on compte les deux enquêtes intégrés (PGE et Master 
+Dans la catégorie CO-4, on compte les deux enquêtes intégrés (PGE et Master 
 Universitaires, formation continue) qui apportent de l'information sur la 
 typologie des étudiants nouvellement recrutés et la façon dont ils ont eu 
 connaissance de l'établissement et de la formation. Cette information permet 
@@ -367,7 +380,7 @@ demandée via fichier partagé en réseau (à travers l'espace de stockage nomm�
 du recrutement (nombre de dossiers demandés, dossiers reçus, dossiers acceptés). 
 L'accroissement du nombre de formations et la mise en place d'ARIA rend 
 cette procédure caduque. Aujourd'hui, ces données dont récupérées
-directement d'ARIA mais la précision est plus faible et ARIA ne 
+directement d'ARIA mais la précision est plus faible et \motcle{Aria} ne 
 conserve que les pré-inscriptions pour l'année en cours. Il faudrait
 donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 
@@ -387,7 +400,7 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 	il existe des fichiers prospects dispersés et conservés dans des 
 	formats techniques de stockage différents. Le tableau en figure 
 	\ref{fg:comm_prospects} liste ces différents fichiers.
-	L'utilisation de fichiers Excel est la plus courante et considérée 
+	L'utilisation de fichiers \motcle{Excel} est la plus courante et considérée 
 	la plus pratique actuellement.
 
 \begin{figure}[hbt]
@@ -397,14 +410,14 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 	\hline
 	public	& source	 & format de stockage \\
 	\hline
-	prospects par évènements & inscription sur  mini-sites &  base de données, export csv (Excel)\\
+	prospects par évènements & inscription sur  mini-sites &  base de données, export csv (\motcle{Excel})\\
 	prospects formation continue  & pré-inscriptions ARIA & import csv \\
 	prospects diplômés      & service diplômés &  import csv, puis base de \\
 					&			 &  données gérée dans le service Comm. \\
-	étudiants après CRD 	& données APOGEE & import csv \\
+	étudiants après CRD 	& données \motcle{APOGEE} & import csv \\
 	journalistes 		& contact personnel	& carnets d'adresse \\
-	salons, contacts divers	& contact mail, carte visite & carnets d'adresse, fichiers Excel\\ 
-	VIP institutionnels	& contact mail, carte visite & carnets d'adresse, fichiers Excel\\ 
+	salons, contacts divers	& contact mail, carte visite & carnets d'adresse, fichiers \motcle{Excel}\\ 
+	VIP institutionnels	& contact mail, carte visite & carnets d'adresse, fichiers \motcle{Excel}\\ 
 	\hline
 	\hline
 	\end{tabular}
@@ -434,7 +447,9 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 	enregistrées dans des fichiers personnels.
 \end{itemize}
 
-\paragraph{Analyse}
+
+
+\subsection{Analyse}
 
 D'une part, le \scom a globalement besoin d'informations réparties dans la 
 quasi-totalité des applications du système d'information. Aujourd'hui, la 
@@ -493,21 +508,21 @@ deux besoins plus spécifiques:
 Le besoin RH-1.1 nécessite des informations très nombreuses, précises
 et changeantes d'années en années. Ainsi l'accréditation AACSB demande
 par exemple pour chaque enseignant combien d'années il a passé à l'étranger 
-les cinq dernières années. Ces contraintes spécifiques \textbf{obligent 
-l'établissement à posséder une base propre} de ces informations étant donné 
-que les logiciels de gestion de RH disponibles à l'UdS ne peuvent en aucun
+les cinq dernières années. Ces contraintes spécifiques obligent 
+l'établissement à posséder une base propre de ces informations étant donné 
+que les logiciels de gestion de RH disponibles à l'UdS ne peuvent pas 
 cas fournir d'informations aussi spécifiques. Il est probable que cette
 contrainte perdure après la mise en place du futur SI RH du schéma numérique
 directeur de l'UdS (horizon 2014), à moins que celui-ci ne soit extrêmement 
 paramétrable et qu'un support important de la part de l'UdS soit consacré 
 aux demandes spécifiques.\\
 
-Le besoin RH-1.2) est beaucoup moins exigeant. Il fait appel à toutes
-les informations administratives contenues dans HARPEGE et SOSIE
-concernant les personnels.\\
+Le besoin RH-1.2 est beaucoup moins exigeant. Il fait appel à toutes
+les informations administratives contenues dans \motcle{Harpege} 
+et \motcle{SOSIE} concernant les personnels.\\
 
 
-Concernant les activités de la catégorie RH-2) le besoin exprimé 
+Concernant les activités de la catégorie RH-2 le besoin exprimé 
 est la mise en place d'un agenda partagé permettant d'éviter
 les conflits de date lors d'organisations d'évènements, et de 
 diffuser l'information évenementielle sans faire d'invitation
@@ -523,7 +538,7 @@ place une procédure pour le recrutement des vacataires. Cette procédure
 est décrite par le diagramme de séquence en figure \ref{fg:rh_seq_vacataires}.
 Elle vise à enregistrer les informations perinentes concernant les enseignants
 au moment de la candidature en analysant le CV d'un candidat retenu. Ces
-informations sont enregistrées dans un fichier Excel maintenu par EK.
+informations sont enregistrées dans un fichier \motcle{Excel} maintenu par EK.
 
 \begin{figure}[hbt]
 \begin{center}
@@ -534,19 +549,19 @@ informations sont enregistrées dans un fichier Excel maintenu par EK.
 \end{figure}
 
 Le reste de la procédure vise à enregistrer administrativement l'enseignant
-dans le S.I. de l'UdS: application SOSIE pour les heures effectuées et payées
-et application HARPGest pour mémoriser les informations d'état civil et celles
-nécessaire au paiement des heures. 
+dans le S.I. de l'UdS: application \motcle{SOSIE} pour les heures effectuées 
+et payées et application HARPGest pour mémoriser les informations d'état civil 
+et celles nécessaire au paiement des heures. 
 Cependant, ces \textbf{applications se révèlent totalement inefficaces} dans 
-le reste du processus. Ainsi, les extractions d'HARPGest ne peuvent fournir
-que les noms, date de naissance et nationalité d'une personne. SOSIE ne liste
-que les heures de cours \emph{payées} et sur des intitulés de matière qui
-peuvent avoir changé dans APOGEE.
+le reste du processus. Ainsi, les extractions d'\motcle{HARPGest} ne peuvent 
+fournir que les noms, date de naissance et nationalité d'une personne. 
+\motcle{SOSIE} ne liste que les heures de cours pouvant donner lieu à rétribution
+et sur des intitulés de matière qui peuvent avoir changé dans \motcle{APOGEE}.
 Pour connaître l'état des paiements des heures, la procédure en place prévoit
 que Sylvie Amar édite le fichier Excel (\index{\clecommun} partagé en réseau) 
 pour y inscrire les heures payées pour chaque enseignant.\\
 
-Les processus de la catégorie RH-1.2) subissent les mêmes manquements en terme
+Les processus de la catégorie RH-1.2 subissent les mêmes manquements en terme
 de support du système d'information. Le dialogue de gestion annuel implique
 de faire à minima un état des lieux précis des personnels permanents de 
 l'établissement. Cependant, les applications en place ne permettent même pas
@@ -555,7 +570,7 @@ LW maintient son propre fichier pour ces postes. Elle obtient cette information
 par contact téléphonique auprès d'une responsable au service RH de l'UdS, et
 non sur la base d'une importation automatique de données.\\
 
-Concernant le besoin RH-2.), aucun outil n'est aujourd'hui en place.
+Concernant le besoin RH-2, aucun outil n'est aujourd'hui en place.
 
 \subsection{Analyse}
 \label{sc:rh-analyse}
@@ -565,7 +580,7 @@ aux processus décrits ici, le service RH fonctionnait sans aucun support réel
 du point de vue des systèmes d'information. La perspective de créer un outil 
 spécifique pour gérer les candidatures et CV a été évoquée dès 2006 mais ne 
 s'est pas réalisée. 
-Confrontés aux demandes des accréditations, depuis 2010, les service RH et
+Confrontés aux demandes des accréditations, depuis 2010, les \srh et
 Organisation et Process ont passé de l'ordre de 10 mois hommes pour analyser 
 les CV papiers des enseignants intervenant (de l'ordre de 500 intervenant). 
 Un nouveau projet a été conçu, intitulé \textit{Base de données CV}, dont 
@@ -575,7 +590,7 @@ Cependant, le manque général de planification des projets et la faible
 formalisation du cahier des charges pourrait rendre cette échéance improbable.\\
 
 La procédure actuelle est adaptée aux demandes et devrait permettre de 
-répondre assez efficacement aux questions. Cependant, le fichier Excel
+répondre assez efficacement aux questions. Cependant, le fichier \motcle{Excel}
 dans lequel figure quasiment toutes les données est le point névralgique
 de ce processus, et à ce titre représente un risque certain. Etant sur
 un espace commun, il sauvegardé%
@@ -587,8 +602,9 @@ administratif corrompe (intentionnellement ou non) les données y figurant.\\
 
 Concernant les applications, il faut retenir que les applications
 du S.I. de l'Université ne fournissent quasiment aucune information en
-retour (SOSIE et HARPGest). L'ADE permet de vérifier les cours effectuées.
-L'\motcle{intranet} EM n'est pas du tout utilisé par le service RH.
+retour (\motcle{SOSIE} et \motcle{HARPGest}). L'\motcle{ADE} permet de 
+vérifier les heures de cours effectuées. L'\motcle{intranet} EM n'est pas 
+du tout utilisé par le service RH.
  
 
 
@@ -705,7 +721,7 @@ Cette procédure utilise exclusivement l'\motcle{intranet} EM.
 L'évaluation de la formation dans sa globalité est proposé par un autre service à l'UdS%
 \footnote{\url{http://sondages.unistra.fr}, (logiciel limesurvey)}.\\
 
-Pour OP-3 seul un support sous forme d'un fichier Excel non partagé (possédé par Angèle 
+Pour OP-3 seul un support sous forme d'un fichier \motcle{Excel} non partagé (possédé par Angèle 
 N'zinga) existe actuellement. Cependant, le besoin est
 bien connu dans le monde du logiciel et de nombreux outils existent%
 \footnote{\url{http://tinyurl.com/3eyvb4y}}
@@ -761,29 +777,29 @@ plusieurs semestres.
 \label{sc:concours-process}
 
 \begin{itemize}
-\item[$\bullet$] CO-1) Faire la promotion du concours
-\item[$\bullet$] CO-2) Organiser le concours
-\item[$\bullet$] CO-3) Produire les résultats du concours
+\item[$\bullet$] CC-1) Faire la promotion du concours
+\item[$\bullet$] CC-2) Organiser le concours
+\item[$\bullet$] CC-3) Produire les résultats du concours
 \end{itemize}
 \bigskip
 
-CO-1 concerne la centralisation des informations revenant des
+CC-1 concerne la centralisation des informations revenant des
 opérations de promotion: promotion par des étudiants auprès  des 
 élèves en classe préparatoire, salon, et journées portes 
 ouvertes.\\ 
 
-CO-2 est l'activité d'organisation comprend deux phases. Il 
+CC-2 est l'activité d'organisation comprend deux phases. Il 
 faut d'abord solliciter des personnes du monde professionnel 
 ou académique à devenir membre de jury. Il faut ensuite gérer
 la planification des jurys d'après les informations de
 disponibilité des candidats, transmises quotidiennement
 par les organisations Passerelle et BCE.\\
 
-CO-3 consiste en la saisie des notes des jurys dans un fichier
-Excel (double saisie pour éviter les erreurs). Ce fichier est 
+CC-3 consiste en la saisie des notes des jurys dans un fichier
+\motcle{Excel} (double saisie pour éviter les erreurs). Ce fichier est 
 envoyé à Passerelle, resaisi sur un site web dans le cas de BCE.
 En retour, AS obtient le rang et la moyenne des candidats sous
-la forme d'un fichier Excel. L'EM décide de la barre d'admissibilité
+la forme d'un fichier \motcle{Excel}. L'EM décide de la barre d'admissibilité
 et la communique à Passerelle et BCE. Ces derniers peuvent alors
 communiquer les listes d'admissions.
 
@@ -792,20 +808,20 @@ résultat du concours, qui seront utilisées par plusieurs services.
 
 
 \subsection{Existant}
-CO-1) 
+CC-1) 
 La collecte tout au long de l'année de prospects étudiants
 ne donne pas lieu à un traitement rationel de l'information.
 Les compte-rendus faits par les étudiants après les visites de
 promotion en classes préparatoires sont des documents papiers
 archivés mais inexploités. Occasionnellement, AS saisit dans un
-fichier Excel des noms et adresses de prospects étudiants ayant 
+fichier \motcle{Excel} des noms et adresses de prospects étudiants ayant 
 manifesté un intérêt pour l'EM lors de salons ou journées portes 
 ouvertes. La source la plus abondante pour des contacts reste
 les fichiers de BCE et Passerelles, mais ces personnes ne restent
 prospects qu'un laps de temps assez court.\\
 
 
-CO-2)
+CC-2)
 La sollicitation s'est faite cette année en compilant des
 fichiers d'adresse provenant de plusieurs sources: contacts
 EM Strasbourg Partenaires, diplômés, entreprises versant la
@@ -823,9 +839,9 @@ Du côté des étudiants candidats, toute la gestion de la
 candidature et la prise de rendez-vous est assurée par 
 les sites web de BCE et Passerelle.\\
 
-CO-3) 
+CC-3) 
 La gestion des évaluations du concours (saisie, transmission)
-utilise essentiellement des fichiers Excel. Cette procédure
+utilise essentiellement des fichiers \motcle{Excel}. Cette procédure
 est imposée et convient globalement. Elle est tout a fait 
 compatible à l'import des données dans un système de base de
 données plus évolué.
@@ -953,7 +969,7 @@ formation au sein de leur entreprise.
 La prospection pour le PGE n'est pas plus rationalisée. Les étudiants envoyés
 en opération promotion dans les lycées rapportent des compte-rendus papier
 inexploité(ables). Quelques contacts pris sur des salons ou aux journées portes
-ouvertes sont saisis par Aida Saïd dans des fichiers Excel. Pour la prospection
+ouvertes sont saisis par Aida Saïd dans des fichiers \motcle{Excel}. Pour la prospection
 à l'étranger, l'EM ne dispose que de la plate-forme \motcle{Pass-world} de Passerelle
 qui permet de receuillir des candidatures communes aux 8 écoles françaises 
 participantes. \\
@@ -1031,20 +1047,130 @@ mais l'objectif d'avoir un processus efficace sur ce point est facilement atteig
 \section{Scolarités}
 
 
+\paragraph{Karine Ory, Virginie Renaud, Maud Clarus, Sandra FIXME, Boris Bleriot, 
+Stéphanie Debaize, Isabelle Lottmann, Claire Boisjeot, Stéphanie Harnist, Willy Vos}
+~\\
+
 \subsection{Processus fonctionnels}
+
 
 \begin{itemize}
 \item[$\bullet$] SC-1) Préparer les données pour les dossier d'habilitation et enquêtes.
-\item[$\bullet$] SC-2) Récupérer les notes.
-\item[$\bullet$] SC-3) Gérer les intervenants extérieurs.
+\item[$\bullet$] SC-2) Saisir les notes.
+\item[$\bullet$] SC-3) Prendre contact avec les intervenants extérieurs.
+\item[$\bullet$] SC-4) Faire l'emploi du temps.
 \end{itemize}
 
+Les processus SC-1 à SC-3 ont été identifiés lors de la discussion.
+J'ai ajouté SC-4 à postériori.
+
+
 \bigskip 
-SC-1 consiste à 
+SC-1 consiste à préparer les données de scolarité destinées à étayer les dossiers.
+Deux cas ont été évoqués : les dossiers d'habilitation auprès du ministère pour les 
+Masters universitaires et les enquêtes pour le PGE. Les scolarités doivent 
+remonter un ensemble de statistiques qui sont stockées dans \motcle{Apogée} lors
+de l'inscription de l'étudiant, comme par exemple le nombre d'inscrits, les 
+taux de réussite, ou l'origine des étudiants. Pour les enquêtes, la scolarité
+PGE doit faire face à des questions dont les données n'existent pas encore:
+par exmeple le nombre de diplômés en fin d'année, ou le nombre d'inscrits
+l'an prochain.\\ 
+
+SC-2 consiste à receuillir les notes après des enseignants et les saisir
+dans \motcle{Apogée} afin de pouvoir tenir les jurys.\\
 
 
+SC-3) Les scolarités sont chargées de contacter les enseignants pour tous
+les cours afin de planifier les différentes séances. Quand il s'agit d'un 
+intervenant extérieur, un défraiement des frais de déplacement peut être
+proposé. Si l'intervenant vient pour la première fois, il faut également 
+procéder à son enregistrement, c'est-à-dire mémoriser des informations 
+d'état civil ainsi que son CV.
+
+SC-4 consiste à contacter le ou les intervenants pour chaque cours pour
+lui proposer des créneaux horaires. Il faut ensuite planifier la salle
+où aura lieu le cours.
 
 
+\subsection{Existant}
+
+Pour SC-1, la plupart des informations demandées sont dans \motcle{Apogée}.
+La scolarité des Masters Universitaires et EE peut extraire des données
+d'Apogée sous forme de PDFs pour consultation. Cependant, cette scolarité
+tient à jour des fichiers \motcle{Excel} en parallèle afin de répondre
+plus facilement aux questions statistiques posées. Le fait que les effectifs
+de ces formations soient restreints (~25 étudiants par formation) est 
+l'élément capital qui permet ce mode fonctionnement. Chaque personnel
+de la scolarité MU a en charge une formation complète. L'utilisation
+d'\motcle{Excel} pour gérer les données étudiants satisfait les beoins.
+Il faut noter que l'extraction de fichiers au format \motcle{Excel} est 
+possible, mais ne semble pas facilement accessible aux utilisateurs de 
+la scolarité.
+%
+Pour le PGE, Stéphanie Debaize doit demander à \CK de produire les
+données à partir de l'\motcle{intranet} car elle ne parvient pas à
+exprimer les requêtes nécessaires dans \motcle{Apogée}.\\
+
+SC-2) Pour les Masters Universitaires, le processus repose sur les
+feuilles \motcle{Excel} qui donnent la liste des étudiants. Comme
+indiqué précédemment, la petite taille des groupes d'étudiants,
+ainsi que des contrôles portant sur un ensemble homogène de cours
+facilite grandement le recueil et la saisie des notes.
+Dans le PGE, les étudiants ont un parcours très personnalisé: ils
+peuvent choisir un grand nombre de déclinaisons de cours. Depuis 
+cette année, l'ensemble des possibilités offertes a été modélisé
+dans \motcle{Apogée} par Monique Rice. Ce travail a largement
+simplifié la procédure de saisie, qui peut se faire directement
+dans \motcle{Apogée}.\\
+
+SC-3) Pour chacun des cas à traiter, à savoir la prise de contact
+avec un nouvel intervenant ou le défraiement de frais,
+la scolarité envoie une fiche papier adaptée à l'intervenant:
+\begin{itemize}
+\item La fiche de recrutement, recueille des informations d'état 
+civil et doit ête retournée accompagnée d'un CV papier. 
+\item 
+La fiche de mission, destinée au remboursement des frais doit 
+être retournée avec un RIB. 
+\end{itemize}
+Au retour des fiches, la fiche de recrutement est transmise 
+au \srh, et la fiche de mission est transmise à la comptabilité
+avec le RIB par la scolarité Master Universitaires, tandisi que
+que la scolarité transmet également cette fiche mission au \srh
+qui se charge de ventiler.\\
+
+SC-4) Isabelle Lottmann tient à jour un fichier \motcle{Excel} de 
+l'emploi du temps pour chaque filière. Elle envoie une copie de ce 
+fichier aux intervenants qui indiquent leurs souhaits. Au fur et
+à mesure des retours, Isabelle met à jour ce fichier. A la rentrée
+elle procède à l'affectation des salles dans le logiciel \motcle{ADE}
+(interface \motcle{ADEWeb}).
+
+
+\subsection{Analyse}
+
+Dans l'ensemble, les processus existants sont jugés acceptables.
+L'outil principal \motcle{Apogée} n'est pas considéré facile 
+d'utilisation mais la scolarité Master Universitaire n'éprouve
+pas de difficultés à compenser les lacunes par des fichiers 
+\motcle{Excel} personnels. Côté PGE, la récente modélisation 
+de toute la maquette dans \motcle{Apogée} permet de vérifier
+rigoureusement la validité du processus de délivrance du diplôme.
+Cependant, le manque d'autonomie des personnels vis-à-vis
+d'\motcle{Apogée} induit une dépendance à d'autres personnes
+capables de résoudre des problèmes techniques d'extraction,
+comme Monique Rice ou \CK. Je préconise que le processus
+soit entièrement internalisé aux scolarité et que les 
+responsables de scolarité soient capables, de manière autonome,
+de transmettre aux présidents de jurys les documents documents 
+nécessaires à la tenue des jurys.\\
+
+Concernant SC-3, le projet de base de données des CVs, qui 
+correspond à un besoin du \srh (voir section \label{sc:rh-analyse}),
+doit permettre de revoir complètement la procédure. Il faut
+préconiser ici une procédure sans papier. Les intervenants
+devraient saisir toutes ces données à travers leur accès 
+\motcle{intranet}.
 
 
 \section{Service International}
@@ -1056,7 +1182,7 @@ Le travail de pilotage accompli par la direction du service n'a pas recours
 au S.I. Ludwig Kreitz maintient et développe les relations avec les 175
 universités partenaires sur la base d'une documentation qui provient d'internet, 
 d'annuaires (par exemple la liste des membres AACSB), ou d'échanges oraux et
-de synthèses (fichiers Excel) discutées dans des réunions de service.
+de synthèses (fichiers \motcle{Excel}) discutées dans des réunions de service.
 
 
 \subsection{Processus fonctionnels}
@@ -1131,7 +1257,7 @@ traitements semble superflu.
 Au contraire, le service a globalement besoin d'outils de communication
 souples, efficaces et sûrs. Les personnels utilisent énormément l'espace
 de stockage commun\index{\clecommun} pour y entreposer des informations
-sous des formes très variées (PDF, Excel, ...). Si cet \motcle{\clecommun}
+sous des formes très variées (PDF, \motcle{Excel}, ...). Si cet \motcle{\clecommun}
 venait à être indisponible, l'activité du service en serait paralysée.
 Même si globalement, les personnes interviewées n'ont pas d'idées immédiates
 d'améliorations, il serait probablement intéressant de faire une analyse
@@ -1140,19 +1266,156 @@ de la gestion des données.
  
 
 
+\section{Service Financier}
+
+\paragraph{Hervé Heusser}
+~\\
+
+\subsection{Processus fonctionnels}
+
+\begin{itemize}
+\item[$\bullet$] FI-1) Traiter les demandes de dépenses.
+\item[$\bullet$] FI-2) Calculer les comptes de résultats par formation.
+\item[$\bullet$] FI-3) Contrôler les heures complémentaires.
+\item[$\bullet$] FI-4) Contrôler les salaires des personnels sur budget propre. 
+\end{itemize}
+
+
+\bigskip
+FI-1) Il s'agit de formaliser toute demande de dépense avant de la transmettre
+à l'agent comptable de l'Université pour vérification et mise en paiement. \\
+
+FI-2) Le calcul du coût d'une formation est un élément fondamental du contrôle
+de gestion opéré par le service financier de l'EM. Il suppose un inventaire
+des dépenses, pour beaucoup, constituées des heures de vacations, et des recettes
+provenant des droits d'inscriptions versés par les étudiants. \\
+
+FI-3) Le besoin est de contrôler les heures mises en paiement par rapport
+au prévisionnel déclaré par le responsable pédagogique.\\
+
+FI-4) Le besoin est de contrôler les salaires versés aux peronnels contractuels
+(administratifs et enseignants).\\
+
+
+\subsection{Existant}
+
+FI-1) Pour toute demande engageant des dépenses~: contrats, commandes, frais 
+de déplacement, etc, les personnels doivent remplir des formulaires papiers 
+(disponibles sur \motcle{intranet}) ou fournir des bons de commande au service 
+financier. Ces documents sont ensuite transmis à l'agent comptable de l'Université 
+pour vérification, éventuellement émission de facture, et mise en paiement. Le
+service constate des problèmes fréquents avec la mise en {\oe}uvre de cette
+procédure, comme la réception de factures sans bons de commande préalables.
+Un service facturier est en cours de mise en place à l'Université et devrait
+changer ce processus.\\
+
+
+FI-2) Faire l'état des recettes à un instant donné est très difficile. L'origine
+de cette difficulté est essentiellement organisationnelle.Plusieurs entités sont
+actuellement détentrices ou destinataires des informations financières:
+le service de formation continue de l'UdS, le service financier de l'EM,
+le service financier central de l'UdS. A titre d'exemple, en formation continue, 
+le montant prévisionnel des recettes liées aux droits d'inscription est communiqué 
+au service financier de l'EM par la scolarité, mais le montant réellement perçu 
+provient du service de formation continue de l'UdS. Il est donc nécessaire de faire 
+un rapprochement avant de communiquer le titre de recettes à l'UdS. Aucun outil
+ne permet de rapprochement automatique. 
+
+Les dépenses principales, c'est-à-dire le paiement des heures d'enseignement, sont
+également imparfaitement reportées. Parmi les causes d'erreur, on note le processus 
+approximatif d'affectation des cours déclarés (sous forme libre) par les enseignants
+avec les intitulés réels des cours tels que présentés dans \motcle{SOSIE}. Pour les
+enseignants dépendant d'autres UFRs, ces affectations sont saisies par les 
+personnels administratifs de ces UFRs, qui n'ont pas de moyen direct de lever les
+ambiguités sur les initulés de cours.\\
+
+ 
+
+FI-3) Ce processus a déjà été évoqué en section~\ref{sc:rh-process} pour son
+interface avec le \srh. Il s'agit de faire un rapprochement entre les heures 
+d'enseignements prévisionnelles saisies dans \motcle{SOSIE} et les heures à 
+mettre en paiement. \motcle{SOSIE} permet des extractions mais les filtres 
+proposés dans l'interface utilisateur sont assez limités (essentiellement 
+filtre par composante ou par individu). L'export de données fourni par 
+l'extraction est sous forme d'un fichier \motcle{PDF} qui en rend l'exploitation 
+automatique impossible.
+\\
+
+FI-4) Ce processus a aussi été évoqué en section~\ref{sc:rh-process}.
+Laurie Walbrou tient un fichier \motcle{Excel} qui est utilisé à la
+fois comme un outil prévisionnel pour éviter les dépassements et
+comme un outil de contrôle permettant de vérifier que les salaires
+versés sont conformes au prévisionnel. Les états de paiement récapitulatifs
+proviennent du service financier central de l'UdS avec une périodicité 
+souvent trop longue et il faut explicitement demander des états intermédiaires.
 
 
 
 
-%----------------------- ----------------------------------------------
+\subsection{Analyse}
+
+
+Le besoin fondamental de faire du contrôle de gestion semble très mal
+servi par les processus en place (structure organisationnelle) et par
+les outils du système d'information. Le service financier de l'EM dépend
+souvent, pour avoir une vision complète d'un état financier, d'informations
+détenues dans d'autres services de l'UdS. La circulation de l'information
+provoque également un décalage dans le temps, rendant difficile l'évaluation
+de la situation financière à un instant donné. Ceci complique énormément
+la tâche de communiquer des informations financières précises et fiables,
+notamment aux organismes d'accréditation. Cette tâche est d'autant plus 
+compliquée que la présentation demandée par les organismes (par exemple
+AACSB) ne correspond pas au découpage proposé par \motcle{SIFAC} et 
+nécessite un travail important de remise en forme.
+Enfin, les systèmes d'information actuels proposent une structuration
+de l'information qui n'est pas en adéquation avec les besoins. Les systèmes
+présentent manifestement des lacunes importantes vis-à-vis de la possibilité
+d'extraire de l'information à la bonne granularité, comme par exemple
+extraire de l'information au niveau d'un parcours. Certaines situations
+ne peuvent être reportées avec précision, comme par exemple l'affectation
+des coûts d'enseignements dispensés dans des cours mutualisés entres plusieurs
+diplômes.
+
+L'arrivée d'un nouveau logiciel pour le système d'information RH à la 
+rentrée 2013 et les procédures d'échanges nouvelles avec \motcle{SIFAC}
+vont probablement considérablement modifier cette analyse. La dépendance
+forte des procédures avec le système d'information de l'Université laisse
+avant cette échéance peu de marge de man{\oe}uvre pour améliorer le 
+fonctionnement actuel du service financier de l'EM. Seul l'amélioration
+du stockage de l'information en interne (fichier Excel) peut raisonnablement
+ête envisagé.
+
+
+
+
+%----------------------- A N A L Y S E ----------------------------------------------
 
 \chapter{Analyse}
 
-\section{Points saillants}
+\section{Observations}
 
- - pb interlocuteur
+Il ressort de l'audit des services plusieurs constatations~: 
 
-- pb planification projets / travailler mode projet 
+\subsection{Au niveau organisationnel}
+\begin{itemize}
+\item Les personnels n'ont \textbf{pas d'interlocuteur} pour les projets impliquant le système 
+	d'information. Les personnels des services cherchent un premier conseil technique
+	pour préciser leurs besoins et souhaitent être orientés vers une ressource
+	capable de prendre en charge la demande.\\
+
+\item L'EM lance des projets \textbf{sans savoir quel va être le support du système d'information}.
+	Ceci peut engendrer des coûts très importants dans la réalisation des objectifs
+	assignés au projet (voir par exemple la section \ref{sc:rh-analyse}, p.\pageref{sc:rh-analyse}),
+	voire rendre la faisabilité même de certains projets hasardeuse.\\
+
+\item De manière plus génrale, il n'y a \textbf{pas de planification des projets} impliquant le 
+	système d'information. La charge de travail pesant sur le service informatique n'est donc
+	pas contrôlée, rendant la prévision des échéances de projets délicate.\\
+\end{itemize}
+
+
+
+. / travailler mode projet 
 
 - doubler les personnes sur les tâches critiques
 
@@ -1163,6 +1426,11 @@ de la gestion des données.
 Dépendent de l'\motcle{intranet} historique de l'IECS (\CK)
 - annuaire personnel EM + vacataire
 
+\end{itemize}
+
+
+
+\paragraph{Christos Karakostas} (Responsable)
 \section{Bilan qualité des données}
 
 	\begin{tabular}{|l|l|l|l|l|l|l|}
