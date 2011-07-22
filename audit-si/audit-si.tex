@@ -18,7 +18,7 @@
       vmargin=3cm
 }
 \usepackage{draftwatermark}
-\SetWatermarkText{V. Provisoire}
+\SetWatermarkText{Provisoire}
 \SetWatermarkLightness{0.9}
 \SetWatermarkScale{3}
 
@@ -36,6 +36,7 @@
 \newcommand{\sconc}{service concours\xspace}
 \newcommand{\sintl}{service international\xspace}
 \newcommand{\CK}{Christos Karacostas\xspace}
+\newcommand{\NB}{Nicolas Beyhurst\xspace}
 
 
 \thispagestyle{empty}
@@ -72,7 +73,45 @@ $Date$\\
 
 \chapter*{Préambule}
 
-L'EM Strasbourg 
+L'EM Strasbourg a connu depuis sa création une croissance exceptionnelle impliquant
+le lancement d'un nombre considérable de projets. Un regard est aujourd'hui porté
+sur le mode de fonctionnement de l'établissement, et en particulier la façon dont
+le système d'information est utilisé pour mener l'activité. C'est l'objet de cet
+audit.\\
+
+Ce document a pour objectif de faire l'inventaire des activités des services qui
+reposent sur le système d'information. Ce n'est pas une cartographie des processus
+mais un témoignage des personnels sur leurs façons de travailler avec un accent
+sur les difficultés constatées.\\
+
+Cette état des lieux est effectué à l'occasion d'un changement de direction
+(Isabelle Barth succède à Michel Kalika). Il se déroule également à la veille
+d'un changement majeur pour l'Université de Strasbourg (UdS) en termes de 
+système d'information. L'UdS a défini un nouveau schéma directeur numérique
+(SDN) dont la mise en place a déjà amené le remplacement de plusieurs grands
+logiciels (e.g SIFAC pour les finances, Moodle comme plateforme pédagogique).
+L'essentiel est encore à venir avec la mise en place programmée d'un ERP
+(progiciel de gestion intégré) qui permettra de gérer toutes les activités
+du c{\oe}ur de métier~: gestion logistique de l'activité pédagogique, des
+étudiants et enseignants. C'est le projet \motcle{Alisée}. L'intégration
+du système d'information va supprimer d'un coup un grand nombres des
+difficultés liées à l'interopérabilité qui sont dérites dans ce rapport.
+On peut également attendre de la solution choisie, qui sera dans tous les
+cas un logiciel commercial d'un grand éditeur, une ergonomie bien meilleure
+que celle des logiciels actuellement déployés.
+Le choix du fournisseur est programmé pour la rentrée 2011 et l'échéance
+impérative de mise en exploitation est septembre 2013.\\
+
+Bien sûr, cet outil aura un impact considérable sur la manière de travailler
+de tous les personnels de l'UdS, et la réflexion actuelle sur le système
+d'information de l'EM sera à reconsidérer dans ce nouveau contexte.\\
+
+Néanmoins, les préconisations qui figurent en deuxième partie de ce rapport
+portent beaucoup plus sur l'organisation interne des ressources de l'EM
+que sur des éléments techniques. A ce titre, elles restent valables
+quelque soit les solutions techniques qui seront choisies par l'Université.
+
+
  
 
 \chapter{Audit des Services}
@@ -302,7 +341,7 @@ numérique directeur de l'UdS (probablement disponible à l'horizon 2014).
 \section{Service communication}
 
 \paragraph{Michèle Schmidt (MS), Isabelle Suhr (IS), Marine Julien (MJ), 
-Nicolas Beyhurst (NB), Thomas Arbib (TA).}
+\NB (NB), Thomas Arbib (TA).}
 
 \subsection{Processus fonctionnels}
 Les processus nécessitant le support du système d'information peuvent 
@@ -414,7 +453,7 @@ donc disposer d'un stockage auxiliaire pour fabriquer un historique.
 	prospects formation continue  & pré-inscriptions ARIA & import csv \\
 	prospects diplômés      & service diplômés &  import csv, puis base de \\
 					&			 &  données gérée dans le service Comm. \\
-	étudiants après CRD 	& données \motcle{APOGEE} & import csv \\
+	étudiants après CRD 	& données \motcle{Apogée} & import csv \\
 	journalistes 		& contact personnel	& carnets d'adresse \\
 	salons, contacts divers	& contact mail, carte visite & carnets d'adresse, fichiers \motcle{Excel}\\ 
 	VIP institutionnels	& contact mail, carte visite & carnets d'adresse, fichiers \motcle{Excel}\\ 
@@ -557,7 +596,7 @@ Cependant, ces \textbf{applications se révèlent totalement inefficaces} dans
 le reste du processus. Ainsi, les extractions d'\motcle{HARPGest} ne peuvent 
 fournir que les noms, date de naissance et nationalité d'une personne. 
 \motcle{SOSIE} ne liste que les heures de cours pouvant donner lieu à rétribution
-et sur des intitulés de matière qui peuvent avoir changé dans \motcle{APOGEE}.
+et sur des intitulés de matière qui peuvent avoir changé dans \motcle{Apogée}.
 Pour connaître l'état des paiements des heures, la procédure en place prévoit
 que Sylvie Amar édite le fichier Excel (\index{\clecommun} partagé en réseau) 
 pour y inscrire les heures payées pour chaque enseignant.\\
@@ -830,7 +869,7 @@ taxe d'apprentissage, enseignants vacataires inscrits dans
 l'intranet et anciens membres de jury. Ces contacts ont été
 invités par mail à s'inscrire sur un site web%
 \footnote{\url{http://aestirh.em-strasbourg.eu/jurys}}
-construit et géré par le \scom (Nicolas Beyhurst).
+construit et géré par le \scom (\NB).
 Cette procédure qui vient juste de remplacer une procédure
 ``papier'' est tout à fait adaptée au besoin. Elle va permettre
 de collecter des informations homogènes et enrichies sur les
@@ -1452,14 +1491,14 @@ des bases de données.\\
 
 \begin{itemize}
 \item Les \textbf{personnels compétents en informatique sont irremplaçables}.
-Deux personnes disposent de compétences en informatique~: \CK et Nicolas Beyhurst. Parmi
+Deux personnes disposent de compétences en informatique~: \CK et \NB. Parmi
 ces compétences, celle qui est sollicitée de manière permanente est la programmation
 de nouvelles fonctionnalités du système d'information accessible à travers le web.
 L'intranet n'a cessé de croître depuis sa création, et de nombreux mini-sites ont 
-été developpés par Nicolas Beyhurst pour répondre à des besoins ponctuels.\\
+été developpés par \NB pour répondre à des besoins ponctuels.\\
 
 On constate que ces deux personnes ressources travaillent de manière cloisonnée%
-\footnote{Il faut noter que la mission de Nicolas Beyhurst est d'épauler la communication.}.
+\footnote{Il faut noter que la mission de \NB est d'épauler la communication.}.
 Bien qu'ils aient des compétences équivalentes, l'un est incapable de 
 remplacer l'autre en cas de nécessité.
 \end{itemize}
@@ -1489,19 +1528,26 @@ La préconisation précédente implique un véritable travail d'équipe qui ne p
 qu'au sein d'une équipe, si possible avec une proximité géographique. Cette équipe
 doit agir en concertation avec le DSI.\\
 
+\item \textbf{Repenser la relation du service informatique de l'EM avec la DI et la DUN} :
+bien que la restructuration de la direction informatique (DI) ait remis à plat
+les rôles et responsabilités, \CK et \NB ont tous deux exprimés leur sentiment de
+ne pas pouvoir faire valoir leurs besoins avec force auprès de ce ces directions.
+Il faut déterminer quels rôles peuvent être reconnus au service informatique de l'EM.\\
+
+
+
 \item \textbf{Viser l'autonomie des personnels} : dans son travail de traitement de
 l'information un personnel ayant un accès à la fonctionnalité requise devrait être 
-autonome, c'est-à-dire ne pas avoir besoin d'une compétence technique supplémentaire 
+autonome, c'est-à-dire ne pas avoir besoin de demander l'aide d'informticiens 
 pour arriver au résultat. Ceci passe par la conception de fonctionnalités du S.I. qui
-soient totalement finalisées et assez génériques pour répondre à tous les besoins,
-ou à la formation des personnels afin qu'ils soient autonomes.
-
+soient totalement finalisées et assez \textbf{génériques} pour répondre à tous les besoins,
+ou à la \textbf{formation} des personnels afin qu'ils soient autonomes.
 
 
 \item \textbf{Donner les moyens de faire de la veille technologique} : le rythme
 élevé avec lequel de nouvelles fonctionnalités sont demandées dans l'\motcle{intranet}
 ne laisse pas le temps au service informatique de prendre du recul sur les technologies
-employées. Il est pourtant de nécessaire de réfléchir à la pérennité des technologies
+employées. Il est pourtant nécessaire de réfléchir à la pérennité des solutions techniques
 existantes et d'anticiper leurs évolutions. Intégrer cette démarche peut se faire
 bien plus facilement si le service travaille en mode projet.\\
 
@@ -1509,11 +1555,11 @@ bien plus facilement si le service travaille en mode projet.\\
 \item \textbf{Faire des efforts de développement en cohérence avec les projets de l'UdS} : 
 la Direction des Usages Numériques à l'UdS (DUN) a proposé un effort sans précédent de renouvellement
 du système d'information depuis 2009. L'ampleur du chantier rend la connaissance des
-outils adoptés ou en pase d'adoption difficile. Il est nécessaire de garder un contact
+outils adoptés ou en phase d'adoption difficile. Il est nécessaire de garder un contact
 permanent avec la DUN pour avoir cette information et pour piloter les efforts de 
 l'EM de façon à profiter de la force de développement de la DI et de la DUN.
-il est très important de ne pas développer de projets qui rentrent en collision avec 
-ceux de l'Université. 
+Il est très important de ne pas développer de projets qui risquent de rentrer en 
+collision avec ceux de l'Université. 
 
 
 \end{enumerate}
