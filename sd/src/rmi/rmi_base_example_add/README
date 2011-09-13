@@ -21,9 +21,6 @@ o Client.java : le code utilisant l'interface Operation
 Compilation
 -----------
 
-o Si vous avez un JDK <= 1.4, vous pouvez utiliser le scipt "build" qui 
-  ebchaine les javac et rmic
-
 o Si vous avez un JDK >= 1.5, vous pouvez plus simplement compiler les sources
   avec javac sans rmic.
 
