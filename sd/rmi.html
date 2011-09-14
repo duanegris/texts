@@ -65,7 +65,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 <div id="currentSlide"><!-- DO NOT EDIT --></div>
 <div id="header"></div>
 <div id="footer">
-<h1>octobre &#8226; 2009</h1>
+<h1>octobre &#8226; 2011</h1>
 <h2>Introduction à  RMI</h2>
 </div>
 </div>
@@ -74,7 +74,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 
 <div class="slide">
 <h1>Introduction à  RMI</h1>
-<h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
+<h4><a href="http://icps.u-strasbg.fr/members/genaud">Stéphane Genaud</a></h4>
 </div>
 
 <!-- ________________________ Général _____________________________ -->
@@ -416,7 +416,7 @@ se font toujours avec un registry local.
 <ul>
   <li>Définie par le fichier <tt>java.policy</tt></li>
   <li>Par défaut, celui du JDK, e.g. <br/>
-    <tt>/usr/java/j2sdk1.4.2_04/jre/lib/security/java.policy</tt>
+    <tt>/usr/lib/jvm/java-6-openjdk/jre/lib/security/java.policy</tt>
   </li>
   <li> Donner plus de permissivité :<br/>
     <div id="listing">
@@ -509,46 +509,6 @@ public class Client {
 </pre>-->
 </div>
 </div>
-<!-- ________________________ Compilation _____________________________ -->
-<div class="slide">
-<h1>Compilation</h1>
-<div id="listing">
-<pre>
-javac *.java
-rmic OperationImpl # inutile pour JVMs provenant de JDK &gt;= 5.0
-
-mkdir serveur 
-mkdir client
-
-for i in Client OperationImpl_Stub Operation
-do  cp $i.class client ; done
-
-for i in Serveur OperationImpl_Stub OperationImpl_Skel\
-         OperationImpl Operation
-do  cp $i.class serveur ; done
-</pre>
-</div>
-
-<!-- Commentaires -->
-<div class="handout">
-La commande <code>rmic OperationImpl</code> génère 
-<tt>OperationImpl_Stub.class</tt> et <tt>OperationImpl_Skel.class</tt>.
-</div>
-
-
-<div class="slide">
-<h1>Compilation : fichiers</h1>
-<table class="list">
-<tr><th class="list">client</th><th class="list">  serveur</th></tr>
-<tr class="list"><td>Client.class       </td><td>  Serveur.class</td></tr>
-<tr class="list"><td>Operation.class    </td><td>  OperationImpl.class</td></tr>
-<tr class="list"><td>                   </td><td>  OperationImpl_Skel.class</td></tr>
-<tr class="list"><td>OperationImpl_Stub.class</td><td>OperationImpl_Stub.class</td></tr>
-</table>
-</div>
-
-
-
 
 <!-- ________________________ Execution _____________________________ -->
 
@@ -556,15 +516,27 @@ La commande <code>rmic OperationImpl</code> génère
 <h1>Exécution</h1>
 
 <ol>
+   <li>Pour un test sur une seule machine, mettre les 
+	 programmes du serveur et du client dans deux
+	 répertoires différents, <tt>serveur</tt> et 
+	<tt>client</tt>.
+   </li>
+
    <li> Lancer le serveur 
     <p>
     <div id="listing">
 <pre>
      cd serveur 
-     rmiregistry &amp;  
+     rmiregistry &amp;  # (si pas lance par programme serveur)
      java -Djava.security.policy=java.policy Serveur 
 </pre></div></p>
 </li>
+
+<small><i>
+<b>Attention :</b>le rmiregistry devra trouver le class file
+à l'aide de son $JAVA_PATH. Si celui ne contient que '.' et
+que le class file est dans un autre répertoire: exception.
+</i></small>
 
    <li>Lancer le client
    <p>
@@ -896,13 +868,13 @@ Comme dans l'exemple de base, le serveur instancie un objet <tt>ComputeImpl</tt>
 <p>
 L'une des principales difficultés de RMI est la gestion de la sécurité.
 <ul>
-	  <li>Il est nécessaire de modifier la politique très restrictive de sécurité par défaut (<tt>$JAVA_HOME/lib/security/java.policy</tt>). 
+	  <li>Il faut modifier la politique très restrictive de sécurité par défaut (<tt>$JAVA_HOME/lib/security/java.policy</tt>). 
 	  La méthode préconisée est d'associer un fichier décrivant la politique avec la JVM lancée 
 	  (<tt>-Djava.security.policy=fichier</tt>)
 	  (<a href="http://java.sun.com/j2se/1.4.2/docs/guide/security/PolicyFiles.html">syntaxe</a>).
 	  </li>
 
-	  <li>Un programme n'a pas de gestionnaire de sécurité par défaut, et empàªche certaines opérations (comme le téléchargement de code). On peut en créer un:
+	  <li>Un programme n'a pas de gestionnaire de sécurité par défaut, et empêche certaines opérations (comme le téléchargement de code). On peut en créer un:
 	  <ul>
 		    <li>par programme (<tt><a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/SecurityManager.html">SecurityManager</a></tt>),</li>
 		    <li>par fichier <tt>-Djava.security.manager</tt>.</li>
