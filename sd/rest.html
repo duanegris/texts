@@ -279,16 +279,18 @@ Vue schématique des effets de POST/GET/PUT/DELETE
 <h1>Les opérateurs</h1>
 
 <ul>
-<li>Exemple: Yahoo! Maps Web Services.
-<a href="http://developer.yahoo.com/maps/rest/V1/">API REST</a><br/>
+<li>Exemple: Yahoo! PlaceFinder.
+<a href="http://developer.yahoo.com/geo/placefinder/guide/requests.html">API REST</a><br/>
 
 Simple, uniquement des GET.<br/>
 Opération pour obtenir une carte à partir d'une adresse.
 	<ol>
 		<li>GET : 
-		<a href="http://local.yahooapis.com/MapsService/V1/mapImage?appid=ZyLTte3e&city=Illkirch&country=France">http://local.yahooapis.com/MapsService/V1/mapImage?appid=ZyLTte3e&city=Illkirch&country=France</a>
+		<a href="http://where.yahooapis.com/geocode?location=pole api,illkirch">
+http://where.yahooapis.com/geocode?location=pole api,illkirch</a>
 		</li>
-		<li>Le résultat est un fichier XML contenant l'URL vers la carte.</li>
+		<li>Le résultat est un fichier XML contenant des informations 
+			comme la latitude, longitude, ville, code postal, ...</li>
 	</ol>
 </ul>
 
