@@ -39,8 +39,8 @@ un client d'après l'IP de sa machine, ...
 
 On souhaite utiliser le service de Géolocalisation qui à une adresse IP rend les coordonnées géographiques (lattitude, longitude) de la machine.
 Examiner la description WSDL du service :
-<a href="http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl">
-http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
+<a href="http://v1.fraudlabs.com/fraudlabswebservice.asmx?wsdl">
+http://v1.fraudlabs.com/fraudlabswebservice.asmx?wsdl
 </a>
 	
 <ol>
@@ -108,7 +108,7 @@ http://ws.ip2location.com/ip2locationwebservice.asmx?wsdl
 		<!-- 
 	   	$result = $SoapResponse -> GetLocationByIPResult;
 	   	if (!isset($result->Message)) {
-     			 print("IP $query localisee aux coordonnees geographiques (lat,lon) : ".$result->LATITUDE ."Â°,". $result->LONGITUDE."Â°\n");
+     			 print("IP $query localisee aux coordonnees geographiques (lat,lon) : ".$result->LATITUDE ."°,". $result->LONGITUDE."°\n");
    	   	}
    	   	else
       		print("Erreur : " . $result->Message . "\n");

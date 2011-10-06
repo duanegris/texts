@@ -7,7 +7,12 @@
 // free license obtained from fraudlab
 // 90 credits / month, ask one at :
 // http://www.fraudlabs.com/freelicense.aspx?PackageID=1
-$LicenseKey="02-WVGM-1BA6"; 
+
+
+$LicenseKey="02-WVGM-1BA6";  ## attention, utiliser le WSDL
+				     ## http://ws.fraudlabs.com/ip2locationwebservice.asmx?wsdl
+				     ## avec cette clé
+				     
 
 
 $query="130.79.192.160";
