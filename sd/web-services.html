@@ -922,7 +922,8 @@ Client minimal pour analyzer le WSDL :
     $wsdl_url = "http://soap.amazon.com/schemas2/AmazonWebServices.wsdl";
     $client = new SoapClient( $wsdl_url );
 	
-    $client -&gt; __getFunctions();
+    $ops = $client -&gt; __getFunctions();
+    print_r( $ops );
 ?&gt;
 </pre>
 </div>
@@ -1091,6 +1092,9 @@ Ceux ci sont décrits dans le fichier WSDL suivant : [ <a href="src/soap/wsdl/Go
 <ol>
 <li>Créer un <a href="https://www.google.com/accounts/NewAccount?continue=http://api.google.com/createkey&amp;followup=http://api.google.com/createkey">compte</a> pour obtenir une clé.</li>
 <li>Ecrire un client SOAP::Lite qui donne le nombre de résultats obtenus (estimatedTotalResultsCount) par une recherche <tt>doGoogleSearch</tt>.</li>
+<li>
+	<a href="src/soap/soap-lite/google.pl">Code source</a>
+</li>
 </ol>
 
 </div>
