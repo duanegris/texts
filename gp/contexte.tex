@@ -1,7 +1,7 @@
 
 \section{Le contexte de la gestion de projet}
 
-\subsection{Projet: origine, définitions}
+\subsection{La notion de projet}
 
 \frame{
 \frametitle{Les origines}
@@ -24,52 +24,107 @@
 \vfill
 }
 %*****************************************************************
+\frame{\frametitle{Définition de la notion de Projet}
 
-\frame{
-\frametitle{Notion de projet}
-
-Ensemble d'activités :
+Un projet est une activité: 
+\pause
+\vspace{.2cm}
 \begin{itemize}
-\item<+-> appartenant à différentes phases,
-\item<+-> ayant un objectif commun,
-\item<+-> permettant la satisfaction d'un besoin identifié,
-\item<+-> nécessitant des équipes de spécialistes aux compétences variées,
-\item<+-> sur lesquelles s'exercent trois types de contraintes : coûts, délais, qualité,
+\item<+-> unique et ponctuelle (non répétitive),\\
+	    $\rightarrow$ 
+	    \brown{date de début et fin du projet},
+\vspace{.2cm}
+\item<+-> soumise à des contraintes,\\
+	    $\rightarrow$ 
+	    \brown{de délais, coûts, qualité}.
+\vspace{.2cm}
+\item<+-> constituée d'actions ayant un objectif commun,\\
+	    $\rightarrow$ 
+	    \brown{nécessite des spécialistes aux compétences variées qu'il faut coordonner}, 
+\vspace{.2cm}
+\item<+-> qui produit un livrable\\
+	    $\rightarrow$ 
+	    \brown{résultat permettant la satisfaction d'un besoin identifié.}
 \end{itemize}
 }
-%*****************************************************************
-
-\frame{\frametitle{Caractéristiques d'un projet}
-
-Ce qui implique:
-\begin{itemize}
-\item<+-> Action unique et ponctuelle, non répétitive.  
-\vspace{.2cm}
-\item<+-> Limité dans le temps (dates de début et de fin).
-\vspace{.2cm}
-\item<+-> Une démarche spécifique : atteindre l'objectif en maîtrisant
-      la qualité du produit fini, les coûts et les délais grâce à des
-	jalons.
-	
-\end{itemize}
-}
-
 
 %********************* Phases *************************************
-\frame{\frametitle{Les grandes phases}
 
-\begin{itemize}
-\item Définition
-\item Réalisation
-\item Mise en {\oe}uvre
-\item Bilan, Retour d’Expérience
-\end{itemize}
+\subsection{La genèse d'un projet}
+\frame{\frametitle{Genèse d'un projet}
+
+
+\begin{figure}[!htb]
+\begin{tikzpicture}
+[
+      xscale      = 1,  % to scale horizontally everything but the text
+      yscale      = 1,  % to scale vertically everything but the text
+]
+
+% Noeud "Besoin"
+\node (besoin) [ 	shape             = circle,
+            	top color         = white,        
+            	bottom color      = blue!20!white, 
+            	text              = blue,        
+            	text width        = 1.4cm,        
+            	align             = center,    
+            	draw              = blue,     
+            	rotate            = 2,       
+            	thick,]
+	at (-4,0) {Besoin};
+
+
+%% --- etape 2
+\only<2->{
+% Noeud "Livrable"
+\node (livrable) at (5,0)
+	{\includegraphics[height=1.7cm]{fig/livrable.png} Livrable};
+
+% chemin 
+\draw[dotted, ultra thick,->] (besoin) -- (livrable);
 }
 
 
+\onslide<3->{
+\node (projet) [	shape             = rectangle,
+            	top color         = white,
+            	bottom color      = red!20!white, 	% |
+            	text              = black,                % colour of the fonts
+            	text width        = 3cm,        
+            	align             = center,               % text alignment
+            	draw              = red,                % colour of the border
+            	align             = center,    
+            	thick,]
+		at (0,0) {Projet};
+}
+
+%% --- etape 4
+\onslide<4->{
+	\node (chefprojet) at (0,-2) {\includegraphics[height=9mm] {fig/user_female.png}};
+	\draw (0,-2.5) node[below]{{\small Chef de projet}};
+	\draw[thick,->] (chefprojet) -- (projet);
+}
+\onslide<5->{
+	\node (decideur) at (0,2) {\includegraphics[height=9mm] {fig/user_executive.png}};
+	\draw[thick,->] (decideur) -- (projet)
+			    node[near start,above]{\small Décideur};
+}
+\onslide<6->{
+	\node (equipe) at (2,-2) {\includegraphics[height=9mm] {fig/user_group.png}};
+	\draw (2,-2.5) node[below]{\small Equipes};
+	\draw[thick,->] (equipe) -- (projet);
+}
+\end{tikzpicture}
+\end{figure}
+%  ______________________________________________________________________________________________
+}
+
+
+\subsection{La conduite du projet}
 \frame{\frametitle{Conduite de projet}
 
 La \emph{conduite de projet} est la façon dont cette démarche est menée.\\
+\vspace{2cm}
 
 C'est un cadre méthodologique qui préconise:
 \begin{itemize}
@@ -78,17 +133,88 @@ C'est un cadre méthodologique qui préconise:
 \item<+-> les protocoles usuels entre les acteurs du projet
 \end{itemize}
 }
+
+%********************* Phases *************************************
+\frame{\frametitle{Les grandes phases}
+
+\begin{itemize}
+\item Définition
+\item Réalisation
+\item Mise en {\oe}uvre
+\item Bilan 
+\end{itemize}
+}
+
+
+%********************* Phases *************************************
 \frame{
 \begin{center}
 \includegraphics[height=\textheight]{overview-projet.pdf}
 \end{center}
 }
 
-%*****************************************************************
-\subsection{Assurer le lancement du projet: l'évaluation}
 
+\subsection{Vérifier l'opportunité du projet}
+
+%*****************************************************************
 \frame{
-\frametitle{Etude d'opportunité informelle}
+\frametitle{Etude d'opportunité}
+
+\onslide<1>{\center ... Avant de se lancer ...}
+\pause
+\begin{figure}[!htb]
+\begin{tikzpicture} [xscale=1,yscale=1]
+
+% Noeud "Besoin"
+\node (besoin) [ 	shape             = circle,
+            	top color         = white,        
+            	bottom color      = blue!20!white, 
+            	text              = blue,        
+            	text width        = 1.4cm,        
+            	align             = center,    
+            	draw              = blue,     
+            	rotate            = 2,       
+            	thick,]
+	at (-4,0) {Besoin};
+
+\node (livrable) at (5,0)
+	{\includegraphics[height=1.7cm]{fig/livrable.png} Livrable};
+\draw[dotted, ultra thick,->] (besoin) -- (livrable);
+\node (projet) [	shape             = rectangle,
+            	top color         = gray!20!white,
+            	bottom color      = red!20!white, 	% |
+            	text              = black,                % colour of the fonts
+            	text width        = 3cm,        
+            	align             = center,               % text alignment
+            	draw              = red,                % colour of the border
+            	align             = center,    
+            	thick,]
+		at (0,0) {Projet};
+
+\node (opportunite) [shape             = rectangle,
+            	top color         = white,        
+            	bottom color      = red!20!white, 	% |
+            	text              = black,                % colour of the fonts
+            	text width        = 2cm,        
+            	align             = center,               % text alignment
+            	draw              = red,                % colour of the border
+            	align             = center,    
+            	thick,]
+		at (-1.5,-1.5) {\'Etude opportunité};
+\draw[ultra thick,->] (opportunite) -- (-1.8,-.1);
+
+
+\end{tikzpicture}
+\end{figure}
+}
+%  ______________________________________________________________________________________________
+
+
+
+%*****************************************************************
+\frame{
+\frametitle{Etude d'opportunité}
+
 
 \vspace{.5cm}
 Avant acceptation ou lancement, se poser des questions :\\ 
@@ -139,8 +265,8 @@ Le client veut un site web pour
 \end{itemize}
 \end{block}
 
-\only<2>{Simple, non ? ...}
-\only<3>{... Pourtant, répondre à cette demande nécessite de dialoguer avec le client.}
+\only<1>{Simple, non ? ...}
+\only<2>{... Pourtant, répondre à cette demande nécessite de dialoguer avec le client.}
 
 }
 \frame{
@@ -159,13 +285,14 @@ Quelques questions immédiates (liste non-exhaustive):
 }
 
 \vspace{5mm}
-\only<9>{Risque: un site au contenu périmé \ding{63} }
-\only<10>{$\Rightarrow$ Adopter une démarche d'évaluation: le projet est-il clairement défini ?}
+\onslide<9->{Risque: un site au contenu périmé \ding{63} }
+\onslide<10>{$\Rightarrow$ Adopter une démarche d'évaluation: le projet est-il clairement défini ?}
 }
 
 %*****************************************************************
+\subsection{Lancement du projet: l'évaluation }
 \frame{
-\frametitle{Evaluer le projet (1)}
+\frametitle{Lancement du projet: l'évaluation}
 
 Entre l'idée et sa réalisation, il peut y avoir un gouffre.
 Le résultat attendu peut être flou et les implications mal cernées.  
