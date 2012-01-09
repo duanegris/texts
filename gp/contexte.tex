@@ -362,37 +362,110 @@ Evaluer par la conduite de projet : les risques d'aléas
 la clientèle 30-50 ans. La marque est présente sous la forme d'un réseau de
 franchisés (95 boutiques).
 
-Elle désire lancer une offre distinctive \textit{Personal Fit}, un service de
+\pause
+%\vskip
+Sa direction est organisée comme suit:
+
+\begin{figure}[!htb]
+\begin{tikzpicture} [xscale=1,yscale=1]
+\onslide<2->{
+	\node (pdg) at (-5,0) {\includegraphics[height=12mm] {fig/user_executive.png}};
+	\draw (-5,-.75) node[below]{{\footnotesize PDG}};
+}
+\onslide<3->{
+	\node (daf) at (-3,0) {\includegraphics[height=12mm] {fig/exec_green_user.png}};
+	\draw (-3,-1.25) node[below]{{\footnotesize DAF}};
+}
+\onslide<4->{
+	\node (dp) at (-0.5,0) {\includegraphics[height=12mm] {fig/registered_user.png}};
+	\draw (-0.5,-.75) node[below]{{\footnotesize Dir. Production}};
+}
+\onslide<5->{
+	\node (dp) at (2.5,0) {\includegraphics[height=12mm] {fig/user_female2.png}};
+	\draw (2.5,-1.25) node[below]{{\footnotesize Dir. Commerciale}};
+}
+\onslide<6->{
+	\node (codir) at (5,0) {\includegraphics[height=15mm] {fig/user_group.png}};
+	\draw (5,-.75) node[below]{{\footnotesize Comité de Direction}};
+}
+\end{tikzpicture}
+\end{figure}
+%******** CAS 
+
+\onslide<7->{
+\begin{block}{}
+4.5.6 désire lancer une offre distinctive \textit{Personal Fit}, un service de
 vêtements ``sur mesure`'': une gamme spécifique de vêtements avec un choix de tailles
 beaucoup plus fin, qui peut être guidé par des mesures electroniques. 
-
-\vspace{5mm}
-\begin{center}
-\ldots voir étude de cas \ldots
-\end{center}
+\onslide<8>{\ldots \textbf{voir étude de cas} \ldots}
+\end{block}
+}
 }
 
+%____________________________ L E S   A C T E U R S __________________________________
 
-%******************************************************************
 \section{Les acteurs}
-\subsection{Le triangle projet: objectifs, délais, ressources}
+
+\subsection{La défintion du projet}
 
 \frame{
-\frametitle{Le triangle projet}
- 
-\input{triangle.pdftex_t}
+\frametitle{La définition du projet}
 
-\vfill                 
+Le projet est fortement personnalisé par le \emph{chef de projet}.
+\vspace{1cm}
+
+\pause
+Dans notre exemple de la société 4.5.6, le chef de projet dépend de la direction
+commerciale .
+
+\begin{figure}[!htb]
+\begin{tikzpicture}
+ 	\node(chefprojet) at (-1,0) {\includegraphics[height=9mm] {fig/user_female.png}};
+	\node(dircommerciale) at (1,0) {\includegraphics[height=9mm] {fig/user_female2.png}};
+	\draw[->,ultra thick] (chefprojet) -- (dircommerciale);
+\end{tikzpicture}
+\end{figure}
+\pause
+
+C'est lui qui va \textbf{définir} le projet: 
+\begin{itemize}
+\item définir l'objectif : livrable, périmètre, ...
+\item négocier les moyens
+\item négocier les délais
+\end{itemize}
 }
 
+
+\subsection{Le triangle projet: objectifs, délais, ressources}
+
+
 %*****************************************************************
+\frame{
+\frametitle{Le triangle projet}
+
+Pour le chef de projet:
+
+\begin{figure}[!htb]
+\begin{tikzpicture} [xscale=1,yscale=1]
+	\draw (-2.5,-1) 	node[left]{Moyens}  -- 
+	      (2.5,-1)  	node[right]{Délais} -- 
+		(0,2)   	node[above]{Objectifs} -- 
+	      (-2.5,-1);
+\end{tikzpicture}
+\end{figure}
+}
+
+
 \frame{
 \frametitle{Les objectifs}
 
 \begin{center}
 	`` Quoi faire ? ''
 \end{center}
-Définir le domaine couvert en termes de fonctionnalités. 
+
+Définir le domaine couvert en termes de \textbf{fonctionnalités} 
+et de \textbf{qualité}. 
+
 Le document contractuel est le \alert{cahier des charges}.
 }
 
@@ -413,18 +486,118 @@ Un \alert{calendrier} contractuel définissant les délivrables intermédiaires 
 	`` Avec qui/quoi faire ? ''
 \end{center}
 
-
-La gestion des ressources nécessite une \alert{organisation} parfois complexe.\\
-
-Des structurations typiques des ressources humaines sont:
-\begin{itemize}
-\item structuration générale \emph{client/fournisseur}.
-\item structuration en \emph{maîtrise d'ouvrage/maîtrise d'{\oe}uvre}.
-\end{itemize}
+Une fois l'activité définie, il faut prévoir des \alert{ressources}
+pour les réaliser.
 }
 
-\subsection{Structurations typiques pour les ressources humaines}
 %******************************************************************
+\subsection{Le chef de projet au centre}
+
+\frame{
+\frametitle{Le chef de projet au centre}
+
+\begin{figure}[!hbt]
+\begin{tikzpicture}
+
+% Noeud "Besoin"
+\node (cercle) [ 	shape             = circle,
+            	top color         = white,        
+            	bottom color      = gray!20!white, 
+            	text width        = 5cm,        
+            	draw              = black,     
+            	thick,]
+	at (0,0) {};
+
+\node (chefprojet) at (0,0) {\includegraphics[height=9mm] {fig/user_female.png}};
+
+\onslide<2->{
+	\node (decideur) at (0,2) {\includegraphics[height=9mm] {fig/user_executive.png}};
+	\draw[thick,->] (decideur) -- (projet)
+			    node[near start,above]{\small Décideur};
+	\node (utilisateurs) at (1.5,3) {\includegraphics[height=9mm] {fig/user_group.png}};
+	\draw (1.5,3.5) node[below]{\small Utilisateurs};
+	\draw[thick,->] (utilisateurs) -- (decideur);
+	\draw[thick,->] (utilisateurs) -- (chefprojet);
+}
+
+\onslide<3->{
+	\node(dircommerciale) at (-2.3,-2.3) {\includegraphics[height=9mm] {fig/user_female2.png}};
+	\draw (-2.2,-2.8) node[below]{\small Hiérarchie};
+	\draw[->,thick] (dircommerciale) -- (chefprojet) ;
+}
+\onslide<4->{
+	\node (equipe) at (2,-2) {\includegraphics[height=9mm] {fig/user_group.png}};
+	\draw (2,-2.5) node[below]{\small Equipes};
+	\draw[thick,->] (equipe) -- (projet);
+}
+\end{tikzpicture}
+\end{figure}
+}
+%  ______________________________________________________________________________________________
+
+\subsection{La maîtrise d'{\oe}uvre (MOE)}
+\frame{
+\frametitle{La maîtrise d'{\oe}uvre (MOE)}
+
+\begin{itemize}
+\item<+-> Le chef de projet ne peut pas tout faire tout seul.
+\vspace{5mm}
+\item<+-> Le maître d'{\oe}uvre (MOE) est en charge des aspects opérationnels.
+\vspace{5mm}
+\item<+-> Il a une vision d'ensemble de l'utilisation des ressources.
+\vspace{5mm}
+\item<+-> Il arbitre les priorités entre les différents projets et
+les autres activités.
+\vspace{5mm}
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Le maître d'{\oe}uvre}
+
+\begin{figure}[!hbt]
+\begin{tikzpicture}
+
+% Noeud "Besoin"
+\node (cercle) [ 	shape             = circle,
+            	top color         = white,        
+            	bottom color      = gray!20!white, 
+            	text width        = 5cm,        
+            	draw              = black,     
+            	thick,]
+	at (0,0) {};
+
+\node (chefprojet) at (0,0) {\includegraphics[height=9mm] {fig/user_female.png}};
+
+	\node (decideur) at (0,2) {\includegraphics[height=9mm] {fig/user_executive.png}};
+	\draw[thick,->] (decideur) -- (projet)
+			    node[near start,above]{\small Décideur};
+	\node (utilisateurs) at (1.5,3) {\includegraphics[height=9mm] {fig/user_group.png}};
+	\draw (1.5,3.5) node[below]{\small Utilisateurs};
+	\draw[thick,->] (utilisateurs) -- (decideur);
+	\draw[thick,->] (utilisateurs) -- (chefprojet);
+
+	\node(dircommerciale) at (-2.3,-2.3) {\includegraphics[height=9mm] {fig/user_female2.png}};
+	\draw (-2.2,-2.8) node[below]{\small Hiérarchie};
+	\draw[->,thick] (dircommerciale) -- (chefprojet) ;
+
+	\node (moe) at (1.7,-1.7) {\includegraphics[height=9mm] {fig/registered_user.png}};
+	\draw (1.7,-2) node[below]{\small \alert{MOE}};
+	\draw[thick,<->] (moe) -- (projet);
+
+	\node (equipe) at (3,-3) {\includegraphics[height=9mm] {fig/user_group.png}};
+	\draw (3,-3.5) node[below]{\footnotesize Ressources};
+	\draw[thick,-] (moe) -- (equipe);
+
+
+\end{tikzpicture}
+\end{figure}
+}
+%  ______________________________________________________________________________________________
+
+
+
 \frame{
 \frametitle{Structuration client/fournisseur}
 
@@ -447,6 +620,7 @@ Dans de nombreux projets, on peut retrouver les acteurs suivants:
 }
 %******************************************************************
 
+\subsection{Structuration maîtrise d'ouvrage/maîtrise d'{\oe}uvre}
 \frame{
 \frametitle{Structuration maîtrise d'ouvrage/maîtrise d'{\oe}uvre}
 
@@ -504,6 +678,58 @@ Pour cela, le MOE doit assurer la coordination de tous les fabriquants en veilla
 \item à coordonner l'action des fournisseurs en contrôlant la qualité technique,
 \item à respecter les délais fixés par le MOA et en minimisant les risques.
 \end{itemize}
+}
+
+
+%*****************************************************************
+\subsection{Des intérêts antagonistes}
+\frame{
+\frametitle{Des intérêts antagonistes}
+\begin{columns}
+%-- col1
+\begin{column}{.45\textwidth}
+\onslide<4->{
+	Le client:
+	\begin{itemize}
+	\item augmenter la valeur pour les utilisateurs
+	\item diminuer les coûts
+	\item sans prendre de risque
+	\end{itemize}
+}
+\vspace{5mm}
+\onslide<2->{
+	Le chef de projet:
+	\begin{itemize}
+	\item maintenir la conformité
+	\item respecter le budget
+	\item respecter les délais
+	\end{itemize}
+}
+\end{column}
+%-- col2
+\begin{column}{.55\textwidth}
+\begin{figure}[!htb]
+\begin{tikzpicture} [xscale=.5,yscale=.5]
+
+
+\onslide<3->{
+	\node (decideur) at (0,7) {\includegraphics[height=9mm] {fig/user_executive.png}};
+	\draw (-2.5,6.5) 	node[left]{\footnotesize Coût}  -- 
+	      (2.5,6.5)  	node[right]{\footnotesize Valeur} -- 
+		(0,3.5)   	node[below]{\footnotesize Risque} -- 
+	      (-2.5,6.5);
+}
+
+	\draw (-2.5,-1) 	node[left]{\footnotesize Moyens}  -- 
+	      (2.5,-1)  	node[right]{\footnotesize Délais} -- 
+		(0,2)   	node[above]{\footnotesize Objectifs} -- 
+	      (-2.5,-1);
+	\node (chefprojet) at (0,-2) {\includegraphics[height=9mm] {fig/user_female.png}};
+	\draw (0,-2.3) node[below]{{\footnotesize Chef de projet}};
+\end{tikzpicture}
+\end{figure}
+\end{column}
+\end{columns}
 }
 
   
