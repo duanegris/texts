@@ -91,11 +91,15 @@ Le livrable du projet a été défini comme l'installation fonctionnelle des
 reste le 31 décembre, tandis que que le début du projet est prévu dans 
 quelques jours, le 1er août.
 \begin{figure}[!htb]
+\begin{center}
 \begin{tikzpicture}
  	\node(chefprojet) at (-1,0) {\includegraphics[height=11mm] {../fig/user_female.png}};
-	\node(dircommerciale) at (1,0) {\includegraphics[height=9mm] {../fig/user_female2.png}};
+	\node(dircommerciale) at (2,0) {\includegraphics[height=9mm] {../fig/user_female2.png}};
+	\draw (-1,-.75) node[below]{{\footnotesize chef de projet}};
+	\draw (2,-.75) node[below]{{\footnotesize dir. commerciale}};
 	\draw[->,ultra thick] (chefprojet) -- (dircommerciale);
 \end{tikzpicture}
+\end{center}
 \end{figure}
 
 
