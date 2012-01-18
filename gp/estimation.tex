@@ -59,20 +59,25 @@
 
 %*****************************************************************
 \subsection{Règles empiriques de durée}
+\frame{
 \frametitle{Règles empiriques de durée}
-{
-
 \begin{columns}
-
 %-- col left
 \begin{column}{.55\textwidth}
 \begin{itemize}
-\item<+-> Tâche trop longue : effet tunnel
 \item<+-> Tâche trop courte : se noyer dans les détails 
+\item<+-> $\rightarrow$ minimum : 10 fois la granularité du projet.\\
+\vspace{1cm}
+
+\item<+-> Tâche trop longue : effet tunnel
+\item<+-> $\rightarrow$ maximum : 3 fois la durée de la période d'avancement\\
 \end{itemize}
 \end{column}
 %-- col right
-\begin{column}{.55\textwidth}
+\begin{column}{.45\textwidth}
+	\onslide<3-4>{
+		\includegraphics[width=.9\textwidth]{fig/tunnel.jpg}
+	}
 \end{column}
 \end{columns}
 }
@@ -80,11 +85,9 @@
 \subsection{Estimer charges et coûts}
 \frame{\frametitle{Unité de charge}
 
-\vspace{.5cm}
 \begin{itemize}
-
 \item
-La \emph{charge} est la quantité de travail exprimée en $ressources \times temps$.  \\
+La \emph{charge} est la quantité de travail exprimée en $ressources \times temps$.
 
 \item Les  $ressource$ sont souvent des \textbf{hommes}\\
 
@@ -96,13 +99,12 @@ La \emph{charge} est la quantité de travail exprimée en $ressources \times tem
 
 \item La charge est souvent pondérée par coefficient de productivité (e.g 1,20).
 \end{itemize}
-\vspace{.6cm}
+\vspace{.3cm}
 Exemple : 10 jours $\times$ hommes \\ 
 $\Leftrightarrow$ 1 homme pendant 10 jours\\ 
 $\Leftrightarrow$ 10 hommes pendant 1 jour\\ 
 $\Leftrightarrow$ 5 hommes pendant 2 jours\\
 $\Leftrightarrow  \cdots$ \\
-\vfill
 }
 	
 %***************************************************************** 
