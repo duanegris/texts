@@ -1,4 +1,7 @@
 -include /usr/include/LaTeX.mk
+-include /usr/local/include/LaTeX.mk
+-include /opt/local/include/LaTeX.mk
+
 
 all: pr_451.pdf
 
