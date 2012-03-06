@@ -5,9 +5,12 @@ Comment compiler et exécuter l'exemple WorCount.java en mode standalone
 A. Avec une distribution 0.20.0
 ===============================
 
- $ mkdir wordcount_classes
  $ export HADOOP_VERSION=0.20.2
  $ export HADOOP_HOME=$HOME/hadoop-${HADOOP_VERSION}/
+ $ export PATH=$HADOOP_HOME/bin/:$PATH
+
+
+ $ mkdir wordcount_classes
 
 
  $ javac -classpath ${HADOOP_HOME}/hadoop-core-${HADOOP_VERSION}.jar:$HADOOP_HOME/lib/commons-cli-1.2.jar -d wordcount_classes WordCount.java
@@ -36,6 +39,6 @@ B. Avec une distribution 0.20.204.0 fournie en .deb
 	export HADOOP_HOME=/usr/share/hadoop/                                           
 	export HADOOP_VERSION=0.20.204.0       
 
-
+  Reprendre le point A. au mkdir
 
 
