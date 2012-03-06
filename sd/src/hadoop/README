@@ -1,11 +1,16 @@
 
+Comment compiler et exécuter l'exemple WorCount.java en mode standalone
+=======================================================================
+
+A. Avec une distribution 0.20.0
+===============================
 
  $ mkdir wordcount_classes
  $ export HADOOP_VERSION=0.20.2
  $ export HADOOP_HOME=$HOME/hadoop-${HADOOP_VERSION}/
 
 
- $ javac -classpath ${HADOOP_HOME}/hadoop-${HADOOP_VERSION}-core.jar:$HADOOP_HOME/lib/commons-cli-1.2.jar -d wordcount_classes WordCount.java
+ $ javac -classpath ${HADOOP_HOME}/hadoop-core-${HADOOP_VERSION}.jar:$HADOOP_HOME/lib/commons-cli-1.2.jar -d wordcount_classes WordCount.java
  $ jar -cvf wordcount.jar -C wordcount_classes/ .
 
 
@@ -18,6 +23,18 @@
    ^D
  
  $  ${HADOOP_HOME}/bin/hadoop jar wordcount.jar WordCount input output     
+
+
+B. Avec une distribution 0.20.204.0 fournie en .deb
+===================================================
+
+  Récuper et installer avec gdebi le package à partir de :
+  http://mirrors.ircam.fr/pub/apache//hadoop/core/hadoop-0.20.204.0/
+
+  Modifier votre .bashrc:
+
+	export HADOOP_HOME=/usr/share/hadoop/                                           
+	export HADOOP_VERSION=0.20.204.0       
 
 
 
