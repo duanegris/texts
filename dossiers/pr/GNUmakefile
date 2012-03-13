@@ -5,5 +5,5 @@
 
 all: pr_451.pdf
 
-pr_451.fb.bbl : pr_451.tex
+pr_451.fb.bbl : pr_451.tex generalbiblio.bib
 	bibtex pr_451.fb

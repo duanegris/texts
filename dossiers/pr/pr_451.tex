@@ -333,9 +333,9 @@ dans un modèle de programmation de type \emph{parallélisme de données}. Nous
 avons montré comment ce formalisme pouvait être utilisé pour raisonner sur les 
 programmes et les transformer en nouveaux programmes sémantiquement 
 équivalents ou raffinés \cite{icps-1994-46,icps-1995-1,icps-1997-3,icps-1996-2}.
-Le deuxième volet du travail a consisté à proposer des méthodes pour traduire~%
-\cite{icps-1998-5} ces énoncés formels vers des langages parallèles cibles 
-comme \textit{High Performance Fortran} ainsi que les logiciels permettant les 
+Le deuxième volet du travail a consisté à proposer des méthodes pour traduire
+ces énoncés formels vers des langages parallèles cibles comme 
+\textit{High Performance Fortran} ainsi que les logiciels permettant les 
 transformations, le contrôle de validité des programmes ainsi que les 
 compilateurs pour la traduction%
 \footnote{\url{http://icps.u-strasbg.fr/pei/PEI_SUMMARY/langage.htm}}.
@@ -391,7 +391,7 @@ applications.
 
 \paragraph{Performances} 
 
-Pour améliorer les performances, une partie de mon travail à été l'étude de 
+Pour améliorer les performances, une partie de mon travail a été l'étude de 
 techniques d'équilibrage de charge statiques ou dynamiques.  En effet, les 
 découpages des données et la distribution de la charge dans de nombreuses 
 applications parallèles font l'hypothèse que les processeurs et les réseaux 
@@ -435,20 +435,21 @@ de partager son CPU ou d'utiliser ceux des autres. Cette approche confère
 autonomie et robustesse aux applications. L'autonomie provient de la 
 possibilité de découvrir dynamiquement un ensemble de pairs disponibles à ce 
 moment précis pour exécuter un programme parallèle. On construit ainsi 
-dynamiquement une "plate-forme" à chaque demande d'exécution. La façon de 
+dynamiquement une ``plate-forme'' à chaque demande d'exécution. La façon de 
 choisir les pairs les plus adaptés parmi ceux disponibles dépend de plusieurs 
 critères, dont la latence réseau qui sépare la machine qui fait la requête des 
 pairs candidats, la présence ou non des données nécessaires dans les caches des 
 pairs distants, et le souhait de l'utilisateur de concentrer ou non les 
-processus sur le minimum de machines. Dans de tels systèmes, les pannes sont 
-fréquentes. Or, lors d'un calcul, la panne d'un des participants provoque 
-l'arrêt de l'application. Pour diminuer le risque de panne, nous avons proposé 
-une solution jamais expérimentée dans ce contexte qui est la réplication des 
-calculs. L'utilisateur décide du taux de redondance de l'exécution d'un 
-processus, sur des machines différentes, et le système gère de manière 
-transparente la cohérence de l'exécution. En cas de panne de l'un des processus, 
-l'application peut poursuivre son exécution tant qu'il subsiste au moins une 
-copie de ce processus de calcul.\\
+processus sur le minimum de machines. 
+
+Dans de tels systèmes, les pannes sont fréquentes. Or, lors d'un calcul, la 
+panne d'un des participants provoque l'arrêt de l'application. Pour diminuer le 
+risque de panne, nous avons proposé une solution jamais expérimentée dans ce 
+contexte qui est la réplication des calculs. L'utilisateur décide du taux de 
+redondance de l'exécution de chaque processus, sur des machines différentes, et 
+le système gère de manière transparente la cohérence de l'exécution. En cas de 
+panne de l'un des processus, l'application peut poursuivre son exécution tant 
+qu'il subsiste au moins une copie de ce processus de calcul.\\
 
 
 La conception de {\pmpi} à été décrite dans~\cite{icps-2007-182,icps-2005-155}.
@@ -492,39 +493,40 @@ La simulation présente face à ce problème un grand intérêt. Elle peut perme
 de tester de nombreux scénarios, et de ne faire des expériences réelles que pour
 les cas les plus intéressants.\\
 
-Le projet ANR USS-SimGrid%
-\footnote{http://uss-simgrid.gforge.inria.fr/} (2009-2011) vise à étendre les 
-capacité de l'outil de simulation \textsc{SimGrid}~\footcite{Casanova08}, très 
-utilisé dans notre communauté pour simuler des algorithmes d'ordonnancement des
-systèmes répartis. Ce logiciel permet de décrire l'ensemble des ordinateurs
-connectés et le réseau les interconnectant, ainsi que les opérations de calcul
-et de communication survenant au sein d'une application, et d'en faire une 
-simulation à évènements discrets. Le déroulement d'une application est décrit à 
-travers une \emph{interface} au simulateur, c'est-à-dire une API fournie pour 
-décrire ces opérations de calcul et de communication.\\
+\textsc{SimGrid}~\footcite{Casanova08} est un projet important dans le paysage 
+de la recherche académique sur la simulation des systèmes distribués. Le 
+logiciel permet de décrire l'ensemble des ordinateurs connectés et le réseau 
+les interconnectant, ainsi que les opérations de calcul et de communication 
+survenant au sein d'une application, et d'en faire une simulation à évènements 
+discrets. Le déroulement d'une application est décrit à travers une 
+\emph{interface} au simulateur, c'est-à-dire une API fournie pour décrire ces 
+opérations de calcul et de communication.\\
 
-Il n'existait pas, au démarrage du projet, d'interface permettant de simuler les 
-programmes parallèles à passage de messages (ses deux principales API proposaient 
-alors des communications point à point bloquantes). L'une des extensions proposées 
-était de fournir une interface pour simuler des programmes MPI. Dans ce contexte, 
-j'ai pu ``ranimer'' une interface initiée à l'université d'Hawaï (Mark Stillwell et
-Henri Casanova) mais inachevée, baptisée SMPI. Ce travail, poursuivi par 
-Pierre-Nicolas Clauss a abouti à une version désormais 
-livrée avec SimGrid. La conception et l'évaluation de SMPI ont fait l'objet d'une 
-publication à la conférence IPDPS~\cite{icps-2011-224}.
-Plusieurs perspectives sont ouvertes avec cet outil. On peut extrapoler l'exécution
-d'un programme sur une machine qui n'existe pas encore, dont on ne donne que la 
-description. Ceci peut servir par exemple à des fins de dimensionnement d'un cluster.
-Cela peut être utile dans de nombreuses autres situations, comme 
-l'enseignement, où une machine de bureau peut servir à simuler un cluster
-ou un système distribué. On peut également imaginer dans le futur continuer des 
-exécutions en simulation après avoir capturé la trace d'un programme réellement 
-exécuté (avec des outils de profiling existants) et en injectant cette trace dans 
-le simulateur.
+Ce logiciel a été soutenu entre autres par le projets ANR USS-SimGrid%
+\footnote{\url{http://uss-simgrid.gforge.inria.fr/}} 
+\footnote{Labelisé projet \textit{phare} par l'ANR.}
+(2009-2011), puis aujourd'hui par le projet SONGS%
+\footnote{\url{http://infra-songs.gforge.inria.fr/}} 
+(2012-2015). Je participe à ces projets, dont l'objectif est d'étendre les 
+capacité de l'outil. Il n'existait pas par exemple, avant le projet Uss-Simgrid,  
+d'interface permettant de simuler les programmes parallèles à passage de 
+messages (ses deux principales API proposaient alors des communications point à 
+point bloquantes). Nous avons proposé une interface pour simuler des programmes 
+MPI. J'ai réactivé un effort fait dans ce sens à l'université d'Hawaï (Mark 
+Stillwell et Henri Casanova) mais inachevé, baptisée SMPI. Ce travail, poursuivi 
+par Pierre-Nicolas Clauss a abouti à une version désormais livrée avec SimGrid. 
+La conception et l'évaluation de SMPI ont fait l'objet d'une publication à la 
+conférence IPDPS~\cite{icps-2011-224}. Plusieurs perspectives sont ouvertes avec 
+cet outil. On peut extrapoler l'exécution d'un programme sur une machine qui 
+n'existe pas encore, dont on ne donne que la description. Ceci peut servir par 
+exemple à des fins de dimensionnement d'un cluster. Cela peut être utile dans 
+de nombreuses autres situations, comme l'enseignement, où une machine de bureau 
+peut servir à simuler un clusterou un système distribué. On peut également 
+imaginer dans le futur continuer des exécutions en simulation après avoir 
+capturé la trace d'un programme réellement exécuté (avec des outils de 
+profiling existants) et en injectant cette trace dans le simulateur.
 
 
-**** Ce projet a été labelisé projet \textit{phare}
-par l'ANR.
 
 
 %----------------- P U B L I C A T I O N S ---------------------------
@@ -1007,7 +1009,7 @@ sur plates-formes hétérogènes de tâches partageant des données} - rapporteu
 Trystram (INPG, Grenoble) et Henri Casanova (UCSD, San Diego). Arnaud Giersch a 
 aujourd'hui un poste de maître de conférences à l'IUT d'informatique de Belfort, 
 université de Franche-Comté.
-Publications associées: \cite{icps-2002-50,icps-2002-62,icps-2003-75,icps-2004-125}\\
+Publications associées: \cite{icps-2002-62,icps-2003-75,icps-2004-125}\\
 
 
 \item 2000--2006 : co-encadrement de Marc Grunberg avec Catherine Mongenet 
@@ -1285,7 +1287,6 @@ début 2012. Ce projet qui implique 19 chercheurs sur 7 sites est de type
 \emph{plateforme} au sens ANR, c'est-à-dire qu'il implique déjà une large 
 communauté de chercheurs et d'utilisateurs très actifs, il est ouvert et 
 son fonctionnement est durable. Le projet est aidé à hauteur de 1,8 M\euro{}.
-%\footnote{\url{http://icps.u-strasbg.fr/people/genaud/public_html/draft/SONGS-document-B.pdf}}. 
 L'objectif est d'étendre et d'améliorer les capacités de l'outil de 
 simulation SimGrid en prenant en compte l'évolution des architectures 
 distribuées. Parmi les domaines visés, on compte les plates-formes de 
