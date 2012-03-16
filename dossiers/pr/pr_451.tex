@@ -645,9 +645,9 @@ incontournables dans le domaine. En comparaison des grilles, par nature
 hétérogènes, les clouds proposent des ressources de calcul provenant
 de clusters hébergés dans des \textit{data centers}, dont on peut décider 
 du type (CPU, quantité mémoire).  De plus, la virtualisation (cloud IaaS) 
-permet de rendre également la configuration logicielle homogène, en transportant 
-tout l'environnement logiciel dans la machine virtuelle exécutée chez le 
-fournisseur de ressources. C'est donc un nouveau type d'architecture, 
+permet de rendre également la configuration logicielle homogène, en 
+transportant tout l'environnement logiciel dans la machine virtuelle exécutée 
+chez le fournisseur de ressources. C'est donc un nouveau type d'architecture, 
 entre le cluster homogène et la grille hétérogène, qui s'offre à nous. 
 La disparition de l'hétérogénéité est un élément capital pour le succès
 de ce type de solution. On peut ainsi simplifier considérablement les 
@@ -703,7 +703,7 @@ clouds.
 
 \subsection*{Complémentarité des thèmes}
 
-%------------------------------------------------------------------------------80
+%------------------------------------------------------------------------------|80
 La diversité des besoins en terme de calcul, face à la diversité croissante des
 architectures de calcul parallèle ou distribué, m'incite à mener de front des 
 états de l'art sur ces deux thèmes. Je crois que l'équipe peut contribuer sur 
@@ -742,24 +742,25 @@ plates-formes, en intégrant, quand c'est possible, la dimension économique.
 Optimiser l'exploitation des ressources revêt plusieurs formes. J'ai commencé à
 travailler dans le cadre du projet ANR SPADES (2009-2011)%
 \footnote{\url{http://graal.ens-lyon.fr/SPADES/SPADES}}  
-sur un système permettant d'exploiter des tranches de temps réduites qui peuvent 
-apparaître de manière fugace sur des clusters. L'exploitation de ces tranches se
-faisant en mode non-prioritaire (ou \textit{best-effort}) on pourrait ainsi 
-augmenter le taux d'utilisation de ces clusters. Pour atteindre cet objectif, il 
-faut concevoir des intergiciels extrêmement réactifs, capables de localiser 
-rapidement sur un ensemble de clusters, les plages d'utilisation disponibles, 
-ainsi que la compatibilité du système avec les besoins de l'application. 
-Un deuxième travail démarré dans ce sens est l'étude de stratégies d'allocation
-puis d'ordonnancement \textit{online} de jobs séquentiels sur une ou plusieurs 
-plates-formes de type IaaS. L'utilisation des ressources dans ces centres étant 
-facturée par tranche de temps (typiquement toute heure entamée est due), de 
-nombreux jobs laissent des périodes de temps facturées mais non utilisées, qui 
-peuvent donc être utilisées gratuitement pour d'autres jobs. Une stratégie 
-d'allocation doit décider pour chaque job si une nouvelle machine virtuelle doit 
-être démarrée pour ce traitement ou si l'on peut réutiliser une machine virtuelle 
-déjà démarrée. On étudie dans ce contexte un problème bi-critère de performance 
-incluant le temps d'attente des jobs et le coût de l'ensemble des jobs. Ces 
-résultats ont été présentés dans la dernière édition de la conférence 
+sur un système permettant d'exploiter des tranches de temps réduites qui 
+peuvent apparaître de manière fugace sur des clusters. L'exploitation de ces 
+tranches se faisant en mode non-prioritaire (ou \textit{best-effort}) on 
+pourrait ainsi augmenter le taux d'utilisation de ces clusters. Pour atteindre 
+cet objectif, il faut concevoir des intergiciels extrêmement réactifs, capables 
+de localiser rapidement sur un ensemble de clusters, les plages d'utilisation 
+disponibles, ainsi que la compatibilité du système avec les besoins de 
+l'application. Un deuxième travail démarré dans ce sens est l'étude de 
+stratégies d'allocation puis d'ordonnancement \textit{online} de jobs 
+séquentiels sur une ou plusieurs plates-formes de type cloud IaaS. 
+L'utilisation des ressources dans ces centres étant facturée par tranche de 
+temps (typiquement toute heure entamée est due), de nombreux jobs laissent des 
+périodes de temps facturées mais non utilisées, qui peuvent donc être utilisées 
+gratuitement pour d'autres jobs. Une stratégie d'allocation doit décider pour 
+chaque job si une nouvelle machine virtuelle doit être démarrée pour ce 
+traitement ou si l'on peut réutiliser une machine virtuelle déjà démarrée. On 
+étudie dans ce contexte un problème bi-critère de performance incluant le temps 
+d'attente des jobs et le coût de l'ensemble des jobs. Ces résultats ont été 
+présentés à la dernière édition de la conférence 
 \href{http://www.thecloudcomputing.org/2011/}{CLOUD 2011}~\cite{icps-2011-225}.
 L'objectif à plus long terme est de construire un système de courtage permettant 
 de sélectionner, éventuellement auprès de différents fournisseurs, des machines 
@@ -772,12 +773,12 @@ virtuelles dont les capacités sont les mieux adaptées au besoin.
 L'équipe ICPS souhaite maintenir l'équilibre dans le développement de ses
 différents thèmes. Je suis convaincu qu'il faut couvrir tout le spectre du
 parallélisme pour avoir une bonne vision des solutions les plus appropriées
-aux différents type de besoins. Cette strategie me semble particulièrement
+aux différents types de besoins. Cette strategie me semble particulièrement
 importante dans un contexte où les technologies changent très vite. Certaines
-application qui nécessitaient un petit cluster il y a cinq ans peuvent utiliser
-une machine multi-c{\oe}urs aujourd'hui. Ce changement d'architecture cible 
-peut induire un changement quant au modèle de programmation ainsi que des 
-outils d'optimisation utilisables. C'est pourquoi il me semble important
+applications qui nécessitaient un petit cluster il y a cinq ans peuvent 
+utiliserune machine multi-c{\oe}urs aujourd'hui. Ce changement d'architecture 
+cible peut induire un changement quant au modèle de programmation ainsi que 
+des outils d'optimisation utilisables. C'est pourquoi il me semble important
 d'avoir au sein de l'équipe l'ensemble des visions et des compétences du
 parallélisme. J'ai par exemple entamé un travail~\cite{ketterlin11} avec 
 Alain Ketterlin, sur l'abstraction des schémas de communications des 
@@ -811,9 +812,15 @@ amené à avoir une grosse visibilité internationale.
 
 \bibitem{hdr}
 \textbf{Stéphane Genaud}.
-\newblock {\em Exécutions de programmes parallèles à passage de messages sur grille de calcul}.
-\newblock Habilitation à diriger des recherches de l'université Henri Poincaré, Nancy. Décembre 2009.
-\newblock Rapporteurs : C. Cérin (Paris 13), F. Desprez (INRIA Rhônes-Alpes), T. Priol (INRIA Bretagne-Atlantique).\\[2mm]
+\newblock 
+{\em Exécutions de programmes parallèles à passage de messages sur grille de 
+calcul}.
+\newblock 
+Habilitation à diriger des recherches de l'université Henri Poincaré, 
+Nancy. Décembre 2009.
+\newblock 
+Rapporteurs : C. Cérin (Paris 13), F. Desprez (INRIA Rhônes-Alpes), 
+T. Priol (INRIA Bretagne-Atlantique).\\[2mm]
 
 \bibitem{icps-1997-4}
 \textbf{Stéphane Genaud}.
@@ -826,9 +833,11 @@ amené à avoir une grosse visibilité internationale.
 
 \bibitem{icps-book}
 \textbf{Stéphane Genaud} et Choopan Rattanapoka.
-\newblock \emph{A Peer-to-Peer Framework for Message Passing Parallel Programs.}
-\newblock Parallel Programming and Applications in Grid, P2P and Network-based System,
-in {\em Advances In Parallel Computing} Series. Editor Prof. Dr. Gerhard R. Joubert.
+\newblock 
+\emph{A Peer-to-Peer Framework for Message Passing Parallel Programs.}
+\newblock 
+Parallel Programming and Applications in Grid, P2P and Network-based System,
+in {\em Advances In Parallel Computing} Series. Editor G. R. Joubert.
 IOS Press, juin 2009. 
  
 
@@ -848,12 +857,14 @@ IOS Press, juin 2009.
 \textbf{Stéphane Genaud}, Pierre Gançarski, Guillaume Latu, Alexandre Blansché, 
 Choopan Rattanapoka et Damien Vouriot. \newblock Exploitation of a parallel 
 clustering algorithm on commodity hardware with P2P-MPI.
-\newblock {\em The Journal of SuperComputing}, Springer, 43(1):21--41, jan. 2008.
+\newblock 
+{\em The Journal of SuperComputing}, Springer, 43(1):21--41, jan. 2008.
 
 
 \bibitem{icps-2007-182}
 \textbf{Stéphane Genaud} et Choopan Rattanapoka.
-\newblock P2P-MPI: A Peer-to-Peer Framework for Robust Execution of Message Passing Parallel Programs on Grids.
+\newblock P2P-MPI: A Peer-to-Peer Framework for Robust Execution of Message 
+Passing Parallel Programs on Grids.
 \newblock {\em Journal of Grid Computing}, Springer, 5(1):27--42, mai 2007.
 
 
@@ -866,7 +877,8 @@ clustering algorithm on commodity hardware with P2P-MPI.
 Marc Grunberg, \textbf{Stéphane Genaud} et Catherine Mongenet.
 \newblock Seismic ray-tracing and Earth mesh modeling on various parallel
   architectures.
-\newblock {\em The Journal of Supercomputing}, Kluwer, 29(1):27--44, juillet 2004.
+\newblock 
+{\em The Journal of Supercomputing}, Kluwer, 29(1):27--44, juillet 2004.
 
 
 \subsection*{Articles en revues nationales}
@@ -921,13 +933,18 @@ IEEE, déc. 2009.
 \bibitem{icps-2009-214}
 \textbf{Stéphane Genaud} and Choopan Rattanapoka.
 \newblock Evaluation of Replication and Fault Detection in P2P-MPI.
-\newblock {\em 6th IEEE International Workshop on Grid Computing (HPGC), IPDPS 2009}, mai 2009.
+\newblock 
+{\em 6th IEEE International Workshop on Grid Computing (HPGC), IPDPS 2009}, 
+mai 2009.
 \newblock \textit{(Papier invité)}.
 
 \bibitem{icps-2008-193}
 \textbf{Stéphane Genaud} and Choopan Rattanapoka. 
-\newblock Large-Scale Experiment of Co-allocation Strategies for Peer-to-Peer Supercomputing in P2P-MPI,
-\newblock {\em 5th IEEE International Workshop on Grid Computing (HPGC), IPDPS 2008}, avril 2008.
+\newblock Large-Scale Experiment of Co-allocation Strategies for Peer-to-Peer 
+Supercomputing in P2P-MPI,
+\newblock 
+{\em 5th IEEE International Workshop on Grid Computing (HPGC), IPDPS 2008}, 
+avril 2008.
 
 \bibitem{icps-2007-192}
 Ludovic Hablot and Olivier Glück and Jean-Christophe Mignot and \textbf{Stéphane Genaud} and Pascale Vicat-Blanc Primet.
@@ -938,7 +955,8 @@ Ludovic Hablot and Olivier Glück and Jean-Christophe Mignot and \textbf{Stépha
 \bibitem{icps-2007-185}
 \newblock \textbf{Stéphane Genaud} et Choopan Rattanapoka.
 \newblock Fault Management in {\pmpi}. 
-\newblock International Conference on {\em Grid and Pervasive Computing, (GPC 2007)}, LNCS, Springer, mai 2007.
+\newblock International Conference on {\em Grid and Pervasive Computing, 
+(GPC 2007)}, LNCS, Springer, mai 2007.
 \newblock \small{\textit{(papiers acceptés/soumis:56/217, taux: 25\%)}}
 %submitted papers: 217; accepted : 56 full papers, 12 oral-short papers;  acceptance rate: 25\%
 
@@ -946,13 +964,17 @@ Ludovic Hablot and Olivier Glück and Jean-Christophe Mignot and \textbf{Stépha
 \newblock \textbf{Stéphane Genaud}, Marc Grunberg et Catherine Mongenet.
 \newblock Experiments in running a scientific {MPI} Application on GRID'5000. 
 \newblock distingué par le \textsc{Intel} \textit{best paper award}.
-\newblock {\em 4th IEEE International Workshop on Grid Computing (HPGC), IPDPS 2007}, mars 2007.
+\newblock {\em 4th IEEE International Workshop on Grid Computing (HPGC), IPDPS 
+2007}, mars 2007.
 
 
 \bibitem{icps-2005-155}
 \textbf{Stéphane Genaud} et Choopan Rattanapoka.
-\newblock A Peer-to-peer Framework for Robust Execution of Message Passing Parallel Programs.
-\newblock In {\em EuroPVM/MPI 2005}, LNCS 3666, Springer-Verlag, pages 276--284, septembre 2005.
+\newblock A Peer-to-peer Framework for Robust Execution of Message Passing 
+Parallel Programs.
+\newblock 
+In {\em EuroPVM/MPI 2005}, LNCS 3666, Springer-Verlag, pages 276--284, 
+septembre 2005.
 \newblock \small{\textit{(papiers acceptés/soumis:61/126, taux: 48\%)}}
 
 
@@ -974,8 +996,8 @@ Romaric David, \textbf{Stéphane Genaud}, Arnaud Giersch, \'{E}ric Violard, et
   Benjamin Schwarz.
 \newblock Source-code transformations strategies to load-balance Grid
   applications.
-\newblock In {\em International Conference on Grid Computing - GRID'2002}, LNCS 2536,
-  pages 82--87. Springer-Verlag, novembre 2002.
+\newblock In {\em International Conference on Grid Computing - GRID'2002}, 
+LNCS 2536, pages 82--87. Springer-Verlag, novembre 2002.
 
 \bibitem{icps-2002-20}
 Marc Grunberg, \textbf{Stéphane Genaud}, et Catherine Mongenet.
@@ -1015,7 +1037,8 @@ Marc Grunberg et \textbf{Stéphane Genaud}.
 \bibitem{icps-1994-46}
 Guy-René Perrin, Eric Violard et \textbf{Stéphane Genaud}.
 \newblock \textsc{Pei} : a theoretical framework for data-parallel programming.
-\newblock In {\em Workshop on Data-Parallel Languages and Compilers}, Lille, mai 1994.
+\newblock In {\em Workshop on Data-Parallel Languages and Compilers}, Lille, 
+mai 1994.
 \vspace{3mm}
 
 
@@ -1032,13 +1055,14 @@ séquençage de novo et l'annotation fonctionnelle.
 
 \bibitem{ketterlin11}
 Alain Ketterlin, \textbf{Stéphane Genaud}, Matthieu Kuhn.
-\newblock Loop-Nest Recognition for the Extraction of Communication Patterns and
-the Compression of Message-Passing Parallel Traces.
+\newblock Loop-Nest Recognition for the Extraction of Communication Patterns 
+and the Compression of Message-Passing Parallel Traces.
 \newblock Research Report ICPS 11-01. Université de Strasbourg. déc. 2011.
 
 
 \bibitem{cds-2005}
-A. Schaaff, F. Bonnarel, J.-J. Claudon, R. David, \textbf{S. Genaud}, M. Louys, C. Pestel and C. Wolf, 
+A. Schaaff, F. Bonnarel, J.-J. Claudon, R. David, \textbf{S. Genaud}, M. Louys, 
+C. Pestel and C. Wolf.
 \newblock Work around distributed image processing and workflow management, 
 \newblock poster à ADASS 2005, Madrid.
 
