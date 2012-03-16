@@ -324,7 +324,7 @@ encadrements, et mes perspectives de recherches.
 \subsection{Détails des thèmes de recherche}
 
 
-\subsubsection{\textsc{Pei}}
+\subsubsection{Spécification de programmes data-parallèles}
 
 Ma thèse de doctorat \cite{icps-1997-4} a porté sur la définition et 
 l'utilisation d'un langage formel baptis\'e Pei~\footcite{Violard92}. Ce 
@@ -527,9 +527,277 @@ capturé la trace d'un programme réellement exécuté (avec des outils de
 profiling existants) et en injectant cette trace dans le simulateur.
 
 
+%------------- P R O J E T    R E C H E R C H E S --------------------
+\subsection{Programme de recherches au sein du LSIIT}
+
+\textit{%
+Mon projet pour la recherche s'inscrit naturellement dans la continuité et 
+l'évolution de mon activité actuelle au Laboratoire des Sciences de l'Image,
+de l'Informatique et de la Télé-détection (LSIIT), dans l'équipe Image et
+Calcul Parallèle Scientifique (ICPS). Je souhaite développer mes activités 
+de recherche dans ce laboratoire, et à partir de  2013 dans le laboratoire 
+Icube qui succèdera à l'actuel LSIIT.}\\
+
+Ma stratégie de développement comporte deux axes : un renforcement de 
+l'activité du thème \textit{applications} de l'équipe, et une extension
+du thème \textit{grilles} aux environnements de calcul basés sur 
+l'externalisation des ressources, c'est-à-dire les \emph{clouds}. Ces deux
+axes sont complémentaires.
 
 
-%----------------- P U B L I C A T I O N S ---------------------------
+\subsection*{Thème Applications}
+Les activités de l'équipe ICPS sont structurées en trois thèmes: 
+\begin{enumerate}
+\item la \textit{compilation et l'optimisation de programmes}, qui 
+cherche à exhiber du parallélisme qu'on peut mettre en {\oe}uvre à 
+l'intérieur d'une machine (par exemple sur des multi-c{\oe}urs),
+\item l'\textit{adaptation des programmes pour les grilles}, qui 
+étudie la mise en {\oe}uvre d'applications quand le parallélisme mobilise 
+plusieurs machines interconnectées, potentiellement hétérogènes (par 
+exemple une fédération de clusters à l'échelle nationale ou internationale), 
+\item les \textit{applications}, qui à travers l'étude de cas 
+applicatifs concrets dans le domaine scientifique, examine 
+l'apport du parallélisme pour améliorer les résultats scientifiques
+envisageables par simulation  numérique.
+\end{enumerate}
+
+Ce dernier thème permet à l'ICPS d'établir des collaborations multi-%
+disciplinaires et apporte des problématiques réelles aux deux autres 
+thèmes. Ces problèmes sont variés dans leur forme mais sont tous
+relatifs à la simulation numérique.
+La simulation numérique est un besoin crucial dans de nombreuses 
+disciplines scientifiques. L'augmentation théorique des capacités
+de calcul des ordinateurs ne répond que très partiellement aux
+exigences croissantes des utilisateurs. Ces derniers peuvent par
+exemple vouloir ajouter une dimension au problème, accroître la 
+résolution, ou simuler sur une période plus longue, etc. Répondre 
+à ces exigences demande d'exploiter au mieux les dispositifs 
+matériels à disposition dans le domaine du calcul intensif.
+Cette tâche est difficile étant donné la diversité et la complexité
+du matériel et des couches système. On est aujourd'hui réduit à examiner 
+une application comme un cas particulier, pour lequel on ne sait souvent
+pas prédire quelles configurations matérielles et logicielles vont 
+permettrent les meilleures performances : on doit évaluer l'impact de
+différent modèles de programmation, du nombre de c{\oe}urs par CPU,
+du réseau d'interconnexion entre CPU et mémoire, évaluer l'opportunité
+d'utiliser des GPU, faire de la vectorisation (SSE), etc.\\
+
+%-----------------------------------------------------------------------------|80
+Les exigences des applications de calcul intensif sont un moteur indéniable
+pour la recherche en parallélisme. Les problèmes posés déclenchent une 
+réflexion sur les modèles de programmation, sur les outils automatiques
+d'analyse de code et les méthode de compilation, sur les intergiciels 
+pour coordonner l'exécution distribuée des processus ou la gestion des pannes, 
+sur l'architecture, sur les méthodes numériques. Les deux derniers domaines ne
+ sont pas à proprement parler dans notre champ de compétence mais doivent
+être maîtrisés, par exemple à travers des collaborations avec des 
+spécialistes. Le travail que j'ai mené pour des applications en géophysique 
+m'a ainsi beaucoup appris. Le code développé a souvent servi d'exemple dans
+la communauté travaillant sur Grid'5000 pour évaluer des solutions proposées
+pour des environnements de type grilles~\footcite{Cappello07}.  \\
+
+Aujourd'hui, je compte poursuivre ce travail interdisciplinaire, à travers 
+une collaboration avec Guillaume Latu, ancien membre de l'équipe ICPS, 
+maintenant employé au CEA Cadarache. Nous co-encadrons depuis février 2011 un 
+doctorant, Matthieu Kuhn, avec Nicolas Crouseille chargé de recherches en 
+mathématiques appliquées dans l'équipe CalVi\footnote{L'équipe-projet CalVi
+est bi-localisée entre Strasbourg et Nancy.  Nos collaborateurs directs font 
+partie du laboratoire de mathématiques IRMA (UMR 7501 CNRS-UdS).}, pour 
+paralléliser un code de physique de plasmas de bords. Ce travail renforce une 
+collaboration de longue date (depuis 2002) entre l'ICPS et CalVi. Cette 
+collaboration a été à l'origine de notre association à la proposition de LabEx 
+avec l'IRMA. Ce LabEx a été obtenu en février 2012, et va donc permettre de 
+renforcer de manière significative ces travaux interdisciplinaires, notamment 
+à travers des thèses co-encadrées. Nous souhaitons également recruter un 
+permanent sur ce thème. Un poste de CR2 CNRS ayant été fléché pour recruter
+un informaticien dans un laboratoire de mathématiques, nous avons travaillé
+en concertation avec l'IRMA pour porter un dossier de candidature calibré 
+pour ces besoins à ce concours.\\  
+
+%-----------------------------------------------------------------------------|80
+
+Je compte également démarrer de nouvelles collaborations, comme celle avec 
+l'institut pluridisciplinaire Hubert Curien (UMR 7178, CNRS-IN2P3-INC-INEE, UdS) 
+dans le domaine de la protéomique (Alain Van Dorsselaer). Après une première 
+analyse des besoins en protéomique, nous pensons devoir concentrer la plupart 
+de nos efforts sur le couplage entre calculs et données, avec le plus souvent 
+des calculs très nombreux mais indépendants, et utilisant de grandes bases de 
+données dont le contenu est mis à jour presque quotidiennement. Les 
+environnements de grille sont appropriés à ce type de travail, étant donné les
+capacités de calcul qu'offrent l'organisation virtuelle BioMed (sous-ensemble
+des ressources de la grille européenne EGI). Cette collaboration est importante
+pour les protéomistes Strasbourgeois qui ont obtenu la responsabilité de
+co-développer (avec deux autres centres) la plate-forme ProFI\footnote{\url{%
+http://bit.ly/eXXCOR}}, sélectionnée dans l'appel à projets ``Infrastructures 
+nationales de recherche en  biologie''. Trois étudiants sont en stage depuis
+février 2012 pour apporter des améliorations à la plate-forme développée à
+l'IPHC~\cite{iphc-2011} ou faire un état de l'art des technologies de cloud
+et tester leur introduction dans cet environnement de production.
+ 
+
+
+
+\subsection*{Thème Grilles et Clouds}
+
+A mon retour au LSIIT en septembre 2009, j'ai infléchi l'orientation de 
+mes recherches vers les problématiques de \emph{cloud} qui me semblent 
+incontournables dans le domaine. En comparaison des grilles, par nature
+hétérogènes, les clouds proposent des ressources de calcul provenant
+de clusters hébergés dans des \textit{data centers}, dont on peut décider 
+du type (CPU, quantité mémoire).  De plus, la virtualisation (cloud IaaS) 
+permet de rendre également la configuration logicielle homogène, en transportant 
+tout l'environnement logiciel dans la machine virtuelle exécutée chez le 
+fournisseur de ressources. C'est donc un nouveau type d'architecture, 
+entre le cluster homogène et la grille hétérogène, qui s'offre à nous. 
+La disparition de l'hétérogénéité est un élément capital pour le succès
+de ce type de solution. On peut ainsi simplifier considérablement les 
+intergiciels comparativement à ceux utilisés traditionnellement dans les 
+grilles. Cependant, les problématiques fondamentales des grilles, à
+savoir l'allocation des ressources, l'ordonnancement des calculs et des
+données, la tolérance aux pannes, demeurent mais doivent être revues 
+dans ce contexte.
+D'un point de vue économique, les fournisseurs de cloud proposent 
+généralement une facturation proportionnelle au temps d'utilisation 
+uniquement, ce qui rend cette solution très attractive car supprimant
+totalement le coût de possession des matériels. Les économies d'échelle
+réalisées grâce à la virtualisation et à la taille des \textit{data centers}
+permettent par ailleurs aux fournisseurs de proposer des prix très 
+compétitifs.  On assiste aujourd'hui à une multitude de projets visant 
+à évaluer la viabilité de cette approche, en particulier dans le calcul 
+scientifique. Par exemple, dès 2009, le département de l'énergie américain 
+a (DOE) décidé de financer le projet Magellan%
+\footnote{\url{http://www.nersc.gov/nusers/systems/magellan/}},
+infrastructure de 5000 coeurs exploitée sous la forme d'un cloud
+ouvert à 3000 scientifiques pour tester un large éventail 
+d'applications scientifiques. Je crois qu'une expérimentation comparable
+serait profitable pour le méso-centre de calcul de l'université de
+Strasbourg, amené à jouer un rôle important après le succès de sa 
+proposition d'Equipex. Nos relations privilégiées avec ce centre (Romaric 
+David) encouragent un tel projet.\\
+
+Faire émerger un thème de recherche nécessite cependant un investissement 
+sur plusieurs années. Avec Julien Gossa, maître de conférences, nous avons 
+initié de nombreuses démarches pour nous établir dans notre environnement 
+local et national, afin d'être en position de travailler à des projets
+de visibilité internationale. 
+
+Au niveau local, la présence de ce thème dans nos enseignements a permis de 
+recruter un étudiant de master en stage de recherche, puis en thèse en
+octobre 2011 sur un financement DGA.
+
+Au niveau national, nous avons contribué à la proposition de projet ANR 
+baptisée SONGS, continuant le projet USS-SimGrid (voir section~%
+\ref{sc:simulation}). Notre proposition a été acceptée et SONGS a démarré 
+début 2012. Ce projet qui implique 19 chercheurs sur 7 sites est de type 
+\emph{plateforme} au sens ANR, c'est-à-dire qu'il implique déjà une large 
+communauté de chercheurs et d'utilisateurs très actifs, il est ouvert et 
+son fonctionnement est durable. Le projet est aidé à hauteur de 1,8 M\euro{}.
+L'objectif est d'étendre et d'améliorer les capacités de l'outil de 
+simulation SimGrid en prenant en compte l'évolution des architectures 
+distribuées. Parmi les domaines visés, on compte les plates-formes de 
+\emph{volunteer computing}, les grilles de production, le HPC, et les 
+clouds IaaS. Dans ce projet, je suis pour le LSIIT le responsable 
+scientifique (porteur local) d'un work package sur la simulation des 
+clouds.
+
+
+\subsection*{Complémentarité des thèmes}
+
+%------------------------------------------------------------------------------80
+La diversité des besoins en terme de calcul, face à la diversité croissante des
+architectures de calcul parallèle ou distribué, m'incite à mener de front des 
+états de l'art sur ces deux thèmes. Je crois que l'équipe peut contribuer sur 
+deux aspects: la performance des applications et la gestion des ressources.\\
+
+Nous avons parlé de la performance dans le thème applicatif, qui nécessite une 
+coopération étroite entre les chercheurs du domaine et les chercheurs 
+expérimentés en parallélisme, ces derniers pouvant apporter des méthodes 
+applicables directement au problème. Parmi ces méthodes, du ressort de la 
+recherche en informatique, on compte l'analyse (par exemple de trace, de 
+complexité, la visualisation), la parallélisation et l'optimisation automatique, 
+l'expérimentation et la simulation.\\
+
+
+La gestion des ressources nécessite de construire des environnements logiciels 
+de type intergiciel, capables de recenser, sélectionner, configurer des 
+ressources adaptées pour une application à un moment donné. Nous avons évoqué 
+l'évolution des équipements de calcul vers plus de complexité. Les machines 
+individuelles voient leur puissance de calcul continuer de croître grâce à 
+l'augmentation du nombre de c{\oe}urs, tandis que l'accès à des équipements 
+de calcul de type cluster est facilité car ils sont de plus en plus nombreux~%
+\footcite{Wu09} avec une  meilleure connectivité réseau. Certaines applications 
+pourront être avantageusement prises en charge par une seule machine multi-%
+c{\oe}urs, tandis que d'autres tireront plus de profit d'un petit laps de temps,  
+éventuellement en mode \textit{best-effort}, accordé sur un cluster avec beaucoup 
+de processeurs. Enfin, la nouvelle voie ouverte par les clouds IaaS permet 
+d'envisager d'embarquer l'application  dans une image de machine virtuelle 
+pour l'exécuter sur des ressources de calcul externalisées. \\
+
+%------------------------------------------------------------------------------|80
+Choisir la bonne plate-forme d'exécution est donc un problème à part entière.
+Cette problématique est au centre de mon projet de recherches au LSIIT. De 
+manière générale, je souhaite étudier les capacités des différents types de 
+plates-formes, en intégrant, quand c'est possible, la dimension économique.
+
+Optimiser l'exploitation des ressources revêt plusieurs formes. J'ai commencé à
+travailler dans le cadre du projet ANR SPADES (2009-2011)%
+\footnote{\url{http://graal.ens-lyon.fr/SPADES/SPADES}}  
+sur un système permettant d'exploiter des tranches de temps réduites qui peuvent 
+apparaître de manière fugace sur des clusters. L'exploitation de ces tranches se
+faisant en mode non-prioritaire (ou \textit{best-effort}) on pourrait ainsi 
+augmenter le taux d'utilisation de ces clusters. Pour atteindre cet objectif, il 
+faut concevoir des intergiciels extrêmement réactifs, capables de localiser 
+rapidement sur un ensemble de clusters, les plages d'utilisation disponibles, 
+ainsi que la compatibilité du système avec les besoins de l'application. 
+Un deuxième travail démarré dans ce sens est l'étude de stratégies d'allocation
+puis d'ordonnancement \textit{online} de jobs séquentiels sur une ou plusieurs 
+plates-formes de type IaaS. L'utilisation des ressources dans ces centres étant 
+facturée par tranche de temps (typiquement toute heure entamée est due), de 
+nombreux jobs laissent des périodes de temps facturées mais non utilisées, qui 
+peuvent donc être utilisées gratuitement pour d'autres jobs. Une stratégie 
+d'allocation doit décider pour chaque job si une nouvelle machine virtuelle doit 
+être démarrée pour ce traitement ou si l'on peut réutiliser une machine virtuelle 
+déjà démarrée. On étudie dans ce contexte un problème bi-critère de performance 
+incluant le temps d'attente des jobs et le coût de l'ensemble des jobs. Ces 
+résultats ont été présentés dans la dernière édition de la conférence 
+\href{http://www.thecloudcomputing.org/2011/}{CLOUD 2011}~\cite{icps-2011-225}.
+L'objectif à plus long terme est de construire un système de courtage permettant 
+de sélectionner, éventuellement auprès de différents fournisseurs, des machines 
+virtuelles dont les capacités sont les mieux adaptées au besoin.
+
+
+\subsection*{Conclusion}
+
+%------------------------------------------------------------------------------|80
+L'équipe ICPS souhaite maintenir l'équilibre dans le développement de ses
+différents thèmes. Je suis convaincu qu'il faut couvrir tout le spectre du
+parallélisme pour avoir une bonne vision des solutions les plus appropriées
+aux différents type de besoins. Cette strategie me semble particulièrement
+importante dans un contexte où les technologies changent très vite. Certaines
+application qui nécessitaient un petit cluster il y a cinq ans peuvent utiliser
+une machine multi-c{\oe}urs aujourd'hui. Ce changement d'architecture cible 
+peut induire un changement quant au modèle de programmation ainsi que des 
+outils d'optimisation utilisables. C'est pourquoi il me semble important
+d'avoir au sein de l'équipe l'ensemble des visions et des compétences du
+parallélisme. J'ai par exemple entamé un travail~\cite{ketterlin11} avec 
+Alain Ketterlin, sur l'abstraction des schémas de communications des 
+programmes MPI. Ce travail basé sur la reconnaissance de répétitions 
+linéaires s'appuye sur des résultats obtenus initialement pour l'analyse des 
+accès mémoire, menés dans le thème compilation et optimisation de programmes.
+
+En conclusion, je pense qu'un poste de professeur dans l'équipe ICPS amènerait
+une accélération du développement du thèmes grilles et clouds, ce statut
+ayant une plus grande reconnaissance au pan national ou international. 
+Je souhaite également contribuer au développement du thème applications,
+avec l'espoir de pouvoir recruter un spécialiste à l'interface dans le 
+moyen terme. Je pense pouvoir faire  béneficier le laboratoire et l'équipe, de 
+ma connaissance de l'environnement local, importante pour les collaborations en 
+cours ou à venir, et de mon intégration dans la communauté de recherche des
+grilles ou du HPC, avec en particulier le travail fait dans le projet SONGS
+amené à avoir une grosse visibilité internationale.
+
+
+%------------------------ P U B L I C A T I O N S -----------------------------|
 \newpage
 
 \subsection{Liste de publications}
@@ -760,6 +1028,14 @@ Bertile, \textbf{Stéphane Genaud}, Alain Van Dorsselaer, Christelle Roy.
 calcul. Utilisation d'algorithmes libres pour l'identification MS/MS, le 
 séquençage de novo et l'annotation fonctionnelle.
 \newblock Rencontres Scientifiques France Grilles 2011, Lyon.
+
+
+\bibitem{ketterlin11}
+Alain Ketterlin, \textbf{Stéphane Genaud}, Matthieu Kuhn.
+\newblock Loop-Nest Recognition for the Extraction of Communication Patterns and
+the Compression of Message-Passing Parallel Traces.
+\newblock Research Report ICPS 11-01. Université de Strasbourg. déc. 2011.
+
 
 \bibitem{cds-2005}
 A. Schaaff, F. Bonnarel, J.-J. Claudon, R. David, \textbf{S. Genaud}, M. Louys, C. Pestel and C. Wolf, 
@@ -1137,233 +1413,6 @@ Ghazi Bouabene, stage licence, juin-août 2005.
 \end{center}
 
 
-%------------- P R O J E T    R E C H E R C H E S --------------------
-\section{Programme de recherches au sein du LSIIT}
-
-\textit{%
-Mon projet pour la recherche s'inscrit naturellement dans la continuité et 
-l'évolution de mon activité actuelle au Laboratoire des Sciences de l'Image,
-de l'Informatique et de la Télé-détection (LSIIT), dans l'équipe Image et
-Calcul Parallèle Scientifique (ICPS). Je souhaite développer mes activités 
-de recherche dans ce laboratoire, et à partir de  2013 dans le laboratoire 
-Icube qui succèdera à l'actuel LSIIT.}\\
-
-Ma stratégie de développement comporte deux axes : un renforcement de 
-l'activité du thème \textit{applications} de l'équipe, et une extension
-du thème \textit{grilles} aux environnements de calcul basés sur 
-l'externalisation des ressources, c'est-à-dire les \emph{clouds}. Ces deux
-axes sont complémentaires.
-
-
-\subsection*{Thème Applications}
-Les activités de l'équipe ICPS sont structurées en trois thèmes: 
-\begin{enumerate}
-\item la \textit{compilation et l'optimisation de programmes}, qui 
-cherche à exhiber du parallélisme qu'on peut mettre en {\oe}uvre à 
-l'intérieur d'une machine (par exemple sur des multi-c{\oe}urs),
-\item l'\textit{adaptation des programmes pour les grilles}, qui 
-étudie la mise en {\oe}uvre d'applications quand le parallélisme mobilise 
-plusieurs machines interconnectées, potentiellement hétérogènes (par 
-exemple une fédération de clusters à l'échelle nationale ou internationale), 
-\item les \textit{applications}, qui à travers l'étude de cas 
-applicatifs concrets dans le domaine scientifique, examine 
-l'apport du parallélisme pour améliorer les résultats scientifiques
-envisageables par simulation numérique.
-\end{enumerate}
-
-Ce dernier thème permet à l'ICPS d'établir des collaborations multi-%
-disciplinaires et apporte des problématiques réelles aux deux autres 
-thèmes. Ces problèmes sont variés dans leur forme mais sont tous
-relatifs à la simulation numérique.
-La simulation numérique est un besoin crucial dans de nombreuses 
-disciplines scientifiques. L'augmentation théorique des capacités
-de calcul des ordinateurs ne répond que très partiellement aux
-exigences croissantes des utilisateurs. Ces derniers peuvent par
-exemple vouloir ajouter une dimension au problème, accroître la 
-résolution, ou simuler sur une période plus longue, etc. Répondre 
-à ces exigences demande d'exploiter au mieux les dispositifs 
-matériels à disposition dans le domaine du calcul intensif.
-Cette tâche est difficile étant donné la diversité et la complexité
-du matériel et des couches système. On est aujourd'hui réduit à examiner 
-une application comme un cas particulier, pour lequel on ne sait souvent
-pas prédire quelles configurations matérielles et logicielles vont 
-permettrent les meilleures performances : on doit évaluer l'impact de
-différent modèles de programmation, du nombre de c{\oe}urs par CPU,
-du réseau d'interconnexion entre CPU et mémoire, évaluer l'opportunité
-d'utiliser des GPU, faire de la vectorisation (SSE), etc.\\
-
-Les exigences des applications de calcul intensif sont un moteur indéniable
-pour la recherche en parallélisme. Les problèmes posés déclenchent une 
-réflexion sur les modèles de programmation, sur les outils automatiques
-d'analyse de code et les méthode de compilation, sur les intergiciels 
-pour coordonner l'exécution distribuée des processus ou la gestion des pannes, 
-sur l'architecture, sur les méthodes numériques. Les deux derniers domaines ne
- sont pas à proprement parler dans notre champ de compétence mais doivent
-être maîtrisés, par exemple à travers des collaborations avec des 
-spécialistes. Le travail que j'ai mené pour des applications en géophysique 
-m'a ainsi beaucoup appris. Le code développé a souvent servi d'exemple dans
-la communauté travaillant sur Grid'5000 pour évaluer des solutions proposées
-pour des environnements de type grilles~\footcite{Cappello07}. \\
-
-Aujourd'hui, je compte poursuivre ce travail interdisciplinaire, à travers une 
-collaboration avec Guillaume Latu, ancien membre de l'équipe ICPS, maintenant 
-employé au CEA Cadarache. Nous commençons le co-encadrement d'un étudiant 
-avec Nicolas Crouseille, chargé de recherche dans l'équipe INRIA Calvi%
-\footnote{L'équipe-projet CALVI est bi-localisée entre Strasbourg et Nancy.
-Nos collaborateurs directs font partie du laboratoire de mathématiques IRMA 
-(UMR 7501 CNRS-UdS).}, pour paralléliser un 
-code de physique de plasmas de bords. Ce travail renforce une collaboration 
-de longue date (depuis 2002) entre l'ICPS et CALVI. Cette collaboration a été
-un argument pour insérer l'ICPS dans une proposition de Labex portée par l'IRMA.
-
-Je compte également démarrer de nouvelles collaborations, comme celle
-avec l'institut pluridisciplinaire Hubert Curien (UMR 7178, CNRS-IN2P3-INC-INEE, UdS) 
-dans le domaine de la protéomique (Alain Van Dorsselaer). Après une première 
-analyse des besoins en protéomique, nous pensons devoir concentrer la plupart de
-nos efforts sur le couplage entre calculs et données, avec le plus souvent des
-calculs innombrables mais indépendants. Les environnements de grille seraient 
-alors appropriés à ce type de travail. Pour asseoir cette collaboration, nous 
-présentons des candidats informaticiens au concours de chargé de recherche CNRS 
-sur un poste en section 16 (chimie) fléché protéomique et traitement des données.
-Notre collaboration sera soutenue par la plate-forme ProFI%
-\footnote{\url{http://bit.ly/eXXCOR}}
-sélectionnée dans l'appel à projets ``Infrastructures nationales de recherche 
-en  biologie'', dont l'IPHC est l'un des trois partenaires.
-
-
-
-\subsection*{Thème Grilles et Clouds}
-
-A mon retour au LSIIT en septembre 2009, j'ai infléchi l'orientation de 
-mes recherches vers les problématiques de \emph{cloud} qui me semblent 
-incontournables dans le domaine. En comparaison des grilles, par nature
-hétérogènes, les clouds proposent des ressources de calcul provenant
-de clusters hébergés dans des \textit{data centers}, dont on peut décider 
-du type (CPU, quantité mémoire).  De plus, la virtualisation (cloud IaaS) 
-permet de rendre également la configuration logicielle homogène, en transportant 
-tout l'environnement logiciel dans la machine virtuelle exécutée chez le 
-fournisseur de ressources. C'est donc un nouveau type d'architecture, 
-entre le cluster homogène et la grille hétérogène, qui s'offre à nous. 
-La disparition de l'hétérogénéité est un élément capital pour le succès
-de ce type de solution. On peut ainsi simplifier considérablement les 
-intergiciels comparativement à ceux utilisés traditionnellement dans les 
-grilles. Cependant, les problématiques fondamentales des grilles, à
-savoir l'allocation des ressources, l'ordonnancement des calculs et des
-données, la tolérance aux pannes, demeurent mais doivent être revues 
-dans ce contexte.
-D'un point de vue économique, les fournisseurs de cloud proposent 
-généralement une facturation proportionnelle au temps d'utilisation 
-uniquement, ce qui rend cette solution très attractive car supprimant
-totalement le coût de possession des matériels. Les économies d'échelle
-réalisées grâce à la virtualisation et à la taille des \textit{data centers}
-permettent par ailleurs aux fournisseurs de proposer des prix très 
-compétitifs.  On assiste aujourd'hui à une multitude de projets visant 
-à évaluer la viabilité de cette approche, en particulier dans le calcul 
-scientifique. Par exemple, dès 2009, le département de l'énergie américain 
-a (DOE) décidé de financer le projet Magellan%
-\footnote{\url{http://www.nersc.gov/nusers/systems/magellan/}},
-infrastructure de 5000 coeurs exploitée sous la forme d'un cloud
-ouvert à 3000 scientifiques pour tester un large éventail 
-d'applications scientifiques. Je crois qu'une expérimentation comparable
-serait profitable pour le méso-centre de calcul de l'université de
-Strasbourg, amené à jouer un rôle important après le succès de sa 
-proposition d'Equipex. Nos relations privilégiées avec ce centre (Romaric 
-David) encouragent un tel projet.\\
-
-Faire émerger un thème de recherche nécessite cependant un investissement 
-sur plusieurs années. Avec Julien Gossa, maître de conférences, nous avons 
-initié de nombreuses démarches pour nous établir dans notre environnement 
-local et national, afin d'être en position de travailler à des projets
-de visibilité internationale. 
-
-Au niveau local, la présence de ce thème dans nos enseignements a permis de 
-recruter un étudiant de master en stage de recherche, puis de le recruter en
-thèse sur un financement obtenu auprès de la DGA depuis octobre.
-
-Au niveau national, nous avons contribué à la proposition de projet ANR 
-baptisée SONGS, continuant le projet USS-SimGrid (voir section~%
-\ref{sc:simulation}). Notre proposition a été acceptée et SONGS a démarré 
-début 2012. Ce projet qui implique 19 chercheurs sur 7 sites est de type 
-\emph{plateforme} au sens ANR, c'est-à-dire qu'il implique déjà une large 
-communauté de chercheurs et d'utilisateurs très actifs, il est ouvert et 
-son fonctionnement est durable. Le projet est aidé à hauteur de 1,8 M\euro{}.
-L'objectif est d'étendre et d'améliorer les capacités de l'outil de 
-simulation SimGrid en prenant en compte l'évolution des architectures 
-distribuées. Parmi les domaines visés, on compte les plates-formes de 
-\emph{volunteer computing}, les grilles de production, le HPC, et les 
-clouds IaaS. Dans ce projet, je suis pour le LSIIT le responsable 
-scientifique (porteur local) d'un work package sur la simulation des clouds.
-
-
-\subsection*{Complémentarité des thèmes}
-
-%------------------------------------------------------------------------------80
-La diversité des besoins en terme de calcul, face à la diversité croissante des
-architectures de calcul parallèle ou distribué, m'incite à 
-mener de front des états de l'art sur ces deux thèmes. Je crois que l'équipe 
-peut contribuer sur deux aspects: la performance des applications et la 
-gestion des ressources.\\
-
-Nous avons parlé de la performance dans le thème applicatif, qui nécessite une 
-coopération étroite entre les chercheurs du domaine et les chercheurs 
-expérimentés en parallélisme, ces derniers pouvant apporter des méthodes 
-applicables directement au problème. Parmi ces méthodes, du ressort de la 
-recherche en informatique, on compte l'analyse (par exemple de trace, de 
-complexité, la visualisation), la parallélisation et l'optimisation automatique, 
-l'expérimentation et la simulation.\\
-
-
-La gestion des ressources nécessite de construire des environnements logiciels 
-de type intergiciel, capables de recenser, sélectionner, configurer des 
-ressources adaptées pour une application à un moment donné. Nous avons évoqué 
-l'évolution des équipements de calcul vers plus de complexité. Les machines 
-individuelles voient leur puissance de calcul continuer de croître grâce à 
-l'augmentation du nombre de c{\oe}urs, tandis que l'accès à des équipements 
-de calcul de type cluster est facilité car ils sont de plus en plus nombreux~%
-\footcite{Wu09} avec une  meilleure connectivité réseau.  Certaines applications 
-pourront être avantageusement prises en charge par une seule machine multi-%
-c{\oe}urs, tandis que d'autres tireront plus de profit d'un petit laps de temps,  
-éventuellement en mode \textit{best-effort}, accordé sur un cluster avec beaucoup 
-de processeurs. Enfin, la nouvelle voie ouverte par les clouds IaaS permet 
-d'envisager d'embarquer l'application  dans une image de machine virtuelle 
-pour l'exécuter sur des ressources de calcul externalisées. \\
-
-%------------------------------------------------------------------------------80
-Choisir la bonne plate-forme d'exécution est donc un problème à part entière.
-Cette problématique est au centre de mon projet de recherches au LSIIT. De 
-manière générale, je souhaite étudier les capacités des différents types de 
-plates-formes, en intégrant, quand c'est possible, la dimension économique.
-
-Optimiser l'exploitation des ressources revêt plusieurs formes. J'ai commencé à
-travailler dans le cadre du projet ANR SPADES (2009-2011)%
-\footnote{\url{http://graal.ens-lyon.fr/SPADES/SPADES}}  
-sur un système permettant d'exploiter des tranches de temps réduites qui peuvent 
-apparaître de manière fugace sur des clusters. L'exploitation de ces tranches se
-faisant en mode non-prioritaire (ou \textit{best-effort}) on pourrait ainsi 
-augmenter le taux d'utilisation de ces clusters. Pour atteindre cet objectif, il 
-faut concevoir des intergiciels extrêmement réactifs, capables de localiser 
-rapidement sur un ensemble de clusters, les plages d'utilisation disponibles, 
-ainsi que la compatibilité du système avec les besoins de l'application. 
-Un deuxième travail démarré dans ce sens est l'étude de stratégies d'allocation
-puis d'ordonnancement \textit{online} de jobs séquentiels sur une ou plusieurs 
-plates-formes de type IaaS. L'utilisation des ressources dans ces centres étant 
-facturée par tranche de temps (typiquement toute heure entamée est due), de 
-nombreux jobs laissent des périodes de temps facturées mais non utilisées, qui 
-peuvent donc être utilisées gratuitement pour d'autres jobs. Une stratégie 
-d'allocation doit décider pour chaque job si une nouvelle machine virtuelle doit 
-être démarrée pour ce traitement ou si l'on peut réutiliser une machine virtuelle 
-déjà démarrée. On étudie dans ce contexte un problème bi-critère de performance 
-incluant le temps d'attente des jobs et le coût de l'ensemble des jobs. 
-Nous présenterons nos premiers résultats dans une communication~\cite{icps-2011-225} 
-faite à la conférence \href{http://www.thecloudcomputing.org/2011/}{CLOUD 2011} en juillet.
-L'objectif à plus long terme est de construire un système de courtage permettant 
-de sélectionner, éventuellement auprès de différents fournisseurs, des machines 
-virtuelles de capacités éventuellement différentes.
-
-
-
-
-
 
 %-------------------------------- E N S G N T  ---------------------------------------------
 \newpage
@@ -1702,7 +1751,7 @@ Par conséquent, mon projet vise à actionner le second levier à travers l'%
 
 %-----------------------------------------------------------------------------|80
 
-\subsection{Relations avec le monde professionnel}
+\subsubsection{Relations avec le monde professionnel}
 
 Des actions sur le moyen terme pourraient jouer en faveur d'une communication 
 plus développée avec le monde professionnel. En particulier, l'outil de CRM 
@@ -1733,7 +1782,7 @@ pour les formations classiques, notamment celles plus orientées vers la recherc
 Une piste est de construire un ou des masters recrutant à l'international.
 
 
-\subsection{Internationalisation}
+\subsubsection{Internationalisation}
 
 %-----------------------------------------------------------------------------|80
 Les étudiants étrangers représentent 20\%\footnote{Dont 47\% en doctorat, 31\% 
@@ -1786,10 +1835,10 @@ formation conjointe à plusieurs établissements européens, ouverte à des
 candidats du monde entier, qui doivent passer leur scolarité sur au moins
 deux des sites partenaires. Elle assure un fort taux de selectivité par
 un recrutement au niveau mondial. Cependant, c'est aussi la solution la
-la plus incertaine en raison de la sélection des dossiers et la plus longue
-car un des critères d'éligibilité est la pré-existence de collaborations
-entre les établissements partenaires. La troisième solution semble 
-plus simple à mettre en place. C'est ce qu'à fait Grenoble avec la déclinaison 
+plus incertaine en raison de la forte sélectivité, et la plus longue car 
+un des critères d'éligibilité est la pré-existence de collaborations
+entre les établissements partenaires. La troisième solution semble plus 
+simple à mettre en place. C'est ce qu'à fait Grenoble avec la déclinaison 
 de son master 2 recherche en deux parcours%
 \footnote{\url{http://ufrima.imag.fr/spip.php?rubrique94}} enseigné en 
 français, l'autre en anglais. Le parcours en anglais, 
@@ -1800,15 +1849,14 @@ français, l'autre en anglais. Le parcours en anglais,
 
 \subsection*{Conclusion}
 
-
 Je serais donc heureux de pouvoir initier ou participer au montage de tels
 programmes internationaux, en faisant bénéficier le département de mon 
 expérience de l'EM Strasbourg, qui a developpé un réseau extrêmement large
-d'Universités partenaires à l'étranger. Le paysage de l'offre dans l'enseignement 
-supérieur est actuellement en pleine restructuration, en France mais aussi 
-chez nos voisins, avec la formation de réseaux d'excellence dont l'Université 
-de Strasbourg a vocation à faire partie. C'est donc une période d'opportunités
-qu'il ne faut pas manquer de saisir.
+d'Universités partenaires à l'étranger. Le paysage de l'offre dans 
+l'enseignement supérieur est actuellement en pleine restructuration, en 
+France mais aussi chez nos voisins, avec la formation de réseaux d'excellence 
+dont l'Université de Strasbourg a vocation à faire partie. C'est donc une 
+période d'opportunités qu'il ne faut pas manquer de saisir.
 
 
 
@@ -1900,7 +1948,6 @@ Marc Grunberg, \textbf{Stéphane Genaud} et Catherine Mongenet.\\
 {\em The Journal of Supercomputing}, Kluwer, 29(1):27--44, juillet 2004.\\
 \end{enumerate}
 
-%@@@
 \end{document}
 \includepdf[pages=1-18]{../mypapers/Seismic-raytracing_JSC04.pdf}
 %\includepdf[pages=1-8]{../mypapers/Mesh_coarsening_SBAC-PAD-04.pdf}
