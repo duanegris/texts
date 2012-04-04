@@ -9,7 +9,7 @@
 <!-- metadata -->
 <meta name="generator" content="S5" />
 <meta name="version" content="S5 1.1" />
-<meta name="presdate" content="20090128" />
+<meta name="presdate" content="20120404" />
 <meta name="author" content="S. Genaud" />
 <meta name="company" content="Université de Strasbourg" />
 <!-- configuration parameters -->
@@ -84,7 +84,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 <div id="currentSlide"><!-- DO NOT EDIT --></div>
 <div id="header"></div>
 <div id="footer">
-<h1>Novembre &#8226; 2009</h1>
+<h1>Novembre &#8226; 2011</h1>
 <h2>Les Grilles Informatiques</h2>
 </div>
 </div>
@@ -95,24 +95,6 @@ td.list    { background-color : #eee59a; margin : 3px;
 <h1>Les Grilles informatiques</h1>
 <h2>Partie 1: introduction</h2>
 <h4><a href="http://icps.u-strasbg.fr/~genaud">Stéphane Genaud</a></h4>
-</div>
-
-
-<div class="slide">
-<h1>Introduction</h1>
- <ul>
-	   <li> Qu'est ce qu'une Grille ?
-	   <ul>
-		     <li>Le rêve</li>
-		     <li>La réalité: les différentes "grilles"</li>
-		     <li>Le dénominateur commun des grilles</li>
-	   </ul>
-	   </li>
-	   
-	   <li> Services que doit proposer l'infrastructure </li>
-	   <li> Un exemple : Globus </li>
-	   <li> Exemples de Grilles existantes </li>
- </ul>
 </div>
 
 
@@ -143,28 +125,17 @@ td.list    { background-color : #eee59a; margin : 3px;
 
 <div class="slide">
 <h1>Technologies</h1>
-<ul>
-<li> Réseaux :  exemple aux U.S. : réseau NFSNET, puis Abilene.
-     Evolution de la bande passante des liens de dorsale (en Mb/s)
-   <table style="margin : auto" border="1">
-   <tr><td>1986</td><td>1989</td><td>1991</td><td>1995</td><td>2000</td><td>2003</td></tr>
-   <tr><td>0.056</td><td>1.5 </td><td> 45</td><td>  155</td><td>2500</td><td>10000</td></tr>
-   </table>
-   <p>
-   En France/Europe : depuis 2003, liens inter-sites à  2.5 Gb/s, 10 Gb/s depuis 2006
-   GEANT entre pays : 10 Gb/s  
-   </p>
-</li>
 
+Cette idée provient de l'évolution de technologies clés:
+<ul>
+<li> Réseaux. </li>
 <li> Middleware : HTTP, Corba, JVM, .... </li>
-<li> Cryptographie  :
-          Chiffrement asymétrique, certificats </li>
+<li> Chiffrement asymétrique, certificats.</li>
 </ul>
 </div>
 
 <div class="slide">
-<h1>Pour résumer le rêve, on peut dire ...</h1>
-
+<h1>L'idée de partage ...</h1>
 <p>
 While the <b>Web</b> is a service for sharing information over the Internet, 
 the <b>Grid</b> is a service for sharing computer power and data storage capacity over the Internet. 
@@ -190,7 +161,7 @@ Que couvre au sens large le terme "une grille" ?
 <ul>
   <li>L'activité: l'utilisation faite des logiciels (e.g. calcul distribué, partage de fichier),</li>
   <li>Le matériel (e.g. des PCs de particuliers, des clusters fédérés, ...), </li>
-  <li>Les utilisateurs/les fournisseurs (qui a le droit d'utiliser le système, qui doit l'administrer).</li>
+  <li>Les utilisateurs et fournisseurs de ressources: on parle de <i>Virtual Organization</i>.
 </ul>
 
 <p>
@@ -204,34 +175,28 @@ Dans chacune de ces catégories existe une grande diversité.
 <h1>Catégories</h1>
 
 <p>
-Aujourd'hui, les applications distribuées à  large échelle sont variées, car
-grande diversité de besoins et d'utilisations des ressources informatiques.
-On peut les classer en catégories:
+Les applications distribuées à  large échelle sont variées.
+Selon le type d'infrastructure, on peut distinguer les grands usages:
+
 </p>
 <ul>
-<li>Calcul distribué,</li>
-<li>Meta-computing,</li>
-<li>Internet computing,</li>
-<li>Réseaux pair-à -pair.</li>
+<li>Private Grid Computing : grilles privées,</li>
+<li>Grid Computing : grilles institutionnelles,</li>
+<li>Internet computing, Desktop Grid, P2P : ressources individuelles sur internet</li>
 </ul>
 <p>
-De nombreux projets réussis dans chacun de ces domaines
-ont confirmé l'intérêt du partage de ressources.
-</p>
 </div>
 
 <div class="slide">
-<h1>Calcul distribué</h1>
+<h1>Private Grid computing</h1>
 
 <p>
-Désigne toutes les solutions oà¹ plusieurs ordinateurs résolvent un problème ensemble,
-en communiquant à  travers le réseau.
+Les ressources d'une organisation sont mutualisées et ouvertes
+aux membres de l'organisation. 
+</p>
+Gestionnaire de ressource: middleware de grille ou batch scheduler.
 </p>
 <p>
-Terme générique mais utilisé surtout aujourd'hui pour désigner des projets qui utilisent des 
-ressources internes à  une organisation
-(les plus nombreux).
-</p>
 <div>
 <img style="float:right" src="grid-img/ilm_yoda.png" alt="frame rendering"/> 
 <p>
@@ -255,31 +220,14 @@ ILM, filiale de Dreamworks a déployé
 
 
 <div class="slide">
-<h1>Meta-computing</h1>
+<h1>Grid Comuting</h1>
 
 <p>
-Dans les années 1990, ce terme désigne des projets d'interconnexion de super-calculateurs
-pour les capacités records d'une telle installation. Exemple (1997-2004), program PACI.
-<img style="float:right" src="grid-img/nsf_PACI_1998.gif" alt="Project NFS PACI"/>
+Organisations Internationales fédérant des ressources. 
+Calculs en tâches indépendantes. Données peuvent être distribuées et répliquées.
+Gestionnaire de ressources : Globus très souvent).
+<img style="float:right" width="400" src="grid-img/FranceGrille_sept2011.jpg" alt="(EGI) France Grille"/>
 </p>
-<p>
-Les applications déployées sont des applications <i class="important">parallèles</i>.
-Les configurations exceptionnelles visent à  relever
-des <em>grand défis</em>.
-</p>
-<!-- 
-From http://gridcafe.web.cern.ch/gridcafe/Gridhistory/ancestors.html :
-"metacomputing", a term that dates back to around 1990, and was used to describe projects aimed at interconnecting supercomputer centers in the US in order to combine the processing power of multiple supercomputers. Larry Smarr, a former Director of NCSA (the National Center for Supercomputing Applications in the US) is generally credited with popularizing the term.
--->
-
-
-<!--
-From http://www.npaci.edu/
-From 1997 to 2004, the San Diego Supercomputer Center (SDSC) served as the Leading Edge Site for the National Partnership for Advanced Computational Infrastructure (NPACI), 
-which partnered 41 universities and research institutions as well as international affiliates. 
-Funded by the National Science Foundation (NSF), the project was led by Principal Investigator and SDSC Director, 
-Dr. Fran Berman from 2001 to 2004. The NPACI program advanced science by working towards a ubiquitous, continuous and pervasive national computational infrastructure for the 21st century, building on dramatic advances in information technology to enable advances in science and engineering.
--->
 </div>
 
 
@@ -346,6 +294,20 @@ le serveur distribue les paquets aux clients, ces derniers les analysent et renv
 
 </div>
 
+<div class="slide">
+<h1>Desktop grid</h1>
+
+<ul>
+<li>Les éléments de la grille sont peux coûteux individuellement (e.g. PC).</li>
+<li>Le nombre de machines installées est grand.</li>
+<li>La fiabilité des noeuds est faible (parfois, volatilité extrême)</li>
+<li>Les utilisateurs ne sont pas toujours clairement identifiés.</li>
+</ul>
+
+
+</div>
+
+
 
 <div class="slide">
 <h1>Stockage distribué</h1>
@@ -410,41 +372,6 @@ super-calculateurs, etc).</li>
 <li>La fiabilité des noeuds est grande.</li>
 <li>Les utilisateurs sont clairement identifiés.</li>
 </ul>
-
-</div>
-
-
-<div class="slide">
-<h1>Exemple</h1>
-
-<table>
-<tr><td>
-<img src="grid-img/tag_grid.png" alt="Exemple de grille privée"/>
-</td>
-<td>
-Grille "institutionnelle" car fédère des institutions identifiées
-<ul>
-<li>Intergiciel Globus 2.4</li>
-<li>Utilise Renater</li>
-<li>Fédère des centres de calcul (exploitation ou expérimentaux)</li>
-<li>Stabilité des ressources</li>
-<li>Hétérogénéité des ressources (e.g. OS, processeurs)</li>
-<li>Nombre de processeurs moyen (&lt;100)</li>
-</ul>
-</td></tr>
-</table>	
-</div>
-
-<div class="slide">
-<h1>Desktop grid</h1>
-
-<ul>
-<li>Les éléments de la grille sont peux coûteux individuellement (e.g. PC).</li>
-<li>Le nombre de machines installées est grand.</li>
-<li>La fiabilité des noeuds est faible (parfois, volatilité extrême)</li>
-<li>Les utilisateurs ne sont pas toujours clairement identifiés.</li>
-</ul>
-
 
 </div>
 

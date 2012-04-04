@@ -78,10 +78,9 @@ http://v1.fraudlabs.com/fraudlabswebservice.asmx?wsdl
 			Tous les paramètres sont optionnels (minOccurs="0")
 			mais il faut bien renseigner IP et LICENSE pour que le service reponde.
 		-->
-		</li>
         	</li>
 		<li>
-		A quels noms de champs le type de la sortie fait il référence ?
+		Quels sont les champs de la sortie ?
 		<!--
 		<xsd:complexType name="FraudLabsOutput">
 		<xsd:all>
@@ -223,9 +222,18 @@ https://www.esendex.com/secure/messenger/soap/SendService.asmx?WSDL
 
    		print_r( $c->__getFunctions());
    		print_r( $c->__getTypes());
+	-->
 
 
-		/* The services expects to receive crendentials in the header 
+	</li>
+	<li>
+		L'authentification est attendue dans l'entête.
+		Regardez dans le WSDL comment est construit le type 
+		<tt>MessengerHeader</tt> utilisé pour l'entête.
+		Comment allez vous le construire en PHP ?
+ 
+	<!--
+		The services expects to receive crendentials in the header 
    		It waits for :
  
 		<soap:Header>
@@ -235,9 +243,21 @@ https://www.esendex.com/secure/messenger/soap/SendService.asmx?WSDL
       			<Account>string</Account>
     			  </MessengerHeader>
   		</soap:Header>
-		*/
-	-->
 
+		PHP :
+
+		$header = new SOAPHeader("com.esendex.ems.soapinterface",
+                        "MessengerHeader", 
+                        array(
+                              "Username"=> $username,
+                              "Password"=> $password,
+                              "Account"=>$account)
+                        );
+            $c -> __setSoapHeaders( $header );
+
+
+
+	-->
 
 
 	</li>
