@@ -1,0 +1,29 @@
+\begin{picture}(0,0)%
+\includegraphics{img/scatter_2.pdf}%
+\end{picture}%
+\setlength{\unitlength}{2960sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(6852,2511)(2764,-2734)
+\put(9601,-1366){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\textit{temps}}%
+}}}}
+\put(3151,-961){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\textit{inactif}}%
+}}}}
+\put(3151,-2086){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\textit{r\'eception}}%
+}}}}
+\put(3151,-1711){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\textit{envoi}}%
+}}}}
+\put(3151,-1336){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\textit{calcul}}%
+}}}}
+\put(9526,-2431){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}$t_0$}}}}
+\put(9526,-406){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}$t_1$}}}}
+\put(5101,-2656){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}$P_1$}}}}
+\put(6301,-2656){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}$P_2$}}}}
+\put(7501,-2656){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}$P_3$}}}}
+\put(8701,-2656){\makebox(0,0)[b]{\smash{{\SetFigFontNFSS{9}{10.8}{\rmdefault}{\mddefault}{\updefault}$P_4$}}}}
+\end{picture}%
