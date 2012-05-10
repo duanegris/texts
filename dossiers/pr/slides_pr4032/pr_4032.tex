@@ -49,6 +49,8 @@
 \usepackage{calc}
 \usepackage{fp} %floating point
 
+\setbeamercovered{invisible}
+
 % definition de couleur
 \definecolor{gris}{rgb}{0.65,0.65,0.65}
 
@@ -174,11 +176,11 @@ Département Informatique
 
 
 %                    C H R O N O L O G I E
-\frame{
-\frametitle{Curriculum général}
+%\frame{
+%\frametitle{Curriculum général}
 
-\includegraphics[width=\textwidth]{img/timeline-jobs.pdf}
-}
+%\includegraphics[width=\textwidth]{img/timeline-jobs.pdf}
+%}
 
 
 % ------------------------- E N S E I G N E M E N T -------------------------------------------		
@@ -189,10 +191,10 @@ Département Informatique
 \vfill
 \begin{center}
 	{\huge \textcolor{blue}{Enseignement}}
-\end{center}
 \vfill
-\vspace{1cm}
-\includegraphics[width=.75\textwidth]{img/timeline-jobs-teaching.pdf}
+\vspace{6mm}
+\includegraphics[width=.85\textwidth]{img/timeline-jobs-teaching.pdf}
+\end{center}
 }
 
 
@@ -200,30 +202,25 @@ Département Informatique
 \frametitle{Enseignement: Mes expériences}
 
 \begin{itemize}
-	\item<+-> Etablissement principal : IECS \\
-		Responsable filière \emph{Systèmes d'information} (2001-2007) : 
-		\begin{itemize}
-		\item définir et coordonner les enseignements,
-		\item lien avec chaire NTIC,
-		% securite SI, conception des SI, mise en place ERP, gestion projet, data mining
-		\item recrutement intervenants,
-		\item suivi étudiants (mémoires, cursus à l'étranger, ...)
-		\item coordination inter-filières \\[3mm]
-
-		\end{itemize}
-
-
 	\item<+-> \textcolor{blue}{Différents types d'établissement et de publics} \\
-		IECS, \pause
-		IUT, \pause
-		\'{E}cole d'ingénieur, \pause
-		 UFR Université, \pause
-		formation continue.\pause \\[3mm]
+		\begin{small}
+		\pause EM,
+		\pause IUT,
+		\pause \'{E}cole d'ingénieur, 
+		\pause UFR Université,
+		\pause formation continue. \\[4mm]
+		\end{small}
 
-	\item<+-> \textcolor{blue}{Différents publics}  \\
-		disciplinaire, \pause 
-		âge,\pause 
-		nationalité. 
+
+	\item<+-> \textcolor{blue}{Etablissement principal : EM Strasbourg} \\[2mm]
+		\begin{itemize}
+		\item<+-> Responsable filière \emph{Systèmes d'information} (2001-2007):\\
+			{\small maqette pédagogique, liens industrie, coordination inter-filières, ...}\\[3mm]
+		
+		\item<+-> Directeur délégué aux systèmes d'information (2011-2012) : 
+			{\small structuration/support processus, choix stratégiques, accréditations}\\[3mm]
+					
+		\end{itemize}
 		
 \end{itemize}
 
@@ -231,26 +228,26 @@ Département Informatique
 }
 
 \frame{
-\frametitle{Les caractéristiques du département informatique}
+\frametitle{Perspectives pour l'enseignement}
 
 \begin{itemize}
 
-	\item<+-> Baisse des effectifs
+	\item<+-> Nécessité de renforcer l'attractivité de la filière. \\[3mm]
 	
-	\item<+-> Un développement de l'alternance
+	\item<+-> Déjà engagé :  développement de l'alternance. \\[3mm]
 
-	\item<+-> ... Intl ? ....
+	\item<+-> Proposition : développer une filière internationale. \\[3mm]
 \end{itemize}
 
-\onslide<4->{
-\begin{itemize}
-	\item[$\rhd$] Formation en informatique. Projets logiciels
-	\item[$\rhd$] Expérience de 4 types d'établissements
-	\item[$\rhd$]<+-> Réflexion sur l'utilisation d'outils pédagogiques\\[3mm]
-
-	\item[$\rhd$]<+-> Prise de responsabilités
-\end{itemize}
-}
+%\onslide<4->{
+%\begin{itemize}
+%	\item[$\rhd$] Formation en informatique. Projets logiciels
+%	\item[$\rhd$] Expérience de 4 types d'établissements
+%	\item[$\rhd$]<+-> Réflexion sur l'utilisation d'outils pédagogiques\\[3mm]
+%
+%	\item[$\rhd$]<+-> Prise de responsabilités
+%\end{itemize}
+%}
 
 }
 
@@ -263,28 +260,32 @@ Département Informatique
 \frame{
 \frametitle{Positionnement recherche}
 
-\underline{\'{E}quipe ICPS} (\textit{Image et Calcul Parallèle Scientifique})\\[3mm]
+\underline{\'{E}quipe ICPS} (\textit{Image et Calcul Parallèle Scientifique})\\[6mm]
 
 
-%({\footnotesize Image et Calcul Parallèle Scientifique})} : 3 axes :
-\only<1>{
+\setbeamercovered{visibility=50}
 \begin{itemize}
-     \item Compilation et optimisation pour les multi-c{\oe}urs (INRIA CAMUS)\\[3mm]
-     \item Grilles et Clouds\\[3mm]
-     \item Applications du parallélisme\\[3mm]
+
+   \item Compilation et optimisation pour les multi-c{\oe}urs (INRIA CAMUS)\\[4mm]
+       % GC
+   \onslide<1-5>{
+		\item \only<2-5>{\textcolor{blue}}
+			{Grilles et Clouds} \\[-2mm]
+   	\onslide<3>{
+		{\tiny  2002-- . Permanents (5): David, Genaud, Gossa, Latu, Violard.  
+		    Doct+Ing (3) : Giersch, Rattanapoka, Schwarz.}\\
+		}
+     }
+     % Application
+     \onslide<1-5>{
+		\item \only<2-5>{\textcolor{blue}}
+    		{Applications du parallélisme}
+     		\onslide<5>{(entres autres LabEx IRMIA)\\[-2mm]
+	      		{\tiny HPC calcul scientifique.} 
+		}
+	}
 \end{itemize}
 }
-\only<2->{
-\begin{itemize}
-     \item Compilation et optimisation pour les multi-c{\oe}urs (INRIA CAMUS)\\[3mm]
-     \item[$\rhd$] \textcolor{blue}{Grilles et Clouds} (2002)\\[-2mm]
-	{\tiny  Permanents (5): David, Genaud, Gossa, Latu, Violard.  
-			    Doct+Ing (3) : Giersch, Rattanapoka, Schwarz.}\\[3mm]
-     \item[$\rhd$] \textcolor{blue}{Applications du parallélisme}
-\end{itemize}
-}
-}
-
 
 %                           P R O B L E M A T I Q U E -- Animation
 
@@ -443,7 +444,6 @@ Département Informatique
 \frame{
 \frametitle{Ma problématique}
 
-\setbeamercovered{invisible}
 
 
 \begin{center}
@@ -464,8 +464,8 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
             {
                   \node (nPerf) [ellipse, fill=red!20, draw=red, ]  
 					  at (-1,0) { Performances };
-                  \node (nExpl) [ellipse, fill=red!20, draw=red, 
-					    right = 2cm of nPerf]  { Exploitation };
+                  \node (nGestRess) [ellipse, fill=red!20, draw=red, 
+					    right = 2.1cm of nPerf]  { Gestion des Ressources };
             }
             %
 		\only<4-5>
@@ -473,9 +473,9 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
 			\node (nPerfL)  [fill=red!15,drop shadow,
 					     below =0mm of nPerf]{
 								\begin{tabular}[t]{l}
-									{\tiny -- algorithmique }\\[-1mm]
-									{\tiny -- équilibrage}\\[-1mm]
-									{\tiny -- ordonnancement}\\[-1mm]
+									{\small -- algorithmique }\\[-1mm]
+									{\small -- équilibrage}\\[-1mm]
+									{\small -- ordonnancement}\\[-1mm]
 								\end{tabular}
 						};
 		}
@@ -483,13 +483,13 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
            %
 		\only<5>
 		{
-			\node (nExplL)  [fill=red!15,drop shadow,
-					     below =0mm of nExpl]{
+			\node (nGestRessL)  [fill=red!15,drop shadow,
+					     below =0mm of nGestRess]{
 								\begin{tabular}[t]{l}
-									{\tiny -- découverte de ressources}\\[-1mm]
-									{\tiny -- allocations de ressources}\\[-1mm]
-									{\tiny -- tolérance aux pannes}\\[-1mm]
-									{\tiny -- accès aux données}\\[-1mm]
+									{\small -- découverte de ressources}\\[-1mm]
+									{\small -- allocations de ressources}\\[-1mm]
+									{\small -- tolérance aux pannes}\\[-1mm]
+									{\small -- accès aux données}\\[-1mm]
 								\end{tabular}
 						};
 		}
@@ -499,7 +499,7 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
             {
                   \node (nXp) [sTextBlockStyle, below right= .5cm of nPerf]  {Expérimentation};
                   \draw [->, thick, bend left=30] (nXp.west) to (nPerf);
-                  \draw [->, bend left=-30,thick] (nXp.east) to (nExpl);
+                  \draw [->, bend left=-30,thick] (nXp.east) to (nGestRess);
             }
             \uncover<7->
             {
@@ -527,8 +527,8 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
            %
             \uncover<10->
             {
-                  \node (nInterg) [sTextBlockStyle, below right = of nExpl]  {Intergiciel};
-                  \draw [->, thick] (nInterg) to (nExpl);
+                  \node (nInterg) [sTextBlockStyle, below = of nGestRess]  {Intergiciel};
+                  \draw [->, thick] (nInterg) to (nGestRess);
             }
             \uncover<11->
             {
