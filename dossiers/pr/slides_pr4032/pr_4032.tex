@@ -54,7 +54,7 @@
 % definition de couleur
 \definecolor{gris}{rgb}{0.65,0.65,0.65}
 
-\newcommand{\boldwhite}[1]{\tiny \textcolor{black}{\textbf{#1}}}
+\newcommand{\boldwhite}[1]{\footnotesize \textcolor{black}{\textbf{#1}}}
 
 %--------------------------------------
 % makes 
@@ -199,11 +199,11 @@ Département Informatique
 
 
 \frame{
-\frametitle{Enseignement: Principales Responsabilités}
+\frametitle{Principales Responsabilités}
 
 \begin{itemize}
 
-	\item<+-> \textcolor{blue}{Etablissement principal : EM Strasbourg} \\[2mm]
+	\item<+-> \textcolor{blue}{Etablissement d'enseignement} \\[2mm]
 		\begin{itemize}
 		\item<+-> Responsable filière \emph{Systèmes d'information} (2001-2007):\\
 			{\small maquette pédagogique, liens industrie, coordination inter-filières, ...}\\[3mm]
@@ -212,6 +212,13 @@ Département Informatique
 			{\small structuration/support processus, choix stratégiques, accréditations}\\[3mm]
 					
 		\end{itemize}
+
+	\item<+-> \textcolor{blue}{Université} \\[2mm]
+		\begin{itemize}
+		\item<+-> Comité de sélection, puis Comité d'Expert section 27.
+		\item<+-> Conseil Scientifique du centre HPC de l'Université (Equipex).
+		\end{itemize}
+
 		
 \end{itemize}
 
@@ -242,7 +249,7 @@ Département Informatique
 		\begin{small}
 		\begin{itemize}
 		\item<+-> Attrait U. Strasbourg 20\% étudiants étrangers 
-			 \tiny{(PhD 37\%, M 31\%, L 15\%)}.
+			 \footnotesize{(PhD 37\%, M 31\%, L 15\%)}.
 		\item<+-> Pistes: formation délocalisée / Erasmus Mundus / Parcours en anglais
 		\item<+-> Avantage : ré-équilibrage vers recherche
 		\end{itemize}		
@@ -280,8 +287,8 @@ Département Informatique
 \begin{center}
 	{\huge \textcolor{blue}{Recherche}}
 \vfill
-\vspace{6mm}
-\includegraphics[width=.85\textwidth]{img/timeline-jobs-research.pdf}
+%\vspace{6mm}
+%\includegraphics[width=.85\textwidth]{img/timeline-jobs-research.pdf}
 \end{center}
 }
 
@@ -305,8 +312,8 @@ Département Informatique
 		\item \only<2-5>{\textcolor{blue}}
 			{Grilles et Clouds} \\[-2mm]
    	\onslide<3>{
-		{\tiny  2002-- . Permanents (5): David, Genaud, Gossa, Latu, Violard.  
-		    Doct+Ing (3) : Giersch, Rattanapoka, Schwarz.}\\
+		{\footnotesize  2002-- . Permanents (5): David, Genaud, Gossa, Latu, Violard.  
+		    Doct+Ing (4) : Giersch, Michon, Rattanapoka, Schwarz.}\\
 		}
      }
      % Application
@@ -314,7 +321,7 @@ Département Informatique
 		\item \only<2-5>{\textcolor{blue}}
     		{Applications du parallélisme}
      		\onslide<5>{(entres autres LabEx IRMIA)\\[-2mm]
-	      		{\tiny HPC calcul scientifique.} 
+	      		{\footnotesize HPC calcul scientifique.} 
 		}
 	}
 \end{itemize}
@@ -501,40 +508,40 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
 					    right = 2.1cm of nPerf]  { Gestion des Ressources };
             }
             %
-		\only<4-5>
-		{
-			\node (nPerfL)  [fill=red!15,drop shadow,
-					     below =0mm of nPerf]{
-								\begin{tabular}[t]{l}
-									{\small -- algorithmique }\\[-1mm]
-									{\small -- équilibrage}\\[-1mm]
-									{\small -- ordonnancement}\\[-1mm]
-								\end{tabular}
-						};
-		}
+		%\only<4-5>
+		%{
+		%	\node (nPerfL)  [fill=red!15,drop shadow,
+		%			     below =0mm of nPerf]{
+		%						\begin{tabular}[t]{l}
+		%							{\small -- algorithmique }\\[-1mm]
+		%							{\small -- équilibrage}\\[-1mm]
+		%							{\small -- ordonnancement}\\[-1mm]
+		%						\end{tabular}
+		%				};
+		%}
 
-           %
-		\only<5>
-		{
-			\node (nGestRessL)  [fill=red!15,drop shadow,
-					     below =0mm of nGestRess]{
-								\begin{tabular}[t]{l}
-									{\small -- découverte de ressources}\\[-1mm]
-									{\small -- allocations de ressources}\\[-1mm]
-									{\small -- tolérance aux pannes}\\[-1mm]
-									{\small -- accès aux données}\\[-1mm]
-								\end{tabular}
-						};
-		}
+           	%
+		%\only<5>
+		%{
+		%		\node (nGestRessL)  [fill=red!15,drop shadow,
+		%				     below =0mm of nGestRess]{
+		%							\begin{tabular}[t]{l}
+		%									{\small -- découverte de ressources}\\[-1mm]
+		%									{\small -- allocations de ressources}\\[-1mm]
+		%									{\small -- tolérance aux pannes}\\[-1mm]
+		%									{\small -- accès aux données}\\[-1mm]
+		%								\end{tabular}
+		%						};
+		%		}
 
 
-            \uncover<6->
+            \uncover<4->
             {
                   \node (nXp) [sTextBlockStyle, below right= .5cm of nPerf]  {Expérimentation};
                   \draw [->, thick, bend left=30] (nXp.west) to (nPerf);
                   \draw [->, bend left=-30,thick] (nXp.east) to (nGestRess);
             }
-            \uncover<7->
+            \uncover<5->
             {
                   \node (nApp) [sWhiteBoxStyle, below = 0.1cm of nXp]  
 				{
@@ -543,7 +550,19 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
             }
 
             %
-            \uncover<8->
+            \uncover<6->
+            {
+                  \node (nInterg) [sTextBlockStyle, below = of nGestRess]  {Intergiciel};
+                  \draw [->, thick] (nInterg) to (nGestRess);
+            }
+            \uncover<7->
+            {
+                  \node (nPmpi) [sWhiteBoxStyle, below = 0.1cm of nInterg]  
+				{
+				\includegraphics[width=1.8cm]{img/p2p-mpi-logo.png}
+				};
+            }
+           \uncover<8->
             {
                   \node (nSimu) [sTextBlockStyle,below = of nPerf]  {Simulation};
                   \draw [->, thick] (nSimu) to (nPerf);
@@ -555,26 +574,7 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
 				\includegraphics[width=1.8cm]{img/simgrid_logo.png}
 				};
             }
-
-
            %
-            \uncover<10->
-            {
-                  \node (nInterg) [sTextBlockStyle, below = of nGestRess]  {Intergiciel};
-                  \draw [->, thick] (nInterg) to (nGestRess);
-            }
-            \uncover<11->
-            {
-                  \node (nPmpi) [sWhiteBoxStyle, below = 0.1cm of nInterg]  
-				{
-				\includegraphics[width=1.8cm]{img/p2p-mpi-logo.png}
-				};
-            }
-
-           %
-
-           %
-
 
       \end{tikzpicture}
 \end{center}
@@ -616,7 +616,7 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
                                    below =0mm of nPerf]{
                                                 \begin{tabular}[t]{l}
                                                       {\footnotesize -- applications témoins de passage à l'échelle }\\[-1mm]
-                                                      {\footnotesize -- travaux sur l'équilibrage, contribution à la Divisble Load Theory}\\[-1mm]
+                                                      {\footnotesize -- travaux sur l'équilibrage, cadre de la Divisible Load Theory}\\[-1mm]
                                                 \end{tabular}
                                     };
             %
@@ -681,14 +681,17 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
 \vspace{2mm}
 
 %--------- Put figures here to save space for later ...
-\only<2>{
+\only<2-3>{
   \centering
   \includegraphics[width=.50\linewidth,height=6.2cm]{img/jumpshot-mg-16-bw.pdf}
   \hspace{2mm}
-  \includegraphics[width=.39\linewidth,height=6.2cm]{img/nlr-mg-16.pdf}\\
+  \pause
+  \onslide<3>{
+  \includegraphics[width=.39\linewidth,height=6.2cm]{img/nlr-mg-16.pdf}
+  }\\
   Visualisation réelle à gauche, abstraite à droite.\\
 }
-\only<3>{
+\only<4>{
   \centering
   \includegraphics[width=.95\linewidth]{img/cg-C-16-slices}\\
   \includegraphics[width=.95\linewidth]{img/cg-C-32-slices}\\
@@ -699,21 +702,21 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
 \setbeamercovered{transparent}
 \begin{itemize}
 
-\item<1,6-> \textcolor{blue}{Applications}: 
+\item<1,7-> \textcolor{blue}{Applications}: 
 		\begin{itemize}
 		\item Physique des plasmas (thèse, ANR E2T2 avec CEA) : HPC
 		\item Protéomique (CNRS IPHC, platforme nationale ProFi): Grille et Clouds
 		\item Abstraction de programmes MPI (interne équipe) : HPC\\[4mm]
 		\end{itemize}
 
-\item<4,6> \textcolor{blue}{Simulation}: \textsc{SimGrid} $\Rightarrow$ forte visibilité internationale
+\item<5,7> \textcolor{blue}{Simulation}: \textsc{SimGrid} $\Rightarrow$ forte visibilité internationale
 		%{\small (H. Casanova, Univ. Hawaï)}.
 		\begin{itemize}
 		\item SMPI : simuler des programmes MPI 
 		\item ANR plateforme sur SimGrid : WP simulation de Clouds\\[4mm]
 		\end{itemize}
 
-\item<5,6> \textcolor{blue}{Clouds}: résoud beaucoup des problèmes des grilles.
+\item<6,7> \textcolor{blue}{Clouds}: résoud beaucoup des problèmes des grilles.
 	\begin{itemize}
 		\item Virtualisation $\Rightarrow$ nouvelles problématiques d'allocation de ressources
 		\item<+-> Défi : courtier en charge de l'application de l'utilisateur
@@ -758,25 +761,26 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
 
 %\includegraphics[height=.5\textheight,width=.7\textwidth]{img/timeline-hdr-e123.pdf}
 
+\textcolor{blue}{Enseignement}	
+	\begin{itemize}
+		\item<+-> Diversité des publics pour l'enseignement, liens monde professionnel.
+		\item<+-> Regard extérieur, Expérience différente du fonctionnement d'une UFR.
+		\item<+-> Thématique de recherche HPC adaptée aux projets Labex pour réseau Rhin-supérieur. 
+	\end{itemize}
 
+\pause
+\vspace{4mm}
 \textcolor{blue}{Recherche} :	Apport à ICube
 \begin{itemize}
 		\item<+-> \'{E}quipe: développement thème \emph{Grille et Cloud} (ré-équilibrage)\\
-			    {\footnotesize Lien avec INRIA AlGorille (membre associé)}
+			    {\footnotesize Lien avec INRIA AlGorille (membre associé), projet de nouvelle EPI INRIA.}
 		\item<+-> Laboratoire: renforcement des compétences ``calcul'' (axe transverse CSSMD)
 			% -- CSSMD : Calcul scientifique, simulation et gestion de masses de données
-		\item<+-> Université: renforcement collaboration avec centre HPC, poids au CS HPC.
+		\item<+-> Université: renforcement collaboration avec centre HPC, liaison Grille EGI CNRS Tier 2 et CS HPC Unistra.
 			% -- evangélisation, conseil scientifique HPC, liaison avec CNRS Tier2
 \end{itemize}
 \vspace{3mm}
 
-
-\textcolor{blue}{Enseignement}	
-	\begin{itemize}
-		\item<+-> Expérience de l'IUT, diversité des publics, liens monde professionnel.
-		\item<+-> Ouverture vers l'industrie et la recherche (cloud).
-		\item<+-> Désir de porter la voix du département d'informatique.
-	\end{itemize}
 }
 
 
