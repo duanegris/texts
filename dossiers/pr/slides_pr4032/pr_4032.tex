@@ -198,12 +198,33 @@ Département Informatique
 }
 
 
+
 \frame{
-\frametitle{Principales Responsabilités}
+\frametitle{Enseignement: Expériences}
 
 \begin{itemize}
+	\item<+-> \textcolor{blue}{\'Etablissement de rattachement : EM} \\
+		\pause 
+		\begin{small}
+		tourné vers l'international,
+		\pause 
+		vers l'industrie,
+		\pause 
+		environnement concurrentiel. 
+		\\[4mm]
+		\end{small}
 
-	\item<+-> \textcolor{blue}{Etablissement d'enseignement} \\[2mm]
+
+	\item<+-> \textcolor{blue}{Différents types d'établissement et de publics} \\
+		\begin{small}
+		\pause 
+		IUT informatique,
+		\pause \'{E}cole d'ingénieur ENSIIE, 
+		\pause UFR maths-info,
+		\pause formation continue.\\[4mm]
+		\end{small}
+
+	\item<+-> \textcolor{blue}{Principales responsabilités} \\[2mm]
 		\begin{itemize}
 		\item<+-> Responsable filière \emph{Systèmes d'information} (2001-2007):\\
 			{\small maquette pédagogique, liens industrie, coordination inter-filières, ...}\\[3mm]
@@ -212,6 +233,16 @@ Département Informatique
 			{\small structuration/support processus, choix stratégiques, accréditations}\\[3mm]
 					
 		\end{itemize}
+
+
+\end{itemize}
+}
+
+\begin{comment}
+\frame{
+\frametitle{Principales Responsabilités}
+
+\begin{itemize}
 
 	\item<+-> \textcolor{blue}{Université} \\[2mm]
 		\begin{itemize}
@@ -223,6 +254,8 @@ Département Informatique
 \end{itemize}
 
 }
+\end{comment}
+
 
 \frame{
 \frametitle{Enseignement: Perspectives pour le département}
@@ -230,7 +263,7 @@ Département Informatique
 \pause
 \begin{itemize}
       % Le plus gros chantier, me semble être ....
-	\item<+-> Nécessité de renforcer l'attractivité de la filière. \\[5mm]
+	\item<+-> Développer la filière en attirant par les Masters. \\[5mm]
 	
 	\item<+->{ Déjà engagé :  développement de l'alternance. \\
 		\begin{small}
@@ -262,18 +295,9 @@ Département Informatique
 \frame{
 \frametitle{Enseignement: Résumé}
 
-%	\item<+-> \textcolor{blue}{Différents types d'établissement et de publics} \\
-%		\begin{small}
-%		\pause EM,
-%		\pause IUT,
-%		\pause \'{E}cole d'ingénieur, 
-%		\pause UFR Université,
-%		\pause formation continue. \\[4mm]
-%		\end{small}
-
 \begin{itemize}
-	\item[$\rhd$]<+-> Formation en informatique. Projets logiciels.\\[5mm]
-	\item[$\rhd$]<+-> Expérience de 4 types d'établissements.\\[5mm]
+	\item[$\rhd$]<+-> Formation en informatique. Souhait de plus d'enseignement disciplinaire.\\[5mm]
+	\item[$\rhd$]<+-> Expérience de quatre types d'établissement.\\[5mm]
 	\item[$\rhd$]<+-> Prise de responsabilités.\\[5mm]
 	\item[$\rhd$]<+-> Regard extérieur, expérience d'un établissement très ancré dans le monde des entreprises et l'international.   
 \end{itemize}
@@ -312,7 +336,7 @@ Département Informatique
 		\item \only<2-5>{\textcolor{blue}}
 			{Grilles et Clouds} \\[-2mm]
    	\onslide<3>{
-		{\footnotesize  2002-- . Permanents (5): David, Genaud, Gossa, Latu, Violard.  
+		{\tiny  2002-- . Permanents (5): David, Genaud, Gossa, Latu, Violard.  
 		    Doct+Ing (4) : Giersch, Michon, Rattanapoka, Schwarz.}\\
 		}
      }
@@ -321,7 +345,7 @@ Département Informatique
 		\item \only<2-5>{\textcolor{blue}}
     		{Applications du parallélisme}
      		\onslide<5>{(entres autres LabEx IRMIA)\\[-2mm]
-	      		{\footnotesize HPC calcul scientifique.} 
+	      		{\tiny HPC calcul scientifique.} 
 		}
 	}
 \end{itemize}
@@ -702,26 +726,28 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
 \setbeamercovered{transparent}
 \begin{itemize}
 
-\item<1,7-> \textcolor{blue}{Applications}: 
+\item<1,7-> \textcolor{blue}{Applications et Analyse}: 
 		\begin{itemize}
 		\item Physique des plasmas (thèse, ANR E2T2 avec CEA) : HPC
 		\item Protéomique (CNRS IPHC, platforme nationale ProFi): Grille et Clouds
 		\item Abstraction de programmes MPI (interne équipe) : HPC\\[4mm]
 		\end{itemize}
 
-\item<5,7> \textcolor{blue}{Simulation}: \textsc{SimGrid} $\Rightarrow$ forte visibilité internationale
+\item<5,7> \textcolor{blue}{Clouds}: résoud beaucoup des problèmes des grilles.
+	\begin{itemize}
+		\item Virtualisation $\Rightarrow$ nouvelles problématiques d'allocation de ressources
+		\item<+-> Défi : courtier en charge de l'application de l'utilisateur \\[4mm]
+		\end{itemize}
+
+
+
+
+\item<6,7> \textcolor{blue}{Simulation}: \textsc{SimGrid} $\Rightarrow$ forte visibilité internationale
 		%{\small (H. Casanova, Univ. Hawaï)}.
 		\begin{itemize}
 		\item SMPI : simuler des programmes MPI 
-		\item ANR plateforme sur SimGrid : WP simulation de Clouds\\[4mm]
+		\item Projet ANR \textit{plateforme} sur SimGrid: WP simulation de Clouds\\[4mm]
 		\end{itemize}
-
-\item<6,7> \textcolor{blue}{Clouds}: résoud beaucoup des problèmes des grilles.
-	\begin{itemize}
-		\item Virtualisation $\Rightarrow$ nouvelles problématiques d'allocation de ressources
-		\item<+-> Défi : courtier en charge de l'application de l'utilisateur
-		\end{itemize}
-
 
 \end{itemize}
 
@@ -763,21 +789,22 @@ $\hookrightarrow$ cas particulier du parallélisme à passage de messages.
 
 \textcolor{blue}{Enseignement}	
 	\begin{itemize}
-		\item<+-> Diversité des publics pour l'enseignement, liens monde professionnel.
-		\item<+-> Regard extérieur, Expérience différente du fonctionnement d'une UFR.
-		\item<+-> Thématique de recherche HPC adaptée aux projets Labex pour réseau Rhin-supérieur. 
+		\item<+-> Diversité des publics pour l'enseignement.
+		\item<+-> Regard extérieur, Expérience d'une composante différente de l'UFR.
+		\item<+-> Thématique de recherche HPC pour projets Masterclass LabEx.\\[5mm]
 	\end{itemize}
 
 \pause
 \vspace{4mm}
-\textcolor{blue}{Recherche} :	Apport à ICube
+\textcolor{blue}{Recherche} 
 \begin{itemize}
-		\item<+-> \'{E}quipe: développement thème \emph{Grille et Cloud} (ré-équilibrage)\\
-			    {\footnotesize Lien avec INRIA AlGorille (membre associé), projet de nouvelle EPI INRIA.}
-		\item<+-> Laboratoire: renforcement des compétences ``calcul'' (axe transverse CSSMD)
+		\item<+-> Icube : Renforcement des compétences ``calcul'' sur l'axe transverse CSSMD.
 			% -- CSSMD : Calcul scientifique, simulation et gestion de masses de données
-		\item<+-> Université: renforcement collaboration avec centre HPC, liaison Grille EGI CNRS Tier 2 et CS HPC Unistra.
+		\item<+-> Université: renforcement collaboration avec centre HPC, 
+					responsabilité au CS centre HPC, lien avec Grille EGI.
 			% -- evangélisation, conseil scientifique HPC, liaison avec CNRS Tier2
+		\item<+-> \'{E}quipe: développement thème \emph{Grille et Cloud} (ré-équilibrage).
+		\item<+-> Dynamique potentielle autour d'équipes INRIA et LabEx.
 \end{itemize}
 \vspace{3mm}
 
