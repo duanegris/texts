@@ -1,0 +1,69 @@
+
+* Généralités
+** Fonction de répartition
+   #+begin_latex
+   $F(x) = P(X < x) = 1 - P(X > x)
+   #+end_latex
+
+
+* Loi Exponentielle
+** Définition
+   Une V.A. qui ne prend que des valeurs positives suit une loi
+   exponentielle de paramètre lambda.
+*** fonctions 
+**** Fonction de densité :
+   #+begin_latex
+   $f(x) = \lambda e^{-\lambda x}$ si $x \geq 0$, 0 autrement. 
+   #+end_latex
+**** Fonction de répartition (CDF) :
+   #+begin_latex
+   $F(x) = 1 - \lambda e^{-\lambda x}$ si $x \geq 0$, 0 autrement. 
+   #+end_latex
+   #+begin_src gnuplot :exports code :file file.png
+      reset
+      set title "CDF for Exp(x), lambda=1"
+      plot 1-exp(-x)
+    #+end_src
+
+
+
+*** Exemple
+**** Durée de vie d'une ampoule
+     On connait la durée de vie de l'ampoule t=1000h, c-a-d
+     que sur un lot d'ampoule la moitié au moins seront allumées
+     au bout de 1000h. Et on sait que cette durée suit une loi 
+     exponentielle de paramètre inconnu.
+***** Quel est le paramètre ?
+#+begin_latex
+$\begin{array}{ll}
+                & P(X \geq 1000) = 1/2 \\
+\Lefrightarrow  & 1 - F(1000) = 1/2\\
+\Lefrightarrow  & 1 - (1 - e^{-1000 \lambda}) = 1/2\\
+\Lefrightarrow  & -1000 \lambda} = ln(1/2)\\
+\Lefrightarrow  &  \lambda = 6.9 \cdot 10^{-4}\\
+\end{array}$
+#+end_latex
+***** Quelle probabilité qu'une ampoule passe 2000h ?
+#+begin_latex
+$\begin{array}{ll}
+                & P(X \geq 2000) = 1/2 \\
+\Lefrightarrow  & 1 - F(1000) = 1/2\\
+\Lefrightarrow  & 1 - (1 - e^{-1000 \lambda}) = 1/2\\
+\Lefrightarrow  & -1000 \lambda} = ln(1/2)\\
+\Lefrightarrow  &  \lambda = 6.9 \cdot 10^{-4}\\
+\end{array}$
+#+end_latex
+
+
+* Exemple de tables
+#+tblname: data-table
+| x | y1 | y2 |
+|---+----+----|
+| 0 |  3 |  6 |
+| 1 |  4 |  7 |
+| 2 |  5 |  8 |
+
+#+begin_src gnuplot :var data=data-table :file table.png
+plot data using 1:2 w lines
+  
+#+end_src
