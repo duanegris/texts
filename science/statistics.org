@@ -790,6 +790,9 @@ The null hypothesis \Rightarrow B_a*B_b=0
     | S/A    | \sum (Y_ij - Y_j)^1  | a(n-1) | SS_S/A / DF_S/A | ----        |
     | TOTAL  | \sum(Y_ij - Y_T)^2   | N-1    | ----            | ----        |
 
+
+
+
 * R
 ** Install packages
    From console: 
