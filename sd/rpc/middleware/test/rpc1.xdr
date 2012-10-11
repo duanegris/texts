@@ -1,0 +1,7 @@
+program RPC1 {
+  version VERS {
+    int getval() = 1;
+    int inc() = 2;
+  } = 1;
+} = 0x77665544;
+

@@ -1,0 +1,29 @@
+
+
+* Exercice 1
+Compiler puis tester l'exemple se trouvant dans le répertoire =PremierExemple=. 
+Utiliser la commande  
+Constater que votre serveur est enregistré au niveau du serveur de liaison avec 
+la commande : =/usr/sbin/rpcinfo -p=. Le numéro de programme en décimal de 
+votre service est 536871168.
+
+L'affichage sur un PC : 
+client : 
+    variable n (debut) : 1094861636 DCBA, 
+    client :	variable	n	( fin )	:	1094861636, client :	variable	res	:	1094861637
+==>	
+
+L' affichage de la premiere ligne différe sur une SPARC (Machine SUN) : client : variable n (debut) : 1094861636 ABCD,
+Affichage : serveur :	variable serveur :	variable serveur :	variable
+n	(debut)	:	1094861636, n	( fin )	:	1094861637,
+res	:	1094861637
+Questions : 1.1) Dans le serveur pourquoi déclarer la variable 'res' static ? 1.2) Expliquez pourquoi l'a􏰡chage au niveau du client est di􏰞érent selon que l'on utilise une SPARC ou un PC. 1.3) Pourquoi la valeur 􏰟nale de (*n) est di􏰞érente sur le serveur et sur le client ? 1.4) Dans le Make􏰟le, expliquer la ligne de compilation gcc -Wall -o client client.c -lrpcsvc -lnsl
+Exercice 2
+Dé􏰟nir un appel RPC qui permette de calculer, de facon distante, la division entière d'un nombre par un autre. Le serveur de calcul (qui est responsable de la division) se trouvera sur votre machine. Vous exécuterez le client depuis une autre machine. Pour cela, il est possible de garder en permanence une fenêtre sur cette autre machine avec la commande ssh votreLogin@machineDuVoisin. Vous éditerez, compilerez les 􏰟chiers sources sur votre machine. Les sources pour débuter cet exercice se trouvent dans le répertoire DiviseExercice.
+ATTENTION: ces 􏰟chiers sources ne sont pas 􏰓corrects􏰔. Il faut remplacer les 􏰓????􏰔 par du code C. Expliquer la ligne de compilation gcc -o serveur serveur.o xdr_entiers2.o -lnsl
+Exercice 3
+On désire implanter un serveur de calcul sur des matrices 2X2 à coe􏰡cients réels qui o􏰞re comme service la multipli- cation de deux matrices. Mettre en place un tel serveur sur votre machine.
+Exercice 4
+Ajouter le service : addition de deux matrices. Le client o􏰞rira la possibilité d'appeler le service de multiplication ou d'addition, au choix.
+Exercice 5
+Reprenez les exercices 4 et 5 en considérant que les matrices à multiplier peuvent être NxN. Mettez en évidence qu'il existe un time-out (au niveau du client) et une retransmission lorsque l'appel de fonction distant prend un peu de temps.

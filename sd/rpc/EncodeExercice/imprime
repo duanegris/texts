@@ -1,0 +1,1 @@
+a2ps -2 --lines-per-page=57 -B --right-title="Encodage/Decodage d'un flot XDR" -b" " xdr_ex1.c -o EncodeExercice.ps
