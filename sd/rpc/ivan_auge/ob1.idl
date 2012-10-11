@@ -1,0 +1,4 @@
+interface constant {
+    long value();
+    long precision();
+};

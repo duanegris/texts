@@ -158,7 +158,7 @@
       void MYPROG_NULL(void) = 0;
       answer MYPROG_MYFUNC(data) = 1;
     } = 1;
-  } = 0x20000001;
+  } = 0x2000:0001;
 #+END_SRC
  
 ** Service Registration (portmap)
@@ -420,12 +420,62 @@ which allows to use =coord= instead of =struct coord=
    - Java only
    - Available since JDK >= 1.1
    - Since JDK 1.5, stubs are automatically generated (no =rmic=)
-** Transparent access
-The call to a remote object's method is exactly (syntactically) the same as a local one.
-- Use of a representative, local object called /proxy/.
+** RPC in the world of RMI
+   - RMI provides access to *objects* and their *methods*
+   - In contrast to Sun RPC, not only data can be passed
+     to remote computations, but also objects that can contain
+     code and data.\\[5mm]
+
+   - There are 2 ways to communicate in this object-oriented
+     paradigm: 
+     1. through the =Remote= class
+     2. through the =Serializable= class
+
+
+** The Remote class 
+   
+   definition: An object of the Remote class can be used remotely.
+   It can be used:
+   - in the address space of the JVM that created it,
+   - in the address spaces of other JVMs through /handles/ (aka /proxies/).
+   
 #+CAPTION:Proxy object
 #+LABEL:fig:timeline
+#+latex_attr .8\textwidth
 [[../img/proxy.png]]
+The call to a remote object's method is exactly (syntactically) the same as a local one.   
+
+** The Remote class  and interface  
+
+*** A Remote class must be defined in 2 parts  
+  - an interface
+  - the class itself
+*** Interface   :B_block:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :END:  
+#+begin_src java
+    public interface MyExample extends Remote {...}
+#+end_src
+    
+*** Class    :B_block:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :END:
+#+begin_src java
+public class MyExampleImpl 
+  extends    UnicastRemoteObject
+  implements MyExample  {
+    ...
+   }
+#+end_src
+
+** The Serializable class
+
+definition: an object of the class Serializable is an object
+that can be copied from one address space to another.
+
+
 ** Registering the services
    A process called *rmiregistry* is in charge of service registration\\
    (Equivalent of portmapper)
@@ -437,7 +487,7 @@ The call to a remote object's method is exactly (syntactically) the same as a lo
     - default port is 1099
     - can be started by program
 
-** Example 1 with primitive types
+** Example 1: Remote object with primitive types
 Example parameter passing using primitive types (e.g. int, float, ..) or arrays (e.g. String) 
 - In general, parameters just need to be *serializable* (java.io.Serializable).
 *** The different pieces of code 				    :B_block:

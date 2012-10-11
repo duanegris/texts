@@ -1,0 +1,7 @@
+program RPC3 {
+  version VERS {
+    string i2c() = 1;
+    int init(int v) = 2;
+  } = 1;
+} = 0x77665542;
+
