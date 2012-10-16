@@ -31,6 +31,23 @@
 #+latex_header: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
 
 
+
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:         keywordstyle=\color{blue},
+#+LATEX_HEADER:         commentstyle=\color{red},
+#+LATEX_HEADER:         stringstyle=\color{green},
+#+LATEX_HEADER:         basicstyle=\ttfamily\small,
+#+LATEX_HEADER:         columns=fullflexible,
+#+LATEX_HEADER:         frame=single,
+#+LATEX_HEADER:         basewidth={0.5em,0.4em}
+#+LATEX_HEADER:         }
+
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+
+
+
+
 * Introduction      
 ** Technologies for Distributed Systems
    - Extremely fast evolution since 1985:
@@ -98,37 +115,6 @@
 [[../soap-img/soapuser-archi1.png]]
 
 * Sun RPC
-#+LATEX_CLASS: article
-#+LaTeX_HEADER: \usepackage{listings}
-#+LaTeX_HEADER: \lstnewenvironment{common-lispcode}
-#+LaTeX_HEADER: {\lstset{language={Lisp},basicstyle={\ttfamily\footnotesize},frame=single,breaklines=true}}
-#+LaTeX_HEADER: {}
-#+LaTeX_HEADER: \newcommand{\python}[1]{\lstset{language={Python},basicstyle={\ttfamily\small}}\lstinline{#1}}
-
- #+name: setup-listings
-#+begin_src emacs-lisp :exports both :results silent
-  (setq org-export-latex-listings 'listings)
-  (setq org-export-latex-custom-lang-environments
-        '((emacs-lisp "common-lispcode")))
-  (setq org-export-latex-listings-options
-        '(("frame" "shadowbox")
-          ("rulesepcolor" "\\color{black}")
-          ("basicstyle" "\\footnotesize\\ttfamily")
-          ("numberstyle" "\\tiny")))
-  (setq org-latex-to-pdf-process
-        '("pdflatex -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -interaction nonstopmode -output-directory %o %f"))
-  (org-add-link-type
-   "latex" nil
-   (lambda (path desc format)
-     (cond
-      ((eq format 'html)
-       (format "<span class=\"%s\">%s</span>" path desc))
-      ((eq format 'latex)
-       (format "\\%s{%s}" path desc)))))
-#+end_src
-
 ** Background
    Sun RPC  (aka RPC ONC (Open Network Computing)) 
    - are the original RPC ([[http://tools.ietf.org/html/rfc1831][RFC 1831]]), introduced by Sun in 1988
@@ -635,3 +621,148 @@ run the server by overriding its IP
 #+end_src
 
 * Corba
+** History
+*** Context
+   - A specification defined by the /Object Management Group/ (OMG), 
+     composed of about 1000 members
+   - currently CORBA 3.0
+   - Implementors then propose implementations
+
+*** Implemenations
+     Commercial :
+     - ORBIS, IONA, VisiBroker, ORBacus, ....
+     Open source:
+     - JDK, MICO, JacORB, TAO, ...
+
+** Characteristics
+
+CORBA = Common Object Request Broker Architecture
+
+*** A RPC framework
+  - object oriented
+  - multiple-OS, multiple languages can be involved
+  - analogy of the "software bus"  
+*** External Services
+  - helper services, can connect to the bus
+  - services: naming, transaction, persistence ...
+
+** IDL
+
+   The Interface Definition Language:
+   equivalent to the RPC Language.
+
+   - defines the *methods* a server proposes 
+   - defines the *data* that can be accessed from the client (get/set)
+
+   From IDL, generation of concrete code to
+   represent data and methods in the chosen language.
+ 
+** IDL structure
+
+Three hierarchical elements:
+1. =Module= : namespaces (correspond to Java packages)
+2. =Interface= : logical groups of methods
+3. /methods/ : prototypes of the methods implemented by the server
+
+Example:
+#+begin_src idl
+module HelloApp
+{
+  interface Hello
+  {
+  string sayHello();
+  oneway void shutdown();
+  };
+};
+#+end_src
+
+** IDL types
+Types and number of bytes between parenthesis: 
+- boolean ={TRUE,FALSE}
+- octet (1)
+- /signed/ : short (2), long (4), long long (8)
+- /unsigned/ : unsigned short (2), unsigned long (4), unsigned long long (8)
+- /floats/ : float (4), double (8), long double (16)
+- /characters/: char (1, iso-latin-1), string (var), string<n> (n), wchar (2, unicode), wstring (var of wchar)
+
+** IDL type mapping to Java
+
+| IDL         | Java   |   | IDL                | Java   |
+|-------------+--------+---+--------------------+--------|
+| octet       | byte   |   | unsigned short     | short  |
+| short       | short  |   | unsigned long      | int    |
+| long        | int    |   | unsigned long long | long   |
+| long long   | long   |   | char               | char   |
+| float       | float  |   | wchar              | char   |
+| double      | double |   | string             | String |
+| long double | N/A    |   | wstring            | String |
+|             |        |   |                    |        |
+
+** IDL Methods
+*** General Form 						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+<return_type> method_name([<mode> <type> <parameter_id>]*) [raises [exceptions]+]; 
+
+
+- mode={in, out, inout} for input, output, and modified parameters resp. (View from the server). 
+- type: all primitive or constructed type with typedef (constructed before method call)
+
+Method names must be unique (no overloading).
+
+** IDL Oneway Methods
+
+*** Normal method call: waits for return and return is guaranteed
+
+*** Oneway call: no wait, but not guaranteed execution
+    - no return result (=void= return type)
+    - no =out= or =inout= parameter
+
+** IDL Parameter Passing
+*** Reference or Copy   :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:  
+
+
+    A parameter is passed
+    - by reference for CORBA Object
+    - by copy for primitives types (float, long, ...) and constructed types (struct, sequence,...)
+
+*** Observations
+    - =in= : client provides the value. If modified by the server, not updated on the client.
+    - =inout= :  client provides the value, updated on the client.
+    - =out= : the server provides the value, updated on the client.
+
+** POA
+*** OA and POA 							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- Object Adapter: 
+  mechanism that connects a request using an object reference with the proper code to service that request. 
+
+- Portable Object Adapter: a particular type of object adapter that is 
+  defined by the CORBA specification. 
+
+#+CAPTION:POA and servants
+#+LABEL:fig:poa
+#+attr_html: width="200"
+[[./img/POA.png]]
+
+** POA behavior
+*** Thread policy: 
+    - ORB_CTRL_MODEL (default): The POA is responsible for assigning requests to threads.
+    - SINGLE_THREAD_MODEL: The POA processes requests sequentially
+
+*** Lifespan policy: 
+    - TRANSIENT (Default): Objects implemented in the POA cannot outlive the process in 
+      which they are first created. Once the POA is deactivated, an OBJECT_NOT_EXIST exception occurs 
+      when attempting to use any object references generated by the POA.
+    - PERSISTENT Objects implemented in the POA can outlive the process in which they are first created.
+
+
+
+
+
