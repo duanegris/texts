@@ -1,0 +1,49 @@
+
+* Effectifs 2012/2013
+
+31 étudiants acceptés, 30 présents, dont 11 venant du concours, 19 AST.
+
+Note : RS = IUT Robert Schuman, Illkirch
+
+| filière                | acceptés | offertes | sous-total               |
+|------------------------+----------+----------+--------------------------|
+| DUT RS info passerelle |        3 |        5 |                          |
+| DUT info RS            |        6 |          |                          |
+| DUT info Belfort       |        1 |          |                          |
+| Lic pro info RS        |        1 |          |                          |
+| réinscr. DUT info RS   |        1 |          |                          |
+| BTS info               |        1 |          |                          |
+| DUT SRC Haguenau       |        2 |          |                          |
+| MPA                    |        0 |          |                          |
+| ATS                    |        0 |          |                          |
+|                        |          |          | AST FR : 15/31 (48%)     |
+|------------------------+----------+----------+--------------------------|
+| Maroc                  |        2 |        2 |                          |
+| Xidian                 |        2 |        2 |                          |
+|                        |          |          | AST étranger: 4/31 (12%) |
+|------------------------+----------+----------+--------------------------|
+| MP                     |        8 |       12 |                          |
+| PSI                    |        4 |        8 |                          |
+|                        |          |          | concours: 12/31 (38%)    |
+|                        |          |          |                          |
+
+
+* Objectifs 2013/2014
+
+objectifs : 40 étudiants, dont 20 provenant du concours, 20 AST
+
+- concours: places offertes 30 avec objectifs de remplir 20. 
+            Proportions MP et PSI légèrement changées pour offrir un peu plus aux MP.
+            Note : on devrait offrir 20 et 10 en suivant proportionnellement le taux remplissage 
+            année précédente (75% et 50% resp.)
+- AST : diversifier la provenance des DUT info, max 10 venant d'illkirch.
+
+
+| filière                | acceptés | offertes | sous-total |
+|------------------------+----------+----------+------------|
+| DUT RS info passerelle |          |        5 |            |
+| DUT info               |          |        5 |            |
+| autres AST             |          |       10 |            |
+|------------------------+----------+----------+------------|
+| MP                     |          |       22 |            |
+| PSI                    |          |        8 |            |
