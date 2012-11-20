@@ -5,6 +5,8 @@ Comment compiler et exécuter l'exemple WorCount.java en mode standalone
 A. Avec une distribution 0.20.0
 ===============================
 
+Supposons que vous téléchargez et décomprésser l'archive hadoop dans votre $HOME directory.
+
  $ export HADOOP_VERSION=0.20.2
  $ export HADOOP_HOME=$HOME/hadoop-${HADOOP_VERSION}/
  $ export PATH=$HADOOP_HOME/bin/:$PATH
