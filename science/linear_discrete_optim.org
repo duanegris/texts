@@ -1,0 +1,24 @@
+
+* Linear Programming
+** Example: Production Plant Problem
+
+2 drinks, Spring and Nebsi. Each contains two liquids, A and B.
+For 100l of Spring and Nebsi, there is :
+
+|        | A  | B  | profit |
+|--------+----+----+--------|
+| Spring | 3l | 8l | $100   |
+| Nebsi  | 6l | 4l | $125   |
+
+*Goal* : maximize the profit
+
+Further constraint: 
+- 30l of A in stock
+- 44l of B in stock
+- barel capacity able to store Spring : 500l
+- barel capacity able to store Nebsi  : 400l
+
+
+   
+   
+   
