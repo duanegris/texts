@@ -57,7 +57,7 @@ You are expected to find a support for your answers in this paper.
  Notice that Questions 6. and 7. have a limited support from the article.
 
  You must hand-in your answers by sending a email to [[genaud@unistra.fr]]
- by friday may 3, 8:00. 
+ by friday may 3rd, 8:00. 
  
 
 * Questions.
@@ -74,8 +74,8 @@ What are the differences between public and private clouds? Are there intermedia
 of public and private clouds? If yes, tell what benefit would it provide to the client
 using it?
 
-** Q4. Private vs. Public decision making
-Give an exampel of a situation where it is preferable to run a private cloud than
+** Q4. Private vs. Public cloud decision making
+Give an example of a situation where it is preferable to run a private cloud than
 using a public cloud.
 
 ** Q5. Provider Lock-in
@@ -93,9 +93,19 @@ to high-performance applications'', i.e applications running simultaneously
 many processes and threads over different hosts interconnected with a high
 throughput network? (Examples of such applications are MPI programs).
 
-** Q10. Exploitation Cost and Elasticity
-Explain which is the most commonly pricing model used in public clouds, and
+** Q9. Exploitation Cost and Elasticity
+Explain which is pricing model the most commonly in public clouds, and
 how it relates to /elasticity/.
+
+** Q10. Your Concern
+Consider you run a fresh start-up and you are the developper of an
+application, which is to have a large audience over the internet
+(for insance a popular application pluged in Facebook). What would
+be your major concern? What solutions would you consider to solve
+this issue?
+
+
+
 
 #+ATTR_HTML: width="150"
 [[http://www.antoinebenkemoun.fr/wp-content/uploads/2010/01/v92.jpg]]
