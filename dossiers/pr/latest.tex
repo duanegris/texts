@@ -36,11 +36,10 @@
 
 \usepackage[twoside,citeonce(page)]{footbib}
 \usepackage{todonotes}
+\usepackage{sectsty}
 
 \footbibliography{generalbiblio}
 \footbibliographystyle{plain}
-
-\newcommand{\SG}[2][inline]{\todo[color=yellow!50,#1]{\sf \textbf{SG:} #2}}
 
 \newcommand {\burl}[1]{\url{http://icps.u-strasbg.fr/~genaud/courses/#1}}
 
@@ -54,7 +53,7 @@
 
 
 \makeatletter
-\def\thebibliography#1{\subsection*{\rule{\linewidth}{1mm}\@mkboth
+\def\thebibliography#1{\subsection*{\rule{\linewidth}{1pt}\@mkboth
 %\def\thebibliography#1{\subsection*{\rubrique{\large\bf Références biliographiques}\@mkboth
   {PUBLICATIONS}{PUBLICATIONS}}\list
       {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
@@ -79,8 +78,8 @@
 \begin{center}
 \Large{\textbf{Dossier de Candidature\\
 aux fonctions de \\
-Maître de Conférences\\
-Poste 4013 - ENS IIE - Antenne de Strasbourg}}\\[5mm]
+Professeur des Universités\\
+Poste XXXX - ENSIIE - Antenne de Strasbourg}}\\[5mm]
 \Large{Stéphane \textsc{Genaud}}\\[1cm]
 
 \rule{\linewidth}{1mm}
@@ -115,7 +114,9 @@ Date: \today\\
 
 
 \newpage
-
+% Sections' styles
+\sectionfont{\sectionrule{3ex}{0pt}{-1ex}{2pt}}
+\subsectionfont{\sectionrule{1ex}{0pt}{-1ex}{1pt}}
 
 %-------- C V -----------------------------------
 
@@ -135,17 +136,40 @@ Date: \today\\
 		 	& Date et lieu de naissance :	& Né le 10 mars 1969 à Forbach (57).\\
 			& Nationalité :			& Française. \\
 			& Situation familiale :		& Marié, 2 enfants. \\
-			& Adresse professionnelle :	& LSIIT, Pôle API, Boulevard S. Brant,\\
+			& Adresse professionnelle :	& ENSIIE, 1 r. Cassini,\\
 			&      				& F-67400 Illkirch\\
-			&					& Tél. : +33 (0)38 92 77 449\\ 
-			&					& Fax  : +33 (0)3 90 24 45 47\\
+			&				& Tél. : +33 (0)3 69 200 231\\ 
 			& Adresse électronique :	& \texttt{genaud@unistra.fr}\\
 			& Page personnelle :		& \texttt{{\url{http://icps.u-strasbg.fr/members/genaud}}}\\[5mm]
 				%& \rule{\linewidth}{.2mm} \\
 
 \end{tabular}
 
+%---------------------- P O S I T I O N   A D M I N I S T R A T I V E ------------------------------
+\vspace{8mm}
+\textbf{\underline{Position administrative actuelle (depuis novembre 2012)}}
+\vspace{5mm}
 
+\begin{itemize}
+\item Fonction :\textbf{Directeur de l'antenne de Strasbourg de l'ENSIIE}.\\[1mm]
+       
+\item Position administrative: 
+   \begin{itemize}
+	\item[$\rhd$] Maître de conférences mis à disposition ide l'ENSIIE par l'Université de Strasbourg (UdS),
+	\item[$\rhd$] Chercheur au Laboratoire des sciences de l'ingénieur, de l'informatique et de l'imagerie
+	  l'Informatique et de la Télédétection (Icube, UMR 7357 CNRS-UdS),
+          membre de l'équipe \textit{Image et Calcul Parallèle Scientifique} (ICPS).\\
+   \end{itemize}
+
+\item Titulaire de la \textbf{Prime d'Excellence Scientifique} depuis septembre 2009.\\
+
+\item \textbf{Qualifié aux fonctions de Professeur des Universités} dans la 
+              section 27 en 2010.\\
+	\indent {\small Numéro de qualification~:~PR-2010-27-10127207589}\\[2mm]
+\end{itemize}
+
+
+%---------------------- F O R M A T I O N   U N I V E R S I T A I R E ------------------------------
 
 \subsection{Formation Universitaire}
 \medskip
@@ -189,12 +213,10 @@ Date: \today\\
 %		%	& \rule{\linewidth}{.2mm} \\
 
 \end{tabular}
-\newpage
+%\newpage
 
 
 \subsection{Expérience professionnelle}
-
-\textit{Seules les expériences liées à une activité d'enseignement et/ou de recherche sont décrites ici.}\\[2mm]
 
 \noindent
 \begin{tabular}{p{2cm}p{14.3cm}}
@@ -209,6 +231,8 @@ Date: \today\\
 %				\vspace{3mm}
 % 				}\\
 
+ 	 \textbf{2013--~~~}  &  \textbf{Directeur de l'antenne de Strasbourg de l'ENSIIE}\\
+	 \textbf{2009--2012}  &  \textbf{Maître de conférences en Informatique} à l'Université de Strasbourg\\[2mm]
  	 \textbf{2007--2009}  &  \textbf{Détaché Chargé de Recherche} au Laboratoire Lorrain de Recherche en Informatique et ses Applications
 (LORIA, UMR 7503 CNRS-INPL-INRIA-UHP-Nancy 2), équipe projet INRIA \textsc{AlGorille}.\\[2mm]
 
@@ -224,65 +248,43 @@ Date: \today\\
 
 	\textbf{1996--1998} &  \textbf{Attaché Temporaire d'Enseignement et de Recherche} au département d'informatique 
 de l'IUT de l'université Robert Schuman.\\[2mm]
-	\textbf{1994--1996} & Doctorant à l'Université Louis Pasteur (ULP), Strasbourg. \\
-				  & Directeur de thèse: Guy-René Perrin.\\[2mm]
-	\textbf{1993--1994} & Doctorant à l'Université de Franche-Comté, Besançon. \\
-				  & Directeur de thèse: Guy-René Perrin.\\[2mm]
-%				& \rule{\linewidth}{.2mm} \\[5mm]
-
+	\textbf{1993--1996} & Doctorant à l'Université de Franche-Comté, Besançon, puis Université Louis Pasteur, Strasbourg. Directeur de thèse: Guy-René Perrin.\\[2mm]
 \end{tabular}
 
-\vspace{6mm}
-\textbf{\underline{Position administrative actuelle (depuis septembre 2009)}}
-\vspace{5mm}
 
-\begin{itemize}
-\item
- 	\textbf{Maître de conférences en Informatique} à l'Université de Strasbourg (UdS):
-	\begin{itemize}
-		\item Enseignant à l'\'Ecole de Management Strasbourg,
-		\item Chercheur au Laboratoire des Sciences de l'Image, de 
-		      l'Informatique et de la Télédétection \\
-			(LSIIT, UMR 7005 CNRS-UdS).
-équipe \textit{Image et Calcul Parallèle Scientifique} (ICPS).
-\\[1mm]
-	\end{itemize}
+%------------------ R E S P O N S A B I L I T E S ---------------------------
 
-\item Titulaire de la \textbf{Prime d'Excellence Scientifique} depuis septembre 2009.\\
-
-\item \textbf{Qualifié aux fonctions de Professeur des Universités} dans la 
-              section 27 en 2010.\\
-	\indent {\small Numéro de qualification~:~PR-2010-27-10127207589}\\[2mm]
-\end{itemize}
-
-
-\vspace{-1mm}
 \subsection{Responsabilités principales}
+\vspace{3mm}
+\medskip
 
 \begin{itemize}
 \item
- 	\textbf{Responsabilités pédagogiques}
+ 	\textbf{Responsabilités pédagogiques}\\[-1mm]
 	\begin{itemize}
+		\item \textbf{Directeur de l'antenne de Strasbourg de l'ENSIIE}, depuis 03/2013.
 		\item Directeur délégué aux Systèmes d'Information de 
-		      l'\'Ecole de Management Strasbourg depuis 07/2011.
+		      l'\'Ecole de Management Strasbourg 07/2011-09/2012.
 		\item Responsable de la filière \textit{Système d'Information} 
-		      du master Management International de l'IECS de 2002 à 2007.
+		      du master Management International de l'IECS de 2002 à 2007.\\
 	\end{itemize}
+
  	\textbf{Responsabilités recherche}
 	\begin{itemize}
 		\item Responsable du thème de recherche \textit{Grilles} dans 
 		      l'équipe ICPS du LSIIT de 2001 à 2007. 
 			Reprise du thème à mon retour dans l'équipe en septembre 2009.
 		\item Membre du conseil scientifique du département \emph{Expertise 
-		      pour la recherche de l'UdS} depuis 2010.
+		      pour la recherche de l'UdS} depuis 2010.\\
 	\end{itemize}
+
  	\textbf{Responsabilités administratives et collectives}
 	\begin{itemize}
 		\item Membre de 3 commissions de spécialistes entre 2004 et 2008.
 		\item Membre du comité d'experts UdS (section 27) depuis 2009 et 
 		      membre dans 2 comités de sélection externes.
 	      \item Co-responsable des systèmes d'information de mon 
-		      établissement depuis 2001.
+		      établissement depuis 2001.\\
 	\end{itemize}
 \end{itemize}
 
@@ -463,35 +465,34 @@ un taux optimal de réplication~\cite{icps-2009-217} puis en faisant une étude
 quantitative du coût de la réplication et des temps de reprise~%
 \cite{icps-2009-214}.
 
-Enfin, je me suis attaché à valider notre proposition sur de vraies 
-applications.Deux collaborations ont abouties dans ce cadre. En 2007 et 2008 
-nous avons aidé des collègues du LSIIT (Pierre Gançarski), dans le domaine de 
-la fouille de données, à paralléliser leur méthode d'apprentissage non-%
-supervisée pour le clustering~\cite{icps-2008-188}. En 2008 et 2009, nous avons 
-collaboré avec des collègues de SUPELEC (Virginie Galtier et Stéphane Vialle) 
-pour comparer les implantations parallèles de la méthode d'apprentissage 
-Adaboost dans deux modèles de programmation différents (JavaSpace et MPJ)~%
+Enfin,  je  me   suis  attaché  à  valider  notre  proposition   sur  de  vraies
+applications. Deux  collaborations ont abouties dans  ce cadre. En 2007  et 2008
+nous avons aidé des collègues du LSIIT (Pierre Gançarski), dans le domaine de la
+fouille de données, à paralléliser leur méthode d'apprentissage non-% supervisée
+pour le clustering~\cite{icps-2008-188}.  En 2008 et 2009,  nous avons collaboré
+avec  des  collègues de  SUPELEC  (Virginie  Galtier  et Stéphane  Vialle)  pour
+comparer  les implantations  parallèles de  la méthode  d'apprentissage Adaboost
+dans   deux   modèles  de   programmation   différents   (JavaSpace  et   MPJ)~%
 \cite{icps-2009-219}.
 
 
 \subsubsection{Simulation}
 \label{sc:simulation}
 
-Les expérimentations que nous avons menées dans notre travail sur les grilles 
-ont été fastidieuses. L'apparition de l'outil Grid'5000 a considérablement
-élargi les possibilités d'expérimentation dans un environnement réel, tout
-en permettant un protocole expérimental plus rigoureux car l'utilisateur
-peut sélectionner le matériel voulu, et installer le système d'exploitation de
-son choix. Le caractère reproductible des expériences a donc été considérablement
-amélioré avec Grid'5000, mais reste néanmoins imparfait, car le
-réseau reliant les sites ainsi que les clusters sont régulièrement renouvelés.
-Les expériences doivent donc se succéder sur une période relativement courte
-pour obtenir une série de résultats comparables. Cependant, les problèmes 
-techniques ou la difficulté d'obtenir l'accès à l'outil au moment souhaité 
-peuvent fortement allonger la période d'expérimentation.
-La simulation présente face à ce problème un grand intérêt. Elle peut permettre
-de tester de nombreux scénarios, et de ne faire des expériences réelles que pour
-les cas les plus intéressants.\\
+Les expérimentations  que nous avons menées  dans notre travail sur  les grilles
+ont  été  fastidieuses. L'apparition  de  l'outil  Grid'5000 a  considérablement
+élargi les  possibilités d'expérimentation dans  un environnement réel,  tout en
+permettant  un  protocole expérimental  plus  rigoureux  car l'utilisateur  peut
+sélectionner le  matériel voulu, et  installer le système d'exploitation  de son
+choix. Le  caractère reproductible des  expériences a donc  été considérablement
+amélioré avec  Grid'5000, mais reste imparfait  car le réseau reliant  les sites
+ainsi que les  clusters sont régulièrement renouvelés.   Les expériences doivent
+donc se succéder  sur une période relativement courte pour  obtenir une série de
+résultats  comparables. Cependant,  les  problèmes techniques  ou la  difficulté
+d'obtenir l'accès  à l'outil  au moment souhaité  peuvent fortement  allonger la
+période d'expérimentation.  La  simulation présente face à ce  problème un grand
+intérêt. Elle peut permettre de tester de nombreux scénarios, et de ne faire des
+expériences réelles que pour les cas les plus intéressants.\\
 
 \textsc{SimGrid}~\footcite{Casanova08} est un projet important dans le paysage 
 de la recherche académique sur la simulation des systèmes distribués. Le 
@@ -506,38 +507,35 @@ Ce logiciel a été soutenu entre autres par le projet ANR USS-SimGrid%
 \footnote{\url{http://uss-simgrid.gforge.inria.fr/}} 
 \footnote{Labelisé projet \textit{phare} par l'ANR.}
 (2009-2011), puis aujourd'hui par le projet SONGS%
-\footnote{\url{http://infra-songs.gforge.inria.fr/}} 
-(2012-2015). Je participe à ces projets, dont l'objectif est d'étendre les 
-capacité de l'outil. Il n'existait pas par exemple, avant le projet Uss-Simgrid,  
-d'interface permettant de simuler les programmes parallèles à passage de 
-messages (ses deux principales API proposaient alors des communications point à 
-point bloquantes). Nous avons proposé une interface pour simuler des programmes 
-MPI. J'ai réactivé un effort fait dans ce sens à l'université d'Hawaï (Mark 
-Stillwell et Henri Casanova) mais inachevé, baptisée SMPI. Ce travail, poursuivi 
-par Pierre-Nicolas Clauss a abouti à une version désormais livrée avec SimGrid. 
-La conception et l'évaluation de SMPI ont fait l'objet d'une publication à la 
-conférence IPDPS~\cite{icps-2011-224}. Plusieurs perspectives sont ouvertes avec 
-cet outil. On peut extrapoler l'exécution d'un programme sur une machine qui 
-n'existe pas encore, dont on ne donne que la description. Ceci peut servir par 
-exemple à des fins de dimensionnement d'un cluster. Cela peut être utile dans 
-de nombreuses autres situations, comme l'enseignement, où une machine de bureau 
-peut servir à simuler un cluster ou un système distribué. On peut également 
-imaginer dans le futur continuer des exécutions en simulation après avoir 
-capturé la trace d'un programme réellement exécuté (avec des outils de 
-profiling existants) et en injectant cette trace dans le simulateur.
+\footnote{\url{http://infra-songs.gforge.inria.fr/}} (2012-2015). Je participe à
+ces  projets,  dont  l'objectif  est  d'étendre  les  capacité  de  l'outil.  Il
+n'existait pas par exemple, avant  le projet Uss-Simgrid, d'interface permettant
+de simuler les programmes parallèles à passage de messages (ses deux principales
+API proposaient alors  des communications point à point  bloquantes). Nous avons
+proposé une interface  pour simuler des programmes MPI. J'ai  réactivé un effort
+fait dans ce sens à l'université d'Hawaï (Mark Stillwell et Henri Casanova) mais
+inachevé,  baptisée SMPI.  Ce  travail, poursuivi  par  Pierre-Nicolas Clauss  a
+abouti  à  une  version  désormais   livrée  avec  SimGrid.   La  conception  et
+l'évaluation  de  SMPI  ont  fait  l'objet d'une  publication  à  la  conférence
+IPDPS~\cite{icps-2011-224}.  Plusieurs  perspectives   sont  ouvertes  avec  cet
+outil.  On  peut extrapoler  l'exécution  d'un  programme  sur une  machine  qui
+n'existe pas encore, dont  on ne donne que la description.  Ceci peut servir par
+exemple à des fins de dimensionnement d'un cluster. Cela peut être utile dans de
+nombreuses autres  situations, comme  l'enseignement, où  une machine  de bureau
+peut servir  à simuler  un cluster  ou un système  distribué. On  peut également
+imaginer  dans le  futur  continuer  des exécutions  en  simulation après  avoir
+capturé la trace d'un programme réellement exécuté (avec des outils de profiling
+existants) et en injectant cette trace dans le simulateur.
 
 
 %------------- P R O J E T    R E C H E R C H E S --------------------
-\subsection{Programme de recherches au sein du LSIIT}
+\subsection{Programme de recherches au sein du laboratoire Icube}
 
-\textit{%
-Mon projet pour la recherche s'inscrit naturellement dans la continuité et 
-l'évolution de mon activité actuelle au Laboratoire des Sciences de l'Image,
-de l'Informatique et de la Télé-détection (LSIIT), dans l'équipe Image et
-Calcul Parallèle Scientifique (ICPS). Je souhaite développer mes activités 
-de recherche dans ce laboratoire, et à partir de  2013 dans le laboratoire 
-Icube qui succèdera à l'actuel LSIIT, tout en les inscrivant dans le cadre
-du LabEx IRMIA auquel l'équipe participe.}\\
+\textit{Mon projet pour la recherche  s'inscrit naturellement dans la continuité
+  et l'évolution  de mon activité  actuelle au Laboratoire Icube,  dans l'équipe
+  Image et  Calcul Parallèle  Scientifique (ICPS).   Je souhaite  développer mes
+  activités de  recherche dans ce  laboratoire, tout  en les inscrivant  dans le
+  cadre du LabEx IRMIA auquel l'équipe participe.}\\
 
 Ma stratégie de développement comporte deux axes : un renforcement de 
 l'activité du thème \textit{applications} de l'équipe, et une extension
@@ -546,7 +544,7 @@ l'externalisation des ressources, c'est-à-dire les \emph{clouds}. Ces deux
 axes sont complémentaires.
 
 
-\subsection*{Thème Applications}
+\subsubsection{Thème Applications}
 Les activités de l'équipe ICPS sont structurées en trois thèmes: 
 \begin{enumerate}
 \item la \textit{compilation et l'optimisation de programmes}, qui 
@@ -597,23 +595,22 @@ m'a ainsi beaucoup appris. Le code développé a servi plusieurs fois d'exemple
 dansla communauté travaillant sur Grid'5000 pour évaluer des solutions proposées
 pour des environnements de type grilles~\footcite{Cappello07}.  \\
 
-Aujourd'hui, je compte poursuivre ce travail interdisciplinaire, à travers 
-une collaboration avec Guillaume Latu, ancien membre de l'équipe ICPS, 
-maintenant employé au CEA Cadarache. Nous co-encadrons depuis février 2011 un 
-doctorant, Matthieu Kuhn, avec Nicolas Crouseille chargé de recherches en 
-mathématiques appliquées dans l'équipe CalVi\footnote{L'équipe-projet CalVi
-est bi-localisée entre Strasbourg et Nancy.  Nos collaborateurs directs font 
-partie du laboratoire de mathématiques IRMA (UMR 7501 CNRS-UdS).}, pour 
-paralléliser un code de physique de plasmas de bords. Ce travail renforce une 
-collaboration de longue date (depuis 2002) entre l'ICPS et CalVi. Cette 
-collaboration a été à l'origine de notre association à la proposition de LabEx 
-avec l'IRMA. Ce LabEx a été obtenu en février 2012, et va donc permettre de 
-renforcer de manière significative ces travaux interdisciplinaires, notamment 
-à travers des thèses co-encadrées. Nous souhaitons également recruter un 
-permanent sur ce thème. Un poste de CR2 CNRS ayant été fléché pour recruter
-un informaticien dans un laboratoire de mathématiques, nous avons travaillé
-en concertation avec l'IRMA pour porter un dossier de candidature calibré 
-pour ces besoins à ce concours.\\  
+Aujourd'hui, je compte  poursuivre ce travail interdisciplinaire,  à travers une
+collaboration avec  Guillaume Latu, ancien  membre de l'équipe  ICPS, maintenant
+employé au  CEA Cadarache. Nous  co-encadrons depuis février 2011  un doctorant,
+Matthieu Kuhn,  avec Nicolas  Crouseille chargé  de recherches  en mathématiques
+appliquées dans  l'équipe CalVi\footnote{L'équipe-projet CalVi  est bi-localisée
+  entre  Strasbourg  et  Nancy.   Nos  collaborateurs  directs  font  partie  du
+  laboratoire de mathématiques IRMA (UMR  7501 CNRS-UdS).}, pour paralléliser un
+code de physique  de plasmas de bords. Ce travail  renforce une collaboration de
+longue date  (depuis 2002) entre  l'ICPS et CalVi.  Cette collaboration a  été à
+l'origine de notre association à la proposition de LabEx avec l'IRMA. Ce LabEx a
+été  obtenu en  février  2012, et  va  donc permettre  de  renforcer de  manière
+significative ces  travaux interdisciplinaires,  notamment à travers  des thèses
+co-encadrées. Nous souhaitons  également recruter un permanent sur  ce thème. Un
+poste  de CR2  CNRS ayant  été  fléché pour  recruter un  informaticien dans  un
+laboratoire de mathématiques,  nous avons travaillé en  concertation avec l'IRMA
+pour porter un dossier de candidature calibré pour ces besoins à ce concours.\\
 
 %-----------------------------------------------------------------------------|80
 
@@ -638,7 +635,7 @@ et tester leur introduction dans cet environnement de production.
 
 
 
-\subsection*{Thème Grilles et Clouds}
+\subsubsection{Thème Grilles et Clouds}
 
 A mon retour au LSIIT en septembre 2009, j'ai infléchi l'orientation de 
 mes recherches vers les problématiques de \emph{cloud} qui me semblent 
@@ -702,42 +699,42 @@ scientifique (porteur local) d'un work package sur la simulation des
 clouds.
 
 
-\subsection*{Complémentarité des thèmes}
+\subsubsection{Complémentarité des thèmes}
 
-%------------------------------------------------------------------------------|80
-La diversité des besoins en terme de calcul, face à la diversité croissante des
-architectures de calcul parallèle ou distribué, m'incite à mener de front des 
-états de l'art sur ces deux thèmes. Je crois que l'équipe peut contribuer sur 
+
+La diversité des besoins en terme de  calcul, face à la diversité croissante des
+architectures de  calcul parallèle ou distribué,  m'incite à mener de  front des
+états de l'art sur  ces deux thèmes.  Je crois que  l'équipe peut contribuer sur
 deux aspects: la performance des applications et la gestion des ressources.\\
 
-Nous avons parlé de la performance dans le thème applicatif, qui nécessite une 
-coopération étroite entre les chercheurs du domaine et les chercheurs 
-expérimentés en parallélisme, ces derniers pouvant apporter des méthodes 
-applicables directement au problème. Parmi ces méthodes, du ressort de la 
-recherche en informatique, on compte l'analyse (par exemple de trace, de 
-complexité, la visualisation), la parallélisation et l'optimisation automatique, 
+Nous avons parlé  de la performance dans le thème  applicatif, qui nécessite une
+coopération  étroite  entre   les  chercheurs  du  domaine   et  les  chercheurs
+expérimentés  en  parallélisme,  ces  derniers  pouvant  apporter  des  méthodes
+applicables  directement au  problème.  Parmi  ces méthodes,  du  ressort de  la
+recherche  en  informatique, on  compte  l'analyse  (par  exemple de  trace,  de
+complexité, la visualisation), la parallélisation et l'optimisation automatique,
 l'expérimentation et la simulation.\\
 
 
-La gestion des ressources nécessite de construire des environnements logiciels 
-de type intergiciel, capables de recenser, sélectionner, configurer des 
-ressources adaptées pour une application à un moment donné. Nous avons évoqué 
-l'évolution des équipements de calcul vers plus de complexité. Les machines 
-individuelles voient leur puissance de calcul continuer de croître grâce à 
-l'augmentation du nombre de c{\oe}urs, tandis que l'accès à des équipements 
-de calcul de type cluster est facilité car ils sont de plus en plus nombreux~%
-\footcite{Wu09} avec une  meilleure connectivité réseau. Certaines applications 
-pourront être avantageusement prises en charge par une seule machine multi-%
-c{\oe}urs, tandis que d'autres tireront plus de profit d'un petit laps de temps,  
-éventuellement en mode \textit{best-effort}, accordé sur un cluster avec beaucoup 
-de processeurs. Enfin, la nouvelle voie ouverte par les clouds IaaS permet 
-d'envisager d'embarquer l'application  dans une image de machine virtuelle 
+La gestion des  ressources nécessite de construire  des environnements logiciels
+de  type  intergiciel,  capables   de  recenser,  sélectionner,  configurer  des
+ressources adaptées  pour une application à  un moment donné. Nous  avons évoqué
+l'évolution  des équipements  de calcul  vers plus  de complexité.  Les machines
+individuelles  voient leur  puissance de  calcul  continuer de  croître grâce  à
+l'augmentation du nombre  de c{\oe}urs, tandis que l'accès à  des équipements de
+calcul de  type cluster  est facilité car  ils sont de  plus en  plus nombreux~%
+\footcite{Wu09} avec  une meilleure connectivité réseau.  Certaines applications
+pourront être  avantageusement prises  en charge par  une seule  machine multi-%
+c{\oe}urs, tandis que d'autres tireront plus de profit d'un petit laps de temps,
+éventuellement  en  mode  \textit{best-effort},  accordé  sur  un  cluster  avec
+beaucoup de  processeurs. Enfin, la  nouvelle voie  ouverte par les  clouds IaaS
+permet d'envisager d'embarquer l'application dans une image de machine virtuelle
 pour l'exécuter sur des ressources de calcul externalisées. \\
 
 %------------------------------------------------------------------------------|80
-Choisir la bonne plate-forme d'exécution est donc un problème à part entière.
-Cette problématique est au centre de mon projet de recherches au LSIIT. De 
-manière générale, je souhaite étudier les capacités des différents types de 
+Choisir la  bonne plate-forme d'exécution est  donc un problème à  part entière.
+Cette  problématique est  au centre  de mon  projet de  recherches au  LSIIT. De
+manière  générale, je  souhaite étudier  les capacités  des différents  types de
 plates-formes, en intégrant, quand c'est possible, la dimension économique.
 
 Optimiser l'exploitation des ressources revêt plusieurs formes. J'ai commencé à
@@ -768,40 +765,44 @@ de sélectionner, éventuellement auprès de différents fournisseurs, des machi
 virtuelles dont les capacités sont les mieux adaptées au besoin.
 
 
-\subsection*{Conclusion}
+\subsubsection{Conclusion}
 
 %------------------------------------------------------------------------------|80
-L'équipe ICPS souhaite maintenir l'équilibre dans le développement de ses
-différents thèmes. Je suis convaincu qu'il faut couvrir tout le spectre du
-parallélisme pour avoir une bonne vision des solutions les plus appropriées
-aux différents types de besoins. Cette strategie me semble particulièrement
-importante dans un contexte où les technologies changent très vite. Certaines
-applications qui nécessitaient un petit cluster il y a cinq ans peuvent 
-utiliserune machine multi-c{\oe}urs aujourd'hui. Ce changement d'architecture 
-cible peut induire un changement quant au modèle de programmation ainsi que 
-des outils d'optimisation utilisables. C'est pourquoi il me semble important
-d'avoir au sein de l'équipe l'ensemble des visions et des compétences du
-parallélisme. J'ai par exemple entamé un travail~\cite{ketterlin11} avec 
-Alain Ketterlin, sur l'abstraction des schémas de communications des 
-programmes MPI. Ce travail basé sur la reconnaissance de répétitions 
-linéaires s'appuye sur des résultats obtenus initialement pour l'analyse des 
-accès mémoire, menés dans le thème compilation et optimisation de programmes.
+L'équipe  ICPS  souhaite maintenir  l'équilibre  dans  le développement  de  ses
+différents  thèmes. Je  suis convaincu  qu'il faut  couvrir tout  le spectre  du
+parallélisme pour avoir une bonne vision  des solutions les plus appropriées aux
+différents  types  de  besoins.   Cette  strategie  me  semble  particulièrement
+importante dans  un contexte où  les technologies changent très  vite. Certaines
+applications  qui  nécessitaient un  petit  cluster  il  y  a cinq  ans  peuvent
+utiliserune  machine multi-c{\oe}urs  aujourd'hui. Ce  changement d'architecture
+cible peut induire un changement quant  au modèle de programmation ainsi que des
+outils d'optimisation utilisables. C'est pourquoi il me semble important d'avoir
+au   sein  de   l'équipe  l'ensemble   des   visions  et   des  compétences   du
+parallélisme. J'ai  par exemple entamé un  travail~\cite{ketterlin11} avec Alain
+Ketterlin,  sur  l'abstraction  des  schémas de  communications  des  programmes
+MPI. Ce travail basé sur la reconnaissance de répétitions linéaires s'appuye sur
+des résultats obtenus initialement pour  l'analyse des accès mémoire, menés dans
+le thème compilation et optimisation de programmes.
 
-En conclusion, je pense qu'un poste de professeur dans l'équipe ICPS amènerait
-une accélération du développement du thèmes grilles et clouds, ce statut
-ayant une plus grande reconnaissance au pan national ou international. 
-Je souhaite également contribuer au développement du thème applications,
-avec l'espoir de pouvoir recruter un spécialiste à l'interface dans le 
-moyen terme. Je pense pouvoir faire  béneficier le laboratoire et l'équipe, de 
-ma connaissance de l'environnement local, importante pour les collaborations en 
-cours ou à venir, et de mon intégration dans la communauté de recherche des
-grilles ou du HPC, avec en particulier le travail fait dans le projet SONGS
-amené à avoir une visibilité internationale.
+En conclusion, je  pense qu'un poste de professeur dans  l'équipe ICPS amènerait
+une accélération du  développement du thèmes grilles et clouds,  ce statut ayant
+une plus  grande reconnaissance au  pan national ou international.   Je souhaite
+également contribuer  au développement du  thème applications, avec  l'espoir de
+pouvoir recruter  un spécialiste  à l'interface  dans le  moyen terme.  Je pense
+pouvoir  faire béneficier  le laboratoire  et  l'équipe, de  ma connaissance  de
+l'environnement local, importante  pour les collaborations en cours  ou à venir,
+et de  mon intégration dans  la communauté de recherche  des grilles ou  du HPC,
+avec en  particulier le  travail fait  dans le  projet SONGS  amené à  avoir une
+visibilité internationale.
+
+
+% Sections' styles -> reset to no underlining
+\subsectionfont{\sectionrule{3ex}{0pt}{-1ex}{0pt}}
+
 
 
 %------------------------ P U B L I C A T I O N S -----------------------------|
 \newpage
-
 \subsection{Liste de publications}
 
 
@@ -904,6 +905,18 @@ Hermès, avril 1996.
 
 
 \subsection*{Conférences internationales avec actes et comité de lecture}
+
+\bibitem{MichonGGFB13}
+Etienne Michon, Julien Gossa, Stéphane Genaud, Marc Frincu and Alexandre Burel.
+\newblock Porting Grid applications to the Cloud with Schlouder.
+\newblock 5th IEEE International Conference on Cloud Computing Technology and Science (CloudCom 2013). Bristol, UK, dec 2013.
+
+
+\bibitem{KuhnLGC13}
+Matthieu Kuhn, Guillaume Latu, Stéphane Genaud and Nicolas Crouseilles.
+\newblock Optimization and parallelization of Emedge3D on shared memory architecture.
+\newblock HPCSP 2013: Workshop on HPC for Scientific Problems, Timisoara, Romania, sept 2013.
+
 
 \bibitem{FrincuGG13}
 Marc Frincu, \textbf{Stéphane Genaud} et Julien Gossa.
@@ -1096,19 +1109,19 @@ Marc Grunberg, \textbf{Stéphane Genaud}, et Michel Granet.
 
 \subsection*{En cours de soumission}
 
-\bibitem{itpro-cs11}
-\newblock \textbf{Stéphane Genaud}, Julien Gossa et Etienne Michon.
-\newblock Provisioning Cloud resources on the client-side: a cost-performance trade-off approach.
-IEEE IT Professional Magazine on Cloud Computing. Nov 2011
 
-\bibitem{tomacs-11}
-Olivier Beaumont, Laurent Bobelin, Henir Casanova, Pierre-Nicolas Clauss, 
-Bruno Donassolo, Lionel Eyraud-Dubois, \textbf{Stéphane Genaud}, Sacha Hunold, 
-Arnaud Legrand, Martin Quinson.
+\bibitem{sc13}
+Paul Bédaride, Augustin Degomme, Stéphane Genaud, Arnaud Legrand, George S. Markomanolis,
+Martin Quinson, Frédéric Suter, Mark Stillwell, Brice Videau
 \newblock
-Towards Scalable, Accurate, and Usable Simulations of Distributed Applications and Systems,
-ACM Transactions on Modeling and Computer Simulation. Oct 2011.
+Improving Simulations of MPI Applications Using A Hybrid Network Model with Topology and Contention Support,
+International Conference for High Performance Computing, Networking, Storage, and Analysis (SuperComputing 13).
 \end{thebibliography}
+
+
+\newpage
+\subsectionfont{\sectionrule{3ex}{0pt}{-1ex}{1pt}}
+
 
 
 %-----------------A N I M A T I O N -------------------
@@ -1130,8 +1143,6 @@ http://www.cse2012.cs.ucy.ac.cy/
 2011 (Banff, Canada),
 \item[$\bullet$] 
 IEEE/ACM International Conference on Grid Computing (GRID'10), 2010 (Bruxelles, Belgique),
-\item[$\bullet$] 
-20th IASTED International Conference on Parallel and Distributed Computing and Systems, 2010, (Marina Del Rey, USA),
 \item[$\bullet$] 
 IEEE/ACM International Conference on Grid Computing (GRID'08), 2008 (Tsukuba, Japon), 
 \item [$\bullet$]
@@ -1266,6 +1277,12 @@ scientifiques des équipes et à une conférence par un industriel invité.\\
 \subsubsection{Jurys de thèse}
 
 \begin{itemize}
+
+\item[$\bullet$] 
+Examinateur de la thèse d'Imen Chakroun, Université de Lille 1,
+(soutenance juin 2013), \textit{Parallel heterogeneous Branch and Bound algorithms for multi-core and multi-GPU environments},
+rapporteurs P. Manneback (Univ. de Mons), C. Roucairol (UVSQ), 
+encadrants N. Melad (Univ. Lille 1)\\
 
 \item[$\bullet$] 
 Rapporteur de la thèse d'Adrian Muresan, \'Ecole Normale Supérieure de Lyon
@@ -1763,7 +1780,7 @@ Membre élu, collège A, du conseil scientifique de l'ENSIIE depuis juin 2012.
 
 
 %-----------------------------------------------------------------------------|80
-\subsection{Projet de développement}
+\subsection{Projet de développement de l'ENSIIE Strasbourg}
 
 \textit{%
 Il est usuel dans un dossier de candidature à un poste d'enseignant-chercheur,
@@ -1772,100 +1789,102 @@ fonction proposée à travers ce poste m'amène à discuter, pour le volet
 pédagogique, davantage le contexte dans lequel s'inscrirait mon action
 que le contenu pédagogique.}\\
 
-L'offre de formation universitaire en informatique à Strasbourg est 
-essentiellement celle proposée par l'Université de Strasbourg, à travers sa 
-licence d'informatique et trois masters d'informatique hébergés à l'UFR de
-Mathématiques-Informatique, et à travers le DUT informatique de l'IUT
-Robert Schumann. Il n'existe pas de formation classique d'ingénieur en 
-informatique\footnote{Le CNAM Alsace possède une filière d'ingénieurs en 
-apprentissage qui forme environ 25 étudiants par an.}
-dans le paysage local de l'enseignement supérieur public.
-Conscient de cette absence, les collectivités locales ont favorisé un projet
-d'implantation d'école d'ingénieur en informatique. C'est dans ce contexte
-que L'ENSIIE a ouvert une antenne à Strasbourg en septembre 2009. 
-Trois promotions d'étudiants ont déjà débuté leur cursus à Strasbourg.\\
+L'offre   de  formation   universitaire   en  informatique   à  Strasbourg   est
+essentiellement  celle proposée  par l'Université  de Strasbourg,  à travers  sa
+licence  d'informatique et  trois  masters d'informatique  hébergés  à l'UFR  de
+Mathématiques-Informatique, et  à travers  le DUT  informatique de  l'IUT Robert
+Schumann.   Il   n'existe   pas    de   formation   classique   d'ingénieur   en
+informatique\footnote{Le  CNAM  Alsace  possède   une  filière  d'ingénieurs  en
+  apprentissage qui forme  environ 25 étudiants par an.}  dans  le paysage local
+de   l'enseignement  supérieur   public.   Conscient   de  cette   absence,  les
+collectivités locales ont favorisé  un projet d'implantation d'école d'ingénieur
+en informatique.  C'est dans  ce contexte  que L'ENSIIE a  ouvert une  antenne à
+Strasbourg en  septembre 2009.   Quatre promotions  d'étudiants ont  déjà débuté
+leur cursus à Strasbourg.\\
 
 J'ai contribué aux enseignements de l'école dès la première promotion,
 en assurant le cours \emph{Systèmes Informatiques} aux deux semestres
 de première année. Grâce à ce contact permanent avec l'école, j'ai pu
 comprendre les enjeux du développement de l'antenne de Strasbourg.
 
-\subsection*{Enjeu socio-économique}
-Le premier enjeu est de former des cadres en informatique de haut niveau 
-pour le tissu industriel. Les entreprises sont demandeuses d'une telle 
-formation d'ingénieur comme le montrent les stages offerts
-ou les partenariats privilégiés avec Abase ou Logica. Intégrée au réseau
-AlsaceTech (fédération de 12 écoles d'ingénieur et de management sur
-l'Alsace), l'ENSIIE est devenue d'emblée un acteur de premier rang
-dans le milieu socio-économique alsacien. Le travail de Pierre Tellier,
-en amont du projet d'implantation ENSIIE, puis spécifiquement sur le lancement
-de l'antenne, a permis d'implanter rapidement l'école localement.
+\subsubsection*{Enjeu socio-économique}
+Le premier enjeu est de former des cadres en informatique de haut niveau pour le
+tissu  industriel.  Les  entreprises  sont  demandeuses  d'une  telle  formation
+d'ingénieur comme le montrent les stages offerts ou les partenariats privilégiés
+avec Abase ou  CGI (ex-Logica). Intégrée au réseau AlsaceTech  (fédération de 12
+écoles d'ingénieur et de management sur l'Alsace), l'ENSIIE est devenue d'emblée
+un acteur de  premier rang dans le milieu socio-économique  alsacien. Le travail
+de Pierre Tellier, en amont du projet d'implantation ENSIIE, puis spécifiquement
+sur  le  lancement  de  l'antenne,   a  permis  d'implanter  rapidement  l'école
+localement.
 
-\subsection*{Enjeu offre de formation}
-Le deuxième enjeu concerne l'insertion de l'ENSIIE dans le paysage
-des formations en informatique et des formations d'ingénieur à Strasbourg.
-Il est nécessaire pour réussir cette intégration d'avoir une politique 
-concertée avec l'Université de Strasbourg pour que la lisibilité de 
-l'offre reste cohérente. La convention passée entre l'IUT Robert Schumann de 
-l'université de Strasbourg et l'ENSIIE pour accueillir les meilleurs 
-étudiants de DUT informatique en est un bon exemple : alors que beaucoup 
-de ces étudiants changeaient auparavant de région pour intégrer une école 
-d'ingénieur, une formation de qualité leur est maintenant offerte sur place, 
-renforçant ainsi l'attractivité du site. De même, l'effet de \emph{marque} 
-dont disposent les grandes écoles est un facteur d'attractivité inconstestabe
-qui a des retombées pour tout le site. Cette attractivité dûe à la réputation
-est aujourd'hui renforcé par les mouvements actuels de concentration dans le
-monde des écoles d'ingénieur ou de management, en augmentant la visibilité 
-des établissements.
-Réciproquement, l'Université peut offrir aux étudiants de l'ENSIIE de Strasbourg,
-un large panorama de formations et compétences. L'exemple le plus emblématique
-est l'ouverture de deux Masters informatiques de l'Université aux étudiants de 
-l'ENSIIE. La convention passée permet aux étudiants d'obtenir le Master 
-en suivant un certain nombre de modules spécifiques. C'est pour eux une occasion 
-de s'initier à une spécialisation et de connaître l'état de l'art des recherches
-dans ces domaines.
-En contre-partie, leur présence apporte à ces formations un flux d'étudiants de 
-bon niveau. De manière générale, l'Université offre son portefeuille extrêmement 
-large de formation, qui permet aux élèves ingénieurs en informatique d'ajouter 
-des compétences dans d'autres disciplines, comme la finance ou le management à 
-l'EM Strasbourg. Au final, l'Université de Strasbourg a la capacité de fournir 
-un effet de levier à l'ENSIIE, et réciproquement, l'ENSIIE peut apporter à 
+\subsubsection*{Enjeu offre de formation}
+Le  deuxième  enjeu  concerne  l'insertion  de  l'ENSIIE  dans  le  paysage  des
+formations en informatique  et des formations d'ingénieur à  Strasbourg.  Il est
+nécessaire pour réussir  cette intégration d'avoir une  politique concertée avec
+l'Université de Strasbourg pour que la lisibilité de l'offre reste cohérente. La
+convention passée entre  l'IUT Robert Schumann de l'université  de Strasbourg et
+l'ENSIIE pour accueillir  les meilleurs étudiants de DUT informatique  en est un
+bon exemple  : alors  que beaucoup  de ces  étudiants changeaient  auparavant de
+région pour  intégrer une école d'ingénieur,  une formation de qualité  leur est
+maintenant offerte sur place, renforçant  ainsi l'attractivité du site. De même,
+l'effet  de \emph{marque}  dont  disposent  les grandes  écoles  est un  facteur
+d'attractivité  inconstestabe qui  a des  retombées  pour tout  le site.   Cette
+attractivité dûe  à la réputation  est aujourd'hui renforcée par  les mouvements
+actuels de concentration dans le monde  des écoles d'ingénieur ou de management,
+en augmentant  la visibilité  des établissements.   Réciproquement, l'Université
+peut  offrir aux  étudiants  de l'ENSIIE  de Strasbourg,  un  large panorama  de
+formations et  compétences. L'exemple  le plus  emblématique est  l'ouverture de
+deux  Masters  informatiques de  l'Université  aux  étudiants de  l'ENSIIE.   La
+convention passée permet aux étudiants d'obtenir le Master en suivant un certain
+nombre de  modules spécifiques. C'est pour  eux une occasion de  s'initier à une
+spécialisation et de connaître l'état de l'art des recherches dans ces domaines.
+En contre-partie, leur présence apporte à  ces formations un flux d'étudiants de
+bon niveau. De manière générale, l'Université offre son portefeuille extrêmement
+large de formations, qui permet  aux élèves ingénieurs en informatique d'ajouter
+des compétences dans  d'autres disciplines, comme la finance ou  le management à
+l'EM Strasbourg. Au  final, l'Université de Strasbourg a la  capacité de fournir
+un  effet de  levier à  l'ENSIIE, et  réciproquement, l'ENSIIE  peut apporter  à
 l'Université et à la région un flux d'étudiants et de relations indédits.
 
-\subsection*{Enjeu recherche}
-Enfin, un troisième enjeu concerne la recherche. Les synergies possibles 
-décrites précedemment sont également valables pour la recherche : les étudiants
-de l'ENSIIE choisissant des cours ou des stages proposés à l'Université de
-Strasbourg renforcent le dynamisme de ces parcours, et en retour profitent
-d'opportunités de faire la recherche au sein de l'école doctorale MSII
-de l'Université. En sens inverse, l'ENSIIE représente une opportunité, pour 
-l'ensemble des enseignants-chercheurs du site, de dispenser des cours dans une
-formation de haut niveau. L'antenne strasbourgeoise, en l'absence de postes
+\subsubsection*{Enjeu recherche}
+Enfin,  un  troisième  enjeu  concerne la  recherche.  Les  synergies  possibles
+décrites précedemment sont également valables  pour la recherche : les étudiants
+de  l'ENSIIE choisissant  des cours  ou des  stages proposés  à l'Université  de
+Strasbourg  renforcent le  dynamisme de  ces  parcours, et  en retour  profitent
+d'opportunités  de faire  la  recherche au  sein de  l'école  doctorale MSII  de
+l'Université.  En  sens  inverse,  l'ENSIIE  représente  une  opportunité,  pour
+l'ensemble des enseignants-chercheurs  du site, de dispenser des  cours dans une
+formation  de haut  niveau. L'antenne  strasbourgeoise, en  l'absence de  postes
 d'enseignants permanents, s'est beaucoup appuyée, pendant sa phase de lancement,
-sur les enseignants-chercheurs de l'Université, qui ont pu naturellement sensibiliser
-les étudiants à leurs thèmes de recherche. Ceci est cohérent avec la politique 
-affichée par l'ENSIIE concernant le développement de la recherche à Strasbourg.
-Celle ci est une politique de site, c'est-à-dire que les enseignants-chercheurs 
-sont prioritairement recrutés dans les thèmes développés au LSIIT (futur Icube).
-Du point de vue de la recherche également, la qualité de la recherche faite
-au LSIIT bénéficie à l'ENSIIE, et l'ENSIIE apporte de nouvelles forces, que 
-ce soit en étudiants ou (je l'espère, prochainement) en enseignants-chercheurs.
+sur  les  enseignants-chercheurs  de  l'Université,  qui  ont  pu  naturellement
+sensibiliser les étudiants  à leurs thèmes de recherche. Ceci  est cohérent avec
+la politique affichée par l'ENSIIE concernant le développement de la recherche à
+Strasbourg.   Celle  ci  est  une   politique  de  site,  c'est-à-dire  que  les
+enseignants-chercheurs sont prioritairement recrutés  dans les thèmes développés
+au laboratoire Icube.  Du point de vue  de la recherche également, la qualité de
+la  recherche faite  au  LSIIT  bénéficie à  l'ENSIIE,  et  l'ENSIIE apporte  de
+nouvelles forces,  que ce soit en  étudiants ou (je l'espère,  prochainement) en
+enseignants-chercheurs.
 
  
-\subsection*{Conclusion}
-L'implantation de l' antenne de l'ENSIIE à Strasbourg s'est faite avec
-succès car elle a trouvé sa place immédiatement dans l'environnement local.
-Les paragraphes précédents ont décrits les apports mutuels de l'Université
-et de l'ENSIIE. Ils plaident pour une mener une politique concertée, tant
-au niveau de la recherche que de l'enseignement. Après la phase préliminaire
-de lancement réussie, il s'agit de développer l'antenne. Ce développement
-passe bien sûr par une augmentation du nombre d'étudiants recrutés. Le
-recrutement au niveau national ou international est le plus délicat, car
-il repose beaucoup sur la réputation et le positionnement stratégique
-de l'école, dans les concours, et dans les partenariats avec d'autres
-établissements, mais il est celui qui distingue l'école des autres 
-formations. Je serais très heureux de m'investir dans ce projet, et c'est
-ce qui motive ma candidature à cette fonction aujourd'hui.
+\subsubsection*{Conclusion}
+L'implantation de  l' antenne de l'ENSIIE  à Strasbourg s'est faite  avec succès
+car  elle a  trouvé  sa  place immédiatement  dans  l'environnement local.   Les
+paragraphes précédents  ont décrits  les apports mutuels  de l'Université  et de
+l'ENSIIE. Ils plaident pour une mener une politique concertée, tant au niveau de
+la recherche  que de  l'enseignement. Après la  phase préliminaire  de lancement
+réussie, il s'agit de développer l'antenne.  Ce développement passe bien sûr par
+une  augmentation du  nombre  d'étudiants recrutés.   Le  recrutement au  niveau
+national ou  international est le  plus délicat, car  il repose beaucoup  sur la
+réputation et  le positionnement stratégique  de l'école, dans les  concours, et
+dans  les partenariats  avec  d'autres  établissements, mais  il  est celui  qui
+distingue l'école des  autres formations.  Je serais très  heureux de m'investir
+plus avant dans ce projet que j'ai déjà amorcé. Il me semble important d'asseoir
+la  position de  directeur de  cette  antenne avec  un poste  de professeur  des
+Universités  et j'espère  que ce  dossier  a convaincu  de la  légitimité de  ma
+candidature sur ce poste.
+
 
 
 
@@ -1882,7 +1901,10 @@ ce qui motive ma candidature à cette fonction aujourd'hui.
 %― un exemplaire d'au moins un des travaux, ouvrages, articles et réalisations parmi ceux mentionnés dans le curriculum vitae ;
 %― une copie du rapport de soutenance du diplôme détenu, le cas échéant.
 
+\end{document}
+
 \newpage
+
 \section{Documents annexes}
 
 Le reste du document fournit:\\
