@@ -81,6 +81,8 @@
 ** A Time-line of technologies
 #+CAPTION:Timeline of mainstream or emblematic technologies
 #+LABEL:fig:timeline
+#+ATTR_LaTeX: width=1\linewidth
+#+ATTR_HTML: width="70%"
   [[../img/timeline.png]]
 
 ** Principle Design Choices
@@ -153,6 +155,19 @@
    - converts : <prog_name + ver + protocol> to <portnumber>
    - exact service name depending on sytem/distribution : =rpcbind= (or sometimes =portmap=, or =rpc.portmap=)
    - attached to port 111
+
+** Service Registration (prognum)
+
+Registration needs (=rpcregister= 1st arg for example)
+a 32-bit identifier (sometimes called RPC port) 
+
+| Range (hex.)      | role                       |
+|-------------------+----------------------------|
+| 00000000-1fffffff | defined by rpc@sun.com     |
+| 20000000-3fffffff | defined by user            |
+| 40000000-5fffffff | transient (dynamic server) |
+| 60000000-ffffffff | reserved                   |
+
 
 ** Standard RPC services
 *** file =/etc/rpc=						    :B_block:
@@ -526,10 +541,8 @@ public class OperationImpl extends UnicastRemoteObject
 ** Example 1: Service Registration
 - The first server task is to register the service 
   in the rmiregistry under a name (here /Operation/)
-#+begin_src java
-import java.rmi.*;
-import java.net.*;
 
+#+begin_src java
 public class Serveur {
   public static void main(String [] args) {
     try {
