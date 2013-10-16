@@ -48,7 +48,7 @@ void messaging(int myid, CLIENT *clnt) {
 	printf("..:: Welcome client #%d. Type your message. Empty line to quit. ::..\n\n",myid);
 	inputmsg = malloc(MAX_MSG_SIZE);
 	strcpy(inputmsg,"init");
-	while (inputmsg[0] != '\0') {
+	while (inputmsg[0] != '\0') {  /* an empty string means 'Quit!' */
 		  printf("client-%d> ",myid);
 		  inputmsg = fgets(inputmsg,MAX_MSG_SIZE,stdin);
 		  /* overwrite trailing \n with a \0 
