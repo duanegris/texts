@@ -115,6 +115,9 @@ Date: \today\\
 
 \newpage
 % Sections' styles
+
+%save
+\newcommand{\mysf}{\sectionfont}
 \sectionfont{\sectionrule{3ex}{0pt}{-1ex}{2pt}}
 \subsectionfont{\sectionrule{1ex}{0pt}{-1ex}{1pt}}
 
@@ -292,6 +295,8 @@ de l'IUT de l'université Robert Schuman.\\[2mm]
 %---------------------------- E N J E U ------- --------------------------------
 \newpage
 %\setlength{\parindent}{5mm}
+%\sectionfont{\mysf}
+
 \section{L'enjeu du poste}
 
 \medskip
@@ -342,16 +347,19 @@ entreprises ont dès la création proposé  un soutien solide (Abase Europe, CGI
 Euro Information Développement) et  l'organisation d'évènements réguliers a fait
 croître le  cercle des entreprises qui  viennent rencontrer les élèves  dans nos
 locaux (la \emph{rentrée des entreprises}, les exposés thématiques faits par les
-entreprises, le  \emph{startup week-end}),  ou à  l'extérieur (la  \emph{nuit de
-  l'info}, le forum AlsaceTech). Depuis  septembre 2012, Pierre Tellier m'a aidé
-pour    conduire    la    transition     dans    nos    relations    avec    les
-entreprises. L'introduction  d'un nouveau  contact à  la direction  de l'antenne
-était  important car  le projet  en démarrage  était fortement  personnalisé par
-Pierre Tellier. Les nombreux  évènements extérieurs auxquels l'ENSIIE participe,
-ainsi que visites  des nombreux stagiaires, m'a permis de  rencontrer une grande
-partie  des  entreprises  cette  année écoulée.  Ces  rencontres  permettent  de
-réaffirmer la  volonté de  l'école d'être  bien ancré  dans le  tissu industriel
-local pour fournir des cadres de haut niveau aux entreprises.
+entreprises, le  \emph{startup week-end}),  la journée thématique  annuelle (que
+j'organise cette année sur le Cloud Computing%
+\footnote{\url{http://www.ensiie-developpement-strasbourg.fr/evenements/cloud-computing/}}),
+ou  à l'extérieur  (la  \emph{nuit  de l'info},  le  forum AlsaceTech).   Depuis
+septembre 2012,  Pierre Tellier m'a  aidé pour  conduire la transition  dans nos
+relations  avec  les  entreprises.  L'introduction d'un  nouveau  contact  à  la
+direction  de  l'antenne  était  important  car le  projet  en  démarrage  était
+fortement personnalisé  par Pierre  Tellier. Les nombreux  évènements extérieurs
+auxquels  l'ENSIIE participe,  ainsi que  visites des  nombreux stagiaires,  m'a
+permis de rencontrer une grande partie des entreprises cette année écoulée.  Ces
+rencontres permettent de réaffirmer la volonté de l'école d'être bien ancré dans
+le  tissu  industriel  local  pour  fournir   des  cadres  de  haut  niveau  aux
+entreprises.
 
 
 \paragraph{Étudiants entrants} 
@@ -404,38 +412,58 @@ Année &	Total &  Concours & Admission sur  &	Admission sur  & 	Part  \\
 
 \paragraph{Formation et Recherche}
 Le  point 3.   est un  levier  fondamental :  une  bonne insertion  au sein  des
-formations universitaires et  des laboratoires de recherche fera  de l'école une
-brique   importante   de   l'ensemble.   L'existence   de   l'antenne   renforce
-l'attractivité    du     site    Strasbourgeois     dans    le     domaine    de
-l'informatique. L'ENSIIE  attire en  effet des  étudiants au  niveau local  : la
-formation  représente  pour  les  meilleurs étudiants  du  DUT  informatique  de
-l'Université de  Strasbourg, une  poursuite d'études  attractive à  laquelle ils
-souscrivent largement alors qu'ils  partaient auparavant pour rejoindre d'autres
-écoles  d'ingénieurs en  France. L'ENSIIE  attire également  au niveau  national
-(61\%  hors  Alsace à  cette  rentrée),  voire  international (Campus  France  +
-conventions internationales comme Xidian,  issues du partenariat Mines-Télécom).
-C'est  actuellement la  seule formation  en  informatique à  Strasbourg avec  un
-rayonnement  aussi  large.   L'ENSIIE  attire   des  étudiants  à  proximité  de
-l'Université,   et   l'antenne   doit   s'appuyer  sur   les   compétences   des
-ensiegnants-chercheurs  de   l'Université  de   Strasbourg.   Ceci   permet  une
-mutualisation efficace  des enseignements lors des  semestres 4 et 5  composés à
-80\%  d'options,  et de  manière  plus  générale,  favorise la  proximité  entre
-enseignants-chercheurs de l'Université et élèves  de l'ENSIIE qui est nécessaire
-pour attirer ces élèves vers la recherche.  C'est pour cela que nous travaillons
-actuellement  au rétablissement  de la  convention qui  avait permis  aux EC  de
-l'université  d'inclure   les  heures   d'enseignement  à  l'ENSIIE   dans  leur
-service. En  contre-partie, L'ENSIIE peut  également être un soutien  à d'autres
-formations, comme  dans le projet  de création d'un nouveau  diplôme d'ingénieur
-\textit{Internet des objets} porté par  Télécom Physique Strasbourg, pour lequel
-l'ENSIIE assurerait la première  année d'enseignement.  Concernant la recherhce,
-la présence des EC de l'Université  dans la formation amène davantage d'élèves à
-faire des  stages recherche  dans les  équipes de  Icube ou  de l'IRMA  avec des
-poursuites éventuelles en  thèse.  Deux étudiants (dont un  provenant d'Evry ont
-déjà entamé une  thèse à l'Université de Strasbourg). La  bonne connaissance des
-thèmes  de recherche  à  l'Université  est donc  indispensable  au directeur  de
-l'ENSIIE Strasbourg  pour insérer  correctement l'école dans  cet environnement.
-Le fléchage de ce poste en  informatique pour le laboratoire Icube va exactement
-dans ce sens.
+formations universitaires et des laboratoires  de recherche est prioritaire pour
+faire  de  l'école une  ``brique''  indispensable  de l'ensemble.  Cette  brique
+apporte des bénéfices nouveaux:
+\begin{itemize}
+
+\item L'existence  de l'antenne  renforce l'attractivité du  site Strasbourgeois
+  dans le domaine  de l'informatique. L'ENSIIE attire en effet  des étudiants au
+  niveau local  : la formation  représente pour  les meilleurs étudiants  du DUT
+  informatique de l'Université de  Strasbourg, une poursuite d'études attractive
+  à laquelle  ils souscrivent largement  alors qu'ils partaient  auparavant pour
+  rejoindre  d'autres  écoles d'ingénieurs  en  France.   Nous avons  établi  un
+  partenariat    privilégié   avec    le    département   informatique    Robert
+  Schumann. Depuis  2010, le dispositif  \textit {Passerelle} depuis  permet aux
+  cinq meilleurs étudiants  d'entrer à l'ENSIIE Strasbourg. Il a  été convenu de
+  faire évoluer  le dispositif  vers une filière  spécificique dans  PostBac qui
+  donnerait comme débouché à l'issue du DUT informatique, une poursuite d'études
+  dans l'une des deux formations d'ingénieur, \textit{Infrastructures Numériques
+    et Objets Communicants} à Télécom  Physique Strasbourg ou celle de l'ENSIIE.
+  L'ENSIIE  attire  également au  niveau  national  (61\%  hors Alsace  à  cette
+  rentrée),  voire international  (Campus France  + conventions  internationales
+  comme  Xidian, issues  du partenariat  Mines-Télécom).  C'est  actuellement la
+  seule formation en informatique à Strasbourg avec un rayonnement aussi large.
+
+\item L'ENSIIE  attire des étudiants  à proximité de l'Université,  et l'antenne
+  doit s'appuyer sur les  compétences des enseginants-chercheurs de l'Université
+  de Strasbourg.  Ceci permet une  mutualisation efficace des enseignements lors
+  des semestres 4 et  5 composés à 80\% d'options, et  de manière plus générale,
+  favorise la  proximité entre enseignants-chercheurs de  l'Université et élèves
+  de l'ENSIIE, nécessaire pour attirer ces élèves vers la recherche.  C'est pour
+  cela que nous travaillons actuellement  à une formalisation des relations avec
+  l'Université de Strasbourg  sous la forme d'une  association.  Nous souhaitons
+  simplifier  les  interventions   de  ECs  de  l'Université   à  l'ENSIIE.   En
+  contre-partie, L'ENSIIE peut  également être un soutien  à d'autres formations
+  de  l'Université,  comme dans  le  projet  de  création d'un  nouveau  diplôme
+  d'ingénieur \textit{Infrastructures  Numériques et Objets  Communicants} porté
+  par Télécom Physique  Strasbourg, pour lequel l'ENSIIE  assurerait la première
+  année d'enseignement.
+
+\item  Concernant la  recherche,  la présence  des EC  de  l'Université dans  la
+  formation  amène davantage  d'élèves à  faire  des stages  recherche dans  les
+  équipes de Icube ou de l'IRMA  avec des poursuites éventuelles en thèse.  Deux
+  étudiants (dont un  provenant d'Evry ont déjà entamé une  thèse à l'Université
+  de  Strasbourg). Plus  d'une  dizaine de  stages  ont déjà  eu  lieu dans  les
+  laboratoires de l'Université. 
+
+
+\end{itemize}
+
+La bonne connaissance  des thèmes de recherche et des  chercheurs à l'Université
+est  donc  indispensable  au  directeur  de  l'ENSIIE  Strasbourg  pour  insérer
+correctement  l'école  dans cet  environnement.   Le  fléchage  de ce  poste  en
+informatique pour le laboratoire Icube va exactement dans ce sens.
 
 
 \paragraph{Financement}
@@ -459,7 +487,9 @@ confiance,  et de  convaincre  que le  projet  de l'ENSIIE  va  bien amener  une
 plus-value aux acteurs locaux, entreprises ou Université.\\
 
 
+
 \bigskip
+\paragraph{Conclusion}
 \emph{A  travers ces  quatres  volets,  j'ai montré  les  difficultés  mais aussi  les
 réussites  constatées, et  j'ai esquissé  les actions  que j'étais  en train  de
 mener.  Le  reste du  dossier a  pour objectif  de me  présenter en  détails. Il
@@ -559,38 +589,30 @@ différentes.  Cette  alternative a  été popularisée~\footcite{Foster97,Foste
 sous  l'appellation de  \emph{grilles}.   J'ai orienté  mes  recherches vers  ce
 domaine  en  portant un  projet  de  l'Action  Concertée Incitative  (ACI)  Grid
 (2002--2005).   Le   projet  visait   l'étude  du   comportement  d'applications
-scientifiques,  essentiellement des  programmes MPI~\footnote{%  Message Passing
-  Interface définit  une bibliothèque  de fonctions  permettant à  des processus
-  d'échanger des messages.  C'est devenu  le standard \textit{de facto} pour les
-  programmes parallèles  exécutés sur  des architectures à  mémoire distribuée.}
-sur  les  grilles.  Deux  catégories  de  problèmes  ont  été traitées  dans  ce
-projet. D'une part, déterminer quelles \emph{performances} on peut espérer d'une
-application exécutée sur des ressources  hétérogènes distribuées à large échelle
-géographique et  ce qu'on peut faire  pour les améliorer.  D'autre  part, quelle
-couche \emph{intergicielle} peut  on proposer pour masquer la  complexité de ces
-systèmes répartis et améliorer la prise en charge des applications.
+scientifiques,  essentiellement  des  programmes  MPI  sur  les  grilles.   Deux
+catégories de problèmes ont été traitées  dans ce projet. D'une part, déterminer
+quelles \emph{performances} on  peut espérer d'une application  exécutée sur des
+ressources hétérogènes distribuées à large échelle géographique et ce qu'on peut
+faire pour les améliorer.  D'autre part, quelle couche \emph{intergicielle} peut
+on proposer pour masquer la complexité  de ces systèmes répartis et améliorer la
+prise en charge des applications.
 
 
 \paragraph{Performances} 
 
-Pour améliorer les performances, nosu  avons étudié les techniques d'équilibrage
-de charge statiques  ou dynamiques.  En effet, les découpages  des données et la
-distribution  de  la charge  dans  de  nombreuses applications  parallèles  font
-l'hypothèse que les processeurs et les réseaux sont homogènes. Pour optimiser le
-temps  de  calcul  d'un  ensemble  de tâches  indépendantes  exécutées  sur  des
-processeurs  hétérogène, il  faut déterminer  la meilleure  quantité de  données
-distribuées  à  chacune. Nous  avons  proposé  des algorithmes  pour  déterminer
-statiquement de telles  distributions optimales. Ces algorithmes  ont été testés
-sur  de   vraies  applications,   dont  l'application  de   géophysique  décrite
-précédemment~\cite{icps-2002-62,icps-2003-75,icps-2004-125}.      Nous     avons
-également comparé cette  approche statique à l'approche  dynamique dans laquelle
-le maître distribue un nouveau bloc de  travail à un esclave dès que celui-ci le
-demande : l'équilibrage de charge se fait alors naturellement selon le rythme de
-calcul des  esclaves. La  difficulté dans  cette approche  est de  déterminer la
-taille  du  bloc  à envoyer:  en  dessous  de  la  taille  idéale, il  y  a  des
-aller-retours  inutiles, tandis  qu'au  dessus, les  esclaves  ne finissent  pas
-simultanément.  En  revanche,  cette  stratégie  possède  l'avantage  majeur  de
-s'adapter aux variations de charge.
+Pour améliorer les performances, nous avons proposé des techniques d'équilibrage
+de charge statiques ou dynamiques  qui sont adaptées à l'hétérogénéité inhérente
+de ces  plateformes. Les algorithmes proposés  optimisent le temps de  calcul de
+tâches  indépendantes dans  ce cadre,  en déterminant  la meilleure  quantité de
+données  distribuées  à  chaque  élément de  calcul  iterconnecté.   Nous  avons
+également  comparé cette  approche statique  à  une approche  dynamique de  type
+maître-esclave, dans  laquelle dans laquelle  les esclaves réclament  du travail
+dès   que   les   tâches   qui   leur  ont   été   affectées   précemment   sont
+terminées.  L'approche dynamique  a l'avantage  de s'adapter  aux variations  de
+charge tout en étant proches des solutions optimales statiques.  Ces algorithmes
+ont été  testés sur  de vraies applications,  dont l'application  de géophysique
+décrite précédemment~\cite{icps-2002-62,icps-2003-75,icps-2004-125}.
+
 
 
 \paragraph{Intergiciel}
@@ -608,7 +630,7 @@ pannes.  Nous  avons  développé  {\pmpi}\footnote{~\url{http://www.p2pmpi.org}
 pour pallier ces lacunes. {\pmpi} comprend  à la fois la couche intergicielle et
 la  bibliothèque  de  communication  permettant  de  développer  des  programmes
 parallèles  à passage  de messages.  Cette  dernière est  une implémentation  de
-MPJ\footnote{Message Passing for  Java: adaptation de MPI  pour Java}qui intègre
+MPJ\footnote{Message Passing for  Java: adaptation de MPI  pour Java} qui intègre
 la notion  de tolérance aux pannes.  Les applications sont des  programmes Java,
 beaucoup  plus faciles  à déployer  dans un  environnement hétérogène.   Pour la
 couche  intergicielle, nous  reprenons les  principes des  systèmes pair-à-pair:
@@ -623,26 +645,26 @@ la machine  qui fait  la requête  des pairs  candidats, la  présence ou  non d
 données  nécessaires dans  les  caches  des pairs  distants,  et  le souhait  de
 l'utilisateur de concentrer ou non les processus sur le minimum de machines.
 
-Dans de tels systèmes, les pannes sont fréquentes. Or, lors d'un calcul, la 
-panne d'un des participants provoque l'arrêt de l'application. Pour diminuer le 
-risque de panne, nous avons proposé une solution jamais expérimentée dans ce 
-contexte qui est la réplication des calculs. L'utilisateur décide du taux de 
-redondance de l'exécution de chaque processus, sur des machines différentes, et 
-le système gère de manière transparente la cohérence de l'exécution. En cas de 
-panne de l'un des processus, l'application peut poursuivre son exécution tant 
+Dans de  tels systèmes,  les pannes  sont fréquentes. Or,  lors d'un  calcul, la
+panne d'un des participants provoque  l'arrêt de l'application. Pour diminuer le
+risque de  panne, nous avons  proposé une  solution jamais expérimentée  dans ce
+contexte qui  est la réplication  des calculs.  L'utilisateur décide du  taux de
+redondance de l'exécution de chaque  processus, sur des machines différentes, et
+le système gère  de manière transparente la cohérence de  l'exécution. En cas de
+panne de  l'un des processus,  l'application peut poursuivre son  exécution tant
 qu'il subsiste au moins une copie de ce processus de calcul.\\
 
 
-La conception de {\pmpi} à été décrite dans~\cite{icps-2007-182,icps-2005-155}.
-Nous avons aussi démontré sa capacité à prendre en charge l'exécution de 
-programmes parallèles sur plusieurs centaines de processeurs~%
-\cite{icps-2008-193}. La thèse de Choopan Rattanapoka~\footcite{icps-2008-208} 
-présente l'ensemble des résultats. {\pmpi} est aussi un support pour l'étude de 
-la tolérance aux pannes. Nous avons étudié le mécanisme de réplication des 
-calculs que nous proposons~\cite{icps-2007-185} en montrant comment déterminer 
-un taux optimal de réplication~\cite{icps-2009-217} puis en faisant une étude 
-quantitative du coût de la réplication et des temps de reprise~%
-\cite{icps-2009-214}.
+La conception de {\pmpi}  à été décrite dans~\cite{icps-2007-182,icps-2005-155}.
+Nous  avons aussi  démontré  sa  capacité à  prendre  en  charge l'exécution  de
+programmes       parallèles        sur       plusieurs        centaines       de
+processeurs~\cite{icps-2008-193}.        La        thèse       de        Choopan
+Rattanapoka~\footcite{icps-2008-208} présente l'ensemble  des résultats. {\pmpi}
+est aussi un support pour l'étude de  la tolérance aux pannes. Nous avons étudié
+le mécanisme de réplication  des calculs que nous proposons~\cite{icps-2007-185}
+en     montrant      comment     déterminer      un     taux      optimal     de
+réplication~\cite{icps-2009-217} puis en faisant  une étude quantitative du coût
+de la réplication et des temps de reprise~\cite{icps-2009-214}.
 
 Enfin,  je  me   suis  attaché  à  valider  notre  proposition   sur  de  vraies
 applications. Deux  collaborations ont abouties dans  ce cadre. En 2007  et 2008
@@ -687,24 +709,26 @@ Ce logiciel a été soutenu entre autres par le projet ANR USS-SimGrid%
 \footnote{Labelisé projet \textit{phare} par l'ANR.}
 (2009-2011), puis aujourd'hui par le projet SONGS%
 \footnote{\url{http://infra-songs.gforge.inria.fr/}} (2012-2015). Je participe à
-ces  projets,  dont  l'objectif  est  d'étendre  les  capacité  de  l'outil.  Il
+ces  projets,  dont  l'objectif  est  d'étendre les  capacité  de  l'outil.   Il
 n'existait pas par exemple, avant  le projet Uss-Simgrid, d'interface permettant
 de simuler les programmes parallèles à passage de messages (ses deux principales
 API proposaient alors  des communications point à point  bloquantes). Nous avons
 proposé une interface  pour simuler des programmes MPI. J'ai  réactivé un effort
 fait dans ce sens à l'université d'Hawaï (Mark Stillwell et Henri Casanova) mais
-inachevé,  baptisée SMPI.  Ce  travail, poursuivi  par  Pierre-Nicolas Clauss  a
-abouti  à  une  version  désormais   livrée  avec  SimGrid.   La  conception  et
-l'évaluation  de  SMPI  ont  fait  l'objet d'une  publication  à  la  conférence
-IPDPS~\cite{icps-2011-224}.  Plusieurs  perspectives   sont  ouvertes  avec  cet
-outil.  On  peut extrapoler  l'exécution  d'un  programme  sur une  machine  qui
-n'existe pas encore, dont  on ne donne que la description.  Ceci peut servir par
-exemple à des fins de dimensionnement d'un cluster. Cela peut être utile dans de
-nombreuses autres  situations, comme  l'enseignement, où  une machine  de bureau
-peut servir  à simuler  un cluster  ou un système  distribué. On  peut également
-imaginer  dans le  futur  continuer  des exécutions  en  simulation après  avoir
-capturé la trace d'un programme réellement exécuté (avec des outils de profiling
-existants) et en injectant cette trace dans le simulateur.
+inachevé, baptisée  SMPI.  Ce travail  a abouti  à une version  désormais livrée
+avec SimGrid.   La conception  et l'évaluation  de SMPI  ont fait  l'objet d'une
+publication à la conférence IPDPS~\cite{icps-2011-224}. Le projet SONGS a depuis
+fournit le support d'ingénierie nécessaire à de tels projets d'envergure, et les
+progrès continus sont le  fruit d'un travail collectif~\cite{smpi13}.  Plusieurs
+perspectives sont ouvertes avec cet  outil.  On peut extrapoler l'exécution d'un
+programme sur  une machine  qui n'existe  pas encore,  dont on  ne donne  que la
+description.  Ceci  peut servir par exemple  à des fins de  dimensionnement d'un
+cluster.  Cela peut  être  utile  dans de  nombreuses  autres situations,  comme
+l'enseignement, où une machine de bureau peut  servir à simuler un cluster ou un
+système  distribué. On  peut  également  imaginer dans  le  futur continuer  des
+exécutions en simulation après avoir  capturé la trace d'un programme réellement
+exécuté (avec  des outils de  profiling existants)  et en injectant  cette trace
+dans le simulateur.
 
 
 %------------- P R O J E T    R E C H E R C H E S --------------------
@@ -712,53 +736,47 @@ existants) et en injectant cette trace dans le simulateur.
 
 \textit{Mon projet pour la recherche  s'inscrit naturellement dans la continuité
   et l'évolution  de mon activité  actuelle au Laboratoire Icube,  dans l'équipe
-  Image et  Calcul Parallèle  Scientifique (ICPS).   Je souhaite  développer mes
-  activités de  recherche dans ce  laboratoire, tout  en les inscrivant  dans le
-  cadre du LabEx IRMIA auquel l'équipe participe.}\\
-
-Ma stratégie de développement comporte deux axes : un renforcement de 
-l'activité du thème \textit{applications} de l'équipe, et une extension
-du thème \textit{grilles} aux environnements de calcul basés sur 
-l'externalisation des ressources, c'est-à-dire les \emph{clouds}. Ces deux
-axes sont complémentaires.
+  Image et  Calcul Parallèle  Scientifique (ICPS).}\\
 
 
 \subsubsection{Thème Applications}
 Les activités de l'équipe ICPS sont structurées en trois thèmes: 
 \begin{enumerate}
-\item la \textit{compilation et l'optimisation de programmes}, qui 
-cherche à exhiber du parallélisme qu'on peut mettre en {\oe}uvre à 
-l'intérieur d'une machine (par exemple sur des multi-c{\oe}urs),
-\item l'\textit{adaptation des programmes pour les grilles}, qui 
-étudie la mise en {\oe}uvre d'applications quand le parallélisme mobilise 
-plusieurs machines interconnectées, potentiellement hétérogènes (par 
-exemple une fédération de clusters à l'échelle nationale ou internationale), 
-\item les \textit{applications}, qui à travers l'étude de cas 
-applicatifs concrets dans le domaine scientifique, examine 
-l'apport du parallélisme pour améliorer les résultats scientifiques
-envisageables par simulation  numérique.
+\item la  \textit{compilation et  l'optimisation de  programmes}, qui  cherche à
+  exhiber du  parallélisme qu'on  peut mettre en  {\oe}uvre à  l'intérieur d'une
+  machine (par exemple sur des multi-c{\oe}urs),
+\item  \textit{clusters, grilles  et clouds},  qui étudie  la mise  en {\oe}uvre
+  d'applications   quand    le   parallélisme   mobilise    plusieurs   machines
+  interconnectées, potentiellement  hétérogènes (par  exemple une  fédération de
+  clusters à l'échelle nationale ou internationale),
+\item  les  \textit{applications}, qui  à  travers  l'étude de  cas  applicatifs
+  concrets dans le  domaine scientifique, examine l'apport  du parallélisme pour
+  améliorer les résultats scientifiques envisageables par simulation numérique.
 \end{enumerate}
 
-Ce dernier thème permet à l'ICPS d'établir des collaborations multi-%
-disciplinaires et apporte des problématiques réelles aux deux autres 
-thèmes. Ces problèmes sont variés dans leur forme mais sont tous
-relatifs à la simulation numérique.
-La simulation numérique est un besoin crucial dans de nombreuses 
-disciplines scientifiques. L'augmentation théorique des capacités
-de calcul des ordinateurs ne répond que très partiellement aux
-exigences croissantes des utilisateurs. Ces derniers peuvent par
-exemple vouloir ajouter une dimension au problème, accroître la 
-résolution, ou simuler sur une période plus longue, etc. Répondre 
-à ces exigences demande d'exploiter au mieux les dispositifs 
-matériels à disposition dans le domaine du calcul intensif.
-Cette tâche est difficile étant donné la diversité et la complexité
-du matériel et des couches système. On est aujourd'hui réduit à examiner 
-une application comme un cas particulier, pour lequel on ne sait souvent
-pas prédire quelles configurations matérielles et logicielles vont 
-permettrent les meilleures performances : on doit évaluer l'impact de
-différent modèles de programmation, du nombre de c{\oe}urs par CPU,
-du réseau d'interconnexion entre CPU et mémoire, évaluer l'opportunité
-d'utiliser des GPU, faire de la vectorisation (SSE), etc.\\
+Mon   activité  de   recherche  touche   deux   thèmes  de   l'ICPS:  le   thème
+\textit{clusters, grilles et clouds} qui  pose aujourd'hui beaucoup de problèmes
+de  gestion des  ressources,  et le  thème  \textit{applications} permettant  de
+démontrer le bien-fondé des propositions faites dans les deux autres thèmes.
+
+
+Ce  dernier   thème  permet  à   l'ICPS  d'établir  des   collaborations  multi-
+disciplinaires et apporte des problématiques réelles aux deux autres thèmes. Ces
+problèmes sont  variés dans leur forme  mais sont tous relatifs  à la simulation
+numérique.  La  simulation numérique  est un besoin  crucial dans  de nombreuses
+disciplines scientifiques. L'augmentation théorique  des capacités de calcul des
+ordinateurs  ne répond  que  très partiellement  aux  exigences croissantes  des
+utilisateurs. Ces derniers peuvent par  exemple vouloir ajouter une dimension au
+problème,  accroître la  résolution, ou  simuler  sur une  période plus  longue,
+etc.  Répondre à  ces exigences  demande  d'exploiter au  mieux les  dispositifs
+matériels à  disposition dans le  domaine du  calcul intensif.  Cette  tâche est
+difficile étant donné  la diversité et la complexité du  matériel et des couches
+système.  On est  aujourd'hui réduit  à examiner  une application  comme un  cas
+particulier, pour lequel  on ne sait souvent pas  prédire quelles configurations
+matérielles et  logicielles vont  permettrent les  meilleures performances  : on
+doit  évaluer l'impact  de  différent  modèles de  programmation,  du nombre  de
+c{\oe}urs  par CPU,  du réseau  d'interconnexion entre  CPU et  mémoire, évaluer
+l'opportunité d'utiliser des GPU, faire de la vectorisation (SSE), etc.\\
 
 %-----------------------------------------------------------------------------|80
 Les exigences des applications de calcul intensif sont un moteur indéniable pour
@@ -1293,6 +1311,9 @@ Marc Grunberg, \textbf{Stéphane Genaud}, et Michel Granet.
 
 
 \subsection*{En cours de soumission}
+
+
+
 
 
 \bibitem{sc13}
