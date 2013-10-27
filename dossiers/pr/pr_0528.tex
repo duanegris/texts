@@ -1,4 +1,3 @@
-
 % PROjet d'enseignement
 
 % Détails responsabilités filière
@@ -79,7 +78,7 @@
 \Large{\textbf{Dossier de Candidature\\
 aux fonctions de \\
 Professeur des Universités\\
-Poste 0528 - ENSIIE - Antenne de Strasbourg}}\\[5mm]
+Poste 0419- ENSIIE - Antenne de Strasbourg}}\\[5mm]
 \Large{Stéphane \textsc{Genaud}}\\[1cm]
 
 \rule{\linewidth}{1mm}
@@ -382,11 +381,7 @@ types de contacts :
 \item Enfin, avec le bureau des élèves, nous avons mis en place un parrainage de
   promotion  propre  à Strasbourg.   Le  parrain  est  une entreprise  qui  peut
   entretenir  des  relations privilégiées  avec  l'école  en contre-partie  d'un
-  soutien logistique et financier. Abase Europe  a accepté ce rôle avec beaucoup
-  d'enthousiasme.  Le soutien financier et humain  offert par le parrain est ici
-  pleinement satisfaisant pour l'ENSIIE.  Il était important de viser assez haut
-  en termes  de prestations  dans ce  premier contrat de  parrainage car  il est
-  naturel de le reconduire à l'identique d'années en années.
+  soutien logistique et financier. 
   
 
 \end{itemize}
@@ -909,87 +904,74 @@ nouvelle doctorante.
 
 
 \paragraph{Complémentarité des thèmes}
+
 La diversité des besoins en termes de calcul, face à la diversité croissante des
 architectures de calcul parallèle ou  distribué, sont des éléments incitateurs à
 mener des recherches à la croisée  des thèmes performance des applications et la
-gestion des ressources.\\
+gestion des ressources.
 
 La gestion des  ressources nécessite de construire  des environnements logiciels
 de  type  intergiciel,  capables   de  recenser,  sélectionner,  configurer  des
-ressources adaptées  pour une application à  un moment donné. L'évolution  des 
-équipements  de calcul va indéniablement vers plus  de complexité.  Les machines
+ressources  adaptées pour  une application  à un  moment donné.  L'évolution des
+équipements de calcul  va indéniablement vers plus de  complexité.  Les machines
 individuelles  voient leur  puissance de  calcul  continuer de  croître grâce  à
 l'augmentation du nombre  de c{\oe}urs, tandis que l'accès à  des équipements de
 calcul de  type cluster  est facilité car  ils sont de  plus en  plus nombreux~%
-\footcite{Wu09} avec  une meilleure connectivité réseau.  Certaines applications
+\footcite{Wu09} avec une meilleure  connectivité réseau.  Certaines applications
 pourront être  avantageusement prises  en charge par  une seule  machine multi-%
 c{\oe}urs, tandis que d'autres tireront plus de profit d'un petit laps de temps,
 éventuellement  en  mode  \textit{best-effort},  accordé  sur  un  cluster  avec
 beaucoup de  processeurs. Enfin, la  nouvelle voie  ouverte par les  clouds IaaS
-permet d'envisager d'embarquer l'application dans une image de machine virtuelle
-pour l'exécuter sur des ressources de calcul externalisées. \\
+permet  d'embarquer  l'application dans  une  image  de machine  virtuelle  pour
+l'exécuter sur des ressources de calcul externalisées. 
 
-%------------------------------------------------------------------------------|80
 Choisir la bonne plate-forme d'exécution est donc un problème à part entière qui
 est au  centre de mon  activité de recherches à  Icube. De manière  générale, je
 souhaite  étudier  les  capacités  des différents  types  de  plates-formes,  en
-intégrant, quand c'est possible, la dimension économique.
-
-Optimiser l'exploitation des ressources revêt plusieurs formes. J'ai commencé à
-travailler dans le cadre du projet ANR SPADES (2009-2011)%
-\footnote{\url{http://graal.ens-lyon.fr/SPADES/SPADES}}    sur     un    système
-permettant d'exploiter des tranches de  temps réduites qui peuvent apparaître de
-manière fugace  sur des clusters. L'exploitation  de ces tranches se  faisant en
-mode non-prioritaire  (ou \textit{best-effort})  on pourrait ainsi  augmenter le
-taux  d'utilisation de  ces  clusters.   Pour atteindre  cet  objectif, il  faut
-concevoir  des   intergiciels  extrêmement   réactifs,  capables   de  localiser
-rapidement sur  un ensemble de  clusters, les plages  d'utilisation disponibles,
-ainsi que  la compatibilité  du système  avec les  besoins de  l'application. Un
-deuxième travail  démarré dans  ce sens est  l'étude de  stratégies d'allocation
-puis d'ordonnancement \textit{online}  de jobs séquentiels sur  une ou plusieurs
-plates-formes de type cloud IaaS.  L'utilisation des ressources dans ces centres
-étant facturée par  tranche de temps (typiquement toute heure  entamée est dûe),
-de nombreux  jobs laissent des périodes  de temps facturées mais  non utilisées,
-qui peuvent donc  être utilisées gratuitement pour d'autres  jobs. Une stratégie
+intégrant, quand  c'est possible,  la dimension  économique. Pour  atteindre cet
+objectif, il faut  concevoir des intergiciels extrêmement  réactifs, capables de
+localiser  rapidement sur  un  ensemble de  clusters,  les plages  d'utilisation
+disponibles,  ainsi  que  la  compatibilité  du  système  avec  les  besoins  de
+l'application.  Une  part importante de mon  travail depuis 2011 est  l'étude de
+stratégies   d'allocation   puis   d'ordonnancement  \textit{online}   de   jobs
+séquentiels,  et que  nous  avons récemment  étendu aux  workflows,  sur une  ou
+plusieurs plates-formes de type cloud IaaS. Etant donné les variations entre les
+politiques  tarifaires   et  les   performances  des   différents  fournisseurs,
+l'optimisation  de l'utilisation  de  ces  plateformes n'est  plus  à la  portée
+d'utilisateurs ordinaires  et ce  travail de sélection  doit être  automatisé et
+confié  à un  broker. Par  exemple,  l'utilisation des  ressources facturée  par
+tranche de temps, laisse des périodes de temps facturées mais non utilisées, qui
+peuvent  donc être  utilisées  gratuitement pour  d'autres  jobs. Une  stratégie
 d'allocation doit décider pour chaque job si une nouvelle machine virtuelle doit
 être  démarrée  pour ce  traitement  ou  si  l'on  peut réutiliser  une  machine
 virtuelle déjà  démarrée. On étudie dans  ce contexte un problème  bi-critère de
 performance incluant  le temps d'attente des  jobs et le coût  de l'ensemble des
-jobs~\cite{icps-2011-225}.  L'objectif  à plus long  terme est de  construire un
-système  de  courtage  permettant  de  sélectionner,  éventuellement  auprès  de
-différents fournisseurs,  des machines  virtuelles dont  les capacités  sont les
-mieux adaptées au besoin.
+jobs~\cite{icps-2011-225}.  L'objectif plus général est de construire un système
+de  courtage permettant  de  sélectionner, éventuellement  auprès de  différents
+fournisseurs, des machines virtuelles dont les capacités sont les mieux adaptées
+au besoin.
 
 
 \subsubsection{Conclusion}
 
-%------------------------------------------------------------------------------|80
-L'équipe  ICPS  souhaite maintenir  l'équilibre  dans  le développement  de  ses
-différents  thèmes. Je  suis convaincu  qu'il faut  couvrir tout  le spectre  du
-parallélisme pour avoir une bonne vision  des solutions les plus appropriées aux
-différents  types  de  besoins.   Cette  strategie  me  semble  particulièrement
-importante dans  un contexte où  les technologies changent très  vite. Certaines
-applications  qui  nécessitaient un  petit  cluster  il  y  a cinq  ans  peuvent
-utiliserune  machine multi-c{\oe}urs  aujourd'hui. Ce  changement d'architecture
-cible peut induire un changement quant  au modèle de programmation ainsi que des
-outils d'optimisation utilisables. C'est pourquoi il me semble important d'avoir
-au   sein  de   l'équipe  l'ensemble   des   visions  et   des  compétences   du
-parallélisme. J'ai  par exemple entamé un  travail~\cite{ketterlin11} avec Alain
-Ketterlin,  sur  l'abstraction  des  schémas de  communications  des  programmes
-MPI. Ce travail basé sur la reconnaissance de répétitions linéaires s'appuye sur
-des résultats obtenus initialement pour  l'analyse des accès mémoire, menés dans
-le thème compilation et optimisation de programmes.
+Mon activité  de recherche a  été développée au sein  de l'équipe ICPS,  une des
+équipes informatiques du laboratoire Icube. J'ai été le porteur, depuis 2002, de
+ce  thème qui  se concentre  sur la  programmation parallèle  ou la  gestion des
+ressources  de clusters,  grille et  aujourd'hui clouds.   Mon détachement  dans
+l'équipe-projet  INRIA   AlGorille  a   permis  de   construire  des   liens  de
+collaboration durables avec l'INRIA Nancy-Grand Est sur ce thème. Nous avons par
+exemple présenté  lors de  l'évaluation INRIA d'AlGorille  en octobre  2012, une
+stratégie d'équipe  basée sur les  efforts des sites  de Nancy, Supelec  Metz et
+Strasbourg.  Le  rapprochement avec  le centre  INRIA local  a aussi  permis par
+extension, de collaborer avec d'autres équipes-projet INRIA en France. Le projet
+ANR SONGS en est une bonne  illustration. Finalement, ces efforts pour maintenir
+une dynamique forte en recherche sont profitables à l'ENSIIE, car ils permettent
+d'identifier l'école à l'innovation. Ils démontrent que l'école s'appuye sur les
+équipes de recherche  d'Icube, et qu'elle constitue  ainsi un bon relai
+entre le mondre industriel et le monde de la recherche académique. 
 
-En conclusion, je  pense qu'un poste de professeur dans  l'équipe ICPS amènerait
-une accélération du  développement du thèmes grilles et clouds,  ce statut ayant
-une plus  grande reconnaissance au  pan national ou international.   Je souhaite
-également contribuer  au développement du  thème applications, avec  l'espoir de
-pouvoir recruter  un spécialiste  à l'interface  dans le  moyen terme.  Je pense
-pouvoir  faire béneficier  le laboratoire  et  l'équipe, de  ma connaissance  de
-l'environnement local, importante  pour les collaborations en cours  ou à venir,
-et de  mon intégration dans  la communauté de recherche  des grilles ou  du HPC,
-avec en  particulier le  travail fait  dans le  projet SONGS  amené à  avoir une
-visibilité internationale.
+ 
+
 
 
 % Sections' styles -> reset to no underlining
@@ -1318,13 +1300,6 @@ Alain Ketterlin, Matthieu Kuhn, Stéphane Genaud, Philippe Clauss.
 \newblock 28th IEEE International Parallel \& Distributed Processing Symposium (IPDPS),
 2014.
 
-\bibitem{s2}
-Marc Frincu, Stéphane Genaud, Julien Gossa.
-
-
-
-\bibitem{sc13}
-\newblock
 \end{thebibliography}
 
 
@@ -1608,12 +1583,13 @@ LNMIIT Jaipur, Inde. 3 mois, mai-août 2009.
 Antonio Grassi, Master de Facultad de Ingeniería, Universidad de la República, 
 Montevideo, Uruguay. 4 mois, avril-août 2008, co-encadré avec Emmanuel Jeannot 
 (AlGorille, LORIA).
-
 \end{itemize}
 ~\\
 Encadrement stage ENSIIE
 \smallskip
 \begin{itemize}
+\item[$\bullet$] {\it Broker de Cloud  IaaS}, Léo Unbekandt, ENSIIE 1A .2.5mois,
+  juin-août 2012.
 \item[$\bullet$]  {\it Experimentation de cluster virtualisé ave Nimbus}, 
 Marien Ritzenthaler, ENSIIE 1A. 2,5 mois, juin-août 2010. 
 \end{itemize}
@@ -1664,9 +1640,9 @@ Ghazi Bouabene, stage licence, juin-août 2005.
 \begin{tabular}{ll}
 	\hline\\[-2mm]
 	5	&	articles dans des revues internationales\\
+	20	& 	articles dans des conférences internationales à comité de lecture \\
 	3	&	articles dans des revues nationales\\
 	1	&	chapitre de livre dans une publication internationale\\
-	17	& 	articles dans des conférences internationales à comité de lecture\\
 	3	&	articles dans des conférences nationales à comité de lecture\\
 	8	& 	participations à des comités de programmes de conférences internationales\\
 	\hline\\
@@ -1694,49 +1670,63 @@ Ghazi Bouabene, stage licence, juin-août 2005.
 \section{Activités d'enseignement}
 \label{sc:ensgnt-univ}
 
-Je décris d'abord le contexte dans le lequel se sont déroulées mes activités
-pédagogiques, puis je présente un tableau récapitulatif des cours assurés, suivi
-d'une description des contenus de cours les plus récents. J'indique ensuite les
-principales charges d'intérêt collectif exercées. Enfin, je donne ma vision 
-des enjeux spécifique à ce poste destiné à l'enseigne strasbourgeoise de l'ENSIIE.
+J'assure cette année  une demi-charge de service d'enseignement  à l'ENSIIE, qui
+se  traduit par  l'enseignement  de trois  modules du  tronc  commun :  Systèmes
+Informatiques aux semestres 1 et 2, et Middleware au semestre 3. Ce contact avec
+les élèves en tant qu'enseignant est pour moi indispensable pour bien comprendre
+la dynamique de la promotion.  Ma fonction actuelle de directeur étant largement
+consacrée à  gérer le  corps professoral  qui intervient  auprès des  élèves, ce
+contact permanent  avec l'enseignement me  permet d'anticiper ou  comprendre les
+problèmes qui peuvent se poser au quotidien.
+
+
+Cependant, ma  vocation d'enseigner  va au-delà de  l'ENSIIE. J'ai  conservé des
+interventions dans d'autres  composantes : cette année,  j'interviendrai dans un
+Master  Informatique  de  l'UFR   Mathématique-Informatique  à  l'Université  de
+Strasbourg, dans la filière informatique de Télécom Physique Strasbourg, et dans
+un cours  d'informatique à  Supélec Campus  de Metz.  Si ces  interventions sont
+minimes en terme de volume horaire, ce sont autant d'occasions de rencontrer ces
+étudiants et de comprendre ce qui motive et a motivé leur orientation.
+
+
+Les années précédentes, j'ai également eu des expériences d'enseignement variées,
+à différents types de publics. Les enseignements auxquels j'ai participé sont listés
+dans le tableau de la section~\ref{sc:tab-ens}.
+
 
 \subsection{Contexte}
 
 \noindent
 J'ai été recruté en septembre 1998 sur un poste de maître de conférences 
 en informatique (27$^e$ section) dans une composante de l'Université, l'IECS%
-\footnote{Institut d'Enseignement Commercial Supérieur, devenue en 2007, après 
-fusion avec l'IAE, l'\'Ecole de Management Strasbourg. \url{http://www.em-strasbourg.eu/}}
-dédiée aux sciences de gestion (6$^e$ section). 
-Ce poste préexistant marquait la volonté de la composante de développer les 
-enseignements en systèmes d'information. \`A mon arrivée, j'ai pris en charge les cours
-définis qui avaient trait à l'informatique. 
-Puis en 2001, j'ai pris la responsabilité de la filière \textit{systèmes d'information} 
-pour y développer et organiser les enseignements.
-Mon rôle était de définir et de coordonner les enseignements de la filière, nécessitant
-en plus des enseignants permanents, de recruter une dizaine de vacataires par an, 
-professionnels de l'industrie dans leur très grande majorité. D'autre part, il m'incombait
-le suivi des étudiants au travers de la définition de sujets de mémoires de fin d'études,
-la validation de leur cursus à l'étranger, et l'information vis-à-vis des débouchés 
-professionnels (réunions d'information avec des professionnels, animation d'échanges
-avec des anciens de la filière).
-Cette activité s'est arrêtée en 2007 lorsque je suis parti en détachement à l'INRIA.
+\footnote{Institut d'Enseignement  Commercial Supérieur, devenue en  2007, après
+  fusion        avec        l'IAE,         l'\'Ecole        de        Management
+  Strasbourg. \url{http://www.em-strasbourg.eu/}} dédiée aux sciences de gestion
+(6$^e$ section).  Ce  poste préexistant marquait la volonté de  la composante de
+développer les  enseignements en systèmes  d'information. \`A mon  arrivée, j'ai
+pris en  charge les cours définis  qui avaient trait à  l'informatique.  Puis en
+2001, j'ai pris la responsabilité  de la filière \textit{systèmes d'information}
+pour y développer et organiser les  enseignements.  Mon rôle était de définir et
+de  coordonner  les  enseignements  de  la  filière,  nécessitant  en  plus  des
+enseignants  permanents,  de   recruter  une  dizaine  de   vacataires  par  an,
+professionnels de l'industrie  dans leur très grande majorité.  D'autre part, il
+m'incombait le  suivi des  étudiants au  travers de la  définition de  sujets de
+mémoires  de  fin d'études,  la  validation  de  leur  cursus à  l'étranger,  et
+l'information  vis-à-vis des  débouchés  professionnels (réunions  d'information
+avec des professionnels,  animation d'échanges avec des anciens  de la filière).
+Cette activité  s'est arrêtée  en 2007  lorsque je suis  parti en  détachement à
+l'INRIA.
 
 
-Les principaux cours que j'ai enseignés dans cet établissement sont:
-technologies des systèmes d'information, 
-conception des systèmes d'information,
-gestion de projet et outils pour la gestion de projet,
-introduction à l'algorithmique et la programmation, 
-architecture des applications web,
-échange de données informatisées,
-réseaux.
-De retour de détachement, j'ai réintégré mon poste tout en effectuant plus d'un tiers
-de mon service à l'extérieur de l'établissement (procédure facilitée par la fusion des 
-universités strasbourgeoises), 
-à l'UFR de mathématiques et informatique, et dans l'école d'ingénieur ENSIIE
-\footnote{Ecole Nationale Supérieure d'Informatique pour l'Industrie et l'Entreprise, 
-basée à Evry, ayant ouvert un campus à Strasbourg. \url{http://www.ensiie.fr/}}.
+Les  principaux   cours  que  j'ai   enseignés  dans  cet   établissement  sont:
+technologies des systèmes d'information,  conception des systèmes d'information,
+gestion  de  projet  et  outils  pour  la  gestion  de  projet,  introduction  à
+l'algorithmique et la programmation,  architecture des applications web, échange
+de données informatisées, réseaux.  De retour de détachement, j'ai réintégré mon
+poste  tout en  effectuant  plus d'un  tiers  de mon  service  à l'extérieur  de
+l'établissement   (procédure   facilitée   par   la   fusion   des   universités
+strasbourgeoises), à l'UFR  de mathématiques et informatique, et  à l'ENSIIE qui
+venait d'ouvrir l'antenne de Strasbourg.
 
 
 \subsection{Enseignements en informatique}
@@ -1845,6 +1835,7 @@ EM		& \'Ecole de Management Strasbourg. \\
 \end{small}
 
 
+\begin{comment}
 \subsection{Contenus des enseignements}
 
 \subsubsection*{Ecole de Management - Systèmes d'information}
@@ -1895,6 +1886,8 @@ construisent un site web PHP/MySQL.}\\
 
 \end{itemize}
 
+
+
 \subsubsection*{ENSIIE}
 
 \begin{itemize}
@@ -1937,6 +1930,9 @@ pour les \emph{grilles} ou les \emph{clouds}.
 disponibles, impact de l'hétérogénéité sur les performances, équilibrage de charge
 applicatif, découverte des ressources, volatilités des ressources et tolérance aux pannes.}
 \end{itemize}
+
+\end{comment}
+
 
 
 \subsection{Principales charges d'intérêt collectif}
@@ -1988,96 +1984,15 @@ Membre élu, collège A, du conseil scientifique de l'ENSIIE depuis juin 2012.
 
 
 
-%-----------------------------------------------------------------------------|80
-\subsection{Projet de développement de l'ENSIIE Strasbourg}
-
-\textit{%
-Il est usuel dans un dossier de candidature à un poste d'enseignant-chercheur,
-de discuter d'un  projet de recherche et d'un projet d'enseignement. La
-fonction proposée à travers ce poste m'amène à discuter, pour le volet
-pédagogique, davantage le contexte dans lequel s'inscrirait mon action
-que le contenu pédagogique.}\\
-
-L'offre   de  formation   universitaire   en  informatique   à  Strasbourg   est
-essentiellement  celle proposée  par l'Université  de Strasbourg,  à travers  sa
-licence  d'informatique et  trois  masters d'informatique  hébergés  à l'UFR  de
-Mathématiques-Informatique, et  à travers  le DUT  informatique de  l'IUT Robert
-Schumann.   Il   n'existe   pas    de   formation   classique   d'ingénieur   en
-informatique\footnote{Le  CNAM  Alsace  possède   une  filière  d'ingénieurs  en
-  apprentissage qui forme  environ 25 étudiants par an.}  dans  le paysage local
-de   l'enseignement  supérieur   public.   Conscient   de  cette   absence,  les
-collectivités locales ont favorisé  un projet d'implantation d'école d'ingénieur
-en informatique.  C'est dans  ce contexte  que L'ENSIIE a  ouvert une  antenne à
-Strasbourg en  septembre 2009.   Quatre promotions  d'étudiants ont  déjà débuté
-leur cursus à Strasbourg.\\
-
 J'ai contribué aux enseignements de l'école dès la première promotion,
 en assurant le cours \emph{Systèmes Informatiques} aux deux semestres
 de première année. Grâce à ce contact permanent avec l'école, j'ai pu
 comprendre les enjeux du développement de l'antenne de Strasbourg.
 
-\subsubsection*{Enjeu socio-économique}
-Le premier enjeu est de former des cadres en informatique de haut niveau pour le
-tissu  industriel.  Les  entreprises  sont  demandeuses  d'une  telle  formation
-d'ingénieur comme le montrent les stages offerts ou les partenariats privilégiés
-avec Abase ou  CGI (ex-Logica). Intégrée au réseau AlsaceTech  (fédération de 12
-écoles d'ingénieur et de management sur l'Alsace), l'ENSIIE est devenue d'emblée
-un acteur de  premier rang dans le milieu socio-économique  alsacien. Le travail
-de Pierre Tellier, en amont du projet d'implantation ENSIIE, puis spécifiquement
-sur  le  lancement  de  l'antenne,   a  permis  d'implanter  rapidement  l'école
-localement.
 
-\subsubsection*{Enjeu offre de formation}
-Le  deuxième  enjeu  concerne  l'insertion  de  l'ENSIIE  dans  le  paysage  des
-formations en informatique  et des formations d'ingénieur à  Strasbourg.  Il est
-nécessaire pour réussir  cette intégration d'avoir une  politique concertée avec
-l'Université de Strasbourg pour que la lisibilité de l'offre reste cohérente. La
-convention passée entre  l'IUT Robert Schumann de l'université  de Strasbourg et
-l'ENSIIE pour accueillir  les meilleurs étudiants de DUT informatique  en est un
-bon exemple  : alors  que beaucoup  de ces  étudiants changeaient  auparavant de
-région pour  intégrer une école d'ingénieur,  une formation de qualité  leur est
-maintenant offerte sur place, renforçant  ainsi l'attractivité du site. De même,
-l'effet  de \emph{marque}  dont  disposent  les grandes  écoles  est un  facteur
-d'attractivité  inconstestabe qui  a des  retombées  pour tout  le site.   Cette
-attractivité dûe  à la réputation  est aujourd'hui renforcée par  les mouvements
-actuels de concentration dans le monde  des écoles d'ingénieur ou de management,
-en augmentant  la visibilité  des établissements.   Réciproquement, l'Université
-peut  offrir aux  étudiants  de l'ENSIIE  de Strasbourg,  un  large panorama  de
-formations et  compétences. L'exemple  le plus  emblématique est  l'ouverture de
-deux  Masters  informatiques de  l'Université  aux  étudiants de  l'ENSIIE.   La
-convention passée permet aux étudiants d'obtenir le Master en suivant un certain
-nombre de  modules spécifiques. C'est pour  eux une occasion de  s'initier à une
-spécialisation et de connaître l'état de l'art des recherches dans ces domaines.
-En contre-partie, leur présence apporte à  ces formations un flux d'étudiants de
-bon niveau. De manière générale, l'Université offre son portefeuille extrêmement
-large de formations, qui permet  aux élèves ingénieurs en informatique d'ajouter
-des compétences dans  d'autres disciplines, comme la finance ou  le management à
-l'EM Strasbourg. Au  final, l'Université de Strasbourg a la  capacité de fournir
-un  effet de  levier à  l'ENSIIE, et  réciproquement, l'ENSIIE  peut apporter  à
-l'Université et à la région un flux d'étudiants et de relations indédits.
-
-\subsubsection*{Enjeu recherche}
-Enfin,  un  troisième  enjeu  concerne la  recherche.  Les  synergies  possibles
-décrites précedemment sont également valables  pour la recherche : les étudiants
-de  l'ENSIIE choisissant  des cours  ou des  stages proposés  à l'Université  de
-Strasbourg  renforcent le  dynamisme de  ces  parcours, et  en retour  profitent
-d'opportunités  de faire  la  recherche au  sein de  l'école  doctorale MSII  de
-l'Université.  En  sens  inverse,  l'ENSIIE  représente  une  opportunité,  pour
-l'ensemble des enseignants-chercheurs  du site, de dispenser des  cours dans une
-formation  de haut  niveau. L'antenne  strasbourgeoise, en  l'absence de  postes
-d'enseignants permanents, s'est beaucoup appuyée, pendant sa phase de lancement,
-sur  les  enseignants-chercheurs  de  l'Université,  qui  ont  pu  naturellement
-sensibiliser les étudiants  à leurs thèmes de recherche. Ceci  est cohérent avec
-la politique affichée par l'ENSIIE concernant le développement de la recherche à
-Strasbourg.   Celle  ci  est  une   politique  de  site,  c'est-à-dire  que  les
-enseignants-chercheurs sont prioritairement recrutés  dans les thèmes développés
-au laboratoire Icube.  Du point de vue  de la recherche également, la qualité de
-la  recherche faite  au  LSIIT  bénéficie à  l'ENSIIE,  et  l'ENSIIE apporte  de
-nouvelles forces,  que ce soit en  étudiants ou (je l'espère,  prochainement) en
-enseignants-chercheurs.
 
  
-\subsubsection*{Conclusion}
+\section*{Conclusion}
 L'implantation de  l' antenne de l'ENSIIE  à Strasbourg s'est faite  avec succès
 car  elle a  trouvé  sa  place immédiatement  dans  l'environnement local.   Les
 paragraphes précédents  ont décrits  les apports mutuels  de l'Université  et de
