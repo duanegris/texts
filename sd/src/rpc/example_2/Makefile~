@@ -1,0 +1,15 @@
+
+all: myservice_client myservice_server
+
+myservice_client:myservice_client.o myservice_clnt.o myservice_xdr.o
+	gcc -o $@ $^
+
+myservice_server:myservice_server.o myservice_svc.o myservice_xdr.o
+	gcc -o $@ $^
+
+%.o: %.c
+	gcc -c $<
+
+clean:
+	rm -f *.o
+

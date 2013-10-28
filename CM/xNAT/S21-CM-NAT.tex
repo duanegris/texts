@@ -1,0 +1,238 @@
+%\documentclass[table, 10pt]{beamer}%
+\documentclass[table, 10 pt, handout]{beamer}%
+
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx,graphics}
+
+\usepackage{amsmath,amsfonts}
+
+\usepackage{multirow}
+
+%\usepackage[table]{xcolor}
+
+%\usepackage{beamerthemeliris}
+
+\usepackage{beamerthemesplit}
+\usetheme{Malmoe}%Copenhagen%Dresden%Malmoe
+\usecolortheme{orchid}%beetle,seagull,crane,dove,orchid
+\useinnertheme[shadow]{rounded}%rounded
+\usefonttheme{professionalfonts}
+
+\definecolor{darkgreen}{RGB}{0,180,0} 
+
+\setbeamertemplate{navigation symbols}{}
+
+
+\newenvironment{codeblock}[1]{\begin{exampleblock}<+->{\texttt{#1}}\begin{tt}}{\end{tt}\end{exampleblock}}
+
+
+
+
+\title[S21 - Comprendre les réseaux -- CM \hspace{1cm}\insertframenumber{} / \inserttotalframenumber]
+{S21 -- Comprendre les réseaux }
+\subtitle{CM}
+\author[Julien Gossa]{Julien Gossa}
+\institute
+{ 
+	{\bf IUT Robert Schuman -- Département Informatique}\\
+	{\url{julien.gossa@unistra.fr}}
+}
+
+\date{2009}
+\beamertemplatetransparentcovereddynamicmedium 
+
+\begin{document}
+
+
+\begin{frame}
+ 	\titlepage
+\end{frame}
+
+
+
+\AtBeginSection[]
+{
+   \begin{frame}
+       \frametitle{Sans transition\ldots}
+       %\small
+       \tableofcontents[currentsubsection]
+   \end{frame}
+}	
+
+\AtBeginSubsection[]
+{
+   \begin{frame}
+       \frametitle{Sans transition\ldots}
+       %\small
+       \tableofcontents[currentsubsection]
+   \end{frame}
+}	
+
+%----------------------------------------------------------------------
+\section{NAT -- Network Address Translation}
+% ----------------------------------------------------------------------
+\subsection{Présentation}
+%----------------------------------------------------------------------
+\begin{frame}
+
+	\begin{block}<+->{SSH}
+		\begin{itemize}
+		\item Secure SHell - un shell sécurisé
+			\begin{itemize}
+			\item En remplacement de \texttt{rsh}, \texttt{rlogin} et \texttt{telnet}
+			\item Chiffrement des communications pour contrer le \textit{sniffing}
+			\end{itemize}
+		\item Clients
+			\begin{itemize}
+			\item \texttt{ssh} sous unix
+			\item \texttt{open ssh} et \texttt{putty} sous windows
+			\item \texttt{ssh <login>@<host>}
+			\end{itemize}
+		\item Tranfert de fichier
+			\begin{itemize}
+			\item \url{scp <fichier> <login>@<host>:<chemin>}
+			\item \url{scp <login>@<host>:<fichier> <chemin>}
+			\end{itemize}		
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\subsection{PKI -- Public Key Infrastructure}
+%----------------------------------------------------------------------
+\begin{frame}
+
+	\begin{block}<+->{PKI -- Public Key Infrastructure}
+		\begin{itemize}
+		\item Alternative au mot de passe (pratique pour les scripts)
+			\begin{itemize}
+			\item Chiffrement asymétrique : authentification basée sur un couple clés
+			\end{itemize}
+		\item Couple clé privée / clé publique
+			\begin{itemize}
+			\item Clé privée : doit être gardée précieusement
+			\item Clé publique : peut être donnée à tout le monde
+			\item Un message chiffré avec la clé privée ne peut être déchiffré que par la clé publique
+			\item Et vice-versa
+			\item Plus solide que le chiffrement symétrique (à clé secrète)
+			\end{itemize}
+		\item Application
+			\begin{itemize}
+			\item Confidentialité
+			\item Non-répudiation
+ 			\item Intégrité
+			\item Authentification
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+%----------------------------------------------------------------------
+\begin{frame}
+
+	\begin{block}<+->{PKI -- Confidentialité}
+		\begin{itemize}
+		\item Rendre illisibles les informations échangées par un chiffrement
+			\begin{enumerate}
+			\item Chiffrement du message par la clé publique
+			\item Transfert du message chiffré
+			\item Déchiffrement par la clé privée
+			\end{enumerate}
+		\item Et vice-versa ?
+		\end{itemize}
+	\end{block}
+
+	\begin{block}<+->{PKI -- Non répudiation et intégrité}
+		\begin{itemize}
+		\item Empêcher l'émetteur de nier être à l'origine du message
+		\item Vérifier que le message n'a pas été altéré
+			\begin{enumerate}
+			\item Chiffrement du message par la clé privée
+			\item Transfert du message en clair et en chiffré
+			\item Déchiffrement par la clé publique et comparaison
+			\end{enumerate}
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------
+\begin{frame}
+
+	\begin{block}<+->{PKI -- Authentification}
+		\begin{itemize}
+		\item Faire preuve de son identité
+			\begin{enumerate}
+			\item Chiffrement par le testeur d'un message secret par la clé publique du testé
+			\item Transfert du message en chiffré 
+			\item Déchiffrement par le testé grâce à sa clé publique
+			\item Renvoie du message au testeur
+			\end{enumerate}
+		\item Permet à \texttt{ssh} de vérifier l'identité du client
+		\item Sans demander de mot de passe
+		\item \texttt{ssh-keygen} permet de générer le couple de clés
+		\end{itemize}
+	\end{block}	
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\subsection{ssh -- fichiers}
+%----------------------------------------------------------------------
+\begin{frame}
+
+	\begin{block}<+->{ssh -- fichiers}
+		\begin{itemize}
+		\item \texttt{\~{}/.ssh/id\_rsa.pub}
+			\begin{itemize}
+			\item clé publique
+			\end{itemize}
+		\item \texttt{\~{}/.ssh/id\_rsa}
+			\begin{itemize}
+			\item clé privée
+			\end{itemize}
+		\item \texttt{\~{}/.ssh/authorized\_keys}
+			\begin{itemize}
+			\item liste des clés publiques autorisées à se connecter
+			\end{itemize}
+		\item \texttt{\~{}/.ssh/known\_hosts}
+			\begin{itemize}
+			\item empreintes des hôtes sur lesquels on s'est connecté
+			\end{itemize}
+		\item \texttt{\~{}/.ssh/config}
+		
+			\begin{tt}
+			Host fou\\
+			User toto\\
+			HostName fou.u-strasbg.fr
+			\end{tt}
+			
+			\begin{itemize}
+			\item permet de faire \texttt{ssh fou}
+			\item au lieu de \texttt{ssh toto@fou.u-strasbg.fr}
+			\end{itemize}
+			
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+\begin{frame}{Conclusion}
+\tableofcontents
+\end{frame}
+
+\end{document}

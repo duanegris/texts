@@ -1,0 +1,112 @@
+% Created 2013-04-24 Mer 08:24
+\documentclass[bigger,hyperref={colorlinks=true, urlcolor=red, plainpages=false, pdfpagelabels, bookmarksnumbered}]{beamer}
+\usepackage[AUTO]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{color}
+\usepackage{listings}
+\AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+\lstset{
+keywordstyle=\color{blue},
+commentstyle=\color{red},
+stringstyle=\color{green},
+basicstyle=\ttfamily\footnotesize,
+columns=fullflexible,
+frame=single,
+basewidth={0.5em,0.4em}
+}
+\RequirePackage{fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{IMW: Middleware}
+\author{Stephane Genaud}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.11}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+
+
+
+
+
+\lstset{language=Lisp}
+\begin{lstlisting}
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((ditaa . t))) ; this line activates ditaa
+\end{lstlisting}
+
+\section{Introduction}
+\label{sec-1}
+\begin{frame}
+\frametitle{Technologies for Distributed Systems}
+\label{sec-1-1}
+
+\begin{itemize}
+\item Extremely fast evolution since 1985:
+     about a technology every 5 years.\\
+\item Implementations adapt to up-to-date technology\\
+     e.g If networks go faster, it is possible to convey bigger messages.\\
+         If the cost of some hardware becomes low, no need to spare it.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Technologies change but \ldots{} concepts stay}
+\label{sec-1-2}
+
+\begin{itemize}
+\item Client-server is the central concept:\\
+      The \textbf{client} can make a request at any time,\\
+      The \textbf{server} permanently waits for incoming requests
+\end{itemize}
+\includegraphics[width=.9\linewidth]{./img/S9_RPC_works.png}
+\end{frame}
+\begin{frame}
+\frametitle{Middleware}
+\label{sec-1-3}
+
+
+\lstset{language=ditaa}
+\begin{lstlisting}
+/-------------\
+| cC00        |
+| Application |
+|             |
++-------------+
+| c0CF        |
+| Middleware  |
+|             |
++-------------+
+| cGRE        |
+|   OS        |
+|             |
+\-------------/
+\end{lstlisting}
+\end{frame}
+\begin{frame}
+\frametitle{Middleware: definition}
+\label{sec-1-4}
+\begin{block}{What is middleware?}
+\label{sec-1-4-1}

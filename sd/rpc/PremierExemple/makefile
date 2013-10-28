@@ -2,10 +2,10 @@
 all : serveur client
 #----------------------------------------------
 serveur : serveur.c
-	gcc -Wall -o serveur  serveur.c -lnsl
+	gcc -Wall -o serveur  serveur.c #-lnsl
 #----------------------------------------------
 client : client.c 
-	gcc -Wall -o client client.c -lrpcsvc -lnsl
+	gcc -Wall -o client client.c #-lrpcsvc -lnsl
 #----------------------------------------------
 clean :
 	/bin/rm -f *.o serveur client *~ pok* *.ps

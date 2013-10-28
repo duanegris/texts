@@ -1,0 +1,204 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Chapter 3. PHP</title><link rel="stylesheet" href="duaneg-docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.html" title="Notes de cours Apache+PHP+MySQL"><link rel="up" href="index.html" title="Notes de cours Apache+PHP+MySQL"><link rel="prev" href="ch02.html" title="Chapter 2. Apache, PHP et MySQL"><link rel="next" href="ch04.html" title="Chapter 4. Passage de valeurs d'une page à l'autre"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 3. PHP</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch04.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="id36116237"></a>Chapter 3. PHP</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="ch03.html#id36116254">Les opérateurs</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#id36116272">Opérateurs sur les nombres</a></span></dt><dt><span class="sect2"><a href="ch03.html#id36116365">Opérateurs booléens</a></span></dt><dt><span class="sect2"><a href="ch03.html#id36116441">Affectation et affection combinées</a></span></dt><dt><span class="sect2"><a href="ch03.html#id36116586">Opérateurs de comparaison</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#id36116692">Les tableaux</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#id36116716">Enumérations</a></span></dt><dt><span class="sect2"><a href="ch03.html#id36116767">Déclaration et affectation</a></span></dt><dt><span class="sect2"><a href="ch03.html#id36116792">Parcours</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#id36116896">Les fonctions</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#id36116912">Définition d'une fonction</a></span></dt><dt><span class="sect2"><a href="ch03.html#id36116935">Appel d'une fonction</a></span></dt><dt><span class="sect2"><a href="ch03.html#id36116957">Exemple de fonction</a></span></dt></dl></dd></dl></div><p>
+PHP est un langage interprété exécuté du côté serveur (comme les scripts CGI, ASP, ...) 
+et non du côté client (par exemple un code Javascript ou une applet Java s'exécute sur votre ordinateur...). 
+La syntaxe du langage est inspirée de celles du langage C, du Perl et de Java. 
+</p><p>
+La grande force de tels langages (PHP ou ASP) réside dans les fonctionnalités
+de programmation qu'ils offrent pour traiter des problèmes liés au 
+developpement de services web. 
+Par exemple, des fonctions de traitements de chaînes de caractères puissantes
+sont fournies.
+Une autre grande classe de besoin pour les développements web concerne
+l'utilisation de base de données. PHP propose une interface vers de
+nombreux gestionnaires de bases de données, permettant au programmeur
+d'accéder à un système de gestion de base de données à travers des
+primitives du langage. 
+PHP supporte des interfaces vers les bases de données suivantes :
+Adabas D, dBase, Empress, FilePro, Hyperware, IBM DB2, Informix, Ingres, Interbase, Frontbase, 
+Direct MS-SQL, mSQL, MySQL, Oracle (version 7 et 8), Ovrimos, PostgreSQL, Sesam, Solid, Sybase, Velocis et Unix dbm.
+Quand une base de données n'est pas interfacée, il est en outre possible
+d'utiliser le format ODBC.
+</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id36116254"></a>Les opérateurs</h2></div></div></div><p>
+Les exemples donnés supposent que la valeur de <code class="varname">$x</code>
+ est 8, <code class="varname">$c</code>  est "la ", et <code class="varname">$b</code> est TRUE;
+</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116272"></a>Opérateurs sur les nombres</h3></div></div></div><p>
+</p><div class="informaltable"><table border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>opérateur</th><th>dénomination</th><th>exemple</th><th>résultat</th></tr></thead><tbody><tr><td>+</td><td>addition</td><td>$x+4</td><td>12</td></tr><tr><td>-</td><td>soustraction</td><td>$x-4</td><td>4</td></tr><tr><td>*</td><td>multiplication</td><td>$x*3</td><td>24</td></tr><tr><td>/</td><td>division</td><td>$x/2</td><td>4</td></tr></tbody></table></div><p>
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116365"></a>Opérateurs booléens</h3></div></div></div><p>
+
+</p><div class="informaltable"><table border="1"><colgroup><col><col><col><col></colgroup><tbody><tr><td>|| ou OR</td><td>OU logique</td><td>$b OR FALSE</td><td>TRUE</td></tr><tr><td>|| ou OR</td><td>OU logique</td><td>$b OR FALSE</td><td>TRUE</td></tr><tr><td>&amp;&amp; ou AND</td><td>ET logique</td><td>$b AND TRUE</td><td>TRUE</td></tr><tr><td>XOR</td><td>OU exclusif</td><td>$b XOR FALSE</td><td>FALSE</td></tr></tbody></table></div><p>
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116441"></a>Affectation et affection combinées</h3></div></div></div><p>
+
+</p><div class="informaltable"><table border="1"><colgroup><col><col><col><col></colgroup><tbody><tr><td>=</td><td>affectation</td><td>$x=5</td><td>$x==5</td></tr><tr><td>+=</td><td>incrémentation et affectation</td><td>$x+=6</td><td>$x==14</td></tr><tr><td>-=</td><td>soustraction</td><td>$x-=6</td><td>$x==2</td></tr><tr><td>/=</td><td>division</td><td>$x/=2</td><td>$x==4</td></tr><tr><td>%=</td><td>division entière</td><td>$x%=3</td><td>$x==2</td></tr><tr><td>|=</td><td>effectue un OU logique</td><td>$b |= FALSE</td><td>$b==TRUE</td></tr><tr><td>^=</td><td>effectue un OU exclusif logique</td><td>$b ^= FALSE</td><td>$b==TRUE</td></tr><tr><td>&amp;=</td><td>effectue un ET logique</td><td>$b &amp;= FALSE</td><td>$b==FALSE</td></tr><tr><td>.=</td><td>concatène la chaîne à droite à celle de gauche</td><td>$c .= "fin"</td><td>$c=="la fin"</td></tr></tbody></table></div><p>
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116586"></a>Opérateurs de comparaison</h3></div></div></div><p>
+</p><div class="informaltable"><table border="1"><colgroup><col><col><col><col></colgroup><tbody><tr><td>!=</td><td>différent</td><td>$x!=10</td><td>TRUE</td></tr><tr><td>==</td><td>égalité</td><td>$x==10</td><td>FALSE</td></tr><tr><td>&lt;=</td><td>inférieur ou égal</td><td>$x&lt;=10</td><td>TRUE</td></tr><tr><td>&lt;</td><td>inférieur</td><td>$x&lt;10</td><td>TRUE</td></tr><tr><td>&gt;=</td><td>supérieur ou égal</td><td>$x&gt;=10</td><td>FALSE</td></tr><tr><td>&gt;</td><td>supérieur</td><td>$x&gt;10</td><td>FALSE</td></tr></tbody></table></div><p>
+</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id36116692"></a>Les tableaux</h2></div></div></div><p>
+Les tableaux PHP sont des tableaux <span class="emphasis"><em>associatifs</em></span>, 
+c'est-à-dire que ce sont des listes d'associations entre une clé
+et une valeur. Cette notion est plus générale que celle de tableau
+simple que l'on rencontre habituellement : les tableaux simples
+associent uniquement des positions (mémoire) à une valeur.
+On accède habituellement dans ce cas, à un élément du tableau par une
+notation crochet : t[i] désigne le i-ème élément du tableau (i entier).
+</p><p>
+Le tableau simple est un cas particulier du tableau associatif (où la clé
+est la position dnas le tableau). Par conséquent PHP autorise bien sûr
+l'utilisation de tableaux simples.
+</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116716"></a>Enumérations</h3></div></div></div><p>
+Un tableau peut servir à énumérer un ensemble fixe d'éléments.
+Dans ce cas, le tableau PHP est créé avec la primitive <span><strong class="command">array()</strong></span>
+</p><pre class="programlisting">
+   array( [clé =&gt;] valeur , ... )
+</pre><p>
+
+où <code class="varname">clé</code> est une chaîne ou un entier, 
+<code class="varname">valeur</code> peut être de n'importe quel type.
+</p><p>
+La clé est optionnelle, si bien qu'on que si l'on ne la précise
+pas, on obtient un tableau simple. Dans ce cas, une numérotation
+implicite des éléments de tableau à partir de 0 prend place.
+</p><p>Voici deux exemples de déclaration de tableaux :
+</p><pre class="programlisting">
+$t1 = array( 'version' =&gt; 4 , 
+             'OS'      =&gt; 'Linux',
+             'name'    =&gt; 'app1');
+
+$t2 = array( 'pierre',
+             'jean',
+             'max');
+</pre><p>
+</p><p>
+Dans la deuxième déclaration, les éléments ont automatiquement
+un clé qui est le numéro de l'élément. Dans ce cas, t2[1] désigne
+la chaîne 'jean'.
+Dans la première déclaration, on peut accéder aux éléments par une
+notation comme : t1['OS'], qui vaut 'Linux'.
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116767"></a>Déclaration et affectation</h3></div></div></div><p>
+A l'instar des autres variables, on ne déclare pas les tableaux en PHP.
+L'interpréteur PHP infère qu'une variable est de type tableau dès que la notation
+crochets ( [ ] ) est utilisée.
+</p><p>
+L'affectation se fait directement avec la notation crochets, sans avoir besoin d'allouer
+explicitement d'espace mémoire pour le stockage :
+</p><pre class="programlisting">
+
+ $tableau[0]="msg1";
+
+</pre><p>
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116792"></a>Parcours</h3></div></div></div><p>
+Habituellement, dans un langage impératif, le parcours d'un tableau
+est décrit par une boucle allant du premier indice au dernier indice
+du tableau. En PHP, on peut aussi utiliser cette construction (on fait appel à la primitive
+<span><strong class="command">count()</strong></span> qui donne le nombre d'éléments d'un tableau) :
+</p><pre class="programlisting">
+ for ($i=0;$i&lt;count($t2);$i++) {
+     echo "$t2[$i]";
+ }
+</pre><p>
+</p><p>
+Il existe cependant des primitives plus élaborées.
+</p><p>
+Ces primitives utilisent en interne un pointeur qui indique
+où en est le parcours du tableau. Ce pointeur est invisible et
+inaccessible au programmeur. La fonction <span><strong class="command">reset($tableau)</strong></span>
+permet de remettre le pointeur au début du tableau.
+</p><p>
+On peut utiliser la fonction <span><strong class="command">each($tableau)</strong></span> qui prend
+prend l'élément présent à la position courante du pointeur et le renvoie.
+Le pointeur progresse automatiquement à la prochaine position du tableau.
+
+</p><pre class="programlisting">
+ reset($t2);
+ while ($valeur = each($t2)) {
+    echo "Valeur: $valeur";
+  }
+</pre><p>
+Attention, si le tableau est associatif (comme <code class="varname">$t1</code>),
+i.e. chaque élément est une paire
+(clé,valeur), c'est cette paire qui est renvoyée par <span><strong class="command">each()</strong></span>.
+Pour lister les valeurs uniquement, on peut utiliser <span><strong class="command">list()</strong></span>
+qui permet de ne sélectionner que certains éléments d'un n-uplet.
+</p><p>
+</p><pre class="programlisting">
+ reset($t1);
+ while (list(, $valeur) = each($t1)) {
+    echo "Valeur: $valeur";
+  }
+</pre><p>
+</p><p>
+La fonction <span><strong class="command">foreach()</strong></span> est bien adaptée au parcours
+d'un tableau, quelque soit le type de clé utilisé. 
+On extrait les valeurs associées aux clés directement avec quelquechose
+comme :
+</p><pre class="programlisting">
+  foreach($t1 as $valeur) {
+    echo "Valeur: $valeur";
+  }
+</pre><p>
+</p><p>
+Tandis qu'on peut accéder à la fois à la clé et à la valeur de la manière
+suivante :
+</p><pre class="programlisting">
+  foreach($t1 as $cle =&gt; $valeur) {
+    echo "A $cle est associé $valeur";
+  }
+</pre><p>
+</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id36116896"></a>Les fonctions</h2></div></div></div><p>
+Les fonctions permettent de définir un traitement retournant 0 ou 1 résultat.
+On donne une fois sa définition, et on peut ensuite <span class="emphasis"><em>appeler</em></span>
+cette fonction autant de fois qu'on le désire dans d'autres parties du programme,
+éventuellement avec des paramètres différents. 
+</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116912"></a>Définition d'une fonction</h3></div></div></div><p>
+Une fonction est définie par le mot clé <code class="code">function</code>.
+Le résultat retourné (optionnel) est celui donné par <code class="code">return</code>.
+</p><pre class="programlisting">
+&lt;php?
+function prix_reduit( $prix, $reduction ) {
+   $res = $prix * (1-$reduc);
+   return( $res);
+}
+?&gt;
+</pre><p>
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116935"></a>Appel d'une fonction</h3></div></div></div><p>
+Une fois définie, la fonction peut être appelée, c-a-d exécutée 
+(avec des paramètres réels si la définition attend des paramètres).
+</p><pre class="programlisting">
+&lt;php?
+   ...
+   $prix_initial=100;
+   $reduc=0.20;
+   $prix_final1 = prix_reduit( $prix_initial, $reduc );
+   $prix_final2 = prix_reduit( 100 , 0.20 );
+   ...
+?&gt;
+</pre><p>
+Les deux appels à <code class="code">prix_reduit</code> ci-dessus donnent le même résultat.
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36116957"></a>Exemple de fonction</h3></div></div></div><p>
+On se servira avec avantage des fonctions pour éviter les traitements répétitifs.
+Par exemple, on pourra écrire une fonction qui fait une requête SQL passée en paramètre,
+et qui accepte un paramètre supplémentaire (debug) quand on veut plus d'information
+sur les erreurs.
+
+</p><pre class="programlisting">
+function requete($requet, $debug=0) {
+      if($debug==0){
+            $query = mysql_query($requet);
+            if($query == 0)
+                  echo "Problème d\'accès à la base de données ou erreur de syntaxe dans la requête.";
+            return $query;
+      }
+      // mode debug
+      else{
+            $query = mysql_query($requet);
+            echo "$requet";
+            if($query == 0) {
+                  echo "Problème d\'accès à la base de données ou erreur de syntaxe dans la requête.";
+                  echo "Erreur #'. mysql_errno()";
+                  echo "Description : ' . mysql_error()";
+            }
+            else
+                  echo "Pas d\'erreur dans la requête.";
+            return $query;
+      }
+}
+</pre><p>
+</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 2. Apache, PHP et MySQL </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 4. Passage de valeurs d'une page à l'autre</td></tr></table></div></body></html>

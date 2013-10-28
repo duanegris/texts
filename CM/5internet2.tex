@@ -1,0 +1,839 @@
+
+\def\resdir{5internet}
+
+% ----------------------------------------------------------------------
+\section{Plan d'adressage}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\subsection{Construction du plan d'adressage}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}
+	\begin{columns}
+	
+	\column{0.5\textwidth}
+		\hspace*{-0.5cm}
+		\includegraphics[height=0.8\textheight]{\resdir/osi}
+	
+	\column{0.5\textwidth}
+		\begin{block}<+-> {IP : Internet Protocol}
+			\begin{itemize}
+			\item Protocole Réseau de Réseaux
+			\item Routé
+				\item Implémentation de la couche
+				\begin{itemize}
+					\item Réseau
+				\end{itemize}
+				\item Inter - Net(work)
+				\item Basé sur l'adresse IP
+				\begin{itemize}
+					\item IPv4 ou IPv6
+				\end{itemize}
+				\item \'Echange de \textit{Paquets}
+			\end{itemize}
+		\end{block}
+		
+	\end{columns}		
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+	\centering
+	
+	\includegraphics[height=0.95\textheight]{\resdir/reseau-vierge}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage}
+
+	\centering
+	\includegraphics[height=0.4\textheight]{\resdir/reseau-vierge}
+
+	\begin{itemize}
+		\item<+-> On dispose de l'adresse \texttt{192.1.1.0/24}
+		\item<+-> Plage : \texttt{192.1.1.0 - 192.1.1.255} (classe C)
+		\item<+-> Comment attribuer les adresses aux machines ?
+	\end{itemize}
+	
+	\only<1-7>{
+	\begin{block}<+->{Objectifs}
+		\begin{itemize}
+			\item<+-> Partitionner le réseau
+			\item<+-> Optimiser l'utilisation de la plage
+			\item<+-> Permettre le routage interne des paquets
+		\end{itemize}
+	\end{block}
+	}\only<8->{
+	\begin{block}{Méthode}
+		\begin{itemize}
+			\item<9-> Attribuer des plages aux sous-réseaux
+			\item<10-> Au plus juste, mais non saturées
+			\item<11-> Par ordre décroissant du nombre d'adresses
+		\end{itemize}
+	\end{block}
+	}
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Méthode}
+
+	\centering
+	
+	\includegraphics[height=0.4\textheight]{\resdir/reseau-vierge}
+	
+	\begin{block}<1-3>{Attribuer des plages aux sous-réseaux}
+ 		Plage \texttt{192.1.1.X/M} : Trouver \texttt{M}, puis \texttt{X}
+	\end{block}
+	
+	\begin{block}<2-3>{Au plus juste, mais non saturées}
+		\texttt{M} doit être le plus petit possible, tout en laissant des adresses libres
+	\end{block}
+	
+	\begin{block}<3-3>{Par ordre décroissant du nombre de machines}
+		Contrainte technique
+	\end{block}	
+		
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Méthode - Trouver \texttt{M}}
+
+\uncover<+->{Plage \texttt{192.1.1.X/M} : $M=32-nb\ bits\ necessaires\ pour\ les\ hotes$}
+
+ 	\begin{itemize}
+ 	\item<+-> \textbf{\texttt{M}=30} : $32-M=2\ bits\ hote \Rightarrow 4\ adresses \Rightarrow 2\ adresses\ utiles$
+\uncover<+->{
+ 		\hspace*{-1.5cm}\footnotesize	\begin{tt}
+		\begin{tabular}{lcl}
+Masque de S-R &
+\textcolor{red}{11000000.11111111.11111111}.\textcolor{magenta}{111111}\textcolor{blue}{00} & 255.255.255.252 \\
+Adresse IPv4 & 
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{xxxxxx}\textcolor{blue}{xx} & 192.\ \ 1.\ \ 1.XXX \\
+		\end{tabular}
+		\end{tt} \normalsize	
+}
+
+\uncover<+->{ Plage d'adresse :
+ 		\hspace*{-1.5cm}\footnotesize	\begin{tt}
+		\begin{tabular}{lcl}
+		\hline
+@ Réseau
+& \textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{xxxxxx}\textcolor{blue}{00} & 192.\ \ 1.\ \ 1.0 \\
+\phantom{Masque de S-R}
+& \textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{xxxxxx}\textcolor{blue}{01} & 192.\ \ 1.\ \ 1.1 \\
+& \textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{xxxxxx}\textcolor{blue}{10} & 192.\ \ 1.\ \ 1.2 \\
+@ Broadcast
+& \textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{xxxxxx}\textcolor{blue}{11} & 192.\ \ 1.\ \ 1.3 \\
+\hline
+		\end{tabular}
+		\end{tt} \normalsize	
+}
+ 	\item<+-> \textbf{\texttt{M}=29} : $32-M=3\ bits\ hote \Rightarrow 8\ adresses \Rightarrow 6\ adresses\ utiles$
+ 	
+ 		\hspace*{-1.5cm}\footnotesize	\begin{tt}
+		\begin{tabular}{lcl}
+Masque de S-R &
+\textcolor{red}{11000000.11111111.11111111}.\textcolor{magenta}{11111}\textcolor{blue}{000} & 255.255.255.248 \\
+Adresse IPv4 & 
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{xxxxx}\textcolor{blue}{xxx} & 192.\ \ 1.\ \ 1.XXX \\
+		\end{tabular}
+		\end{tt} \normalsize		
+		
+	\item<+-> \ldots	
+		
+ 	\item<+-> \textbf{\texttt{M}=25} : $32-M=7\ bits\ hote \Rightarrow 128\ adresses \Rightarrow 126\ adresses\ utiles$
+ 	 	
+ 		\hspace*{-1.5cm}\footnotesize	\begin{tt}
+		\begin{tabular}{lcl}
+Masque de S-R &
+\textcolor{red}{11000000.11111111.11111111}.\textcolor{magenta}{1}\textcolor{blue}{0000000} & 255.255.255.128 \\
+Adresse IPv4 & 
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{x}\textcolor{blue}{xxxxxxx} & 192.\ \ 1.\ \ 1.XXX \\
+		\end{tabular}
+		\end{tt} \normalsize			
+		 	
+ 	\end{itemize}
+		
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Méthode - Trouver \texttt{X}}
+
+\begin{exampleblock}{Plage \texttt{192.1.1.X/M}}
+
+\begin{itemize}
+\item \texttt{X} = adresse du sous-réseau
+\item Première adresse disponible suivante
+\end{itemize}
+
+\end{exampleblock}
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Application}
+
+	\centering
+	
+	\includegraphics[height=0.5\textheight]{\resdir/reseau-vierge}
+		
+	\begin{exampleblock}<+->{Par ordre décroissant du nombre de machines}
+		\begin{itemize}
+		\item Sous-réseau A : 80 machines
+		\item Sous-réseau B : 15 machines
+		\item Sous-réseau C : 6 machines
+		\end{itemize}
+	\end{exampleblock}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Application}
+		
+	\begin{exampleblock}<+->{Au plus juste, non saturé}
+		\begin{itemize}
+		\item<+-> Sous-réseau A
+			\begin{itemize}
+			\item<+-> $2^6(64) \leq \mathbf{80+2} < 2^7(128) \Rightarrow 7 bits \Rightarrow M=32-7$
+			\item<+-> $M=25$
+			\item<+-> \texttt{11111111.11111111.11111111.10000000 \\ \ \ \ \ \ 255.\ \ \ \ \ 255.\ \ \ \ \ 255.\ \ \ \ \ 128}
+			\end{itemize}
+			
+		\item<+-> Sous-réseau B (ne pas oublier les 2 adresses réservées)
+			\begin{itemize}
+			\item $2^4(16) \leq \mathbf{15+2} < 2^5(32) \Rightarrow 5 bits \Rightarrow M=32-5=27$
+			\item $M=27$
+			\item \texttt{11111111.11111111.11111111.11100000  \\ \ \ \ \ \ 255.\ \ \ \ \ 255.\ \ \ \ \ 255.\ \ \ \ \ 224}
+			\end{itemize}
+		
+		\item<+-> Sous-réseau C (non saturé)
+			\begin{itemize}
+			\item $2^3(8) \leq \mathbf{6+2} < 2^4(16) \Rightarrow 4 bits \Rightarrow M=32-4=28$
+			\item $M=28$
+			\item \texttt{11111111.11111111.11111111.11110000  \\ \ \ \ \ \ 255.\ \ \ \ \ 255.\ \ \ \ \ 255.\ \ \ \ \ 240}
+			\end{itemize}
+					
+		\end{itemize}
+	\end{exampleblock}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Application}
+
+		
+		\hspace*{-1cm} \footnotesize	\begin{tt}
+		\begin{tabular}{|ll|ll|}
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.00000000 & 192.1.1.0  & \phantom{@R} & \phantom{192.1.1.128/27} \\
+\ldots & & & \\
+\ldots & & & \\
+\ldots & & & \\
+
+
+
+\ldots & & & \\
+\ldots & & & \\
+\ldots & & & \\
+\ldots & & & \\
+
+
+
+\ldots & & & \\
+\ldots & & & \\
+\ldots & & & \\
+\ldots & & & \\
+
+
+\ldots & & & \\
+\ldots & & & \\
+\textcolor{red}{11000000.00000001.00000001}.11111111 & 255.1.1.255 & & \\
+
+\hline
+
+		\end{tabular}
+		\end{tt} 
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Application}
+
+		
+		\hspace*{-1cm} \footnotesize	\begin{tt}
+		\begin{tabular}{|ll|ll|}
+
+\hline
+
+
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{0000000} & 192.1.1.0\ \  & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{0000000} & 192.1.1.1\ \  & @P & Sous-réseau A\\
+\ldots & & @H &  \scriptsize 192.1.1.0/25 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{1111111} & 255.1.1.127 & @B & \\
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.10000000 & 192.1.1.128  & \phantom{@R} & \phantom{192.1.1.128/27} \\
+\ldots & & & \\
+\ldots & & & \\
+\ldots & & & \\
+
+
+
+\ldots & & & \\
+\ldots & & & Reste \\
+\ldots & & & \\
+\ldots & & & \\
+
+
+\ldots & & & \\
+\ldots & & & \\
+\textcolor{red}{11000000.00000001.00000001}.11111111 & 255.1.1.255 & & \\
+
+\hline
+
+		\end{tabular}
+		\end{tt} 
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Application}
+
+		
+		\hspace*{-1cm} \footnotesize	\begin{tt}
+		\begin{tabular}{|ll|ll|}
+
+\hline
+
+
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{0000000} & 192.1.1.0\ \  & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{0000000} & 192.1.1.1\ \  & @P & Sous-réseau A\\
+\ldots & & @H &  \scriptsize 192.1.1.0/25 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{1111111} & 255.1.1.127 & @B & \\
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{100}\textcolor{blue}{00000} & 192.1.1.128 & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{100}\textcolor{blue}{00001} & 192.1.1.129 & @P & Sous-réseau B \\
+\ldots & & @H & 192.1.1.128/27 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{100}\textcolor{blue}{11111} & 255.1.1.159 & @B & \\
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.10100000 & 192.1.1.160 &\phantom{@R}&\phantom{192.1.1.160/27}\\
+\ldots & & & \\
+\ldots & & & \\
+\ldots & & &  Reste \\
+
+
+\ldots & & & \\
+\ldots & & & \\
+\textcolor{red}{11000000.00000001.00000001}.11111111 & 255.1.1.255 & & \\
+
+\hline
+
+		\end{tabular}
+		\end{tt} 
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Application}
+
+		
+		\hspace*{-1cm} \footnotesize	\begin{tt}
+		\begin{tabular}{|ll|ll|}
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{0000000} & 192.1.1.0\ \  & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{0000000} & 192.1.1.1\ \  & @P & Sous-réseau A\\
+\ldots & & @H &  \scriptsize 192.1.1.0/25 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{0}\textcolor{blue}{1111111} & 255.1.1.127 & @B & \\
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{100}\textcolor{blue}{00000} & 192.1.1.128 & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{100}\textcolor{blue}{00001} & 192.1.1.129 & @P & Sous-réseau B \\
+\ldots & & @H & 192.1.1.128/27 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{100}\textcolor{blue}{11111} & 255.1.1.159 & @B & \\
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{1010}\textcolor{blue}{0000} & 192.1.1.160 & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{1010}\textcolor{blue}{0001} & 192.1.1.161 & @P & Sous-réseau C \\
+\ldots & & @H & 192.1.1.160/28 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{1010}\textcolor{blue}{1111} & 255.1.1.175 & @B &\\
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.10111100 & 255.1.1.188 & & \\
+\ldots & & & Reste\\
+\textcolor{red}{11000000.00000001.00000001}.11111111 & 255.1.1.255 & & \\
+
+\hline
+
+		\end{tabular}
+		\end{tt} 
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+	\centering
+	\includegraphics[height=\textheight]{\resdir/reseau-ip}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Plan d'adressage : Application}
+
+		\hspace*{-1cm} \footnotesize	\begin{tt}
+		\begin{tabular}{|ll|ll|}
+		
+\ldots & & @H & 192.1.1.160/28 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{1010}\textcolor{blue}{1111} & 255.1.1.175 & @B &\\
+
+\hline
+
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101100}\textcolor{blue}{00} & 192.1.1.176 & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101100}\textcolor{blue}{01} & 192.1.1.177 & @r1 & S-R R1-R2 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101100}\textcolor{blue}{10} & 255.1.1.178 & @r2 & 192.1.1.176/30\\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101100}\textcolor{blue}{11} & 255.1.1.179 & @B & \\
+\hline
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101101}\textcolor{blue}{00} & 192.1.1.180 & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101101}\textcolor{blue}{01} & 192.1.1.181 & @r1 & S-R R1-R3 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101101}\textcolor{blue}{10} & 255.1.1.182 & @r3 & 192.1.1.180/30 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101101}\textcolor{blue}{11} & 255.1.1.183 & @B & \\
+\hline
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101110}\textcolor{blue}{00} & 192.1.1.184 & @R & \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101110}\textcolor{blue}{01} & 192.1.1.185 & @r2 & S-R R2-R3 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101110}\textcolor{blue}{10} & 255.1.1.186 & @r3 & 192.1.1.184/30 \\
+\textcolor{red}{11000000.00000001.00000001}.\textcolor{magenta}{101110}\textcolor{blue}{11} & 255.1.1.187 & @R & \\
+\hline
+
+
+\textcolor{red}{11000000.00000001.00000001}.10111100 & 255.1.1.188 & &\\
+\ldots & & & Reste\\
+\textcolor{red}{11000000.00000001.00000001}.11111111 & 255.1.1.255 & & \\
+
+\hline
+
+		\end{tabular}
+		\end{tt} \scriptsize	
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+	\centering
+	\includegraphics[height=\textheight]{\resdir/reseau-intercos}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+	\centering
+	\includegraphics[height=\textheight]{\resdir/plages.pdf}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\subsection{Configuration}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : Interfaces}
+
+\begin{block}<+->{Configuration des interfaces}
+	\begin{itemize}
+	\item Adresse IP 						\hfill \texttt{192.\ \ 1.\ \ 1.\ 10}
+	\item Masque de sous-réseau \hfill \texttt{255.255.255.128}
+	\item Passerelle 						\hfill \texttt{192.\ \ 1.\ \ 1.\ \ 1}
+	\end{itemize}
+\end{block}
+
+
+\begin{exampleblock}<+->{Passerelle}
+	\begin{itemize}
+	\item Destination si la destination n'est pas dans le même S-R
+	\item Exemple, si \texttt{192.1.1.10} envoie un paquet à destination de
+		\begin{itemize}
+		\item \texttt{192.1.1.\ 15}, le paquet est émis directement
+		\item \texttt{192.1.1.130}, le paquet est émis à destination de la passerelle
+		\end{itemize}
+	\end{itemize}
+\end{exampleblock}
+
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : Interfaces}
+
+\begin{block}{Configuration des interfaces}
+	\begin{itemize}
+	\item Adresse IP 						\hfill \texttt{192.\ \ 1.\ \ 1.\ 10}
+	\item Masque de sous-réseau \hfill \texttt{255.255.255.128}
+	\item Passerelle 						\hfill \texttt{192.\ \ 1.\ \ 1.\ \ 1}
+	\end{itemize}
+\end{block}
+
+
+\begin{alertblock}{Détection du sous-réseau}
+	\begin{itemize}
+	\item Application du Masque de sous-réseau
+		\begin{itemize}
+		\item \texttt{192.1.1.\ 10  ET 255.255.255.128 = 192.1.1.0}
+		\item \texttt{192.1.1.\ 15  ET 255.255.255.128 = 192.1.1.0}
+		\item \texttt{192.1.1.130 ET 255.255.255.128 = 192.1.1.128}
+		\end{itemize}
+	\end{itemize}
+\end{alertblock}
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : Routeurs}
+
+	\begin{itemize}
+	\item<+-> Fonction des routeurs : Router les paquets
+		\begin{itemize}
+		\item i.e. les acheminer au travers du réseau
+		\end{itemize}
+	\item<+-> Machines dédiées au traitement réseau
+	\item<+-> Possédant plusieurs interfaces
+		\begin{itemize}
+		\item Une interface par sous-réseau connecté
+		\end{itemize}
+	\item<+-> Basés sur une \textit{Table de Routage}
+	\end{itemize}
+
+
+\begin{exampleblock}<+->{Table de routage (R1)}
+\scriptsize \tt
+
+\begin{tabular}{l|lllll}
+N & Adr Dest & Masque & Passerelle & Interface & Métrique \\
+\hline
+1 & 192.1.1.0 		& 255.255.255.128		& 192.1.1.1		& 192.1.1.1		& 2 \\
+2 & 192.1.1.128 	& 255.255.255.224		& 192.1.1.178	& 192.1.1.177	& 2 \\
+3 & 192.1.1.160 	& 255.255.255.240		& 192.1.1.182	& 192.1.1.181	& 2 \\
+4 & \ \ 0.0.0.0 	& 255.255.255.255		& 192.1.1.182	& 192.1.1.181	& 2 \\
+\end{tabular}
+
+\end{exampleblock}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : Routeurs}
+
+	\centering
+	\only<1>{\includegraphics[height=0.55\textheight]{\resdir/reseau-intercos}}
+	\only<2->{\includegraphics[height=0.55\textheight]{\resdir/reseau-routeurs}}
+
+\only<1-2>{\begin{exampleblock}{Table de routage (R1)}
+\footnotesize \tt
+\begin{tabular}{l|lllll}
+N & Adr Dest & Masque & Passerelle & Interface  \\
+\hline
+1 & 192.1.1.0 		& 255.255.255.128		& 192.1.1.1		& 192.1.1.1		 \\
+2 & 192.1.1.128 	& 255.255.255.224		& 192.1.1.178	& 192.1.1.177	 \\
+3 & 192.1.1.160 	& 255.255.255.240		& 192.1.1.182	& 192.1.1.181	 \\
+4 & \ \ 0.0.0.0 	& 255.255.255.255		& 192.1.1.182	& 192.1.1.181	 \\
+\end{tabular}
+\end{exampleblock}}
+
+\only<3>{\begin{exampleblock}{Table de routage (R2)}
+\footnotesize \tt
+\begin{tabular}{l|lllll}
+N & Adr Dest & Masque & Passerelle & Interface  \\
+\hline
+1 & 192.1.1.0 		& 255.255.255.128		& 192.1.1.177	& 192.1.1.178	 \\
+2 & 192.1.1.128 	& 255.255.255.224		& 192.1.1.129	& 192.1.1.129	 \\
+3 & 192.1.1.160 	& 255.255.255.240		& 192.1.1.186	& 192.1.1.187	 \\
+4 & \ \ 0.0.0.0 	& 255.255.255.255		& 192.1.1.186	& 192.1.1.187	 \\
+\end{tabular}
+\end{exampleblock}}
+
+\only<4>{\begin{exampleblock}{Table de routage (R3)}
+\footnotesize \tt
+\begin{tabular}{l|lllll}
+N & Adr Dest & Masque & Passerelle & Interface  \\
+\hline
+1 & 192.1.1.0 		& 255.255.255.128		& 192.1.1.181	& 192.1.1.182	 \\
+2 & 192.1.1.128 	& 255.255.255.224		& 192.1.1.187	& 192.1.1.186	 \\
+3 & 192.1.1.160 	& 255.255.255.240		& 192.1.1.161	& 192.1.1.161	 \\
+4 & \ \ 0.0.0.0 	& 255.255.255.255		& \ 80.0.0.1	& 192.1.1.254	 \\
+\end{tabular}
+\end{exampleblock}}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : Routeurs - Comment ça marche ?}
+
+	%\centering
+	%\includegraphics[height=0.55\textheight]{\resdir/reseau-routeurs}
+
+\begin{exampleblock}{Table de routage (R3)}
+
+\footnotesize \tt
+\begin{tabular}{c|lllll} 
+N & Adr Dest & Masque & Passerelle & Interface  \\
+\hline
+\only<3->{\bf}1 & \only<3->{\bf}192.1.1.0 		& \only<3->{\bf}255.255.255.128		& \only<3->{\bf}192.1.1.181	& \only<3->{\bf}192.1.1.182	 \\
+2 & 192.1.1.128 	& 255.255.255.224		& 192.1.1.187	& 192.1.1.186	 \\
+3 & 192.1.1.160 	& 255.255.255.240		& 192.1.1.161	& 192.1.1.161	 \\
+4 & \ \ 0.0.0.0 	& 255.255.255.255		& \ 80.0.0.1	& 192.1.1.254	\\
+\end{tabular}
+\end{exampleblock}
+
+\small
+\begin{tt} 
+Si ( \textbf{Adresse IP ET Masque $=$ Adr Dest} )
+
+Alors Envoyer le paquet vers \textbf{Passerelle} \textit{via} \textbf{Interface}
+\end{tt}
+~\\~\\
+
+\uncover<2->{
+\`A la réception par R3 d'un paquet à destination de \hfill \texttt{192.1.1.10}
+}
+
+{ \footnotesize \tt
+	\begin{enumerate}  
+	\item<3-> 192.1.1.10 ET 255.255.255.128 (192.1.1.0) $=$ 192.1.1.0
+	\end{enumerate}}
+
+\uncover<4->{$\Rightarrow$ Le Paquet est envoyé vers \texttt{\bf 192.1.1.181} \textit{via} \texttt{\bf 192.1.1.182}}
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : Routeurs - Comment ça marche ?}
+
+	%\centering
+	%\includegraphics[height=0.55\textheight]{\resdir/reseau-routeurs}
+
+\begin{exampleblock}{Table de routage (R3)}
+
+\footnotesize \tt
+\begin{tabular}{c|lllll} 
+N & Adr Dest & Masque & Passerelle & Interface  \\
+\hline
+\only<2>{\bf}1 & \only<2>{\bf}192.1.1.0 		& \only<2>{\bf}255.255.255.128		& \only<2>{\bf}192.1.1.181	& \only<2>{\bf}192.1.1.182	 \\
+\only<3->{\bf}2 & \only<3->{\bf}192.1.1.128 	& \only<3->{\bf}255.255.255.224		& \only<3->{\bf}192.1.1.187	& \only<3->{\bf}192.1.1.186	 \\
+3 & 192.1.1.160 	& 255.255.255.240		& 192.1.1.161	& 192.1.1.161	 \\
+4 & \ \ 0.0.0.0 	& 255.255.255.255		& \ 80.0.0.1	& 192.1.1.254	\\
+\end{tabular}
+\end{exampleblock}
+
+\small
+\begin{tt} 
+Si ( \textbf{Adresse IP ET Masque $=$ Adr Dest} )
+
+Alors Envoyer le paquet vers \textbf{Passerelle} \textit{via} \textbf{Interface}
+\end{tt}
+~\\~\\
+
+\`A la réception par R3 d'un paquet à destination de \hfill \texttt{192.1.1.132}
+
+
+{ \footnotesize \tt
+	\begin{enumerate}  
+	\item<2-> 192.1.1.132 ET 255.255.255.128 (192.1.1.128) $\neq$ 192.1.1.0
+	\item<3-> 192.1.1.132 ET 255.255.255.224 (192.1.1.128) $=$ 192.1.1.128
+	\end{enumerate}}
+
+\uncover<4->{$\Rightarrow$ Le Paquet est envoyé vers \texttt{\bf 192.1.1.187} \textit{via} \texttt{\bf 192.1.1.186}}
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : Routeurs - Comment ça marche ?}
+
+	%\centering
+	%\includegraphics[height=0.55\textheight]{\resdir/reseau-routeurs}
+
+\begin{exampleblock}{Table de routage (R3)}
+\footnotesize \tt
+\begin{tabular}{c|lllll}
+N & Adr Dest & Masque & Passerelle & Interface  \\
+\hline
+\only<2>{\bf}1 & \only<2>{\bf}192.1.1.0 		& \only<2>{\bf}255.255.255.128		& \only<2>{\bf}192.1.1.181	& \only<2>{\bf}192.1.1.182	 \\
+\only<3>{\bf}2 & \only<3>{\bf}192.1.1.128 	& \only<3>{\bf}255.255.255.224		& \only<3>{\bf}192.1.1.187	& \only<3>{\bf}192.1.1.186	 \\
+\only<4->{\bf}3 & \only<4->{\bf}192.1.1.160 	& \only<4->{\bf}255.255.255.240		& \only<4->{\bf}192.1.1.161	& \only<4->{\bf}192.1.1.161	 \\
+						 4 & \ \ 0.0.0.0 	& 255.255.255.255		& \ 80.0.0.1	& 192.1.1.254	\\
+\end{tabular}
+\end{exampleblock}
+
+\small
+\begin{tt} 
+Si ( \textbf{Adresse IP ET Masque $=$ Adr Dest} )
+
+Alors Envoyer le paquet vers \textbf{Passerelle} \textit{via} \textbf{Interface}
+\end{tt}
+~\\~\\
+
+\`A la réception par R3 d'un paquet à destination de \hfill \texttt{192.1.1.163}
+
+{\tt \footnotesize
+	\begin{enumerate} 
+	\item<2-> 192.1.1.163 ET 255.255.255.128 (192.1.1.128) $\neq$ 192.1.1.0
+	\item<3-> 192.1.1.163 ET 255.255.255.224 (192.1.1.160) $\neq$ 192.1.1.128
+	\item<4-> 192.1.1.163 ET 255.255.255.160 (192.1.1.160) $=$ 192.1.1.160
+	\end{enumerate}}
+
+\uncover<5->{$\Rightarrow$ Le Paquet est envoyé vers \texttt{\bf 192.1.1.161} \textit{via} \texttt{\bf 192.1.1.161}}
+
+\uncover<6->{$\Rightarrow$ Le Paquet est envoyé vers \texttt{\bf 192.1.1.163} \textit{via} \texttt{\bf 192.1.1.161}}
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : Routeurs - Comment ça marche ?}
+
+	%\centering
+	%\includegraphics[height=0.55\textheight]{\resdir/reseau-routeurs}
+
+\begin{exampleblock}{Table de routage (R3)}
+\footnotesize \tt
+\begin{tabular}{c|lllll}
+N & Adr Dest & Masque & Passerelle & Interface  \\
+\hline
+\only<2>{\bf}1 & \only<2>{\bf}192.1.1.0 		& \only<2>{\bf}255.255.255.128		& \only<2>{\bf}192.1.1.181	& \only<2>{\bf}192.1.1.182	 \\
+\only<3>{\bf}2 & \only<3>{\bf}192.1.1.128 	& \only<3>{\bf}255.255.255.224		& \only<3>{\bf}192.1.1.187	& \only<3>{\bf}192.1.1.186	 \\
+\only<4>{\bf}3 & \only<4>{\bf}192.1.1.160 	& \only<4>{\bf}255.255.255.240		& \only<4>{\bf}192.1.1.161	& \only<4>{\bf}192.1.1.161	 \\
+\only<5->{\bf}4 & \only<5->{\bf}\ \ 0.0.0.0 	& \only<5->{\bf}255.255.255.255		& \only<5->{\bf}\ 80.0.0.1	& \only<5->{\bf}192.1.1.254	\\
+\end{tabular}
+\end{exampleblock}
+
+\small
+\begin{tt} 
+Si ( \textbf{Adresse IP ET Masque $=$ Adr Dest} )
+
+Alors Envoyer le paquet vers \textbf{Passerelle} \textit{via} \textbf{Interface}
+\end{tt}
+~\\~\\
+
+\`A la réception par R3 d'un paquet à destination de \hfill \texttt{132.2.5.1}
+
+{\tt \footnotesize
+	\begin{enumerate} 
+	\item<2-> 132.2.5.1 ET 255.255.255.128 (132.2.5.0) $\neq$ 192.1.1.0
+	\item<3-> 132.2.5.1 ET 255.255.255.224 (132.2.5.0) $\neq$ 192.1.1.128
+	\item<4-> 132.2.5.1 ET 255.255.255.160 (132.2.5.0) $=$ 192.1.1.160
+	\item<5-> 132.2.5.1 ET 255.255.255.255 (\ \ 0.0.0.0) $=$ \ \ 0.0.0.0\ \ 
+	\end{enumerate}}
+
+\uncover<6->{$\Rightarrow$ Le Paquet est envoyé vers \texttt{\bf 80.0.0.1} \textit{via} \texttt{\bf 192.1.1.254}}
+
+
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Configuration : IP/MAC - Comment ça marche ?}
+
+\begin{alertblock}{Problème}
+	\begin{itemize}
+	\item<+-> Adresse IP au niveau IP + Adresse MAC au niveau Ethernet
+	\item<+-> Comment les mettre en correspondance ?
+	\end{itemize}
+\end{alertblock}
+
+\begin{exampleblock}<+->{ARP : Address Resolution Protocol}
+	\begin{itemize}
+	\item<+-> Traduction d'addresse niveau réseau en addresse MAC
+	\item<+-> Interface couche OSI 2 et 3
+	\item<+-> Fonctionnement
+		\begin{itemize}
+		\item Emission d'un \textit{broadcast} \textbf{Requête ARP} sur le réseau local
+		\item Emission d'un \textit{unicast} \textbf{Réponse ARP} contenant l'adresse MAC
+		\end{itemize}
+	\item<+-> Accéléré par un mécanisme de cache
+	\item<+-> Représente une vulnérabilité
+	\item<+-> Supplanté en IPv6
+	\end{itemize}
+\end{exampleblock}
+\end{frame}
+% ----------------------------------------------------------------------

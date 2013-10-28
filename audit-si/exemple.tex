@@ -1,0 +1,69 @@
+\documentclass{book}
+\usepackage{a4,makeidx,fancyheadings}
+\usepackage{graphicx}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{makeidx}
+\usepackage{tabularx}
+\usepackage{eurosym}
+\usepackage{color}
+\usepackage{url}
+\usepackage{pdfpages}
+\usepackage{xspace}
+\usepackage{geometry}
+\geometry{ 
+      hmargin=3cm,
+      vmargin=3cm
+}
+
+\makeindex
+	
+\begin{document}
+\newcommand{\motcle}[1]{\index{#1}\emph{#1}}
+\newcommand{\sre}{service relations entreprises\xspace}
+\newcommand{\sop}{service organisation et process\xspace}
+\newcommand{\scom}{service communication\xspace}
+\newcommand{\sconc}{service concours\xspace}
+\newcommand{\CK}{Christos Karacostas\xspace}
+
+
+\thispagestyle{empty}
+%-------- fancy headings setting -----------
+\rhead[]{}
+%\footrulewidth 0.1pt
+\rfoot[]{\small\sc S. Genaud}
+\pagestyle{fancy}
+%------------------------- Page de Garde -------------------
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0mm}
+\vspace*{\stretch{1}}
+\rule{\linewidth}{1mm}
+\begin{center}
+\Large{Rapport de Stage}\\[5mm]
+\Large{en \LaTeX}\\[5mm]
+\large{Stéphane Genaud}
+\rule{\linewidth}{1mm}
+\vspace*{\stretch{2}}
+\end{center}
+\begin{center}
+juin \oldstylenums{2011} \\
+\textrm{
+$Revision:$\\	% utile pour imprimer sur le document les num révisions svn.
+$Id:  $\\		% pour cela il faut faire un 'svn propset ....'  sur le fichier svn
+}
+\end{center}
+%------------------------------------------------------------
+
+\tableofcontents
+\newpage
+
+ 
+ 
+
+\chapter{Audit des Services}
+ 
+
+\section{Responsable Informatique}
+
+\end{document}

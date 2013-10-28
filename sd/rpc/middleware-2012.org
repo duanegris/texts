@@ -1,0 +1,733 @@
+
+#+TITLE:     IMW: Middleware
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+LINK_UP:
+#+LINK_HOME:
+#+STYLE:    <link rel="stylesheet" type="text/css" href="css/worg.css" />
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger,hyperref={colorlinks=true, urlcolor=red, plainpages=false, pdfpagelabels, bookmarksnumbered}]
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_HEADER_EXTRA: \usetheme{Boadilla}\usecolortheme{default}
+#+BEAMER_HEADER_EXTRA:\setbeamertemplate{footline}{\leavevmode \hbox{ \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot} \insertshorttitle\end{beamercolorbox} \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}\insertshortauthor\end{beamercolorbox} \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot} \insertframenumber / \inserttotalframenumber\hspace*{2em} \end{beamercolorbox} } \vskip0pt }
+#+BEAMER_HEADER_EXTRA: \setbeamercovered{invisible}
+#+BEAMER_HEADER_EXTRA: \author[S. Genaud]{{\large Stéphane Genaud} \\ \vspace{0.2cm} ENSIIE - Strasbourg \\ \vspace{0.2cm} \texttt{genaud@unistra.fr} }
+#+BEAMER_HEADER_EXTRA: \date{{\large Middleware} \\ \vspace{0.2cm} }
+#+BEAMER_envargs: [<+->] 
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+#+STARTUP: beamer
+#+EPRESENT_FRAME
+#+latex_header: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+
+
+
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:         keywordstyle=\color{blue},
+#+LATEX_HEADER:         commentstyle=\color{red},
+#+LATEX_HEADER:         stringstyle=\color{green},
+#+LATEX_HEADER:         basicstyle=\ttfamily\small,
+#+LATEX_HEADER:         columns=fullflexible,
+#+LATEX_HEADER:         frame=single,
+#+LATEX_HEADER:         basewidth={0.5em,0.4em}
+#+LATEX_HEADER:         }
+
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+
+
+
+
+* Introduction      
+** Technologies for Distributed Systems
+   - Extremely fast evolution since 1985:
+     about a technology every 5 years.\\
+   - Implementations adapt to up-to-date technology\\
+     e.g If networks go faster, it is possible to convey bigger messages.\\
+         If the cost of some hardware becomes low, no need to spare it.
+
+** Technologies change but ... concepts stay
+    - Client-server is the central concept:\\
+      The *client* can make a request at any time,\\
+      The *server* permanently waits for incoming requests
+#+CAPTION:Temporal view of a client-server request and response
+#+LABEL:fig:client-server-schema
+#+attr_html: width="300"
+[[./img/S9_RPC_works.png]]
+
+** Middleware: definition
+*** What is middleware?						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    - A sofware layer between the OS and the application allowing 
+      a set of distributed computers to communicate in a standardized
+      way.
+
+*** Middleware provides inter-machines communication facilities, 
+    but may also include services, such as authentification services,
+    resource directories, distributed file catalogs, ...
+     
+** A Time-line of technologies
+#+CAPTION:Timeline of mainstream or emblematic technologies
+#+LABEL:fig:timeline
+  [[../img/timeline.png]]
+
+** Principle Design Choices
+   - Abstraction vs. Performance
+   - Interoperability
+   - Versatility
+** Abstraction
+*** Abstraction of communication primitives
+    - too low level: rapidly obsolete, lower programming productivity
+    - too high level: difficult to optimize for performance 
+*** Abstraction Trade-off 
+    - independent from the architecture: execute across
+      different systems without *source code* modification
+    - Hide details related to communication/synchronization management
+      (e.g =Remote Procedure Calls= more abstract than =sockets=)
+					  
+** Interoperability
+*** Machine-independent
+    e.g [[http://www.ietf.org/rfc/rfc1057.txt][Sun RPC]] 
+    \vspace{5mm}
+*** OS-independent  
+    e.g [[http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136424.html][Java-RMI]]
+    \vspace{5mm}
+*** Language-independent 
+    e.g [[http://www.corba.org][Corba]], [[http://www.w3.org/TR/soap/][SOAP]]
+** Versatility
+   The more general, the more versatile 
+   - Example 1: SOAP communicates through XML pieces of text 
+   - $\Rightarrow$ SOAP toolkits can be found for almost all languages.
+#+CAPTION:SOAP used to communicate between heterogeneous components
+#+LABEL:fig:soap-comm
+[[../soap-img/soapuser-archi1.png]]
+
+* Sun RPC
+** Background
+   Sun RPC  (aka RPC ONC (Open Network Computing)) 
+   - are the original RPC ([[http://tools.ietf.org/html/rfc1831][RFC 1831]]), introduced by Sun in 1988
+   - motivation: provide a support to inter-machines services
+   - NFS as first target, NIS, ....
+   - is open source software (BSD license since 2009)
+** Interoperability
+   - ONC RPC allow programs on different OS and machines to communicate
+   - It may be in different languages but C in 99% cases.
+   - Relies on [[http://www.ietf.org/rfc/rfc4506.txt][XDR]] (eXternal Data Representation)
+     
+** RPC service identification
+*** Services are identified by					    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+   1. the program name (~prog_name~)
+   2. the program version (~prog_ver~)
+   3. the function name
+*** Example						   :B_beamercolorbox:
+    :PROPERTIES:
+    :BEAMER_env: beamercolorbox
+    :END:
+#+BEGIN_SRC C
+  program MYPROG {
+    version VERSION_ONE {
+      void MYPROG_NULL(void) = 0;
+      answer MYPROG_MYFUNC(data) = 1;
+    } = 1;
+  } = 0x2000:0001;
+#+END_SRC
+ 
+** Service Registration (portmap)
+ This service must be registered in a directory service generally called /portmapper/ 
+   - acts as a name server
+   - converts : <prog_name + ver + protocol> to <portnumber>
+   - exact service name depending on sytem/distribution : =rpcbind= (or sometimes =portmap=, or =rpc.portmap=)
+   - attached to port 111
+
+** Standard RPC services
+*** file =/etc/rpc=						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    #+begin_src c
+    portmapper  100000  
+    rstatd      100001  
+    rusersd     100002  
+    nfs         100003  
+    ypserv      100004 
+    mountd      100005 
+    ypbind      100007
+    walld       100008 
+    #+end_src
+     
+** Running Services					    :B_ignoreheading:
+   :PROPERTIES:
+   :BEAMER_env: ignoreheading
+   :END:
+   #+begin_src c
+   % rpcinfo -p
+     program vers proto   port
+    100000    2   tcp    111  portmapper
+    100000    2   udp    111  portmapper
+ 536870913    1   udp  58764
+ 536870913    1   tcp  65106
+   #+end_src c
+ Two last lines are one user program.
+
+
+ 
+
+
+** Programming with ONC RPC
+   Two layers:
+*** The *higher* layer: small set of functions to describe and call services in a simple way.
+   -  Essential primitives: =registerrpc()= and =callrpc()= \\
+   -  However, limitations: udp only, no auth, and encoding/decoding by hand.   
+
+*** The *lower* layer: 20+ functions to fine tune the calls.
+   - Much more complex, used for stressed services, for example 
+     to implement asynchronous RPC and authentification.  
+
+** Server-side steps
+   The server must *register*: asks the local portmap to:
+   1.  create a new entry so that clients can be routed 
+   2.  associate a service number and the address of the function 
+     that implements it, or the address of the /dispatcher/.
+*** The primtives are
+    - =svc_register()= and =pmap_set()= (low level)
+    - =rpcregister()= (high level)
+    - on exit, =svc_unregister()=, =pmap_uset()=
+** Client-side steps
+   The client must initialize (1), lookup in remote portmap to find the service (2),
+   then, several calls can be made afterwards (3):
+   1. =clnt_create()= / =clnttcp_create()= / =clntudp_create()=,
+   2. =pmap_getport()=
+   3. =clnt_call()=
+
+   The higher level =callrpc()= does steps 1, 2 and 3 in a row.
+
+** Example of high-layer usage (server side 1/2)
+/Define the service on the server:/
+#+begin_src c
+#include <rpc/xdr.h>
+#include <rpc/rpc.h>
+
+int* my_function(int *n) {
+   static int res;
+   *n = *n + 1;
+   res= *n; 
+   return (&res);
+}
+#+end_src
+ 
+** Example of high-layer usage (server side 2/2)
+/Register the service on the server:/
+#+begin_src c
+#define PROGNUM 0x20000100                                                      
+#define VERSNUM 1                                                               
+#define PROCNUM 1
+
+int main (void) {
+   registerrpc( PROGNUM,
+                VERSNUM,
+                PROCNUM,
+                my_function, /*ptr to function*/
+                (xdrproc_t) xdr_int, /*encode input*/
+                (xdrproc_t) xdr_int);/*decode output*/
+
+    svc_run(); /*  server starts listening ... */
+}
+#+end_src
+
+** Example of high-layer usage (client side 1/2)
+   /Call the service from the client:/
+#+begin_src c :exports code
+int main (int argc, char **argv) {
+ int n=0x41424344;
+ char *host = argv[1];
+ int stat;
+ stat = callrpc(host,
+                PROGNUM,
+                VERSNUM,
+                PROCNUM,
+                (xdrproc_t) xdr_int, //intput encoding
+                (char *)&n,          //input param
+                (xdrproc_t)xdr_int,  //output decoding
+                (char *)&res);       //return of func
+}
+#+end_src
+ 
+** Another way: =rpcgen=
+- Taking care of conversion through XDR is difficult
+- The =rpcgen= compiler automates the process of writing RPC applications
+- =rpcgen= accepts interface descriptions in [[http://docs.oracle.com/cd/E19683-01/816-1435/6m7rrfn9k/index.html][RPCL (RPC Language)]]
+- and generates skeletons programs (C code) 
+
+** Example with =rpcgen=
+- Consider an /operation/ =addition=, that adds up 2 =int= s
+- Describe this service in a file =myservice.x= 
+#+begin_src C
+struct data {
+  int arg1;  int arg2;
+};
+typedef struct data data;
+struct response {
+  int result; unsigned char error;
+};
+typedef struct response response;
+
+program MYCOMPUTATION {
+  version VERSION_ONE{
+    void MYCOMPUTATION_NULL(void) = 0;
+    response MYCOMPUTATION_ADDITION(data) = 1;
+  } = 1;
+} = 0x20000001;
+#+end_src
+
+** Example with =rpcgen= (contd)
+- Generate the skeletons
+#+begin_src c :exports code
+   % rpcgen -a myservice.x
+#+end_src
+- The following files are generated
+#+begin_src c :exports code
+  myservice.h        /* parameter definitions */
+  myservice_xdr.c    /* XDR conversion */
+  myservice_svc.c    /* stubs server */   
+  myservice_clnt.c   /* stubs client */
+  myservice_server.c /* server code */
+  myservice_client.c /* client code */
+#+end_src
+
+
+
+** RPCL in Brief (enumeration, constants & simple)
+*** Enumerations and Constants 
+#+begin_src C
+enum colortype { RED = 0, GREEN = 1,BLUE = 2  };
+const PI = 3.14; 
+#+end_src
+*** Simple Declarations 
+#+begin_src C
+int length;
+colortype c;
+#+end_src
+*** Added types (bool and string) 
+- =bool= : boolean, can take TRUE or FALSE values
+- =string=: translated to =char *= (See variable length array).   
+** RPCL in Brief (arrays)
+*** Fixed-length arrays 
+#+begin_src C
+int length[5];
+color palette[8];
+#+end_src
+
+*** Variable-length arrays                                        
+   - The maximum size is specified between angle brackets, or may be ommitted:
+#+begin_src C
+int notes_serie<20>;   # at most 20
+int heights<>;         # unlimited
+string message<256>;
+#+end_src
+each will translate to a C struct, e.g:
+#+begin_src C
+struct {
+   u_int heights_len;/* # of items in array */
+   int *heights_val; /* pointer to array */
+} heights;
+#+end_src
+** RPCL in brief (typedef)
+*** Type definitions 
+    Same syntax as C typedef
+#+begin_src C
+typedef string name_t<255>; 
+typedef string longstring<>;
+#+end_src
+will be translated into C code:
+#+begin_src C
+typedef char *name_t;
+typedef char *longstring;
+#+end_src
+
+** RPCL in Brief (pointers)
+   - Pointer declarations are as in C. Address pointers are not sent over the network. 
+     Instead, data pointed to are copied. This is useful for sending recursive data 
+     types such as lists and trees. 
+#+begin_src C
+ tree_t *t;
+#+end_src
+** RPCL in Brief (struct)
+   - Translates as is in C, excepted that an extra typedef is generated.
+#+begin_src C
+struct coord {  int x;  int y;  };                           
+#+end_src
+Translates to:
+#+begin_src C
+struct coord {  int x;  int y;  };
+typedef struct coord coord;
+#+end_src
+which allows to use =coord= instead of =struct coord=
+
+
+
+
+** Tips & Tricks
+*** Linux							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+   - Install: rpc lib provided by package  =libtirpc-dev=  (0.2.2-5 on ubuntu 12.04) 
+   - Run: a portmapper is provided by package =rpcbind=  
+   - Run: =svc_register()= might refuse to register ("credentials problem") 
+           $\Rightarrow$ Start server as root or in sudo mode.
+   - Initialize array variables before calling remote functions 
+     ("Can't encode arguments" error).
+*** MacOSX							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+   - Install: the 'Command line tools' element from Xcode in the distrib
+              or download it fom  [[https://developer.apple.com/downloads/][Apple]] . 
+   - Use: =rpcgen -C= to force generation of ANSI-C code
+   
+* Java RMI
+** History
+   - Created by Sun in 1998
+   - Java only
+   - Available since JDK >= 1.1
+   - Since JDK 1.5, stubs are automatically generated (no =rmic=)
+** RPC in the world of RMI
+   - RMI provides access to *objects* and their *methods*
+   - In contrast to Sun RPC, not only data can be passed
+     to remote computations, but also objects that can contain
+     code and data.\\[5mm]
+
+   - There are 2 ways to communicate in this object-oriented
+     paradigm: 
+     1. through the =Remote= class
+     2. through the =Serializable= class
+
+
+** The Remote class 
+   
+   definition: An object of the Remote class can be used remotely.
+   It can be used:
+   - in the address space of the JVM that created it,
+   - in the address spaces of other JVMs through /handles/ (aka /proxies/).
+   
+#+CAPTION:Proxy object
+#+LABEL:fig:timeline
+#+latex_attr .8\textwidth
+[[../img/proxy.png]]
+The call to a remote object's method is exactly (syntactically) the same as a local one.   
+
+** The Remote class  and interface  
+
+*** A Remote class must be defined in 2 parts  
+  - an interface
+  - the class itself
+*** Interface   :B_block:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :END:  
+#+begin_src java
+    public interface MyExample extends Remote {...}
+#+end_src
+    
+*** Class    :B_block:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :END:
+#+begin_src java
+public class MyExampleImpl 
+  extends    UnicastRemoteObject
+  implements MyExample  {
+    ...
+   }
+#+end_src
+
+** The Serializable class
+
+definition: an object of the class Serializable is an object
+that can be copied from one address space to another.
+
+
+** Registering the services
+   A process called *rmiregistry* is in charge of service registration\\
+   (Equivalent of portmapper)
+*** Characteristics of =rmiregistry= 				    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    - runs on the same host as the services
+    - default port is 1099
+    - can be started by program
+
+** Example 1: Remote object with primitive types
+Example parameter passing using primitive types (e.g. int, float, ..) or arrays (e.g. String) 
+- In general, parameters just need to be *serializable* (java.io.Serializable).
+*** The different pieces of code 				    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    - The service: description of the function prototype
+    - The service: the implementation of the service
+    - The server: a generic code which registers the service
+    - The client: the code that uses the service
+
+** Example 1: Service Description
+
+A service is described by an *interface*.
+- known by the client and the server.
+ 
+#+begin_src java
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface Operation extends Remote {
+
+    public int addition(int a, int b) 
+                    throws RemoteException ;
+}
+#+end_src
+
+** Example 1: Service Implementation
+   - Only the server *implements* the service.
+#+begin_src java
+import java.rmi.server.UnicastRemoteObject ;
+import java.rmi.RemoteException ;
+import java.net.InetAddress.* ;
+import java.net.* ;
+
+public class OperationImpl extends UnicastRemoteObject
+  implements Operation  {
+
+    public OperationImpl () throws RemoteException {
+        super();
+    };
+
+    public int addition(int a, int b) 
+                    throws RemoteException {
+      return( a + b) ;
+  }
+}
+#+end_src
+
+** Example 1: Service Registration
+- The first server task is to register the service 
+  in the rmiregistry under a name (here /Operation/)
+#+begin_src java
+import java.rmi.*;
+import java.net.*;
+
+public class Serveur {
+  public static void main(String [] args) {
+    try {
+       OperationImpl une_op = new OperationImpl ();
+       Naming.rebind("rmi://"+args[0]+"/Operation",une_op) ;
+       System.out.println("Serveur pret");
+     }
+     catch (Exception e) { 
+           System.out.println(re) ; 
+     }
+}
+#+end_src
+
+** Example 1: Client code
+   - gets a reference to the  the service in the registry (proxy)
+   - call the service using that reference 
+
+#+begin_src java
+import java.rmi.* ;
+import java.net.MalformedURLException ;
+import java.io.*;
+
+public class Client {
+  public static void main(String [] args) {
+    try {
+         Operation o = (Operation) 
+             Naming.lookup("//"+args[0]+"/Operation");
+         System.out.println("Client: 33+45= ?");
+         int r = o.addition( 33, 45 );
+         System.out.println("33+45="+ r );
+     }
+     catch (Exception e) { System.out.println(e) ; }
+   }
+}
+#+end_src
+
+** Trouble shooting 1
+*** Observation 						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    The client experiences a =connection refused= error when 
+    contacting the server.
+
+*** Why?  							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    =$JAVA_HOME/lib/security/java.policy= is too restrictive wrt sockets
+*** Solution  							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+   To override the standard, run
+#+begin_src java
+  java -Djava.security.policy=more_perm Server
+#+end_src
+   where =fichier= contains, for instance:
+#+begin_src java
+grant {
+    permission java.net.SocketPermission
+    "*:80-65535","connect,accept,listen,resolve";
+    permission java.security.AllPermission;
+};
+#+end_src
+   
+** Trouble shooting 2
+*** Observation 						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+   When calling the RPC (hence after the lookup), the client ends with:
+   =java.rmi.ConnectException: Connection refused to host: 127.0.0.1=
+
+*** Why?    							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+   In some linux distributions, the name resolution for hostname
+   takes 127.0.0.1 from =/etc/hosts= instead of public IP.
+
+*** Solution  							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+run the server by overriding its IP
+#+begin_src java
+    java -Djava.rmi.server.hostname=<my ip here> Server 
+#+end_src
+
+* Corba
+** History
+*** Context
+   - A specification defined by the /Object Management Group/ (OMG), 
+     composed of about 1000 members
+   - currently CORBA 3.0
+   - Implementors then propose implementations
+
+*** Implemenations
+     Commercial :
+     - ORBIS, IONA, VisiBroker, ORBacus, ....
+     Open source:
+     - JDK, MICO, JacORB, TAO, ...
+
+** Characteristics
+
+CORBA = Common Object Request Broker Architecture
+
+*** A RPC framework
+  - object oriented
+  - multiple-OS, multiple languages can be involved
+  - analogy of the "software bus"  
+*** External Services
+  - helper services, can connect to the bus
+  - services: naming, transaction, persistence ...
+
+** IDL
+
+   The Interface Definition Language:
+   equivalent to the RPC Language.
+
+   - defines the *methods* a server proposes 
+   - defines the *data* that can be accessed from the client (get/set)
+
+   From IDL, generation of concrete code to
+   represent data and methods in the chosen language.
+ 
+** IDL structure
+
+Three hierarchical elements:
+1. =Module= : namespaces (correspond to Java packages)
+2. =Interface= : logical groups of methods
+3. /methods/ : prototypes of the methods implemented by the server
+
+Example:
+#+begin_src idl
+module HelloApp
+{
+  interface Hello
+  {
+  string sayHello();
+  oneway void shutdown();
+  };
+};
+#+end_src
+
+** IDL types
+Types and number of bytes between parenthesis: 
+- boolean ={TRUE,FALSE}
+- octet (1)
+- /signed/ : short (2), long (4), long long (8)
+- /unsigned/ : unsigned short (2), unsigned long (4), unsigned long long (8)
+- /floats/ : float (4), double (8), long double (16)
+- /characters/: char (1, iso-latin-1), string (var), string<n> (n), wchar (2, unicode), wstring (var of wchar)
+
+** IDL type mapping to Java
+
+| IDL         | Java   |   | IDL                | Java   |
+|-------------+--------+---+--------------------+--------|
+| octet       | byte   |   | unsigned short     | short  |
+| short       | short  |   | unsigned long      | int    |
+| long        | int    |   | unsigned long long | long   |
+| long long   | long   |   | char               | char   |
+| float       | float  |   | wchar              | char   |
+| double      | double |   | string             | String |
+| long double | N/A    |   | wstring            | String |
+|             |        |   |                    |        |
+
+
+** IDL Methods
+
+*** General Form 						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+<return_type> method_name([<mode> <type> <parameter_id>]*) [raises [exceptions]+]; 
+
+- mode={in, out, inout} for input, output, and modified parameters resp. 
+- type: all primitive or constructed type with typedef (constructed before method call)
+
+Method names must be unique (no overloading).
+
+
+** POA
+*** OA and POA 							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- Object Adapter: mechanism that connects a request using an object reference with 
+the proper code to service that request. 
+
+- Portable Object Adapter: a particular type of object adapter that is 
+  defined by the CORBA specification. 
+
+*** characteristics
+- Enables portability of object implementations between different ORB products
+- Provide support for objects with persistent identities
+- Provide support for transparent activation of objects
+- Allow a single servant to support multiple object identities simultaneously
+
+

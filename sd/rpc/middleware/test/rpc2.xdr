@@ -1,7 +1,0 @@
-program RPC2 {
-  version VERS {
-    int essai(int v) = 1;
-    int init(int v) = 2;
-  } = 1;
-} = 0x77665542;
-

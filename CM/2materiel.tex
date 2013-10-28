@@ -1,0 +1,246 @@
+\def\resdir{2materiel}
+\def\imgheight{0.4\textheight}
+
+% ----------------------------------------------------------------------
+\section{Architecture Matérielle}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\subsection{Câbles}
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[height=0.4\textheight]{\resdir/cablerj45.jpg}\hfill
+\includegraphics[height=0.4\textheight]{\resdir/cablefo.jpg}\hfill
+\includegraphics[height=0.4\textheight]{\resdir/cablesm.jpg}
+
+	\begin{block}<+-> {Câble}
+		\begin{itemize}
+		\item Différentes caractéristiques
+			\begin{itemize}
+			\item Atténuation
+			\item Bande-passante
+			\item Vitesse de propagation
+			\item Prix
+			\end{itemize}
+		\item Couche OSI 1 
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[height=\imgheight]{\resdir/repeteur.jpg}
+
+	\begin{block}<+-> {Répéteur (\textit{repeater})}
+		\begin{itemize}
+		\item Regénére le signal entre deux câbles
+		\item Pour dépasser les limites d'atténuation
+		\item Répète sur un port ce qu'il entend sur l'autre
+		\item Couche OSI 1
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\subsection{Matériel interne}
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[width=\textwidth]{\resdir/pont.jpg}
+
+	\begin{block}<+-> {Pont (\textit{bridge})}
+		\begin{itemize}
+		\item Relie des réseau travaillant avec le même protocole
+		\item = Filtre les trames à destination du réseau de l'autre côté
+		\item Permet de segmenter le réseau (réduction du trafic)
+		\item Couche OSI 1 et 2 (adresse MAC)
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[height=0.5\textheight]{\resdir/routeur.jpg}
+
+	\begin{block}<+-> {Routeur (\textit{router})}
+		\begin{itemize}
+		\item Route les paquets entre les différents réseaux
+		\item Interne à l'internet
+		\item Détermine le chemin à emprunter (table de routage)
+		\item Implémente un algorithme de routage
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[width=0.32\textwidth]{\resdir/neufbox.jpg}\hfill
+\includegraphics[width=0.32\textwidth]{\resdir/freebox.jpg}\hfill
+\includegraphics[width=0.32\textwidth]{\resdir/livebox.jpg}
+
+	\begin{block}<+-> {Passerelle (\textit{gateway})}
+		\begin{itemize}
+		\item Pont entre deux réseaux de protocole différents
+		\item Matériel et logiciel
+		\item Exemple : modem ou tunnel (VPN)
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[height=\imgheight]{\resdir/concentrateur}
+
+	\begin{block}<+-> {Concentrateur (\textit{hub})}
+		\begin{itemize}
+		\item Concentre le trafic de plusieurs hôtes
+		\item Rediffusion du trafic arrivant sur chaque port sur tous les autres
+		\item \'Egalement : répéteur
+		\item 4/8/16/32 ports
+		\item Couche OSI 1 
+		\item Actif (alimenté) ou passif
+		\item Connectable en cascade (port uplink/câble croisé)
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[width=\textwidth]{\resdir/commutateur.jpg}
+
+	\begin{block}<+-> {Commutateur (\textit{switch})}
+		\begin{itemize}
+		\item Pont multiports
+		\item Concentre et redirige les données vers la bonne destination
+		\item 4-96 ports		
+		\item Couche OSI 1 et 2
+		\item \'Egalement : commutateur de niveau 7
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[height=\imgheight]{\resdir/parefeu.jpg}
+
+	\begin{block}<+-> {Pare-feu (\textit{firewall})}
+		\begin{itemize}
+		\item Filtre les communications (sécurité)
+		\item Matériel ou logiciel
+		\item Réseau (par port/protocole) ou applicatif (par application/port/protocole)
+		\item Analyse plus ou moins profonde des communications
+		\item Gestion dynamique des ports
+		\item Permet aussi de faire des translations (NAT/PAT)
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\subsection{Matériel d'extrémité}
+%TODO : ajouter smartphone, pc
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[height=\imgheight]{\resdir/PC.jpg}
+
+	\begin{block}<+-> {Serveur mandataire (\textit{proxy server})}
+		\begin{itemize}
+		\item Masque les machines \og derrière\fg
+		\item Filtrage
+		\item Authentification
+		\item Cache
+		\item Machine classique
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\only<1>{\includegraphics[height=\imgheight]{\resdir/serveur-home.jpg} \hspace{2cm} \includegraphics[height=\imgheight]{\resdir/serveur-armoire.jpg}}
+\only<2>{\includegraphics[height=\imgheight]{\resdir/serveur-blade.jpg}
+\includegraphics[height=\imgheight]{\resdir/blade.jpg}}
+\only<3>{\includegraphics[height=\imgheight]{\resdir/serveur-fichier.jpg}}
+
+	\begin{block}<+-> {Serveur (\textit{server})}
+		\begin{itemize}
+		\item Exécute les applications
+		\item Matériel ET logiciel
+		\item Plus ou moins performant
+			\begin{itemize}
+				\item CPU, mémoire, disque, communication
+			\end{itemize}
+		\item Louable
+			\begin{itemize}
+				\item stockage, hébergement Web ou pas, calcul, jeu\ldots
+			\end{itemize}
+		\item Mode actuelle : externalisation et virtualisation
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}
+
+\centering
+\includegraphics[width=0.32\textwidth]{\resdir/neufbox.jpg}\hfill
+\includegraphics[width=0.32\textwidth]{\resdir/freebox.jpg}\hfill
+\includegraphics[width=0.32\textwidth]{\resdir/livebox.jpg}
+
+	\begin{block}<+-> {adslbox}
+		\begin{itemize}
+		\item Pont + Passerelle + Proxy
+		\item Switch
+		\item Proxy
+		\item Routeur (un peu)
+		\item Parefeu
+		\item Hotspot wifi (privé et public)
+		\item Serveur : DHCP, FTP, impression\ldots
+		\end{itemize}	
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------

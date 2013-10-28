@@ -62,13 +62,13 @@ th.list    { background-color : #c2ddeb; }
 td.list    { background-color : #eee59a; margin : 3px; 
         font-family : courier ; font-size : 12pt;}
 
-
-#listing pre { padding: 0; margin: 0; 
-               background-color : #c2ddeb; 
-               font-size : 30%;
+#listing pre { padding: 0; margin: 0;
+               background-color : #c2ddeb;
+               font-size : 50%;
            border-bottom: 1px solid #000;
            border-top   : 1px solid #000;
            width: 100%; position: relative;}
+
 </style>
 
 
@@ -84,7 +84,7 @@ td.list    { background-color : #eee59a; margin : 3px;
 <div id="currentSlide"><!-- DO NOT EDIT --></div>
 <div id="header"></div>
 <div id="footer">
-<h1>Novembre &#8226; 2011</h1>
+<h1>Decembre &#8226; 2012</h1>
 <h2>Les Grilles Informatiques</h2>
 </div>
 </div>
@@ -376,7 +376,98 @@ super-calculateurs, etc).</li>
 </div>
 
 
-<!-- _______________________________ Définitions _____________________________ -->
+<!-- ______________________________ EGI  _____________________________ -->
+<div class="slide">
+<h1>La grille EGI</h1>
+
+<img style="float:right" src="grid-img/egi_nagios_status.jpg" alt="EGI clusters' status"/>
+
+<ul>
+<li> Issue du projet datagrid Européen, soutien fort pour le LHC </li>
+<li> EGI: structure administrative fédératrice de structures nationales (e.g France Grilles, ...)</li>
+<li> VOs : structure en communauté d'utilisateurs, utilisant les ressources physiques (e.g BioMed, Atlas, ...).</li>
+</ul>
+
+</div>
+
+
+
+<!-- ______________________________ EGI  _____________________________ -->
+<div class="slide">
+<h1>EGI user usecase</h1>
+
+
+
+<ol>
+<li>Préparer scripts, programmes, et données</li>
+<li>Démarrer et s'identifier auprès d'un SSO</li>
+<li>Copier les programmes et données sur un SE</li>
+<li>Préparer un job écrit en JDL</li>
+<li>Soumettre le job</li>
+</ol>
+
+</div>
+
+
+<!-- ______________________________ EGI  _____________________________ -->
+<div class="slide">
+<h1>EGI middleware</h1>
+Basée sur des dérivés logiciels de Globus: gLite dans la plupart des cas.
+
+Eléments principaux:
+<ul>
+<li> Le client: ensemble de commandes d'identification, de soumission de job et de manipulation de données</li>
+<li> Le Worker Node (WN): host qui réalise les calculs </li>
+<li> Le Compute Element (CE): frontale aux WN. Dispatche les requêtes sur les WN.</li>
+<li> MetaScheduler: doté d'un annuaire global LDAP, choisit un CE pour exécuter une requête</li> 
+<li> Le Storage Element (SE): host utilisé pour le stockage, également support du LFC (file catalog).</li> 
+</ul>
+</div>
+
+
+<!-- ______________________________ EGI  _____________________________ -->
+<div class="slide">
+<h1>EGI middleware - JDL</h1>
+
+<div id="listing">
+<pre>
+$ cat hostname.jdl
+Type = "Job";
+JobType = "Normal";
+Executable = "/bin/hostname";
+Arguments = "-f";
+StdOutput = "hostname.out";
+StdError = "hostname.err";
+OutputSandbox = {"hostname.err","hostname.out"};
+ShallowRetryCount = 3;
+</pre>
+</div>
+
+Soumission du job:
+
+<div id="listing">
+<pre>
+$ glite-wms-job-submit -d $USER -o myjobs hostname.jdl
+
+Connecting to the service https://wms.grid.sara.nl:7443/glite_wms_wmproxy_server
+
+====================== glite-wms-job-submit Success ======================
+
+The job has been successfully submitted to the WMProxy
+Your job identifier is:
+
+https://wms.grid.sara.nl:9000/T1JVMOHOgl3xCIv_cN4bVg
+
+The job identifier has been saved in the following file:
+/home/mgjansen/myjobs
+
+==========================================================================
+</pre>
+</div>
+</div>
+
+
+<!-- ______________________________ Définitions _____________________________ -->
 <div class="slide">
 <h1>Définition d'une Grille</h1>
 

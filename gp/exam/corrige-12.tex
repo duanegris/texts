@@ -1,0 +1,151 @@
+\documentclass{report}
+\usepackage[francais]{babel}
+%\usepackage{times}
+\usepackage{geometry}
+\usepackage[latin1]{inputenc} 
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+%\setlength\textwidth{15.5cm}
+%\setlength\textheight{20cm}
+%\setlength\rightmargin{2cm}
+\pagestyle{empty}
+\geometry{a4paper}
+\begin{document}
+ 
+\begin{center}
+\begin{Large}
+	Sujet d'examen
+\end{Large}
+
+\begin{Large}
+\emph{Gestion de projet} \\
+Ecole de Management Strasbourg\\
+\end{Large}
+
+\vspace{.3cm}
+\begin{large}
+Stéphane \textsc{Genaud}, Février 2012
+\end{large}
+ 
+\end{center}
+
+
+\noindent {\footnotesize
+durée : 2 heures\\
+documents non autorisés\\
+calculatrice autorisée\\
+writing in english is ok.\\
+}
+\vspace{1cm}\\
+%----------------- Question -------------------
+
+\vspace{.5cm}
+ 
+\noindent  $\diamond$ {\em Question 1} (12pts)
+
+\paragraph{Le contexte}
+
+La société pour laquelle vous travaillez souhaite déménager son site
+de production dans un nouveau bâtiment. 
+Cette décision à été prise en comité de direction, composé du directeur général, du 
+directeur administratif et financier (DAF), du responsable de 
+production, et du directeur commercial. 
+
+
+\paragraph{La production}
+Le site de production actuel est constitué de
+deux lignes de productions indépendantes, $L_1$ et $L_2$. La ligne $L_1$
+ne sera pas déménagée et une nouvelle ligne plus moderne $L_3$ sera installée
+en remplacement sur le nouveau site. Cette nouvelle ligne sera totalement 
+fournie et installée par l'entreprise spécialisée NKKS. NKKS sera également
+en charge du démontage et remontage de $L_2$. Elle ne prend pas en charge 
+le transport.
+Pour chaque ligne de production, 3 équipes se relaient pour en assurer le
+focntionnement 24/24 7/7. L'équipe affectée à la ligne $L_1$ devra être
+formée pour opérer la ligne $L_3$. NKKS prévoit une formation de 3 jours.
+
+\paragraph{Le projet}
+La direction a décidé de vous nommer chef de projet pour mener cette mission.
+Vous devrez faire un rapport de l'avancement du projet toutes les semaines.
+La direction vous indique que vous pourrez vous appuyez sur les services de la
+DAF, qui pourra assurer la réalisation de certaines tâches.
+ 
+Voici une liste de tâches obligatoires constituant le projet. Les durées, 
+en jours, sont indiquées entre parenthèses.\\
+
+\begin{itemize}
+\item Concernant les nouveaux locaux :
+	\begin{itemize}
+	\item[\textbf{LRL}] réceptionner les locaux, état des lieux (1j)
+	\item[\textbf{LCE}] tester la conformité électrique pour la production (2j)
+	\item[\textbf{LRI}] tester l'accès et le câblage réseau informatique (1j)	
+	\item[\textbf{LSK}] installer le stock (5j)
+	\end{itemize}
+
+\item Concernant ligne de production :
+	\begin{itemize}
+	\item[\textbf{PFM}] formation à la ligne $L_3$ (3j)
+	\item[\textbf{PDM}] arrêter, puis démonter la ligne de production $L_2$ (3j)
+	\item[\textbf{PIM}] installer la nouvelle ligne de production $L_3$ (7j)
+	\item[\textbf{PTM}] transporter les machines de la ligne de production $L_2$ sur nouveau site (1j)
+	\item[\textbf{PMM}] remonter les machines de la ligne de production $L_2$ (4j)
+	\item[\textbf{PTS}] tester et régler le fonctionnement simultannés des ligne $L_2$ et $L_3$ (3j)
+	\item[\textbf{PTI}] tester et régler le fonctionnement simultannés des ligne $L_2$ et $L_3$ pilotées par l'informatique à distance (2j)
+	\item[\textbf{PPR}] relancer la production sur la nouvelle ligne et valider fonctionnement --nécessite le stock et l'informatique (2j)
+	\end{itemize}
+
+\item Concernant les bureaux:
+	\begin{itemize}
+	\item[\textbf{BTM}] transporter le mobilier (chaises, bureaux) pour les nouveaux bureaux (1j)
+	\item[\textbf{BPI}] déménager les postes informatiques (1j)
+	\item[\textbf{IPI}] installer les postes informatiques et les relier au réseau (3j)
+	BPIr\end{itemize}
+\end{itemize}
+
+\vspace{2cm}
+
+\paragraph{Question 1} (6pts)
+Identifiez les acteurs principaux du projet. 
+\begin{itemize}
+\item Qui est le maître d'ouvrage ?
+% Reponse : la direction
+\item Qui est le maître d'oeuvre ?
+%Reponse : la DAF
+\item Lister les ressources dont vous estimez avoir besoin pour mener à bien le projet.
+\end{itemize}
+Comment allez vous conduire la gestion de ce projet. Indiquez quelles
+réunions vous allez organiser, quels documents vous pensez produire, pour qui,
+comment vous allez organiser des équipes, ou tout autre initiative organisationnelle
+que vous pensez intéressante. Précisez les points d'avancement que vous allez fixer.
+
+
+
+\paragraph{Question 2 } (10pts)
+
+\begin{itemize}
+\item 
+Tracer le graphe PERT pour ce projet. C'est à vous de déterminer les dépendances entre tâches
+et leur nature (fin-début, fin-fin, ou début-début). 
+\item 
+Calculer les dates au plus tôt et au plus tard, 
+et la date de fin du projet en jours.
+\item 
+Calculer les marges.
+\item 
+Quel est le chemin critique
+\end{itemize}
+
+
+
+\paragraph{Question 3} (4pts)
+Juste avant le remontage de la ligne de production $L_2$ (tâche PMM), le 
+directeur de la production exprime le souhait de modifier l'implanation
+de la ligne $L_2$. Il aimerait ajouter un poste en argumentant que l'efficacité
+de la production serait améliorée. Il estime la durée supplémentaire liée
+à cette modification à 1 jour.
+Comment traitez vous cette demande ?
+ 
+
+
+\end{document}

@@ -1,0 +1,203 @@
+\def\resdir{1intro}
+
+% ----------------------------------------------------------------------
+\section{Introduction}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\subsection{Historique}
+% ----------------------------------------------------------------------
+\begin{frame}{Historique}
+	
+	\begin{itemize}
+		\item<+-> 1968 : Arpanet (Advanced Research Projects Agency), DOD américain, mel entre centres de recherche, protocole X25
+		\item<+-> 1972 : protocole TCP/IP, résister à une attaque nucléaire
+		\item<+-> 1979 : mise en domaine public, récupération par les université (Duke University, Caroline du Nord), USENET (news)
+		\item<+-> 1982 : accès gratuit au réseau
+		\item<+-> 1983 : arrivée en Europe, CNAM en France, réseau de réseaux
+		\item<+-> 1984 : ARPANET devient MILNET + INTERNET par la NFS
+		\item<+-> 1986 : connexion aux lignes publiques
+		\item<+-> 1991 : Apparition des FAI
+		\item<+-> 1993 : WWW, 1ier navigateur au CERN, HTML/hyperliens
+		\item<+-> 1995 : 2 millions d'ordinateurs, 30 millions d'utilisateurs
+		\item<+-> 2008 : 15,5 millions de foyers haut-débit en France, +1milliard d'internautes dans le monde
+	\end{itemize}
+
+\end{frame}
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Nombre de sites Web}
+	
+	\includegraphics[width=\textwidth]{\resdir/sitecounthistory}
+		
+\end{frame}
+
+
+
+
+% ----------------------------------------------------------------------
+\subsection{Visualisation}
+% ----------------------------------------------------------------------
+\begin{frame}{\'Epine dorsale d'Internet}
+	\centering
+	\includegraphics[width=\textwidth]{\resdir/carte-internet-backbone}
+\end{frame}
+
+\begin{frame}{Représentation d'Internet}
+	\centering
+	\includegraphics[height=0.8\textheight]{\resdir/carte-internet}
+		
+\end{frame}
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+	
+	\begin{block}<+-> {Caractéristiques d'Internet}
+		\begin{itemize}
+		\item Décentralisé et dynamique : pas de point névralgique
+		\item Construit par le bas : pas de planification globale
+		\item Ensemble de domaines autonomes interconnectés
+		\item Hétérogène : équipement, utilisateur, utilisation\ldots
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+
+
+
+% ----------------------------------------------------------------------
+\subsection{APS}
+% ----------------------------------------------------------------------
+\begin{frame}
+	\begin{block}<+-> {APS}
+		\begin{itemize}
+		\item Architecture : Infrastructure et matériel
+		\item Protocole : langage de communication
+		\item Service : applications
+		\end{itemize}
+		Doivent être normés (RFC : Request For comment)	
+	\end{block}
+\end{frame}
+
+% ----------------------------------------------------------------------
+\begin{frame}
+	
+	\begin{block}<+-> {Architecture Matérielle}
+	
+		\begin{itemize}
+		
+		\item Matériel d'extrémité
+			\begin{itemize} 
+			\item poste client, serveur\ldots
+			\item utilisent le réseau pour communiquer
+			\end{itemize}
+			
+		\item Matériel internes 
+			\begin{itemize} 
+			\item routeur, DNS\ldots
+			\item responsable de l'acheminement
+			\end{itemize}	
+			
+		\item Câbles
+			\begin{itemize} 
+			\item responsable du transport entre deux points
+			\end{itemize}
+			
+		\end{itemize}
+		
+	\end{block}
+		
+\end{frame}
+
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+	
+	\begin{block}<+-> {Protocoles}
+		\begin{itemize}
+		
+		\item ensemble de règles et de conventions 
+			\begin{itemize} 
+			\item réaliser les échanges d'informations
+			\item = langage
+			\item propriétaire ou ouvert
+			\end{itemize}
+			
+		\item acteurs
+			\begin{itemize} 
+			\item constructeurs
+			\item opérateurs de télécommunication
+			\item utilisateurs, communauté
+			\end{itemize}	
+
+		\item exemples 
+			\begin{itemize} 
+			\item TCP/UDP
+			\item Kad
+			\item IRC, MSN, Jabber
+			\end{itemize}
+		
+		\end{itemize}
+		
+	\end{block}
+\end{frame}
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+	
+	\begin{block}<+-> {Services}
+		\begin{itemize}
+		
+		\item Applications
+			\begin{itemize} 
+			\item en mode client/serveur ou pair à pair
+			\item distantes et à la disposition des utilisateurs
+			\end{itemize}
+			
+		\item Exemples
+			\begin{itemize} 
+			\item Connexion distante
+			\item Transfert de fichiers
+			\item WWW, mel
+			\item Annuaire
+			\item Impression
+			\item \ldots
+			\end{itemize}	
+		\end{itemize}
+		
+	\end{block}
+\end{frame}
+
+
+% ----------------------------------------------------------------------
+\begin{frame}
+	\begin{columns}
+	
+	\column{0.5\textwidth}
+		\includegraphics[height=0.8\textheight]{\resdir/osi}
+	
+	\column{0.5\textwidth}
+		\begin{block}<+-> {Modèle OSI}
+			\begin{itemize}
+				\item Séparation en couches
+				\item Chacune rend un service à celle juste au dessus
+				\item Les données doivent traverser toutes les couches
+				\item Avantages :
+				\begin{itemize}
+					\item Réduit la complexité
+					\item Uniformise les interfaces
+					\item Assure l'interopérabilité
+					\item Facilite la conception modulaire
+					\item Accélère l'évolution
+				\end{itemize}
+			\end{itemize}
+		\end{block}
+		
+	\end{columns}
+
+
+\end{frame}

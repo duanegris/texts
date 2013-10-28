@@ -1,0 +1,143 @@
+
+\def\resdir{4ethernet}
+
+% ----------------------------------------------------------------------
+\section{Ethernet}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\subsection{Adresse MAC}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{Ethernet}
+	\centering
+	\includegraphics[height=0.4\textheight]{\resdir/etoile}
+	
+	\begin{block}<+-> {Ethernet - Topologie}
+		\begin{itemize}
+			\item En \'Etoile
+			\item Autour d'un hub ou d'un switch
+			\item Unique médium de communication
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{\'Etoile autour d'un HUB}
+	\centering
+	\includegraphics[height=0.6\textheight]{\resdir/etoile}
+		
+\end{frame}
+% ----------------------------------------------------------------------
+\begin{frame}{\'Etoile autour d'un HUB = BUS}
+	\centering
+	\includegraphics[height=0.6\textheight]{\resdir/bus1}
+		
+\end{frame}
+% ----------------------------------------------------------------------
+\begin{frame}{Communications montantes et descendante}
+	\centering
+	\includegraphics[height=0.6\textheight]{\resdir/bus2}
+		
+\end{frame}
+% ----------------------------------------------------------------------
+\begin{frame}{Adresse MAC (Media Access Control) pour filtrage}
+	\centering
+	\includegraphics[height=0.6\textheight]{\resdir/busmac}
+		
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\subsection{Protocole Ethernet}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{Médium unique = unique \textit{parleur}}
+	\centering
+	\includegraphics[height=0.6\textheight]{\resdir/bus3}
+		
+\end{frame}
+% ----------------------------------------------------------------------
+\begin{frame}{Parole à tour de rôle}
+	\centering
+	\includegraphics[height=0.6\textheight]{\resdir/bus4}
+		
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\begin{frame}{Ethernet - Protocole}
+	
+			\small
+			\begin{enumerate}
+			\item \textit{début de transmission :} Si le média n'est pas utilisé, commencer la transmission, sinon aller à l'étape 4
+			\item \textit{transmission de l'information :} Si une collision est détectée, continue à transmettre jusqu'à ce que le temps minimal pour un paquet soit dépassé (pour s'assurer que tous les postes détectent la collision), puis aller à l'étape 4
+			\item \textit{fin d'une transmission réussie :} Indiquer la réussite au protocole du niveau supérieur et sortir du mode de transfert.
+			\item \textit{câble occupé :} Attendre jusqu'à ce que le fil soit inutilisé.
+			\item \textit{le câble est redevenu libre :} Attendre pendant un temps aléatoire, puis retourner à l'étape 1, sauf si le nombre maximal d'essais de transmission a été dépassé.
+			\item \textit{nombre maximal d'essais de transmission dépassé :} Annoncer l'échec au protocole de niveau supérieur et sortir du mode de transmission.
+			\end{enumerate}
+		
+\end{frame}
+% ----------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------
+\subsection{Ethernet Commuté}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{Ethernet Commuté}
+
+	\centering
+	\includegraphics[height=0.6\textheight]{\resdir/switchmac}
+		
+			\begin{itemize}
+				\item Hub vs. switch
+				\item Avantage ?
+				\item Comment ca marche ?
+			\end{itemize}
+					
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{Ethernet Commuté}
+
+	\centering
+	
+	\includegraphics[height=0.6\textheight]{\resdir/switchmac1}
+		
+			\begin{itemize}
+				\item Hub vs. switch
+				\item Avantage ?
+				\item Comment ca marche ?
+			\end{itemize}
+					
+\end{frame}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+\begin{frame}{Ethernet Commuté}
+
+	\centering
+	\includegraphics[height=0.6\textheight]{\resdir/switchmacport}
+		
+			\begin{tabular}{|c|c|}
+				\hline
+				MAC & Port \\
+				\hline
+				$5E:FF:56:A2:AF:15$ & $1$ \\ 
+				$4E:7F:B6:AE:12:FD$ & $2$ \\
+				$42:CC:12:2B:F7:51$ & $3$ \\
+				$DF:14:DE:21:C7:D1$ & $4$ \\
+				\hline
+			\end{tabular}
+					
+\end{frame}
+% ----------------------------------------------------------------------

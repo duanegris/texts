@@ -1,0 +1,61 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Chapter 4. Passage de valeurs d'une page à l'autre</title><link rel="stylesheet" href="duaneg-docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.html" title="Notes de cours Apache+PHP+MySQL"><link rel="up" href="index.html" title="Notes de cours Apache+PHP+MySQL"><link rel="prev" href="ch03.html" title="Chapter 3. PHP"><link rel="next" href="ch05.html" title="Chapter 5. SQL"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 4. Passage de valeurs d'une page à l'autre</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch05.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="id36116988"></a>Chapter 4. Passage de valeurs d'une page à l'autre</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="ch04.html#id36117016">Méthode POST</a></span></dt><dt><span class="sect1"><a href="ch04.html#id36117091">Méthode GET</a></span></dt><dt><span class="sect1"><a href="ch04.html#id36117174">Autres variables systèmes</a></span></dt></dl></div><p>
+La notion de site web <span class="emphasis"><em>dynamique</em></span> repose sur l'interactivité,
+et donc la capacité du client à envoyer, avec son navigateur, des données au service web.
+Les méthodes principales pour envoyer les données sont:
+</p><div class="itemizedlist"><ul type="disc"><li><p>L'utilisattion d'un formulaire HTML (méthode POST),</p></li><li><p>L'utilisation d'une URL (méthode GET).</p></li></ul></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id36117016"></a>Méthode POST</h2></div></div></div><p>
+Les moyens de saisir des données en HTML sont habituellement consignés
+à l'intérieur d'un <span class="emphasis"><em>formulaire</em></span> (form). 
+Les balises HTML disponibles sont <code class="varname">input</code>, <code class="varname">select</code> ou <code class="varname">textarea</code>.
+La balise <code class="varname">input</code> a de nombreuses variantes (attribut <code class="varname">type</code>= text, password, file, hidden, radio, checkbox ...
+</p><p>
+Le principe de passage des valeurs est le suivant.
+Quand un formulaire comme ci-dessous est posté (<code class="varname">method='post'</code> comme attribut de <code class="varname">form</code>)
+à l'aide du bouton submit,
+le navigateur transmet les valeurs saisies dans le formulaire à l'URL
+spécifiée dans l'attribut <code class="varname">action</code>.
+Dans notre cas, l'URL de destination est un programme PHP ('maj.php' dans l'exemple)..
+</p><pre class="programlisting">
+&lt;form method="post" action="maj.php"&gt;
+
+Champ texte : &lt;input type="text" name="monchamp"&gt;&lt;br&gt;
+
+            &lt;input type=submit value="Insérer"&gt;
+&lt;/form&gt;
+</pre><p>
+
+</p><p>
+PHP met à disposition les valeurs saisies dans une variable <code class="varname">$_POST</code>.
+Cette variable est un tableau associatif qui contient en particulier toutes les valeurs
+saisies dans les champs du formulaire. 
+Quand il y a un champ nommé <code class="varname">monchamp</code> dans le formulaire posté, on peut
+récupérer la valeur saisie en PHP par 
+</p><pre class="programlisting">
+  $une_variable_php =  $_POST['monchamp'];
+</pre><p>
+</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id36117091"></a>Méthode GET</h2></div></div></div><p>
+La méthode GET permet de récupérer des valeurs passées dans l'URL.
+La partie de l'URL contenant les  paramètres passés est celle suivant le point d'interrogation (?).
+Ensuite, chaque paramètre et sa valeur sont séparés par un ET commercial (&amp;).
+Dans l'URL suivante, on a deux paramètres <code class="varname">a</code> et <code class="varname">b</code>
+qui valent respectivement 23 et toto.
+</p><pre class="programlisting">
+  http://domaine.org/maj.php?a=23&amp;b=toto 
+</pre><p>
+</p><p>
+PHP met à disposition les valeurs des paramètres présents dans une URL à travers une  <code class="varname">$_GET</code>.
+Dans l'exemple précédent, on peut récupérer la valeur du paramètre <code class="varname">a</code> par:
+</p><pre class="programlisting">
+  $une_variable_php =  $_GET['a'];
+</pre><p>
+</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>
+La tâche de transférer les valeurs dans $_POST et $_GET (et les autres, moins utilisées) étant fastidieuse,
+on peut demander à PHP une extraction automatique grâce à la fonction <span><strong class="command">extract()</strong></span>. 
+Elle exporte votre tableau associatif et crée une variable pour chaque clé du tableau.
+</p><p>
+Par exemple, si le tableau $_POST contient les variables <code class="varname">login</code> et <code class="varname">email</code>
+</p><pre class="programlisting">
+extract($_POST,EXTR_OVERWRITE);
+</pre><p>
+créera les deux variables PHP <code class="varname">$login</code> <code class="varname">$email</code>.
+</p></td></tr></table></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id36117174"></a>Autres variables systèmes</h2></div></div></div><p>
+</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 3. PHP </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 5. SQL</td></tr></table></div></body></html>

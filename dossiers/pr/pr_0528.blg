@@ -1,0 +1,75 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/MacPorts 2013_2)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: pr_0528.aux
+The style file: plain.bst
+I found no \bibdata command---while reading file pr_0528.aux
+Warning--I didn't find a database entry for "icps-1997-4"
+Warning--I didn't find a database entry for "icps-1994-46"
+Warning--I didn't find a database entry for "icps-1995-1"
+Warning--I didn't find a database entry for "icps-1997-3"
+Warning--I didn't find a database entry for "icps-1996-2"
+Warning--I didn't find a database entry for "icps-2005-146"
+Warning--I didn't find a database entry for "icps-2007-184"
+Warning--I didn't find a database entry for "icps-2002-62"
+Warning--I didn't find a database entry for "icps-2003-75"
+Warning--I didn't find a database entry for "icps-2004-125"
+Warning--I didn't find a database entry for "icps-2007-182"
+Warning--I didn't find a database entry for "icps-2005-155"
+Warning--I didn't find a database entry for "icps-2008-193"
+Warning--I didn't find a database entry for "icps-2007-185"
+Warning--I didn't find a database entry for "icps-2009-217"
+Warning--I didn't find a database entry for "icps-2009-214"
+Warning--I didn't find a database entry for "icps-2008-188"
+Warning--I didn't find a database entry for "icps-2009-219"
+Warning--I didn't find a database entry for "icps-2011-224"
+Warning--I didn't find a database entry for "iphc-2011"
+Warning--I didn't find a database entry for "icps-2011-225"
+Warning--I didn't find a database entry for "ketterlin11"
+Warning--I didn't find a database entry for "icps-book"
+Warning--I didn't find a database entry for "icps-2002-20"
+Warning--I didn't find a database entry for "icps-2003-111"
+Warning--I didn't find a database entry for "icps-2003-113"
+Warning--I didn't find a database entry for "icps-2004-107"
+Warning--I didn't find a database entry for "icps-2004-124"
+You've used 0 entries,
+            2118 wiz_defined-function locations,
+            524 strings with 4329 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)

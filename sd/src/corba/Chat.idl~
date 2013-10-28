@@ -1,0 +1,12 @@
+   struct Message {
+      long cli_id;
+      long msg_id;
+      string msg;
+   }
+   typedef sequence<Message> MessageList;
+
+module Chat {
+	interface Services {
+		MessageList send (in Message m );
+      };
+};

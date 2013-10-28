@@ -1,0 +1,176 @@
+\begin{thebibliography}{10}
+
+\bibitem{icps-2002-62}
+Romaric David, Stéphane Genaud, Arnaud Giersch, Frédéric Violard, and
+  Benjamin Schwarz.
+\newblock Source-code transformations strategies to load-balance grid
+  applications.
+\newblock In {\em Grid Computing - GRID'2002}, volume 2536 of {\em Lecture
+  Notes in Computer Science}, pages 82--87. Springer-Verlag, November 2002.
+
+\bibitem{Foster97}
+Ian Foster and Carl Kesselman.
+\newblock {Globus}: A metacomputing infrastructure toolkit.
+\newblock {\em The International Journal of Supercomputer Applications and High
+  Performance Computing}, 11(2):115--128, 1997.
+
+\bibitem{Foster98}
+Ian Foster and Carl Kesselman, editors.
+\newblock {\em The {G}rid: Blueprint for a New Computing Infrastructure}.
+\newblock Morgan Kaufmann Publishers, August 1998.
+
+\bibitem{icps-2009-219}
+Virginie Galtier, Stéphane Genaud, and Stéphane Vialle.
+\newblock Implementation of the adaboost algorithm for large scale distributed
+  environments: Comparing javaspace and mpj.
+\newblock In {\em Fifteenth International Conference on Parallel and
+  Distributed Systems (ICPADS'09)}. IEEE, December 2009.
+
+\bibitem{icps-1998-5}
+S.~Genaud.
+\newblock On deriving hpf code from pei programs.
+\newblock Technical Report RR 98-05, ICPS-Université Louis Pasteur, June 1998.
+
+\bibitem{icps-1995-1}
+S.~Genaud, E.~Violard, and G.-R. Perrin.
+\newblock Transformation techniques in pei.
+\newblock In P.~Magnusson S.~Haridi, K.~Ali, editor, {\em EUROPAR'95}, LNCS
+  966, pages 131--142. Springer-Verlag, August 1995.
+
+\bibitem{icps-2007-182}
+St\'{e}phane Genaud and Choopan Rattanapoka.
+\newblock P2p-mpi: A peer-to-peer framework for robust execution of message
+  passing parallel programs on grids.
+\newblock {\em Journal of Grid Computing}, 5(1):27--42, 2007.
+
+\bibitem{icps-1996-2}
+Stéphane Genaud.
+\newblock Transformations d'énoncés pei.
+\newblock {\em Technique et Science Informatiques}, 15(5):601--618, April 1996.
+
+\bibitem{icps-1997-4}
+Stéphane Genaud.
+\newblock {\em Transformations de programmes Pei : applications au
+  parallélisme de données}.
+\newblock PhD thesis, Université Louis Pasteur, Strasbourg, January 1997.
+
+\bibitem{icps-2008-188}
+Stéphane Genaud, Pierre Gançarski, Guillaume Latu, Alexandre Blansché,
+  Choopan Rattanapoka, and Damien Vouriot.
+\newblock Exploitation of a parallel clustering algorithm on commodity hardware
+  with {P2P}-{MPI}.
+\newblock {\em The Journal of SuperComputing}, 43(1), January 2008.
+
+\bibitem{icps-2003-75}
+Stéphane Genaud, Arnaud Giersch, and Frédéric Vivien.
+\newblock Load-balancing scatter operations for grid computing.
+\newblock In {\em Proceedings of 12th Heterogeneous Computing Workshop (HCW
+  '03)}. IEEE Computer Society Press, April 2003.
+
+\bibitem{icps-2004-125}
+Stéphane Genaud, Arnaud Giersch, and Frédéric Vivien.
+\newblock Load-balancing scatter operations for grid computing.
+\newblock {\em Parallel Computing}, 30(8):923--946, August 2004.
+
+\bibitem{icps-2005-146}
+Stéphane Genaud and Marc Grunberg.
+\newblock Calcul de rais en tomographie sismique : exploitation sur la grille.
+\newblock {\em Technique et Science Informatiques}, 24(5):591--608, 2005.
+\newblock Numéro thématique RenPar'15.
+
+\bibitem{icps-2009-217}
+Stéphane Genaud, Emmanuel Jeannot, and Choopan Rattanapoka.
+\newblock Fault management in p2p-mpi.
+\newblock {\em International Journal of Parallel Programming}, 37(5):433--461,
+  August 2009.
+
+\bibitem{icps-2005-155}
+Stéphane Genaud and Choopan Rattanapoka.
+\newblock A peer-to-peer framework for robust execution of message passing
+  parallel programs.
+\newblock In B.~Di~Martino et~al., editor, {\em EuroPVM/MPI 2005}, volume 3666
+  of {\em LNCS}, pages 276--284. Springer-Verlag, September 2005.
+
+\bibitem{icps-2007-185}
+Stéphane Genaud and Choopan Rattanapoka.
+\newblock Fault management in p2p-mpi.
+\newblock In {\em In proceedings of International Conference on Grid and
+  Pervasive Computing, GPC'07}, Lecture Notes in Computer Science. Springer,
+  May 2007.
+
+\bibitem{icps-2008-193}
+Stéphane Genaud and Choopan Rattanapoka.
+\newblock Large-scale experiment of co-allocation strategies for peer-to-peer
+  supercomputing in p2p-mpi.
+\newblock In {\em 5th High Performance Grid Computing International Workshop,
+  IPDPS conference proceedings}. IEEE, April 2008.
+
+\bibitem{icps-2004-112}
+Arnaud Giersch, Yves Robert, and Frédéric Vivien.
+\newblock Scheduling tasks sharing files on heterogeneous master-slave
+  platforms.
+\newblock In {\em 12th Euromicro Conference on Parallel, Distributed and
+  Network based Processing (PDP 2004)}, pages 364--371. IEEE Computer Society
+  Press, February 2004.
+
+\bibitem{icps-2002-20}
+Marc Grunberg, Stéphane Genaud, and Catherine Mongenet.
+\newblock Parallel seismic ray-tracing in a global earth mesh.
+\newblock In {\em Proceedings of the 2002 Parallel and Distributed Processing
+  Techniques and Applications (PDPTA'02)}, pages 1151--1157, June 2002.
+
+\bibitem{icps-2004-124}
+Marc Grunberg, Stéphane Genaud, and Catherine Mongenet.
+\newblock Parallel adaptive mesh coarsening for seismic tomography.
+\newblock In {\em SBAC-PAD 2004, 16th Symposium on Computer Architecture and
+  High Performance Computing}. IEEE Computer Society Press, October 2004.
+
+\bibitem{icps-2004-107}
+Marc Grunberg, Stéphane Genaud, and Catherine Mongenet.
+\newblock Seismic ray-tracing and earth mesh modeling on various parallel
+  architectures.
+\newblock {\em The Journal of Supercomputing}, 29(1):27--44, July 2004.
+
+\bibitem{DBLP:conf/cluster/HablotGMGP07}
+Ludovic Hablot, Olivier Gl{\"u}ck, Jean-Christophe Mignot, St{\'e}phane Genaud,
+  and Pascale Vicat-Blanc Primet.
+\newblock Comparison and tuning of mpi implementations in a grid context.
+\newblock In {\em CLUSTER}, pages 458--463. IEEE, 2007.
+
+\bibitem{icps-1994-46}
+G.-R. Perrin, E.~Violard, and S.~Genaud.
+\newblock Pei: a theoretical framework for data-parallel programming.
+\newblock In {\em Workshop on Data-Parallel Languages and Compilers}, May 1994.
+
+\bibitem{icps-2004-139}
+Choopan Rattanapoka.
+\newblock P2p-mpi : A peer-to-peer framework for robust execution of message
+  passing parallel programs on grids.
+\newblock Master's thesis, Université Louis-Pasteur de Strasbourg, July 2004.
+
+\bibitem{icps-2008-208}
+Choopan Rattanapoka.
+\newblock {\em P2P-MPI : A fault-tolerant Message Passing Interface
+  Implementation for Grids.}
+\newblock PhD thesis, University Louis Pasteur, Strasbourg, April 2008.
+
+\bibitem{icps-2002-49}
+E.~Violard, R.~David, and B.~Schwarz.
+\newblock Experiments in load balancing across the grid via a code
+  transformation.
+\newblock In {\em DAPSYS 2002}, pages 66--73. Kluwer, September 2002.
+
+\bibitem{icps-1997-3}
+E.~Violard, S.~Genaud, and G.-R. Perrin.
+\newblock Refinement of data-parallel programs in pei.
+\newblock In R.~Bird and L.~Meertens, editors, {\em IFIP Working Conference on
+  Algorithmic Language and Calculi}. Chapman \& Hall Ed., February 1997.
+\newblock 25 pages.
+
+\bibitem{Violard92b}
+Eric Violard and Guy-René Perrin.
+\newblock {PEI} : a language and its refinement calculus for parallel
+  programming.
+\newblock {\em Parallel Computing}, (18):1167--1184, 1992.
+
+\end{thebibliography}

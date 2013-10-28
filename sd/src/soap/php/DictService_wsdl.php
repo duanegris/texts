@@ -7,7 +7,9 @@
 	$wsdl_url = "http://services.aonaware.com/DictService/DictService.asmx?WSDL";
    	$SoapClient = new Soapclient($wsdl_url);
    
-	$SoapResponse = $SoapClient->Define(array("word" => "Moon"));
+	//$SoapResponse = $SoapClient->Define(array("word" => "Moon"));
+      $myword= "Moon";
+	$SoapResponse = $SoapClient->Define(new SoapParam((string)$myword, "word"));
 
 // debug. Uncomment following line to see whole result structure:
 //var_dump($Result);

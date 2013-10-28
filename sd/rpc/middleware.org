@@ -82,7 +82,7 @@
 #+CAPTION:Timeline of mainstream or emblematic technologies
 #+LABEL:fig:timeline
 #+ATTR_LaTeX: width=1\linewidth
-#+ATTR_HTML: width="70%"
+#+ATTR_HTML: width="60%"
   [[../img/timeline.png]]
 
 ** Principle Design Choices
@@ -114,6 +114,7 @@
    - $\Rightarrow$ SOAP toolkits can be found for almost all languages.
 #+CAPTION:SOAP used to communicate between heterogeneous components
 #+LABEL:fig:soap-comm
+#+ATTR_HTML: width="60%"
 [[../soap-img/soapuser-archi1.png]]
 
 * Sun RPC
@@ -275,13 +276,22 @@ int main (int argc, char **argv) {
                 PROGNUM,
                 VERSNUM,
                 PROCNUM,
-                (xdrproc_t) xdr_int, //intput encoding
-                (char *)&n,          //input param
-                (xdrproc_t)xdr_int,  //output decoding
-                (char *)&res);       //return of func
+                (xdrproc_t) xdr_int,  //intput encoding
+                (char *) &n,          //input param
+                (xdrproc_t) xdr_int,  //output decoding
+                (char *) &res);       //return of func
 }
 #+end_src
  
+
+** Try It
+- Sources : [[http://icps.u-strasbg.fr/~genaud/courses/sd/src/rpc/example_1.tar.gz][Example 1]]
+
+*** Have you noticed? 
+  - There are only *1* parameter for input and *1* for output
+  - the variable returned =res= is declared =static= because it may have to survive for a while
+
+
 ** Another way: =rpcgen=
 - Taking care of conversion through XDR is difficult
 - The =rpcgen= compiler automates the process of writing RPC applications

@@ -1,0 +1,814 @@
+%
+% Guide des themes:
+% http://mcclinews.free.fr/latex/beamergalerie.php
+
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+\usepackage{beamerthemesplit}
+
+\beamertemplatetransparentcovereddynamic
+
+%\usepackage{beamerthemeshadow}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+
+% pas les symboles de navigation
+\setbeamertemplate{navigation symbols}{}
+
+\mode<presentation>
+%\mode<handout>{\beamertemplatesolidbackgroundcolor{black!5}}
+
+%--- gris et rouge----
+\usetheme{Boadilla}
+%\usecolortheme{beaver}
+%\useinnertheme[shadow]{rounded}
+%--- /gris et rouge----
+
+%albatross -> fond bleu
+%crane -> barre orangé
+%beetle 
+%dove fly seagull wolverine beaver
+
+%fond rosé dégradé
+%\beamertemplateshadingbackground{red!10}{blue!10}
+
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+
+\usepackage[latin1]{inputenc}
+\usepackage{eurosym}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{fancyvrb}
+\usepackage{pgf}
+\usepackage{tikz}
+% - REMARK: do not use blanks or newlines between the libraries
+\usetikzlibrary{arrows,decorations.pathmorphing,decorations.footprints,fadings,shadows,decorations.text,patterns,positioning,shapes,matrix,fit}
+\usepackage{calc}
+\usepackage{fp} %floating point
+
+\setbeamercovered{invisible}
+
+% definition de couleur
+\definecolor{gris}{rgb}{0.65,0.65,0.65}
+
+\newcommand{\boldwhite}[1]{\footnotesize \textcolor{black}{\textbf{#1}}}
+
+%--------------------------------------
+% makes 
+\newcommand{\hzoom}[2]{%
+	\FPeval{zoom}{1/#1} 
+	\resizebox{#1\textwidth}{!}{% 
+	\begin{minipage}[t]{\zoom\textwidth}%
+	%\the\textwidth\\
+	%\rule{\textwidth}{1mm}
+	#2 %
+	\end{minipage} 
+	} 
+}
+
+%--\publis{zoom:float}{\bibitem az azeaze \bibitem sdfsdfdfs}
+\newcommand{\publis}[2]{%
+\vfill
+\hzoom{#1}{
+\bibliographystyle{plain}
+\begin{thebibliography}{99}
+#2
+\end{thebibliography}
+}}
+
+
+
+%--------------------------------------
+\usepackage{ifpdf}
+        \ifpdf
+          \DeclareGraphicsRule{.pdftex}{pdf}{*}{}
+        \fi
+
+\hypersetup{%
+  pdfauthor={Stéphane Genaud},
+  pdftitle={Audition poste PR 4032}
+}
+
+\title[Audition Poste 4032]%
+{\textit{Audition Poste 4032}\\
+UFR Mathématiques-Informatique\\
+Département Informatique
+}
+
+\author{St\'ephane Genaud }
+
+\setbeamertemplate{footline}{
+\leavevmode%
+\hbox{\hspace*{-0.06cm}
+\begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+	\usebeamerfont{author in head/foot}\insertshortauthor%~~(\insertshortinstitute)
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+	\usebeamerfont{section in head/foot}\insertshorttitle
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+	\usebeamerfont{section in head/foot}
+	\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+\end{beamercolorbox}
+}%
+\vskip0pt%
+}
+
+\logo{\includegraphics[width=12mm]{img/uds.png}}
+%\logo{\insertframenumber/\inserttotalframenumber}
+
+\begin{document}
+
+%-------- Page de garde
+\frame{\titlepage}
+
+
+\frame{
+\frametitle{Plan de l'exposé}
+\begin{small}
+\tableofcontents
+\end{small}
+}
+
+
+% ------------------------- I N T R O D U C T I O N -----------------------------------------------		
+\section{Présentation personnelle}
+
+\frame{
+\frametitle{Présentation personnelle}
+
+\begin{block}{Situation actuelle}
+\begin{itemize}
+     \item 43 ans, marié, 2 enfants
+     \item En poste à l'Ecole de Management, Université de Strasbourg
+     \item Membre du LSIIT (futur ICube)
+     \item PES depuis 2009
+\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{Présentation personnelle}
+\begin{block}{Formation}
+\begin{itemize}
+		\item HDR Informatique, U. Poincaré (Nancy), 2009\\ 
+			\emph{\footnotesize Exécutions de programmes parallèles à passage de messages sur grille de calcul}
+		\item Doctorat Informatique, U. Pasteur  (Strasbourg), 1997 \\
+			\emph{\footnotesize Transformations de programmes Pei : applications au parallélisme de données}
+		\item DESS Informatique (Besançon)
+		\item DEST Informatique (Bordeaux) 
+		\item BSc (Sheffield)
+		\item DUT Informatique (Nantes)
+\end{itemize}
+\end{block}
+}
+
+%
+%\frame{
+%\frametitle{Présentation personnelle}
+%%\begin{block}{Mots clés en recherche}
+%	Parallélisme $\bullet$  Grilles $\bullet$  Clouds 
+%\end{block}
+%}
+
+
+%                    C H R O N O L O G I E
+%\frame{
+%\frametitle{Curriculum général}
+
+%\includegraphics[width=\textwidth]{img/timeline-jobs.pdf}
+%}
+
+
+% ------------------------- E N S E I G N E M E N T -------------------------------------------		
+
+\section{Enseignement}
+
+\frame{
+\vfill
+\begin{center}
+	{\huge \textcolor{blue}{Enseignement}}
+\vfill
+\vspace{6mm}
+\includegraphics[width=.85\textwidth]{img/timeline-jobs-teaching.pdf}
+\end{center}
+}
+
+
+
+\frame{
+\frametitle{Enseignement: Expériences}
+
+\begin{itemize}
+	\item<+-> \textcolor{blue}{\'Etablissement de rattachement : EM} \\
+		\pause 
+		\begin{small}
+		tourné vers l'international,
+		\pause 
+		vers l'industrie,
+		\pause 
+		environnement concurrentiel. 
+		\\[4mm]
+		\end{small}
+
+
+	\item<+-> \textcolor{blue}{Différents types d'établissement et de publics} \\
+		\begin{small}
+		\pause 
+		IUT informatique,
+		\pause \'{E}cole d'ingénieur ENSIIE, 
+		\pause UFR maths-info,
+		\pause formation continue.\\[4mm]
+		\end{small}
+
+	\item<+-> \textcolor{blue}{Principales responsabilités} \\[2mm]
+		\begin{itemize}
+		\item<+-> Responsable filière \emph{Systèmes d'information} (2001-2007):\\
+			{\small maquette pédagogique, liens industrie, coordination inter-filières, ...}\\[3mm]
+		
+		\item<+-> Directeur délégué aux systèmes d'information (2011-2012) : 
+			{\small structuration/support processus, choix stratégiques, accréditations}\\[3mm]
+					
+		\end{itemize}
+
+
+\end{itemize}
+}
+
+\begin{comment}
+\frame{
+\frametitle{Principales Responsabilités}
+
+\begin{itemize}
+
+	\item<+-> \textcolor{blue}{Université} \\[2mm]
+		\begin{itemize}
+		\item<+-> Comité de sélection, puis Comité d'Expert section 27.
+		\item<+-> Conseil Scientifique du centre HPC de l'Université (Equipex).
+		\end{itemize}
+
+		
+\end{itemize}
+
+}
+\end{comment}
+
+
+\frame{
+\frametitle{Enseignement: Perspectives pour le département}
+
+\pause
+\begin{itemize}
+      % Le plus gros chantier, me semble être ....
+	\item<+-> Développer la filière en attirant par les Masters. \\[5mm]
+	
+	\item<+->{ Déjà engagé :  développement de l'alternance. \\
+		\begin{small}
+		\begin{itemize}
+		\item<+->Master ILC: M2 en 2007, M1+M2 en 2010.
+		\item<+->Demande entreprise $>$ offre, remplissage 100\%.
+		\item<+->Revers : rythme/format pédagogie à adapter, déséquilibre des effectifs.\\[5mm]
+		\end{itemize}
+		\end{small}
+	}
+      % ... mais a un revers. 
+	% - Le rythme/format de la pédagogie doit % s'adapter. 
+      % - Assèche les autre filières
+
+	\item<+->{ Proposition : développer une filière internationale. \\
+		\begin{small}
+		\begin{itemize}
+		\item<+-> Attrait U. Strasbourg 20\% étudiants étrangers \tiny{(PhD 37\%, M 31\%, L 15\%)}.
+		\item<+-> Pistes: formation délocalisée / Erasmus Mundus / Parcours en anglais
+		\item<+-> Avantage : ré-équilibrage vers recherche
+		\end{itemize}		
+		\end{small}
+	}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Enseignement: Résumé}
+
+\begin{itemize}
+	\item[$\rhd$]<+-> Formation en informatique. Souhait de plus d'enseignement disciplinaire.\\[5mm]
+	\item[$\rhd$]<+-> Expérience de quatre types d'établissement.\\[5mm]
+	\item[$\rhd$]<+-> Prise de responsabilités.\\[5mm]
+	\item[$\rhd$]<+-> Regard extérieur, expérience d'un établissement très ancré dans le monde des entreprises et l'international.   
+\end{itemize}
+
+}
+
+
+% ------------------------- R E C H E R C H E  -------------------------------
+\frame{
+\vfill
+\begin{center}
+	{\huge \textcolor{blue}{Recherche}}
+\vfill
+%\vspace{6mm}
+%\includegraphics[width=.85\textwidth]{img/timeline-jobs-research.pdf}
+\end{center}
+}
+
+
+\section{Domaine de Recherches}
+
+
+
+% ------------- P O S I T I O N N E M E N T   R E C H E R C H E ---------------
+\frame{
+\frametitle{Recherche : Positionnement}
+
+\underline{\'{E}quipe ICPS} (\textit{Image et Calcul Parallèle Scientifique})\\[6mm]
+
+
+\begin{itemize}
+
+   \item Compilation et optimisation pour les multi-c{\oe}urs (INRIA CAMUS)\\[4mm]
+       % GC
+   \onslide<1-5>{
+		\item \only<2-5>{\textcolor{blue}}
+			{Grilles et Clouds} \\[-2mm]
+   	\onslide<3>{
+		{\tiny  2002-- . Permanents (5): David, Genaud, Gossa, Latu, Violard.  
+		    Doct+Ing (4) : Giersch, Michon, Rattanapoka, Schwarz.}\\
+		}
+     }
+     % Application
+     \onslide<1-5>{
+		\item \only<2-5>{\textcolor{blue}}
+    		{Applications du parallélisme}
+     		\onslide<5>{(entres autres LabEx IRMIA)\\[-2mm]
+	      		{\tiny HPC calcul scientifique.} 
+		}
+	}
+\end{itemize}
+}
+
+%                           P R O B L E M A T I Q U E -- Animation
+
+
+\input{tikz_style}
+
+
+\frame{
+\frametitle{Recherche : Problématique}
+
+
+\begin{figure}[!htb]
+\begin{tikzpicture}
+[
+      xscale      = 1,  % to scale horizontally everything but the text
+      yscale      = 1,  % to scale vertically everything but the text
+]
+
+% pc
+\node (pc1) at (-2,0)
+	{
+	\includegraphics[height=6mm] {img/user_female.png}%
+	\includegraphics[height=7mm] {img/pc.jpg}};
+
+% cluster
+\node (cluster1) at (2.2,0)
+	{\includegraphics[height=2cm] {img/cluster.png}};
+
+\only<1>{
+% question 'ou calculer'
+\node (qcircle) [
+            shape             = circle,
+            top color         = white,        
+            bottom color      = blue!20!white, 
+            text              = blue,        
+            text width        = 2cm,        
+            align             = center,    
+            draw              = blue,     
+            rotate            = 2,       
+            thick,                      
+      ]
+	at (-3,2)
+      {Où Calculer ?};
+}
+
+
+%% --- etape 2
+\only<2>{
+% question 'multithreading ?'
+\node (qcircle) [
+            shape             = circle,
+            top color         = white, 
+            bottom color      = green!20!white, 
+            text              = black,         
+            text width        = 2cm,          
+            align             = center,      
+            draw              = green,      
+            rotate            = 10,        
+            thick,                        
+      ]
+	at (-3,2)
+      {Multicore? GPU ?};
+}
+
+\only<2-4>{
+\node (gpgpu) at (-1.2,0.5)
+	{\includegraphics[height=.8cm] {img/gpgpu.png}};
+}
+% question 'cluster ?'
+\only<3>{
+\node (qcircle) [
+            shape             = circle,
+            top color         = white,        
+            bottom color      = green!20!white,
+            text              = black,                        % colour of the fonts
+            text width        = 1.8cm,   
+            align             = center,               % text alignment
+            draw              = green,                % colour of the border
+            rotate            = -10,                   % angle of rotation
+            thick,                                                % thickness of the border
+      ]
+	at (3,2)
+      {Cluster?};
+}
+\only<3->{
+\node (router1) at (0,0)
+	{\includegraphics[height=6mm] {img/router.png}};
+
+\draw[thick] (pc1) -- (router1) -- (cluster1);
+}
+
+%% --- etape 4
+\only<4>{
+% question 'encore plus  ?'
+\node (qcircle) [
+            shape             = circle,
+            top color         = white,                % | filling of the node
+            bottom color      = green!20!white, 	% |
+            text              = black,                % colour of the fonts
+            text width        = 1.8cm,                %
+            align             = center,               % text alignment
+            draw              = green,                % colour of the border
+            thick,                                    % thickness of the border
+      ]
+	at (-1,3.2)
+      {Grille?};
+
+
+\node (pc2) at (-2,-2)
+	{\includegraphics[height=7mm] {img/pc.jpg}};
+\node (pc3) at (-2.7,-2.6)
+	{\includegraphics[height=7mm] {img/pc.jpg}};
+\node (pc4) at (-1,-2.4)
+	{\includegraphics[height=7mm] {img/pc.jpg}};
+\node (pc5) at (1,3)
+	{\includegraphics[height=7mm] {img/pc.jpg}};
+\node (cluster2) at (5,4)
+	{\includegraphics[height=2cm] {img/cluster.png}};
+\node (router2) at (3,4)
+	{\includegraphics[height=7mm] {img/router.png}};
+	\draw[thick] (cluster1) -- (router2) -- (cluster2);
+	\draw[thick] (router2) -- (pc5);
+	\draw[thick] (pc2) -- (pc3) -- (pc4) -- (router1);
+}
+
+%% --- etape 5
+\only<5->{
+% question 'Cloud ?'
+\node (nQCloud) [
+            shape             = circle,
+            top color         = white,                % | filling of the node
+            bottom color      = green!20!white, % |
+            text              = black,                % colour of the fonts
+            text width        = 1.7cm,                % 
+            align             = center,               % text alignment
+            draw              = green,                % colour of the border
+            thick,                                    % thickness of the border
+      ]
+	at (3,2)
+      {Cloud?};
+
+\node (cloud) at (2.2,0)
+	{\includegraphics[height=2cm] {img/cloud-server.png}};
+
+}
+	
+\end{tikzpicture}
+\end{figure}
+
+}
+%  ______________________________________________________________________________________________
+%
+%                           P R O B L E M A T I Q U E -- Animation
+%  ______________________________________________________________________________________________
+
+\frame{
+\frametitle{Recherche : Problématique}
+
+
+
+\begin{center}
+\begin{quote}
+	Comprendre comment les \textcolor{blue}{applications}
+	 peuvent profiter de ces nouvelles \textcolor{blue}{architectures}.
+\end{quote}
+\end{center}
+
+\pause
+$\hookrightarrow$ cas particulier du parallélisme à passage de messages. 
+
+\pause
+\begin{center}
+      \begin{tikzpicture}[ xscale=1, yscale=1]
+            %
+            \uncover<3->
+            {
+                  \node (nPerf) [ellipse, fill=red!20, draw=red, ]  
+					  at (-1,0) { Performances };
+                  \node (nGestRess) [ellipse, fill=red!20, draw=red, 
+					    right = 2.1cm of nPerf]  { Gestion des Ressources };
+            }
+            %
+		%\only<4-5>
+		%{
+		%	\node (nPerfL)  [fill=red!15,drop shadow,
+		%			     below =0mm of nPerf]{
+		%						\begin{tabular}[t]{l}
+		%							{\small -- algorithmique }\\[-1mm]
+		%							{\small -- équilibrage}\\[-1mm]
+		%							{\small -- ordonnancement}\\[-1mm]
+		%						\end{tabular}
+		%				};
+		%}
+
+           	%
+		%\only<5>
+		%{
+		%		\node (nGestRessL)  [fill=red!15,drop shadow,
+		%				     below =0mm of nGestRess]{
+		%							\begin{tabular}[t]{l}
+		%									{\small -- découverte de ressources}\\[-1mm]
+		%									{\small -- allocations de ressources}\\[-1mm]
+		%									{\small -- tolérance aux pannes}\\[-1mm]
+		%									{\small -- accès aux données}\\[-1mm]
+		%								\end{tabular}
+		%						};
+		%		}
+
+
+            \uncover<4->
+            {
+                  \node (nXp) [sTextBlockStyle, below right= .5cm of nPerf]  {Expérimentation};
+                  \draw [->, thick, bend left=30] (nXp.west) to (nPerf);
+                  \draw [->, bend left=-30,thick] (nXp.east) to (nGestRess);
+            }
+            \uncover<5->
+            {
+                  \node (nApp) [sWhiteBoxStyle, below = 0.1cm of nXp]  
+				{
+				\includegraphics[angle=90,width=2.7cm]{img/irrsol-04.pdf}
+				};
+            }
+
+            %
+            \uncover<6->
+            {
+                  \node (nInterg) [sTextBlockStyle, below = of nGestRess]  {Intergiciel};
+                  \draw [->, thick] (nInterg) to (nGestRess);
+            }
+            \uncover<7->
+            {
+                  \node (nPmpi) [sWhiteBoxStyle, below = 0.1cm of nInterg]  
+				{
+				\includegraphics[width=1.8cm]{img/p2p-mpi-logo.png}
+				};
+            }
+           \uncover<8->
+            {
+                  \node (nSimu) [sTextBlockStyle,below = of nPerf]  {Simulation};
+                  \draw [->, thick] (nSimu) to (nPerf);
+            }
+            \uncover<9->
+            {
+                  \node (nSimgrid) [sWhiteBoxStyle, below = 0.1cm of nSimu]  
+				{
+				\includegraphics[width=1.8cm]{img/simgrid_logo.png}
+				};
+            }
+           %
+
+      \end{tikzpicture}
+\end{center}
+}
+
+%  ______________________________________________________________________________________________
+%
+%                          B I L A N    R E C H E R C H E 
+%  ______________________________________________________________________________________________
+
+\frame{
+\frametitle{Recherche : Domaines}
+
+
+	% ---- Head ------------------------
+	\begin{block}{Contributions}
+		\begin{itemize}
+			\item<+-> Applications sur grilles : conception, expérimentation, adaptation	%1
+			\item<3-> Nouvel Intergiciel : synthèse d'idées	%3
+		\end{itemize}
+	\end{block}
+
+
+	%--------- Geophysique
+      \begin{overlayarea}{\textwidth}{6cm}
+	\only<1-2>{			%1
+		\begin{itemize}
+            \item[]
+			\textcolor{blue}{Tomographie Sismique:} imager l'intérieur de la terre [Phys. Globe].
+		\item[]
+			\textcolor{blue}{Classification} non-supervisée par co-évolution de populations [LSIIT].
+		\item[] 
+			\textcolor{blue}{Détection de visage}: machine-learning (Adaboost) [Supelec].
+		\end{itemize}
+	}
+	\onslide<2>{			%2
+            \begin{tikzpicture}[ xscale=.5, yscale=.5]
+             \node (nPropPMPI)  [rectangle,fill=red!15,drop shadow,
+                                   below =0mm of nPerf]{
+                                                \begin{tabular}[t]{l}
+                                                      {\footnotesize -- applications témoins de passage à l'échelle }\\[-1mm]
+                                                      {\footnotesize -- travaux sur l'équilibrage, cadre de la Divisible Load Theory}\\[-1mm]
+                                                \end{tabular}
+                                    };
+            %
+            \end{tikzpicture}
+      }
+	%--------- Contrib Intergiciel
+	\only<3->{
+		\vspace{-3mm}
+		\begin{itemize}
+            \item Intergiciel : \raisebox{-3.5mm}{\includegraphics[width=23mm]{img/p2p-mpi-logo.png}}
+
+		\item Environnement intégré pour développer et exécuter des programmes MPJ. Fédération dynamique de ressources.
+			% implem MPJ passe JGF benchmark
+		\item \textcolor{blue}{Cible:} besoins intermédiaires entre multi-thread et HPC.
+		\end{itemize}
+	}
+	\only<4>{
+     		\begin{tikzpicture}[ xscale=.5, yscale=.5]
+
+		 \node (nPropPMPI)  [rectangle,fill=red!15,drop shadow,
+                                   below =0mm of nPerf]{
+                                                \begin{tabular}[t]{l}
+                                                      {\footnotesize -- gestion dynamique des ressources (P2P) }\\[-1mm]
+                                                      {\footnotesize -- détection pannes + tolérance par réplication}\\[-1mm]
+                                                      {\footnotesize -- bibliothèque de communication adaptée }\\[-1mm]
+                                                \end{tabular}
+                                    };
+            %
+     		\end{tikzpicture}
+ 	}	
+	\end{overlayarea}
+
+}
+
+% ----- FOOTER -----------------------
+\frame{
+\frametitle{Bilan recherche}
+
+      \begin{itemize}
+	\item contrat ACI Grid
+	\item publications: 1 CL + 4 RI + 1RN + 9 CI 
+	\item<+-> 3 thèses + 3 MR
+	\item logiciel libre : P2P-MPI et Ray2mesh
+	\item logiciel : base d'échange nationaux et internationaux
+	\item collaboration EOST et IRMA (Strasbourg), INRIA Graal et RESO (Lyon), Grand-Large (Orsay) 
+	\item collaborations internationales : 
+		\begin{itemize}
+			\item[-] U. Norbisrath, Univ. Tartu, pour F2F computing.
+			\item[-] J. Subhlok, Univ. Houston, pour Voxel-MPI. 
+		\end{itemize}
+	\end{itemize}
+}
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section{Projets de recherche}
+\frame{
+\frametitle{Développements récents et perspectives}
+
+
+\vspace{2mm}
+
+%--------- Put figures here to save space for later ...
+\only<2-3>{
+  \centering
+  \includegraphics[width=.50\linewidth,height=6.2cm]{img/jumpshot-mg-16-bw.pdf}
+  \hspace{2mm}
+  \pause
+  \onslide<3>{
+  \includegraphics[width=.39\linewidth,height=6.2cm]{img/nlr-mg-16.pdf}
+  }\\
+  Visualisation réelle à gauche, abstraite à droite.\\
+}
+\only<4>{
+  \centering
+  \includegraphics[width=.95\linewidth]{img/cg-C-16-slices}\\
+  \includegraphics[width=.95\linewidth]{img/cg-C-32-slices}\\
+  CG classe C sur 16 et 32 procs (éxécution complète).
+}
+
+%--------- The flow of text starts here ...
+\setbeamercovered{transparent}
+\begin{itemize}
+
+\item<1,7-> \textcolor{blue}{Applications et Analyse}: 
+		\begin{itemize}
+		\item Physique des plasmas (thèse, ANR E2T2 avec CEA) : HPC
+		\item Protéomique (CNRS IPHC, platforme nationale ProFi): Grille et Clouds
+		\item Abstraction de programmes MPI (interne équipe) : HPC\\[4mm]
+		\end{itemize}
+
+\item<5,7> \textcolor{blue}{Clouds}
+	\begin{itemize}
+		\item Virtualisation $\Rightarrow$ nouvelles problématiques d'allocation de ressources
+		\item<+-> Défi : courtier en charge de l'application de l'utilisateur \\[4mm]
+		\end{itemize}
+
+
+\item<6,7> \textcolor{blue}{Simulation}: \textsc{SimGrid} $\Rightarrow$ forte visibilité internationale
+		%{\small (H. Casanova, Univ. Hawaï)}.
+		\begin{itemize}
+		\item SMPI : simuler des programmes MPI 
+		\item Projet ANR \textit{plateforme} sur SimGrid: WP simulation de Clouds\\[4mm]
+		\end{itemize}
+
+\end{itemize}
+
+%----- Overlay for publis
+\begin{overlayarea}{\textwidth}{3.5cm}
+\only<5>{
+		~\\[-2mm]
+		\publis{.8}{
+			\bibitem{icps-2011-225}
+				Stéphane Genaud et Julien Gossa,
+				\newblock Cost-wait Trade-offs in Client-side Resource Provisioning with Elastic Clouds.
+			\newblock {\em 4th IEEE International Conference on Cloud Computing (CLOUD 2011)}, juillet 2011.
+		 }
+	}
+\only<6>{
+		\publis{.8}{
+		\bibitem{icps-2011-224}
+		Pierre-Nicolas Clauss, Mark Stillwell, Stéphane Genaud, Fr\'ed\'eric Suter,
+		Henri Casanova and  Martin Quinson.
+		\newblock Single Node On-Line Simulation of MPI Applications with SMPI.
+		{\em 25th IEEE International Parallel \& Distributed Processing Symposium (IPDPS 2011)}, mai 2011.
+		}
+	}
+
+\end{overlayarea}
+}
+
+
+
+
+
+% ------------------------- C O N C L U S I O N -----------------------------------------------		
+\section{Conclusion}
+
+
+\frame{
+\frametitle{Conclusion}
+
+%\includegraphics[height=.5\textheight,width=.7\textwidth]{img/timeline-hdr-e123.pdf}
+
+\textcolor{blue}{Enseignement}	
+	\begin{itemize}
+		\item<+-> Diversité des publics pour l'enseignement.
+		\item<+-> Regard extérieur, Expérience d'une composante différente de l'UFR.
+		\item<+-> Thématique de recherche HPC pour projets Masterclass LabEx.\\[5mm]
+	\end{itemize}
+
+\pause
+\vspace{4mm}
+\textcolor{blue}{Recherche} 
+\begin{itemize}
+		\item<+-> Icube : Renforcement des compétences ``calcul'' sur l'axe transverse CSSMD.
+			% -- CSSMD : Calcul scientifique, simulation et gestion de masses de données
+		\item<+-> Université: renforcement collaboration avec centre HPC, 
+					responsabilité au CS centre HPC, lien avec Grille EGI.
+			% -- evangélisation, conseil scientifique HPC, liaison avec CNRS Tier2
+		\item<+-> \'{E}quipe: développement thème \emph{Grille et Cloud} (ré-équilibrage).
+		\item<+-> Dynamique potentielle autour d'équipes INRIA et LabEx.
+\end{itemize}
+\vspace{3mm}
+
+}
+
+
+\end{document}  
+
+

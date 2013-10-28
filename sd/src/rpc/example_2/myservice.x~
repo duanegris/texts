@@ -1,0 +1,21 @@
+struct data {
+  unsigned int arg1;
+  unsigned int arg2;
+};
+
+typedef struct data data;
+
+/**
+ * Here: write a struct 'response' 
+   which has 2 fields : 
+
+**/
+
+typedef struct response response;
+
+program MYCOMPUTATION {
+  version VERSION_ONE{
+    /void CALCUL_NULL(void) = 0;
+    reponse CALCUL_ADDITION(data) = 1;
+  } = 1;
+} = 0x20000001;

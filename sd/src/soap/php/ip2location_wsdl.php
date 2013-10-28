@@ -12,6 +12,10 @@
 $LicenseKey="02-WVGM-1BA6";  ## attention, utiliser le WSDL
 				     ## http://ws.fraudlabs.com/ip2locationwebservice.asmx?wsdl
 				     ## avec cette clé
+
+$LicenseKey="01-AUXQ-6XMN"; ## attention, utiliser le WSDL
+                             ## http://v1.fraudlabs.com/....
+                             ## avec cette clé
 				     
 
 

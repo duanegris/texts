@@ -1,0 +1,863 @@
+\documentclass{beamer}
+\usepackage{beamerthemesplit}
+
+%fond rosé dégradé
+%\beamertemplateshadingbackground{red!10}{blue!10}
+\beamertemplatetransparentcovereddynamic
+
+\usepackage{beamerthemeshadow}
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{fancyvrb}
+\usepackage{listings}
+
+
+% definition de couleur
+\definecolor{gris}{rgb}{0.65,0.65,0.65}
+
+\usepackage{ifpdf}
+        \ifpdf
+          \DeclareGraphicsRule{.pdftex}{pdf}{*}{}
+        \fi
+
+\hypersetup{%
+  pdfauthor={Stéphane Genaud},
+  pdftitle={P2P-MPI}}
+
+\title{\textit{Parallélisme sur grilles avec P2P-MPI}\\}
+\subtitle{\textit{Présentation Master UdS}\\}
+
+\author{Stéphane Genaud }
+
+
+\institute{%
+  LSIIT-ICPS, Université de Strasbourg \\
+  \url{http://www.p2pmpi.org/}}
+
+
+\pgfdeclareimage[width=0.8cm]{logo-uds}{logo-uds}
+\logo{\pgfuseimage{logo-uds}}
+
+
+
+%-------------------------- begin ------------------------------------
+
+\begin{document}
+
+
+
+\frame{\titlepage}
+\section[Plan]{}
+\frame{\tableofcontents}
+
+%\begin{comment}
+
+
+\section{Le contexte de grille}
+
+
+%%-----------------------------------------------------
+\frame{
+\frametitle{Grilles: difficultés principales}
+  \begin{itemize}
+    \item machines appartenant à des propriétaires différents\\ 
+    \item machines distribuées géographiquement, souvent à large échelle \\  
+  \end{itemize}
+ 
+  Conséquences:
+  \begin{itemize}
+    \item connexions réseaux hétérogènes\\
+    \item puissances de calcul hétérogènes\\
+    \item hétérogénéité des systèmes et logiciels\\
+    \item pannes fréquentes\\
+    \item système d'information pas maîtrisé\\ 
+  \end{itemize}
+}
+
+
+
+\section{P2P-MPI}
+
+
+\subsection{Caractéristiques de P2P-MPI}
+%%-----------------------------------------------------
+\frame{
+\frametitle{Caractéristiques de P2P-MPI}
+Un environnement offrant:
+\pause
+une implémentation MPJ
+\pause
++ un intergiciel de gestion P2P des ressources
+\pause
+
+\begin{block}{}
+  \begin{itemize}
+    \item Installation et développement très simples (1 jar)
+    \item Décentralisé : environnement pair-à-pair\\
+    \item Exécute des bytecodes Java\\
+    \item Construit de manière automatique une plate-forme à chaque exécution\\
+    \item Transfert automatique des fichiers (bytecode et input)
+    \item Tolérant aux pannes (détection pannes \& réplication processus)\\
+  \end{itemize}
+\end{block}
+}
+%%-----------------------------------------------------
+
+
+
+
+\section{Découverte}
+
+\frame{
+
+  Principe : l'utilisateur offre sa machine, et profite de celle des autres.\\
+
+  \begin{block}{Activité de l'utilisateur}
+  \begin{itemize}
+    \item configure la capacité CPU offerte 
+    \item configure le supernode
+    \item \texttt{mpiboot} enregistre la participation dans le réseau P2P 
+    \item développe un programme parallèle MPJ
+    \item \texttt{p2pmpirun} lance le programme en utilisant les CPU des autres 
+    \item \texttt{mpihalt} retire sa machine du réseau P2P
+  \end{itemize}
+  \end{block}
+}
+
+
+
+
+\frame{
+\frametitle{Scenario démarrage application}
+
+\begin{overlayarea}{\textwidth}{.75\textheight}
+\only<1>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_1.pdftex_t}}
+\end{center}
+}
+\only<2>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_2.pdftex_t}}
+\end{center}
+}
+\only<3>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_3.pdftex_t}}
+\end{center}
+}
+\only<4>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_4.pdftex_t}}
+\end{center}
+}
+\only<5>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_5.pdftex_t}}
+\end{center}
+}
+\only<6>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_6.pdftex_t}}
+\end{center}
+}
+\only<7>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_7.pdftex_t}}
+\end{center}
+}
+\only<8>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_8.pdftex_t}}
+\end{center}
+}
+\only<9>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_9.pdftex_t}}
+\end{center}
+}
+\only<10>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_10.pdftex_t}}
+\end{center}
+}
+\only<11>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario_11.pdftex_t}}
+\end{center}
+}
+\only<12>{
+\begin{center}
+\resizebox{!}{.7\textheight}{\input{fig/scenario.pdftex_t}}
+\end{center}
+}
+\end{overlayarea}
+
+\begin{overlayarea}{\textwidth}{2cm}
+\only<1>{ {\small \textbf{Booting up:} \texttt{mpiboot} starts \texttt{MPD, FD, FT, RS}.}}
+\only<2>{ {\small \textbf{Job submission: } \texttt{p2pmpirun -n} $n$  \texttt{-r} $r$  \texttt{-a} $alloc$ \texttt{prog}.}}
+\only<3>{ {\small \textbf{Requesting peers: } Application asks \texttt{MPD} to discover resources for executing $n \times r$ MPI processes.}}
+\only<4>{ {\small \textbf{Discovery and Reservation: } \texttt{MPD} requests \texttt{RS} to reserve peer.}}
+\only<5>{ {\small \textbf{Registering: } Local \texttt{MPD} contacts distant MPDs, give them MPI ranks, and IP, port of rank 0.}}
+\only<6>{ {\small \textbf{Hand-shake: } The remote peers sends its \texttt{FD}, \texttt{FT} ports to rank 0.}}
+\only<7>{ {\small \textbf{File staging: } program and data transfer via \texttt{FT}.}}
+\only<8>{ {\small \textbf{Execution Notification: } \texttt{FD} notifies \texttt{MPD} to execute the transferred program.}}
+\only<9>{ {\small \textbf{Remote executable lauch: } \texttt{MPD} executes the transferred program.}}
+\only<10>{ {\small \textbf{Execution preamble: } spawn processes return their IP, port, rank to build the MPI communicator.}}
+\only<11>{ {\small \textbf{Fault detection: } MPI processes register itself to \texttt{FD} for monitoring failure during the execution.}}
+\end{overlayarea}
+}
+
+
+
+
+\section{Tolérance aux pannes}
+\frame{
+\frametitle{Problématique}
+
+Notre choix: tolérance aux fautes \alert{transparente} aux applications et (presque) à l'utilisateur, pour un déploiement simple.\\
+
+\vspace{5mm}
+
+Le système repose sur deux ``piliers'' : 
+
+\begin{itemize}
+\item Tolérance aux fautes : par redondance (réplication) des traitements.
+\item Détection des fautes : monitoring externe et distribué chargé d'informer des pannes.
+\end{itemize}
+
+\pause
+Objectif : intégrer ces mécanismes dans un système 
+extensible, %% 100- 1000 processus, 
+prédictible, %% on sait quelle est la probabilité de panne de l'app, la probabilité de panne du FD, quel temps est nécessaire pour détecter une panne, ...
+et fiable. %% les pannes détectées sont de vraies pannes et une vraie panne est toujours détectée.
+}
+%-----------------------------------------------------
+%
+% Archi P2P
+\subsection{Architecture de P2P-MPI}
+\frame{
+\frametitle{Un noeud P2P-MPI}
+\input{structure.pdftex_t}
+}
+
+%-----------------------------------------------------
+\subsection{Constitution d'une plate-forme pour une exécution}
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\resizebox{!}{.7\textheight}{\input{scenario_00.pdftex_t}}
+}
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_01.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Inscription Groupe} : \texttt{mpiboot} : MPD joint le groupe et publie son annonce
+\end{footnotesize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_02.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Requête utilisateur}: \texttt{p2pmpirun -n 5 -r 2 -l filelist program}
+\end{footnotesize}
+\end{center}
+}
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_03.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Recherche} : accueil des ressources candidates, numérotation (rank) et diffusion du port application
+\end{footnotesize}
+\end{center}
+}
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_04.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Reconnaissance} : candidat retourne les ports de ses services FT et FD
+\end{footnotesize}
+\end{center}
+}
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_05.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Téléchargement} : programmes et données transférées entre noeuds via services FT
+\end{footnotesize}
+\end{center}
+}
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_06.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Notification} : FT indique au MPD d'exécuter le programme
+\end{footnotesize}
+\end{center}
+}
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_07.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Exécution} : MPD démarre l'application MPI
+\end{footnotesize}
+\end{center}
+}
+
+%\end{comment}
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_08.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Construction plate-forme d'exécution} : MPIs s'échangent leur IP et leur Port
+\end{footnotesize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{Constitution d'une plate-forme pour une exécution}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{scenario_09.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+\alert{Gestion pannes} : les applications s'enregistrent dans le service de détection de panne
+\end{footnotesize}
+\end{center}
+}
+
+\subsection{Réplication}
+\frame{
+\frametitle{Réplication}
+
+\begin{itemize}
+\item<+-> Combien de réplica pour chaque processus est indiqué par l'utilisateur (option -r).
+\item<+-> Garantie : pas 2 copies d'un processus sur la même machine.
+\item<+-> Réplication est transparente aux programmeurs (Send $P_0 \rightarrow P_1$).
+\end{itemize}
+
+\begin{center}
+\resizebox{\textwidth}{!}{\input{replica.pdftex_t}}
+\end{center}
+}
+
+\frame{
+\frametitle{Scénario master arrive au MPI\_SEND avant réplica}
+\begin{center}
+\resizebox{.7\textwidth}{!}{\input{mpi_send_01.pdftex_t}}
+\end{center}
+}
+
+\frame{
+\frametitle{Scénario réplica arrive au MPI\_SEND avant master}
+\begin{center}
+\resizebox{.7\textwidth}{!}{\input{mpi_send_02.pdftex_t}}
+\end{center}
+}
+
+\frame{
+\frametitle{Cas de panne}
+Lorsqu'il y a une panne
+\pause
+\begin{itemize}
+\item<+-> Panne du maître : 
+     \begin{itemize}
+     \item Replica choisit un nouveau maître.
+     \item Le nouveau maître envoie tous les messages qui reste dans sa table de backup
+     \end{itemize}
+\item<+->  Panne du/des replica :
+     \begin{itemize}
+     \item Il n'y a rien à faire. L'exécution continue normalement.
+     \end{itemize}
+\end{itemize}
+
+%\pause
+
+%\begin{center}
+%\alert{Mais comment peut on détecter une panne ?}
+%\end{center}
+}
+
+\frame{
+\frametitle{Probabilité de panne d'une application}
+
+Hyp: dans une unité de temps, 
+chaque processus à une probabilité $f$ de tomber en panne.\\
+\vspace{5mm}
+Probabilité qu'une application à $n$ processus, \alert{sans réplication}, tombe en panne ?\\
+\vspace{5mm}
+
+\pause
+\begin{tabular}[t]{ll}
+$\Leftrightarrow$  &  Probabilité que 1, ou 2, ou ... $n$  processus tombent en
+panne \\
+$\Leftrightarrow$ & 1 - (probabilité qu'aucun processus tombe en panne)\\
+$\Leftrightarrow$ & $1 - (1-f)^n$ \\
+\end{tabular}
+}
+
+\frame{
+\frametitle{Probabilité de panne d'une application}
+
+Hyp: dans une unité de temps, 
+chaque processus à une probabilité $f$ de tomber en panne.\\
+\vspace{5mm}
+Probabilité qu'une application à $n$ processus, \alert{taux réplication $r$}, tombe en panne ?\\
+\vspace{5mm}
+
+\pause
+Un processus répliqué tombe en panne ssi ses $r$ copies tombent en panne.
+Probabilité : $f^r$\\
+
+\vspace{5mm}
+Probabilité qu'une application à $n$ processus tombe en panne \\
+\begin{tabular}[t]{ll}
+$\Leftrightarrow$  &  Probabilité que 1, ou 2, ou ... $n$  processus répliqués tombent en
+panne \\
+$\Leftrightarrow$ & 1 - (probabilité qu'aucun processus répliqué ne tombe en panne)\\
+$\Leftrightarrow$ & $1 - (1-f^r)^n$ \\
+\end{tabular}
+}
+
+
+%-------------------------------------------------------------------------------
+% proba pannes : exemples numériques
+
+\frame{
+\frametitle{Probabilité de panne d'une application}
+\center{Exemples numériques}\\
+$$
+\begin{array}{|l|l|l|l|}
+  \hline
+  n & f   &  r & Prob. \\
+  \hline
+  8 & 5\% &  1 & 0.33 \\
+  8 & 5\% &  2 & 0.01 \\
+  50 & 5\% &  1 & 0.92 \\
+  50 & 5\% &  2 & 0.11 \\
+  100 & 5\% &  1 & 0.99 \\
+  100 & 5\% &  2 & 0.22 \\
+  \hline
+\end{array}
+$$
+}
+
+\frame{
+\begin{center}
+\textbf{Mais comment peut-on détecter une panne ?}
+\end{center}
+}
+
+
+
+\section{Protocole du système de détection des pannes}
+\subsection{Centralisé}
+\frame{
+\frametitle{Protocole de détection des pannes (Centralisé)}
+
+\begin{center}
+\resizebox{.25\textwidth}{.4\textheight}{\input{pull.pdftex_t}}
+\hspace{2cm}
+\resizebox{.25\textwidth}{.4\textheight}{\input{push.pdftex_t}}
+\end{center}
+
+\textbf{L'inconvénient :}\
+\begin{itemize}
+\item Besoin d'un serveur (monitor) centralisé
+\item Goulot d'étranglement (réseau) sur serveur
+\end{itemize}
+}
+
+\subsection{Distribué}
+
+\frame{
+\frametitle{Protocole Gossip (Distribué)}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{gossip_01.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+Chaque n{\oe}ud maintient une table qui contient le dernier heartbeat des autres.
+\end{footnotesize}
+\end{center}
+}
+
+\frame {
+\frametitle{Protocole Gossip (Distribué)}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{gossip_02.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+Périodiquement, Un n{\oe}ud augmente son heartbeat
+\end{footnotesize}
+\end{center}
+}
+
+\frame{
+\frametitle{Protocole Gossip (Distribué)}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{gossip_03.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+Après avoir augmenté son heartbeat, il envoie sa table à un autre noeud.
+\end{footnotesize}
+\end{center}
+}
+
+\frame{
+\frametitle{Protocole Gossip (Distribué)}
+\begin{center}
+
+\resizebox{!}{.7\textheight}{\input{gossip_04.pdftex_t}}
+\vspace{.3cm}
+
+\begin{footnotesize}
+Il fusionne sa table avec une table qu'il a reçu (garde l'heartbeat maximum)
+\end{footnotesize}
+\end{center}
+}
+
+
+\frame{
+\frametitle{Protocole Gossip (Distribué)}
+\textbf{La détection :}\
+Chaque n{\oe}ud peut détecter une panne individuellement en vérifiant
+si l'heartbeat d'un n{\oe}ud n'a pas augmenté depuis un certain temps.
+
+\pause
+
+\textbf{Avantages :}\
+\begin{itemize}
+\item Distribution de la charge sur le réseau
+\item Pas de serveur centralisé
+\end{itemize}
+
+\pause
+
+\textbf{Mot clé :}\
+\begin{itemize}
+\item<+-> $T_{gossip}$ est la période d'envoi de la table d'heartbeat
+\item<+-> $T_{cleanup}$ est le temps de détection et de suppression d'un noeud défaillant de la table
+\item<+-> $T_{cleanup} = N_{round} \times T_{gossip}$ 
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Aléatoire (Random Gossip)}
+\textbf{Fonction :}\
+\begin{itemize}
+\item Le design d'origine du protocole gossip [Van Renesse 97]
+\item Choisit un noeud au hasard, et envoie un message gossip
+\end{itemize}
+
+\pause
+
+\textbf{Problème :}\
+\begin{itemize}
+\item Temps de détection non-déterministe
+\item $N_{round}$ petit, provoque fausse détection (si un noeud n'a pas reçu un message gossip)
+\item $N_{round}$ grand, la détection est lente
+\end{itemize}
+}
+
+\frame{
+\frametitle{Round-Robin}
+
+\begin{center}
+\resizebox{!}{.5\textheight}{\input{rr_12.pdftex_t}}
+\hspace{2cm}
+\resizebox{!}{.5\textheight}{\input{rr_3.pdftex_t}}
+\end{center}
+
+\textbf{Propriété :}\
+\begin{itemize}
+\item $d = (s + r) \mod n, ~~ 1 \leq r < n$
+\item $N_{round} = n-1$
+\end{itemize}
+}
+
+\frame{
+\frametitle{Round-Robin Binaire}
+\begin{center}
+\resizebox{!}{.5\textheight}{\input{brr.pdftex_t}}
+\end{center}
+
+\textbf{Propriété :}\\
+\begin{itemize}
+\item $d = (s + 2^{r-1}) \mod n, ~~ 1 \leq r \leq log_2(n)$
+\item $N_{round} = \lceil log_2(n) \rceil$
+\end{itemize}
+}
+
+\frame{
+\frametitle{BRR VS Réplica du P2P-MPI}
+\textbf{Exemple :} n = 2, r = 2\\
+
+\textbf{Application :}
+\begin{itemize}
+\item  $P_a = 1 - (1-f^2)^2 = 2f^2 - f^4$\\
+\end{itemize}
+
+\textbf{Binaire Round-Robin :}
+\begin{itemize}
+\item  panne 1 processus : $p = 0$ \\
+\item  panne 2 processus : $p = 4 * (f^2(1 -f)^2)$ \\
+\item  panne 3 processus : $p = 4 * (f^3(1-f))$ \\
+\item  panne 4 processus : $p = f^4$ \\
+\item  Total: $P_{fd} = 4f^2 - 4f^3 + f^4$ \\
+\end{itemize}
+
+\textbf{Conclusion :}\\
+$f \in ~ ] 0, 1 [ ~ 
+\Rightarrow 
+P_{fd} > P_a ~
+( f = 0.05 \Rightarrow P_a = 0.005, P_{fd} = 0.0095)$
+}
+
+\frame{
+\frametitle{Double Round-Robin Binaire}
+\begin{center}
+\resizebox{!}{.5\textheight}{\input{dbrr_12.pdftex_t}}
+\hspace{2cm}
+\resizebox{!}{.5\textheight}{\input{dbrr_34.pdftex_t}}
+\end{center}
+\textbf{Propriété :}\
+\begin{itemize}
+\item $d =
+       \left\{ \begin{array}{ll}
+             (s + 2^{r-1}) \mod n    & {\rm if}~ 1 \leq r \leq log_2(n)\\
+             (s - 2^{r-log_2(n)-1}) \mod n    & {\rm if}~ log_2(n) < r \leq 2 * log_2(n) \\
+      \end{array}\right.$
+\item $N_{round} = 2 * \lceil log_2(n) \rceil$
+\end{itemize}
+}
+
+\frame{
+\frametitle{Difficulté de développement}
+\textbf{Problème :}
+\begin{itemize}
+\item Les n{\oe}uds n'ont pas d'horloge globale
+\item Utilisation, l'horloge logique pour gossip.
+\item Comment peut on être sûr que l'horloge logique démarre au même moment?
+\end{itemize}
+
+\pause
+\textbf{Solution:}
+\begin{itemize}
+\item Réglage automatique de l'heartbeat
+\end{itemize}
+}
+
+\frame{
+\frametitle{Réglage l'heartbeat}
+\begin{center}
+\resizebox{.6\textwidth}{!}{\input{mpi-init.pdftex_t}}
+\end{center}
+
+\begin{footnotesize}
+\begin{itemize}
+\item Rank 0 : $StartingHB = (T - t_{0})/T_{gossip}$
+\item Rank i : $StartingHB = (T - t_{i} + \Delta t_{i})/T_{gossip}, ~~ 1 \leq i \leq N$
+\end{itemize}
+\end{footnotesize}
+}
+
+
+%-----------------------------------------------------
+% Detection des pannes
+\frame{
+\frametitle{Module FD en détails}
+\begin{center}
+\resizebox{!}{.6\textheight}{\input{fd.pdftex_t}}
+\end{center}
+}
+
+\frame{
+\frametitle{Pannes d'un noeud}
+\textbf{Problème :}\
+\begin{itemize}
+ \item Crash d'un noeud
+ \item Coupure de réseau 
+\end{itemize} 
+
+\pause
+\textbf{Solution dans P2P-MPI :}\\
+   Grace à FD, après $T_{cleanup}$  ($2*log_2(N) \times T_{gossip}$), 
+Le FD peut détecter qu'il y a un noeud qui n'augmente pas son heartbeat
+depuis. Donc, il notifie l'application MPI pour traiter 
+(Choisi nouveau maître, si c'est le maître qui crash)
+}
+
+\frame{
+\frametitle{Pannes de l'application}
+\textbf{Problème :}\
+\begin{itemize}
+ \item application provoque une faute (e.g. divide by zero)
+\end{itemize}
+
+\pause
+\textbf{Solution dans P2P-MPI : }\\
+   Le module \emph{check-alive} dans FD va détecter une panne d'application
+si l'application ne répond pas au message \emph{check-alive}. 
+Après détection de la panne, il arrête de fonctionner (d'envoyer son heartbeat).
+Les autres noeuds peuvent alors détecter la panne comme la panne d'un noeud.
+}
+
+
+%\frame{
+%\frametitle{Pannes de processus FD}
+%  Si processus FD est tué par incident
+%  \begin{block}{Résoudre}
+%     Les autres noeuds vont détecter une panne. Mais l'application peuv
+%  \end{block}
+%}
+
+%-----------------------------------------------------
+% Experiment
+\section{Expériments}
+
+\frame{
+\frametitle{Expériments}
+\textbf{Système :}\
+\begin{itemize}
+\item Grid5000
+\item 32 n{\oe}uds à grillon (Nancy)
+\item 32 n{\oe}uds à parasol (Rennes)
+\item 32 n{\oe}uds à azur (Nice)
+\end{itemize}
+
+\pause
+
+\textbf{Configuration :}\
+\begin{itemize}
+\item Protocole gossip (double binaire round-robin)
+\item $T_{gossip}$ = 1 seconde
+\end{itemize}
+
+\pause
+
+\textbf{Etape de test :}\
+\begin{itemize}
+\item Lance une application MPI.
+\item Tue tous les processus dans un n{\oe}ud (killall java).
+\item Mesure le temps écoulé entre la panne et la date où le n{\oe}ud le sait.
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Le temps de détection des pannes}
+\textbf{Temps de détection :}\\
+\begin{center}
+\begin{tabular}{|c|cccc|c|}
+\hline
+nodes & Ideal & Min & Max & Avg & Std Deviation \\
+\hline
+8       &  6    & 7.21 & 7.33 & 7.29 & 0.041 \\
+16      &  8    & 9.16 & 9.57 & 9.34 & 0.144 \\
+32      &  10   & 10.53 & 10.84 & 10.65 & 0.083 \\
+64      &  12   & 13.15 & 13.52 & 13.35 & 0.090 \\
+128     &  14   & 14.83 & 15.46 & 15.19 & 0.154 \\
+192     &  16   & 16.60 & 18.17 & 17.50 & 0.234 \\
+\hline
+\end{tabular}
+\end{center}
+}
+
+\frame{
+\frametitle{Le temps de détection des pannes}
+\begin{center}
+\resizebox{.8\textwidth}{!}{\includegraphics{gossip_bench.pdf}}
+\end{center}
+}
+
+
+%-----------------------------------------------------
+% CONCLUSION
+\section{Conclusion}
+
+\frame{
+\frametitle{Conclusion}
+\begin{itemize}
+\item P2P-MPI propose une exécution \textbf{robuste} d'une application
+parallèle, de manière \textbf{transparente}.
+
+\item Système de détection de pannes
+\begin{itemize}
+\item distribué (extensible)
+\item déterministe ($2 * log_2(n)$ round)
+\item fiable
+\item intégré à P2P-MPI (adjustement du heartbeat, check-alive)
+\end{itemize}
+\end{itemize}
+}
+% -----------------------------------------------------
+% website 
+\frame{
+\frametitle{Téléchargement}
+
+\begin{center}
+\url{http://grid.u-strasbg.fr/p2pmpi}
+\end{center}
+
+\includegraphics[height=.8\textheight]{website.jpg}
+}
+% -----------------------------------------------------
+
+\end{document}

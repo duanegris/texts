@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {1}{Pr\'esentation personnelle}{3}{0}{1}
+\beamer@sectionintoc {2}{Enseignement}{5}{0}{2}
+\beamer@sectionintoc {3}{Domaine de Recherches}{33}{0}{3}
+\beamer@sectionintoc {4}{Projets de recherche}{57}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{64}{0}{5}

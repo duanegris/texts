@@ -2,9 +2,9 @@ Viste au KIT, le 11/07/2013
 
 
 * Participants : 
-ENSIIE : Pierre Dossantos-Uzarralde, Stéphane Genaud, Martin Weil
-KIT : Isabelle Hornik (Institut Franco-Allemand), Maren Daniell (ERASMUS Incoming coordinator), a PhD student qui représente Sebastian Kobbe.
-contacts: Maren.Daniell@kit.edu, hornik@kit.edu
+- ENSIIE : Pierre Dossantos-Uzarralde, Stéphane Genaud, Martin Weil
+- KIT : Isabelle Hornik (Institut Franco-Allemand), Maren Daniell (ERASMUS Incoming coordinator), a PhD student qui représente Sebastian Kobbe.
+- contacts: Maren.Daniell@kit.edu, hornik@kit.edu
 
 
 * Agenda de la rencontre
@@ -16,7 +16,7 @@ contacts: Maren.Daniell@kit.edu, hornik@kit.edu
 *** Politique de partenariat académique 
 
 Le DeFI (institut franco-allemand au sein du KIT) gère des double-diplômes
-- avec 7 unviersités/écoles en France : X, Arts-et-métiers PartisTech, INSA Strasbourg et Lyon, Ensas Strasbourg, Phela-Grenoble INP, UJF Grenoble. 
+- avec 7 unviersités/écoles en France : X, Arts-et-métiers PartisTech, INSA Strasbourg et Lyon, Ensas Strasbourg, Phelma-Grenoble INP, UJF Grenoble. 
 - En informatique avec INSA Lyon et UJF-ENSIMAG. 
 - En Math avec ENSIMAG.
 - Echange avec X : de l'ordre de 2 étudiants par an.
@@ -50,13 +50,17 @@ Le DeFI (institut franco-allemand au sein du KIT) gère des double-diplômes
 
 
 ** Présentation ENSIIE avec focus Strasbourg par S. Genaud
+- présentation des spécificités du système français et ce qui distingue les écoles d'ingénieur
+- Isabelle Hornik connait très bien le système français, demande sur quel concours nous recrutons
+- présentation détaillée des matières enseignées.
+- Nous insistons sur l'importance des séjours à l'étranger et l'intérêt de faire des stages à l'étranger.
 
 
 ** Actions prévues
 
 - 2 étudiants ENSIIE-Evry partent en échange Erasmus au KIT à partir de sept 2013
 - Martin Weil va faire une visite sur place de type tutorat pour avoir un retour sur d'éventuelles autres points de collaborations
-
+- Maren Daniell et Isabelle Hornik seront invitées à la journée d'information des RI se tenant en avril prochain.
 
 
 ** Discussion informelle
@@ -66,7 +70,8 @@ Le DeFI (institut franco-allemand au sein du KIT) gère des double-diplômes
 
 - les étudiants de l'Université ne sont pas obligé de faire de stage en entreprise. Le parcours peut rester complètement théorique en dehors des projets dont l'importance est de plus en plus prise en compte.
 
-- Quelques entreprises intéressantes sur Karlsruhe ou la région : Michelin, Kärcher, L'Oreal, SAP.
+- En réponse à notre besoin de stages à l'étranger, 
+  quelques entreprises intéressantes sur Karlsruhe ou la région : Michelin, Kärcher, L'Oreal, SAP.
 
 
 

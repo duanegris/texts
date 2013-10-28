@@ -88,7 +88,6 @@ td.list    { background-color : #eee59a; margin : 3px;
         </ul>
     </li> 
     <li>On peut passer des objets en paramètre des appels distants.
-        (Implique qu'on peut télécharger du code dans une JVM distante).
     </li>
     <li>
     Accessibilité : disponible dans tout JDK (&gt;=1.1) 
@@ -167,9 +166,10 @@ ou tableaux (e.g. String) mais <span class="important">sérialisables</a> (java.
 
 Le service est ici un objet dont l'une des méthodes fait l'addition de deux nombres.
   <ul>
-     <li><tt>Operation.java</tt>     : interface utilisée par le client</li>
+     <li><tt>Operation.java</tt>     : interface connue du client et du serveur, 
+						   indispensable pour typer les paramètres échangés.</li>
      <li><tt>OperationImpl.java</tt> : classe implémentant <tt>Operation</tt>, 
-                                       lancée par le serveur</li>
+                                       executée par le serveur</li>
   </ul>
 
 </div>
@@ -184,14 +184,13 @@ Le service est ici un objet dont l'une des méthodes fait l'addition de deux nom
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface Operation extends Remote {
+public interface Operation <b class="important">extends Remote</b> {
 
     public int addition(int a, int b) throws RemoteException ;
 
 }
 </pre>
 </div>
-<div class="handout">
 <p>
 <b>Remarque 1.</b>
 En étendant l'interface java.rmi.Remote, les méthodes de l'interface sont automatiquement
@@ -200,11 +199,8 @@ Tout objet qui implémentera cette interface deviendra "remote".
 </p>
 <p>
 <b>Remarque 2.</b> 
-On pourrait bien sà»r définir d'autres methodes à  cà´té de <tt>addition</tt>. 
+On pourrait bien sûr définir d'autres methodes à  côté de <tt>addition</tt>. 
 </p>
-
-</div>
-</div>
 </div>
 
 
@@ -218,7 +214,7 @@ import java.rmi.RemoteException ;
 import java.net.InetAddress.* ;
 import java.net.* ;
 
-public class OperationImpl extends UnicastRemoteObject
+public class OperationImpl <b class="important">extends UnicastRemoteObject</b>
   implements Operation  {
 
     public OperationImpl () throws RemoteException {
@@ -334,7 +330,6 @@ public class Serveur {
 	   System.out.println("Serveur pret"); 
        }
        catch (Exception e) { System.out.println(e) ; }
-       }
 }
 </pre>
 </div>
@@ -943,7 +938,8 @@ un serveur:
 <ul>
 	<li>un client envoie un message vers un serveur connu,</li>
 	<li>le serveur enregistre le message du client,</li>
-	<li>et lui renvoie tous les messages non encore lus provenant d'autres clients.</li>
+	<li>et lui renvoie les N derniers messages non encore lus provenant d'autres clients,</li>
+      <li>le client affiche ces N messages à l'écran et se termine.</li>
 </ul>
 
 </div>

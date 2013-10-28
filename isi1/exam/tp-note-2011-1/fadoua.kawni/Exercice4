@@ -1,0 +1,19 @@
+#!/bin/sh
+
+jj=`date +%d`
+mm=`date +%m`
+aa=`date +%y`
+
+sum=0
+
+rep=/tmp/executable_"$jj"_"$mm"_"$aa"
+
+for i in `ls $rep`
+do
+	#On récupère la taille en octects du fichier 
+	taille=`wc -c $i | cut -d " " -f1`
+
+	sum=`expr $sum + $taille`
+done
+
+echo "La somme des tailles des fichiers contenus dans $rep est de $sum (octets)"

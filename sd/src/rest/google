@@ -1,0 +1,3 @@
+
+macle="RegvGPFQFHKAht9PBeGYj2b/UHz7QA3d" # ma clé a moi
+wget --no-check-certificate https://www.googleapis.com/customsearch/v1?key=${macle}&q="Strasbourg University"

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://v1.fraudlabs.com/soap/FraudLabsWebService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://v1.fraudlabs.com/soap/FraudLabsWebService">
+<types>
+<xsd:schema targetNamespace="http://v1.fraudlabs.com/soap/FraudLabsWebService"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="FraudLabsInput">
+  <xsd:all>
+   <xsd:element name="IP" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="CITY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="REGION" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="POSTAL" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="COUNTRY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="DOMAIN" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="PHONE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BIN" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BINNAME" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BINPHONE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="LICENSE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="SHIPADDR" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="SHIPCITY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="SHIPREGION" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="SHIPPOSTAL" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="SHIPCOUNTRY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="QUERYID" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="FraudLabsOutput">
+  <xsd:all>
+   <xsd:element name="COUNTRYMATCH" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="COUNTRY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="HIGHRISKCOUNTRY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="DISTANCE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="IP2COUNTRY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="IP2REGION" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="IP2CITY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="IP2LATITUDE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="IP2LONGITUDE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="IP2ISP" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="ANONYMOUSPROXY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="FREEMAIL" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BINCOUNTRYMATCH" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BINNAMEMATCH" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BINPHONEMATCH" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BINCOUNTRY" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BINBANKNAME" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="BINBANKPHONE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="POSTALCITYMATCH" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="PHONECITYMATCH" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="SHIPFORWARD" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="CREDITSAVAILABLE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="FRAUDSCORE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="QUERYID" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="MESSAGE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+  </xsd:all>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="FraudLabsRequest">
+  <part name="inputdata" type="tns:FraudLabsInput" /></message>
+<message name="FraudLabsResponse">
+  <part name="return" type="tns:FraudLabsOutput" /></message>
+<portType name="FraudLabsWebServicePortType">
+  <operation name="FraudLabs">
+    <documentation>The FraudLabs Web Service</documentation>
+    <input message="tns:FraudLabsRequest"/>
+    <output message="tns:FraudLabsResponse"/>
+  </operation>
+</portType>
+<binding name="FraudLabsWebServiceBinding" type="tns:FraudLabsWebServicePortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="FraudLabs">
+    <soap:operation soapAction="http://v1.fraudlabs.com/fraudlabswebservice.asmx/FraudLabs" style="rpc"/>
+    <input><soap:body use="encoded" namespace="v1.fraudlabs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="v1.fraudlabs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="FraudLabsWebService">
+  <port name="FraudLabsWebServicePort" binding="tns:FraudLabsWebServiceBinding">
+    <soap:address location="http://v1.fraudlabs.com/fraudlabswebservice.asmx"/>
+  </port>
+</service>
+</definitions>

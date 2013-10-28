@@ -1,0 +1,10 @@
+/** Un programme qui affiche le numéro de port RPC d’un service dont le numéro est donné **/ /* Rappel sur la structure rpcent donné dans rpcent.h struct rpcent {
+																char * r_name ; // nom du programme RPC char ** aliases; int r_number; // numéro du programme
+																} */
+
+
+int main() { 
+	  int num_serv = 1000003;
+	  int iport; 
+	  struct rpcent * p ; p = getrpcbynumber(num_serv);	// retourne le rpcent du service printf(“ Nom du service %s \n”,p->rname); iport = getrpcport(“ada”, num_serv, 1, iPPPRO_UDP); printf(“ Port affecté au service %d \n”,iport);
+}

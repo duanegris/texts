@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Plan d'adressage}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Construction du plan d'adressage}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Configuration}{43}{0}{1}
+\beamer@sectionintoc {2}{Services R\'eseaux}{84}{0}{2}
+\beamer@subsectionintoc {2}{1}{Services}{85}{0}{2}
+\beamer@subsectionintoc {2}{2}{ADSL-box}{142}{0}{2}

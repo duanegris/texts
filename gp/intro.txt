@@ -1,0 +1,6 @@
+
+Le mode projet est un mode de fonctionnement facile à manager et donc de plus en plus répandu en entreprise. Il implique néanmoins que tous les contributeurs du projet partagent une vision commune des objectifs et cibles à atteindre et de ce qu’il convient de faire. L’incarnation de cette vision commune, c’est le livrable. Pour définir le livrable puis assurer sa livraison, l’existence de parties prenantes clairement identifiées est essentielle.
+
+Qu'est-ce qu'un projet ? Comment le définir clairement ? Quels sont les rôles des parties prenantes et quel contrat les lie ? C'est ce que vous allez apprendre dans cette session. 
+
+

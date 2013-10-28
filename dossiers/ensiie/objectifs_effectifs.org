@@ -32,18 +32,27 @@ Note : RS = IUT Robert Schuman, Illkirch
 
 objectifs : 40 étudiants, dont 20 provenant du concours, 20 AST
 
-- concours: places offertes 30 avec objectifs de remplir 20. 
+- concours: places offertes 25 avec objectif de remplir 19. 
            Proportions MP et PSI légèrement changées pour offrir un peu plus aux MP.
            Note : on devrait offrir 20 et 10 en suivant proportionnellement le taux remplissage 
            année précédente (75% et 50% resp.)
 - AST : diversifier la provenance des DUT info, max 10 venant d'illkirch.
 
 
-| filière                | acceptés | offertes | sous-total |
-|------------------------+----------+----------+------------|
-| DUT RS info passerelle |          |        5 |            |
-| DUT info               |          |        5 |            |
-| autres AST             |          |       10 |            |
-|------------------------+----------+----------+------------|
-| MP                     |          |       22 |            |
-| PSI                    |          |        8 |            |
+| filière                | acceptés | offertes/candidats | sous-total |
+|------------------------+----------+--------------------+------------|
+| DUT RS info passerelle |        3 |                  5 |            |
+| DUT info               |        5 |                 15 |          8 |
+| DUT RT                 |        1 |                  2 |          1 |
+| DUT SRC                |        1 |                  3 |          1 |
+| BTS SIO                |        0 |                  1 |          0 |
+| Licence Pro            |        0 |                  2 |          0 |
+| Licence info           |        0 |                  2 |          0 |
+| Licence Maths          |        1 |                  1 |          1 |
+| ATS                    |        1 |                  2 |          1 |
+|------------------------+----------+--------------------+------------|
+| MP                     |       22 |                 15 |            |
+| PSI                    |        3 |                 10 |         25 |
+|------------------------+----------+--------------------+------------|
+| Chine Xidian           |        2 |                  2 |          2 |
+

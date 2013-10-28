@@ -1,0 +1,19 @@
+18 oct. 2012 00:46:41 com.sun.corba.se.impl.orb.ORBImpl shutdown
+ATTENTION: "IOP01600003: (BAD_INV_ORDER) Operation would deadlock"
+org.omg.CORBA.BAD_INV_ORDER:   vmcid: OMG  minor code: 3  completed: No
+	at com.sun.corba.se.impl.logging.OMGSystemException.shutdownWaitForCompletionDeadlock(OMGSystemException.java:196)
+	at com.sun.corba.se.impl.logging.OMGSystemException.shutdownWaitForCompletionDeadlock(OMGSystemException.java:218)
+	at com.sun.corba.se.impl.orb.ORBImpl.shutdown(ORBImpl.java:1237)
+	at com.sun.corba.se.impl.activation.ServerCallback.shutdown(ServerMain.java:359)
+	at com.sun.corba.se.spi.activation._ServerImplBase._invoke(_ServerImplBase.java:47)
+	at com.sun.corba.se.impl.protocol.CorbaServerRequestDispatcherImpl.dispatchToServant(CorbaServerRequestDispatcherImpl.java:637)
+	at com.sun.corba.se.impl.protocol.CorbaServerRequestDispatcherImpl.dispatch(CorbaServerRequestDispatcherImpl.java:189)
+	at com.sun.corba.se.impl.protocol.CorbaMessageMediatorImpl.handleRequestRequest(CorbaMessageMediatorImpl.java:1682)
+	at com.sun.corba.se.impl.protocol.CorbaMessageMediatorImpl.handleRequest(CorbaMessageMediatorImpl.java:1540)
+	at com.sun.corba.se.impl.protocol.CorbaMessageMediatorImpl.handleInput(CorbaMessageMediatorImpl.java:922)
+	at com.sun.corba.se.impl.protocol.giopmsgheaders.RequestMessage_1_2.callback(RequestMessage_1_2.java:181)
+	at com.sun.corba.se.impl.protocol.CorbaMessageMediatorImpl.handleRequest(CorbaMessageMediatorImpl.java:694)
+	at com.sun.corba.se.impl.transport.SocketOrChannelConnectionImpl.dispatch(SocketOrChannelConnectionImpl.java:451)
+	at com.sun.corba.se.impl.transport.SocketOrChannelConnectionImpl.doWork(SocketOrChannelConnectionImpl.java:1213)
+	at com.sun.corba.se.impl.orbutil.threadpool.ThreadPoolImpl$WorkerThread.performWork(ThreadPoolImpl.java:471)
+	at com.sun.corba.se.impl.orbutil.threadpool.ThreadPoolImpl$WorkerThread.run(ThreadPoolImpl.java:500)

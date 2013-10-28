@@ -1,0 +1,340 @@
+#+TITLE:     IMW: Middleware
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+LINK_UP:
+#+LINK_HOME:
+#+STYLE:    <link rel="stylesheet" type="text/css" href="css/worg.css" />
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger,hyperref={colorlinks=true, urlcolor=red, plainpages=false, pdfpagelabels, bookmarksnumbered}]
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_HEADER_EXTRA: \usetheme{Boadilla}\usecolortheme{default}
+#+BEAMER_HEADER_EXTRA:\setbeamertemplate{footline}{\leavevmode \hbox{ \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot} \insertshorttitle\end{beamercolorbox} \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}\insertshortauthor\end{beamercolorbox} \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot} \insertframenumber / \inserttotalframenumber\hspace*{2em} \end{beamercolorbox} } \vskip0pt }
+#+BEAMER_HEADER_EXTRA: \setbeamercovered{invisible}
+#+BEAMER_HEADER_EXTRA: \author[S. Genaud]{{\large Stéphane Genaud} \\ \vspace{0.2cm} ENSIIE - Strasbourg \\ \vspace{0.2cm} \texttt{genaud@unistra.fr} }
+#+BEAMER_HEADER_EXTRA: \date{{\large Middleware} \\ \vspace{0.2cm} }
+#+BEAMER_envargs: [<+->] 
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+#+STARTUP: beamer
+#+EPRESENT_FRAME
+#+latex_header: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:         keywordstyle=\color{blue},
+#+LATEX_HEADER:         commentstyle=\color{red},
+#+LATEX_HEADER:         stringstyle=\color{green},
+#+LATEX_HEADER:         basicstyle=\ttfamily\footnotesize,
+#+LATEX_HEADER:         columns=fullflexible,
+#+LATEX_HEADER:         frame=single,
+#+LATEX_HEADER:         basewidth={0.5em,0.4em}
+#+LATEX_HEADER:         }
+
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+
+
+* Introduction      
+** Technologies for Distributed Systems
+   - Extremely fast evolution since 1985:
+     about a technology every 5 years.\\
+   - Implementations adapt to up-to-date technology\\
+     e.g If networks go faster, it is possible to convey bigger messages.\\
+         If the cost of some hardware becomes low, no need to spare it.
+
+** Technologies change but ... concepts stay
+    - Client-server is the central concept:\\
+      The *client* can make a request at any time,\\
+      The *server* permanently waits for incoming requests
+#+CAPTION:Temporal view of a client-server request and response
+#+LABEL:fig:client-server-schema
+#+attr_html: width="300"
+[[./img/S9_RPC_works.png]]
+
+** Middleware
+   
+#+BEGIN_SRC ditaa :file img/middleware.png 
+/-------------\
+| cC00        |
+| Application |
+|             |
++-------------+
+| c0CF        |
+| Middleware  |
+|             |
++-------------+
+| cGRE        |
+|   OS        |
+|             |
+\-------------/
+#+END_SRC      
+
+#+RESULTS:
+[[file:img/middleware.png]]
+
+#+CAPTION: Middleware.
+#+LABEL:fig:middleware_def
+
+
+** Middleware: definition
+*** What is middleware?						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    - A sofware layer between the OS and the application allowing 
+      a set of distributed computers to communicate in a standardized
+      way.
+      
+*** Middleware provides inter-machines communication facilities, 
+    but may also include services, such as authentification services,
+    resource directories, distributed file catalogs, ...
+     
+** A Time-line of technologies
+#+CAPTION:Timeline of mainstream or emblematic technologies
+#+LABEL:fig:timeline
+#+ATTR_LaTeX: width=1\linewidth
+#+ATTR_HTML: width="90%"
+  [[../img/timeline.png]]
+
+** Principle Design Choices
+   - Abstraction vs. Performance
+   - Interoperability
+   - Versatility
+** Abstraction
+*** Abstraction of communication primitives
+    - too low level: rapidly obsolete, lower programming productivity
+    - too high level: difficult to optimize for performance 
+*** Abstraction Trade-off 
+    - independent from the architecture: execute across
+      different systems without *source code* modification
+    - Hide details related to communication/synchronization management
+      (e.g =Remote Procedure Calls= more abstract than =sockets=)
+					  
+** Interoperability
+*** Machine-independent
+    e.g [[http://www.ietf.org/rfc/rfc1057.txt][Sun RPC]] 
+    \vspace{5mm}
+*** OS-independent  
+    e.g [[http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136424.html][Java-RMI]]
+    \vspace{5mm}
+*** Language-independent 
+    e.g [[http://www.corba.org][Corba]], [[http://www.w3.org/TR/soap/][SOAP]]
+** Versatility
+   The more general, the more versatile 
+   - Example 1: SOAP communicates through XML pieces of text 
+   - $\Rightarrow$ SOAP toolkits can be found for almost all languages.
+#+CAPTION:SOAP used to communicate between heterogeneous components
+#+LABEL:fig:soap-comm
+[[../soap-img/soapuser-archi1.png]]
+
+* Sun RPC
+** Background
+   Sun RPC  (aka RPC ONC (Open Network Computing)) 
+   - are the original RPC ([[http://tools.ietf.org/html/rfc1831][RFC 1831]]), introduced by Sun in 1988
+   - motivation: provide a support to inter-machines services
+   - NFS as first target, NIS, ....
+   - is open source software (BSD license since 2009)
+** Interoperability
+   - ONC RPC allow programs on different OS and machines to communicate
+   - It may be in different languages but C in 99% cases.
+   - Relies on [[http://www.ietf.org/rfc/rfc4506.txt][XDR]] (eXternal Data Representation)
+     
+** RPC service identification
+*** Services are identified by					    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+   1. the program name (~prog_name~)
+   2. the program version (~prog_ver~)
+   3. the function name
+*** Example						   :B_beamercolorbox:
+    :PROPERTIES:
+    :BEAMER_env: beamercolorbox
+    :END:
+#+BEGIN_SRC C
+  program MYPROG {
+    version VERSION_ONE {
+      void MYPROG_NULL(void) = 0;
+      answer MYPROG_MYFUNC(data) = 1;
+    } = 1;
+  } = 0x2000:0001;
+#+END_SRC
+ 
+** Service Registration (portmap)
+ This service must be registered in a directory service generally called /portmapper/ 
+   - acts as a name server
+   - converts : <prog_name + ver + protocol> to <portnumber>
+   - exact service name depending on sytem/distribution : =rpcbind= (or sometimes =portmap=, or =rpc.portmap=)
+   - attached to port 111
+
+** Standard RPC services
+*** file =/etc/rpc=						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    #+begin_src c
+    portmapper  100000  
+    rstatd      100001  
+    rusersd     100002  
+    nfs         100003  
+    ypserv      100004 
+    mountd      100005 
+    ypbind      100007
+    walld       100008 
+    #+end_src
+     
+** Running Services					    :B_ignoreheading:
+   :PROPERTIES:
+   :BEAMER_env: ignoreheading
+   :END:
+   #+begin_src c
+   % rpcinfo -p
+     program vers proto   port
+    100000    2   tcp    111  portmapper
+    100000    2   udp    111  portmapper
+ 536870913    1   udp  58764
+ 536870913    1   tcp  65106
+   #+end_src c
+ Two last lines are one user program.
+
+
+ 
+
+
+** Programming with ONC RPC
+   Two layers:
+*** The *higher* layer: small set of functions to describe and call services in a simple way.
+   -  Essential primitives: =registerrpc()= and =callrpc()= \\
+   -  However, limitations: udp only, no auth, and encoding/decoding by hand.   
+
+*** The *lower* layer: 20+ functions to fine tune the calls.
+   - Much more complex, used for stressed services, for example 
+     to implement asynchronous RPC and authentification.  
+
+** Server-side steps
+   The server must *register*: asks the local portmap to:
+   1.  create a new entry so that clients can be routed 
+   2.  associate a service number and the address of the function 
+     that implements it, or the address of the /dispatcher/.
+*** The primtives are
+    - =svc_register()= and =pmap_set()= (low level)
+    - =rpcregister()= (high level)
+    - on exit, =svc_unregister()=, =pmap_uset()=
+** Client-side steps
+   The client must initialize (1), lookup in remote portmap to find the service (2),
+   then, several calls can be made afterwards (3):
+   1. =clnt_create()= / =clnttcp_create()= / =clntudp_create()=,
+   2. =pmap_getport()=
+   3. =clnt_call()=
+
+   The higher level =callrpc()= does steps 1, 2 and 3 in a row.
+
+** Example of high-layer usage (server side 1/2)
+/Define the service on the server:/
+#+begin_src c
+#include <rpc/xdr.h>
+#include <rpc/rpc.h>
+
+int* my_function(int *n) {
+   static int res;
+   *n = *n + 1;
+   res= *n; 
+   return (&res);
+}
+#+end_src
+ 
+** Example of high-layer usage (server side 2/2)
+/Register the service on the server:/
+#+begin_src c
+#define PROGNUM 0x20000100                                                      
+#define VERSNUM 1                                                               
+#define PROCNUM 1
+
+int main (void) {
+   registerrpc( PROGNUM,
+                VERSNUM,
+                PROCNUM,
+                my_function, /*ptr to function*/
+                (xdrproc_t) xdr_int, /*encode input*/
+                (xdrproc_t) xdr_int);/*decode output*/
+
+    svc_run(); /*  server starts listening ... */
+}
+#+end_src
+
+** Example of high-layer usage (client side 1/2)
+   /Call the service from the client:/
+#+begin_src c :exports code
+int main (int argc, char **argv) {
+ int n=0x41424344;
+ char *host = argv[1];
+ int stat;
+ stat = callrpc(host,
+                PROGNUM,
+                VERSNUM,
+                PROCNUM,
+                (xdrproc_t) xdr_int, //intput encoding
+                (char *)&n,          //input param
+                (xdrproc_t)xdr_int,  //output decoding
+                (char *)&res);       //return of func
+}
+#+end_src
+ 
+** Another way: =rpcgen=
+- Taking care of conversion through XDR is difficult
+- The =rpcgen= compiler automates the process of writing RPC applications
+- =rpcgen= accepts interface descriptions in [[http://docs.oracle.com/cd/E19683-01/816-1435/6m7rrfn9k/index.html][RPCL (RPC Language)]]
+- and generates skeletons programs (C code) 
+
+** Example with =rpcgen=
+- Consider an /operation/ =addition=, that adds up 2 =int= s
+- Describe this service in a file =myservice.x= 
+#+begin_src C
+struct data {
+  int arg1;  int arg2;
+};
+typedef struct data data;
+struct response {
+  int result; unsigned char error;
+};
+typedef struct response response;
+
+program MYCOMPUTATION {
+  version VERSION_ONE{
+    void MYCOMPUTATION_NULL(void) = 0;
+    response MYCOMPUTATION_ADDITION(data) = 1;
+  } = 1;
+} = 0x20000001;
+#+end_src
+
+** Example with =rpcgen= (contd)
+- Generate the skeletons
+#+begin_src C :exports code
+   % rpcgen -a myservice.x
+#+end_src
+- The following files are generated
+#+begin_src C :exports code
+  myservice.h        /* parameter definitions */
+  myservice_xdr.c    /* XDR conversion */
+  myservice_svc.c    /* stubs server */   
+  myservice_clnt.c   /* stubs client */
+  myservice_server.c /* server code */
+  myservice_client.c /* client code */
+#+end_src
+
+
+** RPCL in Brief (enumeration, constants & simple)
+*** Enumerations and Constants 
+#+begin_src C
+enum colortype { RED = 0, GREEN = 1,BLUE = 2  };
+const PI = 3.14; 
+#+end_src

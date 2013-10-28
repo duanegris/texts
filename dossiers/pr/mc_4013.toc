@@ -1,0 +1,36 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Curriculum Vit{\ae }}{4}{section.2}
+\contentsline {subsection}{\numberline {1.1}\'Etat civil}{4}{subsection.3}
+\contentsline {subsection}{\numberline {1.2}Formation Universitaire}{4}{subsection.4}
+\contentsline {subsection}{\numberline {1.3}Exp\IeC {\'e}rience professionnelle}{5}{subsection.5}
+\contentsline {subsection}{\numberline {1.4}Responsabilit\IeC {\'e}s principales}{5}{subsection.6}
+\contentsline {section}{\numberline {2}Activit\IeC {\'e}s de recherches}{7}{section.7}
+\contentsline {paragraph}{R\IeC {\'e}sum\IeC {\'e}}{7}{section*.8}
+\contentsline {subsection}{\numberline {2.1}D\IeC {\'e}tails des th\IeC {\`e}mes de recherche}{7}{subsection.9}
+\contentsline {subsubsection}{\numberline {2.1.1}Sp\IeC {\'e}cification de programmes data-parall\IeC {\`e}les}{7}{subsubsection.10}
+\contentsline {subsubsection}{\numberline {2.1.2}Parall\IeC {\'e}lisation pour la g\IeC {\'e}ophysique}{7}{subsubsection.12}
+\contentsline {subsubsection}{\numberline {2.1.3}Grilles de calcul}{8}{subsubsection.14}
+\contentsline {paragraph}{Performances}{8}{section*.16}
+\contentsline {paragraph}{Intergiciel}{8}{section*.17}
+\contentsline {subsubsection}{\numberline {2.1.4}Simulation}{9}{subsubsection.20}
+\contentsline {subsection}{\numberline {2.2}Programme de recherches au sein du LSIIT}{10}{subsection.24}
+\contentsline {subsection}{\numberline {2.3}Liste de publications}{15}{subsection.36}
+\contentsline {subsection}{\numberline {2.4}Activit\IeC {\'e}s scientifiques}{17}{subsection.46}
+\contentsline {subsubsection}{\numberline {2.4.1}Niveau international}{17}{subsubsection.47}
+\contentsline {subsubsection}{\numberline {2.4.2}Niveau national}{18}{subsubsection.48}
+\contentsline {subsubsection}{\numberline {2.4.3}Niveau local}{19}{subsubsection.49}
+\contentsline {subsubsection}{\numberline {2.4.4}Jurys de th\IeC {\`e}se}{19}{subsubsection.50}
+\contentsline {subsection}{\numberline {2.5}Encadrements}{19}{subsection.51}
+\contentsline {subsubsection}{\numberline {2.5.1}Th\IeC {\`e}ses}{19}{subsubsection.52}
+\contentsline {subsubsection}{\numberline {2.5.2}Stages de DEA/Master}{20}{subsubsection.58}
+\contentsline {subsubsection}{\numberline {2.5.3}Autres}{20}{subsubsection.64}
+\contentsline {subsection}{\numberline {2.6}Synth\IeC {\`e}se quantitative}{21}{subsection.65}
+\contentsline {section}{\numberline {3}Activit\IeC {\'e}s d'enseignement}{22}{section.66}
+\contentsline {subsection}{\numberline {3.1}Contexte}{22}{subsection.67}
+\contentsline {subsection}{\numberline {3.2}Enseignements en informatique}{22}{subsection.70}
+\contentsline {subsection}{\numberline {3.3}Tableau r\IeC {\'e}capitulatif}{23}{subsection.71}
+\contentsline {subsection}{\numberline {3.4}Contenus des enseignements}{24}{subsection.72}
+\contentsline {subsection}{\numberline {3.5}Principales charges d'int\IeC {\'e}r\IeC {\^e}t collectif}{25}{subsection.76}
+\contentsline {subsection}{\numberline {3.6}Projet de d\IeC {\'e}veloppement}{25}{subsection.77}
+\contentsline {section}{\numberline {4}Documents annexes}{28}{section.83}
+\contentsline {section}{\numberline {5}Copies d'articles}{43}{section.84}

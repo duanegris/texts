@@ -1,0 +1,13 @@
+
+Projet codé en PERL
+Executable principal : series.pl
+
+Modules PERL utilisés :
+Getopt::Long
+Digest::MD5
+XML::LibXML
+URI::Escape
+
+API REST du site BetaSeries (https://www.betaseries.com/)
+Documentation : https://www.betaseries.com/dev/wiki/Documentation
+

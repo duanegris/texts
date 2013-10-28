@@ -1,0 +1,21 @@
+IDL=idlj -oldImplBase
+INTERFACE=OpMatrice
+SOURCES=OpMatriceImpl Client Serveur
+
+IMPL=$(INTERFACE)Impl
+
+all: $(INTERFACE:=.class) $(SOURCES:=.class)
+
+$(INTERFACE:=.class) : $(<:=.idl)
+	$(IDL) -fall $(@:.class=.idl)
+	javac $(@:.class=.java)
+
+%.class : %.java
+	javac $*.java
+
+
+clean :
+	/bin/rm -f $(INTERFACE)H*.java $(INTERFACE)POA.java $(INTERFACE)Operations.java _$(INTERFACE)*.java $(INTERFACE).h $(INTERFACE).java *.class *Helper.java *Holder.java
+
+realclean : clean
+	/bin/rm -f *~  pok *Helper.java *Holder.java *POA.java annu.ior iorfile.java

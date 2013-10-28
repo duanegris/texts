@@ -753,7 +753,7 @@ The null hypothesis \Rightarrow B_a*B_b=0
  |         |           |     |      |      |
 
 *** F ratio
- 
+   The ratio of the mean squares
    - F = syst. var / unsystematic var.
    - F = between-groups var / within-groups var.
    - F = MS_between / MS_within
@@ -789,6 +789,49 @@ The null hypothesis \Rightarrow B_a*B_b=0
     | A      | n \sum (Y_j - Y_T)^2 | a-1    | SS_A / df_A     | MS_A/MS_S/A |
     | S/A    | \sum (Y_ij - Y_j)^1  | a(n-1) | SS_S/A / DF_S/A | ----        |
     | TOTAL  | \sum(Y_ij - Y_T)^2   | N-1    | ----            | ----        |
+
+**
+
+*** Effect size
+   
+    \eta^2 : percentage of variance explained in the outcome variable (=dependent variable)
+    Exactly the same as R^2 in multiple regression
+    
+    So, for our example : \eta^2 = SS_A / SS_total = 50 /75 = .66  (unusually large)
+    
+    Assumptions
+    - DV is continuous
+    - DV is normally distributed
+    - Homogeneity of variance : within-group variance is equivalent for all groups (test it with Levene's test)
+
+* Factorial ANOVA (L13S3)
+
+** Two IVs (tratements)
+   
+    Example
+    - IV : driving driving difficulty (easy, difficuult)
+    - IV : conversation difficulty (none, easy, difficult)
+    - DV : errors made in driving simulator
+
+    Three hypotheses can be tested:
+    - More errors in the difficult simulator ?
+    - More errors when conversation more difficults?
+    - More errors due to the interactoins of these factors?
+
+    Therefore, the subjects were assigned to 1 of 6 groups (2x3 values)
+
+    F_A = MS_A / MS_S/AB
+    F_B = MS_B / MS_S/AB
+    F_AxB = MS_AxB / M_S/AB
+
+*** Follow-up tests
+   Main effects
+   - post-hoctests
+   Interaction
+   - Analysis of simple effects : conduct a series of one-way ANOVAs
+     comparing high and low spans at each level of the other IVs
+   Effect size  
+ 
 
 
 

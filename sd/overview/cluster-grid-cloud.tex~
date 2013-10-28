@@ -1,0 +1,239 @@
+%
+% Guide des themes:
+% http://mcclinews.free.fr/latex/beamergalerie.php
+
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+\usepackage{beamerthemesplit}
+
+\beamertemplatetransparentcovereddynamic
+
+%\usepackage{beamerthemeshadow}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+
+% pas les symboles de navigation
+\setbeamertemplate{navigation symbols}{}
+
+\mode<presentation>
+%\mode<handout>{\beamertemplatesolidbackgroundcolor{black!5}}
+
+%--- gris et rouge----
+\usetheme{Boadilla}
+%\usecolortheme{beaver}
+%\useinnertheme[shadow]{rounded}
+%--- /gris et rouge----
+
+%albatross -> fond bleu
+%crane -> barre orangé
+%beetle 
+%dove fly seagull wolverine beaver
+
+%fond rosé dégradé
+%\beamertemplateshadingbackground{red!10}{blue!10}
+
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+
+\usepackage[utf8]{inputenc}
+\usepackage{eurosym}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{wasysym} % emoticons
+\usepackage{fancyvrb}
+\usepackage{pgf}
+\usepackage{calc}
+%\usepackage{fp} %floating point
+% hyperref already used in beamer : \usepackage[colorlinks=true]{hyperref}
+\hypersetup{colorlinks=true} 
+
+\definecolor{darkgreen}{rgb}{0,.7,0}
+\definecolor{darkred}{rgb}{.7,0,0}
+
+% custom Emoticon
+\newcommand{\Frownie}{{\textcolor{darkred}\frownie}}
+\newcommand{\Smiley}{{\textcolor{green}\smiley}}
+
+\graphicspath{{fig/}}
+
+%%%%%% New handy commands
+
+
+\def\shorttitle{Clusters-Grids-Clouds}
+\title[]{Infrastructures Parallèles de Calcul\\ {\large Clusters -- Grids -- Clouds}}
+
+\author[~~~Stéphane Genaud]{Stéphane Genaud} \date{11/02/2011} 
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}
+\frametitle{Clusters - Grids - Clouds}
+  \begin{block}{}
+    \begin{itemize}
+    \item<+-> \textcolor{darkred}{Clusters} : assemblage de ``PCs''\\+ interconnexion rapide + espace disque partagé  
+    \item<+-> \textcolor{darkred}{Grids} : mutualisation de ressources à large échelle\\ (middleware + VOs)
+    \item<+-> \textcolor{darkred}{Clouds} : externalisation des ressources\\ (coût=$f($temps$)$, virtualisation, SaaS/IaaS/PaaS)
+    \end{itemize}
+ \end{block}
+%\hfill
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Clusters}
+  \begin{block}{Matériel}
+    \begin{itemize}
+    \item Calcul: serveurs $\times$ processeurs $\times$ c{\oe}urs
+    		\begin{itemize}
+		\item<+->hpc (UdS) 2007 : 32 $\times$ 1 $\times$ 2 = 64cores , Opteron 2.4GHz, 4GB RAM/server
+		\item<+->hpc (UdS) 2009 : 68 $\times$ 2 $\times$ 4 = 544 cores, ....
+		%\item<+->griffon (G5K) : 92 $\times$ 2 $\times$ 4 = 736 cores , 16GB RAM/server
+		\item<+->jade (CINES) : 2880 $\times$ 2 $\times$ 4 = 23040 cores , 34GB RAM/server (267 Tflop/s)
+		\item<+->\textcolor{darkred}{Hybride} Tianhe-1H (Chine): 2560 $\times$ 2 $\times$ 4=20480 cores (Xeon) + AMD GPU : 2560 $\times$ 1600= 4096000 SPU 
+    		\end{itemize}
+    \item<+-> Mémoire : distribuée sur les serveurs, caches sur les processeurs/coeurs
+    \item<+-> Réseau : TCP ou spécialisé (Infiniband, Quadrics, ...)
+    \item<+-> Stockage : scratch, NFS, GPFS
+    \end{itemize}
+  \end{block}
+\hfill
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Grids}
+  \begin{block}{Matériel}
+    \begin{itemize}
+    	\item<+->`grilles ``maison'' et \href{http://desktopgridfederation.org/}{Desktop Grid}, Volunteer Computing (e.g \href{http://www.boinc.org}{Boinc})
+    	\begin{itemize}
+		\item Calcul, Mémoire : ordinateurs de bureau (complètement hétérogène)
+    		\item Réseau : TCP, NREN ou ADSL
+		\item Stockage : local et parfois distribué à large échelle. 
+    	\end{itemize}
+	\item<+-> Grille production (e.g \href{http://www.egi.eu/}{EGI}, \href{http://www.teragrid.org}{TeraGrid}): clusters
+    	\begin{itemize}
+    		\item Calcul, Mémoire : clusters
+    		\item Réseau : local=clusters et  global=NREN
+		\item Stockage : type cluster et parfois distribué à large échelle
+    	\end{itemize}
+    \end{itemize}
+  \end{block}
+\hfill
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Clouds}
+  \begin{block}{Matériel (\Frownie souvent secret industriel) }
+    \begin{itemize}
+		\item Calcul, Mémoire: dépend du prix : [machine de bureau $\leadsto$ cluster]  
+    		\item Réseau : local=dépend du prix, global=NREN
+		\item Stockage : type cluster 
+    	\end{itemize}
+\pause
+	\begin{small}
+	Amazon EC2
+	\begin{tabular}{|l|l|l|l|l|l|l|}
+		\hline
+		instance		& CPU			& RAM (GB) & disque (GB) &  I/O \&réseau	& \$\\
+		\hline
+		\hline
+		small			& mono-proc		 & 1.7		& 160		&  modérée 	& 1 \\
+		large			& 2 cores		& 7.5		& 850		&  élevée  		& 2\\
+		xtra large		& 4 cores		& 15		& 1690	&  élevée		& 4\\
+		$\vdots$		&			&		&		&			& $\vdots$ \\
+		clstr compute	& 2{$\times$}8 cores &23	& 1690	&  10 Gbps		& 33.5\\
+		\hline
+	\end{tabular}
+	\end{small}
+
+  \end{block}
+\hfill
+\end{frame}
+
+%__________________________ Pros & Cons ______________________%
+
+\begin{frame}
+\frametitle{Clusters:Pros \& Cons }
+
+  \begin{block}{Objectifs, Avantage}
+    \begin{itemize}
+		\item HPC (Performances)
+    		\item Fiabilité de l'infrastructure
+		\item Homogénéité des systèmes/logiciels installés
+		\item Facilité d'accès aux données
+    	\end{itemize}
+  \end{block}
+  \pause
+  \begin{block}{Obstacles, Inconvénients}
+    \begin{itemize}
+		\item Problème de coût et dimensionnement
+    		\item Difficulté de tirer toute la performance
+		\item Environnement déporté
+    	\end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Grille: Pros \& Cons }
+
+  \begin{block}{Objectifs, Avantage}
+    \begin{itemize}
+		\item Mutualisation des ressources  
+    		\item Meilleur utilisation des ressources ($\downarrow$ coût)
+		\item Ressources nombreuses
+    	\end{itemize}
+  \end{block}
+  \pause
+  \begin{block}{Obstacles, Inconvénients}
+    \begin{itemize}
+		\item Instabilité de l'infrastructure (pannes)
+    		\item Hétérogénéité des matériels et logiciels
+		\item Recensement difficile des ressources
+    	\end{itemize}
+
+  \end{block}
+
+\end{frame}
+
+
+
+%__________________________ Domaines d'applications ______________________%
+\begin{frame}{}
+\frametitle{Domaines d'applications}
+
+
+
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{|p{2cm}|p{2.8cm}|p{2.2cm}|p{2.2cm}|p{2.2cm}|}
+		\hline
+					& cluster		&  grid    			& grid prod. 		&  cloud (IaaS) \\
+		\hline
+		\hline
+		resources		& homogène		& hétérogène		&  fédér. homogènes	&   fédér. homogènes \\ 
+		\hline
+		gestionnaire	& batch		& middleware		& meta-batch		&   manuel+transparent \\
+		\hline
+	      marché dominant	& HPC		 			&  calcul			& calcul + I/O 		  &  web servers 	\\
+		\hline
+		parallélisme	& div. domaine			&  distribution tâches	& distribution programmes &  distribution systèmes\\
+		\hline
+		modèle prog.	& SMPD				&  client/server		& séquentiel, workflow	  &  tout  		\\
+		\hline
+		exemples		& MPI [+OpenMP,] [+opencl], PGAS & Boinc, Condor		& tout lang.		  &  tout lang.	\\ 
+		\hline
+		\hline
+	\end{tabular}
+	}
+
+\end{frame}
+
+
+\end{document}

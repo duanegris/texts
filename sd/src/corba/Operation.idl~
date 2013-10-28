@@ -1,0 +1,7 @@
+module SimpleComputation
+{
+  interface Operation
+  {
+  int addition(in long a, in long b);
+  };
+};

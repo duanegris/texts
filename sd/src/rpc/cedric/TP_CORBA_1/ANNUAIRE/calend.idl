@@ -1,0 +1,34 @@
+// Description avec le langage IDL d'un calendrier
+
+module ServiceDate {
+  typedef unsigned short Jour;
+  const short stringLength = 100;
+
+  enum Mois { 
+    Janvier, Fevrier, Mars, Avril, Mai, Juin, Juillet, Aout, 
+    Septembre, Octobre, Novembre, Decembre
+  };
+  typedef unsigned short Annee;
+  struct Date { 
+    Jour j;
+    Mois m;
+    Annee a;
+  };
+  typedef sequence<Date> DesDates;
+  interface Calendrier {
+    exception MauvaiseDate{ string raison; };
+    
+    attribute Annee annee_courante;
+    boolean verifier_date(in Date d);
+    void jour_suivant(inout Date d);
+    Date convertir_chaine(in string chaine) raises (MauvaiseDate);
+    string convertir_date(in Date d) raises (MauvaiseDate);
+  };
+  interface Affichable {
+    string afficheLe();
+  };
+  interface CalendrierFerie : Calendrier, Affichable {
+    void jours_feries(in Annee a, out DesDates dates);
+  };
+
+};

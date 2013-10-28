@@ -1,0 +1,9 @@
+Avant d'exécuter la commande "make", il fautdécalere le nom de l'interface par
+
+export INTERFACE= ...
+
+Exemple :
+
+export INTERFACE=Icarre
+
+

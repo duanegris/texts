@@ -1,0 +1,208 @@
+<ol class='xoxo'>
+  <li>Introduction      
+    <ol>
+      <li>Technologies for Distributed Systems  - Extremely fast evolution since 1985:    about a technology every 5 years.\\  - Implementations adapt to up-to-date technology\\    e.g If networks go faster, it is possible to convey bigger messages.\\        If the cost of some hardware becomes low, no need to spare it.</li>
+      <li>Technologies change but ... concepts stay   - Client-server is the central concept:\\     The *client* can make a request at any time,\\     The *server* permanently waits for incoming requests</li>
+      <li>Middleware  </li>
+      <li>Middleware: definition
+	<ol>
+	  <li>What is middleware?						    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:   - A sofware layer between the OS and the application allowing      a set of distributed computers to communicate in a standardized     way.     </li>
+	  <li>Middleware provides inter-machines communication facilities,    but may also include services, such as authentification services,   resource directories, distributed file catalogs, ...    </li>
+	</ol>
+      </li>
+      <li>A Time-line of technologies</li>
+      <li>Principle Design Choices  - Abstraction vs. Performance  - Interoperability  - Versatility</li>
+      <li>Abstraction
+	<ol>
+	  <li>Abstraction of communication primitives   - too low level: rapidly obsolete, lower programming productivity   - too high level: difficult to optimize for performance </li>
+	  <li>Abstraction Trade-off    - independent from the architecture: execute across     different systems without *source code* modification   - Hide details related to communication/synchronization management     (e.g =Remote Procedure Calls= more abstract than =sockets=)				  </li>
+	</ol>
+      </li>
+      <li>Interoperability
+	<ol>
+	  <li>Machine-independent   e.g [[http://www.ietf.org/rfc/rfc1057.txt][Sun RPC]]    \vspace{5mm}</li>
+	  <li>OS-independent     e.g [[http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136424.html][Java-RMI]]   \vspace{5mm}</li>
+	  <li>Language-independent    e.g [[http://www.corba.org][Corba]], [[http://www.w3.org/TR/soap/][SOAP]]</li>
+	</ol>
+      </li>
+      <li>Versatility  The more general, the more versatile   - Example 1: SOAP communicates through XML pieces of text   - $\Rightarrow$ SOAP toolkits can be found for almost all languages.</li>
+    </ol>
+  </li>
+  <li>Sun RPC
+    <ol>
+      <li>Background  Sun RPC  (aka RPC ONC (Open Network Computing))   - are the original RPC ([[http://tools.ietf.org/html/rfc1831][RFC 1831]]), introduced by Sun in 1988  - motivation: provide a support to inter-machines services  - NFS as first target, NIS, ....  - is open source software (BSD license since 2009)</li>
+      <li>Interoperability  - ONC RPC allow programs on different OS and machines to communicate  - It may be in different languages but C in 99% cases.  - Relies on [[http://www.ietf.org/rfc/rfc4506.txt][XDR]] (eXternal Data Representation)    </li>
+      <li>RPC service identification
+	<ol>
+	  <li>Services are identified by					    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:  1. the program name (~prog_name~)  2. the program version (~prog_ver~)  3. the function name</li>
+	  <li>Example						   :B_beamercolorbox:   :PROPERTIES:   :BEAMER_env: beamercolorbox   :END:</li>
+	</ol>
+      </li>
+      <li>Service Registration (portmap)This service must be registered in a directory service generally called /portmapper/   - acts as a name server  - converts : <prog_name + ver + protocol> to <portnumber>  - exact service name depending on sytem/distribution : =rpcbind= (or sometimes =portmap=, or =rpc.portmap=)  - attached to port 111</li>
+	  <li>Standard RPC services
+	    <ol>
+	      <li>file =/etc/rpc=						    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:   #+begin_src c   portmapper  100000     rstatd      100001     rusersd     100002     nfs         100003     ypserv      100004    mountd      100005    ypbind      100007   walld       100008    #+end_src    </li>
+	    </ol>
+	  </li>
+	  <li>Running Services					    :B_ignoreheading:  :PROPERTIES:  :BEAMER_env: ignoreheading  :END:  #+begin_src c  % rpcinfo -p    program vers proto   port   100000    2   tcp    111  portmapper   100000    2   udp    111  portmapper536870913    1   udp  58764536870913    1   tcp  65106  #+end_src cTwo last lines are one user program.</li>
+	  <li>Programming with ONC RPC  Two layers:
+	    <ol>
+	      <li>The *higher* layer: small set of functions to describe and call services in a simple way.  -  Essential primitives: =registerrpc()= and =callrpc()= \\  -  However, limitations: udp only, no auth, and encoding/decoding by hand.   </li>
+	      <li>The *lower* layer: 20+ functions to fine tune the calls.  - Much more complex, used for stressed services, for example     to implement asynchronous RPC and authentification.  </li>
+	    </ol>
+	  </li>
+	  <li>Server-side steps  The server must *register*: asks the local portmap to:  1.  create a new entry so that clients can be routed   2.  associate a service number and the address of the function     that implements it, or the address of the /dispatcher/.
+	    <ol>
+	      <li>The primtives are   - =svc_register()= and =pmap_set()= (low level)   - =rpcregister()= (high level)   - on exit, =svc_unregister()=, =pmap_uset()=</li>
+	    </ol>
+	  </li>
+	  <li>Client-side steps  The client must initialize (1), lookup in remote portmap to find the service (2),  then, several calls can be made afterwards (3):  1. =clnt_create()= / =clnttcp_create()= / =clntudp_create()=,  2. =pmap_getport()=  3. =clnt_call()=</li>
+	  <li>Example of high-layer usage (server side 1/2)</li>
+	  <li>Example of high-layer usage (server side 2/2)</li>
+	  <li>Example of high-layer usage (client side 1/2)  /Call the service from the client:/</li>
+	  <li>Another way: =rpcgen=</li>
+	  <li>Example with =rpcgen=</li>
+	  <li>Example with =rpcgen= (contd)</li>
+	  <li>RPCL in Brief (enumeration, constants & simple)
+	    <ol>
+	      <li>Enumerations and Constants </li>
+	      <li>Simple Declarations </li>
+	      <li>Added types (bool and string) </li>
+	    </ol>
+	  </li>
+	  <li>RPCL in Brief (arrays)
+	    <ol>
+	      <li>Fixed-length arrays </li>
+	      <li>Variable-length arrays                                          - The maximum size is specified between angle brackets, or may be ommitted:</li>
+	    </ol>
+	  </li>
+	  <li>RPCL in brief (typedef)
+	    <ol>
+	      <li>Type definitions    Same syntax as C typedef</li>
+	    </ol>
+	  </li>
+	  <li>RPCL in Brief (pointers)  - Pointer declarations are as in C. Address pointers are not sent over the network.     Instead, data pointed to are copied. This is useful for sending recursive data     types such as lists and trees. </li>
+	  <li>RPCL in Brief (struct)  - Translates as is in C, excepted that an extra typedef is generated.</li>
+	  <li>Tips & Tricks
+	    <ol>
+	      <li>Linux							    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:  - Install: rpc lib provided by package  =libtirpc-dev=  (0.2.2-5 on ubuntu 12.04)   - Run: a portmapper is provided by package =rpcbind=    - Run: =svc_register()= might refuse to register ("credentials problem")           $\Rightarrow$ Start server as root or in sudo mode.  - Initialize array variables before calling remote functions     ("Can't encode arguments" error).</li>
+	      <li>MacOSX							    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:  - Install: the 'Command line tools' element from Xcode in the distrib             or download it fom  [[https://developer.apple.com/downloads/][Apple]] .   - Use: =rpcgen -C= to force generation of ANSI-C code  </li>
+	    </ol>
+	  </li>
+	</ol>
+      </li>
+      <li>Java RMI
+	<ol>
+	  <li>History  - Created by Sun in 1998  - Java only  - Available since JDK >= 1.1  - Since JDK 1.5, stubs are automatically generated (no =rmic=)</li>
+	  <li>RPC in the world of RMI  - RMI provides access to *objects* and their *methods*  - In contrast to Sun RPC, not only data can be passed    to remote computations, but also objects that can contain    code and data.\\[5mm]</li>
+	  <li>The Remote class     definition: An object of the Remote class can be used remotely.  It can be used:  - in the address space of the JVM that created it,  - in the address spaces of other JVMs through /handles/ (aka /proxies/).  </li>
+	  <li>The Remote class  and interface  
+	    <ol>
+	      <li>A Remote class must be defined in 2 parts   - an interface - the class itself</li>
+	      <li>Interface   :B_block:  :PROPERTIES:  :BEAMER_env: block  :END:  </li>
+	      <li>Class    :B_block:  :PROPERTIES:  :BEAMER_env: block  :END:</li>
+	    </ol>
+	  </li>
+	  <li>The Serializable class</li>
+	  <li>Registering the services  A process called *rmiregistry* is in charge of service registration\\  (Equivalent of portmapper)
+	    <ol>
+	      <li>Characteristics of =rmiregistry= 				    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:   - runs on the same host as the services   - default port is 1099   - can be started by program</li>
+	    </ol>
+	  </li>
+	  <li>Example 1: Remote object with primitive types
+	    <ol>
+	      <li>The different pieces of code 				    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:   - The service: description of the function prototype   - The service: the implementation of the service   - The server: a generic code which registers the service   - The client: the code that uses the service</li>
+	    </ol>
+	  </li>
+	  <li>Example 1: Service Description</li>
+	  <li>Example 1: Service Implementation  - Only the server *implements* the service.</li>
+	  <li>Example 1: Service Registration</li>
+	  <li>Example 1: Client code  - gets a reference to the  the service in the registry (proxy)  - call the service using that reference </li>
+	  <li>Trouble shooting 1
+	    <ol>
+	      <li>Observation 						    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:   The client experiences a =connection refused= error when    contacting the server.</li>
+	      <li>Why?  							    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:   =$JAVA_HOME/lib/security/java.policy= is too restrictive wrt sockets</li>
+	      <li>Solution  							    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:  To override the standard, run</li>
+	    </ol>
+	  </li>
+	  <li>Trouble shooting 2
+	    <ol>
+	      <li>Observation 						    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:  When calling the RPC (hence after the lookup), the client ends with:  =java.rmi.ConnectException: Connection refused to host: 127.0.0.1=</li>
+	      <li>Why?    							    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:  In some linux distributions, the name resolution for hostname  takes 127.0.0.1 from =/etc/hosts= instead of public IP.</li>
+	      <li>Solution  							    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:</li>
+	    </ol>
+	  </li>
+	</ol>
+      </li>
+      <li>Corba
+	<ol>
+	  <li>History
+	    <ol>
+	      <li>Context  - A specification defined by the /Object Management Group/ (OMG),     composed of about 1000 members  - currently CORBA 3.0  - Implementors then propose implementations</li>
+	      <li>Implemenations    Commercial :    - ORBIS, IONA, VisiBroker, ORBacus, ....    Open source:    - JDK, MICO, JacORB, TAO, ...</li>
+	    </ol>
+	  </li>
+	  <li>Characteristics
+	    <ol>
+	      <li>A RPC framework - object oriented - multiple-OS, multiple languages can be involved - analogy of the "software bus"  </li>
+	      <li>External Services - helper services, can connect to the bus - services: naming, transaction, persistence ...</li>
+	    </ol>
+	  </li>
+	  <li>IDL</li>
+	  <li>IDL structure</li>
+	  <li>IDL types</li>
+	  <li>IDL types (arrays)
+	    <ol>
+	      <li>Fixed-size array   general form: /type variable [size]+;/</li>
+	      <li>Arbitrary-size arrays   general form: /sequence<type[,max]> variable;/	</li>
+	      </ol>
+	    </li>
+	  <li>IDL type mapping to Java</li>
+	  <li>IDL struct mapping to Java  IDL struct are mapped to Java Class. </li>
+	  <li>IDL Methods
+	    <ol>
+	      <li>General Form 						    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:</li>
+	    </ol>
+	  </li>
+	  <li>IDL Oneway Methods
+	    <ol>
+	      <li>Normal method call: waits for return and return is guaranteed</li>
+	      <li>Oneway call: no wait, but not guaranteed execution   - no return result (=void= return type)   - no =out= or =inout= parameter</li>
+	    </ol>
+	  </li>
+	  <li>IDL Parameter Passing
+	    <ol>
+	      <li>By reference or by copy 					    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:     A parameter is passed   - by reference for CORBA Object   - by copy for primitives types (float, long, ...) and constructed types (struct, sequence,...)</li>
+	      <li>in/out/inout   - =in= : client provides the value. If modified by the server, not updated on the client.   - =inout= :  client provides the value, updated on the client.   - =out= : the server provides the value, updated on the client.</li>
+	    </ol>
+	  </li>
+	  <li>CORBA Architecture</li>
+	  <li>Transient and Persistent Objects  Not to confound with the /Persitent Object Service/ (POS) which allows to store object states on disk, DB, ... 
+	    <ol>
+	      <li>Transient CORBA object 					    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:     It has the same lifetime as the execution of the server process that creates it.  When a server terminates, its transient objects disappear with it and  any object references held by the  client become invalid.  </li>
+	      <li>Persistent CORBA object 					    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:    It lives until it is explicitly destroyed.  If a client has a reference to it, that reference can be used even if the object's server is not running   -- an ORB daemon, =orbd=, will start the server when the ORB receives an invocation on the object.</li>
+	    </ol>
+	  </li>
+	  <li>POA
+	    <ol>
+	      <li>OA and POA 							    :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:</li>
+	    </ol>
+	  </li>
+	  <li>POA and Servants  - A /servant/ is the logical process that executes an object.  - It may be mapped to one or several threads, processes, ...</li>
+	  <li>POA Control in Java (1/3)  - The first POA is managed by the ORB, and called /RootPOA/ by convention.</li>
+	  <li>POA Control in Java (2/3)
+	    <ol>
+	      <li>POA Manager - Each POA is associated a =POAManager= object, which starts/stops the POA, and manages the incoming requests </li>
+	      <li>POAManager's States   - Holding: POAs will queue incoming requests.   - Active: POAs will start processing requests.   - Discarding: POAs will discard incoming requests.   - Inactive: POAs will reject the requests that have not begun executing as well as as any new requests. </li>
+1A Model, Transient server      :B_block:   :PROPERTIES:   :BEAMER_env: block   :END:     From an IDL description, we generate (=idlj=) code for a POA that starts   an /Operation/ service as a transient server</li>
+	      <li>The tasks we have to complete:</li>
+	    </ol>
+	  </li>
+	  <li>The IDL for Operation</li>
+	  <li>The Server for Operation</li>
+	  <li>The Client for Operation</li>
+	  <li>Running the example</li>
+	  <li>=servertool= (JDK)</li>
+	  </ol>
+	</li>
+      </ol>

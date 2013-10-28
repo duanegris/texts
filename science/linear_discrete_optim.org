@@ -18,7 +18,75 @@ Further constraint:
 - barel capacity able to store Spring : 500l
 - barel capacity able to store Nebsi  : 400l
 
+*Production plan*: find a vector (x_1,x_2) \in R^2
 
+Max 100*x1 + 125*x2 s.t.
+(x1 <= 400)
+(x2 <= 500)
+x1>=0
+x2>=0
+3*x1 + 6*x2 <= 30
+8*x1 + 4*x2 <= 44 
    
+Graphical resolution :
+- define the area under constraint
+- find the intersection point between the line 100*x1+125*x2 and the area
+[[figs/lp-graphical-res.jpg]]
+
+Answer here : x1=4 x2=3  (400l and 300l)
+
+
+** Proving Optimality
+
+Point (4,3) is suspected to be the optimal solution.
+It is the intersection of the two equations
+- 3*x1 + 6*x2 <= 30  (a)
+- 8*x1 + 4*x2 <= 44  (b)
+These equations are special because (4,3) satisfies them with equality.
+Let multiply (a) by 50/3, (b) by 25/4
+- 50*x1 + 100*x2 <= 500  (a)
+- 50*x1 + 25*x2  <= 275  (b)
+
+Each feasible production plan satisfies each of these ineq., and 
+Each feasible production plan satisfies the addition of these ineq., i.e
+100*x1 + 125*x2 <= 775
+
+The first part of the ineq is the profit.
+We have therefore shown that any feasible plan has a profit of at most 775.
+And the profit of (4,3) is 775.
+Hence (4,3) is optimal.
+
+** Definition of LP
+*** Definition
+A linear program consits of a linear objective function
+c_1*x_1 + ... + c_n*x_n
+and linear inequalities
+a_11*x_1 + ... + a_1n*x_n <= b_1
+...
+a_m1*x_1 + ... + a_mn*x_n <= b_m
+
+Find x_1, ..., x_n of maximum objective function value
+satisfying the linear inequalities.
+
+**** greater or equal instead?
+Think of multipliying by -1 if inequality in the other direction 
+
+*** Matrix Notation
+
+$max { C^T \dot X : x \in \R, A x \leq b}
+
+$A \in \R^{m n}$
+ 
+*** Def of feasible solution, optimal, bounded
+
+- A point x \in \R^n is caled feasible if x satisfies all linear constraints.
+
+- A feasible solution x is optimal if C^T * x >= C^T * y for all feasible solutions y.
+
+- A LP is bounded if there exists a constant M \in \R s.t. C^T * x <= M holds forall feasible x \in \R^n
+ 
    
-   
+** Linear algebra vs Linear programming
+
+- solving a linear system A x = b
+  Gaussian algorithm

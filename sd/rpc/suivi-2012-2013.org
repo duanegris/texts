@@ -1,20 +1,44 @@
 
 * IMW Middleware
 
-| séance | Strasbourg             | date  | Evry                    | date  |
-|--------+------------------------+-------+-------------------------+-------|
-|      1 | Intro générale         | 25/09 | Cours 1                 | 26/09 |
-|      2 | Intro client/serveur   | 25/09 | TP: http                | 26/09 |
-|      3 | RPC : TP interm. layer | 27/09 | TP:protocole            | 28/09 |
-|      4 | RPCgen (hello world)   | 27/09 | Cours 2                 | 28/09 |
-|      5 | RPCgen (chat)          | 02/10 | TD 8.1+8.2 : TD RMI     | 03/09 |
-|      6 | RMI                    | 02/10 | TP 8.3 - RPC + RMI      | 03/09 |
-|      7 |                        | 09/10 | Cours 3 (7 à 7.4)       | 05/10 |
-|      8 |                        | 09/10 | TD 8.4 - init. CORBA    | 05/10 |
-|      9 |                        | 10/10 | TP 8.5 - Init. CORBA    | 10/10 |
-|     10 |                        | 10/10 | TP 8.5 - Init. CORBA    | 10/10 |
-|     11 |                        | 16/10 | Cours 4 (7.4 à 7.6)     | 12/10 |
-|     12 |                        | 16/10 | TD 8.6 - services CORBA | 12/10 |
-|     13 |                        | 17/10 | TP 8.7 - services CORBA | 17/10 |
-|     14 |                        | 18/10 | TP 8.7 - service CORBA  | 17/10 |
-|     15 | Exam machine           | 24/10 | Examen machine          | 24/10 |
+
+** 2013-2014
+
+| séance | Strasbourg                     | date  | Evry                    | date  |
+|--------+--------------------------------+-------+-------------------------+-------|
+|      1 | Intro générale+intro RPC archi | 02/10 | Cours 1                 | 26/09 |
+|      2 | Intro client/serveur           | 14/10 | TP: http                | 26/09 |  <- WE'RE HERE 
+|      3 | RPC : TP interm. layer         | 16/10 | TP:protocole            | 28/09 |
+|      4 | RPCgen ex. types simpes        | 16/10 | Cours 2                 | 28/09 |
+|      5 | RPCgen ex. chat                | 06/11 | TD 8.1+8.2 : TD RMI     | 03/09 |
+|      6 | RPCgen ex. chat                | 06/11 | TP 8.3 - RPC + RMI      | 03/09 |
+|      7 | RMI présentation               | 25/11 | Cours 3 (7 à 7.4)       | 05/10 |
+|      8 | RMI ex add types simples       | 29/11 | TD 8.4 - init. CORBA    | 05/10 |
+|      9 | RMI ex. chat (à rendre)        | 06/12 | TP 8.5 - Init. CORBA    | 10/10 |
+|     10 | Corba présentation             | 09/12 | TP 8.5 - Init. CORBA    | 10/10 |
+|     11 | Corba                          | 11/12 | Cours 4 (7.4 à 7.6)     | 12/10 |
+|     12 | Corba                          | 18/12 | TD 8.6 - services CORBA | 12/10 |
+|     13 | Corba                          | 18/12 | TP 8.7 - services CORBA | 17/10 |
+|     14 | Corba                          | 13/01 | TP 8.7 - service CORBA  | 17/10 |
+|     15 | Exam machine                   | 13/01 | Examen machine          | 24/10 |
+
+
+** 2012-2013
+
+| séance | Strasbourg               | date  | Evry                    | date  |
+|--------+--------------------------+-------+-------------------------+-------|
+|      1 | Intro générale           | 25/09 | Cours 1                 | 26/09 |
+|      2 | Intro client/serveur     | 25/09 | TP: http                | 26/09 |
+|      3 | RPC : TP interm. layer   | 27/09 | TP:protocole            | 28/09 |
+|      4 | RPCgen ex. types simpes  | 27/09 | Cours 2                 | 28/09 |
+|      5 | RPCgen ex. chat          | 02/10 | TD 8.1+8.2 : TD RMI     | 03/09 |
+|      6 | RPCgen ex. chat          | 02/10 | TP 8.3 - RPC + RMI      | 03/09 |
+|      7 | RMI présentation         | 09/10 | Cours 3 (7 à 7.4)       | 05/10 |
+|      8 | RMI ex add types simples | 09/10 | TD 8.4 - init. CORBA    | 05/10 |
+|      9 | RMI ex. chat (à rendre)  | 10/10 | TP 8.5 - Init. CORBA    | 10/10 |
+|     10 | Corba présentation       | 16/10 | TP 8.5 - Init. CORBA    | 10/10 |
+|     11 | Corba                    | 17/10 | Cours 4 (7.4 à 7.6)     | 12/10 |
+|     12 | Corba                    | 18/10 | TD 8.6 - services CORBA | 12/10 |
+|     13 | Corba                    | 22/10 | TP 8.7 - services CORBA | 17/10 |
+|     14 | Corba                    | 23/10 | TP 8.7 - service CORBA  | 17/10 |
+|     15 | Exam machine             | 24/10 | Examen machine          | 24/10 |

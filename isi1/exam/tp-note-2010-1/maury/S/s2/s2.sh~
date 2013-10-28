@@ -1,0 +1,30 @@
+#!/bin/sh
+
+k=0
+if [ $1 -e ]
+then 
+    if [ $2 -d ]
+    then
+	`cd $2`
+	if [ $1 -e ]
+	then
+	    if [ $3 -f ]
+	    then
+		echo "$1 taille : "`ls -l | grep $1 | cut -f5 -d' '`
+		if [ $1 -x ]
+		then
+		    echo " $1 trouve "
+		    k=1
+		else
+		    echo " $1 non executable "
+		fi
+	    else
+		echo " fichier non trouve "
+	    fi
+	else
+	    echo " parametre non conforme "
+	fi
+    else 
+	echo " parametre 1 non conforme "
+    fi
+    echo " $k "

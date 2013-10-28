@@ -1,0 +1,121 @@
+%% LyX 1.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+%\geometry{verbose,a4paper,tmargin=20mm,bmargin=20mm,lmargin=20mm,rmargin=20mm}
+\geometry{verbose,a4paper,tmargin=15mm,bmargin=15mm,lmargin=15mm,rmargin=15mm}
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{multicol}
+\usepackage{listings}
+
+\usepackage{babel}
+\makeatother
+\begin{document}
+
+
+
+\begin{center}
+\textbf{\large Programmation Distribuée 2009 }
+
+\textbf{\large Premiers pas avec Corba}
+\end{center}
+http://cafeteria.u-strasbg.fr/\~{}gancars
+
+
+Pour tous les exercices, vous ferez attention a toujours lancer
+les applications serveur et cliente sur deux machines DIFFERENTES.
+
+Pensez bien à tuer tous vos processus à chaque fois que vous vous delogez d'une machine Linux.
+%%%
+%% EXERCICE 1
+%%%
+\section*{Exercice 1}
+
+\begin{enumerate}
+ \item Rendez-vous dans le répertoire \texttt{Carre}
+\item {  Réaliser la projection de l'interface IDL :       \texttt{idlj -fall -oldImplBase Icarre.idl} \\
+  Notez tous les fichiers \texttt{*.java} qui sont générés automatiquement. 
+  \textit{IMPORTANT} : ouvrir les fichiers \texttt{Icarre.java} et \texttt{IcarreOperations.java}. En déduire la classe que vous devez utiliser pour réaliser  l'implantation du service.}
+\item Ecrire la classe implantant le service. 
+\item Corriger le code du serveur (Serveur.java) et du client (Client.java)
+\item Lancer la compilation complète par \texttt{UTILS/compile}'
+
+\item { Lancer l'application en commencant par le serveur par \texttt{java Serveur} qui normalement affiche son IOR (\textit{Interoperable Object Reference}).
+
+  (\textit{ATTENTION : la chaine "IOR:" fait partie de l'IOR du serveur})}
+\item Lancer le client :  \texttt{java Client IOR\_du\_serveur nombre}
+\item {\begin{enumerate}
+       \item Lancez le serveur sur une machine par \texttt{java Serveur}
+       \item Exécuter le client sur une autre machine par exemple : \texttt{java Client <IOR:...> 4}
+\end{enumerate}
+            Question : Comment le client arrive-t-il à savoir sur quelle machine se trouve le serveur ? ( java -jar UTILS/IORDecoder.jar <IOR>)}
+\end{enumerate}
+N'oublier pas de tuer le serveur en vous deconnectant !
+
+
+\section*{Exercice 2}
+
+
+\begin{enumerate} 
+ \item  Recopier \texttt{Carre} dans un nouveau répertoire  que vous appelerez \texttt{Carre\_HOLDER}, (utiliser la commande 'cp -r')
+ \item {Modifier la fonction \texttt{long carre(in long source)} afin de faire passer le resultat de la fonction en second paramètre. Modifier le fichier \texttt{Icarre.idl} en conséquence.
+ \item Regarder le fichier \texttt{IcarreOperations.java} et modifier le fichier  \texttt{IcarreImpl.java} en conséquence.
+ \item Ecrire le code du serveur (Serveur.java) et du client (Client.java) et lancer l'application.}
+\end{enumerate}
+
+\paragraph*{Attention} Avant d'exécuter la commande "make", il faut déclarer le nom de l'interface par \texttt{export INTERFACE=<nom interface>}. Exemple : \texttt{export INTERFACE=Icarre}.
+
+\section*{Exercice 3}
+
+Le fichier \texttt{OpMatrice.idl} définit l'interface IDL d'un service proposant l'addition de 2 matrices.   En projetant l'interface \textit{idl} grâce a l'outil \texttt{idlj}, regarder en quel type Java est projeté le type IDL \texttt{long}.
+
+ Proposer une implementation CORBA de ce service.
+ Cette fois ci on pourra additioner des matrices rectangulaires  de dimension $n \times k$.
+
+ Remarque : Pour éviter de faire un copier/coller de l'IOR à partir du shell, on peut écrire l'IOR dans un fichier avec le serveur puis le lire depuis le client.  Dans le fichier IDL est défini une constante \texttt{iorfile} contenant le nom du fichier où l'on va stocker l'IOR.
+
+Dans le serveur pour écrire l'IOR dans un fichier utilisez le code :
+ \begin{lstlisting}
+    import java.io.*;
+           ...
+    FileOutputStream file = new FileOutputStream(iorfile.value);
+    PrintWriter out = new PrintWriter(file);
+    out.println(ior);out.flush();
+    file.close();
+ \end{lstlisting}
+Dans le client pour lire l'IOR dans un fichier utilisez le code :
+ \begin{lstlisting}
+    import java.io.*;
+        ...
+    FileReader file = new FileReader(iorfile.value);
+    BufferedReader in = new BufferedReader(file);
+    ior = in.readLine();
+    file.close();
+ \end{lstlisting}
+
+\section*{Exercice 4}
+Modifier votre programme afin que le serveur et le client utilise un serveur de noms (tnameserv)
+
+\section*{Exercice 5}
+
+\begin{enumerate} 
+ \item  Recopier \texttt{Carre} dans un nouveau répertoire  que vous appelerez  \texttt{Carre\_POA}.
+\item {Utiliser le \textit{Portable Object Adaptor} (POA) dans cette nouvelle version. Par rapport à l'exercice 1, un itermédiaire appelé \texttt{POA} se place entre le squelette de l'objet distant et l'ORB au niveau du serveur. Ce POA normalisé permet de faire interopérer le serveur avec differents ORBs (pas uniquement celui de java SUN) : 
+\begin{itemize}
+ \item Vous modifierez le fichier \texttt{compile} en enlevant l'option \texttt{-oldImplbase} lorsque vous appelez \texttt{idlj}.
+\item  Vous verrez alors que la projection IDL vers java change alors (le squelette généré n'est plus \texttt{\_IcarreImplBase} mais \texttt{IcarrePOA})
+\end{itemize}}
+\end{enumerate}
+
+\section*{Exercice 6}
+
+Le fichier \texttt{Annuaire.idl} définit l'interface IDL d'un service d'annuaire. Proposer une implementation CORBA de ce service équivalente à celle vue avec RMI. Pour cela, vous utiliserez le POA.
+   
+\end{document}

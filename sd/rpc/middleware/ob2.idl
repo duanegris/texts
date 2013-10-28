@@ -1,4 +1,0 @@
-interface jeu {
-    void init(in long v);
-    long essai(in long v);
-};

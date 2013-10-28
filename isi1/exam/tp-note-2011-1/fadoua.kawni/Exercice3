@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#On récupère les éléments de la date pour la construction du nom du répertoire à créer
+jj=`date +%d`
+mm=`date +%m`
+aa=`date +%y`	#[SG] on pourrait faire d'un coup
+
+rep=/tmp/executable_"$jj"_"$mm"_"$aa"
+
+
+#On ne crée le répertoire que s'il n'existe pas déjà
+if [ -e $rep ]
+then
+	echo "Le repertoire existe déjà."
+else
+	mkdir $rep
+	chmod g+rx $rep
+fi
+
+#La commande de copie vers rep est exécutée pour chaque fichier trouvé par find (ayant pour extension ".exe")
+find *.exe -exec cp '{}' $rep/ \; #[SG] find \*.exe …. , et pas de '' autour de {}
+ 

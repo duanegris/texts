@@ -1,0 +1,399 @@
+
+\setlength{\tabcolsep}{5pt}
+\noindent
+\begin{tabular}{lp{13.7cm}}
+\textsc{NOM}		&{\bf Stéphane \textsc{Genaud}}, \texttt{\url{http://icps.u-strasbg.fr/~genaud}}\\
+				& Né le 10 mars 1969. Français. Marié, 2 enfants. \\
+				  & Pôle API, Blvd S. Brant,\\
+				  & F-67400 Illkirch\\
+				  & Tél. : 03 68 \\ 
+				 & \texttt{genaud@unistra.fr}\\[5mm]
+
+\textsc{Formation}	& 2009:  Habilitation à Diriger les Recherches en Informatique, Université Henri Poincaré Nancy.
+      			  Titre: {\em Exécutions de programmes parallèles à passage de messages sur grille de calcul.}
+   				 Rapporteurs: 	Christophe Cérin (Univ. Paris Nord), 
+				   		   	Frédéric Desprez (INRIA),
+							Thierry Priol (INRIA). 
+							Examinateur: Pascal Bouvry (Univ. Luxembourg)
+							Garant: Jens Gustedt (INRIA).\\[5mm]
+%
+				& 1997:  Doctorat en Sciences, mention Informatique, Université Louis Pasteur, Strasbourg.
+      			  Titre: {\em Transformations de programmes \textsc{Pei} : applications au parall\'{e}lisme de donn\'{e}es}.
+		              Rapporteurs: Luc Bougé (\'{E}cole Normale Supérieure Lyon) et Patrice Quinton (Université de Rennes). Examinateur : Christian Lengauer (Université Passau, Allemagne).\\[2mm]
+			      & 1993: Diplôme d'\'{E}tudes supérieures Spécialisées (DESS) en Informatique du parallélisme, 
+				  Université de Franche-Comté, Besançon. mention {\em très bien}.\\[2mm]
+				& 1991: Bachelor of Sciences (BSc) in European Informatics, Sheffield Hallam University.\\[5mm]
+%{\bf 1989}  & {\bf Diplôme Universitaire de Technologie (DUT)} en informatique, Institut Universitaire de Technologies de Nantes, Université de Nantes.\\
+%\end{tabular}
+
+
+\textsc{Emplois} 		& depuis sept. 2009: Maître de conférences à l'Université de Strasbourg. Membre du LSIIT (Laboratoire des Sciences de l'Image, de l'Informatique et de la Télédétection) unité mixte de recherche de l'Université de Strasbourg et du CNRS (UMR 7005),
+équipe ICPS (Image et Caclul Parallèle Scientifique).\\[2mm]
+ 	                  & 2007--2009: Détaché Chargé de Recherches au LORIA, équipe projet 
+				  INRIA \textsc{AlGorille}.\\[2mm]
+
+				& 1998--2007: Maître de conférences à l'IECS, Université Robert Schuman de Strasbourg (aujourd'hui \'{E}cole de Management de Strasbourg).\\[2mm]
+				& 1998--2007: Membre du LSIIT, UMR de l'Université Louis Pasteur et du CNRS (UMR 7005), 
+équipe ICPS (Image et Caclul Parallèle Scientifique).\\[2mm]
+				& 1996--1998: Attaché Temporaire d'Enseignement et de Recherches (ATER) au département d'informatique 
+de l'IUT de Strasbourg Sud.\\[2mm]
+				& 1994--1996: Doctorant à l'Université Louis Pasteur (Strasbourg). Directeur de thèse: Guy-René Perrin.\\[2mm]
+				& 1993--1994: Doctorant à l'Université de Franche-Comté (Besançon). Directeur de thèse: Guy-René Perrin.\\[5mm]
+
+
+\textsc{Responsabilités} & 2002--2007: Responsable du thème de recherche \textit{Grilles} dans l'équipe ICPS du LSIIT.\\[2mm]
+				 & 2001-2007 : Responsable de la filière \textit{Système d'Information} du master Management International de l'IECS.\\[2mm]
+\end{tabular}
+%------------- P H O T O ---------------------------
+\pgfdeclareimage[interpolate=true,width=2.3cm]{idphoto}{stephane_genaud_gray_picture}
+\pgfputat{\pgfxy(14.5,19)}{\pgfuseimage{idphoto}}
+%          pgfxy(width,height) from      
+
+
+
+%---------------------------------------------------------------------------------------------
+\newpage
+\small
+\bibliographystyle{plain}
+\begin{thebibliography}{99}
+
+\subsection*{Thèses}
+
+\bibitem{hdr}
+\textbf{Stéphane Genaud}.
+\newblock 
+{\em Exécutions de programmes parallèles à passage de messages sur grille de 
+calcul}.
+\newblock 
+Habilitation à diriger des recherches de l'université Henri Poincaré, 
+Nancy. Décembre 2009.
+\newblock 
+Rapporteurs : C. Cérin (Paris 13), F. Desprez (INRIA Rhônes-Alpes), 
+T. Priol (INRIA Bretagne-Atlantique).\\[2mm]
+
+\bibitem{icps-1997-4}
+\textbf{Stéphane Genaud}.
+\newblock {\em Transformations de programmes \textsc{Pei} : applications au
+  parallélisme de données}.
+\newblock Thèse de doctorat de l'université Louis Pasteur, Strasbourg, Janvier 1997.
+\newblock Rapporteurs : Luc Bougé et Patrice Quinton. 
+
+\subsection*{Chapitre de livre}
+
+\bibitem{icps-book}
+\textbf{Stéphane Genaud} et Choopan Rattanapoka.
+\newblock 
+\emph{A Peer-to-Peer Framework for Message Passing Parallel Programs.}
+\newblock 
+Parallel Programming and Applications in Grid, P2P and Network-based System,
+in {\em Advances In Parallel Computing} Series. Editor G. R. Joubert.
+IOS Press, juin 2009. 
+ 
+
+\subsection*{Articles en revues internationales}
+
+\setlength{\itemsep}{1.5mm}
+
+
+\bibitem{icps-2009-217}
+\newblock \textbf{Stéphane Genaud}, Emmanuel Jeannot et Choopan Rattanapoka.
+\newblock Fault-Management in P2P-MPI.
+\newblock {\em International Journal of Parallel Programming}, Springer, 
+37(5):433--461, août 2009.
+
+
+\bibitem{icps-2008-188}
+\textbf{Stéphane Genaud}, Pierre Gançarski, Guillaume Latu, Alexandre Blansché, 
+Choopan Rattanapoka et Damien Vouriot. \newblock Exploitation of a parallel 
+clustering algorithm on commodity hardware with P2P-MPI.
+\newblock 
+%---------------------------------------- collab ---------------------------------------------
+%\newpage
+\bigskip
+\rubrique{\large\bf Détails}
+
+
+\section{Activités d'enseignement}
+
+\label{sc:ensgnt-univ}
+
+\begin{itemize}
+
+\item[$\diamond$] \`A la rentrée 2009, maître de conférences en informatique rattaché à l'EM%
+\footnote{Ecole de Management, établissement créé fin 2007 par la fusion des établissement IECS et IAE de l'Université R. Schuman}, 
+Université de Strasbourg. Service d'enseignement partagé entre les établissements:
+\begin{itemize}
+	\item EM Strasbourg
+	\item ENSIIE\footnote{Ecole Nationale Supérieure d'Informatique pour l'Industrie et l'Entreprise, basée à Evry (ex-IEE du CNAM)}, antenne de Strasbourg. Responsable du cours \textit{Systèmes Informatiques}, première année.
+      \item UFR mathématiques-informatique. \textit{Systèmes distribués, calcul parallèles, grilles}, Master ILC M2. \\[2mm]
+\end{itemize}
+
+\item[$\diamond$] Maitre de conférences en informatique à l'IECS, université Robert Schuman, Strasbourg (1998-2007).\\
+	Principaux cours assurés en Master International à la Gestion:
+\begin{itemize}
+	\item Technologies des systèmes d'information
+	\item Algorithmique - Programmation (application avec Java)
+	\item Architecture des applications web (architecture, JavaScript, PHP, base de données)
+	\item Outils pour la gestion de projet
+	\item Réseaux \\[2mm]
+\end{itemize}
+
+\item [$\diamond$]
+Vacataire 
+\begin{itemize}
+\item DESS puis Master informatique pro Université Louis Pasteur (ULP). Cours de systèmes distribués. (2001-2007) 
+\item Master recherche informatique ULP. Cours d'options {\em Grilles informatiques}. (2002-2003)
+\item licence informatique ULP. TD du cours système d'exploitation. (1999-2001). 
+\item CNAM de Strasbourg, filière informatique. 
+cours de programmation parallèlele dans l'unité de valeur {\em conception et développement du logiciel} 
+du cycle B (1/3 de l'UV). (1996-2000).
+Cours magistral et TD (TD assurés avec Franco Zaroli).
+\item école d'ingénieur \textit{ENSPS}. Outils de gestion de projets. (2000)
+\item école d'ingénieur \emph{Ecole et Observatoire de Physique du Globe} (1997-1999).
+Calcul parallèle. Généralités et application à des méthodes de résolution directe de systèmes d'équations 
+linéaires en data-paralléle. 
+\item DESS informatique du parallélisme (1993).\\[2mm]
+\end{itemize}
+
+\item [$\diamond$]
+ATER plein-temps à l'IUT d'informatique de Strasbourg. (1996-1998). 
+Principaux cours assurés: l'algorithmique, avec comme support la programmation en langage C et C++, 
+et responsable de la première partie du cours système d'exploitation. \\[2mm]
+
+
+\end{itemize}
+
+
+
+
+
+\section{Responsabilités administratives}
+
+%------------------------------------
+
+\begin{itemize}
+\item[$\bullet$] \textbf{Comissions Spécialistes / Comité d'experts}:
+\begin{itemize}
+\item 2004--2008: Membre de plusieurs commissions de spécialistes (section CNU 27).
+	\begin{itemize}
+		\item titulaire à l'Université Louis Pasteur (Strasbourg) entre 2004 et 2008,
+		\item suppléant à l'Université de Franche-Comté (Besançon) entre 2005 et 2008,
+		\item suppléant à l'Université Henri Poincaré (Nancy) entre 2006 et 2008.\\
+	\end{itemize}
+\item 2010-- \'Elu membre du comité d'experts (9 membres) pour la section 27 Université de Strasbourg en 2010.
+Membre des comités de sélection:
+	\begin{itemize}
+		\item poste MC 210 UdS Réseaux et Protocole, 2010,
+		\item poste MC 1207 Université de Franche-Comté, IUT Belfort Montbéliard, 2010.\\
+	\end{itemize}
+\end{itemize}
+
+
+
+\item[$\bullet$] \textbf{Pédagogique}:
+Responsable de la filière d'enseignement \emph{système d'information} à l'IECS, Strasbourg. (2001--2007)
+\end{itemize}
+\vspace{1cm}
+
+
+
+
+\section{Animation scientifique}
+
+\begin{itemize}
+\item[$\bullet$] Obtention de la prime d'excellence scientifique (PES) à partir d'octobre 2009.
+\end{itemize}
+
+\subsection{Responsabilités éditoriales}
+%------------------------------------
+\begin{itemize}
+\item[$\bullet$] 
+Membre des comité de programmes des conférences internationales:
+12th International Conference on Algorithms and Architectures for Parallel Processing (ICA3PP-12), 2012 (Fukuoka, Japan),
+13th IEEE International Conference on High Performance Computing and Communications, 2011 (Banff, Canada),
+IEEE/ACM International Conference on Grid Computing, 2008 (Tsukuba, Japon), et 2010 (Bruxelles, Belgique),
+21th IASTED International Conference on Parallel and Distributed Computing and Systems, 2010 (Marina del Rey, USA),
+International Symposium on Grid and Distributed Computing, 2008 (Hainan Island, Chine). 
+\item [$\bullet$]
+Membre du comité de rédaction de la revue Technique et Science Informatiques (2005--2009).
+\item [$\bullet$]
+Membre du comité scientifique du département \emph{Expertise pour la recherche de l'UdS} (sept 2010--).
+Le comité comprend 17 membres nommés, représentants les équipes scientifiques les plus impliquées 
+par rapport aux équipements de calcul de l'Université. Le rôle du comité est de piloter
+l'investissement en matière de calcul, et de promouvoir les projets présentant le plus 
+d'intérêt scientifique par attribution de ressources.
+\end{itemize}
+
+
+\subsection{Animation de projets}
+%------------------------------------
+\begin{itemize}
+\item[$\bullet$]
+\textbf{Co-animateur} d'une action d'animation scientifique 
+dans le cadre de l'action de développement technologique (ADT) de Aladdin de l'INRIA, 
+visant à péreniser l'outil scientifique Grid5000. (07/2008--06/2012). 
+Conjointement à l'ADT, l'animation scientifique est organisée autour de neuf actions d'animations baptisées \emph{défis}.
+Je co-anime avec Nouredine Melab (LIFL, Université de Lille) le défi 
+``{\em scalable application for large scale systems (algorithm, programming, execution models)}''.\\
+
+\item[$\bullet$]
+\textbf{Responsable du thème} \emph{programmation parallèle sur les grilles} au sein l'équipe ICPS,
+du laboratoire LSIIT. Ce thème, parmi trois autres, est représenté par 3 à 4 permanents (2002--2007).\\
+
+
+\item[$\bullet$]
+\textbf{Porteur d'un projet d'Action Concertée Incitative}. Projet TAG, 
+pluri-disciplinaire dans de l'ACI GRID (Globalisation des ressources informatiques et des données) 
+du ministère de la recherche. Doté d'un budget de 182 000 \euro{} et d'un poste d'ingénieur). 
+(12/2001 -- 12/2003).\\
+
+\end{itemize}
+
+
+\subsection{Participation à des projets scientifiques}
+
+\begin{itemize}
+\item[$\bullet$]
+Participant au projet USS-SimGrid coordonné par Martin Quison, LORIA, Nancy. 
+Projet accepté dans le cadre de l'appel d'offre ARPEGE-08 (systèmes embarqués et grandes infrastructures).
+L'objectif est d'élargir les capacités de l'environnement de simulation SimGrid pour satisfaire des besoins plus divers.
+Je devrai prendre part à mi-projet, à un work package dont l'objectif est d'enregistrer des traces d'exécutions (des programmes
+MPI en particulier) et de les rejouer dans le simulateur. (2009 --2011).\\
+
+
+\item[$\bullet$]
+Participant au projet SPADES, coordonné par Eddy Caron, LIP-ENS Lyon.
+L'objectif est de concevoir et construire un intergiciel capable de gérer un environnement 
+dans lequel la disponibilité des
+ressources change très rapidement. En particulier, cet intergiciel doit donner accès de manière fugace à 
+des équipements de calculs très haute performance. (2009 -- 2011).\\
+
+
+\item[$\bullet$]
+Participant au projet HOUPIC coordonné par \'{E}ric Sonnedrücker à l'Institut de Recherche 
+Mathématique Avancée (IRMA) à Stasbourg. 
+Projet accepté dans le cadre de l'appel d'offre ANR-CIS-06 (Calcul Intensif et Simulation). 
+L'objectif est le développement de code scientifiques pour la simulation de nombreux phénomènes physiques mettant en jeu des particules chargées, et leurs exécutions sur des systèmes parallèles ou distribués à large échelle.
+Je prendrai part en dernière partie de projet, à l'expérimentation et à l'adaptation des codes développés 
+sur des architectures massivement parallèles et/ou distribuées à large échelle.
+(2007 -- 2009).\\
+
+
+\item[$\bullet$] Participant au projet MDA (Masse de Données Astronomiques) coordonné par l'observatoire de Strasbourg dans le cadre de l'ACI MD (Masse de Données). (2004 -- 2006).\\
+
+%\item Orateur dans diverses manifestations scientifiques sur ma thématique de recherche 
+% * Journées \textit{Grilles} du CINES en mars 2003 à Montepllier, 
+% * conférence et papier invité à GridUSe-2004 au workshop "What we have learned" 
+%   de l'école thématique sur la \textit{globalisation des ressources informatiques et des données : Utilisation et Services},
+%   juin 2004, Supélec Metz). 
+% * Exposé Invité, Paristic 2006, 23 nov 2006, LORIA. Track 'Grid5000'. 
+%   "Extensibilité d'un tracé de rais en tomographie sismique sur Grid5000."
+
+% * Démonstrateur à SuperComputing'95 de l'environnement de développement Pei/VPei
+% * Démonstrateur à SuperComputing'08 de l'environnement de développement P2P-MPI
+
+\item[$\bullet$]
+Correspondant pour l'équipe ICPS du groupe RGE (Réseau Grand Est), action géographique du groupe de recherche
+\textit{Architecture, Système et Réseaux} du CNRS (GDR 725 ASR). RGE organise trois fois par an, une journée
+d'exposés scientifiques sur le thème réseau et parallélisme, et grilles. Les équipes participantes appartiennent
+à des laboratoires situés dans l'Est de la France.
+%J'ai organisé la journée RGE du 01/06/2006 à Strasbourg.
+
+\end{itemize}
+
+\subsection{Participation à des jury de thèse}
+
+
+\begin{itemize}
+\item[$\bullet$] 
+Rapporteur de la thèse de Sébastien Miquée, Univ. Franche-Comté (soutenance 25/01/2012), 
+\textit{Exécution d'applications parallèles en environnements hétérogènes et volatils~: 
+déploiement et virtualisation},
+rapporteur C. Cérin (U. Paris 13), 
+encadrants R. Couturier et D. Laiymani (U. Franche-Comté) 
+
+
+\item[$\bullet$] 
+Rapporteur de la thèse de Fabrice Dupros, Univ. Bordeaux 1 (soutenance 13/12/2010), 
+\textit{Contribution à la modélisation numérique de la propagation des ondes sismiques sur architectures
+multic{\oe}urs et hiérarchiques},
+rapporteur S. Lanteri (INRIA Sophia-Antipolis), 
+encadrants D. Komatitsch (U. Pau) et J. Roman (Institut Polytechnique de Bordeaux).
+
+\item[$\bullet$] 
+Examinateur de la thèse d'Heithem Abbès, Univ. Paris 13 + Univ. La Manouba, Tunis (soutenance 15/12/2009), 
+\textit{Approches de décentralisation de la gestion des ressources dans les Grilles},
+rapporteurs M. Jmaiel (Université de Sfax) et F. Cappello (INRIA-U. Urbana-Champain), 
+encadrants C. Cérin (U. Paris 13) et M. Jemni (École Supérieure des Sciences et Techniques de Tunis).
+\end{itemize}
+
+
+
+
+
+\section{Encadrements}
+
+\subsection{Thèses}
+\begin{enumerate}
+
+\item 2000/2006 : co-encadrement de Marc Grunberg avec Catherine Mongenet 
+(inscrit en thèse parallèlement à sa fonction d'ingénieur d'études au Réseau National de Surveillance Sismique). 
+Taux de co-encadrement: \~{}70\%.
+Directeurs de thèse: Catherine Mongenet et Michel Granet (Physicien, ULP).
+La thèse \underline{soutenue en septembre 2006} est intitulée \textit{Conception d'une méthode de maillage 3D parallèle pour la construction d'un modèle de Terre réaliste par la tomographie sismique} - rapporteurs : Thierry Priol (IRISA, Rennes) et Denis Trystram (INPG, Grenoble).
+Marc Grunberg occupe toujours aujour'hui un poste d'ingénieur d'études au Réseau National de Surveillance Sismique, 
+\'{E}cole et Observatoire de Géophysique du Globe.\\
+
+\item 2001/2004 : co-encadrement d'Arnaud Giersch avec Frédéric Vivien. Taux de co-encadrement: \~{}40\%.
+Directeur de thèse Guy-René Perrin (ULP).
+La thèse \underline{soutenue en décembre 2004} est intitulée \textit{Ordonnancement sur plates-formes hétérogènes de tâches partageant des données} - rapporteurs : Denis Trystram (INPG, Grenoble) et Henri Casanova (UCSD, San Diego).
+Arnaud Giersch a aujourd'hui un poste de maître de conférences à l'IUT d'informatique de Belfort, université de Franche-Comté.\\
+
+
+
+\item 2004/2008 : encadrement de Choopan Rattanapoka. Taux d'encadrement: 100\%. Directeur de thèse: Catherine Mongenet. 
+La thèse \underline{soutenue en avril 2008} est intitulée \textit{P2P-MPI: A Fault-tolerant Message Passing Interface Implementation for Grids} - rapporteurs : Franck Cappello (INRIA, Orsay) et Thilo Kielmann (Vrije Universiteit, Amsterdam). 
+Choopan Rattanapoka a aujourd'hui un poste permanent d'assistant professor au
+Department of Eletronics Engineering Technology du King Mongkut's University of Technology, à Bangkok (Thailande).
+
+
+
+\end{enumerate}
+
+\subsection{Stages de DEA/Master}
+\begin{enumerate}
+\item 2002 : Dominique Stehly. Mémoire intitulé \textit{Ordonnancement d'applications parallèles sur la grille}, soutenu 07/2002.
+
+\item 2004 : Choopan Rattanapoka. Mémoire intitulé  \textit{P2P-MPI : A Peer-to-Peer Framework for Robust Execution of Message Passing Parallel Programs on Grids}, soutenu 07/2004.
+
+\item 2006 : Constantinos Makassikis. Co-encadrement avec Jean-Jacques Pansiot et Guillaume Latu. Mémoire intitulé  \textit{Modèle de coût des communications TCP à un niveau applicatif}, soutenu 06/2006.
+
+\item 2006 : Ghazi Bouabene. Mémoire intitulé  \textit{Sélection de pairs et allocation de tâches dans P2P-MPI}, soutenu 06/2006.
+
+\item 2011 : Etienne Michon. Co-encadrement avec Julien Gossa. Mémoire intitulé  \textit{Allocation de ressources et ordonnancement côté client dans un environnement de Clouds}, en cours.
+
+\end{enumerate}
+
+
+\subsection{Autres}
+Encadrement internship INRIA\\
+\begin{itemize}
+\item[$\bullet$]  {\it Optimisation de l'opération collective MPI all-to-all}, Antonio Grassi, Master de Facultad de Ingeniería, Universidad de la República, Montevideo, Uruguay. 4 mois, avril-août 2008, co-encadré avec Emmanuel Jeannot (AlGorille, LORIA).
+\item[$\bullet$]  {\it Data Management in P2P-MPI}, Jagdish Achara, B-Tech de LNMIIT Jaipur, Inde. 3 mois, mai-août 2009. 
+\end{itemize}
+~\\
+ 
+J'ai encadré ou co-encadré des stages ou projets tutorés d'étudiants de l'ULP (150h, un mois plein). 
+Parmi les plus récents:\\
+\begin{itemize}
+\item[$\bullet$]  {\it Mise en {\oe}uvre d'une technique de segmentation par ligne de partage des eaux dans un environnement distribué hétérogène}, Lionel Ketterer, projet tutoré, février 2007, co-encadré avec Sebastien Lefèvre (LSIIT).
+\item[$\bullet$]  {\it Distribution de calculs de Pricing d'options au modele Europeen sur grille}, Nabil Michraf et Khalid Souissi, projet tutoré, février 2006, co-encadré avec Stéphane Vialle (Supelec).
+
+\item[$\bullet$]  {\it Parallélisation de la méthode Adaboost}, Abdelaziz Gacemi, projet tutoré, février 2007.
+\item[$\bullet$] {\it Réalisation d'un portail web pour P2P-MPI avec SOAP}, David Michea, projet tutoré, février 2005.
+
+\item[$\bullet$] {\it Parallelisation de la méthode MACLAW}, stage master, avril-juillet 2006, Damien Vouriot, co-encadré avec Pierre Gancarski (LSIIT).
+\item[$\bullet$] {\it Heursitiques d'ordonnancement basées sur des traces d'exécution pour pour programmes parallèles}, Ghazi Bouabene, stage master, juillet-septembre 2006.
+\item[$\bullet$]  {\it Outil de visualisation du réseau P2P dans P2P-MPI}, Ghazi Bouabene, stage licence, juin-août 2005.
+\end{itemize}
+

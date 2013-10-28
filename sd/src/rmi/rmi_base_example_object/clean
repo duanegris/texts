@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SERV_DIR=s
+CLI_DIR=c
+
+set -v
+\rm -rf ${SERV_DIR} ${CLI_DIR} 
+\rm -f listing* *~ *.class

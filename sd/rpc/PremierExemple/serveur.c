@@ -3,7 +3,7 @@
 #include <rpc/xdr.h>
 #include <rpc/rpc.h>
 
-
+//  comment for PROGNUM:  public numbers range from  0x20000000 to 0x3fffffff.
 #define PROGNUM 0x20000100
 #define VERSNUM 1
 #define PROCNUM 1
@@ -22,7 +22,7 @@ int * proc_dist(int *n) {
 
 
 int main (void) {
-  registerrpc(/* prognum */ PROGNUM,
+  registerrpc(/* prognum */ PROGNUM,  /* this 536871168 in decimal */
 	     /* versnum */ VERSNUM,
 	     /* procnum */ PROCNUM,
 	     /* pointeur sur fonction */  proc_dist,

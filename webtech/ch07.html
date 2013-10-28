@@ -1,0 +1,95 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Chapter 7. Fonctionnalités Récurrentes</title><link rel="stylesheet" href="duaneg-docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.html" title="Notes de cours Apache+PHP+MySQL"><link rel="up" href="index.html" title="Notes de cours Apache+PHP+MySQL"><link rel="prev" href="ch06.html" title="Chapter 6. Accéder à une base MySQL avec PHP"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 7. Fonctionnalités Récurrentes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> </td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="id36118964"></a>Chapter 7. Fonctionnalités Récurrentes</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="ch07.html#id36118976">Upload</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch07.html#id36119026">Formulaire HTML</a></span></dt><dt><span class="sect2"><a href="ch07.html#id36119075">Traitement PHP</a></span></dt></dl></dd></dl></div><p>
+Certains besoins fonctionnels reviennent en permanence. Par exemple,
+charger un fichier vers le serveur (upload) est un besoin qui revient dans
+d'innombrables situations.  
+</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id36118976"></a>Upload</h2></div></div></div><p>
+
+La figure ci-dessous montre un exemple de page HTML permettant de charger 
+un fichier photo vers le serveur (upload). 
+
+</p><div class="figure"><a name="fileupload_form"></a><p class="title"><b>Figure 7.1. Exemple de file upload form</b></p><div class="figure-contents"><div class="screenshot"><div><img src="upload.png" alt="Exemple de file upload form"></div></div></div></div><p><br class="figure-break">
+
+Comme pour le traitement des données postées par formulaire,
+charger un fichier comporte conceptuellement deux étapes:
+</p><div class="itemizedlist"><ul type="disc"><li><p> Un formulaire HTML qui permet de sélectionner le fichier,</p></li><li><p> Un fichier PHP de traitement qui manipule le fichier transféré.</p></li></ul></div><p>
+</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36119026"></a>Formulaire HTML</h3></div></div></div><p>
+Le champ permettant de sélectionner un fichier et le bouton 'Choisir' 
+sont produits par le navigateur quand il rencontre la balise HTML
+<span><strong class="command">&lt;input type="file"&gt;</strong></span>.
+
+Cette balise, comme tous les autres champs input doit être dans un
+formulaire (<span><strong class="command">&lt;form&gt;</strong></span>).
+Un exemple HTML de base pour cette fonctionnalité est donné ci-dessous: 
+
+</p><pre class="programlisting">
+&lt;form enctype="multipart/form-data" action="uploader.php" method="POST"&gt;
+      &lt;input type="hidden" name="max_file_size" value="100000" /&gt;
+      Choisir fichier: &lt;input name="fichier_photo" type="file" /&gt;&lt;br/&gt;
+      &lt;input type="submit" value="Soumettre" /&gt;
+&lt;/form&gt;
+</pre><p>
+
+Ici, en appuyant sur le bouton de type submit "Soumettre", le formulaire
+va diriger les données du formulaires vers le fichier de traitement 
+<code class="filename">uploader.php</code>. La propritété <span><strong class="command">multipart/form-data</strong></span> 
+permet au fichier de traitement de réagir correctement.
+On passe aussi dans un champ caché la taille (en octets) maximale qu'on souhaite
+pouvoir transmettre.
+</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id36119075"></a>Traitement PHP</h3></div></div></div><p>
+Quand la page <code class="filename">uploader.php</code> est exécutée, le fichier chargé est
+stocké par le serveur web dans un espace de stockage temporaire. Si il n'est pas
+déplacé rapidement, il sera détruit par le serveur web.
+</p><p>
+Pour localiser ce fichier temporaire et les informations associées, nous allons
+consulter une variable renseignée par PHP ( à la façon dont on le faisait quand
+il fallait récupérer des données d'un formulaire stockées pour le transport dans
+la variable <code class="varname">$_POST</code>).
+</p><p>
+Pour le transfert de fichier, on utilise la variable <code class="varname">$_FILES</code>.
+Cette variable est renseignée par PHP à l'arrivée sur le traitement du fichier.
+C'est un vecteur, avec un élément par fichier chargé (le forumlaire 
+pouvait permettre le chargement de plusieurs fichiers).
+Chaque élement est indexé par le nom du champ HTML du formulaire.
+Dans notre exemple, les informations sont trouvées par <code class="varname">$_FILES['fichier_photo']</code>.
+Chaque élément est lui-même un vecteur de propriétés: le nom, le type, le nom temporaire, l'erreur, 
+la taille du fichier.
+
+La structure en PHP de <code class="varname">$_FILES</code> pour notre exemple pourrait être:
+</p><pre class="programlisting">
+Array
+(
+    [fichier_photo] =&gt; Array
+        (
+            [name] =&gt; baby.jpg
+            [type] =&gt; image/jpeg
+            [tmp_name] =&gt; /tmp/php/php1h5j1o 
+            [error] =&gt; UPLOAD_ERR_OK  (= 0)
+            [size] =&gt; 45654 
+        )
+)
+</pre><p>
+Et on peut récupérer par exemple le nom de fichier original par <code class="varname">$_FILES['fichier_photo']['name']</code>.
+</p><p>
+Un code PHP typique utilisera la fonction prédéfinie <span><strong class="command">move_uploaded_file()</strong></span>
+pour transférer le fichier temporaire vers un endroit de stockage définitif. Dans l'exemple
+suivant, on transfère le fichier temporaire vers un répertoire <code class="varname">images/</code>
+en renommant au passage le fichier temporaire avec le nom original du fichier.
+
+</p><pre class="programlisting">
+&lt;?php
+
+$donnees = "images/";
+$nom_final  = $donnees. basename( $_FILES['fichier_photo']['name']); 
+
+if (move_uploaded_file($_FILES['fichier_photo']['tmp_name'], $nom_final)) {
+    echo "Le fichier a ete charge sur le serveur 
+          (taille=" . ['fichier_photo']['size'] . ")";
+} 
+else{
+    echo "Erreur lors du transfert vers le serveur.";
+}
+?&gt;
+</pre><p>
+
+
+</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> </td></tr><tr><td width="40%" align="left" valign="top">Chapter 6. Accéder à une base MySQL avec PHP </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div></body></html>

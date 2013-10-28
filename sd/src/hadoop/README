@@ -2,6 +2,16 @@
 Comment compiler et exécuter l'exemple WorCount.java en mode standalone
 =======================================================================
 
+Remarque générale : si des problèmes se produisent à l'exécution (par exemple
+des messages disant qu'il n'y a pas assez de mémoire, ou qu'hadoop ne trouve
+pas java), la raison la plus probable est que la configuration n'est pas adaptée.
+
+Cette configuration se trouve dans le fichier: hadoop-env.sh
+situé dans /etc pour une installation par package, dans conf/ pour une installation
+par archive.
+
+
+
 A. Avec une distribution 0.20.0
 ===============================
 
