@@ -63,45 +63,53 @@ public class Mm {
 
 		// A
 		System.out.println("-----\n@"+matStruct[0]+"@\n------");
-		if (matStruct[0].trim().equals("A")) {
+		if (matStruct[0].equals("A")) {
+			// fill in matrix
 			for (int i=0;i<L;i++) {
   				// remove leading ']' (replace doesn't use a regexp so no protection)
 				matLines[i] = matLines[i].replace("[","").trim();
 				System.out.println(matLines[i]);
 				A[i] = matLines[i].split(" ");
+			}
+			// emit (key,value)
+			for (int i=0;i<L;i++) {
 				for (int j=0;j<M;j++) {
-					outputKey.set("C_"+i+"_"+j);
-					outputValue.set(A[i][j]);
-                    		context.write(outputKey, outputValue);
+					  for (int k=0;k<M;k++) {
+						    System.out.println("(C_"+i+"_"+j + ", A_"+i+","+k+")");
+						    outputKey.set("C_"+i+"_"+j);
+						    outputValue.set("A,"+k+","+A[i][k]);
+						    context.write(outputKey, outputValue);
+					  }
 				}
-				
+
 			}
 		}
 		// B
-		if (matStruct[0].trim().equals("B")) {
+		if (matStruct[0].equals("B")) {
+			// fill in matrix
 			for (int i=0;i<M;i++) {
   				// remove leading ']' (replace doesn't use a regexp so no protection)
 				matLines[i] = matLines[i].replace("[","").trim();
 				System.out.println(matLines[i]);
 				B[i] = matLines[i].split(" ");
 			}
+			// emit (key,value)
+			for (int i=0;i<M;i++) {
+				  for (int j=0;j<N;j++) {
+					    for (int k=0;k<M;k++) {
+							System.out.println("(C_"+i+"_"+j + ", B_"+k+","+j+"("+B[k][j]+"))");
+							outputKey.set("C_"+i+"_"+j);
+							outputValue.set("B,"+k+","+B[k][j]);
+							context.write(outputKey, outputValue);
+					    }
+				  }
+			}
 		}
-		    
-             //   for (int k = 0; k < M; k++) {
-             //       outputKey.set(indicesAndValue[1] + "," + k);
-             //       outputValue.set("A," + indicesAndValue[2] + "," + indicesAndValue[3]);
-            //        context.write(outputKey, outputValue);
-           //     }
-           // } else {
-           //     for (int i = 0; i < N; i++) {
-           //         outputKey.set(i + "," + indicesAndValue[2]);
-           //         outputValue.set("B," + indicesAndValue[1] + "," + indicesAndValue[3]);
-           //         context.write(outputKey, outputValue);
-           //     }
-           // }
-        //}
-    }
-} 
+        }
+    } 
+
+
+
     public static class Reduce extends Reducer<Text, Text, Text, Text> {
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
             String[] value;
