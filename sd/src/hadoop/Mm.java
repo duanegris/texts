@@ -3,6 +3,7 @@
  * Consider matrices A (L,M) and B (M,N), we want to compute resulting matrix 
  * A x B = C (L,N)
  *
+ * Stéphane Genaud, Nov 2013
  **/
 
 
@@ -61,83 +62,93 @@ public class Mm {
 										//  [b_1,1  ... b_1,M
 										//  [b_N,1, ... B_N,M
 
-		// A
+										// A
 		System.out.println("-----\n@"+matStruct[0]+"@\n------");
 		if (matStruct[0].equals("A")) {
-			// fill in matrix
-			for (int i=0;i<L;i++) {
-  				// remove leading ']' (replace doesn't use a regexp so no protection)
-				matLines[i] = matLines[i].replace("[","").trim();
-				System.out.println(matLines[i]);
-				A[i] = matLines[i].split(" ");
-			}
-			// emit (key,value)
-			for (int i=0;i<L;i++) {
-				for (int j=0;j<M;j++) {
-					  for (int k=0;k<M;k++) {
-						    System.out.println("(C_"+i+"_"+j + ", A_"+i+","+k+")");
-						    outputKey.set("C_"+i+"_"+j);
-						    outputValue.set("A,"+k+","+A[i][k]);
-						    context.write(outputKey, outputValue);
-					  }
-				}
+			  // fill in matrix
+			  for (int i=0;i<L;i++) {
+				    // remove leading ']' (replace doesn't use a regexp so no protection)
+				    matLines[i] = matLines[i].replace("[","").trim();
+				    System.out.println(matLines[i]);
+				    A[i] = matLines[i].split(" ");
+			  }
+			  // emit (key,value)
+			  for (int i=0;i<L;i++) {
+				    for (int j=0;j<N;j++) {
+						for (int k=0;k<M;k++) {
+							  System.out.println("(C_"+i+"_"+j + ", A_"+i+","+k+")");
+							  outputKey.set("C_"+i+"_"+j);
+							  // values neeed to identify : matrix, position, value to multiply
+							  // i.e  (A,x,valA) will have to match (B,x,valB) to go valA*valB
+							  outputValue.set("A,"+ k +","+ A[i][k]);
+							  context.write(outputKey, outputValue);
+						}
+				    }
 
-			}
+			  }
 		}
 		// B
 		if (matStruct[0].equals("B")) {
-			// fill in matrix
-			for (int i=0;i<M;i++) {
-  				// remove leading ']' (replace doesn't use a regexp so no protection)
-				matLines[i] = matLines[i].replace("[","").trim();
-				System.out.println(matLines[i]);
-				B[i] = matLines[i].split(" ");
-			}
-			// emit (key,value)
-			for (int i=0;i<M;i++) {
-				  for (int j=0;j<N;j++) {
-					    for (int k=0;k<M;k++) {
-							System.out.println("(C_"+i+"_"+j + ", B_"+k+","+j+"("+B[k][j]+"))");
-							outputKey.set("C_"+i+"_"+j);
-							outputValue.set("B,"+k+","+B[k][j]);
-							context.write(outputKey, outputValue);
-					    }
-				  }
-			}
+			  // fill in matrix
+			  for (int i=0;i<M;i++) {
+				    // remove leading ']' (replace doesn't use a regexp so no protection)
+				    matLines[i] = matLines[i].replace("[","").trim();
+				    System.out.println(matLines[i]);
+				    B[i] = matLines[i].split(" ");
+			  }
+			  // emit (key,value)
+			  for (int i=0;i<L;i++) {
+				    for (int j=0;j<N;j++) {
+						for (int k=0;k<M;k++) {
+							  System.out.println("(C_"+i+"_"+j + ", B_"+k+","+j+"("+B[k][j]+"))");
+							  outputKey.set("C_"+i+"_"+j);
+							  // values neeed to identify : matrix, position, value to multiply
+							  outputValue.set("B,"+k+","+B[k][j]);
+							  context.write(outputKey, outputValue);
+						}
+				    }
+			  }
 		}
-        }
+	  }
     } 
 
-
+    /**
+     * reduce
+     * @param key the key as Text
+     * @param values the list of values associated to key
+     * @param context the place to store outputs (goes to results)
+     **/
 
     public static class Reduce extends Reducer<Text, Text, Text, Text> {
-        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-            String[] value;
-            HashMap<Integer, Float> hashA = new HashMap<Integer, Float>();
-            HashMap<Integer, Float> hashB = new HashMap<Integer, Float>();
-            for (Text val : values) {
-                value = val.toString().split(",");
-                if (value[0].equals("A")) {
-                    hashA.put(Integer.parseInt(value[1]), Float.parseFloat(value[2]));
-                } else {
-                    hashB.put(Integer.parseInt(value[1]), Float.parseFloat(value[2]));
-                }
-            }
-            int n = Integer.parseInt(context.getConfiguration().get("n"));
-            float result = 0.0f;
-            float a_ij;
-            float b_jk;
-            for (int j = 0; j < n; j++) {
-                a_ij = hashA.containsKey(j) ? hashA.get(j) : 0.0f;
-                b_jk = hashB.containsKey(j) ? hashB.get(j) : 0.0f;
-                result += a_ij * b_jk;
-            }
-            if (result != 0.0f) {
-                context.write(null, new Text(key.toString() + "," + Float.toString(result)));
-            }
-        }
+		public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+			  String [] value;
+			  int M = Integer.parseInt(context.getConfiguration().get("M"));
+			  Float [] valsA = new Float [M]; 
+			  Float [] valsB = new Float [M]; 
+			  System.out.print("k="+key.toString()+"->[");
+			  // e.g key: C_2_3 -> [("A,2,3.0");("A,2,4.0")]
+			  for (Text val : values) {
+				    value = val.toString().split(",");
+				    int loc = Integer.parseInt(value[1]);
+				    if (value[0].equals("A")) {
+						System.out.print("(A_"+value[1]+","+value[2].toString()+");");
+						valsA[loc] =  Float.parseFloat(value[2]);
+				    } else {
+						System.out.print("(B_"+value[1]+","+value[2].toString()+");");
+						valsB[loc] =  Float.parseFloat(value[2]);
+				    }
+			  }
+			  System.out.println("]");
+			  float result = 0.0f;
+			  float a_ij;
+			  float b_jk;
+			  for (int k = 0; k < M; k++) {
+				    result += valsA[k] * valsB[k];
+			  }
+			  context.write(null, new Text(key.toString() + "," + Float.toString(result)));
+		}
     }
- 
+
     public static void main(String[] args) throws Exception {
 
 	 if (args.length < 2) {
