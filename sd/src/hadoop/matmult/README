@@ -1,0 +1,8 @@
+
+% In order to build :
+
+javac -classpath ${HADOOP_HOME}/hadoop-core-${HADOOP_VERSION}.jar:$HADOOP_HOME/lib/commons-cli-1.2.jar  Mm.java 
+jar cvf Mm.jar Mm*.class
+
+% In order to run
+rm -rf res.out.dat/ ; hadoop jar Mm.jar Mm matrices.in.dat res.out.dat
