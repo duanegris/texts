@@ -1,7 +1,9 @@
 /**
  * Matrix Multiplication.
- * Consider matrices A (L,M) and B (M,N), we want to compute resulting matrix 
- * A x B = C (L,N)
+ * Consider matrices A (L,M)   (L lines, M cols) 
+ *               and B (M,N)   (M lines, N cols)   
+ * we want to compute resulting matrix 
+ *                   A x B = C (L,N)
  *
  * The input should be in a text file formatted as:
  * A : [0 1 2 3 4] [5 6 7 8 9]
@@ -32,18 +34,11 @@ public class Mm {
 		     * map : the map function implementation
 		     *
 		     * @param key
-		     * @param value  the data from input files, one line per map invocation, as text
+		     * @param value  the data from input files, one line per map invocation
 		     * @param contex a place to write the (key,value) pairs we want to emit 
 		     **/
-		    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-
-				// Matrix description is expected to be formatted as:
-				// A : [a_1,1 a_1,2 ... a_1,L] [a_2,1 ... a_2,L] ... [a_M,1, ... a_M,L]
-				// B : [b_1,1  ... b_1,M] [b_2,1 ... b_2,M] ... [b_N,1, ... B_N,M]
-				// that is : each matrix value is separated by a blank, 
-				// lines are between [ and ]  
-				// Matrices names are preceding values, with a ':' as separator between name and values
-				// The 2 matrices on a separated line each
+		    public void map(LongWritable key, Text value, Context context) 
+				throws IOException, InterruptedException {
 
 				Text outputKey = new Text();
 				Text outputValue = new Text();
@@ -59,22 +54,18 @@ public class Mm {
 				matStruct[1]= matStruct[1].trim();
 				//split values in tokens, each token being a matrix line 
 				String [] matLines = matStruct[1].split ("\\]");   
-				// [a_1,1 a_1,2 ... a_1,L 
-				//  [a_2,1 ... a_2,L 
-				// or
-				//  [b_1,1  ... b_1,M
-				//  [b_N,1, ... B_N,M
-
+				
 				// A
 				if (matStruct[0].equals("A")) {
-					  // ------ first parse matrix values and store in an array --------
+					  // ------ first parse matrix values and store in an array
 					  for (int i=0;i<L;i++) {
-						    // remove leading ']' (replace doesn't use a regexp so no protection)
+						    // remove leading ']' 
+						    // (replace doesn't use a regexp so no protection)
 						    matLines[i] = matLines[i].replace("[","").trim();
 						    System.out.println(matLines[i]);
 						    A[i] = matLines[i].split(" ");
 					  }
-			          // ------ second, emit the values needed for products --------
+			          // ------ second, emit the values needed for products 
 					  // emit (key,value)
 					  for (int i=0;i<L;i++) {
 						    for (int j=0;j<N;j++) {
@@ -94,7 +85,8 @@ public class Mm {
 				if (matStruct[0].equals("B")) {
 					  // fill in matrix
 					  for (int i=0;i<M;i++) {
-						    // remove leading ']' (replace doesn't use a regexp so no protection)
+						    // remove leading ']' 
+						    //(replace doesn't use a regexp so no protection)
 						    matLines[i] = matLines[i].replace("[","").trim();
 						    System.out.println(matLines[i]);
 						    B[i] = matLines[i].split(" ");
@@ -115,21 +107,23 @@ public class Mm {
 		    }
 	  } 
 
-	  /**
-	   * reduce
-	   * @param key the key as Text
-	   * @param values the list of values associated to key
-	   * @param context the place to store outputs (goes to results)
-	   **/
-
 	  public static class Reduce extends Reducer<Text, Text, Text, Text> {
-		    public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+		  
+		  /**
+		   * reduce
+		   * @param key the key as Text
+		   * @param values the list of values associated to key
+		   * @param context the place to store outputs (goes to results)
+		   **/
+		  
+		    public void reduce(Text key, Iterable<Text> values, Context context) 
+				throws IOException, InterruptedException {
 				String [] value;
 				int M = Integer.parseInt(context.getConfiguration().get("M"));
 				Float [] valsA = new Float [M]; 
 				Float [] valsB = new Float [M]; 
 				System.out.print("k="+key.toString()+"->[");
-				// e.g key: C_2_3 -> [("A,2,3.0");("A,2,4.0")]
+				// e.g key: C_2_3 -> [("A,2,3.0");("A,2,4.0");("B,2,23.0") ...]
 				for (Text val : values) {
 					  value = val.toString().split(",");
 					  int loc = Integer.parseInt(value[1]);
