@@ -334,7 +334,10 @@ program MYCOMPUTATION {
   myservice_client.c /* client code */
 #+end_src
 
+** Try It (client/server with rpcgen)
 
+- Here are skeletons for a basic client / server scheme 
+- Sources : [[http://icps.u-strasbg.fr/~genaud/courses/sd/src/rpc/example_2_rpcgen_incomplete.tar.gz][Example 2]]
 
 ** RPCL in Brief (enumeration, constants & simple)
 *** Enumerations and Constants 
@@ -442,7 +445,6 @@ which allows to use =coord= instead of =struct coord=
      1. through the =Remote= class
      2. through the =Serializable= class
 
-
 ** The Remote class 
    
    definition: An object of the Remote class can be used remotely.
@@ -457,10 +459,9 @@ which allows to use =coord= instead of =struct coord=
 The call to a remote object's method is exactly (syntactically) the same as a local one.   
 
 ** The Remote class  and interface  
-
 *** A Remote class must be defined in 2 parts  
-  - an interface
-  - the class itself
+  - an interface (shared between client and server)
+  - the class itself (implem. on client)
 *** Interface   :B_block:
    :PROPERTIES:
    :BEAMER_env: block
@@ -589,28 +590,31 @@ public class Client {
 }
 #+end_src
 
+** Try It (RMI basic client/server)
+- Here are the source code for Example 1
+- Sources : [[http://icps.u-strasbg.fr/people/genaud/public_html/courses/sd/src/rmi/rmi_base_example_add.tar.gz][Example 1 (base_example_add)]]
+- Choose either =Serveur_version_Naming.java= or =Serveur_version_Locateregistry.java=
+
 ** Trouble shooting 1
 *** Observation 						    :B_block:
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-    The client experiences a =connection refused= error when 
-    contacting the server.
+    =connection refused= error when contacting the server.
 
 *** Why?  							    :B_block:
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-    =$JAVA_HOME/lib/security/java.policy= is too restrictive wrt sockets
+    =$JAVA_HOME/lib/security/java.policy= too restrictive wrt sockets
 *** Solution  							    :B_block:
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-   To override the standard, run
-#+begin_src java
-  java -Djava.security.policy=more_perm Server
-#+end_src
-   where =fichier= contains, for instance:
+   To override the standard, run: 
+   =java -Djava.security.policy=myperm Server=
+   where file =myperm= contains, for instance:
+
 #+begin_src java
 grant {
     permission java.net.SocketPermission
