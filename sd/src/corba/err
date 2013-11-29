@@ -1,6 +1,0 @@
-AccountServer.java:17: incompatible types
-found   : float[]
-required: boolean[]
-  private boolean ActiveAccount[] =  new float[100];
-                                     ^
-1 error
