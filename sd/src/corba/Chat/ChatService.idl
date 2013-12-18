@@ -1,0 +1,38 @@
+
+
+module ChatService
+{
+    struct Message {
+        string msg;
+        long cli_id;
+        long msg_mid;
+	  	long long timestamp;
+    };
+    typedef sequence<Message> MessageList;
+
+    interface Chat
+    {
+    	//attribute MessageList sentMessages;
+    	
+        long connect();
+        oneway void disconnect(in long cli_id);
+        void send(in Message m);
+        MessageList refresh(in long cli_id, in long long timestamp);
+    };
+};
+
+
+
+
+
+
+/**
+ == corresponding RMI interface ==
+
+public interface ChatService extends Remote {
+        public int connect() throws RemoteException ;
+        public void disconnect(int id) throws RemoteException ;
+        public void send(Message m) throws RemoteException ;
+	 	public  ArrayList<Message> refresh(int cliId, long timestamp) throws RemoteException ;
+}
+**/

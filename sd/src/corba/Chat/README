@@ -1,0 +1,24 @@
+
+== To build
+
+1. idlj -fall ChatService.idl
+	(this will create the ChatService/ dir with generate files in it)
+
+2. javac *.java
+
+
+== To run
+
+1. In a shell, start the orbd
+
+  %   orbd -ORBInitialPort 1234 &
+
+2. Start the server:
+
+  %   java ChatServer -ORBInitialPort 1234
+
+3. In other terminals, start as many clients as needed
+
+  %   java ChatClient -ORBInitialPort 1234 localhost
+
+
