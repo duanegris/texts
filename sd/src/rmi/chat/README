@@ -1,0 +1,16 @@
+
+== Build with:
+
+% javac *.java
+
+== Run server with:
+
+% java ChatServer 
+
+(remiregistry is created by program)
+
+
+== Run client with:
+
+% java ChatClient <host_where_server_is_running>
+ 
