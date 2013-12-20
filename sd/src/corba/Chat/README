@@ -2,7 +2,7 @@
 == To build
 
 1. idlj -fall ChatService.idl
-	(this will create the ChatService/ dir with generate files in it)
+	(this will create the ChatService/ dir with generated files in it)
 
 2. javac *.java
 
