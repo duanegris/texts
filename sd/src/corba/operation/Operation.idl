@@ -1,0 +1,4 @@
+interface Operation
+{
+  long addition(in long a, in long b);
+};
