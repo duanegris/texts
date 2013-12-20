@@ -26,8 +26,9 @@ public class ChatServiceImpl extends ChatPOA {
 	  // list of connected ids: index in array is client id, 
 	  // ids[i] contains connection date (hence the long type), 0 means disconected.
 	  private long [] ids; 
-	  private ChatService.Message[] messages;
-	  private int msgIndex; // because we use a simple array and not an ArrayList, manage an index.
+	  // all messages 
+      private ArrayList<Message> messages;
+
 	  private long [] lastSeen;
 	  private ORB orb;
 
@@ -41,8 +42,7 @@ public class ChatServiceImpl extends ChatPOA {
 	  public ChatServiceImpl()  {
 		    super();
             ids      = new long[MAX_CLIENT];
-            messages = new ChatService.Message[256];
-            msgIndex = 0;
+            messages = new ArrayList<ChatService.Message>(256);
 		    lastSeen = new long[MAX_CLIENT];
 	  }
 	  
@@ -71,12 +71,13 @@ public class ChatServiceImpl extends ChatPOA {
 	  }
 
 	  
-	  
-	public void send(Message msg) {
-		   // uncomment below for debug purpose
-		   //System.out.println("Added message ["+msg.getContent()+"] from (cli="+msg.getCliId()+",mid="+msg.getId()+")@"+msg.getTimestamp());
-		   messages[msgIndex] = msg;
-		   msgIndex++;
+	/** 
+	 * send 
+	 * A message is received from the client, store it in the global array. That's all.
+	 * @param msg the message received
+	 */
+	public void send(ChatService.Message msg) {
+		   messages.add( msg );	
 	}
 	
 	
@@ -86,19 +87,23 @@ public class ChatServiceImpl extends ChatPOA {
      * extract the list of messages aged between t_0 and t_1 and that are not from cliId. 
      **/
 	public  ChatService.Message[] refresh(int cliId, long t_1)  {
-	ArrayList<ChatService.Message> mlist = new ArrayList<ChatService.Message>();
 	
-		    for(int i=0; i< msgIndex; i++) {
-		    	ChatService.Message m = this.messages[i]; // shorthand
-				if (m.timestamp > lastSeen[cliId] && m.cli_id != cliId)
-					  	mlist.add( m );			
-		    }
-		    //memorize this last visit (this t_0 in comments ahead)
-	        lastSeen[cliId] = t_1;
-		    return( mlist.toArray(new ChatService.Message[mlist.size()]) );  // toArray() makes the conversion from ArrayList to Arrray
-	  }
-       
+		ArrayList<Message> mlist = new ArrayList<Message>();
 
+        for(Message m : this.messages) {
+        	if(m.timestamp > lastSeen[cliId] && m.cli_id != cliId)
+                  mlist.add( m );
+         }
+         //memorize this last visit (this t_0 in comments ahead)
+         lastSeen[cliId] = t_1;
+		 return( mlist.toArray(new ChatService.Message[mlist.size()]) );  // toArray() makes the conversion from ArrayList to Arrray
+     }
+
+	  
+	/**
+	 * disconnect
+	 * @param id the id of the client disconnecting
+	 */
 	  public void disconnect(int id)  {
 		    ids[id] = 0;
 		    System.out.println("Disconnect client " + id);
