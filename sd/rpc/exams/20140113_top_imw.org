@@ -1,0 +1,143 @@
+
+#+TITLE:     IMW: TOP middleware - année 2013-2014 - 13 jan 2014
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+LINK_UP:
+#+LINK_HOME:
+#+STYLE:    <link rel="stylesheet" type="text/css" href="css/worg.css" />
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+LaTeX_CLASS: article
+
+
+#+latex_header: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+
+
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:         keywordstyle=\color{blue},
+#+LATEX_HEADER:         commentstyle=\color{red},
+#+LATEX_HEADER:         stringstyle=\color{green},
+#+LATEX_HEADER:         basicstyle=\ttfamily\small,
+#+LATEX_HEADER:         columns=fullflexible,
+#+LATEX_HEADER:         frame=single,
+#+LATEX_HEADER:         basewidth={0.5em,0.4em}
+#+LATEX_HEADER:         }
+
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+
+
+* Sujet 
+
+On souhaite  réaliser un service distribué  de gestion d'images. Un  client peut
+envoyer ou retirer  une image  d'un serveur. un client qui envoie une image, sous
+la forme d'une suite d'octets (par exemple =byte []=) y associe son nom de fichier
+original et peut y ajouter des tags, c'est-à-dire des chaînes de caractères caractérisant
+sémantiquement l'image dans le but de faciliter des recherches par d'autres clients.
+D'autres clients peuvent interroger le serveur sur la liste des images présentes,
+et les télécharger chez eux.
+
+On souhaite définir les méthodes RPC ci-dessous :
+
+#+ATTR_HTML: :border 2 :rules all :frame border
+|--------------------+------------------------------------------------------------------|
+| méthode            | description                                                      |
+|--------------------+------------------------------------------------------------------|
+| =storeImg=         | transmet l'image sous forme d'octets vers le serveur,            |
+|                    | ainsi que son nom et les tags associés. Le serveur sauve les     |
+|                    | octets reçus dans un fichier.                                    |
+|--------------------+------------------------------------------------------------------|
+| =listImg=          | Renvoie le nom des images présentes sur le serveur, ainsi        |
+|                    | que les tags associés aux images                                 |
+|--------------------+------------------------------------------------------------------|
+| =getImgNamesByTag= | Etant donné un tag, renvoie le nom des images associées à ce tag |
+|--------------------+------------------------------------------------------------------|
+| =getImgByName=     | renvoie l'image correspondant au nom sous la forme d'une suite   |
+|                    | d'octetsc. En cas d'erreur, le retour sera null.                 |
+|--------------------+------------------------------------------------------------------|
+
+* Travail à faire
+
+Utiliser RMI pour définir un service RPC qui implémente les méthodes ci-dessus.
+
+** Serveur et Services
+Vous écrirez la classe interface =ImgCatalog.java= et la classe implémentant cette interface
+=ImgCatalogImpl.java=. Vous écrirez le code serveur qui gère les objets =ImgCatalog= et
+l'inscription à l'annuaire rmiregistry, dans une classe à part =Server.java=.
+
+** Client
+Pour le côté client, vous écrirez les 3 scénarios suivants : 
+- Un client 1 charge une image '1.jpg' sur le serveur, avec les tags 'A,B,C',
+  puis une deuxième '2.jpg' avec les tags 'C,D'. 
+- Ensuite, un client 2 interroge le serveur avec la méthode =listImg()=,
+  et télécharge la première image listée (donc '1.jpg') avec la méthode 
+  =getImgByName()=
+- Ensuite, un client 3 interroge le serveur sur les images associées au tag
+  'C' à travers la méthode =getImgNamesByTag()= et télécharge toutes les
+  images correspondantes. 
+
+Vous écrirez des classes =Client1.java=, =Client2.java=, et =Client3.java=
+pour chacun de ces scénarios.
+
+
+
+* Code Utilitaire
+
+** Lecture et Ecriture du fichier
+
+#+begin_src java
+import java.io.*;
+
+       /**
+         * write an array of bytes as a file 
+         * @return -1 in case of failure, the number of bytes written otherwise
+         **/
+        private int writeFile(byte [] buffer, String name) {
+
+                BufferedOutputStream bos = null;
+                try {
+                        //create an object of FileOutputStream
+                        FileOutputStream fos = new FileOutputStream(new File(name));
+                        //create an object of BufferedOutputStream
+                        bos = new BufferedOutputStream(fos);
+                        bos.write(buffer);
+                }
+                catch (Exception e) {
+                        e.printStackTrace();
+                        return( - 1 );
+                }
+                return(buffer.length);
+        }
+
+        /**
+         * read a file and returns an array of bytes
+         * @return a an array of bytes read from the file or null if an error occured
+         **/
+        private byte [] readFile(String name) {
+
+                FileInputStream fin = null;
+                File file = new File(name);
+                byte [] buffer = new byte[ (int) file.length() ];
+                try {
+                        fin = new FileInputStream(file);
+                        int n = 0;
+                        while ( (n = fin.read(buffer, n, buffer.length - n) ) > 0);
+                }
+                catch (FileNotFoundException e) {
+                        System.err.println("[Error] could not find file "+name+" for reading...\n");
+                        return(null);
+                }
+                catch (IOException ioe) {
+                        System.err.println("[Error] error while reading  "+name+" ...\n");
+                        return(null);
+}
+#+end_src
+
