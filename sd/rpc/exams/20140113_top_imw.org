@@ -38,12 +38,12 @@
 * Sujet 
 
 On souhaite  réaliser un service distribué  de gestion d'images. Un  client peut
-envoyer ou retirer  une image  d'un serveur. un client qui envoie une image, sous
-la forme d'une suite d'octets (par exemple =byte []=) y associe son nom de fichier
-original et peut y ajouter des tags, c'est-à-dire des chaînes de caractères caractérisant
-sémantiquement l'image dans le but de faciliter des recherches par d'autres clients.
-D'autres clients peuvent interroger le serveur sur la liste des images présentes,
-et les télécharger chez eux.
+envoyer  vers ou  récupérer une  image d'un  serveur. un  client qui  envoie une
+image, sous la forme d'une suite d'octets  (par exemple =byte []=) y associe son
+nom de fichier original et peut y  ajouter des tags, c'est-à-dire des chaînes de
+caractères caractérisant  sémantiquement l'image  dans le  but de  faciliter des
+recherches par d'autres clients.  D'autres clients peuvent interroger le serveur
+sur la liste des images présentes, et les télécharger chez eux.
 
 On souhaite définir les méthodes RPC ci-dessous :
 
@@ -88,8 +88,10 @@ Vous écrirez des classes =Client1.java=, =Client2.java=, et =Client3.java=
 pour chacun de ces scénarios.
 
 
-
 * Code Utilitaire
+
+Le code proposé ci-dessous a pour simple but de vous faire gagner du temps sur les
+fonctionnalités d'écriture et de lecture d'une suite d'octets dans un fichier.
 
 ** Lecture et Ecriture du fichier
 
@@ -138,6 +140,9 @@ import java.io.*;
                 catch (IOException ioe) {
                         System.err.println("[Error] error while reading  "+name+" ...\n");
                         return(null);
+                }
+                return(buffer);
+        }
 }
 #+end_src
 
