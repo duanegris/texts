@@ -156,7 +156,12 @@ On-demand instance, Linux, USA-West. Partial list (on 04/25/2013)
 * What are Clouds used for?
 ** Web applications and contents
    - Scalable delivery of contents 
-     e.g Amazon CloudFront
+     (e.g Amazon CloudFront)
+
+   - Scalable management of web applications
+     \newline
+     (e.g [[http://www.heroku.com][Heroku]], [[http://appsdeck.eu][Appsdeck.eu]])
+     
 ** Data storage
    - Scalable data storage
    - e.g GoogleDrive, Dropbox, iCloud
