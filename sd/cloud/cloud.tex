@@ -1,4 +1,4 @@
-% Created 2013-04-26 Ven 08:18
+% Created 2014-04-04 Ven 10:59
 \documentclass[bigger,hyperref={colorlinks=true, urlcolor=red, plainpages=false, pdfpagelabels, bookmarksnumbered}]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -37,7 +37,7 @@ basewidth={0.5em,0.4em}
 \hypersetup{
   pdfkeywords={},
   pdfsubject={},
-  pdfcreator={Emacs Org-mode version 7.8.11}}
+  pdfcreator={Emacs Org-mode version 7.9.3f}}
 
 \usetheme{Boadilla}\usecolortheme{default}
 \setbeamertemplate{footline}{\leavevmode \hbox{ \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot} \insertshorttitle\end{beamercolorbox} \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}\insertshortauthor\end{beamercolorbox} \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot} \insertframenumber / \inserttotalframenumber\hspace*{2em} \end{beamercolorbox} } \vskip0pt }
@@ -159,7 +159,7 @@ Cloud Computing can be caracterized by:
 \begin{itemize}
 \item users are granted a total control over machines they can start/stop
 \item machines are totally controlled by the user (e.g through ssh)
-\item e.g Amazon EC2 and S3, Google Compute Engine, recently Microsoft Azure
+\item e.g Amazon \href{http://aws.amazon.com/ec2}{EC} and \href{http://aws.amazon.com/s3}{S3}, \href{http://https://cloud.google.com/products/compute-engine/}{Google Compute Engine}, recently Microsoft \href{http://http://azure.microsoft.com}{Azure}
 \end{itemize}
 \end{frame}
 \begin{frame}
@@ -240,18 +240,22 @@ On-demand instance, Linux, USA-West. Partial list (on 04/25/2013)
 
 \begin{itemize}
 \item Scalable delivery of contents 
-     e.g Amazon CloudFront
+     (e.g Amazon CloudFront)
+\item Scalable management of web applications
+     \newline
+     (e.g \href{http://www.heroku.com}{Heroku}, \href{http://appsdeck.eu}{Appsdeck.eu})
 \end{itemize}
+     
 \end{frame}
 \begin{frame}
 \frametitle{Data storage}
 \label{sec-3-2}
 
 \begin{itemize}
-\item Scalable data storage
-\item e.g GoogleDrive, Dropbox, iCloud
-\item Use of distributed storage systems, generally NoSQL systems
-\item e.g Cassandra, Dynamo, CouchDB
+\item Scalable data storage \newline
+    (e.g GoogleDrive, Dropbox, iCloud)
+\item Use of distributed storage systems, generally \href{http://en.wikipedia.org/wiki/NoSQL}{NoSQL} systems
+     (e.g \href{https://www.mongodb.org}{MongoDB}, \href{http://cassandra.apache.org}{Cassandra}, \href{http://aws.amazon.com/dynamodb/}{Dynamo}, \href{http://couchdb.apache.org}{CouchDB})
 \end{itemize}
 \end{frame}
 \begin{frame}
