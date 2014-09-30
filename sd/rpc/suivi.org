@@ -4,26 +4,26 @@
 
 ** 2013-2014
 
-| séance | Strasbourg                                                | date  |               |
-|--------+-----------------------------------------------------------+-------+---------------|
-|      1 | Intro générale+intro RPC archi                            | 02/10 |               |
-|      2 | Intro client/serveur                                      | 14/10 |               |
-|      3 | RPC : high layer functions (demo callrpc/registerrpc)     | 16/10 |               |
-|        | src/rpc/example_1/{client,server}.c                       |       |               |
-|      4 | Utilisation RPCgen. Identification fichiers générés. Démo | 16/10 |               |
-|        | src/rpc/example_2_rpcgen_incomplet                        |       |               |
-|        | Intro TP Chat avec RPCgen (tp-rpc.html)                   | 16/10 |               |
-|      5 | RPCgen ex. chat : mise au point                           | 06/11 | <- WE'RE HERE |
-|      6 | RPCgen ex. chat                                           | 06/11 |               |
-|      7 | RMI présentation                                          | 25/11 |               |
-|      8 | RMI ex add types simples                                  | 29/11 |               |
-|      9 | RMI ex. chat (à rendre)                                   | 06/12 |               |
-|     10 | Corba présentation                                        | 09/12 |               |
-|     11 | Corba                                                     | 11/12 |               |
-|     12 | Corba                                                     | 18/12 |               |
-|     13 | Corba                                                     | 18/12 |               |
-|     14 | Corba                                                     | 13/01 |               |
-|     15 | Exam machine                                              | 13/01 |               |
+| séance | Strasbourg                                                  | date  |               |
+|--------+-------------------------------------------------------------+-------+---------------|
+|      1 | Intro générale+intro RPC archi                              | 02/10 |               |
+|      2 | Intro client/serveur                                        | 14/10 |               |
+|      3 | RPC : high layer functions (demo callrpc/registerrpc)       | 16/10 |               |
+|        | src/rpc/example_1/{client,server}.c                         |       |               |
+|      4 | Utilisation RPCgen. Identification fichiers générés. Démo   | 16/10 |               |
+|        | src/rpc/example_2_rpcgen_incomplete.tar.gz                  |       |               |
+|        | Intro TP Chat avec RPCgen (tp-rpc.html)                     | 16/10 |               |
+|      5 | RPCgen ex. chat : mise au point                             | 06/11 |               |
+|      6 | RPCgen ex. chat                                             | 06/11 |               |
+|      7 | RMI présentation + exemple basic_add simple (prise en main) | 25/11 |               |
+|      8 | RMI ex. chat (à rendre pour séance suivante)                | 29/11 |               |
+|        | debugging avec -Djava.rmi.server.logCalls=true              |       |               |
+|      9 | RMI ex. chat (à rendre pour séance suivante)                | 09/12 | <- WE'RE HERE |
+|     10 | Corba présentation                                          | 11/12 |               |
+|     11 | Corba                                                       | 18/12 |               |
+|     12 | Corba                                                       | 18/12 |               |
+|     13 | Corba                                                       | 13/01 |               |
+|      1 | Exam machine                                                | 13/01 |               |
 
 
 ** 2012-2013
