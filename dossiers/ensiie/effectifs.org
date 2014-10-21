@@ -1,0 +1,104 @@
+
+* Flux
+
+
+
+ | dipl.   |           |           |      2012 |      2013 | 2014              |                     |
+ | année   | 2009-2010 | 2010-2011 | 2011-2012 | 2012-2013 | 2013-2014         | 2014-2015 {ISI/ILC} |
+ |---------+-----------+-----------+-----------+-----------+-------------------+---------------------|
+ | 1A      |         9 | 19 [a]    |     18[b] |    30 [c] | 39 [d]            | 43                  |
+ | 2A      |           | 8 (-1)    |        19 |  18(-1+1) | 28 (-5+3CF)       | 30 (-9) {15/13}     |
+ | 3A      |           |           |         8 |    17(-2) | 18 (0)            | 27 (-1) {5/21}      |
+ |---------+-----------+-----------+-----------+-----------+-------------------+---------------------|
+ | diplômé |           |           |     5=8-3 | 17=17-3+3 | 15=18-4+1 (prev.) |                     |
+ |---------+-----------+-----------+-----------+-----------+-------------------+---------------------|
+
+[a] dont maguet, bronner, paiva, shan wu, sijia zheng, faugeroux
+[b] dont paiva, thimothée muller
+[c] dont paiva, derlon, merouane elmnabhi, hicham Elbilali
+[d] dont milton, mercadiel,
+
+** Remarques:
+- promo 2012:
+  1A - 2A : -1: bronner (redoub)
+  2A - 3A :  
+  dipl. 2012 : -2: Boutry, Roverch DD
+
+- promo 2013 :
+  1A - 2A : -1 Paiva, +1 Sun
+  2A - 3A : - faugeroux (aband) - Wu (Evry)
+  dipl. 2013 : +4: Boutry et Roverch DD, Bronner, Maquin -3: Chobert redoub S5, Zeng, Maguet DD 
+  Maguet DD
+ 
+
+
+- dipl. 2014 : -5: Gouy stage aband., Shuyan redoub. S5, Tian redoub S5 (Sorbonne),
+Muller actuariat +1: Chobert valide S5
+ 
+
+
+* Diplômés par année de sortie
+
+** Promo 2012
+
+1.Thibault Dubuisson Ingénieur Logiciel     Abase Strasbourg
+2.Marien Ritzenthaler Analyste/Développeur   CGI  Illkirch
+3.Bruno Maury Analyste d'affaires  Héma-Québec Montreal
+4.Nicolas Weber Développeur Sféreno Strasbourg
+5.Guillaume Sabot Développeur ATOS Lyon     
+
+
+** Promo 2013
+
+(entrés en 2009: Boutry, Roverch, Maquin)
+
+1.Leslie Bordonné Conceptrice d’app mobiles e-learning Lomdess Strasbourg
+2.Jonathan Bronner Ingénieur Etudes et Développement Sopra Strasbourg
+3.Julien Ernwein Ingénieur Développement EID Strasbourg
+4.Sébastien Azim Développeur Web Novelys Strasbourg
+5.Adrien Bracigliano Ingénieur d’études Davidson  Strasbourg
+6.Jean-François Spatz Ingénieur Logiciel FM Logistics Phalsbourg
+7.Luke Bertot Doctorant en informatique Icube, Unistra Strasbourg
+8.Victor Bahl Ingénieur d’affaires Smile Paris
+9.Lucas Bee Développeur OVH Lille
+10.Nicolas Maire Développeur 3D Ka-Ra Strasbourg
+11.Fadoua Kawni Ingénieur d’études Davidson  Strasbourg
+12.Sébastien Chatout Développeur Web SDV Plurimédia Strasbourg
+13.Pierre Boutry Doctorant en informatique Icube, Unistra Strasbourg
+14.Xiayoe Sun Ingénieur Logiciel Beijing, Chine
+15.Chenlong Hu Ingénieur Logiciel Astek Strasbourg
+16. Emeric Roverch Ingénieur Logiciel/Finance Solucom Paris
+17.Frédéric Maquin Développeur  Swing Mobility Entzheim
+
+
+** Promo 2014
+
+(entrés en 2010: Chobert)
+
+1. Paul Chobert
+2. Mourad BENGMAH
+3. Xavier CAVARELLI
+4. Vincent DE JONGHE (Evry en S5-)
+5. Saad	EL BANNANI
+6. Paul GOUY
+7. Paul-Henri KOECK
+8. Baptiste LAFABREGUE
+9. Ismail LAGOUILLY
+10. Yaohua LIANG 
+Christophe PAIVA
+11. Guillaume PARAN
+12. Jonathan RYBAK
+13. Lucas SAUREL
+14. Quentin THENOZ
+15. Tian TIAN 
+16. Léo	UNBEKANDT
+17. Shuyan ZHANG 
+
+
+** Promo 2015
+
+(entrés en 2011: Gouy)
+
+1. Paul Gouy
+2. Timothee MULLER
+
