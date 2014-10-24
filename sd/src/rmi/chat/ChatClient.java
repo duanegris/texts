@@ -27,14 +27,23 @@ private static String serviceName=new String("MyCoolChat");
 		    int mid=0;
 		    ChatService c=null;
 
-		    if (args.length != 1) {
-				System.out.println("Usage : java Client <machine du Serveur>");
+ 
+
+		    if (args.length < 1) {
+				System.out.println("Usage : java Client <machine du Serveur> [nom service dans rmiregistry]");
 				System.exit(1);
 		    }
+		    // if service name has been specified on command line
+		    if (args.length == 2) 
+				serviceName=args[1];
 
 		    try {
 				try {
- 					  System.out.println("About to connect to "+args[0]+"...");
+ 					  System.out.println("About to connect to "+args[0]+" searching for ref: "+serviceName+" ...");
+
+					  if (System.getSecurityManager() == null)
+						System.setSecurityManager(new RMISecurityManager());
+
 					  // get a ref to the remote serveur object
 					  c = (ChatService) Naming.lookup("//"+args[0]+"/"+serviceName);
 					  id = c.connect();
