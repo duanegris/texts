@@ -15,4 +15,4 @@ wordcount.jar: WordCount.class
 	@echo "-> run with 'hadoop jar $@ WordCount input output' (make sure you have 'input' and 'output' does not exist yet)"
 
 WordCount.class: WordCount.java
-	$(JAVACC) -classpath $(HADOOP_LIBS) -d $(DIR_CLASSES) $<
+	$(JAVACC) -classpath $(HADOOP_LIBS):. -d $(DIR_CLASSES) $<
