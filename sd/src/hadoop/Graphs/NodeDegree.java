@@ -10,6 +10,8 @@ import org.apache.hadoop.mapred.FileAlreadyExistsException;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.JobContext;
 import org.apache.hadoop.mapreduce.Mapper;
+//import org.apache.hadoop.mapred.lib.IdentityMapper; // Well, this is from the 0.x
+
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
@@ -25,7 +27,7 @@ public class NodeDegree {
 		 * First map.
 		 * The edges denoted as a pair of vertices (=an edge)  are split into nodes. Each node 
              * is sent to the reducer together with the edge it belongs to. 
-		 * @param key is a line number in the input file
+		 * @param key is a line number in the input file (of no use for us)
  		 * @param value is the line content : expected format is: (U,V) for vertices U and V
 		 * @return two (k,v) pairs are output: ("U","(U,V)") and ("V","(U,V)")
 		 **/
@@ -49,8 +51,8 @@ public class NodeDegree {
 		 * @param values an iterator on the vertices pairs (=edges) associated to key
 		 * @return 
 		 **/
-		public void reduce(Text key, Iterable<Text> values,
-				Context context) throws IOException, InterruptedException {		
+		public void reduce(Text key, Iterable<Text> values, Context context) 
+			throws IOException, InterruptedException {		
 			Integer degree = 0;
 			List<Text> valuesList = new ArrayList<Text>();
 			for(Text value : values){
@@ -60,21 +62,26 @@ public class NodeDegree {
 			}
 			// Emit the sum of occurences (degree) found for each edge
 			for(Text value: valuesList){
-				context.write(value, new Text("d("+key+")="+degree));
+				context.write(new Text(value), new Text("d("+key+")="+degree));
 			}			
 		}
 	}
 	
-	public static class MapSecondStep extends
-	Mapper<LongWritable, Text, Text, Text> {
+	public static class IdentityMap extends
+	Mapper<Text, Text, Text, Text> {
 
-		//Second map: does nothing but is mandatory by hadoop
+		// Though identity is the default, see
+ 		// https://hadoop.apache.org/docs/current/api/org/apache/hadoop/mapreduce/Mapper.html#map(KEYIN,%20VALUEIN,%20org.apache.hadoop.mapreduce.Mapper.Context)
+		// we define our identity to cast LongWritable key to Text
+
 		public void map(LongWritable key, Text value, Context context)
 				throws IOException, InterruptedException {			
 			String[] values = value.toString().split("\t");
 			context.write(new Text(values[0]), new Text(values[1]));
 		}
+
 	}
+
 
 	public static class ReduceSecondStep extends
 	Reducer<Text, Text, Text, Text> {
@@ -126,8 +133,10 @@ public class NodeDegree {
 
 		job1.setInputFormatClass(TextInputFormat.class);
 		
-		//Uses the custom output format
+		// Uses our custom output format to override already existing file.
+		// Extends TextOutputFormat which emits LongWritable key and Text value by default.
 		job1.setOutputFormatClass(MyTextOutputFormat.class);
+				
 
 		FileInputFormat.addInputPath(job1, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job1, new Path(args[1]));
@@ -140,7 +149,7 @@ public class NodeDegree {
 		job2.setOutputKeyClass(Text.class);
 		job2.setOutputValueClass(Text.class);
 
-		job2.setMapperClass(MapSecondStep.class);
+        	job2.setMapperClass(IdentityMap.class);
 		job2.setReducerClass(ReduceSecondStep.class);
 
 		job2.setInputFormatClass(TextInputFormat.class);
