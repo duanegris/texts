@@ -48,7 +48,7 @@ public class Mm {
 				int N = Integer.parseInt(conf.get("N"));
 				String [][] A = new String [L][M];
 				String [][] B = new String [M][N];
-				// separate matrix anem and values 
+				// separate matrix name and values 
 				String [] matStruct = value.toString().split(":");  
 				matStruct[0]= matStruct[0].trim();
 				matStruct[1]= matStruct[1].trim();
@@ -137,8 +137,6 @@ public class Mm {
 				}
 				System.out.println("]");
 				float result = 0.0f;
-				float a_ij;
-				float b_jk;
 				for (int k = 0; k < M; k++) {
 					  result += valsA[k] * valsB[k];
 				}
