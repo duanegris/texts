@@ -52,46 +52,46 @@ Muller actuariat +1: Chobert valide S5
 
 (entrés en 2009: Boutry, Roverch, Maquin)
 
-1.Leslie Bordonné Conceptrice d’app mobiles e-learning Lomdess Strasbourg
-2.Jonathan Bronner Ingénieur Etudes et Développement Sopra Strasbourg
-3.Julien Ernwein Ingénieur Développement EID Strasbourg
-4.Sébastien Azim Développeur Web Novelys Strasbourg
-5.Adrien Bracigliano Ingénieur d’études Davidson  Strasbourg
-6.Jean-François Spatz Ingénieur Logiciel FM Logistics Phalsbourg
-7.Luke Bertot Doctorant en informatique Icube, Unistra Strasbourg
-8.Victor Bahl Ingénieur d’affaires Smile Paris
-9.Lucas Bee Développeur OVH Lille
-10.Nicolas Maire Développeur 3D Ka-Ra Strasbourg
-11.Fadoua Kawni Ingénieur d’études Davidson  Strasbourg
-12.Sébastien Chatout Développeur Web SDV Plurimédia Strasbourg
-13.Pierre Boutry Doctorant en informatique Icube, Unistra Strasbourg
-14.Xiayoe Sun Ingénieur Logiciel Beijing, Chine
-15.Chenlong Hu Ingénieur Logiciel Astek Strasbourg
+1. Leslie Bordonné Conceptrice d’app mobiles e-learning Lomdess Strasbourg
+2. Jonathan Bronner Ingénieur Etudes et Développement Sopra Strasbourg
+3. Julien Ernwein Ingénieur Développement EID Strasbourg
+4. Sébastien Azim Développeur Web Novelys Strasbourg
+5. Adrien Bracigliano Ingénieur d’études Davidson  Strasbourg
+6. Jean-François Spatz Ingénieur Logiciel FM Logistics Phalsbourg
+7. Luke Bertot Doctorant en informatique Icube, Unistra Strasbourg
+8. Victor Bahl Ingénieur d’affaires Smile Paris
+9. Lucas Bee Développeur OVH Lille
+10. Nicolas Maire Développeur 3D Ka-Ra Strasbourg
+11. Fadoua Kawni Ingénieur d’études Davidson  Strasbourg
+12. Sébastien Chatout Développeur Web SDV Plurimédia Strasbourg
+13. Pierre Boutry Doctorant en informatique Icube, Unistra Strasbourg
+14. Xiayoe Sun Ingénieur Logiciel Beijing, Chine
+15. Chenlong Hu Ingénieur Logiciel Astek Strasbourg
 16. Emeric Roverch Ingénieur Logiciel/Finance Solucom Paris
-17.Frédéric Maquin Développeur  Swing Mobility Entzheim
+17. Frédéric Maquin Développeur WhiteQuest Erstein
 
 
 ** Promo 2014
 
 (entrés en 2010: Chobert)
 
-1. Paul Chobert
+1. Paul Chobert - Developer, fivebyfive.io - Londres
 2. Mourad BENGMAH
-3. Xavier CAVARELLI
+3. Xavier CAVARELLI	Davidson
 4. Vincent DE JONGHE (Evry en S5-)
 5. Saad	EL BANNANI
 6. Paul GOUY
 7. Paul-Henri KOECK
-8. Baptiste LAFABREGUE
+8. Baptiste LAFABREGUE - Titanium Business System - Strasbourg
 9. Ismail LAGOUILLY
-10. Yaohua LIANG 
-Christophe PAIVA
-11. Guillaume PARAN
-12. Jonathan RYBAK
-13. Lucas SAUREL
-14. Quentin THENOZ
-15. Tian TIAN 
-16. Léo	UNBEKANDT
+10. Yaohua LIANG - Ingénieur logiciel, Amadeus - Antibes
+    Christophe PAIVA
+11. Guillaume PARAN - Auto-entrepreneur - Strasbourg
+12. Jonathan RYBAK - Bull Strasbourg
+13. Lucas SAUREL - 
+14. Quentin THENOZ - TiZ Strasbourg
+15. Tian TIAN - 
+16. Léo UNBEKANDT - Scale&Go (création) - Strasbourg  
 17. Shuyan ZHANG 
 
 
