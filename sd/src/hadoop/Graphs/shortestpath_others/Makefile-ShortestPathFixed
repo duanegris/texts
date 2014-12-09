@@ -1,0 +1,20 @@
+
+JAVACC=javac
+JAR=jar
+
+MAIN_SRC=ShortestPathFixed
+DIR_CLASSES=shortestpath_classes  # a dir to store classes and not mix too many files with sources
+
+HADOOP_LIBS=\
+	${HADOOP_HOME}/hadoop-core-${HADOOP_VERSION}.jar:${HADOOP_HOME}/lib/commons-cli-1.2.jar
+
+all: shortestpath.jar
+
+shortestpath.jar: $(MAIN_SRC).class 
+	$(JAR) -cvf $@ -C $(DIR_CLASSES) .
+	@echo "* JAR READY *"
+	@echo "-> run with 'hadoop jar $@ $(MAIN_SRC) input output' (make sure you have 'input' and 'output' does not exist yet)"
+
+$(MAIN_SRC).class: $(MAIN_SRC).java
+	mkdir -p $(DIR_CLASSES)
+	$(JAVACC) -classpath $(HADOOP_LIBS):. -d $(DIR_CLASSES) $<
