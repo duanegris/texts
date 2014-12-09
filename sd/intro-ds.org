@@ -1,0 +1,186 @@
+
+#+TITLE:     Introduction to Parallel and Distributed Systems
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+LINK_UP:
+#+LINK_HOME:
+#+STYLE:    <link rel="stylesheet" type="text/css" href="css/worg.css" />
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger,hyperref={colorlinks=true, urlcolor=red, plainpages=false, pdfpagelabels, bookmarksnumbered}]
+
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_THEME: Boadilla [height=20pt]
+#+BEAMER_COLOR_THEME: spruce
+
+#+BEAMER_HEADER_EXTRA:\setbeamertemplate{footline}{\leavevmode \hbox{ \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot} \insertshorttitle\end{beamercolorbox} \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}\insertshortauthor\end{beamercolorbox} \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot} \insertframenumber / \inserttotalframenumber\hspace*{2em} \end{beamercolorbox} } \vskip0pt }
+#+BEAMER_HEADER_EXTRA: \setbeamercovered{invisible}
+#+BEAMER_HEADER_EXTRA: \author[S. Genaud]{{\large Stéphane Genaud} \\ \vspace{0.2cm} ENSIIE - Strasbourg \\ \vspace{0.2cm} \texttt{genaud@unistra.fr} }
+#+BEAMER_HEADER_EXTRA: \date{{\large Parallel and Distributed Systems} \\ \vspace{0.2cm} }
+#+BEAMER_envargs: [<+->] 
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+#+STARTUP: beamer
+
+#+latex_header: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+
+
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:         keywordstyle=\color{blue},
+#+LATEX_HEADER:         commentstyle=\color{red},
+#+LATEX_HEADER:         stringstyle=\color{green},
+#+LATEX_HEADER:         basicstyle=\ttfamily\small,
+#+LATEX_HEADER:         columns=fullflexible,
+#+LATEX_HEADER:         frame=single,
+#+LATEX_HEADER:         basewidth={0.5em,0.4em}
+#+LATEX_HEADER:         }
+
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+
+
+
+
+* Introduction on Use Cases 
+** Use Case 1 - Fluid Simulation Visualization
+*** Fluid Simulation 					    :B_ignoreheading:
+   :PROPERTIES:
+   :BEAMER_envargs: [shrink]
+   :END:
+   - In a fluid dynamics lab, visualization of fluid circulation.
+   - Need: from the numerical simulation data, render one particular instant of
+     the simulation ($10^7$ points, 8 GB data in RAM)
+#+LABEL:fig:fluid-simu
+#+ATTR_LaTeX: width=.5\textwidth
+#+ATTR_HTML: width="50%"
+  [[file:img/sph_particles2.png]]
+
+
+** Use Case 1 - Car Model
+*** Car Model						    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:      
+    - In the car industry, a R&D department works on CAD models.
+    - Need: compute the heat transfer from the engine to the rest of the
+      vehicle on a $10^8$ cell mesh (100 GB of data in mesh).
+      
+#+CAPTION:Car CAD Mesh
+#+LABEL:fig:car-mesh
+#+ATTR_LaTeX: width=.5\linewidth
+#+ATTR_HTML: width="70%"
+  [[file:img/car-mesh.png]]
+
+** Use Case 2 - Scene Rendering
+*** Scene Rendering					    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+    - In the film industry, produce an animated cartoon based on digital images. 
+    - Need: compute the scene rendering for $10^5$ images
+      
+#+CAPTION:Scene Rendering
+#+LABEL:fig:scene-rendering
+#+ATTR_LaTeX: width=.5\linewidth,center
+#+ATTR_HTML: width="70%"
+  [[file:img/ilm_yoda.png]]
+
+
+** Use Case 3 - RC5-72
+   :PROPERTIES:
+   :BEAMER_envargs: [t]
+   :END:
+*** Breaking a Ciphering Key                                  :B_block:BMCOL:					   
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_col: 0.48
+    :END:
+    - Find the cryptographic key used to cipher a message. 
+    - Need: scan all possible keys using brute force and find which one matches.
+    - See for example the [[http://en.wikipedia.org/wiki/RSA_Secret-Key_Challenge][RSA Secret-Key Challenge]]
+
+*** Archi. Distributed.net 				      :B_block:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_col: 0.45
+    :END:
+
+#+CAPTION:architecture Distributed.net
+#+LABEL:fig:scene-rendering
+#+ATTR_HTML: width="30%"
+#+ATTR_LATEX: width=.3\textwidth
+[[file:img/compute-split-merge.png]]
+
+
+
+
+
+** Use-Case 4: Social Network
+
+*** Graph Properties					    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- Compute properties on the graph
+- Need: Recommend a user new connections, i.e people he/she may know by
+  transitivity. Do it for $10^6$ users.
+*** Graph
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+
+#+CAPTION: degree-1 neighborhood
+#+LABEL:fig:linkedin-graph
+#+ATTR_HTML: width="30%"
+#+ATTR_LATEX: width=.3\textwidth
+[[file:img/linkedin-network-genaud-aug-2014.png]]
+
+
+
+* Broad fields of parallelism
+** Multi Threaded
+\vfill
+- key technologies: /OpenMP/ - /CUDA/ - /OpenCL/
+\vfill
+- architecture : single host
+\vfill
+
+
+** Message-passing
+\vfill
+- key technologies: /MPI/
+\vfill
+- architecture : multi-hosts connected through fast network (clusters)
+\vfill
+
+
+** Bag-of-tasks
+
+\vfill
+- key technologies: /BOINC/ - /Globus derivatives/ 
+\vfill
+- architecture : distributed hosts connected through LANs or WANs. Grids,
+  Clouds, Internet Computing   
+\vfill
+
+
+** MapReduce
+
+\vfill
+- key technologies: /Google MapReduce/ - /Hadoop/
+\vfill
+- architecture : multi-hosts connected through fast network (clusters)
+\vfill
+
+
+
