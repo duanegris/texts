@@ -7,7 +7,7 @@
 #+LINK_UP:
 #+LINK_HOME:
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/worg.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://icps.u-strasbg.fr/~genaud/css/worg.css" />
 
 
 #+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
@@ -46,12 +46,12 @@ clients. Un  client peut créer  un compte auquel est  associé un nom. Il pourr
 disposition  :   ajout  d'argent,  retrait  d'argent,   listing  des  opérations
 effectuées depuis la création du compte.
 
-Lorsque que le client fait la demande création de compte, il se voit retourner
-par le serveur un numéro de compte unique ainsi qu'une clé secrète qui prend la
-forme d'un entier unique. Vous pourrez utiliser pour implémenter cela côté
-serveur, la classe [[https://docs.oracle.com/javase/1.5.0/docs/api/java/util/UUID.html][java.util.UUID]] (disponible à partir de java 1.5) qui possède
-une méthode =toString()=. Toute opération sur le compte devra ensuite passer
-en paramètre le numéro de compte et cette clé secrète.
+Lorsque que le client  fait la demande création de compte,  il se voit retourner
+par le serveur un numéro de compte  unique ainsi qu'une clé secrète qui prend la
+forme d'un /Universally  Unique IDentifier/ (uuid) . Vous  pourrez utiliser pour
+implémenter cela côté serveur, la  classe [[https://docs.oracle.com/javase/1.5.0/docs/api/java/util/UUID.html][java.util.UUID]] (disponible à partir de
+java 1.5)  qui possède une méthode  =toString()=. Toute opération sur  le compte
+devra ensuite passer en paramètre le numéro de compte et cette clé secrète.
 
 
 On souhaite définir les méthodes RPC ci-dessous :
@@ -65,13 +65,13 @@ On souhaite définir les méthodes RPC ci-dessous :
 |                 | compte ainsi qu'une clé secrète (uuid). En cas d'échec (par exemple trop de comptes          |
 |                 | créés, le serveur renvoie null.                                                              |
 |-----------------+----------------------------------------------------------------------------------------------|
-| =deleteAccount= | demande la suppression du compte. On passe en entrée le numér ode compte et la clé           |
-|                 | secrète. Le serveur renvoie le solde du compte                                               |
+| =deleteAccount= | demande la suppression du compte. On passe en entrée le numéro de compte et la clé           |
+|                 | secrète. Le serveur renvoie le solde du compte.                                              |
 |-----------------+----------------------------------------------------------------------------------------------|
 | =creditAccount= | Etant donné un numéro de compte, sa clé secrète, et un montant, ajoute cette somme           |
 |                 | sur le compte. Retourne la somme sur le compte après l'opération.                            |
 |-----------------+----------------------------------------------------------------------------------------------|
-| =debitAccount=  | Etant donné un numéro de compte, sa clé secrète, et un montant, ajoute cette somme           |
+| =debitAccount=  | Etant donné un numéro de compte, sa clé secrète, et un montant, retire cette somme           |
 |                 | sur le compte. Retourne la somme sur le compte après l'opération.                            |
 |-----------------+----------------------------------------------------------------------------------------------|
 | =listOpAccount= | Etant donné un numéro de compte et sa clé secrète, rend la liste  les opérations             |
