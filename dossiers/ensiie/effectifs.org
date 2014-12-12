@@ -41,58 +41,65 @@ Muller actuariat +1: Chobert valide S5
 
 ** Promo 2012
 
-1.Thibault Dubuisson Ingénieur Logiciel     Abase Strasbourg
+1.Thibault Dubuisson Ingénieur Logiciel     Abase Strasbourg  
 2.Marien Ritzenthaler Analyste/Développeur   CGI  Illkirch
 3.Bruno Maury Analyste d'affaires  Héma-Québec Montreal
 4.Nicolas Weber Développeur Sféreno Strasbourg
 5.Guillaume Sabot Développeur ATOS Lyon     
+
+répartition: Industrie/Service/Petite entreprise innovante =  1/4/1
 
 
 ** Promo 2013
 
 (entrés en 2009: Boutry, Roverch, Maquin)
 
-1. Leslie Bordonné Conceptrice d’app mobiles e-learning Lomdess Strasbourg
-2. Jonathan Bronner Ingénieur Etudes et Développement Sopra Strasbourg
-3. Julien Ernwein Ingénieur Développement EID Strasbourg
-4. Sébastien Azim Développeur Web Novelys Strasbourg
-5. Adrien Bracigliano Ingénieur d’études Davidson  Strasbourg
-6. Jean-François Spatz Ingénieur Logiciel FM Logistics Phalsbourg
-7. Luke Bertot Doctorant en informatique Icube, Unistra Strasbourg
-8. Victor Bahl Ingénieur d’affaires Smile Paris
-9. Lucas Bee Développeur OVH Lille
-10. Nicolas Maire Développeur 3D Ka-Ra Strasbourg
-11. Fadoua Kawni Ingénieur d’études Davidson  Strasbourg
-12. Sébastien Chatout Développeur Web SDV Plurimédia Strasbourg
-13. Pierre Boutry Doctorant en informatique Icube, Unistra Strasbourg
-14. Xiayoe Sun Ingénieur Logiciel Beijing, Chine
-15. Chenlong Hu Ingénieur Logiciel Astek Strasbourg
-16. Emeric Roverch Ingénieur Logiciel/Finance Solucom Paris
-17. Frédéric Maquin Développeur WhiteQuest Erstein
+1. Leslie Bordonné Conceptrice d’app mobiles e-learning Lomdess Strasbourg   (Innov)
+2. Jonathan Bronner Ingénieur Etudes et Développement Sopra Strasbourg       (S)
+3. Julien Ernwein Ingénieur Développement EID Strasbourg                     (Indus)
+4. Sébastien Azim Développeur Web Novelys Strasbourg                         (Innov)
+5. Adrien Bracigliano Ingénieur d’études Davidson  Strasbourg                (S)
+6. Jean-François Spatz Ingénieur Logiciel FM Logistics Phalsbourg            (Indus)
+7. Luke Bertot Doctorant en informatique Icube, Unistra Strasbourg           (autre)
+8. Victor Bahl Ingénieur d’affaires Smile Paris                              (Innov)
+9. Lucas Bee Développeur OVH Lille                                           (Indus)
+10. Nicolas Maire Développeur 3D Ka-Ra Strasbourg                            (Innov)
+11. Fadoua Kawni Ingénieur d’études Davidson  Strasbourg                     (S)
+12. Sébastien Chatout Développeur Web SDV Plurimédia Strasbourg              (Indus)
+13. Pierre Boutry Doctorant en informatique Icube, Unistra Strasbourg        (autre)
+14. Xiayoe Sun Ingénieur Logiciel Beijing, Chine                             (Indus)
+15. Chenlong Hu Ingénieur Logiciel Astek Strasbourg                          (S)
+16. Emeric Roverch Ingénieur Logiciel/Finance Solucom Paris                  (S)
+17. Frédéric Maquin Développeur WhiteQuest Erstein                           (Innov)
+
+répartition: Industrie/Service/Petite entreprise innovante/Autre =  5/5/5/2
 
 
 ** Promo 2014
 
 (entrés en 2010: Chobert)
 
-1. Paul Chobert - Developer, fivebyfive.io - Londres
-2. Mourad BENGMAH
-3. Xavier CAVARELLI	Davidson
-4. Vincent DE JONGHE (Evry en S5-)
-5. Saad	EL BANNANI
-6. Paul GOUY
-7. Paul-Henri KOECK
-8. Baptiste LAFABREGUE - Titanium Business System - Strasbourg
-9. Ismail LAGOUILLY
-10. Yaohua LIANG - Ingénieur logiciel, Amadeus - Antibes
+1. Paul Chobert - Developer, fivebyfive.io - Londres                        (freelance)
+2. Mourad BENGMAH - Ingénieur logiciel - Bluestar solutions - Neuchâtel     (Indus)
+3. Xavier CAVARELLI	Davidson - Strasbourg                               (S)
+5. Saad	EL BANNANI - recherche emploi
+6. Vincent De Jonghe - changement de site vers Evry
+7. Paul GOUY  - Top Décision (projet de création) - Strasbourg              (Innov)
+8. Vincent Kaessle - Top Décision (projet de création) - Strasbourg         (Innov)
+9. Paul-Henri KOECK - IOs developper - Strasbourg                           (freelance)
+10. Baptiste LAFABREGUE - Titanium Business System - Strasbourg             (S)
+11. Ismail LAGOUILLY - Sopra - Strasbourg                                   (S)
+12. Yaohua LIANG - Ingénieur logiciel, Amadeus - Antibes                    (Indus)
     Christophe PAIVA
-11. Guillaume PARAN - Auto-entrepreneur - Strasbourg
-12. Jonathan RYBAK - Bull Strasbourg
-13. Lucas SAUREL - 
-14. Quentin THENOZ - TiZ Strasbourg
-15. Tian TIAN - 
-16. Léo UNBEKANDT - Scale&Go (création) - Strasbourg  
-17. Shuyan ZHANG 
+13. Guillaume PARAN - Titch (projet de création) - Strasbourg               (Innov)
+14. Jonathan RYBAK - Bull Strasbourg                                        (Indus)
+15. Lucas SAUREL - recherche emploi
+16. Quentin THENOZ - Développeur - TiZ Strasbourg                           (Innov)
+17. Tian TIAN - Apprenti - Schneider Electric - Paris                       (Indus)
+18. Léo UNBEKANDT - Scale&Go (création) - Strasbourg                        (Innov)
+
+répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/3/5/2
+
 
 
 ** Promo 2015
@@ -101,4 +108,17 @@ Muller actuariat +1: Chobert valide S5
 
 1. Paul Gouy
 2. Timothee MULLER
+3. Shuyan Zhang
+
+
+* Ventilation par secteur
+
+|-------+-----------+---------+-----------+-----------+-----------|
+|       | Industrie | Service | Innovante | Freelance | Doctorant |
+|-------+-----------+---------+-----------+-----------+-----------|
+|  2012 |         1 |       4 |         1 |         0 |         0 |
+|  2013 |         5 |       5 |         5 |         0 |         2 |
+|  2014 |         4 |       3 |         5 |         2 |         0 |
+|-------+-----------+---------+-----------+-----------+-----------|
+| total |        10 |      12 |        11 |         2 |         2 |
 
