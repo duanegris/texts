@@ -1,0 +1,61 @@
+
+#+TITLE:     IMW: middleware - @@latex:\\@@ @@html:<br><br>@@ Rattrapage 
+#+DATE: 2015-02-02
+
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+LINK_UP:
+#+LINK_HOME:
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://icps.u-strasbg.fr/~genaud/css/worg.css" />
+
+
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+LaTeX_CLASS: article
+
+
+* Sujet 
+
+On  souhaite  réaliser  un  service  permettant   du  jouer  en  réseau  au  jeu
+ papier/ciseau/pierre, qui  se joue  à deux joueurs.   Chaque joueur  démarre un
+ client qui commmence  par se connecter au serveur.  Le  client permet au joueur
+ de saisir son nom, puis démarre  le jeu quand un deuxième joueur (l'adversaire)
+ est connecté.   Quand le  jeu est  démarré, chacun des  joueurs saisit  le coup
+ qu'il joue: /papier/, /ciseau/ ou /pierre/.  Le serveur compare les coups joués
+ et détermine le gagnant selon les règles:
+- la pierre bat les ciseaux (en les émoussant), 
+- les ciseaux battent la feuille (en la coupant), 
+- la feuille bat la pierre (en l'enveloppant).
+Si le coup joué par les deux joueurs est le même, c'est un match nul.
+Gagner sur un coup rapporte un point, faire match nul rapporte un demi-point.
+
+Une partie est composée de 3 coups. A l'issue des 3 coups, les clients demandent
+au serveur le résultat et l'affichent. Le serveur mémorise également le résultat
+de la partie, avec les noms des joueurs et le score final.
+
+* Travail à faire
+
+Utiliser rpc, RMI ou CORBA pour définir le service RPC qui réalise le jeu décrit ci-dessus.
+
+** Interfaces
+Ecrire l'interface décrivant les interactions entre un client et le serveur (de
+nom, par exemple =Jeu.java=).
+
+** Serveur
+Vous écrirez la classe implémentant cette interface (de nom, par exempl, =JeuImpl.java=).
+Vous êtes dispensés d'écrire le code qui gère l'activation de l'objet serveur.
+
+** Client
+
+Vous écrirez également le code du client (de nom, par exemple  =JeuClient.java=).
+
+
