@@ -1,0 +1,82 @@
+réunion du 12 fév. 2015
+
+#+TITLE:    Réunion Perfectionnement M1 ILC - ENSIIE
+#+DATE: 2015-02-02
+
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+LINK_UP:
+#+LINK_HOME:
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://icps.u-strasbg.fr/~genaud/css/worg.css" />
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+LaTeX_CLASS: article
+
+
+Compte rendu des échanges oraux réunissant les élèves ENSIIE inscrits sur le bi-cursus Master ILC.
+
+* Modalités d'obtention des diplômes
+
+  Les élèves s'inquiètent de la non-validation potentielle de leurs
+  enseignements du Master, avec le questionnement de l'équité : les UEs qu'ils
+  suivent ne sont elles pas notées durement, les étudiants de Master pouvant
+compenser avec la note du projet professionnel (alternance).
+  
+
+* Contenu Pédagogique - Enseignements du M1S1
+
+De manière globale, les étudiants sont déçus de ne pas avoir plus de travaux
+pratiques visant à approfondir les enseignements théoriques: TPs impliquant du
+développement informatique, ou projets. 
+
+** Entrepôt de données (Nicolas Lachiche)
++ Souhait de clarification des objectifs de l’enseignement, mise en relief des éléments clés
++ Quelques redondances avec les enseignements à l'IUT (semestre 2)
++ Notation sévère :
+- ENSIIE (13 étudiants) : moyenne 7.25 et 2/13 ayant la moyenne 
+- Master (19 étudiants) : moyenne 8.65 et 8/19 ayant la moyenne
+
+** Fouille de données (Germain Forestier)
+- bien, mais évaluation sur QCM est jugée faisant beaucoup de place au par coeur.
+
+** Extraction et Modélisation de Connaissances (Agnès Braud et Florence Le Ber) 
+- souhait d’une mise en perspective des concepts étudiés par plus d’illustration de leurs emplois dans des situations concrètes.
+
+
+* Contenu Pédagogique - Enseignements du M1S2 (sur la base des cours depuis janvier)
+
+** Algo Avancée (Basile Sauvage)
+- cours intéressant et pleinement en phase avec les attentes
+
+** Ingénierie de la Preuve (Julien Narboux)
+- TP sur Coq appréciés, Disponibilité de l'enseignant.
+- sur le contenu, légère redondance avec le cours de logique ENSIIE le semestre
+  précédent. Haronisation souhaitée.
+
+
+** Bio-informatique (Christian Michel)
+- orientation recherche marquée ostensiblement par l’enseignant, en décalage avec l’avenir professionnel l’immense majorité des étudiants (discuter l’optionnalisation). 
+- projet (en Java) sur la recherche dans une base génomique succite intérêt mais aussi débat sur les technologies utilisées.
+
+
+
+* Contingences matérielles 
+** Intégration ENSIIE
+- L'intégration est un évènement important pour la cohésion des
+  promotions. Quelques étudiants M1 ISI et ILC ont raté une grande partie d’un
+  cours très condensé début septembre. Il faut anticiper davantage les emplois
+  du temps pour éviter toute absence aux cours.
+
+** Ajustement heure de démarrage cours 
+  Certains cours en Master débutent à 13:30, difficile quand la fin ENSIIE est à
+  12:45. Proposition de les décaler à 14:00.
+
