@@ -1,4 +1,3 @@
-réunion du 12 fév. 2015
 
 #+TITLE:    Réunion Perfectionnement M1 ILC - ENSIIE
 #+DATE: 2015-02-02
@@ -22,7 +21,13 @@ réunion du 12 fév. 2015
 #+LaTeX_CLASS: article
 
 
-Compte rendu des échanges oraux réunissant les élèves ENSIIE inscrits sur le bi-cursus Master ILC.
+#+begin_quote
+/Compte rendu des échanges oraux de la réunion réunion du 12 fév. 2015./
+
+- Présents: Guillaume Nominé, Kévin Abrantes, Lisa Peuckert, Simon Lopez, Cyril,
+ Redoine Elbachiri, Maxime Baux, Xavier Flick, Philippe Grad, Dimitri Schippers,
+ Stéphane Genaud.
+#+end_quote
 
 * Modalités d'obtention des diplômes
 
