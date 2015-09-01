@@ -29,10 +29,13 @@ $(PROJECT).jar : $(PROJECT).class
 	$(JAR) -cvf $@ $<
 	@echo "** JAR READY **"
 	@echo "-> Make sure hadoop can reach your $(PROJECT).jar file." 
-	@echo '   e.g if in the current directory, export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:.'
+	@echo '   e.g if in the current directory, export HADOOP_CLASSPATH=$$HADOOP_CLASSPATH:.'
 	@echo "-> Run :"
 	@echo "     hadoop jar $@ $(PROJECT) input output"
 	@echo "(make sure you have 'input' and 'output' does not exist yet)"
 
 $(PROJECT).class : $(PROJECT).java 
 	hadoop com.sun.tools.javac.Main $< 
+
+clean:
+	rm -f $(PROJECT).{jar,class}
