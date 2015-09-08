@@ -61,8 +61,8 @@
    - Need: from the numerical simulation data, render one particular instant of
      the simulation ($10^7$ points, 8 GB data in RAM)
 #+LABEL:fig:fluid-simu
-#+ATTR_LaTeX: width=.5\textwidth
-#+ATTR_HTML: width="50%"
+#+ATTR_LaTeX: :width .5\textwidth
+#+ATTR_HTML:  :width 50%
   [[file:img/sph_particles2.png]]
 
 
@@ -77,8 +77,8 @@
       
 #+CAPTION:Car CAD Mesh
 #+LABEL:fig:car-mesh
-#+ATTR_LaTeX: width=.5\linewidth
-#+ATTR_HTML: width="70%"
+#+ATTR_LaTeX: :width .5\linewidth
+#+ATTR_HTML:  :width 70%
   [[file:img/car-mesh.png]]
 
 ** Use Case 2 - Scene Rendering
@@ -91,8 +91,8 @@
       
 #+CAPTION:Scene Rendering
 #+LABEL:fig:scene-rendering
-#+ATTR_LaTeX: width=.5\linewidth,center
-#+ATTR_HTML: width="70%"
+#+ATTR_LaTeX: :width .5\linewidth,center
+#+ATTR_HTML:  :width "70%"
   [[file:img/ilm_yoda.png]]
 
 
@@ -117,8 +117,8 @@
 
 #+CAPTION:architecture Distributed.net
 #+LABEL:fig:scene-rendering
-#+ATTR_HTML: width="30%"
-#+ATTR_LATEX: width=.3\textwidth
+#+ATTR_HTML: :width 30%
+#+ATTR_LATEX: :width .3\textwidth
 [[file:img/compute-split-merge.png]]
 
 
@@ -141,8 +141,8 @@
 
 #+CAPTION: degree-1 neighborhood
 #+LABEL:fig:linkedin-graph
-#+ATTR_HTML: width="30%"
-#+ATTR_LATEX: width=.3\textwidth
+#+ATTR_HTML: :width 30%
+#+ATTR_LATEX: :width .3\textwidth
 [[file:img/linkedin-network-genaud-aug-2014.png]]
 
 
