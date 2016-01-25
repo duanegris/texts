@@ -2,22 +2,29 @@
 * Flux
 
 
- |     dipl. |        |                |              |                   |
- |     année | 1A     |   2A {ISI/ILC} | 3A {ISI/ILC} | diplômés          |
- |-----------+--------+----------------+--------------+-------------------|
- | 2009-2010 | 9      |                |              |                   |
- | 2010-2011 | 19 [a] |          8(-1) |              |                   |
- | 2011-2012 | 18 [b] |             19 |            8 | 5=8-3             |
- | 2012-2013 | 30 [c] |       18(-1+1) |       17(-2) | 17=17-3+3         |
- | 2013-2014 | 39 [d] |    28 (-5+3CF) |        18(0) | 14=17-1+1 (prev.) |
- | 2014-2015 | 43     | 30(-9) {15/13} | 27(-1){5/21} |                   |
- |-----------+--------+----------------+--------------+-------------------|
+ |     dipl. |              |                    |                    |           |                                  |
+ |     année | 1A           | 2A {ISI/ILC}       | 3A {ISI/ILC}       | diplômés  | double dipl. {ISI/ILC/étr}       |
+ |-----------+--------------+--------------------+--------------------+-----------+----------------------------------|
+ | 2009-2010 | 9            |                    |                    |           |                                  |
+ | 2010-2011 | 19 [a]       | 8(-1)              |                    |           |                                  |
+ | 2011-2012 | 18 [b]       | 19                 | 8                  | 5=8-3     |                                  |
+ | 2012-2013 | 30 [c]       | 18(-1+1)           | 17(-2)             | 17=17-3+3 |                                  |
+ | 2013-2014 | 39 [d]       | 28 (-5+3CF)        | 18(0)              | 17=17-1+1 | {0/0/1}                          |
+ | 2014-2015 | 43 [e]       | 30(-9) {17/13}     | 27(-1){5/21}       |           | {1/21/?}                         |
+ |-----------+--------------+--------------------+--------------------+-----------+----------------------------------|
+ |     année | 1A           | 2A {ISI/ILC/CS/SE} | 3A {ISI/ILC/CS/SE} | diplômés  | double dipl. {ISI/ILC/CS/SE/étr} |
+ |-----------+--------------+--------------------+--------------------+-----------+----------------------------------|
+ | 2015-2016 | 49+3 redbl ? | {19/7/1/5}    [f]  | 27(-1){8/?}        |           |                                  |
+ |-----------+--------------+--------------------+--------------------+-----------+----------------------------------|
 
  
 [a] dont maguet, bronner, paiva, shan wu, sijia zheng, faugeroux
 [b] dont paiva, thimothée muller
 [c] dont paiva, derlon, merouane elmnabhi, hicham Elbilali
-[d] dont milton, mercadiel,
+[d] dont milton, mercadiel, 7 départs à Evry
+[e]
+[f] dont +1 ISI : constitidines, +1 ILC : caron. 3 Redoublants 1A 2014-2105:
+Benattou, Bucheit, Taheri 
 
 ** Remarques:
 - promo 2012:
@@ -79,7 +86,7 @@ répartition: Industrie/Service/Petite entreprise innovante/Autre =  5/5/5/2
 (entrés en 2010: Chobert)
 
 1. Paul Chobert - Developer, fivebyfive.io - Londres                        (freelance)
-2. Mourad BENGMAH - Ingénieur logiciel - Bluestar solutions - Neuchâtel     (Indus)
+2. Mourad BENGMAH - Ingénieur logiciel - Bluestar solutions - Neuchâtel     (editeur)
 3. Xavier CAVARELLI	Davidson - Strasbourg                               (S)
 5. Saad	EL BANNANI - recherche emploi
 6. Vincent De Jonghe - changement de site vers Evry
@@ -95,29 +102,57 @@ répartition: Industrie/Service/Petite entreprise innovante/Autre =  5/5/5/2
 15. Lucas SAUREL - recherche emploi
 16. Quentin THENOZ - Développeur - TiZ Strasbourg                           (Innov)
 17. Tian TIAN - Apprenti - Schneider Electric - Paris                       (Indus)
-18. Léo UNBEKANDT - Scale&Go (création) - Strasbourg                        (Innov)
+18. Léo UNBEKANDT - Scalingo (création) - Strasbourg                        (Innov)
 
 répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/3/5/2
 
 
-
 ** Promo 2015
 
-(entrés en 2011: Gouy)
+ Slimane AGOURAM                 Sopra-Steria - Paris                   (S/ESN)
+ Steve BENEDICK                  Actimage GmbH - Kehl                   (Editeur)
+ Clément CALIN                
+ Julien CASARIN                  doctorant CIFRE -                      (doct)
+ Noël DEUTSCHMANN                Atos-Bull pour ES - Strasbourg         (S/ESN)
+ Arnaud COUCHET                  KLEE Group - Paris                     (Editeur+S)
+ Antoine ERNEWEIN                Actimage GmbH - Kehl                   (Editeur)
+ Thomas ESCHEMANN                Calyatis - Strasbourg                  (Innov)
+ Alan FONDERFLICK                pas encore finalisé 
+ Maxime HECKEL                   Docker (Tutum) - San Francisco         (Innov)
+ Etienne HEITZ                   Actimage GmbH  - Kehl                  (Editeur)
+ Youssef NAIT BELKACEM           CapGemini - Suresnes                   (S/ESN)
+ Anne MAYER                      
+ Timothee MULLER                 AXA - Paris                            (Indus/Assur)
+ Philippe Gaultier               Edge Lab - Lausanne                    (Inuds/FinTech)
+ Joris GIRARDOT                  ATOS pour CoE - Strasbourg             (S/ESN)
+ Magali GROSS                    In-Datech - Strasbourg                 (Indus/Banque)
+ Tristan GUILLEVIN               Actinvision - Strasbourg               (S/ESN)
+ Hao PAN                         Thoughtworks - Xi'an                   (Editeur)
+ Eleanore PIRRI                  EID - Strasbourg                       (Indus/Banque)
+ Soufyane REGRAGUI               SFERENO - Strasbourg                   (Editeur)
+ Julien SCHROEDER                SFEIR Est - Strasbourg                 (S/ESN)                  
+ Claudia TANASE    
+ Elsa THEUIL                     Actinvision - Strasbourg               (S/ESN)
+ Laurent WIESER                  CapCode - Strasbourg                   (S/ESN)
+ Ming ZHANG 
+ Shuyan ZHANG
+ Hugo ZILLIOX                    Sopra-Steria - Strasbourg              (S/ESN)
 
-1. Paul Gouy
-2. Timothee MULLER
-3. Shuyan Zhang
 
 
-* Ventilation par secteur
 
-|-------+-----------+---------+-----------+-----------+-----------|
-|       | Industrie | Service | Innovante | Freelance | Doctorant |
-|-------+-----------+---------+-----------+-----------+-----------|
-|  2012 |         1 |       4 |         1 |         0 |         0 |
-|  2013 |         5 |       5 |         5 |         0 |         2 |
-|  2014 |         4 |       3 |         5 |         2 |         0 |
-|-------+-----------+---------+-----------+-----------+-----------|
-| total |        10 |      12 |        11 |         2 |         2 |
 
+* Ventilation embauchés par secteur
+
+#+TBL_FMT
+|-------+-----------+---------+---------+-----------+-----------+-----------|
+|       | Industrie | Service | Editeur | Innovante | Freelance | Doctorant |
+|-------+-----------+---------+---------+-----------+-----------+-----------|
+|  2012 |         1 |       4 |         |         1 |         0 |         0 |
+|  2013 |         5 |       5 |         |         5 |         0 |         2 |
+|  2014 |         3 |       3 |       1 |         5 |         2 |         0 |
+|  2015 |         2 |       8 |       5 |         2 |         0 |         1 |
+|-------+-----------+---------+---------+-----------+-----------+-----------|
+| total |        11 |      20 |       6 |        13 |         2 |         3 |
+|       |           |         |         |           |           |           |
+#+TBL_FMT
