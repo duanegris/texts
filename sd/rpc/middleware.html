@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="IMW: Middleware"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-10-14 12:15:40 CEST"/>
+<meta name="generated" content="2014-10-08T10:59+0200"/>
 <meta name="author" content="Stephane Genaud"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -62,6 +62,30 @@
 </style>
 <link rel="stylesheet" type="text/css" href="css/worg.css" />
 <script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
  {
@@ -84,6 +108,56 @@
 /*]]>*///-->
 </script>
 <script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+/**
+ *
+ * @source: http://orgmode.org/mathjax/MathJax.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in http://orgmode.org/mathjax/MathJax.js.
+ *
+ * Copyright (C) 2012-2013  MathJax
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in http://orgmode.org/mathjax/MathJax.js.
+ *
+ */
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code below.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code below is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code below.
+*/
 <!--/*--><![CDATA[/*><!--*/
     MathJax.Hub.Config({
         // Only one of the two following lines, depending on user settings
@@ -135,14 +209,6 @@
 <h1 class="title">IMW: Middleware</h1>
 
 
-
-
-
-
-
-
-
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -190,6 +256,7 @@
 <li><a href="#sec-2-6">2.6 Standard RPC services</a>
 <ul>
 <li><a href="#sec-2-6-1">2.6.1 file <code>/etc/rpc</code></a></li>
+<li><a href="#sec-2-6-2">2.6.2 Tips &amp; Tricks : rpc services <i>may not</i> be started on recent systems</a></li>
 </ul>
 </li>
 <li><a href="#sec-2-7">2.7 Running Services</a></li>
@@ -208,34 +275,40 @@
 <li><a href="#sec-2-11">2.11 Example of high-layer usage (server side 1/2)</a></li>
 <li><a href="#sec-2-12">2.12 Example of high-layer usage (server side 2/2)</a></li>
 <li><a href="#sec-2-13">2.13 Example of high-layer usage (client side 1/2)</a></li>
-<li><a href="#sec-2-14">2.14 Try It</a></li>
+<li><a href="#sec-2-14">2.14 Try It</a>
+<ul>
+<li><a href="#sec-2-14-1">2.14.1 Have you noticed?</a></li>
+</ul>
+</li>
 <li><a href="#sec-2-15">2.15 Another way: <code>rpcgen</code></a></li>
 <li><a href="#sec-2-16">2.16 Example with <code>rpcgen</code></a></li>
-<li><a href="#sec-2-17">2.17 Example with <code>rpcgen</code> (contd)</a></li>
-<li><a href="#sec-2-18">2.18 RPCL in Brief (enumeration, constants &amp; simple)</a>
+<li><a href="#sec-2-17">2.17 Files generated by <code>rpcgen</code></a></li>
+<li><a href="#sec-2-18">2.18 Try It (client/server with rpcgen)</a></li>
+<li><a href="#sec-2-19">2.19 Code Generated by <code>rpcgen</code></a></li>
+<li><a href="#sec-2-20">2.20 RPCL in Brief (enumeration, constants &amp; simple)</a>
 <ul>
-<li><a href="#sec-2-18-1">2.18.1 Enumerations and Constants</a></li>
-<li><a href="#sec-2-18-2">2.18.2 Simple Declarations</a></li>
-<li><a href="#sec-2-18-3">2.18.3 Added types (bool and string)</a></li>
+<li><a href="#sec-2-20-1">2.20.1 Enumerations and Constants</a></li>
+<li><a href="#sec-2-20-2">2.20.2 Simple Declarations</a></li>
+<li><a href="#sec-2-20-3">2.20.3 Added types (bool and string)</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-19">2.19 RPCL in Brief (arrays)</a>
+<li><a href="#sec-2-21">2.21 RPCL in Brief (arrays)</a>
 <ul>
-<li><a href="#sec-2-19-1">2.19.1 Fixed-length arrays</a></li>
-<li><a href="#sec-2-19-2">2.19.2 Variable-length arrays</a></li>
+<li><a href="#sec-2-21-1">2.21.1 Fixed-length arrays</a></li>
+<li><a href="#sec-2-21-2">2.21.2 Variable-length arrays</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-20">2.20 RPCL in brief (typedef)</a>
+<li><a href="#sec-2-22">2.22 RPCL in brief (typedef)</a>
 <ul>
-<li><a href="#sec-2-20-1">2.20.1 Type definitions</a></li>
+<li><a href="#sec-2-22-1">2.22.1 Type definitions</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-21">2.21 RPCL in Brief (pointers)</a></li>
-<li><a href="#sec-2-22">2.22 RPCL in Brief (struct)</a></li>
-<li><a href="#sec-2-23">2.23 Tips &amp; Tricks</a>
+<li><a href="#sec-2-23">2.23 RPCL in Brief (pointers)</a></li>
+<li><a href="#sec-2-24">2.24 RPCL in Brief (struct)</a></li>
+<li><a href="#sec-2-25">2.25 Tips &amp; Tricks</a>
 <ul>
-<li><a href="#sec-2-23-1">2.23.1 Linux</a></li>
-<li><a href="#sec-2-23-2">2.23.2 MacOSX</a></li>
+<li><a href="#sec-2-25-1">2.25.1 Linux</a></li>
+<li><a href="#sec-2-25-2">2.25.2 MacOSX</a></li>
 </ul></li>
 </ul>
 </li>
@@ -266,18 +339,25 @@
 <li><a href="#sec-3-9">3.9 Example 1: Service Implementation</a></li>
 <li><a href="#sec-3-10">3.10 Example 1: Service Registration</a></li>
 <li><a href="#sec-3-11">3.11 Example 1: Client code</a></li>
-<li><a href="#sec-3-12">3.12 Trouble shooting 1</a>
-<ul>
-<li><a href="#sec-3-12-1">3.12.1 Observation</a></li>
-<li><a href="#sec-3-12-2">3.12.2 Why?</a></li>
-<li><a href="#sec-3-12-3">3.12.3 Solution</a></li>
-</ul>
-</li>
-<li><a href="#sec-3-13">3.13 Trouble shooting 2</a>
+<li><a href="#sec-3-12">3.12 Try It (RMI basic client/server)</a></li>
+<li><a href="#sec-3-13">3.13 Trouble shooting 1</a>
 <ul>
 <li><a href="#sec-3-13-1">3.13.1 Observation</a></li>
 <li><a href="#sec-3-13-2">3.13.2 Why?</a></li>
 <li><a href="#sec-3-13-3">3.13.3 Solution</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-14">3.14 Trouble shooting 2</a>
+<ul>
+<li><a href="#sec-3-14-1">3.14.1 Observation</a></li>
+<li><a href="#sec-3-14-2">3.14.2 Why?</a></li>
+<li><a href="#sec-3-14-3">3.14.3 Solution</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-15">3.15 Trouble shooting 3</a>
+<ul>
+<li><a href="#sec-3-15-1">3.15.1 Debugging</a></li>
+<li><a href="#sec-3-15-2">3.15.2 Solution</a></li>
 </ul></li>
 </ul>
 </li>
@@ -289,42 +369,93 @@
 <li><a href="#sec-4-1-2">4.1.2 Implemenations</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-2">4.2 Characteristics</a>
+<li><a href="#sec-4-2">4.2 Sun Implementation</a>
 <ul>
-<li><a href="#sec-4-2-1">4.2.1 A RPC framework</a></li>
-<li><a href="#sec-4-2-2">4.2.2 External Services</a></li>
+<li><a href="#sec-4-2-1">4.2.1 Since 1.3</a></li>
+<li><a href="#sec-4-2-2">4.2.2 Since 1.4</a></li>
+<li><a href="#sec-4-2-3">4.2.3 Imports</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-3">4.3 IDL</a></li>
-<li><a href="#sec-4-4">4.4 IDL structure</a></li>
-<li><a href="#sec-4-5">4.5 IDL types</a></li>
-<li><a href="#sec-4-6">4.6 IDL type mapping to Java</a></li>
-<li><a href="#sec-4-7">4.7 IDL Methods</a>
+<li><a href="#sec-4-3">4.3 Characteristics</a>
 <ul>
-<li><a href="#sec-4-7-1">4.7.1 General Form</a></li>
+<li><a href="#sec-4-3-1">4.3.1 A RPC framework</a></li>
+<li><a href="#sec-4-3-2">4.3.2 External Services</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-8">4.8 IDL Oneway Methods</a>
+<li><a href="#sec-4-4">4.4 IDL</a></li>
+<li><a href="#sec-4-5">4.5 IDL structure</a></li>
+<li><a href="#sec-4-6">4.6 IDL types</a></li>
+<li><a href="#sec-4-7">4.7 IDL types (array)</a>
 <ul>
-<li><a href="#sec-4-8-1">4.8.1 Normal method call: waits for return and return is guaranteed</a></li>
-<li><a href="#sec-4-8-2">4.8.2 Oneway call: no wait, but not guaranteed execution</a></li>
+<li><a href="#sec-4-7-1">4.7.1 Fixed-size arrays</a></li>
+<li><a href="#sec-4-7-2">4.7.2 Arbitrary-size arrays</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-9">4.9 IDL Parameter Passing</a>
+<li><a href="#sec-4-8">4.8 IDL type mapping to Java</a></li>
+<li><a href="#sec-4-9">4.9 IDL struct mapping to Java</a></li>
+<li><a href="#sec-4-10">4.10 IDL Methods</a>
 <ul>
-<li><a href="#sec-4-9-1">4.9.1 Reference or Copy</a></li>
-<li><a href="#sec-4-9-2">4.9.2 Observations</a></li>
+<li><a href="#sec-4-10-1">4.10.1 General Form</a></li>
+<li><a href="#sec-4-10-2">4.10.2 with:</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-10">4.10 POA</a>
+<li><a href="#sec-4-11">4.11 IDL Oneway Methods</a>
 <ul>
-<li><a href="#sec-4-10-1">4.10.1 OA and POA</a></li>
+<li><a href="#sec-4-11-1">4.11.1 Normal method call: waits for return and return is guaranteed</a></li>
+<li><a href="#sec-4-11-2">4.11.2 Oneway call: no wait, but not guaranteed execution</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-11">4.11 POA behavior</a>
+<li><a href="#sec-4-12">4.12 IDL Parameter Passing</a>
 <ul>
-<li><a href="#sec-4-11-1">4.11.1 Thread policy:</a></li>
-<li><a href="#sec-4-11-2">4.11.2 Lifespan policy:</a></li>
+<li><a href="#sec-4-12-1">4.12.1 Reference or Copy</a></li>
+<li><a href="#sec-4-12-2">4.12.2 Observations</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-13">4.13 CORBA Architecture</a></li>
+<li><a href="#sec-4-14">4.14 Transient and Persistent Objects</a>
+<ul>
+<li><a href="#sec-4-14-1">4.14.1 Transient CORBA object</a></li>
+<li><a href="#sec-4-14-2">4.14.2 Persistent CORBA object</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-15">4.15 POA</a>
+<ul>
+<li><a href="#sec-4-15-1">4.15.1 OA and POA</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-16">4.16 POA and Servants</a></li>
+<li><a href="#sec-4-17">4.17 POA Control in Java (1/3)</a>
+<ul>
+<li><a href="#sec-4-17-1">4.17.1 The first POA is managed by the ORB, and called RootPOA by convention.</a></li>
+<li><a href="#sec-4-17-2">4.17.2 “Service” POAs can be forked from the RootPOA (it is not mandatory: you can use</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-18">4.18 POA Control in Java (2/3)</a>
+<ul>
+<li><a href="#sec-4-18-1">4.18.1 POAManager’s States</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-19">4.19 POA Control in Java (3/3)</a>
+<ul>
+<li><a href="#sec-4-19-1">4.19.1 Servants</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-20">4.20 POA behavior</a>
+<ul>
+<li><a href="#sec-4-20-1">4.20.1 Thread policy:</a></li>
+<li><a href="#sec-4-20-2">4.20.2 Lifespan policy:</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-21">4.21 Example using Java JDK</a>
+<ul>
+<li><a href="#sec-4-21-1">4.21.1 The Sun JDK (now open-jdk) provides since a long time classes and tools to build CORBA apps.</a></li>
+<li><a href="#sec-4-21-2">4.21.2 Tools</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-22">4.22 NamingService (JDK): <code>orbd</code></a></li>
+<li><a href="#sec-4-23">4.23 Example Outline</a>
+<ul>
+<li><a href="#sec-4-23-1">4.23.1 POA Model, Transient server</a></li>
 </ul>
 </li>
 </ul>
@@ -656,7 +787,6 @@ Registration needs (<code>rpcregister</code> 1st arg for example)
 a 32-bit identifier (sometimes called RPC port) 
 </p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption></caption>
 <colgroup><col class="left" /><col class="left" />
 </colgroup>
 <thead>
@@ -699,6 +829,23 @@ mountd      100005
 ypbind      100007
 walld       100008 
 </pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-6-2" class="outline-4">
+<h4 id="sec-2-6-2"><span class="section-number-4">2.6.2</span> Tips &amp; Tricks : rpc services <i>may not</i> be started on recent systems</h4>
+<div class="outline-text-4" id="text-2-6-2">
+
+<ul>
+<li>MacOSX since Mavericks : run <code>sudo launchctl start com.apple.rpcbind</code>
+</li>
+<li>Linux : check that package <code>rpcbind</code> is installed
+</li>
+</ul>
+
 
 
 </div>
@@ -921,9 +1068,14 @@ walld       100008
 </ul>
 
 
-<p> 
-Have you noticed? 
-</p><ul>
+
+</div>
+
+<div id="outline-container-2-14-1" class="outline-4">
+<h4 id="sec-2-14-1"><span class="section-number-4">2.14.1</span> Have you noticed?</h4>
+<div class="outline-text-4" id="text-2-14-1">
+
+<ul>
 <li>There are only <b>1</b> parameter for input and <b>1</b> for output
 </li>
 <li>the variable returned <code>res</code> is declared <code>static</code> because it may have to survive for a while
@@ -932,6 +1084,7 @@ Have you noticed?
 
 
 
+</div>
 </div>
 
 </div>
@@ -993,7 +1146,7 @@ Have you noticed?
 </div>
 
 <div id="outline-container-2-17" class="outline-3">
-<h3 id="sec-2-17"><span class="section-number-3">2.17</span> Example with <code>rpcgen</code> (contd)</h3>
+<h3 id="sec-2-17"><span class="section-number-3">2.17</span> Files generated by <code>rpcgen</code></h3>
 <div class="outline-text-3" id="text-2-17">
 
 <ul>
@@ -1023,7 +1176,10 @@ myservice_server.c <span style="color: #b22222;">/* </span><span style="color: #
 myservice_client.c <span style="color: #b22222;">/* </span><span style="color: #b22222;">client code </span><span style="color: #b22222;">*/</span>
 </pre>
 
-
+<ul>
+<li>Only the <code>_client.c</code> and <code>_server.c</code> files are intended to the programmer
+</li>
+</ul>
 
 
 </div>
@@ -1031,15 +1187,77 @@ myservice_client.c <span style="color: #b22222;">/* </span><span style="color: #
 </div>
 
 <div id="outline-container-2-18" class="outline-3">
-<h3 id="sec-2-18"><span class="section-number-3">2.18</span> RPCL in Brief (enumeration, constants &amp; simple)</h3>
+<h3 id="sec-2-18"><span class="section-number-3">2.18</span> Try It (client/server with rpcgen)</h3>
 <div class="outline-text-3" id="text-2-18">
+
+
+<ul>
+<li>Here are skeletons for a basic client / server scheme 
+</li>
+<li>Sources : <a href="http://icps.u-strasbg.fr/~genaud/courses/sd/src/rpc/example_2_rpcgen_incomplete.tar.gz">Example 2</a>
+</li>
+</ul>
 
 
 </div>
 
-<div id="outline-container-2-18-1" class="outline-4">
-<h4 id="sec-2-18-1"><span class="section-number-4">2.18.1</span> Enumerations and Constants</h4>
-<div class="outline-text-4" id="text-2-18-1">
+</div>
+
+<div id="outline-container-2-19" class="outline-3">
+<h3 id="sec-2-19"><span class="section-number-3">2.19</span> Code Generated by <code>rpcgen</code></h3>
+<div class="outline-text-3" id="text-2-19">
+
+<ul>
+<li>In <code>_client.c</code> examples calls to functions are 
+</li>
+</ul>
+
+
+
+
+<pre class="src src-C">result = mycomputation_addition_1(
+           &amp;mycomputation_addition_1_arg, clnt);
+<span style="color: #a020f0;">if</span> (result == <span style="color: #008b8b;">NULL</span>) {
+     clnt_perror(clnt, <span style="color: #8b2252;">"call failed:"</span>);
+ }
+</pre>
+
+
+<ul>
+<li>In <code>_server.c</code> <i>handlers</i> are created
+</li>
+</ul>
+
+
+
+
+<pre class="src src-C"><span style="color: #228b22;">response</span> *
+<span style="color: #0000ff;">mycomputation_addition_1_svc</span>(<span style="color: #228b22;">data</span> *<span style="color: #a0522d;">argp</span>,
+                             <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">svc_req</span> *<span style="color: #a0522d;">rqstp</span>)
+{
+      <span style="color: #a020f0;">static</span> <span style="color: #228b22;">response</span>  <span style="color: #a0522d;">result</span>;
+
+      <span style="color: #b22222;">/* </span><span style="color: #b22222;">insert server code here </span><span style="color: #b22222;">*/</span>
+
+      <span style="color: #a020f0;">return</span>(&amp;result);
+}
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-20" class="outline-3">
+<h3 id="sec-2-20"><span class="section-number-3">2.20</span> RPCL in Brief (enumeration, constants &amp; simple)</h3>
+<div class="outline-text-3" id="text-2-20">
+
+
+</div>
+
+<div id="outline-container-2-20-1" class="outline-4">
+<h4 id="sec-2-20-1"><span class="section-number-4">2.20.1</span> Enumerations and Constants</h4>
+<div class="outline-text-4" id="text-2-20-1">
 
 
 
@@ -1052,9 +1270,9 @@ myservice_client.c <span style="color: #b22222;">/* </span><span style="color: #
 
 </div>
 
-<div id="outline-container-2-18-2" class="outline-4">
-<h4 id="sec-2-18-2"><span class="section-number-4">2.18.2</span> Simple Declarations</h4>
-<div class="outline-text-4" id="text-2-18-2">
+<div id="outline-container-2-20-2" class="outline-4">
+<h4 id="sec-2-20-2"><span class="section-number-4">2.20.2</span> Simple Declarations</h4>
+<div class="outline-text-4" id="text-2-20-2">
 
 
 
@@ -1067,9 +1285,9 @@ myservice_client.c <span style="color: #b22222;">/* </span><span style="color: #
 
 </div>
 
-<div id="outline-container-2-18-3" class="outline-4">
-<h4 id="sec-2-18-3"><span class="section-number-4">2.18.3</span> Added types (bool and string)</h4>
-<div class="outline-text-4" id="text-2-18-3">
+<div id="outline-container-2-20-3" class="outline-4">
+<h4 id="sec-2-20-3"><span class="section-number-4">2.20.3</span> Added types (bool and string)</h4>
+<div class="outline-text-4" id="text-2-20-3">
 
 <ul>
 <li><code>bool</code> : boolean, can take TRUE or FALSE values
@@ -1083,16 +1301,16 @@ myservice_client.c <span style="color: #b22222;">/* </span><span style="color: #
 
 </div>
 
-<div id="outline-container-2-19" class="outline-3">
-<h3 id="sec-2-19"><span class="section-number-3">2.19</span> RPCL in Brief (arrays)</h3>
-<div class="outline-text-3" id="text-2-19">
+<div id="outline-container-2-21" class="outline-3">
+<h3 id="sec-2-21"><span class="section-number-3">2.21</span> RPCL in Brief (arrays)</h3>
+<div class="outline-text-3" id="text-2-21">
 
 
 </div>
 
-<div id="outline-container-2-19-1" class="outline-4">
-<h4 id="sec-2-19-1"><span class="section-number-4">2.19.1</span> Fixed-length arrays</h4>
-<div class="outline-text-4" id="text-2-19-1">
+<div id="outline-container-2-21-1" class="outline-4">
+<h4 id="sec-2-21-1"><span class="section-number-4">2.21.1</span> Fixed-length arrays</h4>
+<div class="outline-text-4" id="text-2-21-1">
 
 
 
@@ -1106,9 +1324,9 @@ myservice_client.c <span style="color: #b22222;">/* </span><span style="color: #
 
 </div>
 
-<div id="outline-container-2-19-2" class="outline-4">
-<h4 id="sec-2-19-2"><span class="section-number-4">2.19.2</span> Variable-length arrays</h4>
-<div class="outline-text-4" id="text-2-19-2">
+<div id="outline-container-2-21-2" class="outline-4">
+<h4 id="sec-2-21-2"><span class="section-number-4">2.21.2</span> Variable-length arrays</h4>
+<div class="outline-text-4" id="text-2-21-2">
 
 <ul>
 <li>The maximum size is specified between angle brackets, or may be ommitted:
@@ -1139,16 +1357,16 @@ each will translate to a C struct, e.g:
 
 </div>
 
-<div id="outline-container-2-20" class="outline-3">
-<h3 id="sec-2-20"><span class="section-number-3">2.20</span> RPCL in brief (typedef)</h3>
-<div class="outline-text-3" id="text-2-20">
+<div id="outline-container-2-22" class="outline-3">
+<h3 id="sec-2-22"><span class="section-number-3">2.22</span> RPCL in brief (typedef)</h3>
+<div class="outline-text-3" id="text-2-22">
 
 
 </div>
 
-<div id="outline-container-2-20-1" class="outline-4">
-<h4 id="sec-2-20-1"><span class="section-number-4">2.20.1</span> Type definitions</h4>
-<div class="outline-text-4" id="text-2-20-1">
+<div id="outline-container-2-22-1" class="outline-4">
+<h4 id="sec-2-22-1"><span class="section-number-4">2.22.1</span> Type definitions</h4>
+<div class="outline-text-4" id="text-2-22-1">
 
 <p>    Same syntax as C typedef
 </p>
@@ -1173,9 +1391,9 @@ will be translated into C code:
 
 </div>
 
-<div id="outline-container-2-21" class="outline-3">
-<h3 id="sec-2-21"><span class="section-number-3">2.21</span> RPCL in Brief (pointers)</h3>
-<div class="outline-text-3" id="text-2-21">
+<div id="outline-container-2-23" class="outline-3">
+<h3 id="sec-2-23"><span class="section-number-3">2.23</span> RPCL in Brief (pointers)</h3>
+<div class="outline-text-3" id="text-2-23">
 
 <ul>
 <li>Pointer declarations are as in C. Address pointers are not sent over the network. 
@@ -1194,9 +1412,9 @@ will be translated into C code:
 
 </div>
 
-<div id="outline-container-2-22" class="outline-3">
-<h3 id="sec-2-22"><span class="section-number-3">2.22</span> RPCL in Brief (struct)</h3>
-<div class="outline-text-3" id="text-2-22">
+<div id="outline-container-2-24" class="outline-3">
+<h3 id="sec-2-24"><span class="section-number-3">2.24</span> RPCL in Brief (struct)</h3>
+<div class="outline-text-3" id="text-2-24">
 
 <ul>
 <li>Translates as is in C, excepted that an extra typedef is generated.
@@ -1223,21 +1441,20 @@ which allows to use <code>coord</code> instead of <code>struct coord</code>
 </p>
 
 
-
 </div>
 
 </div>
 
-<div id="outline-container-2-23" class="outline-3">
-<h3 id="sec-2-23"><span class="section-number-3">2.23</span> Tips &amp; Tricks</h3>
-<div class="outline-text-3" id="text-2-23">
+<div id="outline-container-2-25" class="outline-3">
+<h3 id="sec-2-25"><span class="section-number-3">2.25</span> Tips &amp; Tricks</h3>
+<div class="outline-text-3" id="text-2-25">
 
 
 </div>
 
-<div id="outline-container-2-23-1" class="outline-4">
-<h4 id="sec-2-23-1"><span class="section-number-4">2.23.1</span> Linux &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-2-23-1">
+<div id="outline-container-2-25-1" class="outline-4">
+<h4 id="sec-2-25-1"><span class="section-number-4">2.25.1</span> Linux &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-2-25-1">
 
 <ul>
 <li>Install: rpc lib provided by package  <code>libtirpc-dev</code>  (0.2.2-5 on ubuntu 12.04) 
@@ -1256,9 +1473,9 @@ which allows to use <code>coord</code> instead of <code>struct coord</code>
 
 </div>
 
-<div id="outline-container-2-23-2" class="outline-4">
-<h4 id="sec-2-23-2"><span class="section-number-4">2.23.2</span> MacOSX &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-2-23-2">
+<div id="outline-container-2-25-2" class="outline-4">
+<h4 id="sec-2-25-2"><span class="section-number-4">2.25.2</span> MacOSX &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-2-25-2">
 
 <ul>
 <li>Install: the 'Command line tools' element from Xcode in the distrib
@@ -1326,7 +1543,6 @@ which allows to use <code>coord</code> instead of <code>struct coord</code>
 </ul>
 
 
-
 </div>
 
 </div>
@@ -1360,7 +1576,6 @@ The call to a remote object's method is exactly (syntactically) the same as a lo
 <div class="outline-text-3" id="text-3-4">
 
 
-
 </div>
 
 <div id="outline-container-3-4-1" class="outline-4">
@@ -1368,9 +1583,9 @@ The call to a remote object's method is exactly (syntactically) the same as a lo
 <div class="outline-text-4" id="text-3-4-1">
 
 <ul>
-<li>an interface
+<li>an interface (shared between client and server)
 </li>
-<li>the class itself
+<li>the class itself (implem. on client)
 </li>
 </ul>
 
@@ -1540,7 +1755,7 @@ A service is described by an <b>interface</b>.
 <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">OperationImpl</span> <span style="color: #a020f0;">extends</span> <span style="color: #228b22;">UnicastRemoteObject</span>
   <span style="color: #a020f0;">implements</span> <span style="color: #228b22;">Operation</span>  {
 
-    <span style="color: #a020f0;">public</span> OperationImpl () <span style="color: #a020f0;">throws</span> <span style="color: #228b22;">RemoteException</span> {
+    <span style="color: #a020f0;">public</span> <span style="color: #0000ff;">OperationImpl</span> () <span style="color: #a020f0;">throws</span> <span style="color: #228b22;">RemoteException</span> {
         <span style="color: #a020f0;">super</span>();
     };
 
@@ -1627,46 +1842,58 @@ A service is described by an <b>interface</b>.
 </div>
 
 <div id="outline-container-3-12" class="outline-3">
-<h3 id="sec-3-12"><span class="section-number-3">3.12</span> Trouble shooting 1</h3>
+<h3 id="sec-3-12"><span class="section-number-3">3.12</span> Try It (RMI basic client/server)</h3>
 <div class="outline-text-3" id="text-3-12">
+
+<ul>
+<li>Here are the source code for Example 1
+</li>
+<li>Sources : <a href="http://icps.u-strasbg.fr/people/genaud/public_html/courses/sd/src/rmi/rmi_base_example_add.tar.gz">Example 1 (base<sub>example</sub><sub>add</sub>)</a>
+</li>
+<li>Choose either <code>Serveur_version_Naming.java</code> or <code>Serveur_version_Locateregistry.java</code>
+</li>
+</ul>
 
 
 </div>
 
-<div id="outline-container-3-12-1" class="outline-4">
-<h4 id="sec-3-12-1"><span class="section-number-4">3.12.1</span> Observation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-3-12-1">
+</div>
 
-<p>    The client experiences a <code>connection refused</code> error when 
-    contacting the server.
+<div id="outline-container-3-13" class="outline-3">
+<h3 id="sec-3-13"><span class="section-number-3">3.13</span> Trouble shooting 1</h3>
+<div class="outline-text-3" id="text-3-13">
+
+
+</div>
+
+<div id="outline-container-3-13-1" class="outline-4">
+<h4 id="sec-3-13-1"><span class="section-number-4">3.13.1</span> Observation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-3-13-1">
+
+<p>    <code>connection refused</code> error when contacting the server.
 </p>
 </div>
 
 </div>
 
-<div id="outline-container-3-12-2" class="outline-4">
-<h4 id="sec-3-12-2"><span class="section-number-4">3.12.2</span> Why? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-3-12-2">
+<div id="outline-container-3-13-2" class="outline-4">
+<h4 id="sec-3-13-2"><span class="section-number-4">3.13.2</span> Why? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-3-13-2">
 
-<p>    <code>$JAVA_HOME/lib/security/java.policy</code> is too restrictive wrt sockets
+<p>    <code>$JAVA_HOME/lib/security/java.policy</code> too restrictive wrt sockets
 </p></div>
 
 </div>
 
-<div id="outline-container-3-12-3" class="outline-4">
-<h4 id="sec-3-12-3"><span class="section-number-4">3.12.3</span> Solution &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-3-12-3">
+<div id="outline-container-3-13-3" class="outline-4">
+<h4 id="sec-3-13-3"><span class="section-number-4">3.13.3</span> Solution &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-3-13-3">
 
-<p>   To override the standard, run
+<p>   To override the standard, run: 
+   <code>java -Djava.security.policy=myperm Server</code>
+   where file <code>myperm</code> contains, for instance:
 </p>
 
-
-<pre class="src src-java">java -Djava.security.policy=more_perm Server
-</pre>
-
-<p>
-   where <code>fichier</code> contains, for instance:
-</p>
 
 
 <pre class="src src-java">grant {
@@ -1682,16 +1909,16 @@ A service is described by an <b>interface</b>.
 
 </div>
 
-<div id="outline-container-3-13" class="outline-3">
-<h3 id="sec-3-13"><span class="section-number-3">3.13</span> Trouble shooting 2</h3>
-<div class="outline-text-3" id="text-3-13">
+<div id="outline-container-3-14" class="outline-3">
+<h3 id="sec-3-14"><span class="section-number-3">3.14</span> Trouble shooting 2</h3>
+<div class="outline-text-3" id="text-3-14">
 
 
 </div>
 
-<div id="outline-container-3-13-1" class="outline-4">
-<h4 id="sec-3-13-1"><span class="section-number-4">3.13.1</span> Observation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-3-13-1">
+<div id="outline-container-3-14-1" class="outline-4">
+<h4 id="sec-3-14-1"><span class="section-number-4">3.14.1</span> Observation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-3-14-1">
 
 <p>   When calling the RPC (hence after the lookup), the client ends with:
    <code>java.rmi.ConnectException: Connection refused to host: 127.0.0.1</code>
@@ -1700,9 +1927,9 @@ A service is described by an <b>interface</b>.
 
 </div>
 
-<div id="outline-container-3-13-2" class="outline-4">
-<h4 id="sec-3-13-2"><span class="section-number-4">3.13.2</span> Why? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-3-13-2">
+<div id="outline-container-3-14-2" class="outline-4">
+<h4 id="sec-3-14-2"><span class="section-number-4">3.14.2</span> Why? &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-3-14-2">
 
 <p>   In some linux distributions, the name resolution for hostname
    takes 127.0.0.1 from <code>/etc/hosts</code> instead of public IP.
@@ -1711,9 +1938,9 @@ A service is described by an <b>interface</b>.
 
 </div>
 
-<div id="outline-container-3-13-3" class="outline-4">
-<h4 id="sec-3-13-3"><span class="section-number-4">3.13.3</span> Solution &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-3-13-3">
+<div id="outline-container-3-14-3" class="outline-4">
+<h4 id="sec-3-14-3"><span class="section-number-4">3.14.3</span> Solution &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-3-14-3">
 
 <p>run the server by overriding its IP
 </p>
@@ -1724,6 +1951,42 @@ A service is described by an <b>interface</b>.
 
 
 </div>
+</div>
+
+</div>
+
+<div id="outline-container-3-15" class="outline-3">
+<h3 id="sec-3-15"><span class="section-number-3">3.15</span> Trouble shooting 3</h3>
+<div class="outline-text-3" id="text-3-15">
+
+
+</div>
+
+<div id="outline-container-3-15-1" class="outline-4">
+<h4 id="sec-3-15-1"><span class="section-number-4">3.15.1</span> Debugging</h4>
+<div class="outline-text-4" id="text-3-15-1">
+
+<p>    In case your server-side implementation crashes due to a programming error,
+    you may experience errors when accessing the remote objects.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-15-2" class="outline-4">
+<h4 id="sec-3-15-2"><span class="section-number-4">3.15.2</span> Solution &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-3-15-2">
+
+<p>   To better spot the error, run the server with logging on:
+</p>
+
+
+<pre class="src src-java">java -Djava.rmi.server.logCalls=<span style="color: #008b8b;">true</span> Server
+</pre>
+
+<p>
+(add -Djava.security.policy= &hellip; if needed) 
+</p></div>
 </div>
 </div>
 
@@ -1785,8 +2048,64 @@ A service is described by an <b>interface</b>.
 </div>
 
 <div id="outline-container-4-2" class="outline-3">
-<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Characteristics</h3>
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Sun Implementation</h3>
 <div class="outline-text-3" id="text-4-2">
+
+
+</div>
+
+<div id="outline-container-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> Since 1.3</h4>
+<div class="outline-text-4" id="text-4-2-1">
+
+<ul>
+<li>JDK provides IDL-to-Java compiler <code>idlj</code>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> Since 1.4</h4>
+<div class="outline-text-4" id="text-4-2-2">
+
+<ul>
+<li>includes support for the Portable Object Adapter (POA)
+</li>
+<li>an Object Request Broker Daemon (ORBD) to locate/invoke persistent objects.
+</li>
+<li><code>servertool</code>  command line to (un)register/startup/shutdown a persistent server
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> Imports</h4>
+<div class="outline-text-4" id="text-4-2-3">
+
+
+
+
+<pre class="src src-java"><span style="color: #228b22;">impo</span><span style="color: #a020f0;">rt</span> <span style="color: #008b8b;">org</span>.<span style="color: #008b8b;">omg</span>.<span style="color: #008b8b;">CosNaming</span>.*;
+<span style="color: #a020f0;">import</span> <span style="color: #008b8b;">org</span>.<span style="color: #008b8b;">omg</span>.<span style="color: #008b8b;">CosNaming</span>.<span style="color: #008b8b;">NamingContextPackage</span>.*;
+<span style="color: #a020f0;">import</span> <span style="color: #008b8b;">org</span>.<span style="color: #008b8b;">omg</span>.<span style="color: #008b8b;">CORBA</span>.*;
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Characteristics</h3>
+<div class="outline-text-3" id="text-4-3">
 
 
 <p>
@@ -1795,9 +2114,9 @@ CORBA = Common Object Request Broker Architecture
 
 </div>
 
-<div id="outline-container-4-2-1" class="outline-4">
-<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> A RPC framework</h4>
-<div class="outline-text-4" id="text-4-2-1">
+<div id="outline-container-4-3-1" class="outline-4">
+<h4 id="sec-4-3-1"><span class="section-number-4">4.3.1</span> A RPC framework</h4>
+<div class="outline-text-4" id="text-4-3-1">
 
 <ul>
 <li>object oriented
@@ -1812,9 +2131,9 @@ CORBA = Common Object Request Broker Architecture
 
 </div>
 
-<div id="outline-container-4-2-2" class="outline-4">
-<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> External Services</h4>
-<div class="outline-text-4" id="text-4-2-2">
+<div id="outline-container-4-3-2" class="outline-4">
+<h4 id="sec-4-3-2"><span class="section-number-4">4.3.2</span> External Services</h4>
+<div class="outline-text-4" id="text-4-3-2">
 
 <ul>
 <li>helper services, can connect to the bus
@@ -1829,9 +2148,9 @@ CORBA = Common Object Request Broker Architecture
 
 </div>
 
-<div id="outline-container-4-3" class="outline-3">
-<h3 id="sec-4-3"><span class="section-number-3">4.3</span> IDL</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> IDL</h3>
+<div class="outline-text-3" id="text-4-4">
 
 
 <p>
@@ -1854,9 +2173,9 @@ CORBA = Common Object Request Broker Architecture
 
 </div>
 
-<div id="outline-container-4-4" class="outline-3">
-<h3 id="sec-4-4"><span class="section-number-3">4.4</span> IDL structure</h3>
-<div class="outline-text-3" id="text-4-4">
+<div id="outline-container-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> IDL structure</h3>
+<div class="outline-text-3" id="text-4-5">
 
 
 <p>
@@ -1891,9 +2210,9 @@ Example:
 
 </div>
 
-<div id="outline-container-4-5" class="outline-3">
-<h3 id="sec-4-5"><span class="section-number-3">4.5</span> IDL types</h3>
-<div class="outline-text-3" id="text-4-5">
+<div id="outline-container-4-6" class="outline-3">
+<h3 id="sec-4-6"><span class="section-number-3">4.6</span> IDL types</h3>
+<div class="outline-text-3" id="text-4-6">
 
 <p>Types and number of bytes between parenthesis: 
 </p><ul>
@@ -1916,13 +2235,53 @@ Example:
 
 </div>
 
-<div id="outline-container-4-6" class="outline-3">
-<h3 id="sec-4-6"><span class="section-number-3">4.6</span> IDL type mapping to Java</h3>
-<div class="outline-text-3" id="text-4-6">
+<div id="outline-container-4-7" class="outline-3">
+<h3 id="sec-4-7"><span class="section-number-3">4.7</span> IDL types (array)</h3>
+<div class="outline-text-3" id="text-4-7">
+
+
+</div>
+
+<div id="outline-container-4-7-1" class="outline-4">
+<h4 id="sec-4-7-1"><span class="section-number-4">4.7.1</span> Fixed-size arrays</h4>
+<div class="outline-text-4" id="text-4-7-1">
+
+<p>general form: <i>type variable [size]+;</i>
+</p>
+
+
+<pre class="src src-C"><span style="color: #228b22;">wchar</span> <span style="color: #a0522d;">text</span>[140]
+<span style="color: #228b22;">long</span> matrice [32][16]
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-7-2" class="outline-4">
+<h4 id="sec-4-7-2"><span class="section-number-4">4.7.2</span> Arbitrary-size arrays</h4>
+<div class="outline-text-4" id="text-4-7-2">
+
+<p>general form: <i>sequence&lt;type[,max] variable;</i>
+</p>
+
+
+<pre class="src src-C">Sequence&lt;<span style="color: #228b22;">long</span>&gt; myvector;
+sequence&lt;<span style="color: #228b22;">long</span>,16&gt; myvector16;
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-8" class="outline-3">
+<h3 id="sec-4-8"><span class="section-number-3">4.8</span> IDL type mapping to Java</h3>
+<div class="outline-text-3" id="text-4-8">
 
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption></caption>
 <colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <thead>
@@ -1944,22 +2303,63 @@ Example:
 
 </div>
 
-<div id="outline-container-4-7" class="outline-3">
-<h3 id="sec-4-7"><span class="section-number-3">4.7</span> IDL Methods</h3>
-<div class="outline-text-3" id="text-4-7">
+<div id="outline-container-4-9" class="outline-3">
+<h3 id="sec-4-9"><span class="section-number-3">4.9</span> IDL struct mapping to Java</h3>
+<div class="outline-text-3" id="text-4-9">
+
+<p>IDL struct are mapped to Java Class.
+</p>
+
+
+<pre class="src src-java"><span style="color: #228b22;">struct</span> <span style="color: #a0522d;">Message</span> {
+  <span style="color: #228b22;">long</span> <span style="color: #a0522d;">cli_id</span>;
+  <span style="color: #228b22;">long</span> <span style="color: #a0522d;">msg_id</span>;
+  <span style="color: #228b22;">string</span> <span style="color: #a0522d;">msg</span>;
+};
+</pre>
+
+<p>
+Translates to:
+</p>
+
+
+<pre class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">final</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Message</span> <span style="color: #a020f0;">implements</span>
+          <span style="color: #008b8b;">org</span>.<span style="color: #008b8b;">omg</span>.<span style="color: #008b8b;">CORBA</span>.<span style="color: #008b8b;">portable</span>.<span style="color: #228b22;">IDLEntity</span>
+{
+  <span style="color: #a020f0;">public</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">cli_id</span> = (<span style="color: #228b22;">int</span>)0;
+  <span style="color: #a020f0;">public</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">msg_id</span> = (<span style="color: #228b22;">int</span>)0;
+  <span style="color: #a020f0;">public</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">msg</span> = <span style="color: #008b8b;">null</span>;
+  <span style="color: #a020f0;">public</span> <span style="color: #0000ff;">Message</span> () {}
+}
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-10" class="outline-3">
+<h3 id="sec-4-10"><span class="section-number-3">4.10</span> IDL Methods</h3>
+<div class="outline-text-3" id="text-4-10">
 
 
 </div>
 
-<div id="outline-container-4-7-1" class="outline-4">
-<h4 id="sec-4-7-1"><span class="section-number-4">4.7.1</span> General Form &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-4-7-1">
+<div id="outline-container-4-10-1" class="outline-4">
+<h4 id="sec-4-10-1"><span class="section-number-4">4.10.1</span> General Form &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-4-10-1">
 
-<p>&lt;return<sub>type&gt</sub>; method<sub>name</sub>([&lt;mode&gt; &lt;type&gt; &lt;parameter<sub>id&gt</sub>;]*) [raises [exceptions]+]; 
+<p>&lt;return_type&gt; /method_name/([&lt;mode&gt; &lt;type&gt; &lt;parameter_id&gt;]*) [raises [exceptions]+];
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-4-10-2" class="outline-4">
+<h4 id="sec-4-10-2"><span class="section-number-4">4.10.2</span> with:</h4>
+<div class="outline-text-4" id="text-4-10-2">
 
 <ul>
-<li>mode={in, out, inout} for input, output, and modified parameters resp. (View from the server). 
+<li>mode={in, out, inout} for input, output, and modified parameters (View from the server). 
 </li>
 <li>type: all primitive or constructed type with typedef (constructed before method call)
 </li>
@@ -1974,26 +2374,26 @@ Method names must be unique (no overloading).
 
 </div>
 
-<div id="outline-container-4-8" class="outline-3">
-<h3 id="sec-4-8"><span class="section-number-3">4.8</span> IDL Oneway Methods</h3>
-<div class="outline-text-3" id="text-4-8">
+<div id="outline-container-4-11" class="outline-3">
+<h3 id="sec-4-11"><span class="section-number-3">4.11</span> IDL Oneway Methods</h3>
+<div class="outline-text-3" id="text-4-11">
 
 
 
 </div>
 
-<div id="outline-container-4-8-1" class="outline-4">
-<h4 id="sec-4-8-1"><span class="section-number-4">4.8.1</span> Normal method call: waits for return and return is guaranteed</h4>
-<div class="outline-text-4" id="text-4-8-1">
+<div id="outline-container-4-11-1" class="outline-4">
+<h4 id="sec-4-11-1"><span class="section-number-4">4.11.1</span> Normal method call: waits for return and return is guaranteed</h4>
+<div class="outline-text-4" id="text-4-11-1">
 
 
 </div>
 
 </div>
 
-<div id="outline-container-4-8-2" class="outline-4">
-<h4 id="sec-4-8-2"><span class="section-number-4">4.8.2</span> Oneway call: no wait, but not guaranteed execution</h4>
-<div class="outline-text-4" id="text-4-8-2">
+<div id="outline-container-4-11-2" class="outline-4">
+<h4 id="sec-4-11-2"><span class="section-number-4">4.11.2</span> Oneway call: no wait, but not guaranteed execution</h4>
+<div class="outline-text-4" id="text-4-11-2">
 
 <ul>
 <li>no return result (<code>void</code> return type)
@@ -2008,16 +2408,16 @@ Method names must be unique (no overloading).
 
 </div>
 
-<div id="outline-container-4-9" class="outline-3">
-<h3 id="sec-4-9"><span class="section-number-3">4.9</span> IDL Parameter Passing</h3>
-<div class="outline-text-3" id="text-4-9">
+<div id="outline-container-4-12" class="outline-3">
+<h3 id="sec-4-12"><span class="section-number-3">4.12</span> IDL Parameter Passing</h3>
+<div class="outline-text-3" id="text-4-12">
 
 
 </div>
 
-<div id="outline-container-4-9-1" class="outline-4">
-<h4 id="sec-4-9-1"><span class="section-number-4">4.9.1</span> Reference or Copy &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-4-9-1">
+<div id="outline-container-4-12-1" class="outline-4">
+<h4 id="sec-4-12-1"><span class="section-number-4">4.12.1</span> Reference or Copy &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-4-12-1">
 
 
 
@@ -2035,9 +2435,9 @@ Method names must be unique (no overloading).
 
 </div>
 
-<div id="outline-container-4-9-2" class="outline-4">
-<h4 id="sec-4-9-2"><span class="section-number-4">4.9.2</span> Observations</h4>
-<div class="outline-text-4" id="text-4-9-2">
+<div id="outline-container-4-12-2" class="outline-4">
+<h4 id="sec-4-12-2"><span class="section-number-4">4.12.2</span> Observations</h4>
+<div class="outline-text-4" id="text-4-12-2">
 
 <ul>
 <li><code>in</code> : client provides the value. If modified by the server, not updated on the client.
@@ -2054,16 +2454,57 @@ Method names must be unique (no overloading).
 
 </div>
 
-<div id="outline-container-4-10" class="outline-3">
-<h3 id="sec-4-10"><span class="section-number-3">4.10</span> POA</h3>
-<div class="outline-text-3" id="text-4-10">
+<div id="outline-container-4-13" class="outline-3">
+<h3 id="sec-4-13"><span class="section-number-3">4.13</span> CORBA Architecture</h3>
+<div class="outline-text-3" id="text-4-13">
+
+
+<div class="figure">
+<p><img src="img/corba_archi.png"  alt="img/corba_archi.png" /></p>
+<p>This is the caption for the next figure link (or table)</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-14" class="outline-3">
+<h3 id="sec-4-14"><span class="section-number-3">4.14</span> Transient and Persistent Objects</h3>
+<div class="outline-text-3" id="text-4-14">
+
+<p>Not to confound with the Persitent Object Service (POS) which allows to store object states on disk, DB,&hellip;
+</p>
+</div>
+
+<div id="outline-container-4-14-1" class="outline-4">
+<h4 id="sec-4-14-1"><span class="section-number-4">4.14.1</span> Transient CORBA object &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-4-14-1">
+
+<p>It has the same lifetime as the execution of the server process that creates it. When a server terminates, its transient objects disappear with it and any object references held by the client become invalid.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-14-2" class="outline-4">
+<h4 id="sec-4-14-2"><span class="section-number-4">4.14.2</span> Persistent CORBA object &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-4-14-2">
+
+<p>It lives until it is explicitly destroyed. If a client has a reference to it, that reference can be used even if the object’s server is not running – an ORB daemon, orbd, will start the server when the ORB receives an invocation on the object.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-4-15" class="outline-3">
+<h3 id="sec-4-15"><span class="section-number-3">4.15</span> POA</h3>
+<div class="outline-text-3" id="text-4-15">
 
 
 </div>
 
-<div id="outline-container-4-10-1" class="outline-4">
-<h4 id="sec-4-10-1"><span class="section-number-4">4.10.1</span> OA and POA &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
-<div class="outline-text-4" id="text-4-10-1">
+<div id="outline-container-4-15-1" class="outline-4">
+<h4 id="sec-4-15-1"><span class="section-number-4">4.15.1</span> OA and POA &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-4-15-1">
 
 <ul>
 <li>Object Adapter: 
@@ -2076,24 +2517,159 @@ Method names must be unique (no overloading).
 </ul>
 
 
-<p>
-<img src="./img/POA.png" width="200" alt="./img/POA.png" />
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-16" class="outline-3">
+<h3 id="sec-4-16"><span class="section-number-3">4.16</span> POA and Servants</h3>
+<div class="outline-text-3" id="text-4-16">
+
+<ul>
+<li>A servant is the logical process that executes an object.
+</li>
+<li>It may be mapped to one or several threads, processes, &hellip;
+</li>
+</ul>
+
+<p><img src="./img/POA.png" width="200" alt="./img/POA.png" />
 </p>
 </div>
+
+</div>
+
+<div id="outline-container-4-17" class="outline-3">
+<h3 id="sec-4-17"><span class="section-number-3">4.17</span> POA Control in Java (1/3)</h3>
+<div class="outline-text-3" id="text-4-17">
+
+
+</div>
+
+<div id="outline-container-4-17-1" class="outline-4">
+<h4 id="sec-4-17-1"><span class="section-number-4">4.17.1</span> The first POA is managed by the ORB, and called RootPOA by convention.</h4>
+<div class="outline-text-4" id="text-4-17-1">
+
+
+
+
+<pre class="src src-java"><span style="color: #228b22;">ORB</span> <span style="color: #a0522d;">orb</span> = ORB.init( args, <span style="color: #008b8b;">null</span> );
+<span style="color: #228b22;">POA</span> <span style="color: #a0522d;">rootPOA</span> = POAHelper.narrow(
+   orb.resolve_initial_references(<span style="color: #8b2252;">"RootPOA"</span>));
+</pre>
+
+
 </div>
 
 </div>
 
-<div id="outline-container-4-11" class="outline-3">
-<h3 id="sec-4-11"><span class="section-number-3">4.11</span> POA behavior</h3>
-<div class="outline-text-3" id="text-4-11">
+<div id="outline-container-4-17-2" class="outline-4">
+<h4 id="sec-4-17-2"><span class="section-number-4">4.17.2</span> “Service” POAs can be forked from the RootPOA (it is not mandatory: you can use</h4>
+<div class="outline-text-4" id="text-4-17-2">
+
+<p>the RootPOA)
+</p>
+
+
+<pre class="src src-java"><span style="color: #b22222;">// </span><span style="color: #b22222;">Create a POA by passing the Persistent Policy</span>
+<span style="color: #228b22;">POA</span> <span style="color: #a0522d;">persistentPOA</span> = rootPOA.create_POA(
+      <span style="color: #8b2252;">"childPOA"</span>,<span style="color: #008b8b;">null</span>,persistentPolicy );
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-18" class="outline-3">
+<h3 id="sec-4-18"><span class="section-number-3">4.18</span> POA Control in Java (2/3)</h3>
+<div class="outline-text-3" id="text-4-18">
+
+<ul>
+<li>POA Manager
+</li>
+</ul>
+
+<p>&ndash; Each POA is associated a POAManager object, which starts/stops the POA, and manages the incoming requests
+</p>
+
+
+<pre class="src src-java"><span style="color: #b22222;">// </span><span style="color: #b22222;">If not activated, requests will hang</span>
+<span style="color: #b22222;">// </span><span style="color: #b22222;">because POAManager is in the &#8217;HOLD&#8217; state.</span>
+persistentPOA.the_POAManager().activate( );
+</pre>
+
 
 
 </div>
 
-<div id="outline-container-4-11-1" class="outline-4">
-<h4 id="sec-4-11-1"><span class="section-number-4">4.11.1</span> Thread policy:</h4>
-<div class="outline-text-4" id="text-4-11-1">
+<div id="outline-container-4-18-1" class="outline-4">
+<h4 id="sec-4-18-1"><span class="section-number-4">4.18.1</span> POAManager’s States</h4>
+<div class="outline-text-4" id="text-4-18-1">
+
+<ul>
+<li>Holding: POAs will queue incoming requests.
+</li>
+<li>Active: POAs will start processing requests.
+</li>
+<li>Discarding: POAs will discard incoming requests.
+</li>
+<li>Inactive: POAs will reject the requests that have not begun executing as well as as any new requests.
+</li>
+</ul>
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-19" class="outline-3">
+<h3 id="sec-4-19"><span class="section-number-3">4.19</span> POA Control in Java (3/3)</h3>
+<div class="outline-text-3" id="text-4-19">
+
+
+</div>
+
+<div id="outline-container-4-19-1" class="outline-4">
+<h4 id="sec-4-19-1"><span class="section-number-4">4.19.1</span> Servants</h4>
+<div class="outline-text-4" id="text-4-19-1">
+
+<ul>
+<li>A servant may be associated
+</li>
+</ul>
+
+
+
+
+<pre class="src src-java"><span style="color: #b22222;">// </span><span style="color: #b22222;">create servant and register it with the ORB</span>
+<span style="color: #228b22;">OperationImpl</span> <span style="color: #a0522d;">o</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">OperationImpl</span>();
+o.setORB(orb);
+<span style="color: #b22222;">// </span><span style="color: #b22222;">get object reference from the servant</span>
+<span style="color: #008b8b;">org</span>.<span style="color: #008b8b;">omg</span>.<span style="color: #008b8b;">CORBA</span>.<span style="color: #228b22;">Object</span> <span style="color: #a0522d;">ref</span> =
+      persistentPOA.servant_to_reference( o );
+<span style="color: #228b22;">Operation</span> <span style="color: #a0522d;">href</span> = OperationHelper.narrow(ref);
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-20" class="outline-3">
+<h3 id="sec-4-20"><span class="section-number-3">4.20</span> POA behavior</h3>
+<div class="outline-text-3" id="text-4-20">
+
+
+</div>
+
+<div id="outline-container-4-20-1" class="outline-4">
+<h4 id="sec-4-20-1"><span class="section-number-4">4.20.1</span> Thread policy:</h4>
+<div class="outline-text-4" id="text-4-20-1">
 
 <ul>
 <li>ORB<sub>CTRL</sub><sub>MODEL</sub> (default): The POA is responsible for assigning requests to threads.
@@ -2107,9 +2683,9 @@ Method names must be unique (no overloading).
 
 </div>
 
-<div id="outline-container-4-11-2" class="outline-4">
-<h4 id="sec-4-11-2"><span class="section-number-4">4.11.2</span> Lifespan policy:</h4>
-<div class="outline-text-4" id="text-4-11-2">
+<div id="outline-container-4-20-2" class="outline-4">
+<h4 id="sec-4-20-2"><span class="section-number-4">4.20.2</span> Lifespan policy:</h4>
+<div class="outline-text-4" id="text-4-20-2">
 
 <ul>
 <li>TRANSIENT (Default): Objects implemented in the POA cannot outlive the process in 
@@ -2127,14 +2703,110 @@ Method names must be unique (no overloading).
 
 </div>
 </div>
+
+</div>
+
+<div id="outline-container-4-21" class="outline-3">
+<h3 id="sec-4-21"><span class="section-number-3">4.21</span> Example using Java JDK</h3>
+<div class="outline-text-3" id="text-4-21">
+
+
+</div>
+
+<div id="outline-container-4-21-1" class="outline-4">
+<h4 id="sec-4-21-1"><span class="section-number-4">4.21.1</span> The Sun JDK (now open-jdk) provides since a long time classes and tools to build CORBA apps.</h4>
+<div class="outline-text-4" id="text-4-21-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-21-2" class="outline-4">
+<h4 id="sec-4-21-2"><span class="section-number-4">4.21.2</span> Tools</h4>
+<div class="outline-text-4" id="text-4-21-2">
+
+<p>Some of the tools we will use:
+</p><ul>
+<li>idlj: a compiler that maps IDL descriptions to Java
+</li>
+<li>orbd: the Object Request Broker Daemon.
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-22" class="outline-3">
+<h3 id="sec-4-22"><span class="section-number-3">4.22</span> NamingService (JDK): <code>orbd</code></h3>
+<div class="outline-text-3" id="text-4-22">
+
+<p><code>orbd</code> is a name service.
+</p><ul>
+<li>it allows clients to transparently locate and invoke persistent objects on servers.
+</li>
+<li>it receives names of persistent objects from the server, and returns a reference which includes its own port (not the one of server).
+</li>
+<li>it is persistent: if it is restarted, associations are not lost
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-23" class="outline-3">
+<h3 id="sec-4-23"><span class="section-number-3">4.23</span> Example Outline</h3>
+<div class="outline-text-3" id="text-4-23">
+
+
+
+</div>
+
+<div id="outline-container-4-23-1" class="outline-4">
+<h4 id="sec-4-23-1"><span class="section-number-4">4.23.1</span> POA Model, Transient server &nbsp;&nbsp;&nbsp;<span class="tag"><span class="B_block">B_block</span></span></h4>
+<div class="outline-text-4" id="text-4-23-1">
+
+<p>From an IDL description, we generate (<code>idlj</code>) code for a POA that starts an Operation service as a transient server
+</p>
+<ul>
+<li>The tasks we have to complete:
+</li>
+<li>Write the IDL description of the service
+</li>
+<li>Generates the “machinery” files with idlj
+</li>
+<li>Write the Server code, which
+<ul>
+<li>creates the object
+</li>
+<li>registers the object to the POA
+</li>
+<li>get the NamingContexExt
+</li>
+<li>registers the object to the NamingService 
+</li>
+<li>implements the service (application code)
+</li>
+</ul>
+
+</li>
+<li>Write the Client code to test the service
+</li>
+</ul>
+
+</div>
+</div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-10-14 12:15:40 CEST</p>
+<p class="date">Date: 2014-10-08T10:59+0200</p>
 <p class="author">Author: Stephane Genaud</p>
-<p class="creator">Org version 7.9.3f with Emacs version 24</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

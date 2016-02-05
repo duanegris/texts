@@ -21,7 +21,7 @@ public class Refresher extends Thread {
     /**
      * display
      * Helper function in charge of output
-     * param mlist the list of messages to display
+     * @param mlist the list of messages to display
      **/
     public void display (ChatService.Message[] mlist) {
     // in RMI, was: public void display (ArrayList<Message> mlist) {

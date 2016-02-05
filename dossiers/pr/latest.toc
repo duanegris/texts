@@ -29,15 +29,15 @@
 \contentsline {paragraph}{Th\IeC {\`e}me Grilles et Clouds}{19}{section*.47}
 \contentsline {paragraph}{Compl\IeC {\'e}mentarit\IeC {\'e} des th\IeC {\`e}mes}{19}{section*.48}
 \contentsline {subsection}{\numberline {4.3}Liste de publications}{21}{subsection.50}
-\contentsline {subsection}{\numberline {4.4}Activit\IeC {\'e}s scientifiques}{24}{subsection.60}
-\contentsline {subsubsection}{\numberline {4.4.1}Niveau international}{24}{subsubsection.61}
-\contentsline {subsubsection}{\numberline {4.4.2}Niveau national}{24}{subsubsection.62}
-\contentsline {subsubsection}{\numberline {4.4.3}Niveau local}{25}{subsubsection.63}
-\contentsline {subsubsection}{\numberline {4.4.4}Jurys de th\IeC {\`e}se}{25}{subsubsection.64}
-\contentsline {subsection}{\numberline {4.5}Encadrements}{26}{subsection.65}
-\contentsline {subsubsection}{\numberline {4.5.1}Th\IeC {\`e}ses}{26}{subsubsection.66}
-\contentsline {subsubsection}{\numberline {4.5.2}Stages de DEA/Master}{26}{subsubsection.72}
-\contentsline {subsubsection}{\numberline {4.5.3}Autres}{27}{subsubsection.78}
-\contentsline {section}{\numberline {5}Conclusion}{27}{section.79}
-\contentsline {section}{\numberline {6}Documents annexes}{29}{section.80}
-\contentsline {section}{\numberline {7}Copies d'articles}{44}{section.81}
+\contentsline {subsection}{\numberline {4.4}Activit\IeC {\'e}s scientifiques}{25}{subsection.60}
+\contentsline {subsubsection}{\numberline {4.4.1}Niveau international}{25}{subsubsection.61}
+\contentsline {subsubsection}{\numberline {4.4.2}Niveau national}{25}{subsubsection.62}
+\contentsline {subsubsection}{\numberline {4.4.3}Niveau local}{26}{subsubsection.63}
+\contentsline {subsubsection}{\numberline {4.4.4}Jurys de th\IeC {\`e}se}{26}{subsubsection.64}
+\contentsline {subsection}{\numberline {4.5}Encadrements}{27}{subsection.65}
+\contentsline {subsubsection}{\numberline {4.5.1}Th\IeC {\`e}ses}{27}{subsubsection.66}
+\contentsline {subsubsection}{\numberline {4.5.2}Stages de DEA/Master}{27}{subsubsection.72}
+\contentsline {subsubsection}{\numberline {4.5.3}Autres}{28}{subsubsection.78}
+\contentsline {section}{\numberline {5}Conclusion}{28}{section.79}
+\contentsline {section}{\numberline {6}Documents annexes}{30}{section.80}
+\contentsline {section}{\numberline {7}Copies d'articles}{45}{section.81}

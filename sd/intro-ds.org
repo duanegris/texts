@@ -33,7 +33,6 @@
 
 #+latex_header: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
 
-
 #+LATEX_HEADER: \usepackage{listings}
 #+LATEX_HEADER: \lstset{
 #+LATEX_HEADER:         keywordstyle=\color{blue},

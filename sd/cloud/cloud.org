@@ -112,7 +112,7 @@ Cloud Computing can be caracterized by:
 /Infrastructure as a Service/
 - users are granted a total control over machines they can start/stop
 - machines are totally controlled by the user (e.g through ssh)
-- e.g Amazon EC2 and S3, Google Compute Engine, recently Microsoft Azure 
+- e.g Amazon [[http://aws.amazon.com/ec2][EC]] and [[http://aws.amazon.com/s3][S3]], [[http://https://cloud.google.com/products/compute-engine/][Google Compute Engine]], recently Microsoft [[http://http://azure.microsoft.com][Azure]]
 ** PaaS
 /Platform as a Service/
 - users are given a library or a framework to develop their applications
@@ -163,10 +163,11 @@ On-demand instance, Linux, USA-West. Partial list (on 04/25/2013)
      (e.g [[http://www.heroku.com][Heroku]], [[http://appsdeck.eu][Appsdeck.eu]])
      
 ** Data storage
-   - Scalable data storage
-   - e.g GoogleDrive, Dropbox, iCloud
-   - Use of distributed storage systems, generally NoSQL systems
-   - e.g Cassandra, Dynamo, CouchDB
+   - Scalable data storage \newline
+    (e.g GoogleDrive, Dropbox, iCloud)
+
+   - Use of distributed storage systems, generally [[http://en.wikipedia.org/wiki/NoSQL][NoSQL]] systems
+     (e.g [[https://www.mongodb.org][MongoDB]], [[http://cassandra.apache.org][Cassandra]], [[http://aws.amazon.com/dynamodb/][Dynamo]], [[http://couchdb.apache.org][CouchDB]])
 
 ** Analytics
    - Batch jobs for parameter sweep computations

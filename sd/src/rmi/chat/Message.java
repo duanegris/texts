@@ -6,10 +6,10 @@
 import java.io.Serializable;
 
 
-public class Message implements Serializable
-{
-  public int cli_id = (int)0;
-  public int msg_id = (int)0;
+public class Message implements Serializable {
+
+  public int cli_id = 0;
+  public int msg_id = 0;
   public String msg = null;
   private long timestamp;
 
@@ -32,7 +32,7 @@ public class Message implements Serializable
 	    return(this.cli_id);
   }
 
-public long getTimestamp() {
+  public long getTimestamp() {
 	return(this.timestamp);
 }
 

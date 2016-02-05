@@ -1217,6 +1217,12 @@ IOS Press, juin 2009.
 
 \setlength{\itemsep}{1.5mm}
 
+\bibitem{icps-2015-ijcc}
+\newblock Marc Frincû, \textbf{Stéphane Genaud} et Julien Gossa.
+\newblock Client-Side Resource Management on the Cloud: Survey and Future Directions.
+\newblock {\em International Journal of Cloud Computing}, Inderscience, 4(3), octobre 2015.
+
+
 \bibitem{icps-2014-fgg-computer}
 \newblock Marc Frincû, \textbf{Stéphane Genaud} et Julien Gossa.
 \newblock On the efficiency of several VM provisioning strategies for workflows
@@ -1675,7 +1681,7 @@ scientifiques des équipes et à une conférence par un industriel invité.\\
 \begin{itemize}
 \item[$\bullet$] 
 Examinateur de la thèse de Guillaume Laville, Université de Franche-Comté,
-(soutenance juillet 2014), \textit{Exécution efficace de systèmes multi-agents
+(soutenance juillet 2014), \textit{Exécution efficace de systèmes multi-agents
   sur GPU}
 rapporteurs M. Krajecki (Univ. Reims), C. Cambier (Univ. Paris 6), 
 encadrants L. Philippe (Univ. Franche-Comté)\\

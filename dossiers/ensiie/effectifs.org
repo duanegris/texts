@@ -131,7 +131,7 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/3/5/2
  Eleanore PIRRI                  EID - Strasbourg                       (Indus/Banque)
  Soufyane REGRAGUI               SFERENO - Strasbourg                   (Editeur)
  Julien SCHROEDER                SFEIR Est - Strasbourg                 (S/ESN)                  
- Claudia TANASE    
+ Claudia TANASE                  AUSYS - Strasbourg                     (S/ESN)
  Elsa THEUIL                     Actinvision - Strasbourg               (S/ESN)
  Laurent WIESER                  CapCode - Strasbourg                   (S/ESN)
  Ming ZHANG 

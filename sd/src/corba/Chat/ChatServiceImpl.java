@@ -38,14 +38,14 @@ public class ChatServiceImpl extends ChatPOA {
 	      this.orb = orb_val;
 	  }
 
- 	  // Constructor
+	  // Constructor
 	  public ChatServiceImpl()  {
 		    super();
-            ids      = new long[MAX_CLIENT];
-            messages = new ArrayList<ChatService.Message>(256);
+		    ids      = new long[MAX_CLIENT];
+		    messages = new ArrayList<ChatService.Message>(256);
 		    lastSeen = new long[MAX_CLIENT];
 	  }
-	  
+
 	  
 	  /**
 	   * connect 
@@ -84,7 +84,11 @@ public class ChatServiceImpl extends ChatPOA {
     /**
      * resfresh
      * Consider t_0 the date at which client cliId called this method last time, and t_1 the method call occuring now,
-     * extract the list of messages aged between t_0 and t_1 and that are not from cliId. 
+     * extract the list of messages aged between t_0 and t_1 and that are not from cliId. t_0 is implemented
+     * through the lastSeen[] array.
+     * @param cliId the id of the client who requests the refresh
+     * @param t_1 the timestamp when the request was made
+     * @return the messages that this client should see as new messages (those between 
      **/
 	public  ChatService.Message[] refresh(int cliId, long t_1)  {
 	

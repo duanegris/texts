@@ -52,7 +52,7 @@ Execution
 
 cd dir_server
 rmiregistry &     # "start rmiregistry" avec Windows
-java -Djava.security.policy=java.policy Serveur localhost
+java -Djava.security.policy=policy Serveur localhost
 
 
 N.B.: Lancer le rmiregistry dans le même répertoire que le serveur (où se trouve OperationImpl_Stub.class ou OperationImpl.class) est bien commode car le CLASSPATH contient le répertoire courant par défaut. Si vous lancez rmiregistry ailleurs, il faut que le CLASSPATH pointe vers où se trouve OperationImpl_Stub.class ou OperationImpl.class.

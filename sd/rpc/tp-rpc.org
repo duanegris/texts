@@ -19,7 +19,7 @@ n	(debut)	:	1094861636, n	( fin )	:	1094861637,
 res	:	1094861637
 Questions : 1.1) Dans le serveur pourquoi déclarer la variable 'res' static ? 1.2) Expliquez pourquoi l'a􏰡chage au niveau du client est di􏰞érent selon que l'on utilise une SPARC ou un PC. 1.3) Pourquoi la valeur 􏰟nale de (*n) est di􏰞érente sur le serveur et sur le client ? 1.4) Dans le Make􏰟le, expliquer la ligne de compilation gcc -Wall -o client client.c -lrpcsvc -lnsl
 Exercice 2
-Dé􏰟nir un appel RPC qui permette de calculer, de facon distante, la division entière d'un nombre par un autre. Le serveur de calcul (qui est responsable de la division) se trouvera sur votre machine. Vous exécuterez le client depuis une autre machine. Pour cela, il est possible de garder en permanence une fenêtre sur cette autre machine avec la commande ssh votreLogin@machineDuVoisin. Vous éditerez, compilerez les 􏰟chiers sources sur votre machine. Les sources pour débuter cet exercice se trouvent dans le répertoire DiviseExercice.
+Définir un appel RPC qui permette de calculer, de facon distante, la division entière d'un nombre par un autre. Le serveur de calcul (qui est responsable de la division) se trouvera sur votre machine. Vous exécuterez le client depuis une autre machine. Pour cela, il est possible de garder en permanence une fenêtre sur cette autre machine avec la commande ssh votreLogin@machineDuVoisin. Vous éditerez, compilerez les 􏰟chiers sources sur votre machine. Les sources pour débuter cet exercice se trouvent dans le répertoire DiviseExercice.
 
 
 ATTENTION: ces 􏰟chiers sources ne sont pas 􏰓corrects􏰔. Il faut remplacer les 􏰓????􏰔 par du code C. Expliquer la ligne de compilation gcc -o serveur serveur.o xdr_entiers2.o -lnsl

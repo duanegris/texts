@@ -1,5 +1,26 @@
 
 * IMW Middleware
+** 2014-2015
+
+| séance | Strasbourg                                                  | date  |               |
+|--------+-------------------------------------------------------------+-------+---------------|
+|      1 | Intro générale+intro RPC archi                              | 02/10 |               |
+|        | Intro client/serveur                                        |       |               |
+|      2 | RPC : high layer functions (demo callrpc/registerrpc)       | 02/10 |               |
+|        | src/rpc/example_1/{client,server}.c                         |       |               |
+|        | Utilisation RPCgen. Identification fichiers générés. Démo   |       |               |
+|        | src/rpc/example_2_rpcgen_incomplete.tar.gz                  |       |               |
+|      3 | Intro TP Chat avec RPCgen (tp-chat.html)                    | 07/10 |               |
+|      4 | RPCgen ex. chat : mise au point                             | 07/10 |               |
+|      5 | RPCgen ex. chat                                             | 08/10 |               |
+|      6 | RPCgen ex. chat                                             | 08/10 |               |
+|      7 | RMI présentation + exemple basic_add simple (prise en main) | 09/10 |               |
+|      8 | RMI ex. chat (à rendre pour séance suivante)                | 21/10 | <- WE'RE HERE |
+|      9 | debugging avec -Djava.rmi.server.logCalls=true              | 21/10 |               |
+|     10 | RMI ex. chat (à rendre pour séance suivante)                | 23/10 |               |
+|     10 | Corba présentation                                          | 06/11 |               |
+|     11 | Corba                                                       | 21/11 |               |
+|     12 | TP noté Middleware                                          | 28/11 |               |
 
 
 ** 2013-2014

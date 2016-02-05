@@ -138,8 +138,6 @@ public class Mm {
 				}
 				System.out.println("]");
 				float result = 0.0f;
-				float a_ij;
-				float b_jk;
 				for (int k = 0; k < ??? ; k++) {
 					  result += valsA[k] * valsB[k];
 				}

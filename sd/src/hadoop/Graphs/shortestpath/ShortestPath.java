@@ -16,6 +16,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+import org.apache.hadoop.mapreduce.Counters;
 
 public class ShortestPath {
 
@@ -26,7 +27,7 @@ public class ShortestPath {
 
 
 			/**
-			  * Each map is provided with one line read, sotred value has the form
+			  * Each map is provided with one line read, whose value has the form
 		   	  * <node>\t<dist>\t<succList>
 			  * where:
 			  * <node> is a string
@@ -92,18 +93,21 @@ public class ShortestPath {
 		}
 	}
 
+
+
 	public static class Reduce extends
 			Reducer<Text, Text, Text, Text> {
 
+		public static enum PathCounter { TARGET_NODE_DISTANCE_COMPUTED, PATH }
 		@Override
 		public void reduce(Text key, Iterable<Text> values, Context context) 
 			throws IOException, InterruptedException {		
 
+
 			String emptySet="{}";  
 			ArrayList<String> paths = new ArrayList<String>();
 			Long minDist = Long.MAX_VALUE;
-			String valParts []; // to parse each values item received
-			//Get the min distance received for that key
+			String valParts []; // to parse each value items received
 			
 			System.out.println("-> Reduce : key="+key.toString());
 			for (Text val : values) {
@@ -111,6 +115,7 @@ public class ShortestPath {
 				//System.out.println("--> key:"+key.toString()+" Reduce : examines "+val.toString());
 				valParts = val.toString().split("\t");
 				paths.add( valParts[1] );
+				//Get the min distance received for that key
 				if (Long.valueOf(valParts[0]) < minDist){
 					minDist = Long.valueOf(valParts[0]);
 				}
@@ -121,6 +126,11 @@ public class ShortestPath {
 					System.out.println("--> Reduce : key="+key.toString()+" emit(\""+key.toString()+"\",\""+minDist +"\t"+p +"\")");
 					context.write(key,new Text(minDist +"\t"+p));
 				//}
+
+// if (u.getColor() == Node.Color.GRAY) {
+//                                       System.out.println("Incrementing counter for Node key [" + key.toString() + "]");
+//                                       context.getCounter(Iterations.GrayTokens).increment(1L);
+//                               }
 			}
 		}
 	}
@@ -149,6 +159,8 @@ public class ShortestPath {
 	      // We should iterate a maximum of D times, where D is the graph's diameter.
 		// Indeed, each map phase makes one hop to all successors of a given node.
 		// * Problem * : we are not likely to be given the graph's diameter.
+
+		//Counter counter = job.getCounters().findCounter(Reduce.PathCounter.TARGET_NODE_DISTANCE_COMPUTED);
 
 		for (int i=0;i<3;i++) {	
 			  Job job = new Job(conf, "SP");

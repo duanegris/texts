@@ -40,7 +40,8 @@ public class ChatServer {
 
       System.out.println("ChatServer ready and waiting ...");
 
-      // wait for invocations from clients
+      // Wait for invocations from clients.
+      // This is a blocking call.
       orb.run();
     } 
 	

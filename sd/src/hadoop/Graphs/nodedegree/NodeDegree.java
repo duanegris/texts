@@ -67,19 +67,19 @@ public class NodeDegree {
 		}
 	}
 	
-	public static class IdentityMap extends Mapper<LongWritable, Text, Text, Text> {
+     public static class IdentityMap extends Mapper<LongWritable, Text, Text, Text> {
 
-		// Though identity is the default, see
- 		// https://hadoop.apache.org/docs/current/api/org/apache/hadoop/mapreduce/Mapper.html#map(KEYIN,%20VALUEIN,%20org.apache.hadoop.mapreduce.Mapper.Context)
-		// we define our identity to cast LongWritable key to Text
+            // Though identity is the default, see
+            // https://hadoop.apache.org/docs/current/api/org/apache/hadoop/mapreduce/Mapper.html#map(KEYIN,%20VALUEIN,%20org.apache.hadoop.mapreduce.Mapper.Context)
+            // we define our identity to cast LongWritable key to Text
 
-		public void map(LongWritable key, Text value, Context context)
-				throws IOException, InterruptedException {			
-			String[] values = value.toString().split("\t");
-			context.write(new Text(values[0]), new Text(values[1]));
-		}
+            public void map(LongWritable key, Text value, Context context)
+                        throws IOException, InterruptedException {
+                  String[] values = value.toString().split("\t");
+                  context.write(new Text(values[0]), new Text(values[1]));
+            }
 
-	}
+      }
 
 
 	public static class ReduceSecondStep extends
@@ -122,43 +122,34 @@ public class NodeDegree {
 		//Creates a MapReduce Job
 		Configuration conf = new Configuration();		
 				
+		//-------------------- job 2 --------------------------------------	
 		Job job1 = new Job(conf, "My NodeDegree phase1");
-
-		job1.setOutputKeyClass(Text.class);
-		job1.setOutputValueClass(Text.class);
-
-		job1.setMapperClass(MapFirstStep.class);
-		job1.setReducerClass(ReduceFirstStep.class);
-
+		FileInputFormat.addInputPath(job1, new Path(args[0]));
+		FileOutputFormat.setOutputPath(job1, new Path(args[1]));
 		job1.setInputFormatClass(TextInputFormat.class);
-		
 		// Uses our custom output format to override already existing file.
 		// Extends TextOutputFormat which emits LongWritable key and Text value by default.
 		job1.setOutputFormatClass(MyTextOutputFormat.class);
-				
-
-		FileInputFormat.addInputPath(job1, new Path(args[0]));
-		FileOutputFormat.setOutputPath(job1, new Path(args[1]));
+		job1.setOutputKeyClass(Text.class);
+		job1.setOutputValueClass(Text.class);
+		job1.setMapperClass(MapFirstStep.class);
+		job1.setReducerClass(ReduceFirstStep.class);
 		
 		//Tell the jobtracker to run the first job and wait for completion
 		job1.waitForCompletion(true);
-		
+	
+		//-------------------- job 2 --------------------------------------	
 		Job job2 = new Job(conf, "My NodeDegree phase 2");
-
-		job2.setOutputKeyClass(Text.class);
-		job2.setOutputValueClass(Text.class);
-
-        	job2.setMapperClass(IdentityMap.class);
-		job2.setReducerClass(ReduceSecondStep.class);
-
-		job2.setInputFormatClass(TextInputFormat.class);
-		
-		//Uses the custom output format to override directory protection
-		job2.setOutputFormatClass(MyTextOutputFormat.class);
-
 		//Takes information from the previous job
 		FileInputFormat.addInputPaths(job2, args[1]+"/"+"part-r-00000");
 		FileOutputFormat.setOutputPath(job2, new Path(args[1]));
+		//Uses the custom output format to override directory protection
+		job2.setOutputFormatClass(MyTextOutputFormat.class);
+		job2.setOutputKeyClass(Text.class);
+		job2.setOutputValueClass(Text.class);
+        	job2.setMapperClass(IdentityMap.class);
+		job2.setReducerClass(ReduceSecondStep.class);
+		job2.setInputFormatClass(TextInputFormat.class);
 		
 		//Run the second job
 		job2.waitForCompletion(true);

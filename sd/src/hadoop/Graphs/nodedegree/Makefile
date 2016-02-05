@@ -1,22 +1,33 @@
+#
+# 
+# Makefile for Hadoop 2.x
+#
+# ------------------------------------------------------------------------------
+# Take care of setting the $JAVA_HOME and $HADOOP_CLASS as examplified below
+#
+# On MacOSX Yosemite a convenient way of setting JAVA_HOME is 
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+
+# export HADOOP_VERSION=2.4.0
+# export HADOOP_HOME=/usr/local/Cellar/hadoop/${HADOOP_VERSION}   # from HomeBrew
+# export PATH=$HADOOP_HOME/bin:$PATH
+# export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+# ------------------------------------------------------------------------------
+
+
 
 JAVACC=javac
 JAR=jar
 
-DIR_CLASSES=degree_classes  # a dir to store classes and not mix too many files with sources
-JAR_FILE=degree.jar
-MAIN=NodeDegree
 
-HADOOP_LIBS=\
-	${HADOOP_HOME}/hadoop-core-${HADOOP_VERSION}.jar:${HADOOP_HOME}/lib/commons-cli-1.2.jar
+all: nodedegree.jar
 
-all: $(JAR_FILE)
-
-$(JAR_FILE): $(MAIN).class 
-	mkdir -p $(DIR_CLASSES)
-	$(JAR) -cvf $@ -C $(DIR_CLASSES) .
+nodedegree.jar: NodeDegree.class 
+	$(JAR) -cvf $@ *.class
 	@echo "* JAR READY *"
-	@echo "-> run with 'hadoop jar $@ $(MAIN) input output' (make sure you have 'input' and 'output' does not exist yet)"
+	@echo "-> run with 'hadoop jar $@ NodeDegree input output' (make sure you have 'input' and 'output' does not exist yet)"
 
-$(MAIN).class: $(MAIN).java
-	mkdir -p $(DIR_CLASSES)
-	$(JAVACC) -classpath $(HADOOP_LIBS):. -d $(DIR_CLASSES) $<
+NodeDegree.class: NodeDegree.java
+	export HADOOP_CLASSPATH=$(HADOOP_CLASSPATH)
+	hadoop com.sun.tools.javac.Main $<

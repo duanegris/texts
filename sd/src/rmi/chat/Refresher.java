@@ -31,8 +31,8 @@ public class Refresher extends Thread {
     	String underlinered="[3;31;40m";
     	String normal="[0;37;40m";
     	for (Message m : mlist) {
-    		if (m.getContent().length()>0)
-    			System.out.println("-> User "+m.getCliId()+" says: "+ESC+ underlinered + m.getContent()+ESC+normal);
+    		if (m.msg.length()>0)
+    			System.out.println("-> User "+m.cli_id+" says: "+ESC+ underlinered + m.msg+ESC+normal);
     	}	
     }
     

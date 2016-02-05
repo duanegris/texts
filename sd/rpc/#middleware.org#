@@ -1,5 +1,5 @@
 
-#+TITLE:     IMW: Middleware
+#+Title:     IMW: Middleware
 #+DESCRIPTION:
 #+KEYWORDS:
 #+LANGUAGE:  en
@@ -286,8 +286,8 @@ int main (int argc, char **argv) {
 
 ** Try It
 - Sources : [[http://icps.u-strasbg.fr/~genaud/courses/sd/src/rpc/example_1.tar.gz][Example 1]]
- 
-Have you noticed? 
+
+*** Have you noticed? 
   - There are only *1* parameter for input and *1* for output
   - the variable returned =res= is declared =static= because it may have to survive for a while
 
@@ -334,7 +334,10 @@ program MYCOMPUTATION {
   myservice_client.c /* client code */
 #+end_src
 
+** Try It (client/server with rpcgen)
 
+- Here are skeletons for a basic client / server scheme 
+- Sources : [[http://icps.u-strasbg.fr/~genaud/courses/sd/src/rpc/example_2_rpcgen_incomplete.tar.gz][Example 2]]
 
 ** RPCL in Brief (enumeration, constants & simple)
 *** Enumerations and Constants 
@@ -442,7 +445,6 @@ which allows to use =coord= instead of =struct coord=
      1. through the =Remote= class
      2. through the =Serializable= class
 
-
 ** The Remote class 
    
    definition: An object of the Remote class can be used remotely.
@@ -457,10 +459,9 @@ which allows to use =coord= instead of =struct coord=
 The call to a remote object's method is exactly (syntactically) the same as a local one.   
 
 ** The Remote class  and interface  
-
 *** A Remote class must be defined in 2 parts  
-  - an interface
-  - the class itself
+  - an interface (shared between client and server)
+  - the class itself (implem. on client)
 *** Interface   :B_block:
    :PROPERTIES:
    :BEAMER_env: block
@@ -589,28 +590,31 @@ public class Client {
 }
 #+end_src
 
+** Try It (RMI basic client/server)
+- Here are the source code for Example 1
+- Sources : [[http://icps.u-strasbg.fr/people/genaud/public_html/courses/sd/src/rmi/rmi_base_example_add.tar.gz][Example 1 (base_example_add)]]
+- Choose either =Serveur_version_Naming.java= or =Serveur_version_Locateregistry.java=
+
 ** Trouble shooting 1
 *** Observation 						    :B_block:
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-    The client experiences a =connection refused= error when 
-    contacting the server.
+    =connection refused= error when contacting the server.
 
 *** Why?  							    :B_block:
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-    =$JAVA_HOME/lib/security/java.policy= is too restrictive wrt sockets
+    =$JAVA_HOME/lib/security/java.policy= too restrictive wrt sockets
 *** Solution  							    :B_block:
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-   To override the standard, run
-#+begin_src java
-  java -Djava.security.policy=more_perm Server
-#+end_src
-   where =fichier= contains, for instance:
+   To override the standard, run: 
+   =java -Djava.security.policy=myperm Server=
+   where file =myperm= contains, for instance:
+
 #+begin_src java
 grant {
     permission java.net.SocketPermission
@@ -643,6 +647,20 @@ run the server by overriding its IP
     java -Djava.rmi.server.hostname=<my ip here> Server 
 #+end_src
 
+** Trouble shooting 3
+*** Debugging
+    In case your server-side implementation crashes due to a programming error,
+    you may experience errors when accessing the remote objects.
+ 
+*** Solution  							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+   To better spot the error, run the server with logging on:
+#+begin_src java
+    java -Djava.rmi.server.logCalls=true Server
+#+end_src   
+(add -Djava.security.policy= ... if needed) 
 * Corba
 ** History
 *** Context
@@ -656,6 +674,21 @@ run the server by overriding its IP
      - ORBIS, IONA, VisiBroker, ORBacus, ....
      Open source:
      - JDK, MICO, JacORB, TAO, ...
+
+** Sun Implementation
+*** Since 1.3
+- JDK provides IDL-to-Java compiler =idlj=
+*** Since 1.4
+- includes support for the Portable Object Adapter (POA)
+- an Object Request Broker Daemon (ORBD) to locate/invoke persistent objects.
+- =servertool=  command line to (un)register/startup/shutdown a persistent server
+
+*** Imports
+#+begin_src java
+import org.omg.CosNaming.*;
+import org.omg.CosNaming.NamingContextPackage.*;
+import org.omg.CORBA.*;
+#+end_src
 
 ** Characteristics
 
@@ -726,10 +759,10 @@ Types and number of bytes between parenthesis:
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-<return_type> method_name([<mode> <type> <parameter_id>]*) [raises [exceptions]+]; 
+<return\_type> /method\_name/([<mode> <type> <parameter\_id>]*) [raises [exceptions]+];
 
-
-- mode={in, out, inout} for input, output, and modified parameters resp. (View from the server). 
+*** with: 
+- mode={in, out, inout} for input, output, and modified parameters (View from the server). 
 - type: all primitive or constructed type with typedef (constructed before method call)
 
 Method names must be unique (no overloading).
