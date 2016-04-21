@@ -45,7 +45,7 @@ Benattou, Bucheit, Taheri
 
 * Diplômés par année de sortie
 
-** Promo 2012
+** Promo 2012 (5)
 
 1.Thibault Dubuisson Ingénieur Logiciel     Abase Strasbourg  
 2.Marien Ritzenthaler Analyste/Développeur   CGI  Illkirch
@@ -56,7 +56,7 @@ Benattou, Bucheit, Taheri
 répartition: Industrie/Service/Petite entreprise innovante =  1/4/1
 
 
-** Promo 2013
+** Promo 2013 (17)
 
 (entrés en 2009: Boutry, Roverch, Maquin)
 
@@ -81,13 +81,13 @@ répartition: Industrie/Service/Petite entreprise innovante =  1/4/1
 répartition: Industrie/Service/Petite entreprise innovante/Autre =  5/5/5/2
 
 
-** Promo 2014
+** Promo 2014 (18)
 
 (entrés en 2010: Chobert)
 
 1. Paul Chobert - Developer, fivebyfive.io - Londres                        (freelance)
 2. Mourad BENGMAH - Ingénieur logiciel - Bluestar solutions - Neuchâtel     (editeur)
-3. Xavier CAVARELLI	Davidson - Strasbourg                               (S)
+3. Xavier CAVARELLI	Davidson - Strasbourg                               (ESN)
 5. Saad	EL BANNANI - recherche emploi
 6. Vincent De Jonghe - changement de site vers Evry
 7. Paul GOUY  - Top Décision (projet de création) - Strasbourg              (Innov)
@@ -99,15 +99,15 @@ répartition: Industrie/Service/Petite entreprise innovante/Autre =  5/5/5/2
     Christophe PAIVA
 13. Guillaume PARAN - Titch (projet de création) - Strasbourg               (Innov)
 14. Jonathan RYBAK - Bull Strasbourg                                        (Indus)
-15. Lucas SAUREL - recherche emploi
+15. Lucas SAUREL - AUSY - Strasbourg                                        (ESN)
 16. Quentin THENOZ - Développeur - TiZ Strasbourg                           (Innov)
 17. Tian TIAN - Apprenti - Schneider Electric - Paris                       (Indus)
 18. Léo UNBEKANDT - Scalingo (création) - Strasbourg                        (Innov)
 
-répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/3/5/2
+répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 
 
-** Promo 2015
+** Promo 2015 (28)
 
  Slimane AGOURAM                 Sopra-Steria - Paris                   (S/ESN)
  Steve BENEDICK                  Actimage GmbH - Kehl                   (Editeur)
@@ -117,11 +117,11 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/3/5/2
  Arnaud COUCHET                  KLEE Group - Paris                     (Editeur+S)
  Antoine ERNEWEIN                Actimage GmbH - Kehl                   (Editeur)
  Thomas ESCHEMANN                Calyatis - Strasbourg                  (Innov)
- Alan FONDERFLICK                pas encore finalisé 
+ Alan FONDERFLICK                Amaris - Strasbourg                    (S/ESN)
  Maxime HECKEL                   Docker (Tutum) - San Francisco         (Innov)
  Etienne HEITZ                   Actimage GmbH  - Kehl                  (Editeur)
  Youssef NAIT BELKACEM           CapGemini - Suresnes                   (S/ESN)
- Anne MAYER                      
+ Anne MAYER                      Professorat
  Timothee MULLER                 AXA - Paris                            (Indus/Assur)
  Philippe Gaultier               Edge Lab - Lausanne                    (Inuds/FinTech)
  Joris GIRARDOT                  ATOS pour CoE - Strasbourg             (S/ESN)
@@ -140,6 +140,38 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/3/5/2
 
 
 
+
+** Promo 2016 (28 ?)
+
+1. ABRANTES Kévin
+2. AGAG	Mebarek
+3. BAUX	Maxime
+4. BONNET Cyril
+5. BONNET Valentin
+6. BUECHER Nicolas
+7. CHANTELOUP Pierre
+8. CHASTENET Jonathan
+9. DELOFFRE Mélody
+10. EL BACHIRI	Redoine
+11. FLICK Xavier
+11. GRAD Philippe
+12. GUILLIN Florent
+13. HOUET Corentin
+14. LE PERLIER Raoul
+15. LESPINGAL Pierre
+16. LETOFFE Lætitia
+17. LOPEZ Simon
+18. MASSET Gabriel
+19. MAZURKIEWICZ Thomas
+20. METZGER Gabriel
+21. NOMINE Guillaume
+22. PALLAS Aurélie
+23. PEUCKERT Lisa
+24. SOEN Corentin
+25. SOLOWIEFF Morgane
+26. STAUB Olivier
+27. WEBER Florian
+28. ZHAO Yuheng      
 
 
 * Ventilation embauchés par secteur
