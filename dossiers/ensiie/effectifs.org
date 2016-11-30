@@ -11,6 +11,7 @@
  | 2012-2013 | 30 [c]       | 18(-1+1)           | 17(-2)             | 17=17-3+3 |                                  |
  | 2013-2014 | 39 [d]       | 28 (-5+3CF)        | 18(0)              | 17=17-1+1 | {0/0/1}                          |
  | 2014-2015 | 43 [e]       | 30(-9) {17/13}     | 27(-1){5/21}       |           | {1/21/?}                         |
+ | 2015-2016 |        
  |-----------+--------------+--------------------+--------------------+-----------+----------------------------------|
  |     année | 1A           | 2A {ISI/ILC/CS/SE} | 3A {ISI/ILC/CS/SE} | diplômés  | double dipl. {ISI/ILC/CS/SE/étr} |
  |-----------+--------------+--------------------+--------------------+-----------+----------------------------------|
@@ -43,7 +44,7 @@ Benattou, Bucheit, Taheri
  
 
 
-* Diplômés par année de sortie
+            * Diplômés par année de sortie
 
 ** Promo 2012 (5)
 
@@ -143,34 +144,34 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 
 ** Promo 2016 (28 ?)
 
-1. ABRANTES Kévin
+1. ABRANTES Kévin            Scoledge - Strasbourg         (Innov)
 2. AGAG	Mebarek
-3. BAUX	Maxime
-4. BONNET Cyril
-5. BONNET Valentin
+3. BAUX	Maxime           Actinvision - Strasbourg      (Editeur)
+4. BONNET Cyril              Novembre Comm. - Strasbourg   (Editeur/Comm)
+5. BONNET Valentin           - Angoulême ?
 6. BUECHER Nicolas
 7. CHANTELOUP Pierre
 8. CHASTENET Jonathan
 9. DELOFFRE Mélody
-10. EL BACHIRI	Redoine
+10. EL BACHIRI Redoine
 11. FLICK Xavier
-11. GRAD Philippe
-12. GUILLIN Florent
-13. HOUET Corentin
+11. GRAD Philippe             CAPCOD - Strasbourg          (S/ESN)
+12. GUILLIN Florent           CALDERA - Strasbourg         (Editeur)
+13. HOUET Corentin            Lomdness - Strasbourg        (Editeur)
 14. LE PERLIER Raoul
 15. LESPINGAL Pierre
-16. LETOFFE Lætitia
-17. LOPEZ Simon
-18. MASSET Gabriel
-19. MAZURKIEWICZ Thomas
-20. METZGER Gabriel
-21. NOMINE Guillaume
+16. LETOFFE Lætitia           CGI - Bordeaux                (S/ESN)
+17. LOPEZ Simon               EID - Strasbourg              (Indus/Banque)
+18. MASSET Gabriel            ATOS - Strasbourg             (S/ESN)
+19. MAZURKIEWICZ Thomas       SOGETI - Luxembourg           (S/ESN)
+20. METZGER Gabriel           DOCADVIZ - Strasbourg         (Innov)
+21. NOMINE Guillaume          Scoledge - Strasbourg         (Innov)
 22. PALLAS Aurélie
-23. PEUCKERT Lisa
+23. PEUCKERT Lisa             CGI - Luxembourg              (S/ESN)
 24. SOEN Corentin
 25. SOLOWIEFF Morgane
 26. STAUB Olivier
-27. WEBER Florian
+27. WEBER Florian                         - Luxembourg
 28. ZHAO Yuheng      
 
 
@@ -188,3 +189,4 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 | total |        11 |      20 |       6 |        13 |         2 |         3 |
 |       |           |         |         |           |           |           |
 #+TBL_FMT
+
