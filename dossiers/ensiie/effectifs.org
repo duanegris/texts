@@ -145,21 +145,22 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 ** Promo 2016 (28 ?)
 
 1. ABRANTES Kévin            Scoledge - Strasbourg         (Innov)
-2. AGAG	Mebarek
+2. AGAG	Mebarek          
 3. BAUX	Maxime           Actinvision - Strasbourg      (Editeur)
 4. BONNET Cyril              Novembre Comm. - Strasbourg   (Editeur/Comm)
 5. BONNET Valentin           - Angoulême ?
-6. BUECHER Nicolas
-7. CHANTELOUP Pierre
-8. CHASTENET Jonathan
+6. BUECHER Nicolas           HapticMedia - Strasbourg      (Innov)
+7. CHANTELOUP Pierre         HapticMedia - Strasbourg      (Innov)
+8. CHASTENET Jonathan         Recherche d'emploi
 9. DELOFFRE Mélody
-10. EL BACHIRI Redoine
+10. EL BACHIRI Redoine        Mina Tjänster Sveridge AB - Götheborg, Suède
+    (Innov)
 11. FLICK Xavier
 11. GRAD Philippe             CAPCOD - Strasbourg          (S/ESN)
 12. GUILLIN Florent           CALDERA - Strasbourg         (Editeur)
 13. HOUET Corentin            Lomdness - Strasbourg        (Editeur)
 14. LE PERLIER Raoul
-15. LESPINGAL Pierre
+15. LESPINGAL Pierre          Tour du monde
 16. LETOFFE Lætitia           CGI - Bordeaux                (S/ESN)
 17. LOPEZ Simon               EID - Strasbourg              (Indus/Banque)
 18. MASSET Gabriel            ATOS - Strasbourg             (S/ESN)
@@ -168,11 +169,33 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 21. NOMINE Guillaume          Scoledge - Strasbourg         (Innov)
 22. PALLAS Aurélie
 23. PEUCKERT Lisa             CGI - Luxembourg              (S/ESN)
-24. SOEN Corentin
+24. SOEN Corentin             Gameloft - Montreal, Canada   (Indus/Jeux)
 25. SOLOWIEFF Morgane
 26. STAUB Olivier
 27. WEBER Florian                         - Luxembourg
-28. ZHAO Yuheng      
+28. ZHAO Yuheng               promo 2017 
+
+
+
+** Promo 2017
+
+---- ALBERT Louis             thèse INRIA ?
+---- BALLEUX Benjamin         ITS Future - Schiltigheim     (ESN)
+---- BELLUT Pierrick          CGI - Illkirch                (ESN)
+---- BOUCHARD Thibault        Actimage GmbH - Kehl          (Editeur/S)
+---- BOUET FRançois           Ecole Théatre
+---- CHICOIS Maxime           Actimage - Luxembourg         (ESN)
+---- DEMEURE Nestor           Thèse CEA i- Saclay           (Recherche)
+---- HAGENBACH Bastien        VIE Engie - Bruxelles         
+---- HURTER Johnatan          Scalingo - Strasbourg         (Innov)
+---- KOBERSI Pauline          Calyatis - Strasbourg         (Innov)
+---- MANDICA Nicolas          ECO-SI - Lyon                 (Industrie)
+---- NIU Yan                  KPMG - Luxembourg             (Indus/Banque)
+
+---- ZHAO Yueng
+
+
+
 
 
 * Ventilation embauchés par secteur

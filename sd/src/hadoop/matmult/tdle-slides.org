@@ -1,0 +1,769 @@
+#+TITLE:    Large-scale Data Storage and Processing
+#+AUTHOR: Stéphane Genaud --- Philippe Gerner --- Léo Unbekandt
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+LINK_UP:
+#+LINK_HOME:
+
+# --- CSS style for HTML export
+#+SETUPFILE: theme-bigblow.setup
+
+
+
+#+OPTIONS: toc:1
+#+OPTIONS:  H:2 num:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger,hyperref={colorlinks=true, urlcolor=red, plainpages=false, pdfpagelabels, bookmarksnumbered}]
+
+
+#+BEAMER_THEME: Boadilla [height=18pt]
+#+BEAMER_COLOR_THEME: spruce
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_HEADER_EXTRA: \setbeamercovered{invisible}
+#+BEAMER_HEADER_EXTRA: \author[S. Genaud -- P. Gerner -- L. Unbekandt]{{\large S. Genaud -- P. Gerner -- L. Unbekandt}}
+#+BEAMER_HEADER_EXTRA: \institute[ENSIIE]{ENSIIE - Strasbourg}
+#+BEAMER_HEADER_EXTRA: \date[2015]{2015}
+#+BEAMER_envargs: [<+->]
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+#+STARTUP: beamer
+#+latex_header: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+
+
+#+BEAMER_HEADER_EXTRA:\setbeamercolor{normal text}{fg=white,bg=black!90}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor{structure}{fg=white}
+
+#+BEAMER_HEADER_EXTRA:\setbeamercolor{alerted text}{fg=red!85!black}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{framesubtitle}{fg=white}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{block title}{parent=structure,bg=black!60}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{block body}{fg=black,bg=black!10}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{block title example}{parent=example text,bg=black!15}
+
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:         keywordstyle=\color{blue},
+#+LATEX_HEADER:         commentstyle=\color{red},
+#+LATEX_HEADER:         stringstyle=\color{green},
+#+LATEX_HEADER:         basicstyle=\ttfamily\tiny,
+#+LATEX_HEADER:         columns=fullflexible,
+#+LATEX_HEADER:         frame=single,
+#+LATEX_HEADER:         basewidth={0.4em,0.4em},
+#+LATEX_HEADER:         }
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{arrows,shapes.multipart,calc}
+#+LATEX_HEADER: \usetikzlibrary{shapes.geometric}
+#+LATEX_HEADER: \usetikzlibrary{trees}
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+
+* Part 0: Agenda
+
+#+CAPTION: Course Agenda
+#+ATTR_LaTeX: :align |l|l|  :float t 
+|--------------+---------------------------------------------------------|
+| date         | contents                                                |
+|--------------+---------------------------------------------------------|
+| 4 feb        | Introduction: Context                                   |
+| 4 feb        | Storage: ElasticSearch Introduction                     |
+| 5 feb  (day) | Storage: MongoDB                                        |
+| 11 feb (day) | Storage: ElasticSearch                                  |
+| 12 feb (day) | Processing: MapReduce                                   |
+| 12 feb       | Project Assignments                                     |
+| 25 feb (day) | Project Assistance                                      |
+| 13 mar       | Project Hand-in                                         |
+|--------------+---------------------------------------------------------|
+
+* Part 1: Context
+
+** Technological Breakthroughs
+
+Key disruptions that change the context:
+
+*** Software							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- virtualization [VMWare 1998, Xen 2003] 
+     - consolidation 
+     - hosting of whatever guest OS
+- standard OSes embedded everywhere
+\pause
+*** Hardware							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+Ever improving performance/cost base technologies:
+- Computing power
+- Storage
+- Network
+\pause
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+*Transform all the spectrum: Mobile <------------> Data Centers*
+
+** The Cloud era
+
+- /Cloud/ = services somewhere over the network.
+
+- Technological breakthroughs are leveraged in Data Centers where cost is mutualized.
+
+- Providers can offer *performant* and *affordable* computing services to
+  clients (e.g 10GB of free storage to anyone, a base server for 3 Eur/month)
+
+*** The services fall into three main categories		    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+  1. IaaS  (infrastructure)
+  2. PaaS  (platform)
+  3. SaaS  (service)
+
+** IaaS
+
+The client
+- modifies an image of a VM and upload it to the provider,
+- instructs the provider to start/stop instances of this VM image
+- is able to ssh onto this VM
+
+The bare-metal hardware and the mapping of VMs on PMs is hidden, however it offers total control
+over the VMs.
+
+** PaaS
+
+The client (developer)
+- pushes an application to the provider (from command-line or IDE plug-in)
+- the provider analyzes the application, and hosts it in the runtime container
+  matching its requirements.
+- the provider provisions resources to scale the application during operation.
+
+In PaaS, only the logic of the application is handled by the programmer.
+
+** The Pay-Per-Use model
+
+- Cloud most often implies pay-per-use
+- A clear separation of clients and providers
+- *No investment* is one key of the success
+- The contract generally implies QoS
+
+** Example IaaS pay-per-use (GCE)
+
+/As of  feb 1, 2016/
+
+*** Google Compute Engine
+
+- 10 first minutes charged, then charged to the minute
+
+| name           | VCPU | RAM (GB) | GCEUs | hourly price (avg) |
+|----------------+------+----------+-------+--------------------|
+| n1-standard-2  |    2 | 7.50     |  5.50 | $0.084             |
+| n1-standard-16 |   16 | 60GB     |    44 | $0.264             |
+
+([[https://cloud.google.com/compute/pricing][source]])
+
+
+** Example IaaS pay-per-use (EC2)
+
+/As of  feb 1, 2016/
+
+*** Amazon EC2
+
+- charged per hour
+
+| name       | VCPU | RAM (GB) | EC2CUs   | hourly price |
+|------------+------+----------+----------+--------------|
+| t2.large   |    2 | 8        | variable | $0.12        |
+| m4.4xlarge |   16 | 64GB     | 53.5     | $1.14        |
+
+([[https://aws.amazon.com/fr/ec2/pricing/][source]])
+
+
+
+** Novel Usages
+
+*** Amount of Data						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+The *data* acquisition and production devices have invaded our lifes in the last
+decade. They produce data amounts at an exponential rate.
+- cameras
+- sensors
+- mobile devices 
+
+*** Streams of Data						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+Data produced flow as *streams* to servers.
+#+ATTR_HTML: :width 25% 
+#+ATTR_LATEX: :width .25\textwidth :float t
+[[./img/webbased-distapp.png]]
+
+
+
+** Novel Requirements
+
+Unprecedented possibilities ...
+-  new opportunities for data acquisition, storage and analysis.
+
+... requires:
+- fault tolerance as the infrastucture is made of numerous devices
+- dividing the load among numerous devices: distributed data bases and
+  parallel computing.
+
+* Part 2: Storage
+
+** Background
+
+*** Origin of data
+
+    - From the web, user actions
+    - Mobile device usage
+    - Gathered by sensors, IoT is everywhere
+
+    Large part of these data were stored on RDBMS
+
+*** Advantages or RDBMS
+
+  - Transaction
+  - Old and well-known softwares
+
+*** Why alternatives have been created
+
+    Relational Database Management System were not enough
+
+    - Too much data
+    - Not enough scalability
+    - Do not fit distributed systems
+
+** SQL vs NoSQL
+
+*** RDBMS - SQL databases
+
+    - Developed in the 70s
+    - Store business logic (for banks and others)
+    - Deficit in way to represent data
+    - Lack of horizontal scalability
+
+*** NoSQL databases
+    
+    Massive amounts of data being created nowadays
+
+    - Alternative databases to deal with scalingo and performance issues.
+    - Better fit for the type of data created
+
+    NoSQL means, "do not speak SQL", but unfortunately it's meaningless,
+    these alternatives are grouped among several types of databases.
+
+*** ACID
+
+    Conditions to ensure transactions reliability
+
+    - Atomicity "all or nothing"
+    - Consistency "only valid state"
+    - Isolation "like one after the other"
+    - Durability "once commited, it stays"
+
+*** CAP theorem
+
+    2 of 3 only:
+
+    - Consistency 'all nodes see the same data at a certain time'
+    - Availability 'every request get a response'
+    - Partition Tolerance 'system goes on event during partitions'
+
+      ([[http://www.cs.berkeley.edu/~brewer/papers/][Eric Brewer publications]])
+
+*** CAP for distributed databases
+
+    Distributed → It has to resist failures
+    Mostly AP, CP, or both separately
+
+    → If a network split happens
+      
+    - AP: database keeps answering but with possibly old/bad data
+    - CP: database stops responding unless all data are uptodate
+
+** Specialized databases
+
+- Key-value stores
+- Column-orientated
+- Graph
+- Document orientated
+- Search engine
+
+** Key-value stores
+
+#+ATTR_LaTeX: :width .33\textwidth
+#+ATTR_HTML:  :width 33%
+    [[file:img/redis.png]]
+
+    - Most well-known: Redis
+    - key: string
+    - value: data structure (string, array, set, hash etc.)
+
+    Consistency + Partition Tolerant
+
+** Key-value stores - Examples
+    - Memcached (2003 - B. Fitzpatrick - C)
+    - Riak (2009, Salesforce/Akamai, Erlang)
+    - Berkeley DB (1994 - Berkeley - C)
+
+#+begin_Comment
+    - [[https://en.wikipedia.org/wiki/Key-value_database][List of KV Database]] - 46 names
+#+end_comment
+
+** Column-orientated
+#+ATTR_LaTeX: :width .33\textwidth
+#+ATTR_HTML:  :width 33%
+    [[file:img/cassandra.png]]
+
+    - Most well-known: Cassandra
+    - Designed for message search by Facebook
+    - Availability + Partition tolerant
+
+** Column-orientated - Examples
+ - BigTable (2004, Google, as a Service)
+ - HBase (2006, Powerset/Facebook, Java)
+ - Hypertable (2007, Zvents/Baidu, C++)
+    
+** Graph
+#+ATTR_LaTeX: :width .33\textwidth
+#+ATTR_HTML:  :width 33%
+    [[file:img/neo4j.png]]
+
+   - Most well-known: Neo4j
+
+   - Graph database → nodes and edges
+
+   - Available - Consistent
+
+** Graph: Facebook API
+
+    Friends
+    - have friends
+    - who like pages
+    - which have members
+    - who have friends
+
+   Each person, each page, each group
+   → is a node
+   → relations are edges
+    
+** Document oriented
+#+ATTR_LaTeX: :width .33\textwidth
+#+ATTR_HTML:  :width 33%
+    [[file:img/mongo.png]]
+
+   - Most well-known: MongoDB
+
+   - Consistent - Partition Tolerant
+
+** Document orientated - Examples
+
+    - CouchBase (2010, Couchbase Inc, C++)
+    - CouchDB (2005, IBM, Erlang)
+        Cluster of unreliable commodity hardware
+    - RethinkDB (2009, Rethink, C++)
+
+
+** Search engines
+#+ATTR_LaTeX: :width .33\textwidth
+#+ATTR_HTML:  :width 33%
+    [[file:img/elasticsearch.png]]
+
+-    Most well-known: Elasticsearch
+
+-   Also a Document oriented database
+    → But specialized
+
+      - full-text search
+      - efficient indexing
+
+    Philippe will explain a lot about it
+
+** Search engines - Examples
+
+    - Sphinx (2001 - Sphinx Inc - C)
+    - Lucene (1999 - Doug Cutting, Hadoop author - Java)
+    - Solr (2004 - CNET - Java)
+    - Xapian (1984 - Cambridge - C++)
+
+** Time Series Databases
+
+#+ATTR_LaTeX: :width .33\textwidth
+#+ATTR_HTML:  :width 33%
+    [[file:img/opentsdb.png]]
+
+   - Most well-known: OpenTSDB
+
+     Build to handle data indexed on time
+     IoT, Monitoring metrics
+
+     Usage example: OVH IoT PaaS
+
+** Time Series Databases - Example
+
+  - InfluxDB (2013 - InfluxData - Go)
+  - Atlas (2014 - Netflix - Scala)
+  - KairosDB (2013 - KairosDB - Java)
+
+** Big Data is Plumbing
+
+| Data ingestion               | Spark, Logstash |
+| Stream processing            | Spark streaming, Storm |
+| Storage and mass calculation | Parquet, Hadoop |
+| Fast random access           | Cassandra, MongoDB, Riak |
+| Aggregations                 | Spark SQL, Impala, Elasticsearch |
+| Data mining                  | Hadoop, Spark datasets, MADLib, R |
+| Machine learning             | Spark MLLib |
+| Visualization                | Kibana, D3 |
+
+** Example: Adgero
+
+Use-case: IoT
+
+- Ingestion: Redis + Logstash
+- Storage: Elasticsearch
+- Analytics: Elasticsearch
+- Visualization: Kibana
+
+** Pragmatic view
+
+- *RAM*. Data fits in RAM → small data. Up to 1TB!
+Memory access very efficient.
+
+- *Disk*. Data does not fit in RAM → store on disk.
+Implies indexing because of slow access.
+
+- *Distributed*. Data does not fit one one machine → distribute.
+Difficulties begin here.
+
+- No one system to rule them all.
+
+** Motivations
+
+#+BEGIN_EXAMPLE
+Latency Comparison Numbers
+--------------------------
+L1 cache reference                           0.5 ns
+L2 cache reference                           7   ns
+Main memory reference                      100   ns
+Send 1K bytes over 1 Gbps network       10,000   ns
+Read 1 MB sequentially from memory     250,000   ns
+Round trip within same datacenter      500,000   ns
+Read 1 MB sequentially from SSD*             1   ms
+Disk seek                                   10   ms
+Read 1 MB sequentially from disk            20   ms
+#+END_EXAMPLE
+
+** PostgreSQL for Big Data
+
+- OK up to 1To
+- BJSON type
+- Generalized Inverted Index (full-text search)
+- ACID!
+- Window functions!
+- MADLib for data mining
+
+
+** Data Mining and "Big Data"
+
+2015 poll (282 voters)
+How much memory your typical data mining job actually uses:
+| < 1 GB (28)     | 10% |
+| 1-2 GB (44)     | 16% |
+| 2-4 GB (58)     | 21% |
+| 5-16 GB (94)    | 33% |
+| 17 - 64 GB (33) | 12% |
+| > 64 GB (25)    |  9% |
+
+
+** In-Memory Analytics
+
+- Analytics: most often in the Gb range
+- RAM: Gigabytes
+- Analytics can most often be done in-memory on a single PC-style machine
+
+** SQL, NoSQL
+
+- SQL API: PostgreSQL, Couchbase (N1QL), SparkSQL
+ 
+- Database =/= API
+- Classical: "SQL" database (RDBMS) + SQL API
+- NoSQL databases have *custom APIs*: MongoDB, Elasticsearch, …
+
+- NoSQL does not imply large scale
+- Large scale implies NoSQL
+
+
+* Part 3: Processing
+
+** Operating distributed infrastructures
+
+- We've have seen that storage and processing units are essentially distributed.
+
+*** General Issue						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- How can it be *efficiently* operated? 
+     - Application's Performance
+     - Programmers' Productivity
+     - Sysadmin Overhead
+ 
+- What programming models? 
+     - Relevance for processing needs
+     - Relevance for data management needs
+ 								    
+** Programming models   
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- Programming models for parallel/distributed processing have been designed in
+  the last decades mostly for scientific computing
+
+*** Mainstream Models until the 90's 			    :B_ignoreheading:
+   :PROPERTIES:
+   :BEAMER_args: ignoreheading
+   :END:
+- Message Passing
+- Multi-threading
+- Client-Server
+
+
+** Multi-threaded
+
+*** Fluid Simulation 					    :B_ignoreheading:
+   :PROPERTIES:
+   :BEAMER_envargs: [shrink]
+   :END:
+   - In a fluid dynamics lab, visualization of fluid circulation.
+   - Need: from the numerical simulation data, render one particular instant of
+     the simulation ($10^7$ points, 8 GB data in RAM)
+#+LABEL:fig:fluid-simu
+#+ATTR_LaTeX: :width .33\textwidth
+#+ATTR_HTML:  :width 33%
+  [[file:img/sph_particles2.png]]
+
+\pause
+- key technologies: /OpenMP/ - /CUDA/ - /OpenCL/
+- architecture: single host + multicore / GPU
+
+** Multi-threaded (OpenMP)
+
+*** 								    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+
+#+begin_src C
+
+   omp_set_num_threads(4);
+   #pragma omp parallel
+   {
+      int tid = omp_get_thread_num();
+      do_computation(tid);
+   }
+#+end_src
+
+** Message-passing
+
+*** Car Model                                       :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_envargs: [shrink]
+    :END:      
+    - In the car industry, a R&D department works on CAD models.
+    - Need: compute the heat transfer from the engine to the rest of the
+      vehicle on a $10^8$ cell mesh (100 GB of data in mesh).
+      
+#+CAPTION:Car CAD Mesh
+#+LABEL:fig:car-mesh
+#+ATTR_LaTeX: :width .5\linewidth
+#+ATTR_HTML:  :width 50%
+  [[file:img/car-mesh.png]]
+
+\pause
+- key technologies: /MPI/
+- architecture: multi-hosts connected through fast network (clusters)
+
+
+** Message-Passing (MPI)
+   :PROPERTIES:
+   :BEAMER_envargs: [t]
+   :END:
+*** Process 1 						      :B_block:BMCOL:				 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_col: 0.48
+    :END:
+#+begin_src C
+   double *send_res;
+   double *recv_res;
+   ...
+   MPI_Comm_size(MPI_COMM_WORLD, &size); 
+   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+   ...
+   send_res = do_computation(rank);
+   ...
+   src = (rank-1)%size;
+   dst = (rank+1)%size;
+   MPI_Send(&send_res, 100, MPI_DOUBLE, dst, tag1, 
+            MPI_COMM_WORLD);
+   MPI_Recv(&recv_res, 100, MPI_DOUBLE, dst, tag2,
+            MPI_COMM_WORLD, &status);  
+   ...
+#+end_src
+
+
+*** Process 2 						      :B_block:BMCOL:				 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_col: 0.48
+    :END:
+#+begin_src C
+   double *send_res;
+   double *recv_res;
+   ...
+   MPI_Comm_size(MPI_COMM_WORLD, &size); 
+   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+   ...
+   send_res = do_computation(rank);
+   ...
+   src = (rank-1)%size;
+   dst = (rank+1)%size;
+   MPI_Send(&send_res, 100, MPI_DOUBLE, dst, tag1, 
+            MPI_COMM_WORLD);
+   MPI_Recv(&recv_res, 100, MPI_DOUBLE, dst, tag2,
+            MPI_COMM_WORLD, &status);  
+   ...
+#+end_src
+
+** Client-Server
+   :PROPERTIES:
+   :BEAMER_envargs: [t]
+   :END:
+*** Breaking a RC5-72 Ciphering Key 			      :B_block:BMCOL:				 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_col: 0.48
+    :END:
+    - Find the cryptographic key used to cipher a message.
+    - Need: scan all possible keys using brute force and find which one matches.
+    - See for example the [[http://en.wikipedia.org/wiki/RSA_Secret-Key_Challenge][RSA Secret-Key Challenge]]
+
+*** Archi. Distributed.net                            :B_block:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_col: 0.45
+    :END:
+
+#+CAPTION:architecture Distributed.net
+#+LABEL:fig:scene-rendering
+#+ATTR_HTML: :width 50% :center
+#+ATTR_LATEX: :width .5\textwidth :float t
+[[file:img/compute-split-merge.png]]
+
+\pause
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- key technologies: /BOINC/ - /Globus derivatives/
+- architecture : distributed hosts connected through LANs or WANs. Grids,
+  Clouds, Internet Computing
+
+** New Paradigms
+
+- None of the existing models really match the requirements :
+    - fault tolerance
+    - programmer productivity
+    - data orientated
+
+- New Programming Models for large-scale data processing tend to:
+    - provide a framework to (transparently) handle parallel tasks and
+      distributed data
+    - include data-orientated features
+
+** Map-Reduce
+
+*** Graph Properties of a Social Network 		    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- Compute properties on the graph
+- Need: Recommend a user new connections, i.e people he/she may know by
+  transitivity. Do it for $10^6$ users.
+*** Graph
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+
+#+CAPTION: degree-1 neighborhood
+#+LABEL:fig:linkedin-graph
+#+ATTR_HTML: :width 30% :center
+#+ATTR_LATEX: :width .3\textwidth :float t
+[[file:img/linkedin-network-genaud-aug-2014.png]]
+
+\pause
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- key technologies: /Google MapReduce/ - /Hadoop/
+- architecture : multi-hosts connected through fast network (clusters)
+
+
+* Part 4: Project
+
+** Schedule
+
+ - Submission of subjects: 9th of February
+ - Beginning: 12th of February
+ - End: 13th of March
+
+** Groups
+
+- Group of 3/4 students
+
+** Subjects
+
+*** Propose your ideas: crawler? search engine?
+
+  - Use business API (Twitter/Foursquare)?
+
+    Examples:
+
+    https://developers.facebook.com/
+    https://dev.twitter.com/
+    https://developer.github.com/
+    https://developer.foursquare.com/
+
+ -   Public open-data
+
+    Examples:
+
+    http://www.data.gouv.fr/
+    http://data.london.gov.uk/
+    https://data.sncf.com/
+    https://github.com/caesar0301/awesome-public-datasets
+    http://gdeltproject.org/data.html
