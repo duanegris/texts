@@ -185,18 +185,28 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 ---- BELLUT Pierrick          CGI - Illkirch                (ESN)
 ---- BOUCHARD Thibault        Actimage GmbH - Kehl          (Editeur/S)
 ---- BOUET FRançois           Ecole Théatre
+---- CHAROUCHNI Mounir        recherche emploi 
 ---- CHICOIS Maxime           Actimage - Luxembourg         (ESN)
 ---- DEMEURE Nestor           Thèse CEA - Saclay           (Recherche)
+---- FABRA Mickael            recherche d'emploi
+---- FLICK Xavier             Actinvision - Strasbourg      (ESN)
 ---- GIRARDEAU Adrien         Dalim Software                (Editeur)
----- HAGENBACH Bastien        VIE Engie - Bruxelles         
+---- HAGENBACH Bastien        VIE Engie - Bruxelles   
 ---- HURTER Johnatan          Scalingo - Strasbourg         (Innov)
 ---- KOBERSI Pauline          Calyatis - Strasbourg         (Innov)
+---- LEDOS Sophie             I-Datech - Schiltigheim       (Innov/Industrie)
 ---- LE PERLIER Raoul         ATOS - Strasbourg             (ESN)
+---- LE ROY Gabrielle
+---- LOCQUEVILLE Martin       fin de cursus UCAQ
 ---- MANDICA Nicolas          ECO-SI - Lyon                 (Industrie)
+---- MOIRE Sophie             départ etranger
+---- MULL Lucas               I-Datech                      (Innov)
 ---- NIU Yan                  KPMG - Luxembourg             (Indus/Banque)
-
+---- RUFFION Antoine          fin de cursus UCAQ
+---- SITEK Jocelyn            fin cursus etranger
 ---- STEBE Vincent            Catalyse IT - Illkirch        (Editeur/S)
----- ZHAO Yueng
+---- TEODORI Damien           fin de cursus etranger
+---- ZHAO Yueng               
 
 
 
