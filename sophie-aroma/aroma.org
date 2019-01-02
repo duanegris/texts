@@ -1,0 +1,897 @@
+#+TITLE: Mémoire Aromathérapie
+#+AUTHOR: Sophie Genaud
+#+EMAIL: sophie.barthelemy@free.fr
+
+#+OPTIONS: H:4
+
+
+
+#+SELECT_TAGS: hidesolution-dummy
+#+EXCLUDE_TAGS: hidesolution hidden
+
+#+LaTeX_CLASS: article
+#+LaTeX_CLASS_OPTIONS: [12pt,a4wide]
+#+LaTeX_HEADER: \usepackage{french}
+
+
+#+LaTeX_HEADER:\setlength{\oddsidemargin}{0cm}
+#+LaTeX_HEADER:\setlength{\evensidemargin}{0cm}
+#+LaTeX_HEADER:\setlength{\textwidth}{500pt}
+
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+
+* Introduction
+
+	Je suis titulaire d'une Officine en  Alsace – à Metzéral- dans la Vallée
+de  Munster. Nous  sommes confrontés  à un  véritable fléau  qui revient  chaque
+année  : les  tiques !!   La maladie  de Lyme  ou /borréliose  de Lyme/  est une
+maladie infectieuse due  à une bactérie appelée  Borrelia burgdorferi, transmise
+par l'intermédiaire d'une  piqûre de tique infectée. Cette  zoonose peut toucher
+plusieurs  organes et  systèmes,  la peau  mais aussi  les  articulations et  le
+système nerveux. Non  traitée, elle évolue sur plusieurs années  ou décennies en
+trois  stades  de  plus en  plus  graves.  Le  traitement  repose sur  la  prise
+d'antibiotiques,  il   sera  d'autant   plus  efficace  qu'il   sera  administré
+rapidement. (1) Le meilleur moyen de ne  pas l'attraper est de se protéger c'est
+pourquoi je profite  de ce mémoire pour élaborer une  formule répulsive qui soit
+la plus  efficace possible.  mon but  a été  tout d'abord  de lister  les huiles
+essentielles connues comme  répulsives. Au gré de mes recherches  j'ai décidé de
+mettre  pour  chacunes  de   ces  huiles  quelques  références  bibliographiques
+confirmant leur  efficacité dans  cette indication.  Par la  suite, et  aux vues
+d'études j'ai fait le  choix qui me semblait le plus  judicieux pour élaborer ma
+formule.
+
+* Qu'est-ce que la maladie de Lyme ?
+
+La  maladie  de Lyme  est  transmise  à l'homme  par  piqûre  de tiques.   Après
+ l'inoculation cutanée de la bactérie lors de  la piqûre de tique, la maladie de
+ Lyme évolue en trois grandes  phases, séparées par des périodes asymptomatiques
+ (absence de  signes de la maladie).  Lorsqu'elle n'est pas traitée,  la maladie
+ peut mettre plusieurs années à se développer. Les chercheurs parlent de maladie
+ émergente, car les cas sont de plus en plus nombreux. (2 )
+
+* Description de la maladie et symptomatologie
+** La phase primaire de la maladie de Lyme
+
+Elle est caractérisée par une lésion cutanée : l'érythème chronique migrant (ECM). Cette lésion survient ente 3 et 30 jours après la piqûre de tique. Il s'agit d'une papule érythémateuse (rouge) centrée par le point de piqûre, s'étendant progressivement de façon centrifuge. La lésion est ovale (pouvant mesurer jusqu'à 50 cm), la bordure est plus érythémateuse (rouge) que son centre qui retrouve progressivement un aspect cutané normal. Elle est habituellement non prurigineuse (absence de grattage) et siège préférentiellement aux membres inférieurs (parfois aux membres supérieurs, voire au visage chez l'enfant). En l'absence de traitement, l'ECM évolue pendant quelques semaines (extension progressive) et disparaît sans séquelle.
+
+
+Durant cette première phase, vous pourrez constater des Maux de tête, Poussées de fièvre, Frissons, Douleurs articulaires et musculaires Fatigue.
+Il est à noter que 20% des personnes atteintes par cette maladie, l'ECM reste très discret, disparait au bout d'un mois et l'individu n'aura pas remarqué sa présence. La maladie de Lyme passera totalement inaperçue et aucun traitement n'aura été pris. Ces cas peuvent être graves, puisque la maladie pourra se compliquer durant la seconde phase.
+
+
+ 
+** La phase secondaire de la maladie de Lyme
+
+Elle survient plusieurs semaines ou mois après la disparition de l'ECM mais peut révéler la maladie (l'ECM étant passé inaperçu ou pouvant manquer dans près de la moitié des cas). Cette phase se caractérise par :
+    - Des manifestations cutanées : il s'agit de lésions semblables à celles observées lors de la phase primaire de la maladie ; 
+    - Des manifestations articulaires : douleurs articulaires fréquentes. Les arthrites (inflammation des articulations) sont moins fréquentes et touchent les grosses articulations (genou) ; 
+    - Des manifestations cardiaques : syncopes, palpitations, douleurs thoraciques et surtout troubles de la conduction auriculo-ventriculaire 
+ 
+    - Des manifestations neurologiques : la radiculite hyper-algique (inflammation très douloureuse des racines des nerfs innervant le territoire de la piqûre de tique). Le nerf facial est fréquemment touché. Une méningite peut également s'observer. 
+
+	Il devient primordial de traiter la maladie, sans quoi la troisième phase pourrait se développer, des années plus tard pour certains individus, dans des conditions pouvant être très graves.
+
+
+** La phase tertiaire de la maladie de Lyme
+
+Si la maladie de Lyme n'a pas été traitée au cours des deux premières phases, la
+troisième pourrait  se révéler fatale  à l'individu infecté. Tous  les symptômes
+précédemment  cités s'aggraveront  doucement, devenant  chroniques, au  cours de
+cette dernière  phase qui  peut se manifester  des mois ou  des années  après le
+début de l'infection par :
+
+    - Des  atteintes cutanées  :  la maladie  de  Pick Herxheimer  (inflammation
+      cutanée évoluant  vers une  atrophie de la  peau), le  lymphocytome cutané
+      bénin (nodules violacés,  arrondi, à contours nets,  fermes, localisés sur
+      le  front, le  lobe de  l'oreille et  régressant spontanément  en quelques
+      mois) ;
+
+    - Des atteintes articulaires : identiques à celles observées dans la phase secondaire ;
+    - Des atteintes neurologiques : touchant la moelle épinière ou le cerveau (manifestations neuro-psychiatriques diverses). 
+
+Tous les organes pourront être infectés et s'étendront au niveau des nerfs, des yeux, des articulations jusqu'à contaminer le cœur et la rate. De plus, des atrophies de parcelles de peau pourra être constaté. Celle-ci deviendra très fines, voire transparentes et donnera un effet papier froissé tirant sur les rouges violets. Les conséquences cardiaques pourront aussi être grave en fonction des infections.
+A noter que l'évolution vers cette troisième phase reste extrêmement rare, même dans le cas où l'individu n'aura pris aucun traitement.
+
+
+** Diagnostic de la maladie de Lyme
+
+Comme nous l'avons vu ci-dessus, il est très difficile de diagnostiquer la maladie de Lyme. Les symptômes peuvent être très nombreux mais aussi indolores voire presque «invisibles». De plus, il est très facile de confondre les symptômes décrits avec d'autres maladies. Lorsque l'on constate ces symptômes, il est conseillé d'aller chez le médecin rapidement et d'indiquer si vous avez été mordu par une tique. Lorsque l'individu ne sait pas s'il a été piqué par une tique, il pourra indiquer au médecin s'il a été dans des endroits susceptibles de contenir des tiques ; lors de balades en forêt par exemple. 
+ Il est à noter que les prises de sang ne permettent pas toujours de valider la présence de l'infection, surtout si le patient est toujours dans le premier stade de la maladie. Le médecin pourra aussi effectuer un électrocardiogramme afin de rechercher d'éventuels troubles auriculo-ventriculaire. Dans ces cas, une hospitalisation du patient devra être effectuée.
+Dans les cas avancés de la maladie de Lyme, soit à partir de la seconde phase, des examens neurologiques seront nécessaires. Ils permettront de mettre en évidence une diminution des sensations, des forces musculaires ainsi que d'éventuels inflammation des nerfs. En cas de radiculite (phase secondaire), cet examen peut être normal ou mettre en évidence une diminution de la sensibilité, une diminution de la force musculaire ou une abolition des réflexes dans le territoire innervé par le nerf touché par l'inflammation.
+Le diagnostic de la maladie de Lyme repose essentiellement sur les signes cliniques observés.
+La numération formule sanguine (prise de sang banale) est normale le plus souvent.
+Diverses techniques de laboratoire peuvent mettre en évidence dans le sang des anticorps témoins d'une réponse de l'organisme à l'infection bactérienne. Les tests immunologiques les plus récents sont à privilégier.
+
+En cas d'atteinte neurologique, la présence d'anticorps dans le liquide céphalo-rachidien est un argument en faveur de la maladie de Lyme.
+
+
+** Traitement de la maladie de Lyme
+
+La prise d'antibiotiques est obligatoire pour soigner l'infection causée par les tiques. le traitement et les dosages pourront être modifiés en fonction du temps passé depuis l'infection, et donc de la phase de la maladie. La prise d'antibiotique devra se faire sur une durée minimale de deux semaines pouvant aller jusqu'à trois suivant les zones impactées par l'infection.
+Dans les cas les plus avancées de la maladie, des antibiotiques pourront être administrés par voie intraveineuse sur des durées pouvant être beaucoup plus longues. Dans les cas d'hospitalisation, un corticoïde est souvent donné. 
+
+
+
+
+** Pertinence du sujet par rapport à ma région géographique (3) (4)
+
+
+*** Prévalence au niveau national
+
+Le nombre des victimes de la Borrélia burgdorferi dans l'hexagone est maintenant estimé à 27 000 cas par an (http://www.sante.gouv.fr/maladie-de-lyme.html). Selon les données du Réseau Sentinelles, la prévalence moyenne est estimée à 43 cas pour 100 000 habitants depuis 2009. Entre 1999 et 2000, elle était à 16.5 cas pour 100 000 personnes et  entre 1988 et 1989, elle était à 9.4 cas pour 100 000 individus (http://www.invs.sante.fr/Dossiers-thematiques/Maladies-infectieuses/Maladies-a-transmission-vectorielle/Borreliose-de-lyme/Donnees-epidemiologiques). En se basant sur ces chiffres, il est facile de constater que  cette infection n'a cessé de gagner du terrain au niveau national.
+
+*** Incidence au niveau régional
+
+
+
+Les études effectuées par les institutions impliquées dans la surveillance de la
+maladie  de Lyme  ,  telle que  le  Réseau Sentinelles,  le  Centre National  de
+Référence  des Borrélia  (CNR), l'InVS,  la Mutualité  Sociale Agricole  (MSA)…,
+entre 1986 et 2012 ont permis  d'établir des taux d'incidence au niveau national
+et régional.
+
+#+ATTR_LATEX: :width .6\linewidth
+#+CAPTION: Carte de France
+[[./img/carte_lyme.png]]
+
+ 
+
+
+On peut voir sur cette carte que l'incidence pour l'Alsace est dans cette étude de 157 cas pour 100 000 habitants, une incidence bien supérieure au taux moyen national.
+
+
+
+D'autre part,  une étude de l'Agence  régionale de santé (ARS),  menée par Santé
+publique  France et  grâce à  la participation  de 388  médecins, basée  sur des
+critères européens, a permis d'affiner pour  la première fois les données. Mais
+pas de miracle, la région Grand Est  constitue l'une des zones au plus fort taux
+d'incidence de  borréliose de Lyme en  France.  2.200 cas de  borréliose de Lyme
+par  an Tout  particulièrement concernés,  les deux  départements d'Alsace  dont
+notamment les  secteurs situés à  proximité des massifs vosgiens.  Selon l'étude
+baptisée Alsa  (ce) tique  et menée en 2014  et 2015, il y  aurait 2.200  cas de
+borréliose de  Lyme en Alsace par  an soit un  taux d'incidence de 117  cas pour
+100.000 habitants, une incidence deux fois supérieure au taux moyen national… La
+majorité des personnes atteintes  dans le Grand Est sont des  hommes et 90 % des
+cas sont âgés de  16 ans ou plus, avec une moyenne de  55 ans. Chez les enfants,
+les  5  à  9  ans  sont  les  plus touchés.  Si  les  lieux  à  risques  restent
+principalement les  forêts (74 %) les jardins  publics ou privés ne  sont pas en
+reste (47 %), tout comme les prairies (33 %).
+
+
+** Prévention de la maladie de Lyme
+
+La maladie de Lyme est transmise à travers la piqûre, ou plus précisément la morsure, de tiques. Elle est transmissible chez l'Homme mais aussi chez de nombreux animaux. 
+La prévention reste la première arme pour lutter contre cette maladie.
+Des moyens simples existent :
+    • porter des vêtements couvrants et clairs (afin de repérer rapidement les tiques), serrés au cou, aux poignets et aux chevilles (rentrer le bas du pantalon dans les chaussettes ou mettre des guêtres), des chaussures fermées et des gants clairs en cas de travail manuel ; 
+    • vaporiser ses vêtements et ses chaussures de produits anti-tiques (en respectant les contre-indications pour les enfants et les femmes enceintes) ; 
+    • utiliser un produit anti-tiques pour vos chiens et chats ; 
+    • emprunter si possible les sentiers et marcher au milieu des chemins ; 
+    • éviter les contacts avec les herbes, les broussailles et les branches basses ; 
+    • inspecter le corps après une activité de travail ou de loisir en pleine nature (y compris le pli des genoux, les aisselles, les organes génitaux et le cuir chevelu) car la piqûre est indolore. Retirer rapidement la tique avec un tire-tique acheté en pharmacie, désinfecter et surveiller la zone de piqûre pendant plusieurs semaines ; 
+    • consulter son médecin traitant en cas d'apparition de symptômes et en particulier d'une plaque rouge, centrée sur le point de piqûre et qui s'étend dans le mois qui suit la piqûre. 
+Ce qu'il ne faut surtout pas faire (risque de régurgitation des agents infectieux) :
+    • ne pas presser la tique entre ses doigts, afin de ne pas favoriser le passage de la salive de la tique qui contient les agents infectieux ; 
+    • ne pas tirer sur la tique et ne pas utiliser de pince à épiler. Outre le risque précédent, la probabilité de ''laisser la tête'' dans la peau est forte. Cela provoque généralement une petite inflammation, une infection ou la formation d'un kyste ; 
+    • ne pas utiliser d'alcool, d'éther, d'huile ou de vernis ; 
+    • ne jamais tenter de brûler la tique avec un briquet. 
+
+
+On l'aura bien compris la prévention est la première arme pour lutter contre la maladie.
+
+* Choix des Huiles Essentielles
+
+** Définition d'un produit insecticide/insectifuge
+Une plante, un produit ou une substance est insectifuge si elle repousse les insectes chez l'Homme ou l'animal de compagnie ou d'élevage. On parle aussi de répulsif pour ces produits qui – par extension- désignent aussi des molécules ou des produits commerciaux. ( wikipédia )
+Un produit insecticide tue les insectes, leurs larves et/ou leurs œufs tandis qu'un produit insectifuge les repousse.
+Les insecticides font partie des pesticides, eux-mêmes inclus dans le groupe des biocides, tous règlementés en Europe ( Fabienne Millet revelessence.com )
+Le terme générique /insecticide/ est utilisé pour citer les produits pesticides, les produits répulsifs agissant contre des arthopodes spécifiques : les insectes ( moustiques, mouches, punaises, poux, puces , taons, fourmis ), les arachnides ( araignées, scorpions ), les acariens ( tiques , aoûtats…).
+
+** Mécanisme d'action
+Ces produits agissent par contact ou par pénétration dans l'animal ( action systémique) et parfois par les deux mécanismes d'action.
+Il est à noter que la tique n'a pas de perception visuelle contrairement à d'autres arthropodes. Elles sont équipées de récepteurs situés sur les pattes et non pas dans les antennes comme c'est souvent le cas. Sans vision elles s'orientent vers leurs hôtes , stimulées par leur odeur. La sensibilité à la température n'intervient pas car elles piquent aussi des animaux à sang froids ( serpents, lézards etc...)
+
+
+
+Nous nous intéresserons donc aux huiles essentielles ayant une action insecticide  et insectifuge.
+J'ai cherché des études prouvant l'efficacité des huiles essentielles dans ces indications pour les arthropodes d'une manière générale ( les tiques faisant partis de cette grande classe ). J'ai également trouvé quelques travaux portant directement sur les tiques.
+
+
+
+** Le Basilic (Ocimum basilicum) 
+
+*** Caractéristiques 
+
+**** Olfaction
+Odeur fraîche, vive, anisée. Les premières notes rappellent l'estragon.
+**** Propriétés
+
+- Antispasmodique puissante
+- Calmante-relaxante
+- Antalgique
+- Antifongique
+- Tonique digestif
+- Anti-inflammatoire
+- Répulsive insectes
+
+**** Indications
+    - Hoquet
+    - Spasmes digestifs, coliques y compris néphrétiques
+    - Ballonnements
+    - Spasmophilie
+    - Anxiété, insomnie, stress
+    - Polyarthrite rhumatoïde
+    - Eloigner les moustiques (en mélange avec d'autres huiles essentielles insectifuges)
+
+**** Précautions d'emploi spécifiques
+Huile  essentielle  réservée  à  l'adulte  et  sans  usage  répétitif.   L'huile
+essentielle  de basilic  tropical présente  des précautions  spécifiques car  le
+méthylchavicol  ou estragole  et  certains  de ses  dérivés  sont classés  comme
+substance à fort potentiel toxique.  L'hépatocancérogénécité est démontrée chez  la souris et
+la  toxicité hépatique  du  méthylchavicol est  mal déterminée  à  ce jour  chez
+l'homme.  Une  recommandation européenne,  met en avant  la dose  journalière de
+40mg par jour de méthylchavicol admissible par  voie orale pour un adulte ce qui
+correspond à  une à  deux gouttes  toutes les 24  heures d'huile  essentielle de
+basilic tropical.  Il convient d'éviter ou  de limiter la voie orale. Cet emploi
+doit rester exceptionnel et restreint à une période très courte de 24 à 72H.  Il
+est  préférable  de  privilégier  la  voie  cutanée  diluée  (huile  essentielle
+irritante)   mais  toujours   sur   une   période  courte   (maximum   8  à   10
+jours).  L'efficacité  par   cette  voie  est  très   importante.   Cette  huile
+essentielle est  irritante pure sur la  peau. Il est indispensable  de la diluer
+dans une huile végétale !  La  diffusion atmosphérique et les inhalations sèches
+ne  posent pas  de problème  mais attention  à l'odeur  ! 
+
+*** Botanique
+
+**** Description
+Il existe de 50  à 150 espèces de basilic selon les sources.  Le basilic est une
+plante annuelle touffue, de 20 à  60 centimètres de hauteur, pourvue de feuilles
+ovales, de couleur vert  clair à vert foncé. Un sol riche  et bien drainé exposé
+au soleil (plusieurs heures par jour) lui convient parfaitement. Il est sensible
+au gel. Les  fleurs blanches se regroupent  en épis à l'extrémité  des tiges. La
+cueillette en plein soleil développe ses qualités gustatives.
+
+**** Partie utilisée
+- Feuilles Famille botanique: Lamiacées
+- Origine: Asie, Madagascar
+- Obtention : Distillation à la vapeur d'eau.
+
+**** Soyons clairs
+Il existe un certain nombre d'huiles essentielles de « basilic ». Il est important de ne pas les confondre car elles ne présentent pas les mêmes propriétés et précautions.
+Le nombre de variétés ou de cultures de basilic est très important et cela influence la composition de leurs huiles essentielles.
+Les huiles essentielles que l'on retrouve fréquemment sont :
+    - HE de basilic français (doux ou européen), HE Ocimum basilicum chémotype linalol.
+    - HE  de  basilic  tropical  ou  exotique,  HE  Ocimum  basilicum  chémotype
+      méthylchavicol.  Cette  HE présente  des  précautions  spécifiques car  le
+      méthylchavicol et  certains de  ses dérivés  sont classés  comme substance
+      cancérigène (hépatocancérogénécité chez la souris).
+    - HE  de  basilic  commun  origine Asie,  HE  Ocimum  gratissimum  chemotype
+      eugénol.  Cette  HE,  riche  en  eugénol, est  proche  des  propriétés  et
+      précautions  de l'HE  de  giroflier (clou).Il  existe  un autre  chémotype
+      thymol quand cette plante  pousse en  Afrique. Cette HE riche en thymol est
+      alors plus  proche des propriétés  et précautions  de l'HE de  thym commun
+      chémotype thymol.
+    - HE de basilic sacré (saint ou tulsi), HE Ocimum sanctum ou Ocimum tenuiflreum.
+
+Cette HE riche  en eugénol est proche  des propriétés et précautions  de l'HE de
+giroflier (clou). Elle présente en plus une forte action anti-inflammatoire liée
+à un pourcentage  élevé de béta-caryophyllène. Elle est très  appréciée dans les
+contractures musculaires et douleurs articulaires entre autres.
+
+
+*** Particularités
+- Période de récolte: Il pousse d'avril à octobre et apprécie d'être manipulé avec
+respect lors de la cueillette. La  distillation dure environ 2 heures. Son odeur
+franchement agréable donne  faim lorsqu'il est distillé.  
+
+- Rendement  Environ   6  à  10kg   de  sommités  fleuries  pour   10ml  d'huile
+  essentielle. En d'autres termes, 1 tonne de plantes pour 1.5kg d'huile essentielle !  
+
+- Constituants  responsables des  principales  propriétés :  une  HE de  basilic
+  tropical de Madagascar de qualité bio contient  : 
+   + 85  à 90  %  de Méthylchavicol  ( ou  estragole  )
+   +  5  à  10 %  de trans-B-ocimène 1 à 5 % de 1,8 cinéole 
+   + autres molécules minoritaires
+
+
+*** Etudes
+
+Prajapati and  Tripathi (2005) [42]  ont étudié l'effet  insecticide, repellent,
+larvicide et  ovicide de l'huile  essentielle de Ocimum basilicum.   Les travaux
+portaient  sur Anopheles  stephensi,  Aedes aegypti  et Culex  quinquefasciatus.
+L'huile essentielle de  basilic a montré une activité  larvicide intéressante et
+un effet répulsif sur les adultes.
+
+Usip et al, 2006 [51] ont mis en évidence l'effet répulsif d'une autre espèce de
+basilic  (Ocimum   gratissimum)  sur   Simulium  damnosum,   diptère  nématocère
+d'importance en Afrique (vecteur de l'onchocercose).
+
+Murugan K  et al, 2007  [35], ont  également obtenu des  résultats satisfaisants
+dans leur  étude sur  l'effet larvicide  et répulsif  d'Ocimum basilicum  sur le
+vecteur de  la dengue,  Aedes aegypti.  Les mêmes résultats  ont été  obtenus au
+Brésil [10].
+
+Pavela R. 2004 [41] a mis  en évidence l'activité insecticide d'O. basilicum sur
+le 3ème stade  larvaire d'Egyptian corronworm, notamment leur effet  sur le taux
+de  croissance  relative  (RGR),  leur  capacité  de  digestion  (Efficiency  of
+conversion of ingested food (ECI), et Efficiency of digested food (ECD)).
+
+Muse W.A. et al,  2002 [36] ont étudié l'effet de  16 plantes dont O.gratissimum
+(et  Azadirachta  indica)  sur  le  développement larvaire  de  A.  aegypti.  Le
+pourcentage de larves vivantes après 5  jours d'exposition à O. gratissimum et à
+A.  indica s'est  révélé significativement  inférieur au  pourcentage de  larves
+vivantes  du lot  témoin. Par  ailleurs, l'oviposition  s'est révélée  nettement
+diminuée après exposition à A. indica.
+
+ 
+
+
+
+** La Citronnelle de java (Cymbopogon winteranus)
+*** Caractériques 
+**** Olfaction
+Son parfum est frais, floral et citronné.
+**** Propriétés
+- Anti-infectieuse (bactéricide, antivirale, antifongique)
+- Anti-inflammatoire
+- Insectifuge
+- Antiparasitaire
+- antalgique
+- immunostimulant
+
+**** Indications
+Infections diverses (mycoses cutanées), douleurs articulaires (rhumatismes, arthrose) et musculaires (contractures), affections cutanées ( démangeaisons, piqûres d'insectes), éloigne les moustiques et les parasites (puces).
+
+*** Précautions d'emploi particulières
+Cette huile essentielle est irritante pure sur la peau. Il est indispensable de la diluer dans une huile végétale !
+Prudence pour les personnes présentant une tension artérielle basse ou des chutes de tension.
+Intéractions médicamenteuses avec certains médicaments comme les antipaudéens, certains antidouleurs et antitumoraux.
+
+*** Botanique
+
+
+**** Description
+La citronnelle de Java est une herbe aux longues feuilles étroites et à la tige linéaire qui pousse dans les régions tropicales. Elle est cultivée pour ses tiges et ses feuilles aux qualités aromatiques bien connues dans le monde culinaire. La citronnelle nécessite un arrosage relativement abondant. Un substrat humide à tendance sablonneuse, de préférence légèrement enrichi, lui garantira une croissance optimale.
+****Partie utilisée
+Plante entière
+Famille botanique
+Poacées
+Origine
+Java, Taïwan
+Obtention
+Distillation à la vapeur d'eau
+****Soyons clairs
+Le genre Cymbopogon comprend une cinquantaine d'espèces originaires d'Asie.
+Toutes ne fournissent pas des huiles essentielles. Celles que l'on retrouve fréquemment sont :
+    • HE Cymbopogon citratus, HE de lemon-grass appelée parfois citronnelle des Indes ou verveine des Indes. Son odeur citronnée est plus agréable que celle des « citronnelles ». Elle calme le stress, soulage les douleurs.
+    • HE Cymbopogon nardus, HE de citronnelle de Ceylan, la plus commercialisée dans le monde.
+    • HE de citronnelle de Java, HE Cymbopogon winterianus.
+Ces deux dernières huiles essentielles possèdent des propriétés très proches. HE de citronnelle de Java est un peu plus anti-inflammatoire.
+    • HE de palmarosa, HE Cymbopogon martinii var. motia. Elle est très différente des précédentes en olfactif et propriétés par sa forte teneur en géraniol. C'est une huile essentielle antifongique majeure, répulsive face aux moustiques, spasmolytique, régénératrice cutanée.
+
+*** Histoire
+Originaire d'Inde, la citronnelle a été introduite par les Romains en Angleterre au IVème siècle, ces derniers l'utilisaient pour ses vertus rajeunissantes.
+Elle est utilisée dans les pays tropicaux pour ses vertus insecticides : les Antillais la plantent devant leurs fenêtres pour repousser les moustiques. On la surnomme également « Mélisse», nom donné d'après la mythologie grecque, par la nymphe Mélissa qui s'occupait de la protection des abeilles. Ces insectes faisaient un excellent miel avec cette plante.
+
+*** Particularités
+Période de récolte
+Tout au long de l'année
+Rendement
+100kg de plantes permettent d'obtenir 1 litre d'huile essentielle de citronnelle.
+Constituants responsables des principales propriétés
+    - 25 à 45 % de citronellal
+    - 15 à 30 % de Géraniol 
+    - 5 à 20 % de Citronnellol
+    - 1 à 6 % d'acétate de citronellyle 
+    - 1 à 8 % d'acétate de géranyle
+    - 1 à 5 % de limonène
+    - 1 à 5 % de linalol  et d'autres molécules minoritaires 
+
+*** Etudes
+ 
+Ausloos A. (2004) [2] a démontré que par application "contact" sur des termites, les solutions diluées de citronnelle sont plus efficaces que celles de lemongrass (et  d'Eucalyptus camaldulensis ) . Ces résultats montrent donc que les huiles essentielles de lemongrass, de citronnelle (et d'E. Camaldulensis ) sont biologiquement actives contre les termites et les charançons par contact direct ou par vaporisation. 
+L'huile essentielle de Cymbopogon citratus montre des effets larvicide, ovicide et répulsif contre le moustique Culex quinquefasciatus [43]. 
+
+
+** L'Eucalyptus (Eucalyptus citriodora)
+*** Caractéristiques
+**** Olfaction
+L'huile essentielle d'eucalyptus citronné à l'odeur de citronnelle herbacée a une action calmante.
+Lydia Bosson, dans son livre L'aromathérapie énergétique précise : « calme les tempéraments sanguins, détend profondément, aide à agir de manière réfléchie, aide à relativiser ».
+**** Propriétés
+- Anti-inflammatoire puissante
+- Anti-infectieuse (bactéricide, antivirale, antifongique)
+- Antispasmodique
+- Répulsif moustique
+- Acaricide
+- Relaxante
+    
+**** Indications
+
+Calmer les douleurs articulaires et musculaires (courbature, arthrite, tendinite, sciatique), purifier l'air, gérer le stress si l'odeur est appréciée, éloigner les moustiques et les acariens, lutter contre les mycoses cutanées (pied d'athlète, ...).
+
+**** Précautions d'emploi particulières
+Cette huile essentielle est irritante pure sur la peau. Il est indispensable de la diluer dans une huile végétale pour toute application cutanée.
+*** Botanique
+**** Description
+
+Originaire d'Australie, l'eucalyptus citronné peut  mesurer jusqu'à 50 mètres de
+hauteur. Avec  une écorce mouchetée,  il possède les mêmes  caractéristiques que
+les autres  eucalyptus : de jeunes  feuilles ovales sans odeur,  qui s'allongent
+pour devenir  pointues et très  aromatiques à  maturité, des fleurs  blanches en
+forme de  toupie avec  de nombreuses  étamines à l'aisselle  des feuilles  et un
+fruit hémisphérique et ligneux.  Il  existe une multitude d'espèces d'eucalyptus
+(plus  de  500). Mis  à  part  l'eucalyptus  citronné,  nombreux sont  ceux  qui
+présentent des  propriétés respiratoires.  Extrêmement résistant, il  ne pourrit
+pas et résiste très bien aux parasites.
+**** Partie utilisée
+Feuilles
+Famille botanique
+Myrtacées
+Origine
+Australie, Vietnam, Brésil, Chine, Mexique
+Obtention
+Distillation à la vapeur d'eau
+**** Soyons clairs
+
+L'HE d'eucalyptus citronné ne présente pas de propriétés décongestionnantes des voies respiratoires. Elle est principalement utilisée pour ses actions anti-inflammatoire, anti-infectieuse et insectifuge.
+Les huiles essentielles provenant des espèces d'Eucalyptus suivantes :
+- HE Eucalyptus globulus,
+- HE Eucalyptus radiata,
+- HE Eucalyptus smithii,
+- HE Eucalyptus dives présentent toutes des propriétés respiratoires.
+
+L'HE d'eucalyptus mentholé (Eucalyptus dives) se différencie par ses actions mucolytique et lipolytique.
+
+
+*** Particularites
+
+Constituants responsables des principales propriétés
+    - 40 à 80 % de Citronnellal 
+    - 3 à 13 % de citronnelol
+    - traces de géraniol
+
+*** Etudes
+
+L'efficacité de cette huile essentielle n'est plus à prouver.
+
+Le citriodiol est une substance dérivée de l'eucalyptus citronné (p-menthane-3,8
+diol). À une concentration de 30%, sa durée d'efficacité contre les anophèles et
+les tiques est de l'ordre de 6 heures \cite{Trigg1996,Caroll2006}
+
+L'activité toxique  par fumigation de l'eucalyptus  a été testée sur  un insecte
+adulte  parasite  des champignons  [54].  Dans  cette  étude, 43  autres  huiles
+essentielles ont été  testées (dont la citronnelle, la lavande,  le tea tree, le
+neem et  le géranium)  mais c'est  le Thym  (Thymus vulgaris)  puis l'eucalyptus
+(Eucalyptus globulus) qui ont donné les résultats les plus intéressants.
+
+L'huile  essentielle d'Eucalyptus  tereticornis  Sm.  (Myrtaceae)  a montré  des
+effets larvicide, pupicide  et adulticide contre Anopheles  stephensi [45], mais
+également de puissants effets répulsifs anti-moustiques [50].
+
+
+
+** Le Géranium (Geranium rosat) 
+*** Caractéristiques 
+**** Olfaction
+L'huile essentielle de géranium compte plus de 200 composants aromatiques, ce qui en fait une substance d'une grande richesse olfactive, très utilisée en parfumerie.
+Fragrance chaude et suave, florale, douce, voire un peu sucrée avec ses notes fruitées pour parfaire l'alliance d'une rencontre inattendue entre rose et litchi.
+**** Propriétés
+    - Bactéricide
+    - Antivirale
+    - Antifongique
+    - Calmante
+    - Antispasmodique
+    - Hémostatique
+    - Anti-inflammatoire
+    - Cicatrisante
+    - Parasiticide
+    - Insectifuge
+
+**** Indications
+Infections diverses, infections cutanées (acné, mycoses cutanées), troubles cutanés (cicatrices, démangeaisons), stress, anxiété, troubles du sommeil, saignements (plaie, hémorroïdes, saignement de nez…), anti-moustiques, anti-poux.
+
+**** Précautions d'emploi particulières
+Elle s'utilise en règle générale sur la peau diluée dans une huile végétale.
+L'utilisation par voie cutanée pure doit rester un geste d'urgence exceptionnel sur une toute petite surface cutanée.
+
+
+
+*** Botanique
+
+**** Description
+Originaire d'Afrique méridionale, le géranium bourbon est une plante vivace qui croît sur les sols riches des tropiques à une altitude d'environ 1000 mètres. D'une hauteur de 80 centimètres environ, il présente des feuilles vertes odorantes, en lobes dentelés et des fleurs à cinq pétales roses, rouges ou blanches.
+**** Partie utilisée
+Les feuilles
+Famille botanique
+Géraniacées
+Origine
+Réunion, Madagascar
+Obtention
+Distillation à la vapeur d'eau
+
+**** Soyons clairs
+Il existe un certain nombre d'huiles essentielles de « géranium ». La confusion règne car les différentes espèces de Pelargonium s'hybrident très facilement.
+    - HE Pelargonium x asperum (Pelargonium graveolens) type Bourbon, rosat ou odorant ou Afrique(Egypte) présentent des propriétés similaires. De petites nuances olfactives peuvent être remarquées.
+    - HE Pelargonium x asperum (Pelargonium graveolens) type Chine est un peu différente dans sa composition chimique par rapport aux précédentes (plus riche en citronnellol et géraniol). Elle est plus anti-infectieuse et insectifuge. Elle est moins appréciée en olfactif.
+
+*** Particularités
+Période de récolte
+Décembre, mars, juin et octobre
+Rendement
+Faible, c'est l'huile essentielle de géranium la plus réputée et la plus chère avec sa magnifique couleur émeraude. 1 tonne de plantes est nécessaire pour obtenir environ 1,5kg d'huile essentielle.
+Les plants sont productifs en moyenne pendant 6 ans.
+
+Constituants responsables des principales propriétés
+    -  44% de Citronnellol  
+    -  6,5 % de Géraniol 
+    -  17,5 % de Formiate de citronnellyle 
+    - 2,2 % de Formiate de géranyle 
+    - 3,8 % de linalol
+    - 2,2 % de propionate de citronnellyle
+    - 2 % de menthone
+    - 4,5 % d'isomenthone
+    - 9 % de geranial
+    - 0,6 % de proprionates de géranyle
+    - 0,7 % de butyrate de geranyle
+
+*** Etudes
+
+Jeyabalan et al (2003) [26] ont étudié l'effet d'extraits de feuilles de Pelargonium citrosa sur Anopheles stephensi. Les durées des différents stades larvaires et du développement global des larves sont augmentées. Ces différences sont notées pour toutes les concentrations testées. Des malformations apparaissent, et la pupaison est incomplète dans beaucoup de cas. 
+Toutes les concentrations en P.citrosa ont permis la mise en évidence d'une activité repellent sur l'adulte de A. stephensi. Aux concentrations les plus élevées, on notait une faiblesse des adultes et des mouvements ralentis. Ces mêmes effets étaient également retrouvés sur les larves. Ces résultats suggéraient qu'à partir d'une certaine concentration, les repellents avaient des effets insecticides. 
+Enfin, cette étude montrait une diminution du nombre de piqûre sous l'effet de l'huile essentielle. 
+
+
+** La Lavande (Lavandula officinalis) 
+*** Caractéristiques
+**** Olfaction
+Son odeur a une note herbacée fraîche, montante, fleurie avec une douce note camphrée, aux légers accents de lait et de miel, légèrement mentholée». Lydia Bosson, dans l'aromathérapie énergétique, nous indique que la lavande vraie « Amène harmonie et équilibre, détend, calme, assagit les émotions, la nervosité, l'anxiété, l'hyper-émotivité, les peurs, les tensions nerveuses, les troubles du sommeil» et «Favorise l'inspiration»
+**** Propriétés
+    - Calmante, relaxante
+    - Sédative
+    - Anxiolytique
+    - Antalgique, anesthésiante locale
+    - Anti-inflammatoire
+    - Régénératrice cutanée, cicatrisante
+    - Anti-infectieuse ( bactéricide, antivirale, antifongique)
+    - Antiparasitaire
+    - Antispasmodique
+    - Décontractante musculaire
+    - Favorise la concentration
+
+**** Indications
+Angoisse, insomnies, troubles du sommeil, stress, anxiété, émotivité, infections diverses (cutanées, respiratoires), crampes musculaires, courbatures, torticolis, spasmes digestifs, toux, douleurs de règles en début de cycle, colites, brûlures, coup de soleil, plaies, démangeaisons cutanées, piqûres d'insectes, rides, vergetures, crevasses, cicatrices, poux.
+
+**** Précautions d'emploi particulières
+L'huile essentielle de lavande fine est extrêmement bien tolérée au niveau cutané. Elle s'utilise en règle générale sur la peau diluée dans une huile végétale.
+
+*** Botanique
+**** Description
+Sous arbrisseau buissonnant de 20 à 60 centimètres pouvant atteindre 1 mètre de hauteur qui affectionne le plein soleil (mais résiste remarquablement bien au froid !) et les terrains rocailleux et calcaires cependant bien drainés des coteaux du pourtour méditerranéen. Lors de randonnées dans les Alpes, vous pourrez l'apercevoir sur les versants ensoleillés (à environ 1200 mètres d'altitude). A maturité, les rameaux deviennent ligneux (constitués de bois) et les feuilles persistantes, linéaires vont du gris vert au gris argenté. Les épis cylindriques portent des fleurs allant de la couleur mauve très pâle au bleu violet profond. Les glandes sécrétrices d'essence se trouvent dans le calice et les pétales. La lavande est une plante mellifère très recherchée par les abeilles. La parfumerie de luxe apprécie ses notes florales et fraîches.
+**** Partie utilisée
+Fleurs
+Famille botanique		
+Lamiacée
+Origine
+France
+Obtention
+Distillation à la vapeur d'eau.
+
+**** Soyons clairs
+Il existe un certain nombre d'huiles essentielles de « lavande ou lavandin ». Les huiles essentielles que l'on retrouve fréquemment sont :
+    - HE Lavandula angustifolia/vera/officinalis (lavande fine, vraie ou officinale)
+Trois noms donnés à une même plante donc les huiles essentielles sont identiques. La lavande « Maillette », la lavande « Matherone » sont des plantes cultivées de façon clonale (lavandula angustifolia). Leurs huiles essentielles ont les mêmes propriétés que l'huile essentielle de lavande fine.Des subtilités olfactives peuvent être mises en avant.
+    - HE lavandula latifolia/lavandula spica (lavande aspic) présentent des propriétés différentes. Elle est utilisée principalement pour dégager les voies respiratoires ou calmer la douleur de piqûres d'insectes, poissons, méduses.
+Les feuilles de cette lavande sont plus larges et les fleurs exhalent une odeur camphrée.
+    - HE lavandula stoechas (lavande stoechade) est très neurotoxique et ne doit être utilisée que sur avis médical. Elle est mucolytique et cicatrisante.
+Le lavandin est un hybride de lavandula angustifolia et lavandula spica et l'on en obtient différentes huiles essentielles selon les variétés. Leurs propriétés sont très proches de l'huile essentielle de lavande fine. La différence à prendre en compte est la présence d'un pourcentage de camphre.
+
+
+
+**** Histoire
+Viendrait du latin « lavare » qui signifie laver, « lavandaria » (linge à laver) d'où le nom des lavandières de nos campagnes. La lavande est associée au parfum du linge fraîchement lavé. Angustifolia signifie à feuilles étroites. Officinalis évoque la pharmacie.
+
+La légende raconte que la blonde fée « Lavandula » est née dans les lavandes sauvages de la montagne de Lure. Alors qu'elle errait pour s'installer en regardant les paysages, elle s'immobilisa devant la Provence et se mit à pleurer en voyant ces pauvres terrains incultes et de chaudes larmes couleur lavande vinrent tacher le paysage. La fée sécha ses yeux bleus, mais ceci produisit de fines gouttelettes qu'elle transforma en ciel bleu pour oublier toutes ces taches ! La lavande pousserait depuis sur ces terrains…
+
+*** Particularités de la lavande fine
+
+ Période de récolte
+Juillet / août, les lavandiculteurs la récoltent de préférence avant l'ouverture des fleurs, pour préserver la teneur aromatique à son maximum. La floraison des brins de lavande fine s'échelonne de mai à fin juillet. Les fortes chaleurs favorisent la montée de l'essence dans les organes sécréteurs. Afin d'optimiser la qualité, mieux vaut laisser sécher les lavandes pendant un ou deux jours avant distillation.
+
+Rendement
+
+Pour obtenir 1kg d'huile essentielle, environ 100kg de sommités fleuries sont nécessaires. La qualité augmente avec l'altitude mais le rendement est lui plus faible. Un hectare de lavande produit en moyenne de 15 à 20 kg d'huiles essentielles. En ce qui concerne la lavande fine, 100kg de sommités fleuries fraîches sont nécessaires pour produire 0,7kg d'huile essentielle de lavande fine.
+
+Constituants responsables des principales propriétés :
+
+- 25 à 47 % d' acétate de linalyle 
+- 20 à 45 % de Linalol 
+- 0,1 à 8 % de terpinén-4-ol
+- 2,5 % de 1,8 cinéole
+- 1,2 % maximum de camphre
+- 1 % maximum de limonène
+- 0,2 % maximum d' acétate de lavandulyle
+- 0,1 % maximum de lavandulol
+
+Cette huile essentielles bénéficie d'une monographie à la  Pharmacopée.
+
+*** Etudes
+
+Chu C.J. et Kemper K.J. 2001 [11] ont mis en évidence un effet insecticide de 2 espèces de lavande sur Drosophila auroria. L'auteur rapporte que de nombreuses études (in vitro, sur animaux de laboratoire, sur humains) ont montré d'excellents résultats sur les poux, les puces…
+
+Burfield AP. & Reekie S-L. (2005) [7] ont étudié l'activité insecticide de nombreuses huiles essentielles contre le vecteur du paludisme et font de nombreuses observations sur la lavande. La Lavandula lanata a été utilisée de tous temps comme produit répulsif contre les insectes. 
+
+
+
+
+** Arbre à thé ( Melaleuca alternifolia )
+
+*** Caractéristiques 
+
+**** Olfaction
+Odeur fraîche, déroutante voire peu agréable pour certains.
+
+**** Propriétés
+    
+- Anti-infectieuse majeure (Bactéricide, antifongique, antivirale)
+- Cicatrisante
+- Anti-inflammatoire
+- Antiparasitaire
+
+**** Indications
+
+Infections  bactériennes  (cystite,  sinusite, bronchite),  infections  cutanées
+(panari, bouton infecté, acné),  infections fongiques (mycoses cutanées, mycoses
+des ongles), infections virales (grippe, angine, herpès labial), soins des peaux
+grasses et des cheveux gras, pellicules.
+
+*** Botanique
+
+**** Description
+Arbre épineux, d'environ 5m de haut, toujours vert, son tronc est droit avec une écorce en forme de lanières. Ses feuilles étroites, duveteuses, lancéolées, de couleur vert vif, sont alternes, c'est-à-dire isolées et disposées alternativement de part et d'autre de la tige. Les fleurs blanches en panache qui rappellent les fleurs de coton sont disposées en épis. Cet arbre qui affectionne les sols marécageux et ensoleillés se multiplie grâce à des surgeons (sorte de rejet ou repousse), ce qui a contribué à sa survie, car il était menacé d'extinction par l'expansion de l'élevage. Il appartient à la même famille botanique que les eucalyptus ou le giroflier.
+
+**** Partie utilisée
+Feuilles
+Famille botanique
+Myrtacées
+Origine
+Australie
+Obtention
+Distillation à la vapeur d'eau
+
+
+**** Soyons clairs
+
+Ne pas confondre avec le cajeput (Melaleuca cajeputii) et le Niaouli (Melaleuca viridiflora) ou encore avec le théier, Camellia sinensis.
+Il existe plusieurs huiles essentielles de « Melaleuca ». Il est important de ne pas les confondre car elles ne présentent pas les mêmes propriétés et précautions.
+    - HE de cajeput (Melaleuca cajeputii)
+    - HE de Niaouli (Melaleuca viridiflora)
+Ces deux huiles essentielles aux propriétés respiratoires bactéricide, antifongique et antivirale se distinguent de la suivante qui n'a pas d'action respiratoire mais est une anti-infectieuse majeure.
+    - HE tea tree (Melaleuca alternifolia)
+
+*** Histoire
+
+Durant la seconde guerre mondiale, les producteurs et les personnes qui récoltaient la plante étaient exemptés de service militaire tant que les réserves en tea tree n'étaient pas suffisantes. L'huile essentielle était distribuée aux soldats et aux marins pour qu'ils puissent traiter les problèmes infectieux ayant pour origine leurs blessures ou autres maladies.
+
+*** Particularités
+- Période de récolte: Août
+- Rendement: La distillation à la vapeur d'eau dure en moyenne 3 heures, avec un rendement de 1 à 2 %.
+
+
+Constituants responsables des principales propriétés
+    - 42 % de Terpinèn-4-ol
+    - 22 % Gamma- terpinène 
+    - 10 % d'Alpha-terpinène 
+    - 3 % d' Alpha-terpinéol 
+    - 4 % de 1,8 Cinéole 
+
+*** Etudes
+
+Walton et al (2000) [52] ont démontré une efficacité certaine de l'huile essentielle de Tea Tree sur les ectoparasites humains que sont les sarcoptes scabiei hominis, agents de gale.
+
+Iori et al, (2005) [24] ont étudié l'effet acaricide de l'huile essentielle de Melaleuca alternifolia (Tea Tree) sur les nymphes d'Ixodes ricinus. Des résultats intéressants ont été obtenus après une exposition supérieure à 90 minutes. 
+
+
+
+** Romarin Officinal
+
+
+
+*** Caractéristiques
+**** Olfaction
+Odeur herbacée, camphrée qui rappelle à la fois l'encens et l'eucalyptus. Parfum acéré, pénétrant et dense avec des accents citronnés.
+Lydia Bosson, dans son livre L'aromathérapie énergétique précise : « elle donne de l'énergie et de la force mentale, transmet clarté et confiance, améliore l'endurance ».
+
+
+**** Propriétés
+
+    - Anti-infectieuse
+    - Mucolytique
+    - Expectorante
+    - Décontractante musculaire
+    - Décongestionnant veineux
+    - Rubéfiante
+    - Antiparasitaire
+    - Insectifuge, insecticide
+
+**** Indications
+
+    - Contractures musculaires, crampes
+    - Rhumatismes
+    - Infections respiratoires (encombrement bronchique, rhume, sinusite…)
+    - Tonique, favorise la concentration
+    - Parasites (poux)
+
+**** Précautions d'emploi particulières
+
+La présence de camphre, de 1-8 cinéole et d'alpha-pinène dans cette huile essentielle en limite l'usage aux :
+    - Adulte et enfants de plus de 12 ans
+    - Personnes non asthmatiques
+Cette huile essentielle est irritante pure sur la peau. Il est indispensable de la diluer dans une huile végétale pour toute application cutanée.
+
+
+*** Botanique
+
+**** Description
+
+Originaire du pourtour méditerranéen, le romarin officinal est un arbuste aromatique touffu d'environ 1 mètre de haut, qui pousse sur des sols calcaires très secs et ensoleillés, il apprécie les sols bien drainés. Vivant de chaleur et de lumière, il résiste très bien à la sécheresse. Ses feuilles aromatisées ressemblent à des aiguilles et ses fleurs sont de couleur blanc bleu à bleu lavande. Leur calice est velu, à dents bordées de blanc. Leur forme rappelle celle de l'orchidée. Il présente un petit fruit sec dur et brun, contenant quatre graines.
+
+**** Partie utilisée
+Les sommités fleuries
+Famille botanique
+Lamiacées
+Origine
+France, Portugal, Espagne
+Obtention
+Distillation à la vapeur d'eau
+
+**** Soyons clairs
+
+Il existe un certain nombre d'huiles essentielles de « romarin ». Il est important de ne pas les confondre car elles ne présentent pas exactement les mêmes propriétés.
+Leurs précautions sont identiques.
+Les huiles essentielles que l'on retrouve fréquemment sont :
+    - HE Rosmarinus officinal ct 1-8 cinéole, elle présente principalement des propriétés respiratoires.
+    - HE Rosmarinus officinal ct camphre, elle présente principalement des propriétés respiratoires et décontracturante musculaire. Elle est recherchée par les sportifs.
+    - HE Rosmarinus officinal ct verbénone, elle présente principalement des propriétés respiratoires, mucolytique et anti-tussive (toux grasse).
+
+
+
+*** Particularités
+Rendement
+50kg de plantes fournissent 1kg d'huile essentielle
+
+Constituants responsables des principales propriétés
+
+    - Alpha-pinène : 18 à 25 %
+    - 1-8 cinéole : 16 à 25 %
+    - Camphre : 13 à 20 %
+
+
+ Benazzedine and al , 2010 activité insecticides de cinq huiles essentielles vis-à-vis de Sitophilus oryzae et Tribolium confusum
+L'étude Benazzedine a porté sur l'activité insecticide de 5 huiles essentielles : le Romarin ( rosmarinus officinalis ) ,la menthe ( Mentha spicata ), la citronnelle ( Cymbopogon citratus ), le thym ( Thymus vulgaris )et l'eucalyptus ( Eucalyptus globulus ). 
+Parmi les cinq huiles testées le Romarin ( Rosmarinus officinalis ) et la Menthe montrent la plus grande efficacité par inhalation que par contact et ingestion, la mortalité est de100% après 24 heures d'exposition que se soit sur S.oryzae ou T.confusum.
+Par contact les cinq huiles essentielles manifestent un taux de mortalité assez important sur les deux espèces, toutes les huiles ont une efficacité très forte qui dépasse 88% de mortalité sur S.oryzae à l'exception de la Citronnelle qui n'a atteint pas les 70% de mortalité. Concernant le T.confusum, le Thym et la menthe verte ont provoqué 100% de mortalité, ils sont suivi par le Romarin avec une mortalité de 97,37%, alors que l'Eucalyptus a enregistré une mortalité de 72,63% ; leur efficacité est moins importante sur T.confusum par rapport à leur effet sur S.oryzae. En fin la Citronnelle avec un taux de mortalité de 52%.
+
+
+** Thym
+
+*** Caractéristiques 
+
+****  Olfaction
+
+Odeur forte, chaude, cependant assez fine aux légers accents de citron.
+
+**** Propriétés
+    - Anti-infectieuse
+    - Anti-inflammatoire
+
+**** Indications
+Infections respiratoires (bronchite, sinusite), infections cutanées (mycoses, candidoses, panaris, ulcère, dermatoses infectieuses).
+
+**** Précaution d'emploi spécifiques
+
+Cette huile essentielle est très irritante pour la peau et toxique pour le foie. Elle est réservée à l'adulte .
+En cas d'utilisation par voie orale, la goutte d'huile essentielle doit être versée dans une demi-cuillère à café d'huile végétale. Elle est contre indiquée en présence de troubles gastriques (brûlures, ulcères, reflux gastro-oesophagiens). La durée du traitement ne doit pas excéder 5 à 7 jours. Elle est contre-indiquée en cas d' insuffisance hépatique
+En utilisation par voie cutanée diluée (jamais pure) : cette huile essentielle se dilue dans une huile végétale à 10 % maximum en raison de sa forte irritation cutanée
+En diffusion atmosphérique : Ne jamais utiliser seule dans un diffuseur à jet d'air sec. Son odeur est forte et peu agréable.
+Elle ne s'utilise pas par inhalation sèche et par inhalation humide ni dans un bain
+Ne convient pas à l'automédication. L'utilisation doit se faire sur une période courte.
+
+*** Botanique
+
+**** Description
+
+Avide de chaleur et de lumière, le thym, même s'il fait partie des « herbes de Provence » est un sous-arbrisseau compact d'environ 30cm de haut. Il est vivace, pousse à l'état sauvage et conquiert les terrains secs et calcaires les plus pauvres comme les garrigues et les rocailles. Il résiste aux fortes chaleurs grâce à l'huile essentielle qui s'évapore et qu'il produit à nouveau la nuit. Le thym blanc est moins dense que le thym vulgaire. Il possède de très petites feuilles grises roulées sur les bords et cotonneuses en dessous. En mai, il laisse apparaître de petites fleurs blanc rosé qui attirent les abeilles.
+L'huile essentielle se situe dans les feuilles et dès qu'on les froisse, la senteur s'exhale.
+Le thym comprend quelque 350 espèces.
+
+**** Partie utilisée
+Sommités fleuries
+Famille botanique
+Lamiacées
+Origine
+Bassin méditerranéen
+Obtention
+Distillation à la vapeur d'eau
+
+**** Soyons clairs
+
+Il existe un certain nombre d'huiles essentielles de « thym » :
+    - HE de thym commun chémotype linalol ( Thymus vulgaris ct linalol) : propriété principale : anti-infectieuse sans précaution spécifique.
+    - HE de thym commun chémotype thujanol ( Thymus vulgaris ct thujanol) : propriété principale : anti-infectieuse sans précaution spécifique (très difficile à produire, cette huile essentielle est remplacée par l'HE de marjolaine à coquilles car elle contient du thujanol).
+    - HE de thym commun chémotype thymol (Thymus vulgaris ct thymol ) propriété principale : anti-infectieuse majeure avec des précautions spécifiques (dermocausticité, hépatotoxicité).
+    - HE de thym commun chémotype thuyanol (Thymus vulgaris ct thuyanol), propriété principale : anti-infectieuse sans précaution spécifique
+    - HE thym commun chémotype paracymène (Thymus vulgaris ct paracymène), propriété principale : antalgique avec des précautions spécifiques (forte irritation cutanée, hépatotoxicité).
+    - HE de thym d'Espagne chémotype linalol (Thymus zygis ct linalol), propriété principale : anti-infectieuse sans précaution spécifique.
+    - HE thym d'Espagne chémotype thymol (Thymus zygis ct thymol), propriété principale : anti-infectieuse majeure avec des précautions spécifiques (dermocausticité, hépatotoxicité).
+    - HE thym à feuilles de sarriette (thym blanc, thym à bornéol), Thymus satureoïdes, propriété principale : anti-infectieuse avec des précautions spécifiques (forte irritation cutanée, hépatotoxicité).
+    - HE de marjolaine sylvestre (thym d'Espagne), Thymus mastichina, propriété principale : respiratoire sans précaution spécifique.
+
+
+*** Particularités
+
+Rendement: Pour 100kg de plantes fraîches, on obtient, selon les variétés, entre 2% et 6% d'huile essentielle.
+
+Constituants responsables des principales propriétés:
+    - Bornéol : 25 à 30 %
+    - Thymol et carvacrol : 25 %
+    - Alpha-terpinéol : 10 %
+    - Béta-caryophyllène : 5 %
+
+Tabari MA and co , 2017 ont étudié l'activité repellente d'une selection de monoterpènes (thymol, carvacrol et linalol ) contre Ixodes ricinus
+
+nous avons ici évalué les effets ovicides, larvicides et répulsifs de ces composés contre I. ricinus. 
+Le carvacrol et le thymol, à toutes les concentrations testées, ont entraîné une diminution significative de l'éclosion, montrant une efficacité supérieure à celle de la perméthrine, alors que le linalol n'a provoqué aucun effet significatif. Chez les larves traitées au carvacrol et au thymol (1, 2 et 5%), les taux de mortalité ont atteint 100% après 24 heures, montrant une efficacité larvicide supérieure à celle de la perméthrine, alors qu'aucun effet n'a été observé dans les groupes larvaires traités au linalool. Le 
+Le carvacrol et le thymol à toutes les concentrations testées ont montré une répulsion> 90% sur I. ricinus. Le linalol n'était guère efficace (répulsion de 50,24%) qu'à la concentration de 5%. 
+
+
+
+
+Choix de la formulation aux vues de toutes ces données.
+
+Une dernière étude slovaque très compète nous a interpellé. Elle étudie l'efficacité de 11 huiles essentielles que nous avons déjà vues pour la plupart.
+
+
+Ces onze huiles essentielles, à savoir basilic (Ocimum basilicum), bergamote (Citrus bergamia), bouton de clou de girofle (Syzygium aromatic), citronnelle (Cymbopogon winterianus), thym serpolet (Thymus serpyllum), lavande (Lavandula angustifolia), la marjolaine (Origanum majorana), la menthe poivrée (Mentha piperita), la menthe verte (M. spicata) et le thym vulgaire (Thymus vulgaris) ont été soumis à des tests de résistance à la répulsion contre les tiques adultes de D. reticulatus à des concentrations de 1 et 3%. Les huiles essentielles de clou de girofle, de thym serpolet et de thym rouge étaient les plus efficaces: 83, 82 et 68% des tiques ont été repoussées une fois diluées à 3%, respectivement. Le mélange de thym grimpant et de citronnelle contenant 1,5% de chacun a montré une répulsion plus élevée (91%) que les huiles essentielles individuelles à la concentration de 3%.
+
+
+* Formule que nous décidons de réaliser
+
+Nous avons  dû faire  un choix  concernant les  huiles essentielles.  Nous avons
+décidé de  provilégier l'efficacité  et nous  décidons au  vu de  cette dernière
+étude de choisir les huiles essentielles de Lavande, de Géranium et d'Eucalyptus
+citronné. Afin de  les solubliser nous utiliserons une base  neutre pour le bain
+et enfin nous rajouterons de l'eau.
+
+Soit:
+- HE de Lavande officinale : 10 gouttes
+- HE de Géranium rosat : 15 gouttes
+- HE d'Eucalyptus citronné : 30 gouttes dans 15 ml de base neutre pour le bain
+- eau distillée qsp 30 ml
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+
+(1) doctissimo.fr
+2 maladie lyme info
+3 ARS rapport
+4 le quotidien du medecin
+5 santé,gouv
