@@ -221,46 +221,94 @@ J'ai cherché des études prouvant l'efficacité des huiles essentielles dans ce
 
 ** Les familles biochimiques
 
+Toutes ces familles biochimiques sont bactéricides (anti-bactérien, anti-viral,
+anti-fongique, anti-parasitaire), larvicides, acaricides et répulsives.
+
+*** Les monoterpenols
+
 #+CAPTION: Les monoterpenols
-
-| Molécules        | Huiles essentielles                                | Indications | Contre-indications |
-| chimiques        |                                                    |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-| Linalol          | Bois de rose  (Aniba rosaeodora)                   |             |                    |
-|                  | Thym ct linalol (Thymus vulgaris ct linalol)       |             |                    |
-|                  | Bois de Hô (Cinnamomum camphora ct linalol)        |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-| Citronellol      | Géranium rosat (Pelargonium x asperum)             |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-| Géraniol         | Palmarosa (Cymbopogon martinii)                    |             |                    |
-|                  | Thym ct géraniol (Thymus vulgaris ct géraniol)     |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-| Thujanol         | Thym ct thujanol (Thymus vulgaris ct thujanol)     |             |                    |
-|                  | Marjolaine des jardins                             |             |                    |
-|                  | ou à coquilles (Origanum majorana)                 |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-| Menthol          | Menthe poivrée (Mentha x pipérita)                 |             |                    |
-|                  | Menthe des champs (Mentha arvensis)                |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-| Terpinène 1 ol 4 | Tea Tree (Melaleuca alternifolia)                  |             |                    |
-|                  | Marjolaine des jardins                             |             |                    |
-|                  | ou à coquilles (Origanum majorana)                 |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-| Alpha Terpinéol  | Ravintsara (Cinnamomum camphora ct ciéole)         |             |                    |
-|                  | Niaouli (Melaleuca quinquenervia ct cinéole)       |             |                    |
-|                  | Eucalyptus radié (eucalyptus radiata ssp radiata)  |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-| Bornéol          | Thym à feuilles de sarriette (Thymus satureioides) |             |                    |
-|                  | Inule odorante (Inula graveloens)                  |             |                    |
-|------------------+----------------------------------------------------+-------------+--------------------|
-
-
+| *Molécules*      | *Huiles essentielles*                                |
+| *chimiques*      |                                                      |
+|------------------+------------------------------------------------------+
+|                  |                                                      |
+| Linalol          | Bois de rose  (/Aniba rosaeodora/)                   |
+|                  | Thym ct linalol (/Thymus vulgaris ct linalol/)       |
+|                  | Bois de Hô (/Cinnamomum camphora ct linalol/)        |
+|------------------+------------------------------------------------------+
+| Citronellol      | Géranium rosat (/Pelargonium x asperum/)             |
+|------------------+------------------------------------------------------+
+| Géraniol         | Palmarosa (/Cymbopogon martinii/)                    |
+|                  | Thym ct géraniol (/Thymus vulgaris ct géraniol/)     |
+|------------------+------------------------------------------------------+
+| Thujanol         | Thym ct thujanol /(Thymus vulgaris ct thujanol)/     |
+|                  | Marjolaine des jardins                               |
+|                  | ou à coquilles /(Origanum majorana)/                 |
+|------------------+------------------------------------------------------+
+| Menthol          | Menthe poivrée /(Mentha x pipérita)/                 |
+|                  | Menthe des champs /(Mentha arvensis)/                |
+|------------------+------------------------------------------------------+
+| Terpinène 1 ol 4 | Tea Tree (/Melaleuca alternifolia/)                  |
+|                  | Marjolaine des jardins                               |
+|                  | ou à coquilles (/Origanum majorana/)                 |
+|------------------+------------------------------------------------------+
+| Alpha Terpinéol  | Ravintsara (/Cinnamomum camphora ct cinéole/)        |
+|                  | Niaouli (/Melaleuca quinquenervia ct cinéole/)       |
+|                  | Eucalyptus radié (/Eucalyptus radiata ssp radiata/)  |
+|------------------+------------------------------------------------------+
+| Bornéol          | Thym à feuilles de sarriette (/Thymus satureioides)/ |
+|                  | Inule odorante (/Inula graveloens/)                  |
+|------------------+------------------------------------------------------+
 
 
+**** Contre-indications
+Déconseillé chez  la femme enceinte les  trois premiers mois de  la grossesse et
+attention  à la  toxicité du  menthol chezle  jeune enfant.  Sinon, très  peu de
+toxicité.
 
 
-|   |             |   |   |
-|   | |   |   |
+
+*** Les phenols
+
+#+CAPTION: Les phenols
+| *Molécules chimiques* | *Huiles essentielles*                              |
+|                       |                                                    |
+|-----------------------+----------------------------------------------------|
+| Thymol                | Thym ct thymol (/Thymus vulgaris ct thymol/)       |
+|-----------------------+----------------------------------------------------|
+| Carvacrol             | Origan compact (/Origanum compaxtum/)              |
+|                       | Sariette des montagnes (/satureja montana/)        |
+|                       | Thym ct carvacrol (/Thymus vulgaris ct carvacrol/) |
+|                       | Serpolet (/thymus serpyllum/)                      |
+|-----------------------+----------------------------------------------------|
+| Eugénol               | Giroflier (clou) (/Eugnenia caryphyllus/)          |
+|                       | Cannelle de Ceylan (/Cinnamomum zeylannicum/)      |
+|-----------------------+----------------------------------------------------|
+
+**** Contre-indications
+- dermo-causticité (ne pas appliquer pure sur les muqueuses ou la peau, dilution à 5% dans l’h.v.)
+- agressivité des muqueuses
+- hépatotoxicité à long cours
+- contre-indication chez la femme enceinte et enfant de moins de 7 ans (eugénol)
+
+
+
+*** Les aldéhydes aromatiques
+
+#+CAPTION: Les aldéhydes aromatiques
+| *Molécules chimiques* | *Huiles essentielles*                              |
+|                       |                                                    |
+|-----------------------+----------------------------------------------------|
+| Cinnamaldéhyde        | Cannelle de Ceylan (/Cinnamomum zeylanicum/)       |
+|                       | Cannelle de Chine (/Cinnamomum cassia/)            |
+|                       | Cannelle du Vietnam (/Cinnamomum laureirii)        |
+|-----------------------+----------------------------------------------------|
+
+**** Contre-indications
+- La présence d’un noyau benzénique confère à ces molécules une dermo-causticité au même titre que pour les phénols
+- Interdit chez la femme enceinte
+- Déconseillé chez l’enfant de moins de 7 ans
+
+
 ** Le Basilic (Ocimum basilicum) 
 
 *** Caractéristiques 
@@ -417,7 +465,8 @@ Intéractions médicamenteuses avec certains médicaments comme les antipaudéen
 
 **** Description
 La citronnelle de Java est une herbe aux longues feuilles étroites et à la tige linéaire qui pousse dans les régions tropicales. Elle est cultivée pour ses tiges et ses feuilles aux qualités aromatiques bien connues dans le monde culinaire. La citronnelle nécessite un arrosage relativement abondant. Un substrat humide à tendance sablonneuse, de préférence légèrement enrichi, lui garantira une croissance optimale.
-****Partie utilisée
+
+**** Partie utilisée
 Plante entière
 Famille botanique
 Poacées
@@ -425,7 +474,8 @@ Origine
 Java, Taïwan
 Obtention
 Distillation à la vapeur d'eau
-****Soyons clairs
+
+**** Soyons clairs
 Le genre Cymbopogon comprend une cinquantaine d'espèces originaires d'Asie.
 Toutes ne fournissent pas des huiles essentielles. Celles que l'on retrouve fréquemment sont :
     • HE Cymbopogon citratus, HE de lemon-grass appelée parfois citronnelle des Indes ou verveine des Indes. Son odeur citronnée est plus agréable que celle des « citronnelles ». Elle calme le stress, soulage les douleurs.
