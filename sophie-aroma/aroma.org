@@ -195,10 +195,17 @@ On l'aura bien compris la prévention est la première arme pour lutter contre l
 * Choix des Huiles Essentielles
 
 ** Définition d'un produit insecticide/insectifuge
-Une plante, un produit ou une substance est insectifuge si elle repousse les insectes chez l'Homme ou l'animal de compagnie ou d'élevage. On parle aussi de répulsif pour ces produits qui – par extension- désignent aussi des molécules ou des produits commerciaux. ( wikipédia )
-Un produit insecticide tue les insectes, leurs larves et/ou leurs œufs tandis qu'un produit insectifuge les repousse.
-Les insecticides font partie des pesticides, eux-mêmes inclus dans le groupe des biocides, tous règlementés en Europe ( Fabienne Millet revelessence.com )
-Le terme générique /insecticide/ est utilisé pour citer les produits pesticides, les produits répulsifs agissant contre des arthopodes spécifiques : les insectes ( moustiques, mouches, punaises, poux, puces , taons, fourmis ), les arachnides ( araignées, scorpions ), les acariens ( tiques , aoûtats…).
+Une plante,  un produit ou  une substance est  insectifuge si elle  repousse les
+insectes chez l'Homme  ou l'animal de compagnie ou d'élevage.  On parle aussi de
+répulsif pour ces produits qui – par extension- désignent aussi des molécules ou
+des produits commerciaux. ( wikipédia ) Un produit insecticide tue les insectes,
+leurs larves  et/ou leurs  œufs tandis qu'un  produit insectifuge  les repousse.
+Les insecticides font partie des pesticides, eux-mêmes inclus dans le groupe des
+biocides, tous  règlementés en  Europe ( Fabienne  Millet revelessence.com  ) Le
+terme générique  /insecticide/ est utilisé  pour citer les  produits pesticides,
+les produits répulsifs agissant contre des arthopodes spécifiques : les insectes
+( moustiques, mouches, punaises, poux, puces  , taons, fourmis ), les arachnides
+( araignées, scorpions ), les acariens (tiques , aoûtats…).
 
 ** Mécanisme d'action
 Ces produits agissent par contact ou par pénétration dans l'animal ( action systémique) et parfois par les deux mécanismes d'action.
@@ -211,6 +218,49 @@ J'ai cherché des études prouvant l'efficacité des huiles essentielles dans ce
 
 
 
+
+** Les familles biochimiques
+
+#+CAPTION: Les monoterpenols
+
+| Molécules        | Huiles essentielles                                | Indications | Contre-indications |
+| chimiques        |                                                    |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+| Linalol          | Bois de rose  (Aniba rosaeodora)                   |             |                    |
+|                  | Thym ct linalol (Thymus vulgaris ct linalol)       |             |                    |
+|                  | Bois de Hô (Cinnamomum camphora ct linalol)        |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+| Citronellol      | Géranium rosat (Pelargonium x asperum)             |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+| Géraniol         | Palmarosa (Cymbopogon martinii)                    |             |                    |
+|                  | Thym ct géraniol (Thymus vulgaris ct géraniol)     |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+| Thujanol         | Thym ct thujanol (Thymus vulgaris ct thujanol)     |             |                    |
+|                  | Marjolaine des jardins                             |             |                    |
+|                  | ou à coquilles (Origanum majorana)                 |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+| Menthol          | Menthe poivrée (Mentha x pipérita)                 |             |                    |
+|                  | Menthe des champs (Mentha arvensis)                |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+| Terpinène 1 ol 4 | Tea Tree (Melaleuca alternifolia)                  |             |                    |
+|                  | Marjolaine des jardins                             |             |                    |
+|                  | ou à coquilles (Origanum majorana)                 |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+| Alpha Terpinéol  | Ravintsara (Cinnamomum camphora ct ciéole)         |             |                    |
+|                  | Niaouli (Melaleuca quinquenervia ct cinéole)       |             |                    |
+|                  | Eucalyptus radié (eucalyptus radiata ssp radiata)  |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+| Bornéol          | Thym à feuilles de sarriette (Thymus satureioides) |             |                    |
+|                  | Inule odorante (Inula graveloens)                  |             |                    |
+|------------------+----------------------------------------------------+-------------+--------------------|
+
+
+
+
+
+
+|   |             |   |   |
+|   | |   |   |
 ** Le Basilic (Ocimum basilicum) 
 
 *** Caractéristiques 
@@ -270,8 +320,10 @@ cueillette en plein soleil développe ses qualités gustatives.
 - Obtention : Distillation à la vapeur d'eau.
 
 **** Soyons clairs
-Il existe un certain nombre d'huiles essentielles de « basilic ». Il est important de ne pas les confondre car elles ne présentent pas les mêmes propriétés et précautions.
-Le nombre de variétés ou de cultures de basilic est très important et cela influence la composition de leurs huiles essentielles.
+Il  existe un  certain  nombre d'huiles  essentielles  de «  basilic  ». Il  est
+important  de  ne pas  les  confondre  car elles  ne  présentent  pas les  mêmes
+propriétés et précautions.  Le nombre de  variétés ou de cultures de basilic est
+très important  et cela influence  la composition de leurs  huiles essentielles.
 Les huiles essentielles que l'on retrouve fréquemment sont :
     - HE de basilic français (doux ou européen), HE Ocimum basilicum chémotype linalol.
     - HE  de  basilic  tropical  ou  exotique,  HE  Ocimum  basilicum  chémotype
@@ -402,7 +454,7 @@ Constituants responsables des principales propriétés
 
 *** Etudes
  
-Ausloos A. (2004) [2] a démontré que par application "contact" sur des termites, les solutions diluées de citronnelle sont plus efficaces que celles de lemongrass (et  d'Eucalyptus camaldulensis ) . Ces résultats montrent donc que les huiles essentielles de lemongrass, de citronnelle (et d'E. Camaldulensis ) sont biologiquement actives contre les termites et les charançons par contact direct ou par vaporisation. 
+Ausloos A. (2004) [2] a démontré que par application ''contact'' sur des termites, les solutions diluées de citronnelle sont plus efficaces que celles de lemongrass (et  d'Eucalyptus camaldulensis ) . Ces résultats montrent donc que les huiles essentielles de lemongrass, de citronnelle (et d'E. Camaldulensis ) sont biologiquement actives contre les termites et les charançons par contact direct ou par vaporisation. 
 L'huile essentielle de Cymbopogon citratus montre des effets larvicide, ovicide et répulsif contre le moustique Culex quinquefasciatus [43]. 
 
 
