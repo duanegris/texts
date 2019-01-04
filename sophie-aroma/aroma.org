@@ -300,7 +300,7 @@ toxicité.
 |-----------------------+----------------------------------------------------|
 | Cinnamaldéhyde        | Cannelle de Ceylan (/Cinnamomum zeylanicum/)       |
 |                       | Cannelle de Chine (/Cinnamomum cassia/)            |
-|                       | Cannelle du Vietnam (/Cinnamomum laureirii)        |
+|                       | Cannelle du Vietnam (/Cinnamomum laureirii/)       |
 |-----------------------+----------------------------------------------------|
 
 **** Contre-indications
