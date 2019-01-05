@@ -35,6 +35,7 @@
 
 * Introduction
 
+**** Le Contexte
 Des scandales  sanitaires à répétition  et une remise  en question de  notre vie
 actuel  ont été  à l'origine  d'un regain  d'intérêt pour  les médecines  et les
 traitements naturels.Des étude scientifiques de  plus en plus nombreuses mettent
@@ -69,6 +70,7 @@ dorénavant :
   juridiques actuels.\\
 
 
+**** Sujet du mémoire
 Dans ce  mémoire nous  avons choisi  de traiter un  problème auquel  nous sommes
 confrontés chaque année, le retour des tiques  et avec elles la Maladie de Lyme.
 Je  suis titulaire  d'une Officine  en  Alsace –à  Metzéral- dans  la Vallée  de
@@ -286,44 +288,60 @@ anti-fongique, anti-parasitaire), larvicides, acaricides et répulsives.
 #+CAPTION: Les monoterpenols
 | *Molécules*      | *Huiles essentielles*                                |
 | *chimiques*      |                                                      |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
 |                  |                                                      |
 | Linalol          | Bois de rose  (/Aniba rosaeodora/)                   |
 |                  | Thym ct linalol (/Thymus vulgaris ct linalol/)       |
 |                  | Bois de Hô (/Cinnamomum camphora ct linalol/)        |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
 | Citronellol      | Géranium rosat (/Pelargonium x asperum/)             |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
 | Géraniol         | Palmarosa (/Cymbopogon martinii/)                    |
 |                  | Thym ct géraniol (/Thymus vulgaris ct géraniol/)     |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
 | Thujanol         | Thym ct thujanol /(Thymus vulgaris ct thujanol)/     |
 |                  | Marjolaine des jardins                               |
 |                  | ou à coquilles /(Origanum majorana)/                 |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
 | Menthol          | Menthe poivrée /(Mentha x pipérita)/                 |
 |                  | Menthe des champs /(Mentha arvensis)/                |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
 | Terpinène 1 ol 4 | Tea Tree (/Melaleuca alternifolia/)                  |
 |                  | Marjolaine des jardins                               |
 |                  | ou à coquilles (/Origanum majorana/)                 |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
 | Alpha Terpinéol  | Ravintsara (/Cinnamomum camphora ct cinéole/)        |
 |                  | Niaouli (/Melaleuca quinquenervia ct cinéole/)       |
 |                  | Eucalyptus radié (/Eucalyptus radiata ssp radiata/)  |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
 | Bornéol          | Thym à feuilles de sarriette (/Thymus satureioides)/ |
 |                  | Inule odorante (/Inula graveloens/)                  |
-|------------------+------------------------------------------------------+
+|------------------+------------------------------------------------------|
+|                  |                                                      |
+
+
+Ferreira and co, 2017 :Cette étude visait à comparer l'efficacité du N, N-diéthyl-3-méthylbenzamide
+(DEET), un répulsif standard, au β-citronellol dans un dosage biologique par
+boîte de Pétri. Un demi-cercle de papier filtre (31,8 cm2) a été traité avec 87
+ul de l'une des quatre concentrations (0,200, 0,100, 0,050 et 0,025 mg / cm2) de
+β-citronellol, DEET ou solvant (éthanol). Un test comparatif a été mis au point
+en traitant un côté avec des concentrations croissantes de β-citronellol, comme
+mentionné ci-dessus, contre la concentration la plus élevée de DEET. En outre,
+un test à blanc a été effectué. Trois tiques mâles et trois tiques femelles ont été placés au
+milieu d'un plateau et leur emplacement a été évalué 5, 10 et 30 minutes après le début du test. En conséquence, le temps n’a eu aucun effet significatif sur la réponse de répulsion des tiques exposées aux deux composés et à leurs concentrations. La réponse répulsive augmente en fonction de l'augmentation de la concentration. De plus, les résultats indiquent que la tique A. sculptum était plus sensible aux composés testés et que le β-citronellol présentait une efficacité supérieure à celle du DEET. 
+
 Jeyabalan et al (2003) [26] ont étudié l'effet d'extraits de feuilles de Pelargonium citrosa sur Anopheles stephensi. Les durées des différents stades larvaires et du développement global des larves sont augmentées. Ces différences sont notées pour toutes les concentrations testées. Des malformations apparaissent, et la pupaison est incomplète dans beaucoup de cas. 
 Toutes les concentrations en P.citrosa ont permis la mise en évidence d'une activité repellent sur l'adulte de A. stephensi. Aux concentrations les plus élevées, on notait une faiblesse des adultes et des mouvements ralentis. Ces mêmes effets étaient également retrouvés sur les larves. Ces résultats suggéraient qu'à partir d'une certaine concentration, les repellents avaient des effets insecticides. 
 Enfin, cette étude montrait une diminution du nombre de piqûre sous l'effet de
 l'huile essentielle. 
 
 
-Walton et al (2000) [52] ont démontré une efficacité certaine de l'huile essentielle de Tea Tree sur les ectoparasites humains que sont les sarcoptes scabiei hominis, agents de gale.
-
-Iori et al, (2005) [24] ont étudié l'effet acaricide de l'huile essentielle de Melaleuca alternifolia (Tea Tree) sur les nymphes d'Ixodes ricinus. Des résultats intéressants ont été obtenus après une exposition supérieure à 90 minutes. 
+Iori et al, (2005) [24] ont étudié l'effet acaricide de l'huile essentielle de
+Melaleuca alternifolia (Tea Tree) sur les nymphes d'Ixodes ricinus. Des
+expériences ont été réalisées à différentes doses (4,6, 8 et 10 µl ) et pour
+différents temps d'exposition (30, 60, 90 et 120 min). Des résultats
+intéressants ont été obtenus  après une exposition de 90 minutes avec un effet
+renforcé lorsque la dose était augmentée à 10 µl.
 
 
 
@@ -351,11 +369,65 @@ toxicité.
 | Eugénol               | Giroflier (clou) (/Eugnenia caryphyllus/)          |
 |                       | Cannelle de Ceylan (/Cinnamomum zeylannicum/)      |
 |-----------------------+----------------------------------------------------|
+
 Tabari MA and co , 2017 ont étudié l'activité repellente d'une selection de monoterpènes (thymol, carvacrol et linalol ) contre Ixodes ricinus
 
-nous avons ici évalué les effets ovicides, larvicides et répulsifs de ces composés contre I. ricinus. 
-Le carvacrol et le thymol, à toutes les concentrations testées, ont entraîné une diminution significative de l'éclosion, montrant une efficacité supérieure à celle de la perméthrine, alors que le linalol n'a provoqué aucun effet significatif. Chez les larves traitées au carvacrol et au thymol (1, 2 et 5%), les taux de mortalité ont atteint 100% après 24 heures, montrant une efficacité larvicide supérieure à celle de la perméthrine, alors qu'aucun effet n'a été observé dans les groupes larvaires traités au linalool. Le 
-Le carvacrol et le thymol à toutes les concentrations testées ont montré une répulsion> 90% sur I. ricinus. Le linalol n'était guère efficace (répulsion de 50,24%) qu'à la concentration de 5%. 
+Ils ont  évalué les effets ovicides,  larvicides et répulsifs contre  I. ricinus
+des huiles essentielles du  thym, de la sarriette, de l'origan  de la lavande et
+de  la  coriandre.   Des concentrations  de  0,25,  0,5,  1,  2 et  5%  ont  été
+pulvérisées sur les  masses d'oeufs, puis les taux d'éclosion  ont été notés. Le
+carvacrol et  le thymol, à toutes  les concentrations testées, ont  entraîné une
+diminution  significative de  l'éclosion, montrant  une efficacité  supérieure à
+celle  de  la  perméthrine,  alors  que le  linalol  n'a  provoqué  aucun  effet
+significatif. Chez les larves  traitées au carvacrol et au thymol  (1, 2 et 5%),
+les  taux de  mortalité ont  atteint 100%  après 24  h, montrant  une efficacité
+larvicide supérieure  à celle de  la perméthrine,  alors qu'aucun effet  n'a été
+observé dans les groupes larvaires traités au linalol. Le carvacrol et le thymol
+à  toutes  les  concentrations  testées   ont  montré  une  répulsion>  90%  sur
+I. ricinus.  Le linalol  n’était guère  efficace (répulsion  de 50,24%)  qu’à la
+concentration de  5%. Globalement,  sur la  base de  ces résultats,  les phénols
+carvacrol et thymol  peuvent être considérés comme des  ingrédients candidats au
+développement de  nouvelles formulations acaricides permettant  de contrôler les
+populations de  I. ricinus  et la  propagation des  maladies transmises  par les
+tiques.
+
+
+Viviane Zeringóta, 2013 a étudié l'activité répulsive de l'eugénol sur des
+larves de Rhipicephalus microplus et de Dermacentor nitens dans un essai
+biologique. Les solutions ont été utilisées à des concentrations de 10, 20, 30,
+40 et 50 µl / ml.Pour les larves de D. nitens, la répulsion était supérieure à
+80% pendant une période allant jusqu’à 5 h aux concentrations de 40 et 50 μl /
+ml; Pour les larves de R. microplus, les quatre concentrations les plus élevées
+ont produit des niveaux de répulsion  supérieures à 80% pendant 9 h au plus. Par
+conséquent, l'eugénol a une activité répulsive sur le stade larvaire de ces deux
+espèces de tiques, les larves de R. microplus étant plus sensibles.
+
+
+
+Pour Meng and co, 2016 l'étude portait sur l'efficacité du  DEET et de huit huiles essentielles disponibles dans le commerce (origan, clou
+de girofle, thym, vétiver, bois de santal, cannelle, bois de cèdre et menthe
+poivrée). Elles ont été évalués pour leur pouvoir de répulsion contre les nymphes de la
+tique Amblyomma americanum. La répulsion de chaque huile essentielle a été
+comparée à celle du N, N-diéthyl-3-méthyl benzamide (DEET).La concentration
+efficace de DEET qui repousse 50% des tiques (CE50) a été estimée à 0,02 mg /
+cm2, tandis que la CE50 des huiles essentielles se situe entre 0,113 et 0,297 mg
+/ cm2. Selon les estimations de la CE 50, l'huile essentielle d'origan était la
+plus efficace parmi toutes les huiles testées, suivie des huiles de girofle, de
+thym, de vétiver, de bois de santal, de cannelle, de cèdre et de menthe
+poivrée. 
+
+
+Carol and co, 2017 : L'huile  essentielle d'origan, Origanum onites a été testée
+dans  des essais  biologiques en  laboratoire visant  à déterminer  son activité
+répulsive sur les tiques Amblyomma americanum et Aedes aegypti. Les composés les
+plus abondants  de l'  HE d'Origanum  onites étaient  le carvacrol  (75,70%), le
+linalol (9,0%), le p-cymène (4,33%) et  le thymol (1,9%). À une concentration de
+0,413 mg d'huile / cm2 de  papier filtre, l'HE d'Origanum onites repoussait 100%
+des tiques  testées et  à 0,103  mg d'huile /  cm2 de  papier filtre,  66,7% des
+tiques étaient repoussées. À 0,075 mg d'huile  / cm2 de papier filtre, le thymol
+a  repoussé  66,7%  des  tiques,  contre  28,7% pour  le  carvacrol  à  la  même
+concentration.
+
 **** Contre-indications
 - dermo-causticité (ne pas appliquer pure sur les muqueuses ou la peau, dilution à 5% dans l’h.v.)
 - agressivité des muqueuses
@@ -374,6 +446,52 @@ Le carvacrol et le thymol à toutes les concentrations testées ont montré une 
 |                       | Cannelle de Chine (/Cinnamomum cassia/)            |
 |                       | Cannelle du Vietnam (/Cinnamomum laureirii/)       |
 |-----------------------+----------------------------------------------------|
+
+
+
+
+Paalson, 2008
+
+L'effet répulsif des huiles essentielles des têtes de fleurs de la tanaisie de
+la plante aromatique Tanacetum vulgare L. (Asteraceae), originaire de Suède, a
+été testé sur des nymphes de la tique commune, Ixodes ricinus. Les principales
+substances volatiles détectées dans les huiles de T. vulgare recueillies à
+Uppsala étaient l’a-pinène (27%), le β-pinène (11%), le pinocamphone (11%), le
+1,3,3-triméthylcyclohex-1-énène-4-carboxaldéhyde. (11%) et 1,8-cinéole
+(10%). Dans l'échantillon recueilli à Stockholm, les composants principaux
+étaient la β-thujone (39%) et le camphre (23%), suivis de l'α-thujone (11%) et
+du 1,8-cinéole (8%). Lorsque les constituants des huiles, tels que
+l'α-terpinéol, le 4-terpinéol, l'α + β-thujone, le 1,8-cinéol, le verbénol et le
+verbénone ont été testés séparément la répulsion a été de 64 % à 72 %. 
+*** Etudes intéressantes
+
+
+Katarína Štefanidesová and co, 2017 ont étudié onze huiles essentielles sur les tiques Dermacentor reticulatus , à savoir le
+basilic (Ocimum basilicum),la bergamote (Citrus bergamia),le bouton de clou de
+girofle (Syzygium aromatic),la citronnelle de Java(Cymbopogon winterianus), le
+serpolet  (Thymus serpyllum),la lavande (Lavandula angustifolia),la marjolaine
+(Origanum majorana), la menthe poivrée (Mentha piperita), la menthe verte
+(Mentha spicata) et le thym (Thymus vulgaris). Ils ont été soumis à des tests de résistance à la répulsion contre les tiques adultes de D. reticulatus à des concentrations de 1 et 3%. Les huiles essentielles de clou de girofle, de serpolet et de thym étaient les plus efficaces: 83, 82 et 68% des tiques ont été repoussées une fois diluées à 3%, respectivement. Le mélange de serpolet et de citronnelle contenant 1,5% de chacun a montré une répulsion plus élevée (91%) que les huiles essentielles individuelles à la concentration de 3%.
+
+
+
+Dans l'étude  \cite{El-Seedi2012} portant  sur l'efficacité de  répulsifs contre
+les  tiques   d’origine  végétale,  les   auteurs  étudié  l’effet   des  huiles
+essentielles  de quatre  plantes médicinales  et  culinaires de  la famille  des
+Lamiaceae sur  les nymphes de la  tique Ixodes ricinus. Les  huiles essentielles
+des  feuilles sèches  de  Rosmarinus officinalis  (Romarin),  de Mentha  spicata
+(Menthe  verte),   d'Origanum  majorana  (Majoralaine)  et   d'Ocimum  basilicum
+(Basilic) ont été isolée par distillation  à la vapeur avec une concentration en
+huile de 15 microg / cm2. Elles ont  été testées contre les tiques dans un essai
+biologique  en  laboratoire.  Les  huiles  de  R.  officinalis,  M.  spicata  et
+O. majorana ont montré une forte répulsion contre les tiques 100, 93,2 et 84,3%,
+respectivement,   alors   que   O.   basilicum   n'a   montré   que   64,5%   de
+répulsion.  Lorsqu’ils   ont  été   testés  sur  le   terrain,  les   huiles  de
+R. officinalis  et M. spicata ont  montré une répulsion  de 68,3 et 59,4%  à une
+concentration de  6,5 microg /  cm2 sur les tissus  d’essai. Les huiles  ont été
+analysées par spectrométrie de masse par chromatographie en phase gazeuse et les
+principaux composés  des huiles les  plus répulsives étaient le  1,8-cinéole, le
+camphre, le linalol, le 4-terpinéol, le bornéol et le carvone.
 
 **** Contre-indications
 - La présence d’un noyau benzénique confère à ces molécules une dermo-causticité au même titre que pour les phénols
@@ -812,7 +930,7 @@ Burfield AP. & Reekie S-L. (2005) [7] ont étudié l'activité insecticide de no
 
 
 
-** Arbre à thé ( Melaleuca alternifolia )
+** Arbre à thé (Melaleuca alternifolia )
 
 *** Caractéristiques 
 
