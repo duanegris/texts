@@ -1,6 +1,0 @@
-
-* Nouveau Diplôme 
- - diplôme d'ingénieur de spécialité "Réseau, Télécom et Sécurité"
- - maquette : S1 idem, 
-              S2 ajout d'une UE réseau, 
-              S3 UE prises dans Master RISE et TPS plus quelques unes à créer (130h) 

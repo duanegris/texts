@@ -1,8 +1,0 @@
--include /opt/local/include/LaTeX.mk
--include /usr/include/LaTeX.mk
--include /usr/local/include/LaTeX.mk
-
-all: latest.tex
-
-latest.fb.bbl : latest.tex generalbiblio.bib
-	bibtex latest.fb

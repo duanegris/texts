@@ -1,6 +1,0 @@
-set -v
-idlj -fall  Etudiants.idl
-javac EtudiantImpl.java
-javac Serveur.java 
-javac Client1.java 
-javac Client2.java 

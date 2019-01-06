@@ -512,6 +512,15 @@ concentration dans l'HE.   Cette irritation impose une dilution à  50 % dans un
 huile végétale  pour les adultes.   Pour les enfants et  les patients à  la peau
 très sensible, la dilution sera de 10 %.
 
+
+L'étude de Trigg and co 1996, a porté sur l'HE d'Eucalyptus citronné contenant
+le principal ingrédient actif, le p-ménhane-3,8-diol.Il a été évalué sur le
+terrain par rapport au DEET. En Tanzanie, 3 formulations de PMD ont été testées
+contre Anopheles gambiae et An. funestus. Les répulsifs offrent une protection
+complète contre les morsures de 6 à 7,75 h, en fonction du type de formulation,
+sans différence significative entre l'efficacité de la PMD et le DEET .
+
+
 #+CAPTION: Les cétones
 | *Molécules chimiques* | *Huiles essentielles*                                |
 |                       |                                                      |
@@ -526,11 +535,19 @@ très sensible, la dilution sera de 10 %.
 | Pinocamphone          | Hysope officinale (/Hyssopus officinalis/)           |
 |-----------------------+------------------------------------------------------|
 
+<<<<<<< Updated upstream
 Contre  indications:  les cétones  sont  dures  à)  manipuler  du fait  de  leur
 neurotoxicité et  leur action abortive.   On évitera  leur emploi chez  la femme
 enceinte(  et  allaitante)  et  chez  l'enfant  ainsi  que  chez  le  sujet  âgé
 neurologiquement fragile  ( épilépsie )  L'usage prolongé est interdit  chez les
 enfants de moins de 6 ans pour la plupart
+=======
+Contre indications: les cétones sont dures à manipuler du fait de leur
+neurotoxicité et leur action abortive.
+On évitera leur emploi chez la femme enceinte( et allaitante) et chez l'enfant
+ainsi que chez le sujet âgé neurologiquement fragile ( épilépsie )
+L'usage prolongé est interdit chez les enfants de moins de 6 ans pour la plupart
+>>>>>>> Stashed changes
 
 
 
@@ -620,11 +637,11 @@ attention avec les personnes sous anti coagulants.
 
 #+CAPTION: Les phtalides
 
-| *Molécules chimiques* | *Huiles essentielles*                                |
-|                       |                                                      |
-|-----------------------+------------------------------------------------------|
+| *Molécules chimiques* | *Huiles essentielles*             |
+|                       |                                   |
+|-----------------------+-----------------------------------|
 | Lingustilide          | Livèche (/Levisticum officinale/) |
-|                       |                                                      |
+|                       |                                   |
 Contre indications : aucune toxicité n'a été étudiée à ce jour.
 
 
@@ -711,6 +728,9 @@ analysées par spectrométrie de masse par chromatographie en phase gazeuse et l
 principaux composés  des huiles les  plus répulsives étaient le  1,8-cinéole, le
 camphre, le linalol, le 4-terpinéol, le bornéol et le carvone.
 
+
+
+
 **** Contre-indications
 - La présence d'un noyau benzénique confère à ces molécules une dermo-causticité
   au même titre que pour les phénols
@@ -732,6 +752,7 @@ essentielles de clou de  girofle, de thym serpolet et de  thym rouge étaient le
 plus efficaces: 83, 82  et 68% des tiques ont été repoussées  une fois diluées à
 3%, respectivement. Le mélange de thym grimpant et de citronnelle contenant 1,5%
 de chacun a  montré une répulsion plus élevée (91%)  que les huiles essentielles
+<<<<<<< Updated upstream
 individuelles à la concentration de 3%.
 
 ** Le Basilic (Ocimum basilicum) 
@@ -1122,284 +1143,134 @@ Trois noms donnés à une même plante donc les huiles essentielles sont identiq
 Les feuilles de cette lavande sont plus larges et les fleurs exhalent une odeur camphrée.
     - HE lavandula stoechas (lavande stoechade) est très neurotoxique et ne doit être utilisée que sur avis médical. Elle est mucolytique et cicatrisante.
 Le lavandin est un hybride de lavandula angustifolia et lavandula spica et l'on en obtient différentes huiles essentielles selon les variétés. Leurs propriétés sont très proches de l'huile essentielle de lavande fine. La différence à prendre en compte est la présence d'un pourcentage de camphre.
-
-
-
-**** Histoire
-Viendrait du latin « lavare » qui signifie laver, « lavandaria » (linge à laver) d'où le nom des lavandières de nos campagnes. La lavande est associée au parfum du linge fraîchement lavé. Angustifolia signifie à feuilles étroites. Officinalis évoque la pharmacie.
-
-La légende raconte que la blonde fée « Lavandula » est née dans les lavandes sauvages de la montagne de Lure. Alors qu'elle errait pour s'installer en regardant les paysages, elle s'immobilisa devant la Provence et se mit à pleurer en voyant ces pauvres terrains incultes et de chaudes larmes couleur lavande vinrent tacher le paysage. La fée sécha ses yeux bleus, mais ceci produisit de fines gouttelettes qu'elle transforma en ciel bleu pour oublier toutes ces taches ! La lavande pousserait depuis sur ces terrains…
-
-*** Particularités de la lavande fine
-
- Période de récolte
-Juillet / août, les lavandiculteurs la récoltent de préférence avant l'ouverture des fleurs, pour préserver la teneur aromatique à son maximum. La floraison des brins de lavande fine s'échelonne de mai à fin juillet. Les fortes chaleurs favorisent la montée de l'essence dans les organes sécréteurs. Afin d'optimiser la qualité, mieux vaut laisser sécher les lavandes pendant un ou deux jours avant distillation.
-
-Rendement
-
-Pour obtenir 1kg d'huile essentielle, environ 100kg de sommités fleuries sont nécessaires. La qualité augmente avec l'altitude mais le rendement est lui plus faible. Un hectare de lavande produit en moyenne de 15 à 20 kg d'huiles essentielles. En ce qui concerne la lavande fine, 100kg de sommités fleuries fraîches sont nécessaires pour produire 0,7kg d'huile essentielle de lavande fine.
-
-Constituants responsables des principales propriétés :
-
-- 25 à 47 % d' acétate de linalyle 
-- 20 à 45 % de Linalol 
-- 0,1 à 8 % de terpinén-4-ol
-- 2,5 % de 1,8 cinéole
-- 1,2 % maximum de camphre
-- 1 % maximum de limonène
-- 0,2 % maximum d' acétate de lavandulyle
-- 0,1 % maximum de lavandulol
-
-Cette huile essentielles bénéficie d'une monographie à la  Pharmacopée.
-
-*** Etudes
-
-Chu C.J. et Kemper K.J. 2001 [11] ont mis en évidence un effet insecticide de 2 espèces de lavande sur Drosophila auroria. L'auteur rapporte que de nombreuses études (in vitro, sur animaux de laboratoire, sur humains) ont montré d'excellents résultats sur les poux, les puces…
-
-Burfield AP. & Reekie S-L. (2005) [7] ont étudié l'activité insecticide de nombreuses huiles essentielles contre le vecteur du paludisme et font de nombreuses observations sur la lavande. La Lavandula lanata a été utilisée de tous temps comme produit répulsif contre les insectes. 
-
-
-
-
-** Arbre à thé (Melaleuca alternifolia )
-
-*** Caractéristiques 
-
-**** Olfaction
-Odeur fraîche, déroutante voire peu agréable pour certains.
-
-**** Propriétés
-    
-- Anti-infectieuse majeure (Bactéricide, antifongique, antivirale)
-- Cicatrisante
-- Anti-inflammatoire
-- Antiparasitaire
-
-**** Indications
-
-Infections  bactériennes  (cystite,  sinusite, bronchite),  infections  cutanées
-(panari, bouton infecté, acné),  infections fongiques (mycoses cutanées, mycoses
-des ongles), infections virales (grippe, angine, herpès labial), soins des peaux
-grasses et des cheveux gras, pellicules.
-
-*** Botanique
-
-**** Description
-Arbre épineux, d'environ 5m de haut, toujours vert, son tronc est droit avec une écorce en forme de lanières. Ses feuilles étroites, duveteuses, lancéolées, de couleur vert vif, sont alternes, c'est-à-dire isolées et disposées alternativement de part et d'autre de la tige. Les fleurs blanches en panache qui rappellent les fleurs de coton sont disposées en épis. Cet arbre qui affectionne les sols marécageux et ensoleillés se multiplie grâce à des surgeons (sorte de rejet ou repousse), ce qui a contribué à sa survie, car il était menacé d'extinction par l'expansion de l'élevage. Il appartient à la même famille botanique que les eucalyptus ou le giroflier.
-
-**** Partie utilisée
-Feuilles
-Famille botanique
-Myrtacées
-Origine
-Australie
-Obtention
-Distillation à la vapeur d'eau
-
-
-**** Soyons clairs
-
-Ne pas confondre avec le cajeput (Melaleuca cajeputii) et le Niaouli (Melaleuca viridiflora) ou encore avec le théier, Camellia sinensis.
-Il existe plusieurs huiles essentielles de « Melaleuca ». Il est important de ne pas les confondre car elles ne présentent pas les mêmes propriétés et précautions.
-    - HE de cajeput (Melaleuca cajeputii)
-    - HE de Niaouli (Melaleuca viridiflora)
-Ces deux huiles essentielles aux propriétés respiratoires bactéricide, antifongique et antivirale se distinguent de la suivante qui n'a pas d'action respiratoire mais est une anti-infectieuse majeure.
-    - HE tea tree (Melaleuca alternifolia)
-
-*** Histoire
-
-Durant la seconde guerre mondiale, les producteurs et les personnes qui récoltaient la plante étaient exemptés de service militaire tant que les réserves en tea tree n'étaient pas suffisantes. L'huile essentielle était distribuée aux soldats et aux marins pour qu'ils puissent traiter les problèmes infectieux ayant pour origine leurs blessures ou autres maladies.
-
-*** Particularités
-- Période de récolte: Août
-- Rendement: La distillation à la vapeur d'eau dure en moyenne 3 heures, avec un rendement de 1 à 2 %.
-
-
-Constituants responsables des principales propriétés
-    - 42 % de Terpinèn-4-ol
-    - 22 % Gamma- terpinène 
-    - 10 % d'Alpha-terpinène 
-    - 3 % d' Alpha-terpinéol 
-    - 4 % de 1,8 Cinéole 
-
-
-
-
-** Romarin Officinal
-
-
-
-*** Caractéristiques
-**** Olfaction
-Odeur herbacée, camphrée qui rappelle à la fois l'encens et l'eucalyptus. Parfum acéré, pénétrant et dense avec des accents citronnés.
-Lydia Bosson, dans son livre L'aromathérapie énergétique précise : « elle donne de l'énergie et de la force mentale, transmet clarté et confiance, améliore l'endurance ».
-
-
-**** Propriétés
-
-    - Anti-infectieuse
-    - Mucolytique
-    - Expectorante
-    - Décontractante musculaire
-    - Décongestionnant veineux
-    - Rubéfiante
-    - Antiparasitaire
-    - Insectifuge, insecticide
-
-**** Indications
-
-    - Contractures musculaires, crampes
-    - Rhumatismes
-    - Infections respiratoires (encombrement bronchique, rhume, sinusite…)
-    - Tonique, favorise la concentration
-    - Parasites (poux)
-
-**** Précautions d'emploi particulières
-
-La présence de camphre, de 1-8 cinéole et d'alpha-pinène dans cette huile essentielle en limite l'usage aux :
-    - Adulte et enfants de plus de 12 ans
-    - Personnes non asthmatiques
-Cette huile essentielle est irritante pure sur la peau. Il est indispensable de la diluer dans une huile végétale pour toute application cutanée.
-
-
-*** Botanique
-
-**** Description
-
-Originaire du pourtour méditerranéen, le romarin officinal est un arbuste aromatique touffu d'environ 1 mètre de haut, qui pousse sur des sols calcaires très secs et ensoleillés, il apprécie les sols bien drainés. Vivant de chaleur et de lumière, il résiste très bien à la sécheresse. Ses feuilles aromatisées ressemblent à des aiguilles et ses fleurs sont de couleur blanc bleu à bleu lavande. Leur calice est velu, à dents bordées de blanc. Leur forme rappelle celle de l'orchidée. Il présente un petit fruit sec dur et brun, contenant quatre graines.
-
-**** Partie utilisée
-Les sommités fleuries
-Famille botanique
-Lamiacées
-Origine
-France, Portugal, Espagne
-Obtention
-Distillation à la vapeur d'eau
-
-**** Soyons clairs
-
-Il existe un certain nombre d'huiles essentielles de « romarin ». Il est important de ne pas les confondre car elles ne présentent pas exactement les mêmes propriétés.
-Leurs précautions sont identiques.
-Les huiles essentielles que l'on retrouve fréquemment sont :
-    - HE Rosmarinus officinal ct 1-8 cinéole, elle présente principalement des propriétés respiratoires.
-    - HE Rosmarinus officinal ct camphre, elle présente principalement des propriétés respiratoires et décontracturante musculaire. Elle est recherchée par les sportifs.
-    - HE Rosmarinus officinal ct verbénone, elle présente principalement des propriétés respiratoires, mucolytique et anti-tussive (toux grasse).
-
-
-
-*** Particularités
-Rendement
-50kg de plantes fournissent 1kg d'huile essentielle
-
-Constituants responsables des principales propriétés
-
-    - Alpha-pinène : 18 à 25 %
-    - 1-8 cinéole : 16 à 25 %
-    - Camphre : 13 à 20 %
-
-
- Benazzedine and al , 2010 activité insecticides de cinq huiles essentielles vis-à-vis de Sitophilus oryzae et Tribolium confusum
-L'étude Benazzedine a porté sur l'activité insecticide de 5 huiles essentielles : le Romarin ( rosmarinus officinalis ) ,la menthe ( Mentha spicata ), la citronnelle ( Cymbopogon citratus ), le thym ( Thymus vulgaris )et l'eucalyptus ( Eucalyptus globulus ). 
-Parmi les cinq huiles testées le Romarin ( Rosmarinus officinalis ) et la Menthe montrent la plus grande efficacité par inhalation que par contact et ingestion, la mortalité est de100% après 24 heures d'exposition que se soit sur S.oryzae ou T.confusum.
-Par contact les cinq huiles essentielles manifestent un taux de mortalité assez important sur les deux espèces, toutes les huiles ont une efficacité très forte qui dépasse 88% de mortalité sur S.oryzae à l'exception de la Citronnelle qui n'a atteint pas les 70% de mortalité. Concernant le T.confusum, le Thym et la menthe verte ont provoqué 100% de mortalité, ils sont suivi par le Romarin avec une mortalité de 97,37%, alors que l'Eucalyptus a enregistré une mortalité de 72,63% ; leur efficacité est moins importante sur T.confusum par rapport à leur effet sur S.oryzae. En fin la Citronnelle avec un taux de mortalité de 52%.
-
-
-** Thym
-
-*** Caractéristiques 
-
-****  Olfaction
-
-Odeur forte, chaude, cependant assez fine aux légers accents de citron.
-
-**** Propriétés
-    - Anti-infectieuse
-    - Anti-inflammatoire
-
-**** Indications
-Infections respiratoires (bronchite, sinusite), infections cutanées (mycoses, candidoses, panaris, ulcère, dermatoses infectieuses).
-
-**** Précaution d'emploi spécifiques
-
-Cette huile essentielle est très irritante pour la peau et toxique pour le foie. Elle est réservée à l'adulte .
-En cas d'utilisation par voie orale, la goutte d'huile essentielle doit être versée dans une demi-cuillère à café d'huile végétale. Elle est contre indiquée en présence de troubles gastriques (brûlures, ulcères, reflux gastro-oesophagiens). La durée du traitement ne doit pas excéder 5 à 7 jours. Elle est contre-indiquée en cas d' insuffisance hépatique
-En utilisation par voie cutanée diluée (jamais pure) : cette huile essentielle se dilue dans une huile végétale à 10 % maximum en raison de sa forte irritation cutanée
-En diffusion atmosphérique : Ne jamais utiliser seule dans un diffuseur à jet d'air sec. Son odeur est forte et peu agréable.
-Elle ne s'utilise pas par inhalation sèche et par inhalation humide ni dans un bain
-Ne convient pas à l'automédication. L'utilisation doit se faire sur une période courte.
-
-*** Botanique
-
-**** Description
-
-Avide de chaleur et de lumière, le thym, même s'il fait partie des « herbes de Provence » est un sous-arbrisseau compact d'environ 30cm de haut. Il est vivace, pousse à l'état sauvage et conquiert les terrains secs et calcaires les plus pauvres comme les garrigues et les rocailles. Il résiste aux fortes chaleurs grâce à l'huile essentielle qui s'évapore et qu'il produit à nouveau la nuit. Le thym blanc est moins dense que le thym vulgaire. Il possède de très petites feuilles grises roulées sur les bords et cotonneuses en dessous. En mai, il laisse apparaître de petites fleurs blanc rosé qui attirent les abeilles.
-L'huile essentielle se situe dans les feuilles et dès qu'on les froisse, la senteur s'exhale.
-Le thym comprend quelque 350 espèces.
-
-**** Partie utilisée
-Sommités fleuries
-Famille botanique
-Lamiacées
-Origine
-Bassin méditerranéen
-Obtention
-Distillation à la vapeur d'eau
-
-**** Soyons clairs
-
-Il existe un certain nombre d'huiles essentielles de « thym » :
-    - HE de thym commun chémotype linalol ( Thymus vulgaris ct linalol) : propriété principale : anti-infectieuse sans précaution spécifique.
-    - HE de thym commun chémotype thujanol ( Thymus vulgaris ct thujanol) : propriété principale : anti-infectieuse sans précaution spécifique (très difficile à produire, cette huile essentielle est remplacée par l'HE de marjolaine à coquilles car elle contient du thujanol).
-    - HE de thym commun chémotype thymol (Thymus vulgaris ct thymol ) propriété principale : anti-infectieuse majeure avec des précautions spécifiques (dermocausticité, hépatotoxicité).
-    - HE de thym commun chémotype thuyanol (Thymus vulgaris ct thuyanol), propriété principale : anti-infectieuse sans précaution spécifique
-    - HE thym commun chémotype paracymène (Thymus vulgaris ct paracymène), propriété principale : antalgique avec des précautions spécifiques (forte irritation cutanée, hépatotoxicité).
-    - HE de thym d'Espagne chémotype linalol (Thymus zygis ct linalol), propriété principale : anti-infectieuse sans précaution spécifique.
-    - HE thym d'Espagne chémotype thymol (Thymus zygis ct thymol), propriété principale : anti-infectieuse majeure avec des précautions spécifiques (dermocausticité, hépatotoxicité).
-    - HE thym à feuilles de sarriette (thym blanc, thym à bornéol), Thymus satureoïdes, propriété principale : anti-infectieuse avec des précautions spécifiques (forte irritation cutanée, hépatotoxicité).
-    - HE de marjolaine sylvestre (thym d'Espagne), Thymus mastichina, propriété principale : respiratoire sans précaution spécifique.
-
-
-*** Particularités
-
-Rendement: Pour 100kg de plantes fraîches, on obtient, selon les variétés, entre 2% et 6% d'huile essentielle.
-
-Constituants responsables des principales propriétés:
-    - Bornéol : 25 à 30 %
-    - Thymol et carvacrol : 25 %
-    - Alpha-terpinéol : 10 %
-    - Béta-caryophyllène : 5 %
-
-Tabari MA and co , 2017 ont étudié l'activité repellente d'une selection de monoterpènes (thymol, carvacrol et linalol ) contre Ixodes ricinus
-
-nous avons ici évalué les effets ovicides, larvicides et répulsifs de ces composés contre I. ricinus. 
-Le carvacrol et le thymol, à toutes les concentrations testées, ont entraîné une diminution significative de l'éclosion, montrant une efficacité supérieure à celle de la perméthrine, alors que le linalol n'a provoqué aucun effet significatif. Chez les larves traitées au carvacrol et au thymol (1, 2 et 5%), les taux de mortalité ont atteint 100% après 24 heures, montrant une efficacité larvicide supérieure à celle de la perméthrine, alors qu'aucun effet n'a été observé dans les groupes larvaires traités au linalool. Le 
-Le carvacrol et le thymol à toutes les concentrations testées ont montré une répulsion> 90% sur I. ricinus. Le linalol n'était guère efficace (répulsion de 50,24%) qu'à la concentration de 5%. 
-
-
-
-
-Choix de la formulation aux vues de toutes ces données.
-
-Une dernière étude slovaque très compète nous a interpellé. Elle étudie l'efficacité de 11 huiles essentielles que nous avons déjà vues pour la plupart.
-
-
-Ces onze huiles essentielles, à savoir basilic (Ocimum basilicum), bergamote (Citrus bergamia), bouton de clou de girofle (Syzygium aromatic), citronnelle (Cymbopogon winterianus), thym serpolet (Thymus serpyllum), lavande (Lavandula angustifolia), la marjolaine (Origanum majorana), la menthe poivrée (Mentha piperita), la menthe verte (M. spicata) et le thym vulgaire (Thymus vulgaris) ont été soumis à des tests de résistance à la répulsion contre les tiques adultes de D. reticulatus à des concentrations de 1 et 3%. Les huiles essentielles de clou de girofle, de thym serpolet et de thym rouge étaient les plus efficaces: 83, 82 et 68% des tiques ont été repoussées une fois diluées à 3%, respectivement. Le mélange de thym grimpant et de citronnelle contenant 1,5% de chacun a montré une répulsion plus élevée (91%) que les huiles essentielles individuelles à la concentration de 3%.
-
+=======
+individuelles à la concentrat
+>>>>>>> Stashed changes
 
 * Formule que nous décidons de réaliser
 
-Nous avons  dû faire  un choix  concernant les  huiles essentielles.  Nous avons
-décidé de  provilégier l'efficacité  et nous  décidons au  vu de  cette dernière
-étude de choisir les huiles essentielles de Lavande, de Géranium et d'Eucalyptus
-citronné. Afin de  les solubliser nous utiliserons une base  neutre pour le bain
-et enfin nous rajouterons de l'eau.
 
-Soit:
-- HE de Lavande officinale : 10 gouttes
-- HE de Géranium rosat : 15 gouttes
-- HE d'Eucalyptus citronné : 30 gouttes dans 15 ml de base neutre pour le bain
-- eau distillée qsp 30 ml
+Enfin, cette dernière étude nous a interpellé.L'équipe de Jaenson and co, 2017 a
+testé en Suède un répulsif disponible dans le commerce contre les arthropodes
+qui se nourrissent de sang, le MyggA Natural . Il contient 30% d'Eucalyptus
+citronné, Corymbia citriodora (Myrtaceae), huile avec un minimum de 50% de
+p-menthane-3,8-diol. MyggA Natural contient également de petites quantités des
+huiles essentielles de lavande, Lavandula angustifolia (Lamiaceae) et de
+géranium, Pelargonium graveolens (Geraniaceae). Lors d'essais biologiques en
+laboratoire, ces huiles ont montré une répulsion de 100% contre les nymphes
+d'Ixodes ricinus. Les huiles de lavande et de géranium, diluées à 1% dans le
+1,2-propanediol, avaient de faibles activités répulsives sur les nymphes de
+I. ricinus, mais diluées à 30% dans le 1,2-propanediol, elles présentaient une
+répulsion de 100%. Le 1,2-propanediol (100%) n'avait pas d'activité répulsive
+significative par rapport à celle du contrôle. Lors d'essais sur le terrain dans
+des zones infestées de tiques du centre de la Suède, la répulsion des huiles de
+MyggA Natural et de C. citriodora a été testée pendant 4 jours au moyen de la
+technique de traînée de couverture au cours d'une période de 6 jours. Les
+propriétés répulsives (respectivement 74 et 85%) au jour 1 sont similaires (89%)
+à celles des couvertures traitées de la même manière avec du
+diéthyl-méthyl-benzamide à 19%, sur la base de travaux antérieurs. Les
+propriétés répulsives ont diminué de manière significative du jour 1 au jour 6
+(de 74 à 45% pour MyggA Natural; de 85 à 42% pour l'huile de C. citriodora).Ceci 
+permet de conclure qu'il faut réutiliser le spray répulsif régulièrement.
+
+ Nous avons décidé de  privilégier l'efficacité de cette synergie pour élaborer 
+notre formule, d'autant plus que cette étude a été réalisée également in vivo.
+
+** Formule répulsive pour adultes :
+
+Nous allons utiliser les 3 huiles essentielles suivantes :
+
+*** HE de Lavande aspic : nous avons décidé de privilégier la lavande aspic parce
+  qu'elle contient des concentrations plus importantes en linalol  et en 1,8
+  cinéole, ainsi qu'une bonne concentration en camphre ( par rapport à la
+  lavande vraie de l'étude de Jaenson ).
+
+  Identification:
+  Nom botanique : Lavandula latifolia spica
+  Famille : lamiacées
+  Partie distillée : sommité fleurie
+  Origine : Sud de la France, Espagne 
+
+  Principaux composés :
+  Monoterpénols : linalol : 30 à 45 %, bornéol
+  Oxydes terpéniques : 1,8 cinéole 30 %
+  Cétones : camphre 10 %
+  Terpènes : camphène, pinène 10 %
+
+  Contre-indications :
+  Déconseillée dans les trois premiers mois de grossesse
+  Déconseillée chez l'enfant de moins de 3 ans 
+
+
+
+*** HE de Géranium rosat
+
+    Identification :
+    Nom botanique : Pelargonium x asperum CV Egypte ou Chine
+    Famille : Géraniacées
+    Partie distillée : feuille
+    Origine : Egypte, Chine
+
+    Principaux composés :
+    Monoterpénols : citronellol 30 à 45 %, géraniol 13 %, linalol 5%
+    Cétones : isomenthone : 8%
+    Esters : formate de géranyle, acétate de géranyle 25 %
+
+    Contre-indications :
+    Déconseillée dans les trois premiers mois de grossesse
+
+
+*** HE d'Eucalyptus citronné
+
+    Identification :Eucalyptus citriodora ct citronnelol
+    Famille : Myrtacées
+    Partie distillée : feuille
+    Origine : Inde, Vietnam
+
+    Principaux composés :
+    Aldéhydes : citronnellal 40 à 70%
+    Monoterpénols : citronnelol 5 à 20 %, isopulégol
+
+    Contre-indications :
+    Déconseillée dans les trois premiers mois de grossesse
+    
+
+*** La formule
+
+    HE de Lavande Aspic : 35 gouttes
+    HE de Géranium rosat : 55 gouttes
+    HE d'Eucalyptus citronné : 110 gouttes
+    Dispersant : nous utiliserons une base neutre pour le bain : 50 ml
+    eau distillée qsp 100 ml
+
+Nous mettrons le dispersant dans le flacon pulvérisateur, puis on rajoutera les
+gouttes d'HE et enfin on ajoutera l'eau distillée.
+
+Nous utiliserons le spray en pulvérisation sur les parties du corps exposées aux
+piqûres.
+Il faudra penser à renouveler l'application en cas de sorties prolongées.
+Cette formule est déconseillée chez la femme enceinte les trois premiers mois de
+grossesse et pourra être conseillée à partir de 6 ans.
+
+
+** Formule répulsive pour enfants:
+
+Avant ce DU je me demandais si on pouvait remplacer la lavande aspic par de la
+lavande chez les enfants à partir de 3 mois. Je craignais une moindre efficacité.
+Au vue de mes nombreuses lectures je ne doute plus de l'action répulsive d'une
+telle formule c'est pourquoi je propose la formule suivante :
+
+    HE de Lavande officinale : 35 gouttes
+    HE de Géranium rosat : 55 gouttes
+    HE d'Eucalyptus citronné : 110 gouttes
+    Dispersant : nous utiliserons une base neutre pour le bain : 50 ml
+    eau distillée qsp 100 ml
+
+
+Ce spray sera conseillé chez les enfants à partir de 3 mois.
+et déconseillé chez la femme enceinte les trois premiers mois de grossesse.
+
+
 
 
 

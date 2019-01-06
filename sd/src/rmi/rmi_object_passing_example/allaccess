@@ -1,4 +1,0 @@
-grant {
-     // tout permettre pour tester
-     permission java.security.AllPermission;
-};
