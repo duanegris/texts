@@ -1,4 +1,0 @@
-            interface ietc {
-               void maj(in long ec); 
-               string i2c();
-            };

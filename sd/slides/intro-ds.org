@@ -1,5 +1,5 @@
 
-#+TITLE:     Introduction to Parallel and Distributed Systems
+#+TITLE:     Introduction to Parallel and Distributed Computing
 #+DESCRIPTION:
 #+KEYWORDS:
 #+LANGUAGE:  en

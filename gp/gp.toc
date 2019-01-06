@@ -1,5 +1,0 @@
-\beamer@endinputifotherversion {3.10pt}
-\beamer@sectionintoc {1}{La planification}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{M\IeC {\'e}thode PERT}{5}{0}{1}
-\beamer@subsectionintoc {1}{2}{M\IeC {\'e}thode PERT probabiliste}{14}{0}{1}
-\beamer@subsectionintoc {1}{3}{Diagramme Gantt}{26}{0}{1}
