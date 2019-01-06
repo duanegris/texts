@@ -313,6 +313,8 @@ anti-fongique, anti-parasitaire), larvicides, acaricides et répulsives.
 | Linalol          | Bois de rose  (/Aniba rosaeodora/)                   |
 |                  | Thym ct linalol (/Thymus vulgaris ct linalol/)       |
 |                  | Bois de Hô (/Cinnamomum camphora ct linalol/)        |
+|                  | Lavande aspic (/Lavandula latifolia/)                |
+|                  | Lavande officinale (/Lavandula angustifolia/)        |
 |------------------+------------------------------------------------------|
 | Citronellol      | Géranium rosat (/Pelargonium x asperum/)             |
 |------------------+------------------------------------------------------|
@@ -357,18 +359,23 @@ la concentration.  De plus,  les résultats  indiquent que  la tique  A. sculptu
 était plus sensible  aux composés testés et que  le \beta-citronellol présentait
 une efficacité supérieure à celle du DEET.
 
-Jeyabalan  et al  (2003)  [26]  ont étudié  l'effet  d'extraits  de feuilles  de
-Pelargonium citrosa  sur Anopheles stephensi.  Les durées des  différents stades
-larvaires et du développement global des larves sont augmentées. Ces différences
-sont  notées   pour  toutes   les  concentrations  testées.   Des  malformations
+Jeyabalan  et al  (2003)  [26]  ont étudié  l'effet  d'HE  de
+Pelargonium citrosa  sur Anopheles stephensi.   Des  malformations
 apparaissent, et  la pupaison est incomplète  dans beaucoup de cas.   Toutes les
 concentrations  en P.citrosa  ont  permis  la mise  en  évidence d'une  activité
 repellent sur l'adulte de A. stephensi.  Aux concentrations les plus élevées, on
 notait une  faiblesse des adultes et  des mouvements ralentis. Ces  mêmes effets
-étaient  également retrouvés  sur  les larves.  Ces  résultats suggéraient  qu'à
+étaient  également retrouvés  sur  les larves.  Ces  résultats suggérent  qu'à
 partir  d'une   certaine  concentration,  les  repellents   avaient  des  effets
-insecticides.  Enfin,  cette étude montrait  une diminution du nombre  de piqûre
+insecticides.  Enfin,  cette étude montre  une diminution du nombre  de piqûre
 sous l'effet de l'huile essentielle.
+
+Benelli and co, 2017 : Dans cette étude,cinq huiles essentielles, à savoir Pinus nigra var. italica
+(Pinaceae), Hyssopus officinalis (Lamiaceae), Satureja montana  (Lamiaceae),
+Aloysia citriodora (Verbenaceae) et Pelargonium graveolens  (Geraniaceae) ont
+été étudiés sur le diptère  Culex quinquefasciatus.Il en ressort que c'est
+le mélange Satureja montana et Aloysia citriodora qui présente la meilleure
+synergie et donc la meilleure efficacité. 
 
 
 Iori et al  \cite{Iori2005} ont étudié l'effet acaricide  de l'huile essentielle
@@ -390,7 +397,7 @@ toxicité.
 
 *** Les phenols
 
-#+CAPTION: Les phenols
+    #+CAPTION: Les phenols
 | *Molécules chimiques* | *Huiles essentielles*                              |
 |                       |                                                    |
 |-----------------------+----------------------------------------------------|
@@ -477,27 +484,195 @@ concentration.
 |                       | Cannelle du Vietnam (/Cinnamomum laureirii/) |
 |-----------------------+----------------------------------------------|
 
+Contre indications : dermocausticité, interdit chez la femme enceinte,
+déconseillé chez l'enfant de moins de 7 ans.
+
+
+#+CAPTION: Les aldéhydes terpéniques
+ *Molécules chimiques* | *Huiles essentielles*                        |
+|              |                                                |
+|--------------+------------------------------------------------|
+| Citrals      | Lemongrass (/Cymbopogon flexuosus              |
+|              | Verveine citronnée (/Lippia citriodora/)       |
+|              | Litsee citronnée(/Litsea citrata/)             |
+|              |                                                |
+| Citronnellal | Eucalyptus citronné (/Eucalyptus citriodora/)  |
+|              | Citronnelle de Java (/Cymbopogon winterianus/) |
+|--------------+------------------------------------------------|
+
+Contre indications : tussigènes sur certains patients sensibles.
+Cette irritation varie selon les HE, elle dépend du type d'aldéhyde et de sa
+concentration dans l'HE.
+Cette irritation impose une dilution à 50 % dans une huile végétale pour les
+adultes.
+Pour les enfants et les patients à la peau très sensible, la dilution sera de 10
+%.
+
+#+CAPTION: Les cétones
+| *Molécules chimiques* | *Huiles essentielles*                                |
+|                       |                                                      |
+|-----------------------+------------------------------------------------------|
+| Verbénone             | Romarin ct verbénone (/Rosmarinus off ct verbénone/) |
+|                       |                                                      |
+|                       |                                                      |
+| Menthone              | Menthe poivrée (/Mentha x piperita/)                 |
+| Bornéone              | Romarin ct camphre (/Rosmarinus off ct camphre/)     |
+| Thuyone               | Sauge officinale (/ Salvia officinalis/)             |
+| Fenchone              | Lavande stoechade (/Lavandula stoechas/)             |
+| Pinocamphone          | Hysope officinale (/Hyssopus officinalis/)           |
+|-----------------------+------------------------------------------------------|
+
+Contre indications: les cétones sont dures à) manipuler du fait de leur
+neurotoxicité et leur action abortive.
+On évitera leur emploi chez la femme enceinte( et allaitante) et chez l'enfant
+ainsi que chez le sujet âgé neurologiquement fragile ( épilépsie )
+L'usage prolongé est interdit chez les enfants de moins de 6 ans pour la plupart
 
 
 
-Paalson, 2008
+#+CAPTION: Les oxydes terpéniques
+| *Molécules chimiques*     | *Huiles essentielles*                                          |
+|                           |                                                                |
+|---------------------------+----------------------------------------------------------------|
+| 1,8 Cinéole ( Eucalyptol) | Ravintsara (/Cinnamomum camphora ct cinéole/)                  |
+|                           | Myrte verte ou Myrte ct cinéole (/Myrtus communis ct cinéole/) |
+|                           | Eucalyptus radié (/ Eucalyptus radiata spp radiata/)           |
+|                           | Eucalyptus globuleux (/Euvalyptus globulus/)                   |
+|                           | Niaouli (/Mélaleuca quiquinerva/)                              |
+|                           | Laurier noble (/Laurus nobilis/)                               |
+|                           | Romarin ct cinéole (/ Rosmarinus ct cinéole )                  |
+| Linaloloxyde              | Hysope couchée   (/Hyssopus officinalis var. decumbens/)       |
+|---------------------------+----------------------------------------------------------------|
+Nous ne parlerons pas ici de l'ascaridole qui a un effet antiparasitaire certain
+mais qui est neurotoxique.
+
+Contre indications : Le 1,8 cinéole pourra être assèchant donc contre indiqué
+chez l'asthmatique. Il faudra l'utiliser avec prudence chez es épileptiques car
+il diminue le seuil épileptogène.
+
+
+Dans l'étude  \cite{El-Seedi2012} portant  sur l'efficacité de  répulsifs contre
+les  tiques   d’origine  végétale,  les   auteurs  étudié  l’effet   des  huiles
+essentielles  de quatre  plantes médicinales  et  culinaires de  la famille  des
+Lamiaceae sur  les nymphes de la  tique Ixodes ricinus. Les  huiles essentielles
+des  feuilles sèches  de  Rosmarinus officinalis  (Romarin),  de Mentha  spicata
+(Menthe  verte),   d'Origanum  majorana  (Majoralaine)  et   d'Ocimum  basilicum
+(Basilic) ont été isolée par distillation  à la vapeur avec une concentration en
+huile de 15 microg / cm2. Elles ont  été testées contre les tiques dans un essai
+biologique  en  laboratoire.  Les  huiles  de  R.  officinalis,  M.  spicata  et
+O. majorana ont montré une forte répulsion contre les tiques 100, 93,2 et 84,3%,
+respectivement,   alors   que   O.   basilicum   n'a   montré   que   64,5%   de
+répulsion.  Lorsqu’ils   ont  été   testés  sur  le   terrain,  les   huiles  de
+R. officinalis  et M. spicata ont  montré une répulsion  de 68,3 et 59,4%  à une
+concentration de  6,5 microg /  cm2 sur les tissus  d’essai. Les huiles  ont été
+analysées par spectrométrie de masse par chromatographie en phase gazeuse et les
+principaux composés  des huiles les  plus répulsives étaient le  1,8-cinéole, le
+camphre, le linalol, le 4-terpinéol, le bornéol et le carvone.
+
+
+
+#+CAPTION: Les phénols méthyl-éthers
+| *Molécules chimiques*  | *Huiles essentielles*                 |
+|                        |                                       |
+|------------------------+---------------------------------------|
+| Chavicol méthyl-éthers | Basilic exotique (/Ocimum basilicum/) |
+| (estragole)            | Estragon (/Artémesia dranunculus/)    |
+|                        |                                       |
+| Eugénol méthyl-éther   | Laurier noble (/Laurus nobilis/)      |
+|------------------------+---------------------------------------|
+Contre indications: du fait de sa dermocausticité il faudra diluer à 50 % cette
+HE pour les personnes sensibles.
+L'utilisation prolongée des huiles essentielles contenant ces molécules peut
+provoquer une toxicité hépatique due aux métabolites.
+Ces huiles sont déconseillées chez la femme enceinte.
+
+
+#+CAPTION: Les lactones
+
+| *Molécules chimiques* | *Huiles essentielles*               |
+|                       |                                     |
+|-----------------------+-------------------------------------|
+| Alantolactone         | Inule odorante (/Inula graveolens/) |
+|                       |                                     |
+Contre indications : Elles ont allergisantes par vois cutanée et à utiliser avce
+prudence chez les personnes sensibles et les enfants de moins de 7 ans.
+
+
+
+#+CAPTION: Les coumarines
+
+| *Molécules chimiques* | *Huiles essentielles*                            |
+|                       |                                                  |
+|-----------------------+--------------------------------------------------|
+| Bergaptène            | Bergamote (/Citrus aurantium spp bergamia/)      |
+|                       |                                                  |
+| Visnagine             | Khella (/Ammi visnaga/)                          |
+| Limettine             | Citronnier (/Citrus lémon/)                      |
+|
+Contre indications : Elles sont photosensibilisantes ( avec un temps minimum de
+6h avant l'exposition si prise par vois orale ou locale). Il faut faire
+attention avec les personnes sous anti coagulants.
+
+#+CAPTION: Les phtalides
+
+| *Molécules chimiques* | *Huiles essentielles*                                |
+|                       |                                                      |
+|-----------------------+------------------------------------------------------|
+| Lingustilide          | Livèche (/Levisticum officinale/) |
+|                       |                                                      |
+Contre indications : aucune toxicité n'a été étudiée à ce jour.
+
+
+#+CAPTION: Les sesquiterpènes
+
+| *Molécules chimiques* | *Huiles essentielles*                          |
+|                       |                                                |
+|-----------------------+------------------------------------------------|
+| Germacrène            | Ylang Ylang (/Cananga odorata/)                |
+|                       |                                                |
+| Chamazulène           | Tanaisie annuelle(/Tanacetum annuum/)          |
+|                       | Achillée millefeuille (/Achillea millefolium/) |
+|  Zingibérène          | Curcuma (/Curcuma longa/)                      |
+|                       | Gingembre (/ Zingiber officinale/)             |
+
+
+Contre indications : peu de contre indications, attention à l'utilisation avec
+les cétones car elles augmentent l'action abortive des cétones.
+
+#+CAPTION:Les monotérpènes
+
+| *Molécules chimiques* | *Huiles essentielles*                         |
+|                       |                                               |
+|-----------------------+-----------------------------------------------|
+| alpha pinène          | Pin sylvestre (/Pinus sylvestris/)            |
+|                       | Sapin baumier (/Abies balsamea/)              |
+| Limonène              | Orange, mandarine, citron                     |
+|                       | essences de zeste                             |
+| paracymène            | Sarriette des montagnes (/Satureja montana/)  |
+|                       | Thymus vulgaris ct paracymène ( Thym vulgaire |
+|                       | ce paracymène                                 |
+
+
+Contre indications : les terpènes peuvent provoquer des irritations au niveau de
+la peau. Elles sont contre indiquées chez l'enfant de moins de 7 ans.
+
 
 L'effet répulsif des huiles essentielles des têtes de fleurs de la tanaisie de
 la plante aromatique Tanacetum vulgare L. (Asteraceae), originaire de Suède, a
 été testé sur des nymphes de la tique commune, Ixodes ricinus. Les principales
 substances volatiles détectées dans les huiles de T. vulgare recueillies à
-Uppsala étaient l’a-pinène (27%), le \beta-pinène (11%), le pinocamphone (11%), le
+Uppsala étaient l'\alpha-pinène (27%), le \beta-pinène (11%), le pinocamphone (11%), le
 1,3,3-triméthylcyclohex-1-énène-4-carboxaldéhyde. (11%) et 1,8-cinéole
 (10%). Dans l'échantillon recueilli à Stockholm, les composants principaux
 étaient la \beta-thujone (39%) et le camphre (23%), suivis de l'\alpha-thujone (11%) et
-du 1,8-cinéole (8%). Lorsque les constituants des huiles, tels que
+du 1,8-cinéole (8%). Lorsque les constituants des huiles essentielles tels que
 l'\alpha-terpinéol, le 4-terpinéol, l'\alpha + \beta-thujone, le 1,8-cinéol, le verbénol et le
 verbénone ont été testés séparément la répulsion a été de 64 % à 72 %.
  
 *** Etudes intéressantes
 
 
-Katarína Štefanidesová and co, 2017 ont  étudié onze huiles essentielles sur les
+Katarína Štefanidesová et al~\cite{}, 2017 ont  étudié onze huiles essentielles sur les
 tiques  Dermacentor reticulatus  ,  à savoir  le  basilic (Ocimum  basilicum),la
 bergamote (Citrus bergamia),le bouton de  clou de girofle (Syzygium aromatic),la
 citronnelle de  Java(Cymbopogon winterianus), le serpolet  (Thymus serpyllum),la
