@@ -1,6 +1,7 @@
 
 #+OPTIONS: title:nil toc:nil
 #+OPTIONS: H:4
+#+OPTIONS: title:
 #+BEGIN_EXPORT latex
 \begin{titlepage}
 \begin{center}
