@@ -1,10 +1,12 @@
 
 # 
 # Page Rank
+# naive implementation by S. Genaud, 2016
 # based on example 
 # from http://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch14.pdf
 
-
+# From matrix M reprensenting the web pages connexity, compute pagerank (PR) of each page.
+# This is an iterative algorithm, the number k of iterations is to be set in the code. 
 
 
 npages=8

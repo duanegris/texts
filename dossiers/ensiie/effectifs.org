@@ -45,7 +45,7 @@ Benattou, Bucheit, Taheri
 
 
             * Diplômés par année de sortie
-
+      
 ** Promo 2012 (5)
 
 1.Thibault Dubuisson Ingénieur Logiciel     Abase Strasbourg  
@@ -56,7 +56,7 @@ Benattou, Bucheit, Taheri
 
 répartition: Industrie/Service/Petite entreprise innovante =  1/4/1
 
-
+      
 ** Promo 2013 (17)
 
 (entrés en 2009: Boutry, Roverch, Maquin)
@@ -81,7 +81,7 @@ répartition: Industrie/Service/Petite entreprise innovante =  1/4/1
 
 répartition: Industrie/Service/Petite entreprise innovante/Autre =  5/5/5/2
 
-
+      
 ** Promo 2014 (18)
 
 (entrés en 2010: Chobert)
@@ -97,7 +97,7 @@ répartition: Industrie/Service/Petite entreprise innovante/Autre =  5/5/5/2
 10. Baptiste LAFABREGUE - Talent Business System - Strasbourg               (S)
 11. Ismail LAGOUILLY - Sopra - Strasbourg                                   (S)
 12. Yaohua LIANG - Ingénieur logiciel, Amadeus - Antibes                    (Indus)
-    Christophe PAIVA
+    Christophe PAIVA (décédé)
 13. Guillaume PARAN - Titch (projet de création) - Strasbourg               (Innov)
 14. Jonathan RYBAK - Bull Strasbourg                                        (Indus)
 15. Lucas SAUREL - AUSY - Strasbourg                                        (ESN)
@@ -107,42 +107,41 @@ répartition: Industrie/Service/Petite entreprise innovante/Autre =  5/5/5/2
 
 répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 
-
+      
 ** Promo 2015 (28)
 
- Slimane AGOURAM                 Sopra-Steria - Paris                   (S/ESN)
- Steve BENEDICK                  Actimage GmbH - Kehl                   (Editeur)
- Clément CALIN                
- Julien CASARIN                  doctorant CIFRE -                      (doct)
- Noël DEUTSCHMANN                Atos-Bull pour ES - Strasbourg         (S/ESN)
- Arnaud COUCHET                  KLEE Group - Paris                     (Editeur+S)
- Antoine ERNEWEIN                Actimage GmbH - Kehl                   (Editeur)
- Thomas ESCHEMANN                Calyatis - Strasbourg                  (Innov)
- Alan FONDERFLICK                Amaris - Strasbourg                    (S/ESN)
- Maxime HECKEL                   Docker (Tutum) - San Francisco         (Innov)
- Etienne HEITZ                   Actimage GmbH  - Kehl                  (Editeur)
- Youssef NAIT BELKACEM           CapGemini - Suresnes                   (S/ESN)
- Anne MAYER                      Professorat
- Timothee MULLER                 AXA - Paris                            (Indus/Assur)
- Philippe Gaultier               Edge Lab - Lausanne                    (Inuds/FinTech)
- Joris GIRARDOT                  ATOS pour CoE - Strasbourg             (S/ESN)
- Magali GROSS                    In-Datech - Strasbourg                 (Indus/Banque)
- Tristan GUILLEVIN               Actinvision - Strasbourg               (S/ESN)
- Hao PAN                         Thoughtworks - Xi'an                   (Editeur)
- Eleanore PIRRI                  EID - Strasbourg                       (Indus/Banque)
- Soufyane REGRAGUI               SFERENO - Strasbourg                   (Editeur)
- Julien SCHROEDER                SFEIR Est - Strasbourg                 (S/ESN)                  
- Claudia TANASE                  AUSYS - Strasbourg                     (S/ESN)
- Elsa THEUIL                     Actinvision - Strasbourg               (S/ESN)
- Laurent WIESER                  CapCode - Strasbourg                   (S/ESN)
- Ming ZHANG 
- Shuyan ZHANG
- Hugo ZILLIOX                    Sopra-Steria - Strasbourg              (S/ESN)
+     1	 Slimane AGOURAM                 Sopra-Steria - Paris                   (S/ESN)
+     2	 Steve BENEDICK                  Actimage GmbH - Kehl                   (Editeur)
+     3	 Clément CALIN
+     4	 Julien CASARIN                  doctorant CIFRE -                      (doct)
+     5	 Noël DEUTSCHMANN                Atos-Bull pour ES - Strasbourg         (S/ESN)
+     6	 Arnaud COUCHET                  KLEE Group - Paris                     (Editeur+S)
+     7	 Antoine ERNEWEIN                Actimage GmbH - Kehl                   (Editeur)
+     8	 Thomas ESCHEMANN                Calyatis - Strasbourg                  (Innov)
+     9	 Alan FONDERFLICK                Amaris - Strasbourg                    (S/ESN)
+    10	 Maxime HECKEL                   Docker (Tutum) - San Francisco         (Innov)
+    11	 Etienne HEITZ                   Actimage GmbH  - Kehl                  (Editeur)
+    12	 Youssef NAIT BELKACEM           CapGemini - Suresnes                   (S/ESN)
+    13	 Anne MAYER                      Professorat
+    14	 Timothee MULLER                 AXA - Paris                            (Indus/Assur)
+    15	 Philippe Gaultier               Edge Lab - Lausanne                    (Inuds/FinTech)
+    16	 Joris GIRARDOT                  ATOS pour CoE - Strasbourg             (S/ESN)
+    17	 Magali GROSS                    In-Datech - Strasbourg                 (Indus/Banque)
+    18	 Tristan GUILLEVIN               Actinvision - Strasbourg               (S/ESN)
+    19	 Hao PAN                         Thoughtworks - Xi'an                   (Editeur)
+    20	 Eleanore PIRRI                  EID - Strasbourg                       (Indus/Banque)
+    21	 Soufyane REGRAGUI               SFERENO - Strasbourg                   (Editeur)
+    22	 Julien SCHROEDER                SFEIR Est - Strasbourg                 (S/ESN)
+    23	 Claudia TANASE                  AUSYS - Strasbourg                     (S/ESN)
+    24	 Elsa THEUIL                     Actinvision - Strasbourg               (S/ESN)
+    25	 Laurent WIESER                  CapCode - Strasbourg                   (S/ESN)
+    26	 Ming ZHANG
+    27	 Shuyan ZHANG
+    28	 Hugo ZILLIOX                    Sopra-Steria - Strasbourg              (S/ESN)
 
 
 
-
-** Promo 2016 (28 ?)
+** Promo 2016 (27)
 
 1. ABRANTES Kévin            Scoledge - Strasbourg         (Innov)
 2. AGAG	Mebarek          
@@ -180,14 +179,15 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 ** Promo 2017
 
 ---- ADAM Nicolas             Nicolaudie - Brighton (UK)    (Industrie)
----- ALBERT Louis             thèse INRIA ?
+---- ALBERT Louis             Fondation Campus Biotech - Genève (CH) (Innov)
 ---- BALLEUX Benjamin         ITS Future - Schiltigheim     (ESN)
 ---- BELLUT Pierrick          CGI - Illkirch                (ESN)
 ---- BOUCHARD Thibault        Actimage GmbH - Kehl          (Editeur/S)
 ---- BOUET FRançois           Ecole Théatre
 ---- CHAROUCHNI Mounir        recherche emploi 
 ---- CHICOIS Maxime           Actimage - Luxembourg         (ESN)
----- DEMEURE Nestor           Thèse CEA - Saclay           (Recherche)
+---- CUISINIEZ Elan           Doctorant Paris Sorbonne      (Recherche)
+---- DEMEURE Nestor           Doctorant Thèse CEA - ENS Saclay            (Recherche)
 ---- FABRA Mickael            recherche d'emploi
 ---- FLICK Xavier             Actinvision - Strasbourg      (ESN)
 ---- GIRARDEAU Adrien         Dalim Software                (Editeur)
@@ -196,7 +196,7 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 ---- KOBERSI Pauline          Calyatis - Strasbourg         (Innov)
 ---- LEDOS Sophie             I-Datech - Schiltigheim       (Innov/Industrie)
 ---- LE PERLIER Raoul         ATOS - Strasbourg             (ESN)
----- LE ROY Gabrielle
+---- LE ROY Gabrielle         (dépression au cours du S5 en Irlande ?)
 ---- LOCQUEVILLE Martin       fin de cursus UCAQ
 ---- MANDICA Nicolas          ECO-SI - Lyon                 (Industrie)
 ---- MOIRE Sophie             départ etranger
@@ -208,6 +208,45 @@ répartition: Industrie/Service/Petite entreprise innovante/Freelance =  4/4/5/2
 ---- TEODORI Damien           fin de cursus etranger
 ---- ZHAO Yueng               
 
+** Promo 2018
+
+-- LEBRUN Magdeleine          poursuite étude ESCP Europe   (poursuite études)
+-- ALIX	Stéphanie
+-- BUCHERT Thibaut
+-- DINAR Karim
+-- BIER	Kévin
+-- BOURGEOIS Aurélien
+-- HEITZ Dylan
+-- KARST Naïk
+-- SCHMITT Franck
+-- GROHMANN Nicolas
+-- FELLER Camille
+-- BELOT Fanny
+-- BADET Alexandre
+-- BARIL Paul
+-- BARJON Pierre
+-- BERGDOLL Marc
+-- CHAVENON Alexandre         projet de startup avec élève ENSIMAG
+-- CLAUSS Germain              proposition embauche ALE, va signer dans une startup
+-- EL OUERGHI Malek
+-- GENNUSO Tazio
+-- ISABEY Marie
+-- KARIM Anwar
+-- KASTENBAUM Stéphane
+-- KLEINPETER Félix
+-- LEPERLIER Raoul
+-- LESPILETTE Théo
+-- LY Sophie
+-- MASSON Alexian
+-- MICLO Brice               CGI Illkirch                    (ESN)
+-- MORINEAU Charlélie
+-- PAOLI Raphaël             SOPRA-STERIA Schiltigheim       (ESN)
+-- SAINTIER Clément
+-- SCHUTZGER Alexis          SOGETI Schitligheim             (ESN)
+-- STEINMETZ Arnaud
+-- VIDAL PUJOL	Claudia    -> fin cursus Evry
+-- VILA	Melchior         
+-- WEISHAUPT Yannis          Delight (Paris)                 (Startup/Innov)
 
 
 
