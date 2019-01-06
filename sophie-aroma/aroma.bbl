@@ -1,11 +1,22 @@
 \begin{thebibliography}{1}
 
-\bibitem{Caroll2006}
-Scott~P. Carroll and Jenella Loye.
-\newblock Pmd, a registered botanical mosquito repellent with deet-like
-  efficacy.
-\newblock {\em Journal of the American Mosquito Control Association},
-  22(3):507---514, 2006.
+\bibitem{Benelli2017}
+Giovanni Benelli, Roman Pavela, Angelo Canale, Kevin Cianfaglione, Giampiero
+  Ciaschetti, Fabio Conti, Marcello Nicoletti, Sengottayan Senthil-Nathan,
+  Heinz Mehlhorn, and Filippo Maggi.
+\newblock Acute larvicidal toxicity of five essential oils (pinus nigra,
+  hyssopus officinalis, satureja montana, aloysia citrodora and pelargonium
+  graveolens) against the filariasis vector culex quinquefasciatus: Synergistic
+  and antagonistic effects.
+\newblock {\em Parasitology International}, 66(2):166 -- 171, 2017.
+
+\bibitem{Carroll2017}
+John~F. Carroll, Betul Demirci, Matthew Kramer, Ulrich~R. Bernier, Natasha~M.
+  Agramonte, K.~Husnu~Can Baser, and Nurhayat Tabanca.
+\newblock Repellency of the origanum onites l. essential oil and constituents
+  to the lone star tick and yellow fever mosquito.
+\newblock {\em Natural Product Research}, 31(18):2192--2197, 2017.
+\newblock PMID: 28278656.
 
 \bibitem{El-Seedi2012}
 Hesham El-Seedi, Nasr Khalil, Muhammad Azeem, Eman Taher, Ulf Göransson,
@@ -20,10 +31,26 @@ A.~Iori, D.~Grazioli, E.~Gentile, G.~Marano, and G.~Salvatore.
   cheel (tea tree oil) against nymphs of ixodes ricinus.
 \newblock {\em Veterinary Parasitology}, 129(1):173 -- 176, 2005.
 
-\bibitem{Trigg1996}
-J.~K. Trigg and N.~Hill.
-\newblock Laboratory evaluation of a eucalyptus-based repellent against four
-  biting arthropods.
-\newblock {\em Phytotherapy Research}, 10(4):313--316, 1996.
+\bibitem{Meng2015}
+Hao Meng, Andrew Y.~Li, Livio M.~Costa~Junior, Ivan Castro-Arellano, and Jingze
+  Liu.
+\newblock Evaluation of deet and eight essential oils for repellency against
+  nymphs of the lone star tick, amblyomma americanum (acari: Ixodidae).
+\newblock {\em Experimental and Applied Acarology}, 68, 11 2015.
+
+\bibitem{Tabari2017}
+Mohaddeseh~Abouhosseini Tabari, Mohammad~Reza Youssefi, Filippo Maggi, and
+  Giovanni Benelli.
+\newblock Toxic and repellent activity of selected monoterpenoids (thymol,
+  carvacrol and linalool) against the castor bean tick, ixodes ricinus (acari:
+  Ixodidae).
+\newblock {\em Veterinary Parasitology}, 245:86 -- 91, 2017.
+
+\bibitem{Stefanidesova2017}
+Katarína Štefanidesová, Ľudovít Škultéty, Olivier~A.E. Sparagano, and
+  Eva Špitalská.
+\newblock The repellent efficacy of eleven essential oils against adult
+  dermacentor reticulatus ticks.
+\newblock {\em Ticks and Tick-borne Diseases}, 8(5):780 -- 786, 2017.
 
 \end{thebibliography}
