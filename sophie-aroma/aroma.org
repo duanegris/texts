@@ -5,7 +5,9 @@
 #+BEGIN_EXPORT latex
 \begin{titlepage}
 \begin{center}
-{\large Mémoire du Diplôme d'Université d'Aromathérapie \par}
+{\large Mémoire \par }
+{\large Diplôme d'Université de l'Université de Bourgogne \par}
+{\Large Aromathérapie \par}
 \vspace{.7cm}
 {\Large \emph{Les huiles essentielles pour la répulsion des tiques} \par}
 \vspace{2cm}
@@ -343,7 +345,7 @@ anti-fongique, anti-parasitaire), larvicides, acaricides et répulsives.
 |                  |                                                      |
 
 
-Ferreira  and  co, 2017  :Cette  étude  visait  à  comparer l'efficacité  du  N,
+FIXME - L'étude de Ferreira et al \cite{Ferreira} vise  à  comparer l'efficacité  du  N,
 N-diéthyl-3-méthylbenzamide (DEET),  un répulsif standard,  au \beta-citronellol
 dans un  dosage biologique par boîte  de Pétri. Un demi-cercle  de papier filtre
 (31,8 cm2) a  été traité avec 87  ul de l'une des  quatre concentrations (0,200,
@@ -360,7 +362,7 @@ la concentration.  De plus,  les résultats  indiquent que  la tique  A. sculptu
 était plus sensible  aux composés testés et que  le \beta-citronellol présentait
 une efficacité supérieure à celle du DEET.
 
-Jeyabalan  et al  (2003)  [26]  ont étudié  l'effet  d'HE  de
+FIXME - Jeyabalan  et al  (2003)  [26]  ont étudié  l'effet  d'HE  de
 Pelargonium citrosa  sur Anopheles stephensi.   Des  malformations
 apparaissent, et  la pupaison est incomplète  dans beaucoup de cas.   Toutes les
 concentrations  en P.citrosa  ont  permis  la mise  en  évidence d'une  activité
@@ -371,10 +373,10 @@ partir  d'une   certaine  concentration,  les  repellents   avaient  des  effets
 insecticides.  Enfin,  cette étude montre  une diminution du nombre  de piqûre
 sous l'effet de l'huile essentielle.
 
-Benelli and co, 2017 : Dans cette étude,cinq huiles essentielles, à savoir Pinus nigra var. italica
+Dans \cite{Benelli2017}  cinq huiles essentielles, à savoir Pinus nigra var. italica
 (Pinaceae), Hyssopus officinalis (Lamiaceae), Satureja montana  (Lamiaceae),
 Aloysia citriodora (Verbenaceae) et Pelargonium graveolens  (Geraniaceae) ont
-été étudiés sur le diptère  Culex quinquefasciatus.Il en ressort que c'est
+été étudiés sur le diptère  Culex quinquefasciatus. Il en ressort que c'est
 le mélange Satureja montana et Aloysia citriodora qui présente la meilleure
 synergie et donc la meilleure efficacité. 
 
@@ -414,7 +416,9 @@ toxicité.
 |-----------------------+----------------------------------------------------|
 
 
-Tabari MA and co , 2017 ont étudié l'activité repellente d'une selection de monoterpènes (thymol, carvacrol et linalol ) contre Ixodes ricinus
+L'étude publiée par Tabari et al. \cite{Tabari2017} étudie l'activité repellente
+d'une selection  de monoterpènes (thymol,  carvacrol et linalol )  contre Ixodes
+ricinus.
 
 Ils ont  évalué les effets ovicides,  larvicides et répulsifs contre  I. ricinus
 des huiles essentielles du  thym, de la sarriette, de l'origan  de la lavande et
@@ -436,12 +440,12 @@ populations de  I. ricinus  et la  propagation des  maladies transmises  par les
 tiques.
 
 
-Viviane  Zeringóta, 2013  a étudié  l'activité  répulsive de  l'eugénol sur  des
+FIXME - Viviane  Zeringóta, 2013  a étudié  l'activité  répulsive de  l'eugénol sur  des
 larves  de  Rhipicephalus microplus  et  de  Dermacentor  nitens dans  un  essai
 biologique. Les solutions ont été utilisées  à des concentrations de 10, 20, 30,
-40 et 50 $\mu$l / ml.Pour les larves de D. nitens, la répulsion était supérieure
+40 et 50 \mu l / ml.Pour les larves de D. nitens, la répulsion était supérieure
 à 80%  pendant une période  allant jusqu’à  5 h aux  concentrations de 40  et 50
-$\mu$l /  ml; Pour les  larves de R.   microplus, les quatre  concentrations les
+\mu l /  ml; Pour les  larves de R.   microplus, les quatre  concentrations les
 plus élevées ont produit des niveaux de  répulsion supérieures à 80% pendant 9 h
 au  plus. Par  conséquent,  l'eugénol  a une  activité  répulsive  sur le  stade
 larvaire de ces  deux espèces de tiques,  les larves de R.  microplus étant plus
@@ -449,7 +453,7 @@ sensibles.
 
 
 
-Pour Meng  and co,  2016 l'étude  portait sur  l'efficacité du  DEET et  de huit
+Le travail présenté dans \cite{Meng2015} étudie  l'efficacité du DEET et de huit
 huiles essentielles disponibles dans le commerce (origan, clou de girofle, thym,
 vétiver, bois de  santal, cannelle, bois de cèdre et  menthe poivrée). Elles ont
 été  évalués pour  leur pouvoir  de  répulsion contre  les nymphes  de la  tique
@@ -462,16 +466,16 @@ plus efficace parmi toutes les huiles  testées, suivie des huiles de girofle, d
 thym, de vétiver, de bois de santal, de cannelle, de cèdre et de menthe poivrée.
 
 
-Carol and co, 2017 : L'huile  essentielle d'origan, Origanum onites a été testée
-dans  des essais  biologiques en  laboratoire visant  à déterminer  son activité
-répulsive sur les tiques Amblyomma americanum et Aedes aegypti. Les composés les
-plus abondants  de l'  HE d'Origanum  onites étaient  le carvacrol  (75,70%), le
-linalol (9,0%), le p-cymène (4,33%) et  le thymol (1,9%). À une concentration de
-0,413 mg d'huile / cm2 de  papier filtre, l'HE d'Origanum onites repoussait 100%
-des tiques  testées et  à 0,103  mg d'huile /  cm2 de  papier filtre,  66,7% des
-tiques étaient repoussées. À 0,075 mg d'huile  / cm2 de papier filtre, le thymol
-a  repoussé  66,7%  des  tiques,  contre  28,7% pour  le  carvacrol  à  la  même
-concentration.
+L'huile  essentielle  d'origan, Origanum  onites  a  été testée  dans  l'article
+\cite{Carroll2017}, qui  décrit des essais  biologiques en laboratoire  visant à
+déterminer son activité  répulsive sur les tiques Amblyomma  americanum et Aedes
+aegypti. Les composés  les plus abondants de l' HE  d'Origanum onites étaient le
+carvacrol  (75,70%),  le  linalol  (9,0%),  le p-cymène  (4,33%)  et  le  thymol
+(1,9%). À  une concentration de  0,413 mg d'huile /  cm2 de papier  filtre, l'HE
+d'Origanum onites repoussait 100% des tiques testées et à 0,103 mg d'huile / cm2
+de papier filtre, 66,7% des tiques étaient  repoussées. À 0,075 mg d'huile / cm2
+de papier filtre,  le thymol a repoussé  66,7% des tiques, contre  28,7% pour le
+carvacrol à la même concentration.
 
 
 *** Les aldéhydes aromatiques
@@ -502,12 +506,11 @@ déconseillé chez l'enfant de moins de 7 ans.
 |--------------+------------------------------------------------|
 
 Contre indications : tussigènes sur certains patients sensibles.
-Cette irritation varie selon les HE, elle dépend du type d'aldéhyde et de sa
-concentration dans l'HE.
-Cette irritation impose une dilution à 50 % dans une huile végétale pour les
-adultes.
-Pour les enfants et les patients à la peau très sensible, la dilution sera de 10
-%.
+
+Cette irritation  varie selon les  HE, elle dépend du  type d'aldéhyde et  de sa
+concentration dans l'HE.   Cette irritation impose une dilution à  50 % dans une
+huile végétale  pour les adultes.   Pour les enfants et  les patients à  la peau
+très sensible, la dilution sera de 10 %.
 
 #+CAPTION: Les cétones
 | *Molécules chimiques* | *Huiles essentielles*                                |
@@ -523,11 +526,11 @@ Pour les enfants et les patients à la peau très sensible, la dilution sera de 
 | Pinocamphone          | Hysope officinale (/Hyssopus officinalis/)           |
 |-----------------------+------------------------------------------------------|
 
-Contre indications: les cétones sont dures à) manipuler du fait de leur
-neurotoxicité et leur action abortive.
-On évitera leur emploi chez la femme enceinte( et allaitante) et chez l'enfant
-ainsi que chez le sujet âgé neurologiquement fragile ( épilépsie )
-L'usage prolongé est interdit chez les enfants de moins de 6 ans pour la plupart
+Contre  indications:  les cétones  sont  dures  à)  manipuler  du fait  de  leur
+neurotoxicité et  leur action abortive.   On évitera  leur emploi chez  la femme
+enceinte(  et  allaitante)  et  chez  l'enfant  ainsi  que  chez  le  sujet  âgé
+neurologiquement fragile  ( épilépsie )  L'usage prolongé est interdit  chez les
+enfants de moins de 6 ans pour la plupart
 
 
 
@@ -544,6 +547,7 @@ L'usage prolongé est interdit chez les enfants de moins de 6 ans pour la plupar
 |                           | Romarin ct cinéole (/ Rosmarinus ct cinéole )                  |
 | Linaloloxyde              | Hysope couchée   (/Hyssopus officinalis var. decumbens/)       |
 |---------------------------+----------------------------------------------------------------|
+
 Nous ne parlerons pas ici de l'ascaridole qui a un effet antiparasitaire certain
 mais qui est neurotoxique.
 
@@ -610,7 +614,7 @@ prudence chez les personnes sensibles et les enfants de moins de 7 ans.
 | Visnagine             | Khella (/Ammi visnaga/)                          |
 | Limettine             | Citronnier (/Citrus lémon/)                      |
 |
-Contre indications : Elles sont photosensibilisantes ( avec un temps minimum de
+Contre indications : Elles sont photosensibilisantes (avec un temps minimum de
 6h avant l'exposition si prise par vois orale ou locale). Il faut faire
 attention avec les personnes sous anti coagulants.
 
@@ -673,19 +677,19 @@ verbénone ont été testés séparément la répulsion a été de 64 % à 72 %.
 *** Etudes intéressantes
 
 
-Katarína Štefanidesová et al~\cite{}, 2017 ont  étudié onze huiles essentielles sur les
-tiques  Dermacentor reticulatus  ,  à savoir  le  basilic (Ocimum  basilicum),la
-bergamote (Citrus bergamia),le bouton de  clou de girofle (Syzygium aromatic),la
-citronnelle de  Java(Cymbopogon winterianus), le serpolet  (Thymus serpyllum),la
-lavande (Lavandula  angustifolia),la marjolaine  (Origanum majorana),  la menthe
-poivrée (Mentha piperita),  la menthe verte (Mentha spicata) et  le thym (Thymus
-vulgaris). Ils ont  été soumis à des  tests de résistance à  la répulsion contre
-les tiques adultes de D. reticulatus à des concentrations de 1 et 3%. Les huiles
-essentielles  de clou  de  girofle, de  serpolet  et de  thym  étaient les  plus
-efficaces: 83, 82  et 68% des tiques  ont été repoussées une fois  diluées à 3%,
-respectivement.  Le mélange  de serpolet  et  de citronnelle  contenant 1,5%  de
-chacun a  montré une  répulsion plus  élevée (91%)  que les  huiles essentielles
-individuelles à la concentration de 3%.
+Katarína  Štefanidesová et  al~\cite{Stefanidesova2017} ont  étudié onze  huiles
+essentielles  sur les  tiques  Dermacentor  reticulatus ,  à  savoir le  basilic
+(Ocimum basilicum),la bergamote  (Citrus bergamia),le bouton de  clou de girofle
+(Syzygium aromatic),la citronnelle de  Java(Cymbopogon winterianus), le serpolet
+(Thymus serpyllum),la  lavande (Lavandula angustifolia),la  marjolaine (Origanum
+majorana), la menthe poivrée (Mentha piperita), la menthe verte (Mentha spicata)
+et le thym (Thymus vulgaris). Ils ont été  soumis à des tests de résistance à la
+répulsion contre les tiques adultes de  D. reticulatus à des concentrations de 1
+et  3%. Les  huiles essentielles  de clou  de girofle,  de serpolet  et de  thym
+étaient les plus efficaces: 83, 82 et 68% des tiques ont été repoussées une fois
+diluées  à  3%,  respectivement.   Le  mélange de  serpolet  et  de  citronnelle
+contenant 1,5% de chacun a montré une répulsion plus élevée (91%) que les huiles
+essentielles individuelles à la concentration de 3%.
 
 
 
@@ -759,19 +763,19 @@ Odeur fraîche, vive, anisée. Les premières notes rappellent l'estragon.
 Huile  essentielle  réservée  à  l'adulte  et  sans  usage  répétitif.   L'huile
 essentielle  de basilic  tropical présente  des précautions  spécifiques car  le
 méthylchavicol  ou estragole  et  certains  de ses  dérivés  sont classés  comme
-substance à fort potentiel toxique.  L'hépatocancérogénécité est démontrée chez  la souris et
-la  toxicité hépatique  du  méthylchavicol est  mal déterminée  à  ce jour  chez
-l'homme.  Une  recommandation européenne,  met en avant  la dose  journalière de
-40mg par jour de méthylchavicol admissible par  voie orale pour un adulte ce qui
-correspond à  une à  deux gouttes  toutes les 24  heures d'huile  essentielle de
-basilic tropical.  Il convient d'éviter ou  de limiter la voie orale. Cet emploi
-doit rester exceptionnel et restreint à une période très courte de 24 à 72H.  Il
-est  préférable  de  privilégier  la  voie  cutanée  diluée  (huile  essentielle
-irritante)   mais  toujours   sur   une   période  courte   (maximum   8  à   10
-jours).  L'efficacité  par   cette  voie  est  très   importante.   Cette  huile
+substance à fort potentiel  toxique.  L'hépatocancérogénécité est démontrée chez
+la souris  et la toxicité  hépatique du méthylchavicol  est mal déterminée  à ce
+jour  chez  l'homme.   Une  recommandation  européenne, met  en  avant  la  dose
+journalière de 40mg par jour de méthylchavicol admissible par voie orale pour un
+adulte ce  qui correspond  à une  à deux  gouttes toutes  les 24  heures d'huile
+essentielle de  basilic tropical.  Il  convient d'éviter  ou de limiter  la voie
+orale.  Cet emploi  doit rester  exceptionnel et  restreint à  une période  très
+courte de  24 à 72H.   Il est préférable de  privilégier la voie  cutanée diluée
+(huile essentielle irritante) mais toujours sur  une période courte (maximum 8 à
+10  jours).  L'efficacité  par  cette  voie est  très  importante.  Cette  huile
 essentielle est  irritante pure sur la  peau. Il est indispensable  de la diluer
 dans une huile végétale !  La  diffusion atmosphérique et les inhalations sèches
-ne  posent pas  de problème  mais attention  à l'odeur  ! 
+ne posent pas de problème mais attention à l'odeur !
 
 *** Botanique
 
