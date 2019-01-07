@@ -260,57 +260,59 @@ eu un traitement l'an dernier au mois de décembre ... l'EMC était bien présen
 et la personne ne se souvenait pas d'avoir enlevé une tique.
 
 
-** Pertinence du sujet par rapport à ma région géographique (3) (4)
-
+** Pertinence du sujet par rapport à ma région géographique
 
 *** Prévalence au niveau national
 
 Le nombre des victimes de la Borrélia burgdorferi dans l'hexagone est maintenant
 estimé à 27 000 cas par an \cite{site-gouv-fr-2017}. Selon les données du Réseau
 Sentinelles, la prévalence  moyenne est estimée à 43 cas  pour 100 000 habitants
-depuis 2009. Entre 1999 et 2000, elle était à 16.5 cas pour 100 000 personnes et
+depuis 2009. Entre 1999 et 2000, elle était à 16,5 cas pour 100 000 personnes et
 entre 1988 et 1989, elle était à 9.4 cas pour 100 000 individus \cite{invs2018}.
 En se basant sur  ces chiffres, il est facile de  constater que cette infection
 n'a cessé de gagner du terrain au niveau national.
 
 *** Incidence au niveau régional
 
+ Selon l'étude  baptisée Alsa(ce) tique  et menée en 2014  et 2015, il  y aurait
+2200 cas de borréliose de Lyme en Alsace  par an soit un taux d'incidence de 117
+cas pour  100 000 habitants,  une incidence deux  fois supérieure au  taux moyen
+national. La majorité des personnes atteintes  dans le Grand Est sont des hommes
+et 90% des cas sont âgés de 16 ans ou plus, avec une moyenne de 55 ans. Chez les
+enfants, les 5  à 9 ans sont les  plus touchés.  Si les lieux  à risques restent
+principalement les  forêts (74%) les  jardins publics ou  privés ne sont  pas en
+reste (47%), tout comme les prairies (3%).\\
 
 
 Les études effectuées par les institutions impliquées dans la surveillance de la
 maladie  de  Lyme, telle  que  le  Réseau  Sentinelles,  le Centre  National  de
 Référence des Borrélia (CNR), l'InVS, la Mutualité Sociale Agricole (MSA), entre
 1986 et  2012 ont permis  d'établir des taux  d'incidence au niveau  national et
-régional.
+régional. Elles corroborent l'étude  Alsa(ce) tique : le réseau Sentinelles
+recense pour la période 2012-2015 un taux de 128 cas / 10000 en Alsace.\\
+
+
 
 #+ATTR_LATEX: :width .6\linewidth
-#+CAPTION: Carte de France
-[[./img/carte_lyme.png]]
-
- 
-
-
-On peut voir sur cette carte que  l'incidence pour l'Alsace est dans cette étude
-de 157 cas pour  100 000 habitants, une incidence bien  supérieure au taux moyen
-national.
+#+NAME: carte-lyme-2016
+#+CAPTION: Estimation du taux d'incidence annuel moyen de la borreliose de Lyme par region France 2016. Source réseau Sentinelles.
+[[./img/carte_lyme_2016.jpg]]
 
 
+Cependant, le taux d'incidence a  augmenté significativement en 2016 par rapport
+à la période  2012-2015 (+120%). Ces données pour 2016  sont représentées sur la
+carte de la  figure [[carte-lyme-2016]].  Sur cette carte  l'incidence pour l'Alsace
+est de  281 cas pour  100 000 habitants, une  incidence bien supérieure  au taux
+moyen national.\\
 
 D'autre part,  une étude de l'Agence  régionale de santé (ARS),  menée par Santé
 publique  France et  grâce à  la participation  de 388  médecins, basée  sur des
-critères européens, a permis d'affiner pour  la première fois les données. Mais
+critères européens, a  permis d'affiner pour la première fois  les données. Mais
 pas de miracle, la région Grand Est  constitue l'une des zones au plus fort taux
-d'incidence de  borréliose de Lyme en  France.  2.200 cas de  borréliose de Lyme
-par  an Tout  particulièrement concernés,  les deux  départements d'Alsace  dont
-notamment les  secteurs situés à  proximité des massifs vosgiens.  Selon l'étude
-baptisée Alsa(ce) tique  et menée en 2014  et 2015, il y  aurait 2200  cas de
-borréliose de  Lyme en Alsace par  an soit un  taux d'incidence de 117  cas pour
-100 000 habitants, une incidence deux fois supérieure au taux moyen national. La
-majorité des personnes atteintes  dans le Grand Est sont des  hommes et 90% des
-cas sont âgés de  16 ans ou plus, avec une moyenne de  55 ans. Chez les enfants,
-les  5  à  9  ans  sont  les  plus touchés.  Si  les  lieux  à  risques  restent
-principalement les  forêts (74%) les jardins  publics ou privés ne  sont pas en
-reste (47%), tout comme les prairies (3%).
+d'incidence de  borréliose de Lyme  en France. Notamment, les  deux départements
+d'Alsace  pour  les  secteurs  situés  à proximité  des  massifs  vosgiens  sont
+particulièrement concernés.
+
 
 
 ** Prévention de la maladie de Lyme
@@ -423,12 +425,11 @@ anti-fongique, anti-parasitaire), larvicides, acaricides et répulsives.
 |------------------+------------------------------------------------------|
 
 
-
 L'étude de  Ferreira et al  \cite{Ferreira2017} vise à comparer  l'efficacité du
 N-diéthyl-3-méthylbenzamide (DEET),  un répulsif standard,  au \beta-citronellol
 dans un  dosage biologique par boîte  de Pétri. Un demi-cercle  de papier filtre
-(31,8 cm2) a  été traité avec 87 {\mu}l de l'une des  quatre concentrations (0,200,
-0,100,  0,050  et  0,025  mg  /  cm2)  de  \beta-citronellol,  DEET  ou  solvant
+(31,8  cm2) a  été traité  avec  87 \mu{}l  de l'une  des quatre  concentrations
+(0,200, 0,100,  0,050 et 0,025 mg  / cm2) de \beta{}-citronellol,  DEET ou solvant
 (éthanol). Un test  comparatif a été mis  au point en traitant un  côté avec des
 concentrations  croissantes  de  \beta-citronellol, comme  mentionné  ci-dessus,
 contre la concentration la plus élevée de DEET.  En outre, un test à blanc a été
@@ -481,7 +482,6 @@ toxicité.
 
     #+CAPTION: Les phenols
 | *Molécules chimiques* | *Huiles essentielles*                              |
-|                       |                                                    |
 |-----------------------+----------------------------------------------------|
 | Thymol                | Thym ct thymol (/Thymus vulgaris ct thymol/)       |
 |-----------------------+----------------------------------------------------|
@@ -561,7 +561,6 @@ carvacrol à la même concentration.
 
 #+CAPTION: Les aldéhydes aromatiques
 | *Molécules chimiques* | *Huiles essentielles*                        |
-|                       |                                              |
 |-----------------------+----------------------------------------------|
 | Cinnamaldéhyde        | Cannelle de Ceylan (/Cinnamomum zeylanicum/) |
 |                       | Cannelle de Chine (/Cinnamomum cassia/)      |
@@ -575,7 +574,6 @@ déconseillé chez l'enfant de moins de 7 ans.
 
 #+CAPTION: Les aldéhydes terpéniques
 | *Molécules chimiques* | *Huiles essentielles*                          |
-|                       |                                                |
 |-----------------------+------------------------------------------------|
 | Citrals               | Lemongrass (/Cymbopogon flexuosus/)            |
 |                       | Verveine citronnée (/Lippia citriodora/)       |
@@ -605,7 +603,6 @@ DEET.
 
 #+CAPTION: Les cétones
 | *Molécules chimiques* | *Huiles essentielles*                                |
-|                       |                                                      |
 |-----------------------+------------------------------------------------------|
 | Verbénone             | Romarin ct verbénone (/Rosmarinus off ct verbénone/) |
 |                       |                                                      |
@@ -622,13 +619,12 @@ DEET.
 neurotoxicité et leur action abortive.
 On évitera leur emploi chez la femme enceinte (et allaitante) et chez l'enfant
 ainsi que chez le sujet âgé neurologiquement fragile (épilépsie)
-L'usage prolongé est interdit chez les enfants de moins de 6 ans pour la plupart
+L'usage prolongé est interdit chez les enfants de moins de 6 ans pour la plupart (FIXME)
 
 *** Les oxydes terpéniques
 
 #+CAPTION: Les oxydes terpéniques
 | *Molécules chimiques*     | *Huiles essentielles*                                          |
-|                           |                                                                |
 |---------------------------+----------------------------------------------------------------|
 | 1,8 Cinéole ( Eucalyptol) | Ravintsara (/Cinnamomum camphora ct cinéole/)                  |
 |                           | Myrte verte ou Myrte ct cinéole (/Myrtus communis ct cinéole/) |
@@ -671,7 +667,6 @@ camphre, le linalol, le 4-terpinéol, le bornéol et le carvone.
 
 #+CAPTION: Les phénols méthyl-éthers
 | *Molécules chimiques*  | *Huiles essentielles*                 |
-|                        |                                       |
 |------------------------+---------------------------------------|
 | Chavicol méthyl-éthers | Basilic exotique (/Ocimum basilicum/) |
 | (estragole)            | Estragon (/Artémesia dranunculus/)    |
@@ -691,33 +686,33 @@ Ces huiles sont déconseillées chez la femme enceinte.
 
 #+CAPTION: Les sesquiterpènes
 | *Molécules chimiques* | *Huiles essentielles*                          |
-|                       |                                                |
 |-----------------------+------------------------------------------------|
 | Germacrène            | Ylang Ylang (/Cananga odorata/)                |
 |                       |                                                |
 | Chamazulène           | Tanaisie annuelle(/Tanacetum annuum/)          |
 |                       | Achillée millefeuille (/Achillea millefolium/) |
-|  Zingibérène          | Curcuma (/Curcuma longa/)                      |
-|                       | Gingembre (/ Zingiber officinale/)             |
+| Zingibérène           | Curcuma (/Curcuma longa/)                      |
+|                       | Gingembre (/Zingiber officinale/)              |
+|                       |                                                |
 
 
 *Contre indications* : peu de contre indications, attention à l'utilisation avec
-les cétones car elles augmentent l'action abortive des cétones.
-
+les cétones car elles augmentent l'action abortive des cétones.\\
 
 
 L'effet répulsif des  huiles essentielles des têtes de fleurs  de la tanaisie de
 la plante aromatique  Tanacetum vulgare L. (Asteraceae), originaire  de Suède, a
-été testé sur  des nymphes de la tique commune,  Ixodes ricinus. Les principales
-substances  volatiles détectées  dans les  huiles  de T.  vulgare recueillies  à
-Uppsala étaient  l'\alpha-pinène (27%),  le \beta-pinène (11%),  le pinocamphone
-(11%), le 1,3,3-triméthylcyclohex-1-énène-4-carboxaldéhyde. (11%) et 1,8-cinéole
-(10%).  Dans  l'échantillon recueilli  à  Stockholm,  les composants  principaux
-étaient la \beta-thujone (39%) et le camphre (23%), suivis de l'\alpha{}-thujone
-(11%) et du  1,8-cinéole (8%). Lorsque les constituants  des huiles essentielles
-tels que  l'\alpha{}-terpinéol, le  4-terpinéol, l'\alpha +  \beta{}-thujone, le
-1,8-cinéol, le verbénol et le verbénone ont été testés séparément la répulsion a
-été de 64 % à 72 %.
+été   testé   sur   des   nymphes   de  la   tique   commune,   Ixodes   ricinus
+\cite{Trigg1996a}.  Les  principales  substances volatiles  détectées  dans  les
+huiles de  T.  vulgare recueillies  à Uppsala étaient l'\alpha-pinène  (27%), le
+\beta-pinène        (11%),        le        pinocamphone        (11%),        le
+1,3,3-triméthylcyclohex-1-énène-4-carboxaldéhyde.  (11%)  et 1,8-cinéole  (10%).
+Dans l'échantillon recueilli  à Stockholm, les composants  principaux étaient la
+\beta-thujone (39%) et  le camphre (23%), suivis de  l'\alpha{}-thujone (11%) et
+du 1,8-cinéole (8%).  Lorsque les constituants des huiles  essentielles tels que
+l'\alpha{}-terpinéol, le 4-terpinéol, l'\alpha + \beta{}-thujone, le 1,8-cinéol,
+le verbénol et le verbénone ont été testés séparément la répulsion a été de 64 %
+à 72 %.
  
 
 *** Les monoterpènes
@@ -885,54 +880,71 @@ concentrations plus  importantes en  linalol et en  1,8 cinéole,  ainsi qu'une
 bonne concentration en  camphre (par rapport à la lavande  vraie de l'étude de
  Jaenson \cite{Jaenson2006}).
 
-  Identification:
-  Nom botanique : Lavandula latifolia spica
-  Famille : lamiacées
-  Partie distillée : sommité fleurie
-  Origine : Sud de la France, Espagne 
+- Identification:
+  |------------------+---------------------------|
+  | Nom botanique    | Lavandula latifolia spica |
+  | Famille          | lamiacées                 |
+  | Partie distillée | sommité fleurie           |
+  | Origine          | Sud de la France, Espagne |
+  |------------------+---------------------------|
+\\
 
-  Principaux composés :
-  Monoterpénols : linalol : 30 à 45 %, bornéol
-  Oxydes terpéniques : 1,8 cinéole 30 %
-  Cétones : camphre 10 %
-  Terpènes : camphène, pinène 10 %
+- Principaux composés :
+  |--------------------+---------------------------|
+  | Monoterpénols      | linalol 30 à 45%, bornéol |
+  | Oxydes terpéniques | 1,8 cinéole 30%           |
+  | Cétones            | camphre 10%               |
+  | Terpènes           | camphène, pinène 10%      |
+  |--------------------+---------------------------|
+\\
 
-  Contre-indications :
-  Déconseillée dans les trois premiers mois de grossesse
-  Déconseillée chez l'enfant de moins de 6 ans 
+-  Contre-indications :
+  + Déconseillée dans les trois premiers mois de grossesse
+  + Déconseillée chez l'enfant de moins de 6 ans 
 
 
 
 *** HE de Géranium rosat
 
-    Identification :
-    Nom botanique : Pelargonium x asperum CV Egypte ou Chine
-    Famille : Géraniacées
-    Partie distillée : feuille
-    Origine : Egypte, Chine
+- Identification :
+  |------------------+------------------------------------------|
+  | Nom botanique    | Pelargonium x asperum CV Egypte ou Chine |
+  | Famille          | Géraniacées                              |
+  | Partie distillée | feuille                                  |
+  | Origine          | Egypte, Chine                            |
+  |------------------+------------------------------------------|
+\\
 
-    Principaux composés :
-    Monoterpénols : citronellol 30 à 45 %, géraniol 13 %, linalol 5%
-    Cétones : isomenthone : 8%
-    Esters : formate de géranyle, acétate de géranyle 25 %
+- Principaux composés :
+  |---------------+------------------------------------------------|
+  | Monoterpénols | citronellol 30 à 45%, géraniol 13%, linalol 5% |
+  | Cétones       | isomenthone : 8%                               |
+  | Esters        | formate de géranyle, acétate de géranyle 25%   |
+  |---------------+------------------------------------------------|
+\\
 
-    Contre-indications :
-    Déconseillée dans les trois premiers mois de grossesse
+- Contre-indications :
+    + Déconseillée dans les trois premiers mois de grossesse
 
 
 *** HE d'Eucalyptus citronné
 
-    Identification : Eucalyptus citriodora ct citronnelol
-    Famille : Myrtacées
-    Partie distillée : feuille
-    Origine : Inde, Vietnam
+- Identification : Eucalyptus citriodora ct citronnelol
+  |------------------+---------------|
+  | Famille          | Myrtacées     |
+  | Partie distillée | feuille       |
+  | Origine          | Inde, Vietnam |
+  |------------------+---------------|
+\\
 
-    Principaux composés :
-    Aldéhydes : citronnellal 40 à 70%
-    Monoterpénols : citronnelol 5 à 20 %, isopulégol
-
-    Contre-indications :
-    Déconseillée dans les trois premiers mois de grossesse
+- Principaux composés :
+  |---------------+----------------------------------|
+  | Aldéhydes     | citronnellal 40 à 70%            |
+  | Monoterpénols | citronnelol 5 à 20 %, isopulégol |
+  |---------------+----------------------------------|
+\\
+- Contre-indications :
+    + Déconseillée dans les trois premiers mois de grossesse
     
 
 *** La formule
@@ -1023,17 +1035,5 @@ l'automne.
 
 
 
-\bibliographystyle{alpha}
+\bibliographystyle{plain}
 \bibliography{biblio}
-
-
-(1) doctissimo.fr
-3 ARS rapport
-4 le quotidien du medecin
-5 santé,gouv
- mon but  a été  tout d'abord  de lister  les huiles
-essentielles connues comme  répulsives. Au gré de mes recherches  j'ai décidé de
-mettre  pour  chacunes  de   ces  huiles  quelques  références  bibliographiques
-confirmant leur  efficacité dans  cette indication.  Par la  suite, et  aux vues
-d'études j'ai fait le  choix qui me semblait le plus  judicieux pour élaborer ma
-formule.

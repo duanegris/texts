@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Benelli2017}
 Giovanni Benelli, Roman Pavela, Angelo Canale, Kevin Cianfaglione, Giampiero
@@ -18,6 +18,15 @@ John~F. Carroll, Betul Demirci, Matthew Kramer, Ulrich~R. Bernier, Natasha~M.
 \newblock {\em Natural Product Research}, 31(18):2192--2197, 2017.
 \newblock PMID: 28278656.
 
+\bibitem{invs2018}
+Institut de~Veille~Sanitaire.
+\newblock \url{https://bit.ly/2FceJVN}, juillet 2018.
+
+\bibitem{site-gouv-fr-2017}
+Ministère des Solidarités et de~la Santé.
+\newblock Maladie de lyme.
+\newblock \url{http://www.sante.gouv.fr/maladie-de-lyme.html}, avril 2017.
+
 \bibitem{El-Seedi2012}
 Hesham El-Seedi, Nasr Khalil, Muhammad Azeem, Eman Taher, Ulf Göransson,
   Katinka Pålsson, and Anna-Karin Borg-Karlson.
@@ -25,11 +34,36 @@ Hesham El-Seedi, Nasr Khalil, Muhammad Azeem, Eman Taher, Ulf Göransson,
   medicinal plants against ixodes ricinus nymphs (acari: Ixodidae).
 \newblock {\em Journal of medical entomology}, 49:1067--75, 09 2012.
 
+\bibitem{Ferreira2017}
+Lorena~Lopes Ferreira, Jaires~Gomes de~Oliveira~Filho, Gabriel~Moura Mascarin,
+  Adalberto A.~Pérez de~León, and Lígia Miranda~Ferreira Borges.
+\newblock In vitro repellency of deet and $\beta$-citronellol against the ticks
+  rhipicephalus sanguineus sensu lato and amblyomma sculptum.
+\newblock {\em Veterinary Parasitology}, 239:42 -- 45, 2017.
+
+\bibitem{lyme.info}
+Lyme Info.
+\newblock \url{http://www.maladie-lyme.info}.
+
 \bibitem{Iori2005}
 A.~Iori, D.~Grazioli, E.~Gentile, G.~Marano, and G.~Salvatore.
 \newblock Acaricidal properties of the essential oil of melaleuca alternifolia
   cheel (tea tree oil) against nymphs of ixodes ricinus.
 \newblock {\em Veterinary Parasitology}, 129(1):173 -- 176, 2005.
+
+\bibitem{Jaenson2006}
+Thomas Jaenson, Samira Garboui, and Katinka Pålsson.
+\newblock Repellency of oils of lemon eucalyptus, geranium, and lavender and
+  the mosquito repellent mygga natural to ixodes ricinus (acari: Ixodidae) in
+  the laboratory and field.
+\newblock {\em Journal of medical entomology}, 43:731--6, 08 2006.
+
+\bibitem{Trigg1996a}
+J~K~Trigg.
+\newblock Evaluation of a eucalyptus-based repellent against anopheles spp. in
+  {T}anzania.
+\newblock {\em Journal of the American Mosquito Control Association},
+  12:243--6, 07 1996.
 
 \bibitem{Meng2015}
 Hao Meng, Andrew Y.~Li, Livio M.~Costa~Junior, Ivan Castro-Arellano, and Jingze
