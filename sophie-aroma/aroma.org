@@ -8,10 +8,10 @@
 {\large Mémoire \par }
 {\large Diplôme d'Université de l'Université de Bourgogne \par}
 {\Large Aromathérapie \par}
-\vspace{.7cm}
-{\Large \emph{Les huiles essentielles pour la répulsion des tiques} \par}
+\vspace{2.2cm}
+{\huge \emph{Les Huiles Essentielles répulsives contre les tiques} \par}
 \vspace{2cm}
-{\large Sophie \textsc{Genaud} \par}
+{\Large\bf Sophie \textsc{Genaud} \par}
 \vspace{2cm}
 {\Large  \par}
 \end{center}
@@ -19,7 +19,7 @@
 \begin{center}
 
 {\includegraphics[width=4cm]{img/logo-uB-filet.png} \par}
-{\large Janvier 2018}
+{\large Janvier 2019}
 \end{center}
 \end{titlepage}
 
@@ -30,7 +30,7 @@
 #+LaTeX_CLASS: article
 #+LaTeX_CLASS_OPTIONS: [12pt,a4wide]
 #+LaTeX_HEADER: \usepackage{french}
-
+#+LaTeX_HEADER: \usepackage{fancyhdr}
 
 #+LaTeX_HEADER:\setlength{\oddsidemargin}{0cm}
 #+LaTeX_HEADER:\setlength{\evensidemargin}{0cm}
@@ -60,8 +60,8 @@
 
 **** Le Contexte
 Des scandales  sanitaires à répétition  et une remise  en question de  notre vie
-actuel  ont été  à l'origine  d'un regain  d'intérêt pour  les médecines  et les
-traitements naturels.Des étude scientifiques de  plus en plus nombreuses mettent
+actuelle  ont été  à l'origine  d'un regain  d'intérêt pour  les médecines  et les
+traitements naturels.Des études scientifiques de  plus en plus nombreuses mettent
 peu à peu à mal nos croyances relatives à notre santé et à la toute puissance de
 la médecine  ``moderne'' avec  ses médicaments  synthétiques.  Dans  ce contexte
 beaucoup sont  tentés de soigner leurs  maux quotidiens par la  phytothérapie ou
@@ -72,7 +72,7 @@ Leur usage est souvent banalisé par leur appellation ``produit naturel''.\\
 
 
 Le danger  actuel réside en une  règlementation floue permettant de  se procurer
-des huiles  essentielles en  Officine certes  mais aussi  en grande  surface, en
+des huiles  essentielles en  officine certes  mais aussi  en grande  surface, en
 magasin ``bio'' ou encore sur internet. Il est de notre éthique de Pharmacien de
 s'assurer que les  huiles essentielles que nous conseillons  seront employées de
 la  façon  la  plus  sûre  et  la plus  efficace  possible.   C'est  dans  cette
@@ -80,51 +80,54 @@ perspective qualitative que  nous avons abordé ce DU d'Aromathérapie  qui nous
 permis  d'aller  beaucoup plus  loin  dans  nos connaissances,  nous  permettant
 dorénavant :
 - d'avoir une approche biochimique indispensable pour comprendre la relation
-  structure- activité d'une huile essentielle,
+  structure-activité d'une huile essentielle,
 - de conseiller en toute sécurité en se basant sur les familles biochimiques
   permettant de bien comprendre les indications et les contre-indications,
-- d'avoir une  esprit critique par rapport  aux formules existantes tant  par le
-  choix des huiles que par leurs concentrations,
+- d'avoir un  esprit critique par rapport  aux formules existantes tant  pour le
+  choix des huiles que pour leurs concentrations,
 - d'élaborer à partir de nos propres connaissances nos formules en fonction de
-  la symptomatologie précise de notre patient pour une réponse plus
+  la symptômatologie précise de notre patient pour une réponse plus
   personnalisée, 
 - d'exercer donc en toute sécurité pour notre patient et pour notre
   éthique propre, en prenant en compte les contraintes réglementaires et
-  juridiques actuels.\\
+  juridiques actuelles.\\
 
 
 **** Sujet du mémoire
 Dans ce  mémoire nous  avons choisi  de traiter un  problème auquel  nous sommes
 confrontés chaque année, le retour des tiques  et avec elles la Maladie de Lyme.
-Je  suis titulaire  d'une Officine  en  Alsace –à  Metzéral- dans  la Vallée  de
+Je suis titulaire d'une Officine en Alsace  --- à Metzéral --- dans la vallée de
 Munster et nous  observons de plus en plus  de cas au fil des  ans. Nous voulons
 élaborer  un spray  répulsif pour  les  adultes, pour  les enfants  et pour  les
 chiens. Nous  voulons également aller  plus loin et suite  à ce DU  nous voulons
 proposer une solution à appliquer et une solution à prendre par voie orale après
-la morsure.
+la morsure.\\
 
 
 Nous aborderons ce mémoire en trois chapitres.
 
-
 Le premier portera sur un rapide rappel de la maladie, sur la pertinence de ce
 choix par rapport à ma situation géographique et sur les mesures préventives
-indispensables à mettre en place.
+indispensables à mettre en place.\\
 
-Le deuxième chapitre repertoriera les familles biochimiques anti-parasitaires, 
-ayant des propriétés larvicides, ovicides et répulsives. Ce DU d'aromathérapie
-m'a donné envie d'aller plus loin et de chercher des études scientifiques
-prouvant l'efficacité des huiles essentielles dans ces indications.
-
-Le troisième chapitre reprendra les résultats du précédent et permettra
+Le deuxième  chapitre repertoriera les familles  biochimiques anti-parasitaires,
+ayant des propriétés  larvicides, ovicides et répulsives.  Ce DU d'aromathérapie
+m'a donné envie d'aller  plus loin et de profiter de la  rédaction de ce mémoire
+pour  chercher  des  études   scientifiques  prouvant  l'efficacité  des  huiles
+essentielles  dans ces  indications. Au  gré  de mes  recherches  je n'ai  retenu
+presque que  des études portant  sur les  tiques pour être  au plus près  de mon
+sujet. Les études portant sur une molécule chimique précise seront classées à la
+suite de la famille biochimique correspondante. Un sous-chapitre reprendra toutes
+les études plus complètes portant sur un ensemble d'HE.\\
+ 
+Le  troisième  chapitre  reprendra  les  résultats  du  précédent  et  permettra
 d'établir les formules définitives que je compte mettre en pratique à l'Officine
 au printemps.
  
 
 
-
-
-* Qu'est-ce que la maladie de Lyme ?
+* Description de la maladie et symptomatologie
+** Qu'est-ce que la maladie de Lyme ?
 
  La maladie de  Lyme ou /borréliose de  Lyme/ est une maladie  infectieuse due à
 une bactérie  appelée Borrelia burgdorferi, transmise  par l'intermédiaire d'une
@@ -134,7 +137,6 @@ des périodes asymptomatiques.  Lorsqu'elle n'est pas traitée,  la maladie peut
 mettre  plusieurs années  à se  développer.  Les chercheurs  parlent de  maladie
 émergente, car les cas sont de plus en plus nombreux \cite{lyme.info}.
 
-* Description de la maladie et symptomatologie
 ** La phase primaire de la maladie de Lyme
 
 Elle  est caractérisée  par une  lésion cutanée : l'érythème  chronique migrant
@@ -151,8 +153,8 @@ progressive) et disparaît sans séquelle.
 
 Durant cette première  phase, vous pourrez constater des maux  de tête, poussées
 de fièvre, frissons, douleurs articulaires et  musculaires et de la fatigue.  Il
-est à noter que 20% des personnes  atteintes par cette maladie, l'ECM reste très
-discret,  disparait au  bout  d'un mois  et l'individu  n'aura  pas remarqué  sa
+est à noter que  pour 20% des personnes  atteintes par cette maladie, l'ECM reste très
+discret,  disparaît au  bout  d'un mois  et l'individu  n'aura  pas remarqué  sa
 présence. La  maladie de Lyme  passera totalement inaperçue et  aucun traitement
 n'aura été  pris.  Ces  cas peuvent  être graves, puisque  la maladie  pourra se
 compliquer durant la seconde phase.
@@ -162,8 +164,8 @@ compliquer durant la seconde phase.
 ** La phase secondaire de la maladie de Lyme
 
 Elle survient plusieurs semaines ou mois après la disparition de l'ECM mais peut
-révéler la maladie  (l'ECM étant passé inaperçu ou pouvant  manquer dans près de
-la moitié des cas). Cette phase se caractérise par :
+révéler la maladie si l'ECM est passé inaperçu.
+Cette phase se caractérise par :
     - Des manifestations  cutanées :  il s'agit de  lésions semblables  à celles
       observées lors de la phase primaire de la maladie ;
     - Des manifestations  articulaires :  douleurs articulaires  fréquentes. Les
@@ -171,7 +173,7 @@ la moitié des cas). Cette phase se caractérise par :
       touchent les grosses articulations (genou) ;
     - Des   manifestations  cardiaques   :   syncopes,  palpitations,   douleurs
       thoraciques et surtout troubles de la conduction auriculo-ventriculaire
- 
+
     - Des   manifestations   neurologiques   :   la   radiculite   hyper-algique
       (inflammation  très  douloureuse  des   racines  des  nerfs  innervant  le
       territoire  de  la  piqûre  de  tique). Le  nerf  facial  est  fréquemment
@@ -203,8 +205,8 @@ début de l'infection par :
 Tous les organes pourront être infectés  et s'étendront au niveau des nerfs, des
 yeux, des  articulations jusqu'à  contaminer le  cœur et la  rate. De  plus, des
 atrophies de  parcelles de  peau pourra être  constaté. Celle-ci  deviendra très
-fines, voire  transparentes et donnera  un effet  papier froissé tirant  sur les
-rouges  violets.  Les  conséquences  cardiaques pourront  aussi  être  grave  en
+fines, voire  transparente et donnera  un effet  papier froissé tirant  sur les
+rouges  violets.  Les  conséquences  cardiaques pourront  aussi  être  graves  en
 fonction des  infections.  A  noter que l'évolution  vers cette  troisième phase
 reste  extrêmement rare,  même  dans  le cas  où  l'individu  n'aura pris  aucun
 traitement.
@@ -213,51 +215,51 @@ traitement.
 ** Diagnostic de la maladie de Lyme
 
 Comme  nous l'avons  vu ci-dessus,  il est  très difficile  de diagnostiquer  la
- maladie de Lyme. Les symptômes peuvent  être très nombreux mais aussi indolores
+ Maladie de Lyme. Les symptômes peuvent  être très nombreux mais aussi indolores
  voire  presque «invisibles».  De  plus, il  est très  facile  de confondre  les
  symptômes décrits avec d'autres maladies.  Lorsque l'on constate ces symptômes,
  il est conseillé d'aller chez le  médecin rapidement et d'indiquer si vous avez
  été mordu par  une tique. Lorsque l'individu  ne sait pas s'il a  été piqué par
  une  tique,  il  pourra indiquer  au  médecin  s'il  a  été dans  des  endroits
- susceptibles de contenir des tiques; lors de balades en forêt par exemple.  Il
+ susceptibles de contenir des tiques, lors de balades en forêt par exemple.  Il
  est à  noter que les prises  de sang ne  permettent pas toujours de  valider la
  présence de  l'infection, surtout si  le patient  est toujours dans  le premier
  stade de la  maladie. Le médecin pourra aussi  effectuer un électrocardiogramme
- afin de  rechercher d'éventuels troubles auriculo-ventriculaire.  Dans ces cas,
+ afin de  rechercher d'éventuels troubles auriculo-ventriculaires.  Dans ces cas,
  une hospitalisation du  patient devra être effectuée.  Dans les  cas avancés de
- la  maladie  de  Lyme,  soit  à   partir  de  la  seconde  phase,  des  examens
+ la  Maladie  de  Lyme,  soit  à   partir  de  la  seconde  phase,  des  examens
  neurologiques seront  nécessaires. Ils  permettront de  mettre en  évidence une
- diminution  des  sensations,  des  forces  musculaires  ainsi  que  d'éventuels
- inflammation des  nerfs. En  cas de radiculite  (phase secondaire),  cet examen
+ diminution  des  sensations,  des  forces  musculaires  ainsi  que  d'éventuelles
+ inflammations des  nerfs. En  cas de radiculite  (phase secondaire),  cet examen
  peut être  normal ou mettre en  évidence une diminution de  la sensibilité, une
  diminution  de la  force  musculaire  ou une  abolition  des  réflexes dans  le
  territoire innervé par le nerf touché  par l'inflammation.  Le diagnostic de la
- maladie de Lyme  repose essentiellement sur les signes  cliniques observés.  La
+ Maladie de Lyme  repose essentiellement sur les signes  cliniques observés.  La
  numération formule sanguine  est normale le plus  souvent.  Diverses techniques
  de laboratoire  peuvent mettre en évidence  dans le sang des  anticorps témoins
  d'une   réponse   de  l'organisme   à   l'infection   bactérienne.  Les   tests
  immunologiques les plus récents sont à privilégier.
 
 En  cas  d'atteinte  neurologique,  la  présence  d'anticorps  dans  le  liquide
-céphalo-rachidien est un argument en faveur de la maladie de Lyme.
+céphalo-rachidien est un argument en faveur de la Maladie de Lyme.
 
 
 ** Traitement de la maladie de Lyme
 
 La prise d'antibiotiques est obligatoire pour soigner l'infection causée par les
-tiques. le traitement et les dosages pourront être modifiés en fonction du temps
+tiques. Le traitement et les dosages pourront être modifiés en fonction du temps
 passé  depuis  l'infection,  et  donc  de  la phase  de  la  maladie.  La  prise
-d'antibiotique devra  se faire sur une  durée minimale de deux  semaines pouvant
+d'antibiotiques devra  se faire sur une  durée minimale de deux  semaines pouvant
 aller jusqu'à trois  suivant les zones impactées par l'infection.   Dans les cas
 les plus avancées de la maladie, des antibiotiques pourront être administrés par
 voie intraveineuse sur  des durées pouvant être beaucoup plus  longues. Dans les
 cas d'hospitalisation, un corticoïde est souvent donné.
 
 C'est en délivrant une ordonnance d'antibiotiques souvent sur 21 jours que nous
-savons que c'est un traitement contre la maladie de Lyme. Au fil des années nous
+comprenons que c'est un traitement contre la Maladie de Lyme. Au fil des années nous
 constatons au sein de l'officine de plus en plus de traitements. Nous avons même
-eu un traitement l'an dernier au mois de décembre ... l'EMC était bien présent
-et la personne ne se souvenait pas d'avoir enlevé une tique.
+eu un cas l'an dernier au mois de décembre ... l'EMC était bien présent
+et la personne ne se souvenait pas d'avoir été mordu par une tique.
 
 
 ** Pertinence du sujet par rapport à ma région géographique
@@ -289,7 +291,7 @@ maladie  de  Lyme, telle  que  le  Réseau  Sentinelles,  le Centre  National  d
 Référence des Borrélia (CNR), l'InVS, la Mutualité Sociale Agricole (MSA), entre
 1986 et  2012 ont permis  d'établir des taux  d'incidence au niveau  national et
 régional. Elles corroborent l'étude  Alsa(ce) tique : le réseau Sentinelles
-recense pour la période 2012-2015 un taux de 128 cas / 10000 en Alsace.\\
+recense pour la période 2012-2015 un taux de 128 cas pour 100 000 habitants en Alsace.\\
 
 
 
@@ -317,14 +319,14 @@ particulièrement concernés.
 
 ** Prévention de la maladie de Lyme
 
-La maladie  de Lyme est  transmise à travers la  piqûre, ou plus  précisément la
-morsure,  de tiques.  Elle est  transmissible chez  l'Homme mais  aussi chez  de
+La Maladie  de Lyme est  transmise à travers la  piqûre, ou plus  précisément la
+morsure de tiques.  Elle est  transmissible chez  l'Homme mais  aussi chez  de
 nombreux animaux.  La prévention reste la première arme pour lutter contre cette
 maladie.  Des moyens simples existent :
     - porter des vêtements couvrants et clairs (afin de repérer rapidement les tiques), serrés au cou, aux poignets et aux chevilles (rentrer le bas du pantalon dans les chaussettes ou mettre des guêtres), des chaussures fermées et des gants clairs en cas de travail manuel ; 
     - vaporiser  ses vêtements  et ses  chaussures de  produits anti-tiques  (en
       respectant  les   contre-indications  pour  les  enfants   et  les  femmes
-      enceintes) ;
+      enceintes) ; 
     - utiliser un produit anti-tiques pour vos chiens et chats ;
     - emprunter si possible les sentiers et marcher au milieu des chemins ; 
     - éviter les contacts avec les herbes, les broussailles et les branches basses ; 
@@ -349,51 +351,47 @@ Ce qu'il ne faut surtout pas faire (risque de régurgitation des agents infectie
 
 On l'aura bien compris, la prévention est la première arme pour lutter contre la maladie.
 
+
+\newpage
+
 * Choix des Huiles Essentielles
 
 ** Définition d'un produit insecticide/insectifuge
 Une plante,  un produit ou  une substance est  insectifuge si elle  repousse les
 insectes chez l'Homme ou l'animal de  compagnie ou d'élevage.  On parle aussi de
-répulsif pour ces produits qui – par extension- désignent aussi des molécules ou
-des produits commerciaux. Un produit insecticide tue les insectes,
+répulsif  pour ces  produits  qui  --- par  extension  ---  désignent aussi  des
+molécules ou des produits commerciaux.  Un produit insecticide tue les insectes,
 leurs larves  et/ou leurs oeufs  tandis qu'un produit insectifuge  les repousse.
 Les insecticides font partie des pesticides, eux-mêmes inclus dans le groupe des
-biocides,  tous règlementés  en  Europe. Le  terme  générique /insecticide/  est
-utilisé  pour citer  les produits  pesticides, les  produits répulsifs  agissant
-contre des arthopodes spécifiques : les insectes (moustiques, mouches, punaises,
-poux, puces, taons, fourmis), les arachnides (araignées, scorpion), les acariens
-(tiques , aoûtats, ...).
+biocides, tous règlementés en Europe.
 
 ** Mécanisme d'action
 Ces produits  agissent par  contact ou  par pénétration  dans l'animal  (action
 systémique) et parfois par les deux mécanismes  d'action.  Il est à noter que la
 tique n'a pas de perception visuelle contrairement à d'autres arthropodes. Elles
 sont équipées de récepteurs  situés sur les pattes et non  pas dans les antennes
-comme c'est  souvent le cas.  Sans vision elles  s'orientent vers leurs  hôtes ,
+comme c'est  souvent le cas.  Sans vision elles  s'orientent vers leurs  hôtes,
 stimulées par leur  odeur. La sensibilité à la température  n'intervient pas car
 elles piquent aussi des animaux à sang froids (serpents, lézards etc...).\\
 
-
-Nous  nous  intéresserons   donc  aux  huiles  essentielles   ayant  une  action
-insecticide et  insectifuge. Dans  ce mémoire,  j'ai cherché  spécifiquement des
-études prouvant l'efficacité  des huiles essentielles dans  ces indications pour
-les tiques.
 
 
 
 
 ** Les familles biochimiques
 
-Toutes ces familles biochimiques sont bactéricides (anti-bactérien, anti-viral,
-anti-fongique, anti-parasitaire), larvicides, acaricides et répulsives.
+Afin d'établir nos formules nous nous sommes intéressées aux huiles essentielles
+ayant  une  action  anti-parasitaire.  Dans   cette  section  nous  listons  les
+différentes familles biochimiques  et nous citons les  travaux scientifiques s'y
+rapportant et relatifs au sujet de ce mémoire. 
 
-*** Les monoterpenols
 
-#+CAPTION: Les monoterpenols
+*** Les monoterpénols
+
+
 | *Molécules*      | *Huiles essentielles*                                |
 | *chimiques*      |                                                      |
 |------------------+------------------------------------------------------|
-|                  |                                                      |
 | Linalol          | Bois de rose  (/Aniba rosaeodora/)                   |
 |                  | Thym ct linalol (/Thymus vulgaris ct linalol/)       |
 |                  | Bois de Hô (/Cinnamomum camphora ct linalol/)        |
@@ -424,7 +422,12 @@ anti-fongique, anti-parasitaire), larvicides, acaricides et répulsives.
 |                  | Inule odorante (/Inula graveloens/)                  |
 |------------------+------------------------------------------------------|
 
+**** Contre-indications
+Déconseillé chez  la femme enceinte les  trois premiers mois de  la grossesse et
+attention  à la  toxicité du  menthol chez le  jeune enfant.  Sinon, très  peu de
+toxicité.\\
 
+**** Articles scientifiques
 L'étude de  Ferreira et al  \cite{Ferreira2017} vise à comparer  l'efficacité du
 N-diéthyl-3-méthylbenzamide (DEET),  un répulsif standard,  au \beta-citronellol
 dans un  dosage biologique par boîte  de Pétri. Un demi-cercle  de papier filtre
@@ -438,11 +441,10 @@ d'un plateau et leur emplacement a été évalué 5, 10 et 30 minutes après le 
 du  test.  En  conséquence, le  temps  n’a eu  aucun effet  significatif sur  la
 réponse  de  répulsion  des  tiques  exposées  aux  deux  composés  et  à  leurs
 concentrations. La réponse  répulsive augmente en fonction  de l'augmentation de
-la concentration.   De plus, les  résultats indiquent  que la tique  A. sculptum
-était plus sensible  aux composés testés et que  le \beta-citronellol présentait
-une efficacité supérieure à celle du DEET.\\
+la concentration.   De plus, les  résultats indiquent que  le \beta-citronellol 
+présentait une efficacité supérieure à celle du DEET.\\
 
-FIXME  - Jeyabalan  et al  (2003) [26]  ont étudié  l'effet d'HE  de Pelargonium
+Jeyabalan  et al \cite{Jeyabalan2003} ont étudié  l'effet d'HE  de Pelargonium
 citrosa sur Anopheles stephensi.  Des malformations apparaissent, et la pupaison
 est incomplète dans beaucoup de cas.  Toutes les concentrations en P.citrosa ont
 permis  la   mise  en  évidence   d'une  activité  repellent  sur   l'adulte  de
@@ -453,50 +455,33 @@ concentration,  les repellents  avaient des  effets insecticides.   Enfin, cette
 étude  montre  une diminution  du  nombre  de  piqûre  sous l'effet  de  l'huile
 essentielle.\\
 
-Dans  \cite{Benelli2017}   cinq  huiles  essentielles,  à   savoir  Pinus  nigra
-var.  italica (Pinaceae),  Hyssopus  officinalis  (Lamiaceae), Satureja  montana
-(Lamiaceae),   Aloysia  citriodora   (Verbenaceae)  et   Pelargonium  graveolens
-(Geraniaceae)  ont été  étudiés sur  le  diptère Culex  quinquefasciatus. Il  en
-ressort que c'est le mélange Satureja montana et Aloysia citriodora qui présente
-la meilleure synergie et donc la meilleure efficacité.\\
 
 
-Iori et al  \cite{Iori2005} ont étudié l'effet acaricide  de l'huile essentielle
-de  Melaleuca alternifolia  (Tea Tree)  sur les  nymphes d'Ixodes  ricinus.  Des
-expériences ont  été réalisées à différentes  doses (4, 6,  8 et 10 \mu{}l  ) et
-pour  différents temps  d'exposition (30,  60, 90  et 120  min).  Des  résultats
-intéressants ont  été obtenus après une  exposition de 90 minutes  avec un effet
-renforcé lorsque la dose était augmentée à 10 \mu{}l.
+*** Les phénols
 
 
-
-
-**** Contre-indications
-Déconseillé chez  la femme enceinte les  trois premiers mois de  la grossesse et
-attention  à la  toxicité du  menthol chezle  jeune enfant.  Sinon, très  peu de
-toxicité.
-
-
-
-*** Les phenols
-
-    #+CAPTION: Les phenols
 | *Molécules chimiques* | *Huiles essentielles*                              |
 |-----------------------+----------------------------------------------------|
 | Thymol                | Thym ct thymol (/Thymus vulgaris ct thymol/)       |
 |-----------------------+----------------------------------------------------|
-| Carvacrol             | Origan compact (/Origanum compaxtum/)              |
-|                       | Sariette des montagnes (/satureja montana/)        |
+| Carvacrol             | Origan compact (/Origanum compactum/)              |
+|                       | Sariette des montagnes (/Satureja montana/)        |
 |                       | Thym ct carvacrol (/Thymus vulgaris ct carvacrol/) |
-|                       | Serpolet (/thymus serpyllum/)                      |
+|                       | Serpolet (/Thymus serpyllum/)                      |
 |-----------------------+----------------------------------------------------|
-| Eugénol               | Giroflier (clou) (/Eugnenia caryphyllus/)          |
+| Eugénol               | Giroflier (clou) (/Eugenia caryophyllus/)          |
 |                       | Cannelle de Ceylan (/Cinnamomum zeylannicum/)      |
 |-----------------------+----------------------------------------------------|
 
+**** Contre-indications
+Ces huiles présentent une dermo-causticité ( ne pas appliquer pure sur les
+muqueuses ou la peau) et présentent une hépato-toxicité au long cours.
+Elles ont contre-indiquées chez la femme enceinte et l'enfant de moins de 7 ans
+(Eugénol).
 
+**** Articles scientifiques
 L'étude publiée par Tabari et al. \cite{Tabari2017} étudie l'activité repellente
-d'une selection  de monoterpènes (thymol,  carvacrol et linalol)  contre Ixodes
+d'une selection  de molécules (thymol,  carvacrol et linalol)  contre Ixodes
 ricinus.
 
 Ils ont  évalué les effets ovicides,  larvicides et répulsifs contre  I. ricinus
@@ -519,47 +504,25 @@ populations de  I. ricinus  et la  propagation des  maladies transmises  par les
 tiques.\\
 
 
-Viviane  Zeringóta, 2013  a étudié  l'activité  répulsive de  l'eugénol sur  des
-larves  de  Rhipicephalus microplus  et  de  Dermacentor  nitens dans  un  essai
-biologique. Les solutions ont été utilisées  à des concentrations de 10, 20, 30,
-40 et 50 \mu{}l / ml. Pour les larves de D. nitens, la répulsion était supérieure
-à 80%  pendant une période  allant jusqu’à  5 h aux  concentrations de 40  et 50
-\mu{}l /  ml. Pour les  larves de R.   microplus, les quatre  concentrations les
-plus élevées ont produit des niveaux de  répulsion supérieures à 80% pendant 9 h
-au  plus. Par  conséquent,  l'eugénol  a une  activité  répulsive  sur le  stade
-larvaire de ces  deux espèces de tiques,  les larves de R.  microplus étant plus
-sensibles.
+Viviane  Zeringóta   \cite{Zeringota2013}  a  étudié  l'activité   répulsive  de
+l'eugénol sur  des larves  de Rhipicephalus microplus  et de  Dermacentor nitens
+dans un essai  biologique. Les solutions ont été utilisées  à des concentrations
+de 10, 20, 30, 40 et 50 \mu{}l /  ml. Pour les larves de D. nitens, la répulsion
+était supérieure à 80% pendant une période allant jusqu’à 5 h aux concentrations
+de  40  et 50  \mu{}l  /  ml.  Pour les  larves  de  R.  microplus,  les  quatre
+concentrations les plus élevées ont produit des niveaux de répulsion supérieures
+à 80% pendant  9 h au plus.  Par conséquent, l'eugénol a  une activité répulsive
+sur le stade larvaire de ces deux espèces de tiques, les larves de R.  microplus
+étant plus sensibles.
 
 
 
-Le travail présenté dans \cite{Meng2015} étudie  l'efficacité du DEET et de huit
-huiles essentielles disponibles dans le commerce (origan, clou de girofle, thym,
-vétiver, bois de  santal, cannelle, bois de cèdre et  menthe poivrée). Elles ont
-été  évalués pour  leur pouvoir  de  répulsion contre  les nymphes  de la  tique
-Amblyomma americanum. La répulsion de chaque  huile essentielle a été comparée à
-celle du N-diéthyl-3-méthyl benzamide (DEET).  La concentration efficace de DEET
-qui repousse 50% des tiques (CE50) a été  estimée à 0,02 mg / cm2, tandis que la
-CE50 des huiles essentielles  se situe entre 0,113 et 0,297 mg  / cm2. Selon les
-estimations de  la CE 50,  l'huile essentielle  d'origan était la  plus efficace
-parmi  toutes les  huiles testées,  suivie des  huiles de  girofle, de  thym, de
-vétiver, de bois de santal, de cannelle, de cèdre et de menthe poivrée.\\
 
-
-L'huile  essentielle  d'origan, Origanum  onites  a  été testée  dans  l'article
-\cite{Carroll2017}, qui  décrit des essais  biologiques en laboratoire  visant à
-déterminer son activité  répulsive sur les tiques Amblyomma  americanum et Aedes
-aegypti. Les composés  les plus abondants de l' HE  d'Origanum onites étaient le
-carvacrol  (75,70%),  le  linalol  (9,0%),  le p-cymène  (4,33%)  et  le  thymol
-(1,9%). À  une concentration de  0,413 mg d'huile /  cm2 de papier  filtre, l'HE
-d'Origanum onites repoussait 100% des tiques testées et à 0,103 mg d'huile / cm2
-de papier filtre, 66,7% des tiques étaient  repoussées. À 0,075 mg d'huile / cm2
-de papier filtre,  le thymol a repoussé  66,7% des tiques, contre  28,7% pour le
-carvacrol à la même concentration.
 
 
 *** Les aldéhydes aromatiques
 
-#+CAPTION: Les aldéhydes aromatiques
+
 | *Molécules chimiques* | *Huiles essentielles*                        |
 |-----------------------+----------------------------------------------|
 | Cinnamaldéhyde        | Cannelle de Ceylan (/Cinnamomum zeylanicum/) |
@@ -567,32 +530,33 @@ carvacrol à la même concentration.
 |                       | Cannelle du Vietnam (/Cinnamomum laureirii/) |
 |-----------------------+----------------------------------------------|
 
-Contre indications : dermocausticité, interdit chez la femme enceinte,
-déconseillé chez l'enfant de moins de 7 ans.
+**** Contre-indications 
+Elles présentent une dermocausticité,sont interdites chez la femme enceinte,
+déconseillées chez l'enfant de moins de 7 ans.
+
 
 *** Les aldéhydes terpéniques
 
-#+CAPTION: Les aldéhydes terpéniques
 | *Molécules chimiques* | *Huiles essentielles*                          |
 |-----------------------+------------------------------------------------|
 | Citrals               | Lemongrass (/Cymbopogon flexuosus/)            |
 |                       | Verveine citronnée (/Lippia citriodora/)       |
-|                       | Litsee citronnée(/Litsea citrata/)             |
+|                       | Litsée citronnée(/Litsea citrata/)             |
 |                       |                                                |
 | Citronnellal          | Eucalyptus citronné (/Eucalyptus citriodora/)  |
 |                       | Citronnelle de Java (/Cymbopogon winterianus/) |
 |-----------------------+------------------------------------------------|
 
-*Contre indications* : tussigènes sur certains patients sensibles.\\
-
+**** Contre-indications 
+Elles sont tussigènes sur certains patients sensibles en diffusion. 
 Cette irritation  varie selon les  HE, elle dépend du  type d'aldéhyde et  de sa
 concentration dans l'HE.   Cette irritation impose une dilution à  50 % dans une
 huile végétale  pour les adultes.   Pour les enfants et  les patients à  la peau
 très sensible, la dilution sera de 10 %.\\
 
-
-L'étude  de Trigg  \cite{Trigg1996a},  a porté  sur  l'HE d'Eucalyptus  citronné
-contenant le principal ingrédient actif,  le p-ménhane-3,8-diol. Il a été évalué
+**** Articles scientifiques
+L'étude  de Trigg  \cite{Trigg1996a}  a porté  sur  l'HE d'Eucalyptus  citronné
+contenant le principal ingrédient actif,  le p-menthane-3,8-diol. Il a été évalué
 sur le terrain par  rapport au DEET. En Tanzanie, 3 formulations  de PMD ont été
 testées contre  Anopheles gambiae  et An. funestus.   Les répulsifs  offrent une
 protection complète contre  les morsures de 6  à 7,75 h, en fonction  du type de
@@ -601,12 +565,10 @@ DEET.
 
 *** Les cétones
 
-#+CAPTION: Les cétones
+
 | *Molécules chimiques* | *Huiles essentielles*                                |
 |-----------------------+------------------------------------------------------|
 | Verbénone             | Romarin ct verbénone (/Rosmarinus off ct verbénone/) |
-|                       |                                                      |
-|                       |                                                      |
 | Menthone              | Menthe poivrée (/Mentha x piperita/)                 |
 | Bornéone              | Romarin ct camphre (/Rosmarinus off ct camphre/)     |
 | Thuyone               | Sauge officinale (/Salvia officinalis/)              |
@@ -615,76 +577,61 @@ DEET.
 |-----------------------+------------------------------------------------------|
 
 
-*Contre indications*: les cétones sont dures à manipuler du fait de leur
-neurotoxicité et leur action abortive.
-On évitera leur emploi chez la femme enceinte (et allaitante) et chez l'enfant
-ainsi que chez le sujet âgé neurologiquement fragile (épilépsie)
-L'usage prolongé est interdit chez les enfants de moins de 6 ans pour la plupart (FIXME)
+**** Contre-indications
+Les cétones sont dures à manipuler du  fait de leur neurotoxicité et leur action
+abortive.  On évitera leur emploi chez la femme enceinte (et allaitante) et chez
+l'enfant   ainsi    que   chez    le   sujet   âgé    neurologiquement   fragile
+(épilepsie).L'usage prolongé  est interdit chez  les enfants  de moins de  6 ans
+pour la plupart des cétones.
+
 
 *** Les oxydes terpéniques
 
-#+CAPTION: Les oxydes terpéniques
 | *Molécules chimiques*     | *Huiles essentielles*                                          |
 |---------------------------+----------------------------------------------------------------|
 | 1,8 Cinéole ( Eucalyptol) | Ravintsara (/Cinnamomum camphora ct cinéole/)                  |
 |                           | Myrte verte ou Myrte ct cinéole (/Myrtus communis ct cinéole/) |
 |                           | Eucalyptus radié (/ Eucalyptus radiata spp radiata/)           |
-|                           | Eucalyptus globuleux (/Euvalyptus globulus/)                   |
-|                           | Niaouli (/Mélaleuca quiquinerva/)                              |
+|                           | Eucalyptus globuleux (/Eucalyptus globulus/)                   |
+|                           | Niaouli (/Mélaleuca quiquinervia/)                             |
 |                           | Laurier noble (/Laurus nobilis/)                               |
-|                           | Romarin ct cinéole (/ Rosmarinus ct cinéole )                  |
+|                           | Romarin ct cinéole (/ Rosmarinus off ct cinéole )              |
 | Linaloloxyde              | Hysope couchée   (/Hyssopus officinalis var. decumbens/)       |
 |---------------------------+----------------------------------------------------------------|
 
 Nous ne parlerons pas ici de l'ascaridole qui a un effet antiparasitaire certain
 mais qui est neurotoxique.
 
-*Contre indications* : Le 1,8 cinéole pourra être assèchant donc contre indiqué
-chez l'asthmatique. Il faudra l'utiliser avec prudence chez es épileptiques car
+**** Contre-indications 
+ Le 1,8 cinéole pourra être assèchant donc contre indiqué
+chez l'asthmatique. Il faudra l'utiliser avec prudence chez les épileptiques car
 il diminue le seuil épileptogène.
 
 
-Dans l'étude  \cite{El-Seedi2012} portant  sur l'efficacité de  répulsifs contre
-les  tiques   d’origine  végétale,  les   auteurs  étudié  l’effet   des  huiles
-essentielles  de quatre  plantes médicinales  et  culinaires de  la famille  des
-Lamiaceae sur  les nymphes de la  tique Ixodes ricinus. Les  huiles essentielles
-des  feuilles sèches  de  Rosmarinus officinalis  (Romarin),  de Mentha  spicata
-(Menthe  verte),   d'Origanum  majorana  (Majoralaine)  et   d'Ocimum  basilicum
-(Basilic) ont été isolée par distillation  à la vapeur avec une concentration en
-huile de 15 \mu{}g / cm2. Elles ont  été testées contre les tiques dans un essai
-biologique  en  laboratoire.  Les  huiles  de  R.  officinalis,  M.  spicata  et
-O. majorana ont montré une forte répulsion contre les tiques 100, 93,2 et 84,3%,
-respectivement,   alors   que   O.   basilicum   n'a   montré   que   64,5%   de
-répulsion.  Lorsqu’ils   ont  été   testés  sur  le   terrain,  les   huiles  de
-R. officinalis  et M. spicata ont  montré une répulsion  de 68,3 et 59,4%  à une
-concentration de  6,5 \mu{}g /  cm2 sur les tissus  d’essai. Les huiles  ont été
-analysées par spectrométrie de masse par chromatographie en phase gazeuse et les
-principaux composés  des huiles les  plus répulsives étaient le  1,8-cinéole, le
-camphre, le linalol, le 4-terpinéol, le bornéol et le carvone.
 
 
 *** Les phénols méthyl-éthers
 
-#+CAPTION: Les phénols méthyl-éthers
+
+
 | *Molécules chimiques*  | *Huiles essentielles*                 |
 |------------------------+---------------------------------------|
-| Chavicol méthyl-éthers | Basilic exotique (/Ocimum basilicum/) |
-| (estragole)            | Estragon (/Artémesia dranunculus/)    |
+| Chavicol méthyl-éther  | Basilic exotique (/Ocimum basilicum/) |
+| (estragole)            | Estragon (/Artemésia dranunculus/)    |
 |                        |                                       |
 | Eugénol méthyl-éther   | Laurier noble (/Laurus nobilis/)      |
 |------------------------+---------------------------------------|
 
-*Contre indications*: du fait de sa dermocausticité il faudra diluer à 50 % cette
-HE pour les personnes sensibles.
-L'utilisation prolongée des huiles essentielles contenant ces molécules peut
-provoquer une toxicité hépatique due aux métabolites.
-Ces huiles sont déconseillées chez la femme enceinte.
-
+**** Contre indications
+Du  fait de  sa  dermocausticité il  faudra  diluer à  50 %  cette  HE pour  les
+personnes sensibles.  L'utilisation prolongée  des huiles essentielles contenant
+ces molécules  peut provoquer une  toxicité hépatique due aux  métabolites.  Ces
+huiles sont déconseillées chez la femme enceinte.
 
 
 *** Les sesquiterpènes
 
-#+CAPTION: Les sesquiterpènes
+
 | *Molécules chimiques* | *Huiles essentielles*                          |
 |-----------------------+------------------------------------------------|
 | Germacrène            | Ylang Ylang (/Cananga odorata/)                |
@@ -696,87 +643,142 @@ Ces huiles sont déconseillées chez la femme enceinte.
 |                       |                                                |
 
 
-*Contre indications* : peu de contre indications, attention à l'utilisation avec
+**** Contre-indications 
+Peu de contre indications, attention à l'utilisation avec
 les cétones car elles augmentent l'action abortive des cétones.\\
-
-
-L'effet répulsif des  huiles essentielles des têtes de fleurs  de la tanaisie de
-la plante aromatique  Tanacetum vulgare L. (Asteraceae), originaire  de Suède, a
-été   testé   sur   des   nymphes   de  la   tique   commune,   Ixodes   ricinus
-\cite{Trigg1996a}.  Les  principales  substances volatiles  détectées  dans  les
-huiles de  T.  vulgare recueillies  à Uppsala étaient l'\alpha-pinène  (27%), le
-\beta-pinène        (11%),        le        pinocamphone        (11%),        le
-1,3,3-triméthylcyclohex-1-énène-4-carboxaldéhyde.  (11%)  et 1,8-cinéole  (10%).
-Dans l'échantillon recueilli  à Stockholm, les composants  principaux étaient la
-\beta-thujone (39%) et  le camphre (23%), suivis de  l'\alpha{}-thujone (11%) et
-du 1,8-cinéole (8%).  Lorsque les constituants des huiles  essentielles tels que
-l'\alpha{}-terpinéol, le 4-terpinéol, l'\alpha + \beta{}-thujone, le 1,8-cinéol,
-le verbénol et le verbénone ont été testés séparément la répulsion a été de 64 %
-à 72 %.
- 
 
 *** Les monoterpènes
 
-#+CAPTION:Les monotérpènes
 | *Molécules chimiques* | *Huiles essentielles*                         |
-|                       |                                               |
 |-----------------------+-----------------------------------------------|
 | alpha pinène          | Pin sylvestre (/Pinus sylvestris/)            |
 |                       | Sapin baumier (/Abies balsamea/)              |
 | Limonène              | Orange, mandarine, citron                     |
-|                       | essences de zeste                             |
+|                       | essences de zeste de citrus                   |
 | paracymène            | Sarriette des montagnes (/Satureja montana/)  |
 |                       | Thymus vulgaris ct paracymène ( Thym vulgaire |
-|                       | ce paracymène                                 |
+|                       | ct paracymène                                 |
 
 
-*Contre indications* : les terpènes peuvent provoquer des irritations au niveau de
+**** Contre indications
+ Les terpènes peuvent provoquer des irritations au niveau de
 la peau. Elles sont contre indiquées chez l'enfant de moins de 7 ans.
-
+Une certaine nephrotoxicité des HE à terpènes peut exister notamment chez
+l'insuffisant rénal ( pas d'utilisation sur une longue période).
 
 *** Les lactones
 
-#+CAPTION: Les lactones
 | *Molécules chimiques* | *Huiles essentielles*               |
-|                       |                                     |
 |-----------------------+-------------------------------------|
 | Alantolactone         | Inule odorante (/Inula graveolens/) |
 |                       |                                     |
-*Contre indications* : Elles ont allergisantes par vois cutanée et à utiliser avce
+**** Contre indications
+ Elles sont allergisantes par voie cutanée et à utiliser avec
 prudence chez les personnes sensibles et les enfants de moins de 7 ans.
-
+Il existe une neuro-toxicité certaine comparable aux cétones par voie orale.
 
 *** Les coumarines
 
-#+CAPTION: Les coumarines
 | *Molécules chimiques* | *Huiles essentielles*                            |
-|                       |                                                  |
 |-----------------------+--------------------------------------------------|
 | Bergaptène            | Bergamote (/Citrus aurantium spp bergamia/)      |
 |                       |                                                  |
 | Visnagine             | Khella (/Ammi visnaga/)                          |
 | Limettine             | Citronnier (/Citrus lémon/)                      |
-|
-*Contre indications* : Elles sont photosensibilisantes (avec un temps minimum de
-6h avant l'exposition si prise par vois orale ou locale). Il faut faire
+|                       | Bergamote zeste (/Citrus aurantium spp bergamia) |
+**** Contre indications
+ Elles sont photosensibilisantes (avec un temps minimum de
+6h avant l'exposition si prise par voie orale ou locale). Il faut faire
 attention avec les personnes sous anti coagulants.
 
 
 *** Les phtalides
-#+CAPTION: Les phtalides
+
 | *Molécules chimiques* | *Huiles essentielles*             |
-|                       |                                   |
 |-----------------------+-----------------------------------|
 | Lingustilide          | Livèche (/Levisticum officinale/) |
 |                       |                                   |
-*Contre indications* : aucune toxicité n'a été étudiée à ce jour.
+**** Contre indications
+Peu d'études à ce jour montrent une éventuelle toxicité.
 
 
 
 
 
-*** Etudes intéressantes
+*** Articles scientifiques portant sur plusieurs HE
 
+Iori et al  \cite{Iori2005} ont étudié l'effet acaricide  de l'huile essentielle
+de  Melaleuca alternifolia  (Tea Tree)  sur les  nymphes d'Ixodes  ricinus.  Des
+expériences ont  été réalisées à différentes  doses (4, 6,  8 et 10 \mu{}l  ) et
+pour  différents temps  d'exposition (30,  60, 90  et 120  min).  Des  résultats
+intéressants ont  été obtenus après une  exposition de 90 minutes  avec un effet
+renforcé lorsque la dose était augmentée à 10 \mu{}l.\\
+
+Benelli  et al  étudient  dans \cite{Benelli2017}  cinq  huiles essentielles,  à
+savoir Pinus  nigra var.  italica (Pinaceae),  Hyssopus officinalis (Lamiaceae),
+Satureja montana  (Lamiaceae), Aloysia  citriodora (Verbenaceae)  et Pelargonium
+graveolens   (Geraniaceae)    ont   été    étudiés   sur   le    diptère   Culex
+quinquefasciatus. Il en ressort que c'est le mélange Satureja montana et Aloysia
+citriodora qui présente la meilleure synergie et donc la meilleure efficacité.\\
+
+Le travail présenté  par Meng et al \cite{Meng2015} étudie  l'efficacité du DEET
+et de  huit huiles essentielles  disponibles dans  le commerce (origan,  clou de
+girofle,  thym, vétiver,  bois  de santal,  cannelle, bois  de  cèdre et  menthe
+poivrée).  Elles ont  été  évalués pour  leur pouvoir  de  répulsion contre  les
+nymphes  de  la  tique  Amblyomma  americanum.  La  répulsion  de  chaque  huile
+essentielle a été  comparée à celle du N-diéthyl-3-méthyl  benzamide (DEET).  La
+concentration efficace de DEET qui repousse  50% des tiques (CE50) a été estimée
+à 0,02 mg / cm2, tandis que la CE50 des huiles essentielles se situe entre 0,113
+et  0,297 mg  / cm2.  Selon les  estimations de  la CE  50, l'huile  essentielle
+d'origan était  la plus  efficace parmi  toutes les  huiles testées,  suivie des
+huiles de girofle, de thym, de vétiver, de bois de santal, de cannelle, de cèdre
+et de menthe poivrée.\\
+
+
+L'huile essentielle  d'origan, Origanum onites  a été  testée par Carroll  et al
+dans  l'article  \cite{Carroll2017},  qui   décrit  des  essais  biologiques  en
+laboratoire visant à déterminer son  activité répulsive sur les tiques Amblyomma
+americanum et Aedes aegypti. Les composés les plus abondants de l' HE d'Origanum
+onites étaient le carvacrol (75,70%), le  linalol (9,0%), le p-cymène (4,33%) et
+le  thymol (1,9%).  À une  concentration de  0,413 mg  d'huile /  cm2 de  papier
+filtre, l'HE d'Origanum onites repoussait 100%  des tiques testées et à 0,103 mg
+d'huile / cm2 de papier filtre, 66,7%  des tiques étaient repoussées. À 0,075 mg
+d'huile / cm2  de papier filtre, le  thymol a repoussé 66,7%  des tiques, contre
+28,7% pour le carvacrol à la même concentration.\\
+
+
+Dans l'étude de  El-Seedi et al \cite{El-Seedi2012} portant  sur l'efficacité de
+ répulsifs d’origine végétale contre les tiques , les auteurs étudié l’effet des
+ huiles essentielles de  quatre plantes médicinales et culinaires  de la famille
+ des  Lamiaceae  sur  les  nymphes  de  la  tique  Ixodes  ricinus.  Les  huiles
+ essentielles des feuilles sèches de Rosmarinus officinalis (Romarin), de Mentha
+ spicata (Menthe verte), d'Origanum majorana (Majoralaine) et d'Ocimum basilicum
+ (Basilic) ont été isolée par distillation à la vapeur avec une concentration en
+ huile de 15 \mu{}g / cm2. Elles ont été testées contre les tiques dans un essai
+ biologique  en laboratoire.   Les huiles  de  R.  officinalis,  M.  spicata  et
+ O. majorana ont montré  une forte répulsion contre les tiques  : 100%, 93,2% et
+ 84,3%,  respectivement,  alors  que  O.   basilicum n'a  montré  que  64,5%  de
+ répulsion.   Lorsqu’ils  ont été  testés  sur  le  terrain,  les huiles  de  R.
+ officinalis et  M. spicata  ont montré une  répulsion de 68,3%  et 59,4%  à une
+ concentration de 6,5 \mu{}g  / cm2 sur les tissus d’essai.   Les huiles ont été
+ analysées par  spectrométrie de masse  par chromatographie en phase  gazeuse et
+ les principaux composés des huiles  les plus répulsives étaient le 1,8-cinéole,
+ le camphre, le linalol, le 4-terpinéol, le bornéol et le carvone.\\
+
+
+L'effet répulsif des  huiles essentielles des têtes de fleurs  de la tanaisie de
+la plante aromatique  Tanacetum vulgare L. (Asteraceae), originaire  de Suède, a
+été testé  sur des nymphes  de la tique commune,  Ixodes ricinus (Palsson  et al
+\cite{Palsson2008}).  Les  principales substances  volatiles détectées  dans les
+huiles de  T.  vulgare recueillies  à Uppsala étaient l'\alpha-pinène  (27%), le
+\beta-pinène        (11%),        le        pinocamphone        (11%),        le
+1,3,3-triméthylcyclohex-1-énène-4-carboxaldéhyde.   (11%) et  1,8-cinéole (10%).
+Dans l'échantillon recueilli  à Stockholm, les composants  principaux étaient la
+\beta-thujone (39%) et  le camphre (23%), suivis de  l'\alpha{}-thujone (11%) et
+du 1,8-cinéole (8%).  Lorsque les  constituants des huiles essentielles tels que
+l'\alpha{}-terpinéol, le 4-terpinéol, l'\alpha + \beta{}-thujone, le 1,8-cinéol,
+le verbénol et le verbénone ont été testés séparément la répulsion a été de 64 %
+à 72 %.\\
 
 Katarína  Štefanidesová et  al \cite{Stefanidesova2017} ont  étudié onze  huiles
 essentielles  sur les  tiques  Dermacentor  reticulatus,  à  savoir le  basilic
@@ -787,103 +789,58 @@ majorana), la menthe poivrée (Mentha piperita), la menthe verte (Mentha spicata
 et le thym (Thymus vulgaris). Ils ont été  soumis à des tests de résistance à la
 répulsion contre les tiques adultes de  D. reticulatus à des concentrations de 1
 et  3%. Les  huiles essentielles  de clou  de girofle,  de serpolet  et de  thym
-étaient les plus efficaces: 83, 82 et 68% des tiques ont été repoussées une fois
-diluées  à  3%,  respectivement.   Le  mélange de  serpolet  et  de  citronnelle
+étaient les plus efficaces: 83%, 82% et 68% des tiques ont été repoussées une fois
+diluées  à  3%  respectivement.   Le  mélange de  serpolet  et  de  citronnelle
 contenant 1,5% de chacun a montré une répulsion plus élevée (91%) que les huiles
 essentielles individuelles à la concentration de 3%.\\
 
 
 
-Dans l'étude  \cite{El-Seedi2012} portant  sur l'efficacité de  répulsifs contre
-les  tiques   d’origine  végétale,  les   auteurs  étudié  l’effet   des  huiles
-essentielles  de quatre  plantes médicinales  et  culinaires de  la famille  des
-Lamiaceae sur  les nymphes de la  tique Ixodes ricinus. Les  huiles essentielles
-des  feuilles sèches  de  Rosmarinus officinalis  (Romarin),  de Mentha  spicata
-(Menthe  verte),   d'Origanum  majorana  (Majoralaine)  et   d'Ocimum  basilicum
-(Basilic) ont été isolée par distillation  à la vapeur avec une concentration en
-huile de 15 microg / cm2. Elles ont  été testées contre les tiques dans un essai
-biologique  en  laboratoire.  Les  huiles  de  R.  officinalis,  M.  spicata  et
-O. majorana ont montré une forte répulsion contre les tiques 100, 93,2 et 84,3%,
-respectivement,   alors   que   O.   basilicum   n'a   montré   que   64,5%   de
-répulsion.  Lorsqu’ils   ont  été   testés  sur  le   terrain,  les   huiles  de
-R. officinalis  et M. spicata ont  montré une répulsion  de 68,3 et 59,4%  à une
-concentration de  6,5 microg /  cm2 sur les tissus  d’essai. Les huiles  ont été
-analysées par spectrométrie de masse par chromatographie en phase gazeuse et les
-principaux composés  des huiles les  plus répulsives étaient le  1,8-cinéole, le
-camphre, le linalol, le 4-terpinéol, le bornéol et le carvone.
-
-
-
-
-**** Contre-indications
-- La présence d'un noyau benzénique confère à ces molécules une dermo-causticité
-  au même titre que pour les phénols
-- Interdit chez la femme enceinte
-- Déconseillé chez l'enfant de moins de 7 ans
-
-Une  dernière  étude slovaque  très  complète  nous  a interpellé.  Elle  étudie
-l'efficacité de 11 huiles essentielles que nous avons déjà vues pour la plupart.\\
-
-
-Ces onze  huiles essentielles,  à savoir  basilic (Ocimum  basilicum), bergamote
-(Citrus bergamia),  bouton de clou  de girofle (Syzygium  aromatic), citronnelle
-(Cymbopogon winterianus),  thym serpolet (Thymus serpyllum),  lavande (Lavandula
-angustifolia),  la marjolaine  (Origanum  majorana), la  menthe poivrée  (Mentha
-piperita), la  menthe verte (M. spicata)  et le thym vulgaire  (Thymus vulgaris)
-ont  été soumis  à des  tests de  résistance à  la répulsion  contre les  tiques
-adultes  de  D.  reticulatus  à  des  concentrations de  1  et  3%.  Les  huiles
-essentielles de clou de  girofle, de thym serpolet et de  thym rouge étaient les
-plus efficaces: 83, 82  et 68% des tiques ont été repoussées  une fois diluées à
-3%, respectivement. Le  mélange de serpolet et de citronnelle  contenant 1,5% de
-chacun a  montré une  répulsion plus  élevée (91%)  que les  huiles essentielles
-individuelles à la concentration de 3%.
-
 
 * Formule que nous décidons de réaliser
 
 
-Enfin, l'étude suivante nous a interpellé. Dans l'article \cite{Jaenson2006} est
-testé un  répulsif disponible  dans le  commerce contre  les arthropodes  qui se
-nourrissent de  sang, le MyggA  Natural. Il contient 30%  d'Eucalyptus citronné,
-Corymbia   citriodora   (Myrtaceae),  huile   avec   un   minimum  de   50%   de
-p-menthane-3,8-diol. MyggA  Natural contient également de  petites quantités des
-huiles  essentielles  de  lavande,  Lavandula  angustifolia  (Lamiaceae)  et  de
-géranium,  Pelargonium graveolens  (Geraniaceae). Lors  d'essais biologiques  en
-laboratoire, ces  huiles ont  montré une  répulsion de  100% contre  les nymphes
+Enfin,  l'étude  suivante  nous  a  interpellé :  Jaenson  et  al  testent  dans
+\cite{Jaenson2006}  un   répulsif  disponible   dans  le  commerce   contre  les
+arthropodes  qui se  nourrissent  de sang,  le MyggA  Natural.  Il contient  30%
+d'Eucalyptus citronné, Corymbia citriodora (Myrtaceae), huile avec un minimum de
+50%  de  p-menthane-3,8-diol.  MyggA   Natural  contient  également  de  petites
+quantités des huiles essentielles de lavande, Lavandula angustifolia (Lamiaceae)
+et de géranium, Pelargonium  graveolens (Geraniaceae). Lors d'essais biologiques
+en laboratoire, ces  huiles ont montré une répulsion de  100% contre les nymphes
 d'Ixodes ricinus.  Les  huiles de lavande et  de géranium, diluées à  1% dans le
 1,2-propanediol,  avaient de  faibles activités  répulsives sur  les nymphes  de
 I. ricinus, mais  diluées à 30% dans le 1,2-propanediol,  elles présentaient une
 répulsion de  100%. Le 1,2-propanediol  (100%) n'avait pas  d'activité répulsive
 significative par rapport à celle du contrôle. Lors d'essais sur le terrain dans
-des zones infestées de tiques du centre  de la Suède, la répulsion des huiles de
-MyggA Natural et  de C. citriodora a été  testée pendant 4 jours au  moyen de la
-technique  de traînée  de couverture  au cours  d'une période  de 6  jours.  Les
-propriétés répulsives (respectivement 74 et 85%) au jour 1 sont similaires (89%)
-à   celles   des   couvertures   traitées   de   la   même   manière   avec   du
-diéthyl-méthyl-benzamide  à  19%,  sur  la  base  de  travaux  antérieurs.   Les
-propriétés répulsives ont  diminué de manière significative du jour  1 au jour 6
-(de   74  à   45%  pour   MyggA  Natural;   de  85   à  42%   pour  l'huile   de
+des zones infestées de tiques du centre  de la Suède, la répulsion de ces huiles
+ont été testée pendant 4 jours au moyen de la technique de traînée de couverture
+au cours  d'une période de  6 jours.  Les propriétés  répulsives (respectivement
+74% et 85%) au jour 1 sont similaires (89%) à celles des couvertures traitées de
+la même manière  avec du diéthyl-méthyl-benzamide à 19%, sur  la base de travaux
+antérieurs.  Les propriétés  répulsives ont diminué de  manière significative du
+jour 1 au jour 6 (de 74% à 45%  pour MyggA Natural; de 85% à 42% pour l'huile de
 C. citriodora). Ceci permet de conclure  qu'il faut réutiliser le spray répulsif
 régulièrement.\\
 
- Nous avons décidé de  privilégier l'efficacité de cette synergie pour élaborer 
+Nous avons décidé de  privilégier l'efficacité de cette synergie pour élaborer 
 notre formule, d'autant plus que cette étude a été réalisée également in vivo.
 
 ** Formule répulsive pour adultes
 
-Nous allons utilisé les 3 huiles essentielles suivantes :
+Nous allons utiliser les 3 huiles essentielles suivantes :
 
 *** HE de Lavande aspic
 
 Nous avons  décidé de privilégier  la lavande  aspic parce qu'elle  contient des
-concentrations plus  importantes en  linalol et en  1,8 cinéole,  ainsi qu'une
-bonne concentration en  camphre (par rapport à la lavande  vraie de l'étude de
- Jaenson \cite{Jaenson2006}).
+concentrations plus importantes en linalol et en 1,8 cinéole, ainsi qu'une bonne
+concentration en camphre  (par rapport à la lavande vraie  de l'étude de Jaenson
+\cite{Jaenson2006}), confortée par l'étude d'El-Seedi \cite{El-Seedi2012}.
 
 - Identification:
   |------------------+---------------------------|
   | Nom botanique    | Lavandula latifolia spica |
-  | Famille          | lamiacées                 |
+  | Famille          | Lamiacées                 |
   | Partie distillée | sommité fleurie           |
   | Origine          | Sud de la France, Espagne |
   |------------------+---------------------------|
@@ -905,6 +862,9 @@ bonne concentration en  camphre (par rapport à la lavande  vraie de l'étude de
 
 
 *** HE de Géranium rosat
+
+/Études relatives : \cite{Jeyabalan2003} et \cite{Ferreira2017}/
+
 
 - Identification :
   |------------------+------------------------------------------|
@@ -929,12 +889,15 @@ bonne concentration en  camphre (par rapport à la lavande  vraie de l'étude de
 
 *** HE d'Eucalyptus citronné
 
-- Identification : Eucalyptus citriodora ct citronnelol
-  |------------------+---------------|
-  | Famille          | Myrtacées     |
-  | Partie distillée | feuille       |
-  | Origine          | Inde, Vietnam |
-  |------------------+---------------|
+/Études relatives : \cite{Trigg1996a} et \cite{Ferreira2017}/
+
+- Identification :
+  |------------------+--------------------------------------|
+  | Nom botanique    | Eucalyptus citriodora ct citronnelol |
+  | Famille          | Myrtacées                            |
+  | Partie distillée | feuille                              |
+  | Origine          | Inde, Vietnam                        |
+  |------------------+--------------------------------------|
 \\
 
 - Principaux composés :
@@ -955,23 +918,22 @@ bonne concentration en  camphre (par rapport à la lavande  vraie de l'étude de
     - Dispersant : nous utiliserons une base neutre pour le bain : 15 ml
     - eau distillée qsp 30 ml
 
-Nous mettrons le dispersant dans le flacon pulvérisateur, puis on rajoutera les
-gouttes d'HE et enfin on ajoutera l'eau distillée.
+Nous mettrons le dispersant dans le  flacon pulvérisateur, puis on rajoutera les
+gouttes d'HE et enfin on ajoutera l'eau distillée.  Nous utiliserons le spray en
+pulvérisation sur les parties du corps exposées aux piqûres.\\
 
-Nous utiliserons le spray en pulvérisation sur les parties du corps exposées aux
-piqûres.\\
+Il faudra penser à renouveler l'application en cas de sorties prolongées.  Cette
+formule est  déconseillée chez la  femme enceinte  et allaitante et  pourra être
+conseillée à partir de 6 ans.
 
-Il faudra penser à renouveler l'application en cas de sorties prolongées.
-Cette formule est déconseillée chez la femme enceinte les trois premiers mois de
-grossesse et pourra être conseillée à partir de 6 ans.
 
 
 ** Formule répulsive pour enfants
 
 Avant ce DU je me demandais si on pouvait remplacer la lavande aspic par de la
 lavande chez les enfants à partir de 3 mois. Je craignais une moindre efficacité.
-Au vue de mes nombreuses lectures je ne doute plus de l'action répulsive d'une
-telle formule c'est pourquoi je propose :
+Au vu de mes nombreuses lectures je ne doute plus de l'action répulsive d'une
+telle formule, c'est pourquoi je propose :
 
     - HE de Lavande officinale : 10 gouttes
     - HE de Géranium rosat : 15 gouttes
@@ -979,15 +941,73 @@ telle formule c'est pourquoi je propose :
     - Dispersant : nous utiliserons une base neutre pour le bain : 15 ml
     - eau qsp 30 ml
 
+Ce spray sera conseillé chez les enfants  à partir de 3 mois et déconseillé chez
+la femme enceinte et allaitante.\\
 
-Ce spray sera conseillé chez les enfants à partir de 3 mois.
-et déconseillé chez la femme enceinte les trois premiers mois de grossesse.
+Un  article  très  intéressant  de  Sorge  \cite{Sorge2007}  sur  la  protection
+antivectorielle de l'enfant nous conforte  dans l'usage de l'Eucalyptus citronné
+pour les enfants.  Il est indiqué que le citriodiol (p-menthane-3,8 diol), à une
+concentration de 30% a une durée d'efficacité contre les anophèles et les tiques
+de  l'ordre de  6h.  Sa faible  absorption cutanée  (1-3%),  son faible  pouvoir
+d'irritation locale  et l'absence  de toxicité aigüe  ou chronique  connue l'ont
+fait recommander  chez le nourrisson en  janvier 2006 en France.  La présence de
+substances terpéniques (théoriquement épileptogènes) à 0,35% dans la composition
+du citriodiol a  fait limiter son utilisation par l'Afssaps  aux enfants de plus
+de 30  mois /sans antécédents de  convulsions/. Cependant aucun cas  de toxicité
+chez le jeune enfant  n'a été notifié depuis 15 ans alors  que le citriodiol est
+préconisé  chez le  nourrisson  dès l'âge  de  3 mois.  Par  ailleurs une  étude
+réalisée  sur des  rates gestantes  n'a pas  demontré de  toxicité foetale.  Les
+experts ont  estimé que  les données  étaient à  confirmer avant  de recommander
+l'usage  du  citriodiol  chez  la   femme  enceinte.  L'hypothèse  d'un  passage
+transcutané puis lacté de la composante  terpénique du citriodiol a dissuadé les
+experts de recommander cet insectifuge à la femme allaitante.
 
 
 ** Formule pour les chiens
 
-*** Chiens à poils courts
-Au vue des études lues précédemment je propose de faire le mélange suivant :
+Nous allons utiliser les huiles suivantes.
+
+*** Menthe poivrée
+
+- Identification:
+  |------------------+-------------------|
+  | Nom botanique    | Mentha x piperita |
+  | Famille          | Lamiacées         |
+  | Partie distillée | herbe fleurie     |
+  | Origine          | France, USA       |
+  |------------------+-------------------|
+
+- Principaux composés
+  |-----------------------+-----------------------------------|
+  | Monoterpénols         | menthol 40 à 45%, néomenthol 4%   |
+  | Cétones               | menthone 20 à 60%, isomenthone 4% |
+  | Esters                | acétate de menthyle 7%            |
+  | Terpènes              | pinènes                           |
+  |-----------------------+-----------------------------------|
+
+*** Tea tree
+
+- Identification:
+  |------------------+--------------------------------|
+  | Nom botanique    | Melaleuca alternifolia         |
+  | Famille          | Myrtacées                      |
+  | Partie distillée | feuille et rameau terminal     |
+  | Origine          | Australie, Afrique du Sud      |
+  |                  | Madagascar, Nouvelle Calédonie |
+  |------------------+--------------------------------|
+\\
+
+- Principaux composés :
+  |--------------------+-------------------------|
+  | Monoterpénols      | terpinène-4-ol 30 à 45% |
+  | Monoterpènes       | alpha-pinène 1 à 6%     |
+  | Oxydes terpéniques | 1,8-cinéole 0 à 15%     |
+  | Sesquiterpènes     | aromadendrène 0,1 à 7%  |
+  |--------------------+-------------------------|
+
+
+**** Chiens à poils courts
+Je propose de faire le mélange suivant :
 
    - HE de Lavande aspic : 15 gouttes
    - HE de Géranium rosat : 15 gouttes
@@ -995,17 +1015,19 @@ Au vue des études lues précédemment je propose de faire le mélange suivant :
    - HE de Tea tree : 15 gouttes
    - Dispersant : base neutre pour le bain : 15 ml
    - qsp 30 ml d'hydrolat de lavande.
-   
-J'ai préféré ôter l'Eucalyptus citronné car je crains que l'odeur soit trop forte.
+  
+ 
+J'ai préféré ôter l'Eucalyptus citronné car je crains que l'odeur ne soit trop forte.
 
-Comme précedemment on délayera les HE dans l'agent dispersant et on ajoutera
-l'hydrolat.Il faudra pulvériser à rebrousse poil l'animal à chacunes de ses sorties dans la
-nature du début du printemps à la fin de l'automne.
-On fera attention à bien protéger les yeux de l'animal lors de la pulvérisation.
+Comme précédemment  on délayera les  HE dans  l'agent dispersant et  on ajoutera
+l'hydrolat. Il  faudra pulvériser  à rebrousse  poil l'animal  à chacune  de ses
+sorties dans  la nature du début  du printemps à  la fin de l'automne.   On fera
+attention à  bien protéger les  yeux de l'animal  lors de la  pulvérisation.  Du
+fait de la présence d'hydrolat on conservera ce mélange au réfrigérateur.
 
 
 
-*** Chiens à poils longs 
+**** Chiens à poils longs 
 
 Dans  cette formule  j'ai  également  ôté la  Menthe  poivrée  pour les  odorats
 sensibles.  Il faudra  appliquer le  gel  en le  faisant bien  pénétrer dans  le
@@ -1021,19 +1043,101 @@ l'automne.
 
  
 
+
+
+** Les huiles essentielles antibiotiques à prendre par voie orale
+
+ En cas de symtomatologie il est bon  de réagir par un protocole antibiotique le
+ plus vite possible avant que les  borrélies ne s'enkystent quelque part dans un
+ tissu.   On réalisera  une synergie  destinée à  être prise  par voie  orale en
+ gélule  pour éviter  la dermocausticité  de certaines  huiles. \\
+
+Cette synergie  rassemble les molécules les  plus actives sur les  bactéries, en
+ veillant  à   les  varier  suivant   leur  structure  et   les  fonctionnalités
+ biochimiques.Les familles  biochimiques sont  les mêmes  que nous  avons étudié
+ dans ce mémoire.En effet, en  plus d'être antiparasitaires, toutes ces familles
+ sont de puissants anti-bactériens.  Ainsi nous privilégierons l'eugénol présent
+ dans le Clou  de Girofle, le thymol  présent dans le Thym  à thymol, l'aldéhyde
+ cinnamique dans la Cannelle de Ceylan  écorce,le menthol dans la Menthe poivrée
+ et le  limonène dans le  citron pour sa  protection hépatique. Soit  la formule
+ suivante :
+
+     - HE de cannelle de Ceylan : 30 gouttes
+     - HE de girofle : 30 gouttes
+     - HE de thym à thymol : 30 gouttes
+     - HE de menthe poivrée : 30 gouttes
+     - HE de citron : 30 gouttes
+
+On  effectuera le  mélange dans  un flacon  teinté de  30 ml  et on  absorbera 2
+gouttes  de ce  mélange dans  une gélule  matin, midi  et soir  après les  repas
+pendant 5 jours.  Ensuite et/ou en cas de lyme chronique on pourra reprendre ces
+gélules sous forme de cures à caler selon les périodes de fatigue par exemple.
+
+Cette synergie est contre-indiquée pour la femme enceinte ou allaitante,
+les enfants de moins de 12 ans, les personnes ayant des ulcères
+gastriques.Deconseillée aux personnes sous anti-coagulants et en cas
+d'hypertension artérielle.
+
 ** Formule d'un roller après piqûre
+Après avoir retiré la tique on pourra appliquer les HE antibactériennes
+suivantes ( surtout pas sur la tique sinon il y aurait risque de régurgitation).
+Nous utiliserons l'activité antibactérienne forte du carvacrol présent dans
+l'Origan compact, l'eugénol du Clou de Girofle, le terpinène- 4-ol du Tea tree
+et l'aldéhyde terpénique du Lemongrass.
 
-    - HE d'Origan compact
-    - HE de thym à thymol
-    - HE de Girofle
-    - HE de Lemongrass
+    
+
+Pour éviter tout risque de dermocausticité nous ferons un roller dilué avec de
+l'huile de macadamia soit :
+
+    - HE d'Origan compact : 5 gouttes
+    - HE de Tea tree : 5 gouttes
+    - HE de Girofle : 5 gouttes
+    - HE de Lemongrass : 5 gouttes
     - HV de Macadamia qsp 5 ml
- 
+
+L'application se fera le plus rapidement possible et sera renouvellée 4 fois par
+jour dans les jours suivants une morsure. Notons que certains préconisent
+l'utilsation d'un aspi-venin après avoir enlevé la tique et d'appliquer les HE ensuite.
+
+Ce roller sera contre-indiqué chez la femme enceinte ou allaitante et aux
+enfants en dessous de 12 ans.
 
 
 
 
 
+
+* Conclusion
+
+Actuellement,  l'utilisation  de  produits chimiques  synthétiques  pour  lutter
+contre les  insectes et les  tiques en particulier soulève  plusieurs problèmes
+liés  à l'environnement  et  à  la santé  humaine.  Une  alternative consiste  à
+utiliser  des produits  naturels ayant  une bonne  efficacité et  respectueux de
+l'environnement. Parmi ces produits, les  HE appartenant à de nombreuses espèces
+ont été minutieusement testées pour  évaluer leurs propriétés répulsives en tant
+que ressource naturelle précieuse. Les HE  dont les activités répulsives ont été
+démontrées constituent l'objectif principal de  ce mémoire.Comme nous l'avons vu
+ces produits  naturels ont le  potentiel de  fournir des répulsifs  efficaces et
+sûrs pour l'Homme et l'environnement. On  trouve dans la littérature scientifique
+une  abondance  croissante  d'informations  dans  ce  domaine  de  recherche  et
+principalement  au cours  des dix  dernières années.  Nous pensons  qu'il serait
+judicieux   d'utiliser  des   méthodes  normalisées   afin  de   mieux  comparer
+l'efficacité des HE d'une étude  à l'autre. 
+
+
+
+J'ai abordé ce DU d'Aromathérapie avec  beaucoup de plaisir et de curiosité.  Je
+connaissais déjà les propriétés des  huiles essentielles les plus courantes mais
+je ne  prêtais pas attention  aux familles biochimiques. À  ce titre, ce  DU m'a
+fait découvrir une autre approche de  la complexité de la composition des huiles
+essentielles et donc de leur activité.  D'autre part, la rédaction de ce mémoire
+m'a  amené  à  étudier  la   littérature  scientifique  m'ouvrant  de  nouvelles
+perspectives.  Cette  étude bibliographique m'a  conforté dans mes choix  et m'a
+donné  une  méthode de  travail  que  je  compte  poursuivre dans  mon  exercice
+quotidien.
+
+\newpage
 
 \bibliographystyle{plain}
 \bibliography{biblio}
