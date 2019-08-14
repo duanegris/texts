@@ -1,0 +1,60 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[francais]{babel}
+
+
+\selectlanguage{francais}
+\input{lettreLSIIT-0.04.sty}
+
+\selectlanguage{francais}
+\begin{document}
+
+
+\name{Stéphane \textsc{Genaud}}
+%\fonction{Professeur des Universités}
+\telephoneillkirch{+33 (0)390244542}
+\email{genaud@icps.u-strasbg.fr}
+
+\begin{lettre}[Recommandation d'Arnaud Giersch]{aux}{Rapporteurs pour le CNRS}
+
+
+Je travaille en recherche avec Arnaud sur la thématique des \emph{grilles de calcul} depuis l'été 2001.
+A l'époque, le projet \textit{Transformations et Adaptations pour la Grille} (TAG) que je coordonne venait d'être retenu dans le cadre de l'ACI Grid du ministère de la recherche.
+Le projet vise à développer des techniques permettant la mise en oeuvre efficace de programmes parallèles sur une grille de processeurs hétérogènes.
+%
+Arnaud, qui avait commencé sa thèse un an auparavant sur une sujet différent (preuves de programmes data-parallèles), a alors décidé de rejoindre le projet TAG en démarrage.
+%
+L'activité que nous proposions de développer dans ce projet était une ré-orientation importante du thème de recherche précédent du groupe, qui concernait la conception de langages pour le parallélisme. 
+Par conséquent la décision d'Arnaud de recommencer un travail nouveau dans ce contexte à été très courageuse.
+Depuis ce moment jusqu'à la soutenance de sa thèse le 22 Décembre 2004, 
+j'ai été co-encadrant du travail d'Arnaud.
+
+Durant cette période de trois ans (dont une partie a été passée dans le même bureau), j'ai pu apprécier les nombreuses qualités d'Arnaud.
+Dans la phase initiale du projet, de nombreuses discussions ont eu lieu afin de débattre de l'état de l'art et la pertinence des modèles proposés par rapport à la réalité. 
+Arnaud a apporté des éclairages précieux à ces discussions grâce à sa culture générale dans de nombreux domaines de l'informatique, qui est probablement nourrie par sa curiosité insatiable des nouveautés.  
+A la même époque il a apporté une contribution majeure à la mise en place du logiciel Globus lors du déploiement de notre grille expérimentale (y compris en corrigeant un bug bloquant du logiciel), ainsi qu'à l'analyse du comportement d'applications parallèles sur cette grille. 
+Dans la deuxième phase de sa thèse, il a également écrit un simulateur pour tester les heuristiques d'ordonnancement proposées. 
+En dehors de la complexité du logiciel (plusieurs milliers de ligne de C++), j'ai pu constater que la génération et la manipulation des dizaines de milliers de résultats produits sur un cluster de 48 processeurs demandaient méthode et rigueur, et ce sont assurément des qualités que possède Arnaud.
+
+Dans son manuscrit de thèse, Arnaud décrit son travail étudiant le placement et l'ordonnancement de tâches sur des architectures hétérogènes comme les grilles. 
+Il montre d'abord la répartition optimale des données pour une application réelle qui se conforme à un schéma de type maître-esclave ainsi que d'autres solutions plus rapides à calculer. 
+Il généralise ensuite l'étude à des données dont le temps de traitement (tâches) est inégal. Enfin, l'étude prend en compte le fait que des données sont potentiellement distribuées sur des serveurs distants.
+Le travail établit des résultats montrant la NP-complétude du problème d'ordonnancement dans ces deux cas et justifie l'introduction d'heuristiques originales.
+A l'aide de tests synthétiques très complets, il est montré que la qualité de ces nouvelles heuristiques est très proche d'heuristiques connues (\emph{min-min} et \emph{sufferage}) tout en étant beaucoup moins coûteuses.
+
+La capacité d'Arnaud à s'investir dans de tels travaux théoriques montre l'étendue de ses capacités.
+Je mettrais en avant sa rigueur (et son intuition pour dénicher les pièges cachés) et son perfectionisme pour caractériser la façon dont il a travaillé sur la rédaction de sa thèse et de plusieurs articles.
+
+Enfin, Arnaud fait preuve de qualités humaines indéniables: empathie et gentillesse sont à mon sens des traits marquants de sa personnalité. Elles lui ont permis et lui permettront je pense d'intégrer facilement de nouvelles équipes. 
+
+Pour toutes ces raisons je suis certain qu'Arnaud serait un excellent chercheur et
+je recommande vivement sa candidature pour de telles fonctions.
+
+
+
+\end{lettre}
+%\newpage
+%\bibliographystyle{plain}
+%\bibliography{arno}
+
+
+\end{document}

@@ -1,0 +1,137 @@
+\documentclass[10pt]{report}
+%\usepackage{}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+%\usepackage[francais]{babel}
+\usepackage{a4}
+\usepackage{fullpage}
+\usepackage{fancyheadings}
+\pagestyle{empty}
+\usepackage{epsfig}
+\setlength{\headrulewidth}{0pt}
+\setlength{\footskip}{0.5cm}
+\usepackage{anysize}
+\marginsize{2.5cm}{2cm}{2cm}{2cm}
+\usepackage{url} \urlstyle{tt}
+
+
+\begin{document}
+
+
+\thispagestyle{fancy}
+
+\chead{
+\ \\[0.5cm]
+\makebox[0pt]{
+\begin{tabular}{rcr}
+\begin{minipage}{25mm}
+\centerline{\psfig{file=LORIA.eps,width=25mm}}
+\end{minipage}&
+\begin{minipage}{10cm}
+\begin{center}
+{\large\bf Laboratoire Lorrain de Recherche\\ en  Informatique et ses Applications}\\
+\noindent UMR N$^\circ$ 7503, CNRS, INRIA\\ UHP-Nancy 1, INPL , Nancy 2
+\end{center}
+\end{minipage} &
+\begin{minipage}{30mm}
+\centerline{\psfig{file=INRIA.eps,height=10mm}}
+\end{minipage}%\\\hline
+\end{tabular}
+}}
+
+
+\cfoot{\small
+%hrule
+%vspace{2mm}
+\makebox[0pt]{
+\begin{tabular}{rrrr}
+\begin{minipage}{25mm}
+\centerline{\psfig{file=CNRS.eps,width=25mm}}
+\end{minipage}&
+\begin{minipage}{6.6cm}
+LORIA, Université Henri Poincaré\\
+Campus Scientifique - BP 239\\
+ 54506 Vand{\oe}uvre-lès-Nancy Cedex, France\end{minipage} &
+\begin{minipage}{3.7cm}
+Fax :  +33 3 83 59 30 00 \\
+T\'el : +33 3 83 27 83 19\\
+\url{http://www.loria.fr}
+\end{minipage} &
+\begin{minipage}{25mm}
+\centerline{\psfig{file=logo_nu,width=40mm}}
+\end{minipage}
+\end{tabular}
+}
+\ \\[5cm]
+}
+
+\newcommand{\edff}[1]{\mbox{\sf EDF$^{(#1)}$}}
+\newcommand{\edf}{\mbox{\sf EDF}}
+
+\ \\[2cm]
+
+\hfill
+\begin{tabular}{l}
+\smallskip\\
+Stéphane Genaud\\
+Détaché Chargé de Recherches INRIA\\
+Tel : +33 (0)389274992\\
+{\tt stephane.genaud@loria.fr}\\[5mm]
+
+Nancy,   \today
+\end{tabular}
+\ \\[1cm]
+\noindent{Au Service des Ressources Humaines\\}
+
+Madame, Monsieur,\\
+
+Dans le cadre des offres \emph{Internship} de l'INRIA, nous avons proposé,
+Emmanuel Jeannot et moi-même, le sujet 
+\emph{Design of Latency-aware Communications for Grid Applications (\#320)},
+en accord avec le responsable d'équipe.\\
+
+Nous avons sélectionné le candidat suivant:
+\begin{center}
+Monsieur \textbf{Antonio \textsc{Grassi Chiva}}, domicili\'e \`a:\\
+Pablo de Maria 1247, Montevideo, Uruguay\\
+email: agrassic@gmail.com\\
+Phone: (598 2) 401 59 13\\
+Mobile: (598) 099 31 44 31\\
+\end{center}
+%Facultad de Ingeniería, Universidad de la República
+
+Nous avons convenu avec le candidat que son stage débuterait le 29 avril 2008 et se terminerait
+le 29 août 2008 (durée: quatre mois).\\
+
+
+L'objectif global du stage consiste à mieux comprendre les communications TCP dans un contexte
+où les latences des différentes connexions sont hétérogènes, et de là, mieux comprendre le
+comportement des opérations de communication collectives de MPI. 
+Ce travail s'insère dans une des activités de l'équipe qui cherche à améliorer la perfomance
+des communications collectives de MPI dans des environnements de type Grille de calcul.\\
+
+Le travail comportera une partie expérimentale importante, effectuée sur la plateforme Grid5000.
+D'autre part, le travail amènera probablement des propositions algorithmiques pour 
+tirer partie de l'hétérogénité de la plateforme. Dans l'idéal, des contributions significatives
+seraient intégrées dans une distribution largement distribuée comme OpenMPI.\\
+
+
+
+Je vous prie, Madame, Monsieur, de croire en mes sentiments respectueux.\\
+
+
+
+
+
+
+
+\hfill{Stéphane Genaud}\\[2mm]
+
+%\hspace{12cm}\includegraphics[width=4cm]{signature.ps}
+
+\vspace{.2in}
+
+\end{document}
+
+
+

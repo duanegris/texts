@@ -1,0 +1,284 @@
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xspace}
+\usepackage{color}
+%\usepackage{graphicx}
+\usepackage{doublespace}
+\usepackage{geometry}
+\usepackage{helvet}
+\usepackage{calc}
+\usepackage{ifthen}
+
+
+\pagestyle{empty}
+
+%%%%%
+%%%%%
+
+% Package pour la gestion des couleurs
+%
+\usepackage{color}
+
+% Les commandes pour passer de la version nb à la version couleur 
+% (et réciproquement)
+%
+\newboolean{enNoir}
+\setboolean{enNoir}{true}
+\newboolean{enCouleur}
+\setboolean{enCouleur}{false}
+\newcommand{\enNoir}{\definecolor{couleur}{rgb}{0,0,0}
+  \setboolean{enCouleur}{false}
+  \setboolean{enNoir}{true}}
+\newcommand{\enGris}{\definecolor{couleur}{rgb}{0,0,0}
+  \setboolean{enCouleur}{false}
+  \setboolean{enNoir}{false}}
+% Définition du bleu ULP
+\newcommand{\enCouleur}{\definecolor{couleur}{rgb}{0,0.2,0.6}
+  \setboolean{enCouleur}{true}
+  \setboolean{enNoir}{false}}
+% La version par défaut en en noir
+%
+\enNoir
+
+%%%%%%
+% Gestion de pdf
+%%%%%%
+%--------------------------------------
+%pour compiler avec latex ou pdflatex
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+  \pdffalse
+\else
+  \pdfoutput=1
+  \pdftrue
+\fi
+%--------------------------------------
+%pour eviter de generer des fonts de type 3
+\ifpdf 
+\usepackage{pslatex}
+\usepackage[pdftex]{graphicx}
+%\DeclareGraphicsExtensions{.gif}
+\else
+\usepackage[dvips]{graphicx}
+\fi
+%--------------------------------------
+
+
+\addtolength{\parskip}{\baselineskip}
+
+\newlength{\firstcolumnwidth}
+\setlength{\firstcolumnwidth}{1.65in}
+\newlength{\inbetween}
+\setlength{\inbetween}{5mm}
+\newlength{\headermargin}
+\setlength{\headermargin}{49mm}
+
+\geometry{left=0.47in+\firstcolumnwidth+\inbetween,right=1in,top=15mm,bottom=20mm,noheadfoot}
+
+\newenvironment{lettre}[2][]
+{
+\thispagestyle{empty}
+
+\newsavebox{\dimargin}
+\sbox{\dimargin}{%
+  \begin{minipage}[t]{\firstcolumnwidth}
+    \vspace{0pt}
+    \sffamily
+    \begin{flushright}
+      %%% Entête du DI
+      \newsavebox{\dihead}
+      \sbox{\dihead}{%
+        \begin{minipage}{\linewidth}
+          \flushright
+          {\bfseries
+            \color{couleur}
+            \begin{spacing}{1}
+              \large{IECS,}
+              \large{Ecole de Management de Strasbourg,}
+              
+              \large{Université Robert Schuman}
+            
+
+        
+            \end{spacing}
+            }
+          \vspace{-2mm}
+          
+          \rule{36.5mm}{0.5pt}
+          
+%          \vspace{-4mm}
+          %%% Inclusion du Logo ULP
+          \ifthenelse{\boolean{enNoir}}
+          {
+            \flushright{\includegraphics[height=17mm]{logoIECS}}
+          }
+          {
+            \ifthenelse{\boolean{enCouleur}}
+            {
+              \includegraphics[height=17mm]{logoULPA2}
+              }
+            {
+              \includegraphics[height=17mm]{logoULPC2}
+              }
+            }
+          %%% Fin inclusion logo
+        \end{minipage}%
+        }
+      \newlength{\diheadheight}
+      \newlength{\diheaddepth}
+      \newlength{\diheadspace}
+      \settoheight{\diheadheight}{\usebox{\dihead}}
+      \settodepth{\diheaddepth}{\usebox{\dihead}}
+      \setlength{\diheadspace}{\diheadheight+\diheaddepth}
+      %
+      %
+      %%% Coordonnées de l'expéditeur
+      \newsavebox{\sender}
+      \sbox{\sender}{%
+        \begin{minipage}{\linewidth}
+          \flushright
+          \begin{spacing}{1.5}
+            
+            \textbf{\footnotesize{\fromname}}
+
+            \textit{\footnotesize{\fromfonction}}
+            
+            \scriptsize{Tél. : \phoneespla}
+            
+            \scriptsize{\phoneillkirch}
+            
+            \scriptsize{\emailadd}
+          \end{spacing}
+        \end{minipage}%
+        }
+      \newlength{\senderheight}
+      \newlength{\senderdepth}
+      \newlength{\senderspace}
+      \settoheight{\senderheight}{\usebox{\sender}}
+      \settodepth{\senderdepth}{\usebox{\sender}}
+      \setlength{\senderspace}{\senderheight+\senderdepth}
+      %
+      %
+      %%% Coordonnées du DI
+      \newsavebox{\difoot}
+      \sbox{\difoot}{%
+        \begin{minipage}{\linewidth}
+          \flushright
+          \begin{spacing}{1.25}
+            \footnotesize
+            
+            \textbf{IECS}
+            
+            
+            {Pôle Européen de Gestion des Entreprises}
+            
+            {61, avenue de la Fôret-Noire,}
+           
+	      {F-67085 Strasbourg Cedex}
+            
+            {Tél. : +33 (0) 3 90 41 42 98}
+            
+            {Fax : +33 (0) 3 90 24 45 47}
+            
+            {http\string://www.iecs.edu}
+          \end{spacing}
+        \end{minipage}%
+        }
+      \newlength{\difootheight}
+      \newlength{\difootdepth}
+      \newlength{\difootspace}
+      \settoheight{\difootheight}{\usebox{\difoot}}
+      \settodepth{\difootdepth}{\usebox{\difoot}}
+      \setlength{\difootspace}{\difootheight+\difootdepth}
+      %
+      %
+      \newlength{\devantsender}
+      \setlength{\devantsender}{57mm}
+%
+      \newlength{\devantdifoot}
+%
+      \setlength{\devantdifoot}{\textheight-\diheadspace-\devantsender-\senderspace-\difootspace-8mm-13pt}
+%
+      \vspace{8mm}
+
+      \usebox{\dihead}
+
+      \vspace{\devantsender}
+
+      \usebox{\sender}
+
+      \vspace{\devantdifoot}
+
+      \usebox{\difoot}
+    \end{flushright}
+  \end{minipage}%
+}
+
+\begin{spacing}{1}
+
+  \noindent
+  \begin{picture}(0,0)
+    \setlength{\unitlength}{\firstcolumnwidth+\inbetween}
+    \put(-1,0){\usebox{\dimargin}}
+  \end{picture}%
+%
+\begin{minipage}[t]{\headermargin}
+
+\vspace{26mm}
+
+~
+\end{minipage}%
+\begin{minipage}[t]{\linewidth-\headermargin}
+  %Strasbourg, \today
+  Strasbourg, le 20 mai 2007 
+\end{minipage}
+
+\noindent
+\begin{minipage}[t]{\headermargin}
+\vspace{35mm}
+~
+\end{minipage}%
+\begin{minipage}[t]{\linewidth-\headermargin}
+ à 
+  
+
+  \vspace{2mm}
+
+  #2
+\end{minipage}
+\ifthenelse{\equal{#1}{}} {} {{\iflanguage{francais}{Objet}{Object}}: {#1}}
+\vspace{20mm}
+}
+{
+%\vspace{20mm}
+
+\newlength{\taillesignature}
+\settowidth{\taillesignature}{\fromname}
+\newlength{\possignature}
+\setlength{\possignature}{0.667\linewidth-0.5\taillesignature}
+
+\hspace{\possignature}\fromname
+\begin{flushright}
+\includegraphics[width=.25\textwidth]{signgenaud.jpg}\mbox{~~}
+\end{flushright}
+
+
+\end{spacing}
+}
+
+
+
+\newcommand*{\name}[1]{\def\fromname{#1}}
+\name{}
+\newcommand*{\fonction}[1]{\def\fromfonction{#1}}
+\fonction{}
+\newcommand*{\telephoneesplanade}[1]{\def\phoneespla{#1}}
+\telephoneesplanade{}
+\newcommand*{\telephoneillkirch}[1]{\def\phoneillkirch{#1}}
+\telephoneillkirch{}
+\newcommand*{\email}[1]{\def\emailadd{#1}}
+\email{}
+\newcommand*{\objet}[1]{\def\emailadd{#1}}
+
+
+

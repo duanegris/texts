@@ -1,0 +1,282 @@
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+%\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{helvet}
+\usepackage{calc}
+\usepackage{ifthen}
+
+
+\pagestyle{empty}
+
+%%%%%
+%%%%%
+
+% Package pour la gestion des couleurs
+%
+\usepackage{color}
+
+% Les commandes pour passer de la version nb à la version couleur 
+% (et réciproquement)
+%
+\newboolean{enNoir}
+\setboolean{enNoir}{true}
+\newboolean{enCouleur}
+\setboolean{enCouleur}{false}
+\newcommand{\enNoir}{\definecolor{couleur}{rgb}{0,0,0}
+  \setboolean{enCouleur}{false}
+  \setboolean{enNoir}{true}}
+\newcommand{\enGris}{\definecolor{couleur}{rgb}{0,0,0}
+  \setboolean{enCouleur}{false}
+  \setboolean{enNoir}{false}}
+% Définition du bleu ULP
+\newcommand{\enCouleur}{\definecolor{couleur}{rgb}{0,0.2,0.6}
+  \setboolean{enCouleur}{true}
+  \setboolean{enNoir}{false}}
+% La version par défaut en en noir
+%
+\enNoir
+
+%%%%%%
+% Gestion de pdf
+%%%%%%
+%--------------------------------------
+%pour compiler avec latex ou pdflatex
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+  \pdffalse
+\else
+  \pdfoutput=1
+  \pdftrue
+\fi
+%--------------------------------------
+%pour eviter de generer des fonts de type 3
+\ifpdf 
+\usepackage{pslatex}
+\usepackage[pdftex]{graphicx}
+%\DeclareGraphicsExtensions{.gif}
+\else
+\usepackage[dvips]{graphicx}
+\fi
+%--------------------------------------
+
+
+\addtolength{\parskip}{\baselineskip}
+
+\newlength{\firstcolumnwidth}
+\setlength{\firstcolumnwidth}{1.65in}
+\newlength{\inbetween}
+\setlength{\inbetween}{5mm}
+\newlength{\headermargin}
+\setlength{\headermargin}{49mm}
+
+\geometry{left=0.47in+\firstcolumnwidth+\inbetween,right=1in,top=15mm,bottom=20mm,noheadfoot}
+
+\newenvironment{letter}[3][]
+{
+\thispagestyle{empty}
+
+\newsavebox{\dimargin}
+\sbox{\dimargin}{%
+  \begin{minipage}[t]{\firstcolumnwidth}
+    \vspace{0pt}
+    \sffamily
+    \begin{flushright}
+      %%% Entête du DI
+      \newsavebox{\dihead}
+      \sbox{\dihead}{%
+        \begin{minipage}{\linewidth}
+          \flushright
+          {\bfseries
+            \color{couleur}
+            \begin{spacing}{1}
+              \large{\'Equipe EDPTC}
+              
+              \large{Laboratoire IRMA}
+
+              \normalsize{UMR 7501} 
+            
+              {\centering \large{\&}}
+
+              \large{\'Equipe ICPS} 
+
+              \large{Laboratoire LSIIT} 
+        
+              \normalsize{UMR 7005} 
+            \end{spacing}
+            }
+          \vspace{-2mm}
+          
+          \rule{36.5mm}{0.5pt}
+          
+%          \vspace{-4mm}
+          %%% Inclusion du Logo ULP
+          \ifthenelse{\boolean{enNoir}}
+          {
+            \flushright{\includegraphics[height=19mm]{logo-uds-couleur-800x433}}
+          }
+          {
+            \ifthenelse{\boolean{enCouleur}}
+            {
+              \includegraphics[height=19mm]{}
+              }
+            {
+              \includegraphics[height=19mm]{logo-uds-couleur-800x433}
+              }
+            }
+          %%% Fin inclusion logo
+        \end{minipage}%
+        }
+      \newlength{\diheadheight}
+      \newlength{\diheaddepth}
+      \newlength{\diheadspace}
+      \settoheight{\diheadheight}{\usebox{\dihead}}
+      \settodepth{\diheaddepth}{\usebox{\dihead}}
+      \setlength{\diheadspace}{\diheadheight+\diheaddepth}
+      %
+      %
+     %
+      %
+      %%% Coordonnées 
+      \newsavebox{\difoot}
+      \sbox{\difoot}{%
+        \begin{minipage}{\linewidth}
+          \flushright
+          \begin{spacing}{1.25}
+            \footnotesize
+            
+            \textbf{IRMA-EDPTC}
+            
+            {7, rue Descartes}
+            
+            {F-67000 Strasbourg}
+            
+            {Tél. : +33 (0) 3 68 85 01 29}
+            
+            {Fax : +33 (0) 3 68 85 03 28}
+            
+            {http\string://www-irma.u-strasbg.fr}
+
+            \vspace{1cm} 
+            \textbf{LSIIT-ICPS}
+            
+            
+            {Pôle API -Bd S. Brant}
+            
+            {F-67400 Illkirch}
+            
+            {Tél. : +33 (0) 3 90 24 45 42}
+            
+            {Fax : +33 (0) 3 90 24 45 47}
+            
+            {http\string://icps.u-strasbg.fr}
+          \end{spacing}
+        \end{minipage}%
+        }
+      \newlength{\difootheight}
+      \newlength{\difootdepth}
+      \newlength{\difootspace}
+      \settoheight{\difootheight}{\usebox{\difoot}}
+      \settodepth{\difootdepth}{\usebox{\difoot}}
+      \setlength{\difootspace}{\difootheight+\difootdepth}
+      %
+      %
+      \newlength{\devantsender}
+      \setlength{\devantsender}{57mm}
+%
+      \newlength{\devantdifoot}
+%
+      \setlength{\devantdifoot}{\textheight-\diheadspace-\devantsender-\difootspace-8mm-13pt}
+%
+      \vspace{8mm}
+
+      \usebox{\dihead}
+
+      \vspace{\devantsender}
+
+      \vspace{\devantdifoot}
+
+      \usebox{\difoot}
+    \end{flushright}
+  \end{minipage}%
+}
+
+\begin{spacing}{1}
+
+  \noindent
+  \begin{picture}(0,0)
+    \setlength{\unitlength}{\firstcolumnwidth+\inbetween}
+    \put(-1,0){\usebox{\dimargin}}
+  \end{picture}%
+%
+\begin{minipage}[t]{\headermargin}
+
+\vspace{26mm}
+
+~
+\end{minipage}%
+\begin{minipage}[t]{\linewidth-\headermargin}
+  Strasbourg, le \today
+\end{minipage}
+
+\noindent
+\begin{minipage}[t]{\headermargin}
+\vspace{35mm}
+~
+\end{minipage}%
+%-----------------------------------------
+% Champ destinataire (#2=To/A , #3 <nom>)   
+%-----------------------------------------
+\ifthenelse{\equal{#3}{}}{%
+\begin{minipage}[t]{\linewidth-\headermargin}
+
+\vspace{2mm}
+
+\end{minipage}
+}%
+{%
+\begin{minipage}[t]{\linewidth-\headermargin} #2
+  
+  
+
+  \vspace{2mm}
+
+  #3
+}
+\end{minipage}
+\ifthenelse{\equal{#1}{}} {} {Objet : {#1}}
+\vspace{20mm}
+}
+{
+%\vspace{20mm}
+
+\newlength{\taillesignature}
+\settowidth{\taillesignature}{\fromname}
+\newlength{\possignature}
+\setlength{\possignature}{0.667\linewidth-0.5\taillesignature}
+
+\hspace{\possignature}\fromname
+
+
+\end{spacing}
+}
+
+
+
+\newcommand*{\name}[1]{\def\fromname{#1}}
+\name{}
+\newcommand*{\fonction}[1]{\def\fonction{#1}}
+\newcommand*{\telephoneesplanade}[1]{\def\phoneespla{#1}}
+\telephoneesplanade{}
+\newcommand*{\telephoneillkirch}[1]{\def\phoneillkirch{#1}}
+\telephoneillkirch{}
+\newcommand*{\email}[1]{\def\emailadd{#1}}
+\email{}
+\newcommand*{\objet}[1]{\def\emailadd{#1}}
+
+
+

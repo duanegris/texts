@@ -1,0 +1,234 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{mathptmx}
+\usepackage[scaled]{helvet}
+\usepackage{courier}
+
+\usepackage[margin=2cm,nohead,foot=1.4cm]{geometry}
+\usepackage{parskip}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+
+\begin{document}
+
+\begin{flushleft}
+\begin{tabular}[t]{l}
+\Large\textsf{\textbf{Rapport sur le manuscrit de Thèse présenté par}}\\[4mm]
+\Large\textsf{\textbf{Adrian Muresan}}\\[4mm]
+\large\textsf{\textbf{pour l'obtention du Doctorat en Informatique}}\\
+\large\textsf{\textbf{de l'Université de Lyon - \'Ecole Normale Supérieure de Lyon}}\\
+\end{tabular}
+
+
+\noindent%
+\begin{tabular}[t]{l}
+Rapporteur: Stéphane \textsc{Genaud},\\
+Maître de conférences habilité à diriger les recherches,\\
+Université de Strasbourg.\\[3mm]
+Titre du document évalué :\\[1mm]
+\end{tabular}%
+
+\begin{quote}
+\Large \textit{\textsf{\textbf{
+Scheduling and Deployment of Large-Scale Applications on Cloud Platforms
+}}}
+\end{quote}
+
+\end{flushleft}
+
+\vspace{5mm}
+
+Le document  présenté par Adrian  Muresan décrit  les recherches qu'il  a menées
+dans le cadre de  sa thèse, sous la direction de  Frédéric Desprez, directeur de
+recherches à  l'INRIA, et d'Eddy Caron,  Maître de Conférences à  l'ENS Lyon, au
+sein de l'équipe-projet INRIA Avalon.
+
+
+\subsection*{Contexte de l'étude}
+\vspace{-3mm}
+Le cadre  général du travail  est celui de la  gestion des ressources  de calcul
+provenant  de clouds  IaaS.   Ce  sujet a  pris  une  importance majeure  depuis
+quelques années car il correspond à une mutation économique profonde de la façon
+de consommer de  la puissance de calcul ou de  stockage.  Deux éléments nouveaux
+viennent   fondamentalement   changer  la   façon   dont   nous  concevons   les
+intergiciels~: i)  les utilisateurs  ou les  fournisseurs de  ressources peuvent
+faire  varier à  tout moment  le nombre  et le  type de  ressources utilisées  à
+travers  l'allumage ou  l'extinction de  machines virtuelles,  et peuvent  ainsi
+adapter dynamiquement l'infrastructure aux besoins  des applications, et ii) les
+resources sont facturées à l'usage uniquement.
+
+La thèse couvre  un large spectre des  problèmes nouveaux qui se  posent dans ce
+contexte.  Le travail aborde trois  problèmes. Le premier est le dimensionnement
+automatique de  la plateforme en  fonction de  la charge attendue.   Le deuxième
+problème  concerne le  modèle  de  régulation necéssaire  pour  que l'usage  des
+ressources soit  à la  fois maximisé  et que l'équité  d'accès à  ces ressources
+entre utilisateurs soit préservée. Le troisième problème est lié à l'exploitation 
+d'applications de type workflow sur ces plateformes.
+%
+L'ensemble du  travail forme  un tout  cohérent, bien  que chacun  des problèmes
+abordés soit bien distinct. 
+
+\vspace{-3mm}
+\subsection*{Analyse du document présenté}
+Le  document,  rédigé en  anglais,  est  organisé  en  trois parties  comptant  6
+chapitres au total. 
+
+La première partie est introductive. Elle comporte une courte introduction et un
+chapitre  \textit{Resource Management  in  Cloud platforms}  dédié  à l'état  de
+l'art.  Cette  revue du domaine,  qui est  annoncée comme introductive  au sujet
+traité par  la thèse, est assez  brève au regard  du grand nombre de  travaux et
+projets  existants dans  le domaine  des clous  IaaS. C'est  cependant un  choix
+judicieux,  évitant  l'écueil de  brosser  un  panorama  trop large  de  manière
+superficielle.  Ce chapitre se concentre sur  les travaux relatifs en matière de
+dimensionnement (\textit{scaling})  et d'équilibrage  de charge,  utilisés comme
+base pour le chapitre suivant.  Les états de l'art concernant les deux dernières
+problématiques  de la  thèse  sont  reportés à  l'intérieur  de  chacune de  ces
+parties.   L'état  de l'art  fait  dans  ce chapitre  cite,  à  juste titre,  de
+nombreuses solutions  commerciales, souvent  plus matures que  leurs équivalents
+\emph{open-source}.  L'exposé que  fait Adrian Muresan du  paysage actuel montre
+qu'il maîtrise parfaitement ce que contiennent les technologies (et les concepts
+qui  se  cachent  derrière)  proposées  aujourd'hui. Seule  la  section  sur  le
+monitoring référence  des projets  un peu  dépassés et le  fait de  manière trop
+superficielle.
+
+
+La  deuxième partie  comporte deux  chapitres  traitant chacun  une des  grandes
+problématiques abordées  dans la thèse.   Ces deux problématiques  concernent la
+gestion des  resources.  
+
+\paragraph{Auto-scaling Cloud  Applications}
+\vspace{-3mm}
+Le   premier   chapitre   de   cette    partie   (chapitre   3)   est   intitulé
+\textit{Auto-scaling Cloud  Applications}. Il décrit la  contribution qu'apporte
+ce  travail   au  dimensionnement  automatique  de   ressources.   On  distingue
+généralement deux types d'approche pour  anticiper un changement dans la demande
+de ressources: l'approche  réactive, qui établit des règles  selon lesquelles le
+système doit se comporter pour réagir à un état de sur- ou sous-charge constaté,
+et  l'approche prédictive  qui  vise  à prévoir  le  changement  de charge  pour
+anticiper  le  sur-  ou  sous-dimensionnement nécessaire.   Ce  travail  utilise
+l'approche prédictive.  Celle  ci fait l'hypothèse qu'il  existe des régularités
+dans la  charge, et l'objectif  est de détecter  des motifs répétitifs  dans des
+traces d'utilisation.   Ce problème a  été étudié assez largement  dans d'autres
+contextes  et  son  efficacité  diffère  beaucoup selon  la  nature  des  traces
+observées.   Ici, le  travail  reprend l'algorithme  de Knuth-Morris-Pratt  pour
+résoudre le problème  de \textit{string matching} et l'adapte  pour tenir compte
+des spécificités du contexte. Les  difficultés dans ce genre d'approche résident
+beaucoup dans la détermination des paramètres de l'algorithme: la longueur de la
+séquence  prédite, le  seuil d'erreur  tolérée  pour décider  s'il s'agit  d'une
+correspondance  ou  non, etc.   La  contribution,  outre la  méthode  spécifique
+proposée,  repose donc  beaucoup sur  l'évaluation  de cette  solution, en  nous
+montrant dans quelles conditions cette méthode est applicable. Ici, l'évaluation
+faite est menée de manière rigoureuse  et apporte des résultats convaincants sur
+les cas choisis. Un effort est fait pour tester la généralité des prédictions en
+procédant  à des  tests  croisés :  à  partir d'un  ensemble  de traces  réelles
+provenant  de  la \textit{Grid  Workload  Archive},  l'expérience évalue  quelle
+erreur est  observée dans  la prédiction d'une  trace en  utilisant l'historique
+d'une autre trace.  Les résultats  sont satisfaisants dans l'ensemble et ouvrent
+la perspective  qu'une telle méthode  prédiction, bien réglée, et  utilisant des
+traces  adaptées  au  domaine,  peut permettre  un  dimensionnement  automatique
+satisfaisant de la plateforme.
+
+
+   
+\paragraph{Economic based  resource management}
+\vspace{-3mm}
+Dans  le deuxième  chapitre  de cette  partie,  intitulé \textit{Economic  based
+  resource  management}, Adrian  Muresan s'intéresse  à intégrer  des ressources
+cloud IaaS dans  une infrastructure de grille. En  l'occurence, l'intergiciel de
+grille visé est DIET, developpé de longue date dans l'équipe. Cette question est
+tout à  fait d'actualité étant  donné l'existant  important dans le  domaine des
+applications développées  pour des grilles.   Après avoir rapidement  décrit les
+choix architecturaux pour  l'intégration, le problème de fond  de l'équité entre
+utilisateurs de l'accès aux ressources est abordé. Il est proposé de le résoudre
+à l'aide d'un modèle économique. Cette approche  a été étudiée dans le cadre des
+grilles et  la thèse montre  bien les différentes alternatives.   Adrian Muresan
+choisit une approche existante (utilisée pour un système de réseaux de capteurs)
+pour  l'adapter  à   l'intergiciel  DIET.   La  formulation   même  du  problème
+d'optimisation multi-objectifs et  pour de multiple acteurs est  difficile et la
+présentation qui en  est faite ici ne la dévoile  que progressivement, à travers
+des  sous-objectifs  du problème,  présentés  les  uns  après les  autres.   Une
+discussion du problème général en préambule aurait éclairé le plan de résolution
+adopté.   Néanmoins, l'introduction  progressive  des choix  faits (le  provider
+choisit  parmi  les  allocations  celle  qui maximise  la  fonction  utilité  de
+l'utilisateur, le client  choisit la stratégie de priorité par  risque) est très
+pédagogique.  Les arguments  sont justifiés au fur à mesure  par des expériences
+menées  par simulations  qui  sont  réalisées avec  le  logiciel GridSim.   Dans
+l'ensemble, le  chapitre couvre  une problématique très  complexe et  décrit une
+étude fouillée  de stratégies  d'allocation pour  un intergiciel  existant.  Les
+conclusions sont  convaincantes et encouragent  à implanter ces  mécanismes dans
+DIET.
+
+\paragraph{Running workflow-based applications in Cloud environments}
+La   troisième  partie   est  composée   d'un  seul   chapitre,  \textit{Running
+  workflow-based    applications   in    Cloud   environments},    traitant   de
+l'ordonnancement  de   workflows  sur   ces  infrastructures  cloud   IaaS.   Si
+l'ordonnancement des  workflows sur la  grille a  déjà été largement  étudié, la
+nature dynamique du cloud modifie  les objectifs. Alors que le \textit{makespan}
+minimum était quasiment le seul objectif dans les grilles, le budget devient ici
+un objectif au moins aussi important  que le \textit{makespan}.  Le problème est
+formulé ici comme un problème  d'ordonnancement sous contrainte (budgétaire). Il
+s'appuie sur  l'algorithme CPA et son  extension biCPA, qui est  choisi ici pour
+l'allocation des ressources.  Le travail conduit fait des hypothèses qui rendent
+particulièrement complexe  l'ordonnancement~: les workflows considérés  sont non
+déterministes   (des  chemins   alternatifs   peuvent  être   pris  de   manière
+imprévisible).  D'autre part, chaque noeud représentant une tâche de calcul peut
+être  une tâche  parallèle exécutée  sur  plusieurs ressources  de calcul.   Ces
+workflows sont donc extrêmement généraux et  sont complètement en phase avec les
+applications  réelles.   En  revanche,  il  est  particulièrement  difficile  de
+déterminer  la quantité  exacte de  ressources à  réserver.  La  contribution du
+travail  est  une   méthode  de  décomposition  automatique   d'un  workflow  en
+sous-workflows  élémentaires  sur lequels  on  peut  raisonner.  Adrian  Muresan
+propose une approche probabiliste supposant que le nombre de fois qu'un workflow
+élémentaire  est exécuté  suit une  loi  normale.  Le  modèle d'allocation  doit
+également tenir compte de la ré-utilisation possible de ressources non utilisées
+complètement  pour le  temps  loué (et  donc  gratuites).  L'ordonnancement  est
+effectué avec toutes ces estimations, avec comme guide le budget alloué à chaque
+sous-workflow.  Comme dans le chapitre précédent, la méthodologie du travail est
+rigoureuse~: les  hypothèses sont  formulées, introduites dans  le modèle  et le
+résultat est  observé à  travers des  simulations.  Dans  cette partie,  il faut
+aussi saluer l'application à  un code réel, ce qui implique  un lourd travail de
+mise en place.  La méthode proposée  est une contribution très intéressante dans
+la mesure où elle a traite de  workflows très généraux et qu'elle a fait l'objet
+d'un  prototype   qui  pourrait  certainement  rapidement   s'intégrer  dans  un
+intergiciel réel.
+
+
+
+
+\subsection*{Conclusion}
+\vspace{-3mm}
+Ce  document de  thèse rapporte un  travail remarquable  sur trois
+problématiques importantes des  clouds IaaS.  Si ces  problématiques sont toutes
+trois partie  intégrante des clouds IaaS,  elles nécessitent des efforts  et des
+techniques bien distincts. Ceci ne  fait qu'augmenter le mérite d'Adrian Muresan
+d'avoir  traité successivement  ces  trois questions  importantes  dans ce  seul
+manuscrit.
+
+La rédaction  soignée du  document et  la rigueur avec  laquelle est  conduit le
+travail sont pleinement satisfaisantes. L'équilibre  entre la théorie et la mise
+en   application   sur  des   cas   concrets   est  également   particulièrement
+satisfaisante. Etant donné le champs très  vaste de questions étudiées, il était
+difficile  d'aller   plus  loin   dans  l'expérimentation  réelle,   mais  ouvre
+naturellement des  perspectives d'expérimentations  (et de comparaison  avec les
+simulations) très  intéressantes dans le  domaine de l'allocation  de ressources
+régulée par modèle économique et dans celui des workflows.
+
+Au  final,  cette thèse  apporte  des  contributions importantes  sur  plusieurs
+questions majeures des clouds, et démontre  une très grande maîtrise du domaine,
+à la fois scientifique et technologique, de l'auteur. Il faut noter aussi que ce
+travail   a  fait   l'objet   d'un  nombre   très   important  de   publications
+internationales   (trois    articles   de    revues   et    quatre   conférences
+internationales).   Pour  toutes  ces  raisons,  je suis  très  favorable  à  la
+soutenance de cette thèse.
+
+
+\begin{flushright}
+
+{\small fait à Strasbourg, le 14 novembre 2012}.\\
+\includegraphics[width=.16\textwidth]{signgenaud.jpg}
+\end{flushright}
+\end{document}

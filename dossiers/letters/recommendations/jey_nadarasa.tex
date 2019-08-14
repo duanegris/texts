@@ -1,0 +1,67 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[francais]{babel}
+\usepackage{url}
+
+\selectlanguage{francais}
+\input{letter-icube-uds.sty}
+
+\selectlanguage{francais}
+\begin{document}
+
+
+\name{St\'ephane \textsc{Genaud}}
+\fonction{Ma\^itre de conf\'erences (HDR)}
+\telephoneillkirch{+33 (0)3688 54542}
+\email{genaud@unistra.fr}
+
+\begin{letter}[Recommendation de Jey Nadarasa pour un doctorat sur le sujet\\%
+{\it Modeling of soft tissues under Cryoablation and High Intensity Focused Ultrasound with the effect of blood flow.}%
+]{à}{\'Ecole Doctorale MSII,\\Université de Strasbourg}
+
+\vspace{-13mm}
+Madame, Monsieur
+
+J'ai eu le plaisir d'accueillir Jey Nadarasa pour un stage de Master 1 pendant
+dix semaines en juin et juillet 2012. Ce stage s'inscrivait dans son cursus de
+Master \textit{Calcul Scientifique et Sécurité Informatique} de l'UFR de 
+mathématiques-informatique de l'Université de Strasbourg.
+
+Son sujet était l'optimisation de parties précises d'un code de physique destiné
+à la simulation de la fusion des plasmas aux bords d'un tokamak. Il était encadré
+principalement dans ce travail par Matthieu Kuhn, doctorant issu de la même
+formation de Master, dont le travail de thèse se déroule dans le cadre d'un projet
+ANR sur ce même sujet.
+
+Le travail de Jey a été la réécriture d'une méthode de discrétisation basé sur 
+le schéma d'Arakawa afin d'améliorer les temps d'exécution. Les techniques employées
+ont été diverses. D'abord, il a travaillé sur l'optimisation séquentielle du code en faisant de 
+l'inlining ou en jouant sur les variables intermédiaires, puis en favorisant la 
+localité spatiale des données en mémoire afin de mieux exploiter les caches matériels.
+Ensuite, il a parallélisé les nids de boucle au coeur de la méthode afin 
+de profiter d'architectures multi-cores. La parallélisation s'est faite en OpenMP.
+
+
+Jey a montré de très grandes qualités d'adaptation pour s'approprier les notions
+d'architecture et de parallélisation nécessaires à sa tâche. Du côté mathématiques,
+il possèdait le bagage nécessaire pour manier avec aisance les expressions du schéma
+numérique et les simplifier. La rapidité avec laquelle Jey s'est emparé du sujet est
+remarquable. Il a fait également preuve de beaucoup d'autonomie, cherchant toujours
+lui même les solutions avant de demander des conseils. Enfin, Jey est une personne
+extrêmement ouverte et sympathique, toujours désireuse de partager ses idées avec
+l'équipe.
+
+En conclusion, je recommande vivement Jey pour une thèse de doctorat, à la 
+fois pour ses qualités humaines, son sérieux et l'efficacité avec laquelle il pourrait
+mener un travail de recherche dans le domaine de la simulation numérique. 
+
+
+\end{letter}
+\begin{flushright}
+\includegraphics[width=.20\textwidth]{signgenaud.jpg}
+\end{flushright}
+%\newpage
+%\bibliographystyle{plain}
+%\bibliography{julien_blaise_ED}
+
+
+\end{document}

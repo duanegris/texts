@@ -1,0 +1,90 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[francais]{babel}
+\usepackage{url}
+
+\selectlanguage{francais}
+\input{letter-LSIIT-UdS.sty}
+
+\selectlanguage{francais}
+\begin{document}
+\name{Stéphane \textsc{Genaud}}
+\fonction{Maître de conférences (HDR)}
+\telephoneillkirch{+33 (0)3688 54542}
+\email{genaud@unistra.fr}
+
+
+\begin{letter}[Recommendation de Jonathan Rouzaud-Cornabas]{au}{CoCNRS Section 6}
+
+\textit{Concours CNRS 06/03,  thème  prioritaire  ``calcul haute  performance,
+  cloud-computing''}
+
+Madame, Monsieur,
+
+
+Je connais Jonathan depuis que nous travaillons ensemble sur le projet ANR SONGS
+(11-INFRA-13) démarré en  décembre 2012.  Ce projet  poursuit l'objectif général
+d'enrichir  l'outil de  simulation  à évènements  discrets \textsc{SimGrid},  en
+permettant la  modélisation de  systèmes informatiques  de divers  domaines (les
+systèmes pair-à-pair, le  HPC, les clouds, ...). J'anime dans  ce projet le work
+package \textit{Clouds}.  L'objectif  est de proposer des  modèles permettant de
+prédire le comportement  des applications sur ces  grandes infrastructures. Nous
+nous  intéressons principalement  aux  infrastructures dont  on  peut louer  les
+ressources  physiques,  appelées  communément  clouds  IaaS.   
+
+Cette entreprise suppose de modéliser  de nombreux mécanismes, tels l'allocation
+des  machines virtuelles  sur  les  machines physiques  ou  le comportement  des
+systèmes de  stockage (performance  du transfert  des données  et des  images de
+machines virtuelles),  mais également  d'inclure les  éléments utilisés  pour la
+facturation. Nous  nous appuyons  sur les  modèles éprouvés  de \textsc{SimGrid}
+(comme par exemple les modèles de réseau)  ainsi que de son moteur de simulation
+comme  brique  de base.  Néanmoins,  la  modélisation  des clouds  nécessite  de
+construire une architecture complexe comportant de très nombreux nouveaux
+éléments.
+
+Jonathan  a  apporté,   dans  ce  travail,  une  contribution   majeure,  qui  a
+impressionné  tout le  groupe.   Il  a réussi  a  développer  en quelques  mois,
+l'essentiel du  simulateur que nous  souhaitions avoir. Cette réalisation  lui a
+demandé un travail de bibliographie et d'enquêtes minutieuses pour déterminer le
+fonctionnement  précis et  les paramètres  réalistes permettant  de simuler  des
+infrastructures telles  celles d'Amazon  EC2. Il a  ensuite fallu  concevoir une
+structuration logicielle suffisamment générique capable  de décrire le système à
+la fois du  côté du client (qui voit  les clouds comme des boîtes  noires) et du
+côté  fournisseur   de  l'infrastructure.    La  conception   de  l'architecture
+logicielle  est également  ingénieuse en  offrant l'évolutivité  nécessaire pour
+s'adapter aux  modes potentiellement différents  de fonctionnement de la multitude
+de fournisseurs d'infrastructures, qu'ils soient de type cloud privé ou cloud public. 
+Ce développement a été présenté au workshop annuel de l'INRIA-Illinois Joint 
+Laboratory en novembre 2012.
+
+La liste de  publications de Jonathan montre par ailleurs  son dynamisme dans la
+valorisation  de  ses résultats,  que  ce  soit  sur  son précédent  domaine  de
+recherche concernant la  sécurité des systèmes distribués, ou  maintenant sur le
+thème de l'ordonnancement des machines  virtuelles dans les clouds, complété par
+ce travail sur la simulation des clouds  IaaS. Jonathan est auteur de 3 articles
+dans des journeaux internationaux, 7 conférences internationales, et 2 workshops
+d'une conférence  majeure du domaine. Dans  le contexte de l'équipe  dynamique à
+laquelle il participe, plusieurs autres articles sont déjà en préparation sur le
+travail décrit précédemment.
+
+En  conclusion, Jonathan  m'a montré  des capacités  de travail  et de  ténacité
+remarquables.  Il  a aussi démontré  qu'il avait été  capable de s'adapter  à un
+nouvel  environnement   (de  l'Université   d'Orléans  à l'ENS   Lyon)  très
+rapidement, gr\^ace à son investissement  sur des développements logiciels lourds,
+qui prennent habituellement plus de  temps pour être valorisés. Cette expérience
+réussie en toute  autonomie m'amène à recommander  chaleureusement Jonathan pour
+un    poste    de   CR2,    particulièrement    sur    le   thème    prioritaire
+\textit{cloud-computing}.
+
+
+
+
+
+\end{letter}
+\begin{flushright}
+\includegraphics[width=.30\textwidth]{signgenaud.jpg}
+\end{flushright}
+%\newpage
+%\bibliographystyle{plain}dd%\bibliography{julien_blaise_ED}
+
+
+\end{document}
