@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+%\usepackage{a4wide}
+\usepackage{fancybox}
+%\usepackage{hyperref}
+\usepackage{comment}
+\usepackage{pgf}
+%\usepackage{pdfpages}
+\usepackage{geometry}
+\usepackage{eurosym}
+\usepackage{url}
+
+\usepackage{pdfswitch}
+\hypersetup{urlcolor=black,linkcolor=black,citecolor=black} % Keep printer friendly
+%\geometry{hmargin=3.5cm, bottom=22mm,vmargin=2.5cm }
+\geometry{top=27mm,bottom=27mm,left=23mm,right=23mm,headsep=0pt}
+\usepackage[twoside,citeonce(page)]{footbib}
+
+
+\newcommand {\rubrique}[1]{
+\begin{flushleft}
+{\large\bf #1}
+\rule{\linewidth}{1mm}
+\end{flushleft}
+}
+\newcommand{\pmpi}{\mbox{\textsc{P2P-MPI}}}
+
+%\makeatletter
+%\def\thebibliography#1{\subsection*{\rubrique{\large\bf Liste de Publications}\@mkboth
+%  {REFERENCES}{REFERENCES}}\list
+%      {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+%      \advance\leftmargin\labelsep
+%      \usecounter{enumi}}
+%      \def\newblock{\hskip .11em plus .33em minus .07em}
+%      \sloppy\clubpenalty4000\widowpenalty4000
+%      \sfcode`\.=1000\relax}
+%    \makeatother
+
+
+\footbibliography{generalbiblio}
+\footbibliographystyle{plain}
+
+
+\begin{document}
+%------------------------- Page de Garde -------------------
+\setlength{\parindent}{0mm}
+%\setlength{\parskip}{0mm}
+\vspace*{\stretch{1}}
+
+
+
+\rule{\linewidth}{1mm}
+\begin{center}
+\Large{\textbf{Curriculum Vit{\ae}}}\\[5mm]
+\Large{Stéphane \textsc{Genaud}}\\[1cm]
+
+\rule{\linewidth}{1mm}
+\vspace*{\stretch{2}}\\
+\vspace{3cm}
+%\includegraphics[width=5cm]{inria.jpg}
+\end{center}
+\begin{center}
+Date: \today\\
+\end{center}
+
+\newpage
+\mbox{}%blank page 
+
+\setlength{\parindent}{5mm} %% restore a decnt value
+%\setlength{\itemsep}{1mm}
+
+%--------------------- T  O C --------------------------
+%\begin{center}
+%\huge{\textsc{Table des matières}}
+%end{center}
+%\vspace{2cm}
+%\tableofcontents
+%\noindent
+%\rule{\linewidth}{0.3mm}
+%\newpage
+%--------------------- /T  O C --------------------------
+%\setlength{\textwidth}{15cm}
+
+
+%\section{\'{E}tat civil}
+
+
+\input{cv_facts_20170201.tex}
+
+
+
+\end{document}
