@@ -1,0 +1,177 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{mathptmx}
+\usepackage[scaled]{helvet}
+%\usepackage{courier}
+
+\usepackage[margin=2.2cm,nohead,foot=1.8cm]{geometry}
+\usepackage{parskip}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+
+\begin{document}
+
+\begin{flushleft}
+\begin{tabular}[t]{l}
+\Large\textsf{\textbf{Rapport sur le manuscrit d'Habilitation à Diriger les Recherches}}\\[4mm]
+\Large\textsf{par Monsieur \textbf{Heithem Abbes}}\\[4mm]
+\large\textsf{\textbf{pour l'obtention de l'Habilitation à Diriger les Recherches}}\\
+\large\textsf{\textbf{de l'Université Paris 13}}\\
+\end{tabular}%
+
+\vspace{4mm}
+
+\noindent%
+\begin{tabular}[t]{l}
+Rapporteur: Stéphane \textsc{Genaud},\\
+Professeur des Universités,\\
+Université de Strasbourg.\\[5mm]
+Titre du document évalué :\\\\[3mm]
+\end{tabular}%
+
+\begin{quote}
+\Large \textit{\textsf{\textbf{
+	  Contributions à la Gestion Décentralisée des Ressources dans les Environnements de Grilles et Cloud
+}}}
+\end{quote}
+
+\end{flushleft}
+
+\vspace{3mm} Le document  décrit les travaux de recherche  réalisés par Monsieur
+Heithem Abbes au laboratoire de recherche LaTICE, à Tunis, en collaboration avec
+le LIPN de  l'Université de Paris 13,  depuis sa thèse de doctorat  en 2009. Ces
+activités ont pour  objectif d'améliorer la conception et la  mise en oeuvre des
+intergiciels de gestion de ressources de calcul et de données.
+
+\section*{Analyse du document}
+\label{sec-1}
+Le  document  est organisé  en  cinq  chapitres.  Le  premier chapitre  est  une
+introduction qui donne le contexte scientifique  dans lequel se situe ce travail
+et résume les principales contributions.
+
+Le  chapitre 2  brosse ensuite  l'évolution, dans  les dernières  décennies, des
+systèmes distribués  de calcul,  sous le prisme  des concepts  et problématiques
+relatifs au travail de recherche présenté.
+
+
+Le chapitre 3  décrit une première série de contributions  concernant la gestion
+des  données dans  des environnements  décentralisés.  Il  introduit d'abord  la
+problématique  de la  gestion  des données  volumineuses  pour des  applications
+scientifiques de  type workflow.  Le chapitre  décrit avec du recul,  le premier
+travail de l'auteur dans ce domaine, l'intergiciel \emph{BonjourGrid} (2008). Il
+fait le constat que la gestion  des données de BonjourGrid devait être améliorée
+pour que les applications manipulant  des données volumineuses puissent passer à
+l'échelle.  Cette fonctionnalité initialement traitée comme une tâche auxiliaire
+du  coordinateur,  fait  l'objet  d'une  refonte  pour  devenir  une  composante
+\emph{gestionnaire  de données}  à part  entière de  l'intergiciel.  De  manière
+pertinente, l'auteur a choisi de s'appuyer  sur des projets existants (BitDew et
+Stork) pour réaliser  cette composante. Disposer d'un gestionnaire  de données a
+permis de  concevoir des solutions  de cache  et de pré-chargement  des données,
+indépendantes de l'intergiciel (l'auteur l'a intégré dans BonjourGrid mais aussi
+dans Condor). Le calcul du pré-chargement de données, étant donné un workflow de
+tâches (exprimant les  dépendances) est un problème tout à  fait général, que le
+document aurait pu mettre davantage en  exergue. Ces travaux sur le gestionnaire
+de  données  ont  fait  l'objet d'évaluations  expérimentales  conséquentes  (de
+l'ordre  de 200  machines) sur  une  plate-forme réelle,  Grid'5000.  C'est  une
+démarche  qu'il faut  saluer  car elle  demande  beaucoup de  temps  de mise  au
+point. Elle me semble cependant nécessaire pour avoir une validation crédible de
+la proposition.
+
+Toujours en matière de gestion décentralisée des données, ce chapitre expose des
+travaux sur la  sécurisation des données dans le cadre  d'un framework MapReduce
+par un  mécanisme de  dissémination des  données. La  motivation aurait  pu être
+donnée au début de l'exposé (et non au sein du descriptif du fonctionnement) car
+cette problématique  est d'importance quand  on fait  appel à des  ressources de
+calcul et stockage externes.  En effet, il est ainsi possible  de ne confier aux
+entités externes de stockage qu'une  partie des données, rendant impossible leur
+compréhension  sans les  parties complémentaires  hébergées sur  des entités  de
+confiance.  Cette problématique  est  complètement en  phase avec  l'utilisation
+grandissante des  clouds publics  pour lesquels  la confidentialité  des données
+hébergées  est   une  question  cruciale.    Pour  ce  travail   également,  des
+expérimentations conséquentes sur Grid'5000 ont permis  de mesurer le coût de la
+surcouche de dissémination.
+
+
+%\section{Ch 4 Modèles décentralisés de gestion des points de reprises de conteneurs}
+%\label{sec-2}
+
+Le  chapitre  4  traite  de  la   tolérance  aux  pannes  par  un  mécanisme  de
+\emph{check-point  and  restart}  pour  des  applications  s'exécutant  dans  un
+environnement de  \emph{containers}. Ce thème de  recherche est particulièrement
+d'actualité avec le développement des  datacenters, et de nombreux chercheurs de
+la recherche académique ou industrielle  y travaillent. Ce chapitre comporte une
+description des  travaux relatifs tout  à fait conséquente et  précise, montrant
+bien  comment se  situe la  recherche de  l'auteur. L'originalité  de l'approche
+présentée  ici  réside  dans  le  stockage des  points  de  reprise  de  manière
+décentralisée (alors que ce stockage  est traditionnellement fait sur un support
+centralisé  réputé fiable)  ainsi que  l'ajout d'un  mécanisme de  \emph{garbage
+  collector},  qui élimine  au  fur et  à mesure  les  checkpoints périmés.   La
+distribution  des check-points  dans le  système est  opérée avec  une table  de
+hashage  distribuée.  Cette  table  de  hashage repose  sur  un logiciel  ouvert
+éprouvé (Cassandra), modifié  pour s'adapter à la gestion des  snapshots et à la
+détection  de pannes  des  hôtes. L'approche  est  difficile techniquement  mais
+ambitieuse car  la sauvegarde  de containers offre  une solution  générique pour
+tout type  d'application.  Pour ce  travail encore, des  expérimentations menées
+grâce à Grid'5000 renforcent considérablement la validité de la proposition.
+
+
+
+Le dernier  chapitre du manuscrit  est consacré aux conlusions  et perspectives.
+Les perspectives font  état des pistes à court terme,  qui visent l'amélioration
+du mécanisme  de tolérance aux  pannes par \emph{check-point and  restart}.  Une
+part conséquente du chapitre aborde également  des perspectives de moyen et long
+termes. Les idées présentées font apparaître,  en particulier pour ce qui est de
+l'utilisation  de navigateurs  comme  noeud  de calcul  et  stockage, une  vraie
+conviction personnelle et enthousiasmante de l'auteur.
+
+
+
+\section*{Conclusion}
+
+
+Le manuscrit  retrace les travaux de  recherche menés par Monsieur  Heithem Abbes
+depuis sa thèse  ainsi que pendant les  dix années qui ont suivies.   Lors de sa
+thèse de doctorat, effectuée en  co-tutelle entre l'Ecole Nationale des Sciences
+de l'Informatique à Tunis  et le LIPN à l'Université Paris  13, Monsieur Abbes a
+pleinement contribué à  construire une collaboration fructueuse  et pérenne avec
+les chercheurs  français.  Il est  remarquable que  Monsieur Abbes ait  réussi à
+animer  cette  collaboration  durant  ces   années  en  dépit  de  l'éloignement
+géographique  et   des  charges   lourdes  d'une  fonction   d'enseignant.   Ses
+publications pendant cette  période montrent que le candidat a  su faire évoluer
+ses  recherches  avec  l'état de  l'art  du  domaine,  tout  en gardant  le  fil
+conducteur  de la  gestion décentralisée  des  traitements et  données dans  les
+systèmes distribués.   Les publications montrent également  que dans l'évolution
+de ses recherches, il a su faire  naitre de nouvelles collaborations tout à fait
+naturelles avec d'autres  chercheurs français.  Il a  également co-encadré trois
+doctorants tunisiens.
+
+Au final,  Monsieur Heithem Abbes fait  dans son manuscrit une  bonne synthèse de
+son  activité de  recherche  depuis  son doctorat.  Il  fait  apparaitre un  fil
+conducteur  autour duquel  il  résume  avec recul  les  points importants  d'une
+recherche  ayant  évolué   avec  les  problématiques  les   plus  actuelles  qui
+intéressent la communauté. Ce parcours de recherche a donné lieu à de nombreuses
+publications, dont 9 articles dans des revues internationales et une quinzaine de
+publications dans des conférences internationales de haut niveau.
+
+Pour toutes les raisons évoquées ci-dessus, je suis favorable à la soutenance de
+son habilitation à diriger les recherches.
+
+
+%\section{Questions}
+%\label{sec-4}
+%\begin{itemize}
+%\item Q chap4 : sauvegarde differentielle des checkpoints ?
+%\end{itemize}
+
+
+\vspace{.8cm}
+\begin{flushright}
+Stéphane \textsc{Genaud},\\
+{\small fait à Strasbourg, le 20 novembre 2019}.\\
+\includegraphics[width=.20\textwidth]{../signgenaud.jpg}
+\end{flushright}
+\end{document}

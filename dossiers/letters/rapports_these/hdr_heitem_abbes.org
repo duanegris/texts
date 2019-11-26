@@ -1,6 +1,7 @@
 
-#+TITLE: Contributions à la Gestion Décentralisée des Ressources dans les Environnements de Grilles et Cloud
+#+TITLE: Rapport sur le manuscrit Contributions à la Gestion Décentralisée des Ressources dans les Environnements de Grilles et Cloud
 #+AUTHOR: Heitem Abbes
+
 
 
 Le  document  décrit  les  travaux  de recherche  réalisées  au  laboratoire  de
@@ -8,25 +9,26 @@ recherche  LaTICE  en  collaboration  avec  LIPN depuis  sa  thèse  de  doctora
 en 2009. Ces activités ont pour objectif d’améliorer la conception et la mise en
 oeuvre des intergiciels de gestion de ressources de calcul et de données.
 
-Le document  est organisé en cinq  chapitres. Le premier chapitre est une
-introduction qui donne le contexte scientifique dans lequel se situe se travail
+* Analyse du document
+Le  document  est organisé  en  cinq  chapitres.  Le  premier chapitre  est  une
+introduction qui donne le contexte scientifique  dans lequel se situe se travail
 et résume les principales contributions.
 
 
-* Ch2
-Le  chapitre 2  brosse l'évolution  dans les  dernières décennies,  des systèmes
+Le  chapitre deux  brosse ensuite l'évolution,  dans les  dernières décennies,  des systèmes
 distribués de calcul, sous le prisme  des concepts et problématiques relatifs au
-travail  de recherche  présenté.  
+travail  de recherche  présenté. Ce panorama présente 
 
-* Ch 3
+
 Le chapitre 3  décrit une première série de contributions  concernant la gestion
 des  données dans  des environnements  décentralisés.  Il  introduit d'abord  la
 problématique  de la  gestion  des données  volumineuses  pour des  applications
 scientifiques de  type workflow.  Le chapitre  décrit avec du recul,  le premier
 travail de l'auteur dans ce domaine, l'intergiciel /BonjourGrid/ (2008). Il fait
-le constat  que la gestion  des données  de BonjourGrid pouvait  être améliorée.
-Cette  fonctionnalité  initialement  traitée   comme  une  tâche  auxiliaire  du
-coordinateur,   fait  l'objet   d'une  refonte   pour  devenir   une  composante
+le constat que la gestion des  données de BonjourGrid devait être améliorée pour
+ques  les applications  manipulant des  données volumineuses  puissent passer  à
+l'échelle.  Cette fonctionnalité initialement traitée comme une tâche auxiliaire
+du  coordinateur,  fait  l'objet  d'une  refonte  pour  devenir  une  composante
 /gestionnaire  de  données/  à  part   entière  de  l'intergiciel.   De  manière
 pertinente, l'auteur a choisi de s'appuyer  sur des projets existants (BitDew et
 Stork) pour réaliser  cette composante. Disposer d'un gestionnaire  de données a
@@ -37,8 +39,9 @@ tâches (exprimant les  dépendances) est un problème tout à  fait général, 
 document aurait pu mettre davantage en  exergue. Ces travaux sur le gestionnaire
 de  données  ont  fait  l'objet d'évaluations  expérimentales  conséquentes  (de
 l'ordre  de 200  machines) sur  une  plate-forme réelle,  Grid'5000.  C'est  une
-démarche qu'il  faut saluer  car elle  demande beaucoup de  temps mais  est elle
-nécessaire pour avoir une validation crédible de la proposition.
+démarche  qu'il faut  saluer  car elle  demande  beaucoup de  temps  de mise  au
+point. Elle me semble cependant nécessaire pour avoir une validation crédible de
+la proposition.
 
 Toujours en matière de gestion décentralisée des données, ce chapitre expose des
 travaux sur la  sécurisation des données dans le cadre  d'un framework MapReduce
@@ -56,67 +59,79 @@ surcouche de dissémination.
 
 * Ch 4 Modèles décentralisés de gestion des points de reprises de conteneurs
 
-Le  chapitre 4 traite  de la  tolérance aux  pannes en environnement décentralisé
+Le chapitre 4 traite de la tolérance aux pannes par un mécanisme de /check-point
+and  restart/  pour  des  applications  s'exécutant  dans  un  environnement  de
+/containers/. Ce  thème de  recherche est  particulièrement d'actualité  avec le
+développement  des  datacenters,  et  de nombreux  chercheurs  de  la  recherche
+académique ou industrielle  y travaillent. Ce chapitre  comporte une description
+des travaux relatifs  tout à fait conséquente et précise,  montrant bien comment
+se situe  la recherche  de l'auteur. L'originalité  de l'approche  présentée ici
+réside dans  le stockage des points  de reprise de manière  décentralisée (alors
+que ce  stockage est  traditionnellement fait sur  un support  centralisé réputé
+fiable) ainsi que l'ajout d'un mécanisme  de /garbabe collector/, qui élimine au
+fur et à  mesure les checkpoints périmés. La distribution  des check-points dans
+le système  est opérée  avec une  table de hashage  distribuée.  Cette  table de
+hashage  repose  sur  un  logiciel  ouvert  éprouvé  (Cassandra),  modifié  pour
+s'adapter  à   la  gestion  des  snapshots   et  la  détection  de   pannes  des
+hôtes. L'approche est difficile techniquement  mais ambitieuse car la sauvegarde
+de containers offre  une solution générique pour tout  type d'application.  Pour
+ce  travail encore,  des expérimentations  menées grâce  à Grid'5000  renforcent
+considérablement la validité de la proposition.
+
+
+
+Le dernier  chapitre du manuscrit  est consacré aux conlusions  et perspectives.
+Les perspectives font  état des pistes à court terme,  qui visent l'amélioration
+du mécanisme  de tolérance aux  pannes par  /check-point and restart/.  Une part
+conséquente  du chapitre  aborde également  des  perspectives de  moyen et  long
+termes. Les idées présentées font apparaître,  en particulier pour ce qui est de
+l'utilisation  de navigateurs  comme  noeud  de calcul  et  stockage, une  vraie
+conviction personnelle et enthousiasmante de l'auteur.
+
+
+
+* Conclusion
+
+Le manuscrit retrace  les travaux de recherche menés par  Heitem Abbes depuis sa
+thèse ainsi  que pendant les dix  années qui ont  suivies.  Lors de sa  thèse de
+doctorat,  effectuée  en co-tutelle  entre  l'Ecole  Nationale des  Sciences  de
+l'Informatique à Tunis  et le LIPN à  Paris 13, Heitem a  pleinement contribué à
+construire une collaboration fructueuse et pérenne avec les chercheurs français.
+Il est remarquable qu'Heitem ait réussi  à animer cette collaboration durant ces
+années  en dépit  de l'éloignement  géographique  et des  charges lourdes  d'une
+fonction  d'enseignant.  Ses  publications  pendant cette  période montrent  que
+Heitem a su faire  évoluer ses recherches avec l'état de  l'art du domaine, tout
+en gardant  le fil  conducteur de  la gestion  décentralisée des  traitements et
+données dans les  systèmes distribués.  Les publications  montrent également que
+dans  l'évolution de  ses  recherches, Heitem  a su  faire  naitre de  nouvelles
+collaborations tout  à fait naturelles  avec d'autres chercheurs français.  Il a
+également co-encadré trois doctorants tunisiens.
+
+Au final, Heitem Abbes fait dans son manuscrit une bonne synthèse de son
+activité de recherche depuis son doctorat. Il fait apparaitre un fil conducteur
+autour duquel il résume avec recul les points importants d'une recherche ayant
+évolué avec les problématiques les plus actuelles qui intéressent la
+communauté. Ce parcours de recherche a donné lieu à de nombreuses publicatons,
+dont 9 articles dans des revues internationales et une quinzaine de publications
+dans des conférences internationales de haut niveau.
+
+Pour toutes les raisons évoquées ci-dessus, je suis favorable à la soutenance de
+son habilitation à diriger les recherches de l’université Sorbonne Paris Nord.
+   
+
+
+
+
+
+* Questions
+- Q chap4 : sauvegarde differentielle des checkpoints ?
 
 
 
 * Verbatim
 
-Chap 2. Évolution des systèmes distribués
-
-Nous  nous sommes  focalisés  sur  la gestion  décentralisée  des ressources  de
-grilles dans  nos activités  de recherche.   En effet,  les systèmes  de grilles
-décentralisés doivent  utiliser un ordonnancement  distribué sans passer  par un
-élément  central  qui  tient  l’information  sur l’état  des  ressources  de  la
-grille. L’ordonnanceur  distribué doit tenir  compte aussi de la  volatilité des
-ressources,  la disponibilité  aléatoire,  la crédibilité,  la  confiance et  la
-qualité de service demandée par l’utilisateur.
-
-Chap 3. 
-Modèles décentralisés de gestion des données dans les Grilles et Clouds
-
-la gestion de données nécessite une attention particulière pour bénéficier des avantages de telles plateformes. Nous proposons un mo- dèle décentralisé pour la gestion de données. Nous nous intéressons aussi à la sécurisation des données dans les environnements du cloud pour les applications map/reduce.
-
-Dans [CF12], Fedak et al. soulignent que la gestion des données dans l’environnement des grilles de PCs, est difficile à accomplir à cause de de la volatilité des noeuds. En plus, l’éloignement géographique des ressources rend la conception d’une solution scalable, permettant de gérer de grandes masses de données très compliquée.
-Notre objectif est de concevoir un modèle auto-configurable capable d’orchestrer de manière décentralisée les données et le calcul.
-
-
-concl chap 3.4
-
-Cette conclusion montre la scalabilité de BonjourGrid suite à l’intégration d’un mécanisme de gestion des données.
-
-
-
-
-Chap 4.
-Modèles décentralisés de gestion des points de reprises de conteneurs
-
-
-Le chapitre  est organisé comme  suit, nous présentons  dans la section  4.2, la
-conception architecturale  de notre modèle LXCloud-CR,  le modèle décentralisé
-de sauvegarde  de points de reprises,  ainsi que la validation  expérimentale du
-modèle en  utilisant 150 conteneurs distribués  sur 50 nœuds de  Grid’5000. Nous
-présentons différents scénarios  de test afin d’étudier  le nouveau comportement
-de LXCloud-CR  face aux  pannes. La  section 4.3 présente  le modèle  du garbage
-collector décentralisé des checkpoints, nous illustrons l’architecture ainsi que
-les expérimentations de validation sur l’environnement Grid5000.
-
-
-L’originalité de notre modèle de sauvegarde de points de reprises revient à son ar- chitecture totalement décentralisée. Nous appelons dans la suite notre modèle par : LXCloud-CR. Nous utilisons un système de stockage distribué avec une table de hachage distribuée, pour stocker les points de reprise des conteneurs.
-
-
-
-5 Conclusion et Perspectives
-5.1 Conclusion................................... 69
-5.2 Perspectives.................................. 71
-
-5.3 Courtterme.................................. 71
-5.3.1 Gestion dynamique de la fréquence des points de reprise et le nombre de réplicas .......................... 71
-5.3.2 Modèle de gestion de points de reprises pour les applications pa- rallèlesfortementcouplées ...................... 72
-5.3.3 Modèle décentralisé de déduplication des conteneurs . . . . . . . . 72
-
 5.4 Moyen et long termes............................. 73
-5.4.1 Cloudvolontaireàbasedenavigateurs . . . . . . . . . . . . . . . 73
+5.4.1 Cloud volontaire à base de navigateurs . . . . . . . . . . . . . . . 73
 
 L’idée d’avoir un cloud volontaire décentralisé, basé sur la participation de navigateurs Web, soulève plusieurs questions : pouvons nous réutiliser les intergiciels, comme Boinc ou Condor, ou faut-il coder de nou- veaux intergiciels s’exécutant sur les navigateurs à base de JavaScript ?
 
