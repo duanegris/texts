@@ -1,0 +1,486 @@
+#+TITLE: City College - Summary of Questions and Answers
+#+AUTHOR: Stéphane Genaud
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+LINK_UP:
+#+LINK_HOME:
+
+
+
+# --- CSS style for HTML export
+#+SETUPFILE: theme-bigblow.setup
+
+
+#+OPTIONS: toc:1
+#+OPTIONS:  H:2 num:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: hidesolution
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger,hyperref={colorlinks=true, urlcolor=red, plainpages=false, pdfpagelabels, bookmarksnumbered}]
+
+
+#+BEAMER_THEME: Boadilla
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_HEADER_EXTRA: \setbeamercovered{invisible}
+#+BEAMER_HEADER_EXTRA: \author[S. Genaud]{{\large Stéphane Genaud}}
+#+BEAMER_HEADER_EXTRA: \institute[ENSIIE]{Unistra}
+#+BEAMER_HEADER_EXTRA: \date[2019]{2019}
+#+BEAMER_envargs: [<+->]
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+#+STARTUP: beamer
+#+latex_header: \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+
+
+#+BEAMER_HEADER_EXTRA:\setbeamercolor{normal text}{fg=white,bg=black!90}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor{structure}{fg=white}
+
+#+BEAMER_HEADER_EXTRA:\setbeamercolor{alerted text}{fg=red!85!black}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{framesubtitle}{fg=white}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{block title}{parent=structure,bg=black!60}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{block body}{fg=black,bg=black!10}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
+#+BEAMER_HEADER_EXTRA:\setbeamercolor*{block title example}{parent=example text,bg=black!15}
+
+
+#+LATEX_HEADER: \usepackage{algorithm2e} 
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:         keywordstyle=\color{blue},
+#+LATEX_HEADER:         commentstyle=\color{red},
+#+LATEX_HEADER:         stringstyle=\color{green},
+#+LATEX_HEADER:         basicstyle=\ttfamily\tiny,
+#+LATEX_HEADER:         showtabs=true,
+#+LATEX_HEADER:         frame=shadowbox,
+#+LATEX_HEADER:         rulesep=1pt,
+#+LATEX_HEADER:		rulesepcolor=\color{black},
+#+LATEX_HEADER:		basewidth={0.4em,0.4em},
+#+LATEX_HEADER:		}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+
+* Facts
+
+
+** Background
+
+- City College : funded in 1991, Private status for flexibility
+  + Derogates to Greek as mandatory language
+  + Attracts students and staff from abroad (regional attractivity)
+  + Non-profit organization
+- Two public universities in Thessaloniki
+- Most reknowned : [[https://www.auth.gr/][Aristotle University of Thessaloniki]]
+- Aristotle Univ + Unistra dans Epicur
+- City college has joint research with medical school of Aristotle
+
+
+
+
+** Students and Staff numbers
+- 133 in BSc CS 1st+2nd+3rd year
+- 83 in Masters
+- 133 + 83 = 216 students
+- 60% non-greek (from 30 countries)
+- 12 permanent staff in CS
+
+** Tuition Fees
+- Financial refund to Unistra : min(600 Eur/student, 50kEur)
+- Tuition fees
+
+| BSc (Hons) in Computer Science | €6,230 (1st year)         |
+|                                | €6,580 (2nd year)         |
+|                                | €6,880 (3rd year)         |
+|--------------------------------+---------------------------|
+| MSc in Software Development    | €6,800 (full fees, FT/PT) |
+
+
+** Accreditation
+
+- The  Bachelor's  programmes of  the  Computer  Science Department  were  first
+  accredited by  the British Computer  Society (BCS)  during its first  visit to
+  CITY  College on  16th  of  April 2004  and  have  been re-accredited  (5-year
+  unconditional accreditation) ever  since, with the last audit  taking place in
+  October 2019.
+
+- UK  NARIC,  the ‘National  Academic  Recognition  Information Centre’  is  the
+  official national  agency in UK  which is  responsible for the  recognition of
+  academic  and professional  rights and  privileges of  degree holders  from UK
+  Universities.
+
+
+** Research
+Research lab  : https://www.seerc.org/
+
+
+
+* Curriculum BSc
+
+** First Q/A
+- With just 2 maths courses (discrete m. + continuous m.) the BSc CS is closer to an /IUT/ than a /Licence/ in France.
+- Possible to teach more  theoretical courses ? 
+  +  A: -  Yes,  many of  our  permanent  teachers have  the  background and  If
+    necessary, we can employ more staff for this purpose.
+
+- No internship in the curriculum. 
+  + A: we have introduced industry  placements in our Master courses as optional
+    to the students.  Worth 0 ECTS. We plan to change and give credits.
+
+- Adding internships requires workforce + industrial relationships
+
+
+
+** BSc
+- How similar/different are the curricula? 
+- 2 credits = 1 ECTS
+
+- Year 1
+
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align 5
+#+caption: Year 2
+|-------------------------+-------------+------+------------------------------------------------------------+------|
+| Unistra course          | Details     | ECTS | City College course                                        | ECTS |
+|-------------------------+-------------+------+------------------------------------------------------------+------|
+| S1 - Algorithmic 1      | Python      |    6 | Programming Principles and Algorithms CCP1410              |    5 |
+| S1 - Architecture (BAI) |             |    3 | Computer Systems Architecture CC1200                       |    5 |
+| S1 - Cult. Prat. Info   |             |    3 |                                                            |      |
+| S2 - Data Base 1        | SQL-RDBMS   |    3 | Database Systems  CCP2100                                  |    5 |
+| S2 - Algorithmic 2      | C           |    6 | Programming Methodology and Design CCP1400                 |    5 |
+| S2 - *Func. Progr*      | Caml        |    4 |                                                            |      |
+| S2 - Web Prog. 1        | HTML-CSS-JS |    3 | Introduction to Web Technologies CCP1310                   |    5 |
+|                         |             |      | *Information Systems and the Digital Enterprise*   CCP1600 |    5 |
+|                         |             |      | *Systems Analysis and Design* CCP1440                      |    5 |
+|-------------------------+-------------+------+------------------------------------------------------------+------|
+| total                   |             |   28 |                                                            |   35 |
+|-------------------------+-------------+------+------------------------------------------------------------+------|
+
+
+- Year 2
+#+caption: Year 2
+|-------------------------------------+-----------------+------+---------------------------------------------------+------|
+| Unistra course                      | Details         | ECTS | City College course                               | ECTS |
+|-------------------------------------+-----------------+------+---------------------------------------------------+------|
+| S3 - Logic                          | Theory + Prolog |    3 | Logic Programming  CCP2410                        |    5 |
+| S3 - *Architecture*                 |                 |    3 |                                                   |      |
+| S3 - Data Structures                |                 |    6 |                                                   |      |
+| S3 - OOP 1                          | Java            |    3 | Introduction to Object Orientation CCP1430        |    5 |
+| S4 - *OS Programming*               | C               |    3 |                                                   |      |
+| S4 - Network                        |                 |    3 | Networks Architecture CCP1700                     |    5 |
+| S4 - Data Structures and Algorithms |                 |    6 | Data Structures and Algorithms    CCP2400         |      |
+| S4 - OOP 2                          |                 |    3 | Object-oriented Programming CCP1420               |    5 |
+| S4 - Web Prog. 2                    |                 |    3 | Web Programming CCP2300                           |    5 |
+|                                     |                 |      | *Formal Methods and Software Reliability* CCP5200 |    5 |
+|                                     |                 |      | *Artificial Intelligence Techniques* CCP2210      |    5 |
+|                                     |                 |      |                                                   |      |
+|-------------------------------------+-----------------+------+---------------------------------------------------+------|
+| total                               |                 |   33 |                                                   |   35 |
+|-------------------------------------+-----------------+------+---------------------------------------------------+------|
+
+
+- Year 3
+#+caption: Year 3
+|---------------------------+---------+------+--------------------------------------------+------|
+| Unistra course            | Details | ECTS | City College course                        | ECTS |
+|---------------------------+---------+------+--------------------------------------------+------|
+| S5 - *Graphs*             |         |    3 |                                            |      |
+| S5 - Archi & OS           |         |    6 | Operating Systems  CCP2200                 |    5 |
+| S5 - Network algo.        |         |    3 | Network Computing CCP3700 (all tracks)     |    5 |
+| S5 - Data Base 2          |         |    3 |                                            |      |
+| S5 - IHM                  |         |    3 | Human Computer Interaction CCP2440         |    5 |
+| S5 - Professional Project |         |    3 | Individual Project    CCP3810              |   20 |
+| S6 - *Lang. Theory*       |         |    6 |                                            |      |
+| S6 - Integrat. Project    |         |    6 | Industrial Software Project (all tracks)   |   10 |
+| S6 - Software Eng.        |         |    3 | Software Development CCP2430               |    5 |
+|                           |         |      | Software Engineering CCP3500  (all tracks) |    5 |
+| S6 - 2 Electives          |         |  3+3 | 2 Electives (track CS)                     |   10 |
+|                           |         |      |                                            |      |
+|---------------------------+---------+------+--------------------------------------------+------|
+| total                     |         |   42 |                                            |   65 |
+|---------------------------+---------+------+--------------------------------------------+------|
+
+
+
+
+
+* Curriculum Masters
+
+** MSc in ADVANCED SOFTWARE ENGINEERING
+
+- Versions:
+  + FT/PT Athens - Track Data Networks
+  + FT/PT Athens - Track  Web and Mobile Apps
+  + FT/PT Athens - Track Information Security
+  + FT/PT Athens - Track Big Data Engineering and Data Science
+ 
+- Syllabus
+
+|---------+----------------------------------------------+-----------|
+| Common  | Course Title                                 | ECTS=27.5 |
+|---------+----------------------------------------------+-----------|
+| CCP6410 | Advanced Software Development Techniques     |       7.5 |
+| CCP6418 | Continuous and Agile Software Engineering    |       7.5 |
+| CCP6310 | Industrial Group Project                     |       7.5 |
+| CCP6820 | Research Skills and Dissertation Preparation |         5 |
+|---------+----------------------------------------------+-----------|
+
+
+
+  |-----------------------+-----------------------------------------------+-----------|
+  | Data Networks         | Course Title                                  |   ECTS=15 |
+  | CCP6710               | Computer Networking and Internet Technologies |       7.5 |
+  | CCP6730               | Wireless and Mobile Telecommunication         |       7.5 |
+  |-----------------------+-----------------------------------------------+-----------|
+  | +Electives 3 out of 6 | Course Title                                  | ECTS=22.5 |
+  | CCP6417               | Information Security Engineering              |       7.5 |
+  | CCP6412               | Human Computer Interaction/ User Experience   |       7.5 |
+  | CCP6413               | Software Development for Mobile Devices       |       7.5 |
+  | CCP6720               | Engineering Internet Applications             |       7.5 |
+  | CCP6610               | Contemporary Issues in ICT                    |       7.5 |
+  | CCP6419               | DevOps Engineering                            |       7.5 |
+  |-----------------------+-----------------------------------------------+-----------|
+  | Total Data Networks   |                                               |        65 |
+
+#+TBLFM: 
+
+
+  |---------------------------+-----------------------------------------------+-----------+
+  | Web and Mobile Apps       |                                               |   ECTS=15 |
+  | CCP6412                   | Computer Interaction/ User Experience         |       7.5 |
+  | CCP6413                   | Software Development for Mobile Devices       |       7.5 |
+  |---------------------------+-----------------------------------------------+-----------|
+  | +Electives 3 out of 5     |                                               | ECTS=22.5 |
+  | CCP6417                   | Information Security Engineering              |       7.5 |
+  | CCP6710                   | Computer Networking and Internet Technologies |       7.5 |
+  | CCP6720                   | Engineering Internet Applications             |       7.5 |
+  | CCP6610                   | Contemporary Issues in ICT                    |       7.5 |
+  | CCP6419                   | DevOps Engineering                            |       7.5 |
+  |---------------------------+-----------------------------------------------+-----------|
+  | Total Web and Mobile Apps |                                               |        65 |
+
+
+
+
+** MSc in SOFTWARE DEVELOPMENT
+- FT/PT/PT+industry Thessaloniki 
+- FT/PT/PT+industry Athens
+
+| CCP6511 | Fundamentals of Computer Science            | 7.5 |
+| CCP6512 | OO Programming                              | 7.5 |
+| CCP6413 | Software Development for Mobile devices     | 7.5 |
+| CCP6514 | Computer Networks                           | 7.5 |
+| CCP6515 | Database Systems                            | 7.5 |
+| CCP6516 | Software Engineering                        | 7.5 |
+| CCP6517 | Web Technologies                            |   5 |
+| CCP6422 | Artificial Intelligence                     |   5 |
+| CCP6820 | Research Methods & Dissertation Preparation |   5 |
+| CCP6423 | Industry Placement                          |   0 |
+| CCP6810 | Dissertation                                |  25 |
+|---------+---------------------------------------------+-----|
+| total   |                                             |  75 |
+
+
+** MSc in WEB AND MOBILE DEVELOPMENT
+- FT/PT/PT Thessaloniki 
+- FT/PT/PT Athens
+
+
+
+
+* Exchanges
+  
+- How should student exchanges organized?
+  + 
+
+
+* Academic Staff
+
+- *Fact* : 12 permanents FT teachers (CS departement)
+- Q: How many staff ? FT/PT   Q: Which amount of teaching hours covered by FT w.r.t PT staff ?
+- A: Clear process of recruitement, based on the University of Sheffield Academic Career Pathway
+  + Academics full-time : The administration boards receives the application (cover letter + CV) 
+  + Part-Time staff are employed by the College on contractual arrangements that
+    are  made on  the  basis of  their  teaching hours  (normally  less than  10
+    weekly).
+
+** Teaching Staff
+
+1. Mr Petros Amiridis	Part-time Lecturer
+   + BSc (Hons) in Computer Science, University of Sheffield, 1998
+   + MSc in Information Systems, University of Sheffield, 2000
+2. Dr Konstantinos Dimopoulos	Senior Lecturer
+   + BSc Cybernetics and Control Engineering, The University of Reading,
+   + PhD Cybernetics, The University of Reading
+   + Member of BCS
+   + Fellow of the Higher Education Academy
+3. Dr Dimitris Dranidis	Senior Lecturer
+   + PhD in Computer Science, Ludwig-Maximilians University of Munich, Germany
+   + PG Certificate in Learning and Teaching, University of Sheffield
+   + BSc in Physics, Aristotle University, Greece
+4. Dr George Eleftherakis	Reader (Associate Professor)
+   + BSc in Physics from the University of Ioannina, Greece and,
+   + MSc with Distinction and a 
+   + PhD in Computer Science from the University of Sheffield, UK. 
+
+5. Mr Thanos Hatziapostolou	Senior Lecturer
+   + MSc in Computer Science - University of North Carolina
+   + PG Cert in Learning/Teaching, University of Sheffield
+   + BSc in Computer Science - University of Sheffield
+
+6. Prof. Petros Kefalas	Professor
+   + PhD in Computer Science, University of Essex, UK
+   + MSc in Artificial Intelligence, University of Essex, UK
+   + BSc in Physics, Aristotle University of Thessaloniki,Greece
+   + PGCert in Learning & Teaching, University of Sheffield, UK 
+
+7. Prof. Panayiotis Ketikidis	Professor
+   + PhD in Systems Science - Health Informatics, The CITY University, London
+   + Master's of Science with major in Computer Science, West Chester
+     University, Pennsylvania - USA.
+   + Bachelor of Science in Business Administration minor in Computer Science ,
+     Cheyney University, Pennsylvania - USA
+
+8. Dr Evi Mattheopoulou	Part-time Lecturer
+   + PhD in Managing International Operations, Mechanical Engineering Dept., University of W. Macedonia, Greece
+   + Master’s Degree in Business Administration, University of Macedonia, Thessaloniki, GR.
+   + BA (Hons) in English & American Language & Literature, Aristotle University
+     of Thessaloniki, GR.
+
+9. Mr Ivo Neskovic	Part-time Lecturer
+   + MSc in Software Engineering and Telecommunications, University of Sheffield, 2010
+   + BSc (Hons) in Computer Science, University of Sheffield, 2009
+
+10. Ms Marina Ntika	Part-time Lecturer
+   + PhD candidate, University of Sheffield, UK. 
+   + MSc in Software Engineering and Telecommunications, University of Sheffield, UK
+   + BSc in Physics, Aristotle University of Thessaloniki
+
+11. Dr Iraklis Paraskakis	Senior Lecturer
+    + PhD in Information Technology and Education, The Open University, UK
+    + MSc in Analysis Design and Management of Information Systems, London School of Economics and Political Science, UK
+    + BSc (Hon) in Mathematics and Computing, University of North London, UK
+
+12. Mr Leonard Shtika	Part-time Lecturer
+    + MSc in ICT Systems (International Hellenic University)
+    + BSc in Applied Informatics (University of Macedonia)
+
+13. Ms Anna Sotiriadou	Senior Lecturer
+    + MSc Education, University of Rochester, USA
+    + MA in Statistics, University of Rochester, USA
+    + BSc in Mathematics, Aristotle University, Greece
+
+14. Dr Ioanna Stamatopoulou	Senior Lecturer
+    + PhD in Computer Science - University of Sheffield, 2008
+    + MSc in Artificial Intelligence - University of Edinburgh, 2003
+    + BSc (Hons) in Computer Science - University of Sheffield, 2002
+    + Postgraduate Certificate in Learning and Teaching - University of
+      Sheffield, 2018
+
+15. Dr Simeon Veloudis	Lecturer
+    + PhD in Computer Science, The University of Reading
+    + BSc(Hons) In Computer Science, The University of Reading
+
+* Academic Environment
+** Computer Rooms
+  
+- 2 rooms for a class : Ethra (40 PCs) and Thalis (25 PCs)
+- 3 auxiliary rooms : Library (9 Pcs), Multimedia (9), A11Kornilla (11)
+- Windows installed on a "majority" of PCs. Ubuntu as a VM.
+
+
+
+* Verbatim
+
+** Answer 
+
+#+begin_example
+Sujet :	Re: Info requested by CITY College
+Date :	Fri, 29 Nov 2019 14:29:45 +0200
+De :	Petros Kefalas <kefalas@citycollege.sheffield.eu>
+Pour :	Stéphane Cateloin <cateloin@unistra.fr>
+Copie à :	vincent.blanloeil@math.unistra.fr, Ververidis <ververidis@citycollege.sheffield.eu>
+#+end_example
+
+
+Dear Stephane, I hope my email finds you well.
+
+Apologies for delaying a week to reply, but I was abroad for a project kick off meeting. This email attempts  to answer your questions. I hope we provide with enough information to proceed with new meetings. I any case, however, you can request further clarifications and I will respond as quickly as possible. 
+
+** Q1: on your side, did you review Unistra's tracks in computer science?
+
+** A1: 
+Yes, we have a look but not thoroughly reviewed. Obviously there are differences in the curricula, something which is expected between Universities. Our aim was to send you the current curricula for you to review. In case the collaboration goes ahead and as we stated during our meeting, we are willing to review our programmes in order to meet any requirements for adjustments you might have.
+
+** Q2: in comparison to what we do, your lessons seem to have less practical work (in lab) : what are your resources in terms of rooms with computers, servers, network devices, etc?
+
+** A2: 
+The practical work in our programme are as follows:
+- Year 1: 48% lab work (of total teaching hours)
+- Year 2: 49% lab work
+- Year 3: 52% lab work
+- Across the whole programme: Average of 50% lab work
+In addition, an average of 42% of assessment is through coursework and practical work, 47% through examinations and 11% through the individual final year project. 
+
+With regards to resources (rooms with computers/labs, servers, network devices, etc) please see the attached file.
+
+** Q3: your bachelor currently follows the Sheffield model, with many optional courses during the 2nd and 3rd years. Do each of theses courses open each year or semester, or some are closed because students do not choose them?
+
+** A3: 
+Indeed, we follow the University model and provide a number of options for student to choose from. Few of them do not run every year; the reason is either that the students do not choose them or very few student choose these courses thus the number does not exceed the quota we set (minimum number of students in a class), something that the students know in advance. 
+
+** Q4:  in addition, you said that your staff (in the CS department) includes 12 full-time teachers ; so we presume that you also employ external people to ensure all of your courses/lectures; Who are these people? How do you hire them (what diplomas, personal/professional skills, etc.)?
+
+** A4: 
+We employ some additional academic staff on a Part-Time contract to cover the delivery of specialised courses. These are colleagues who are currently employed in the industry but have specialised knowledge and competence. The criteria for recruitment are the same as in FT staff, i.e. they should have the appropriate relevant academic qualifications and professional skills. Newly appointed PT staff goes through training and normally, they stay with us many consecutive years.
+
+For more details on recruitment of PT staff, please see the attached document.
+
+** Q5: do you have staff who can teach mathematics or theoretical computer science in a larger proportion?
+
+** A5: 
+Of course! Many of our staff have a strong background in Mathematics, Formal Methods, Computational Theory etc. and if needed they can teach additional theoretical computer science courses. If necessary, we can employ more staff for this purpose.
+
+** Q6: in your current masters, internships seems to be optional (according to the tracks) : some do include industry placement, and some do not. And it is not clear if these interships are valued with european credits. In France , it is mandatory to include an internship (~5-6 months, either in industry or in a research laboratory) during the last semester of the master. That requires strong relations and partnerships with local industry : what are your actions in this direction ? could you tell us about your relationship with companies?
+
+** A6: 
+Firstly, we have introduced industry placements in our Master courses as optional to the students. Those who take it, they will be awarded a degree in which Industry Placement is explicitly stated. However, the placement does not bare any credits until now but aims to develop their employabiliy profile. As mentioned above, we are willing to discuss any changes you suggest and have credits associated with the industry placement.
+
+Secondly, you are right in saying that such an approach would require strong relations and partnerships with local industry. We believe that we have built strong strategic partnerships with industry through our long lasting relationships. Please have a look at the attached file to find more about this.
+
+** Q7: all masters in France have to be linked to one or more research teams, and must include research components (initiation to research, participation of students in research projects, etc.) ; it seems that this is not your case now? how do you think your research lab could support all these activities ?
+
+** A7 : 
+In the UK system, having labs/research teams is not mandatory as long as there exists academic staff with related competence. In our Department, academic staff have research and expertise in the areas in which Master programmes are provided. Since the number is relatively small (but more than adequate to serve the number of students we have in the Department, staff/student ratio is approximately 1/10), we organise ourselves through teams that work in the same area of research. Students are exposed to research through:
+- research-led teaching and learning
+- a research methods course mandatory for all Masters students
+- research conducted through their dissertation project which amounts to 1/3 of the programme credits.
+
+
+** Q8: about research in City College : on your website some links are broken so that it is difficult to gather informations, in particular your publications. Do you have an activity report that you could send us, and which would bring together  and synthesize the important elements of the research area ?
+
+** A8: 
+You are right, we noticed that the web link is broken because of a database crash. We have updated the link to include all publications of the staff during the last decade: https://citycollege.sheffield.eu/frontend/articles.php?cid=453&t=Publications-CSD
+
+Also, I attach the more recent report we developed as part of a Research Exercise Framework that is done every five years.
+
+** Q9: we believe it would be interesting to teach some French (considering that students will obtain a diploma from a French university). Do you think that is possible?
+
+** A9: 
+Yes, we intent to provide a number of French languages course for our students. 
+
+Best wishes
+
+Petros
+
+
+* Discuss
