@@ -24,7 +24,7 @@
 
 #+BEAMER_HEADER_EXTRA:\setbeamertemplate{footline}{\leavevmode \hbox{ \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot} \insertshorttitle\end{beamercolorbox} \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}\insertshortauthor\end{beamercolorbox} \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot} \insertframenumber / \inserttotalframenumber\hspace*{2em} \end{beamercolorbox} } \vskip0pt }
 #+BEAMER_HEADER_EXTRA: \setbeamercovered{invisible}
-#+BEAMER_HEADER_EXTRA: \author[S. Genaud]{{\large Stéphane Genaud} \\ \vspace{0.2cm} ENSIIE - Strasbourg \\ \vspace{0.2cm} \texttt{genaud@unistra.fr} }
+#+BEAMER_HEADER_EXTRA: \author[S. Genaud]{{\large Stéphane Genaud} \\ \vspace{0.2cm}  - Unistra \\ \vspace{0.2cm} \texttt{genaud@unistra.fr} }
 #+BEAMER_HEADER_EXTRA: \date{{\large Parallel and Distributed Systems} \\ \vspace{0.2cm} }
 #+BEAMER_envargs: [<+->] 
 #+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
